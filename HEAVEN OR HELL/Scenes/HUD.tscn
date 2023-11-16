@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqndmymbihv0q"]
+
+[ext_resource type="Script" path="res://HUD.gd" id="1_dpi44"]
+[ext_resource type="FontFile" uid="uid://dvq2ocj6bcsb6" path="res://fonts/DFPPOPCorn-W12.ttf" id="1_nfbat"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_dpi44")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 50.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("1_nfbat")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="DifficultyLabel" type="Label" parent="."]
+offset_top = 680.0
+offset_right = 238.0
+offset_bottom = 720.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_nfbat")
+theme_override_font_sizes/font_size = 36
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -132.0
+offset_right = 240.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_nfbat")
+theme_override_font_sizes/font_size = 54
+text = "Reimu's no good
+very bad day "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.236
+anchor_top = 0.564
+anchor_right = 0.764
+anchor_bottom = 0.664
+offset_left = 0.219994
+offset_top = 0.0499878
+offset_right = -0.220032
+offset_bottom = 0.0499878
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_nfbat")
+theme_override_font_sizes/font_size = 64
+text = "START"
+
+[node name="MessageTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
