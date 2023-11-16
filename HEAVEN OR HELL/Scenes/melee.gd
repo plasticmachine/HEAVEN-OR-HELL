@@ -34,7 +34,7 @@ func attack():
 	#gets the reference to the melee weapons hitbox
 	var range = $MeleeRange
 	var hitbox = $MeleeHitbox
-	var testing = hitbox
+	
 	
 	#Gets the global position of the mouse, where it is on screen
 	var mouse_position = get_global_mouse_position()
