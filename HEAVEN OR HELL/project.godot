@@ -14,11 +14,7 @@ config/name="Reimu's Bad Day"
 run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 boot_splash/show_image=false
-config/icon="res://art/reimu/down/downwalk_1.png"
-
-[autoload]
-
-Spawning="*res://addons/BulletUpHell/Spawning.tscn"
+config/icon="res://art/HEAVEN/down/downwalk_1.png"
 
 [display]
 
@@ -32,10 +28,6 @@ mouse_cursor/custom_image="res://art/misc/xjwmt5upomxa1-export.png"
 [dotnet]
 
 project/assembly_name="Reimu-s Bad Day"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg")
 
 [input]
 

@@ -13,8 +13,6 @@ func _ready():
 
 func _process(delta):
 	var velocity = Vector2.ZERO #the players movement vector, currently set to (0,0)
-	var direction_up
-	var direction_down
 	var direction_left
 	var direction_right
 	if Input.is_action_pressed("move_right"):
@@ -23,18 +21,10 @@ func _process(delta):
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
 		direction_left = true
-		#direction_up = false
-		#direction_down = false
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
-		direction_down = true
-		#direction_up = false
-		#direction_left = false
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
-		direction_up = true
-		#direction_left = false
-		#direction_down = false
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed #normalizes the velocity variable so it cant go above 1
 		$AnimatedSprite2D.play()
@@ -42,14 +32,28 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "left"
 	elif direction_right:
 		$AnimatedSprite2D.animation = "right"
-	elif direction_up:
-		$AnimatedSprite2D.animation = "up"
-	elif direction_down:
-		$AnimatedSprite2D.animation = "down"
+	if Input.is_action_pressed("move_up"):
+		if Input.is_action_pressed("move_left"): 
+			$AnimatedSprite2D.animation = "up_left"
+		elif Input.is_action_pressed("move_right"):
+			$AnimatedSprite2D.animation = "up_right"
+		elif Input.is_action_pressed("move_up"):
+			$AnimatedSprite2D.animation = "up"
+
+	if Input.is_action_pressed("move_down"):
+		if Input.is_action_pressed("move_left"):
+			$AnimatedSprite2D.animation = "down_left"
+		elif Input.is_action_pressed("move_right"):
+			$AnimatedSprite2D.animation = "down_right"
+		elif Input.is_action_pressed("move_down"):
+			$AnimatedSprite2D.animation = "down"
 	else:
 		$AnimatedSprite2D.stop()
 	position += velocity * delta #updates the position to the direction of the key pressed, velocity is updated thru keypresses and then is used in this simple formula to get the new position
 	position = position.clamp(Vector2.ZERO, screen_size) #clamps the player to the screensize so they cant go out of the window
+	
+	
+	print_debug(velocity)
 
 
 #func _physics_process(delta):

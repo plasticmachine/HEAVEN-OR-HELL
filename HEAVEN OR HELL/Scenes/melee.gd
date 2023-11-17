@@ -4,19 +4,19 @@ extends Area2D
 @export var actionTimer: float
 @export var attackRange: float
 @export var attackWindow: float
-signal actionProgress
 
-@onready var action_timer = $ActionTimer
-@onready var texture_progress_bar = $HBoxContainer/TextureProgressBar
 
-func _ready():
+
+
+func _ready() -> void:
 	hide()
+	
 
 func _physics_process(delta):
 	#Handling Attack cooldown and subtracts it by the delta argument
 	if actionTimer > 0:
 		actionTimer -= delta
-		actionProgress.emit()
+		
 	#Sees if the melee input is pressed, and it sees if the attack timer is zero and if both of those are true then it runs the attack() function
 	if Input.is_action_pressed("Melee") and actionTimer <= 0:
 		attack()
@@ -34,7 +34,6 @@ func attack():
 	#gets the reference to the melee weapons hitbox
 	var range = $MeleeRange
 	var hitbox = $MeleeHitbox
-	
 	
 	#Gets the global position of the mouse, where it is on screen
 	var mouse_position = get_global_mouse_position()

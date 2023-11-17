@@ -1,16 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://co8jc0uhro10o"]
+[gd_scene load_steps=13 format=3 uid="uid://co8jc0uhro10o"]
 
 [ext_resource type="Script" path="res://Scenes/melee.gd" id="1_w5jkd"]
-[ext_resource type="Texture2D" uid="uid://ktqf0y1uxqpb" path="res://art/reimu/attack/sword4.png" id="6_ne5v5"]
-[ext_resource type="Texture2D" uid="uid://btucj1x8u1vxs" path="res://art/reimu/attack/sword5.png" id="7_2gmrd"]
-[ext_resource type="Texture2D" uid="uid://c2v7xf76i7sp3" path="res://art/reimu/attack/sword6.png" id="8_xxo5v"]
-[ext_resource type="Texture2D" uid="uid://cagy5sim6ptrv" path="res://art/reimu/attack/sword7.png" id="9_db1pq"]
-[ext_resource type="Texture2D" uid="uid://cox5c6wprxw51" path="res://art/GUI/bg.png" id="10_gjndm"]
-[ext_resource type="Texture2D" uid="uid://deb1o1jsknmjf" path="res://art/reimu/attack/sword8.png" id="10_hklgx"]
-[ext_resource type="Texture2D" uid="uid://dvbvvyhk42o22" path="res://art/reimu/attack/sword9.png" id="11_4kf83"]
-[ext_resource type="Texture2D" uid="uid://datk8wkaxjvlp" path="res://art/GUI/fill.png" id="11_hh7qq"]
-[ext_resource type="Texture2D" uid="uid://ceec21bsfygl0" path="res://art/reimu/attack/sword10.png" id="12_jxiho"]
-[ext_resource type="Texture2D" uid="uid://0t2ylkqj1x4r" path="res://art/reimu/attack/sword11.png" id="13_mfh1v"]
+[ext_resource type="Texture2D" uid="uid://ktqf0y1uxqpb" path="res://art/reimu/attack/sword4.png" id="2_rrvvf"]
+[ext_resource type="Texture2D" uid="uid://btucj1x8u1vxs" path="res://art/reimu/attack/sword5.png" id="3_vn4oj"]
+[ext_resource type="Texture2D" uid="uid://c2v7xf76i7sp3" path="res://art/reimu/attack/sword6.png" id="4_uoh3f"]
+[ext_resource type="Texture2D" uid="uid://cagy5sim6ptrv" path="res://art/reimu/attack/sword7.png" id="5_nuv1b"]
+[ext_resource type="Texture2D" uid="uid://deb1o1jsknmjf" path="res://art/reimu/attack/sword8.png" id="6_qhoie"]
+[ext_resource type="Texture2D" uid="uid://dvbvvyhk42o22" path="res://art/reimu/attack/sword9.png" id="7_r78oi"]
+[ext_resource type="Texture2D" uid="uid://ceec21bsfygl0" path="res://art/reimu/attack/sword10.png" id="8_8n2rw"]
+[ext_resource type="Texture2D" uid="uid://0t2ylkqj1x4r" path="res://art/reimu/attack/sword11.png" id="9_dcge8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0x67l"]
 
@@ -21,28 +19,28 @@ size = Vector2(27.8605, 56.272)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_ne5v5")
+"texture": ExtResource("2_rrvvf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_2gmrd")
+"texture": ExtResource("3_vn4oj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_xxo5v")
+"texture": ExtResource("4_uoh3f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_db1pq")
+"texture": ExtResource("5_nuv1b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_hklgx")
+"texture": ExtResource("6_qhoie")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_4kf83")
+"texture": ExtResource("7_r78oi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_jxiho")
+"texture": ExtResource("8_8n2rw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_mfh1v")
+"texture": ExtResource("9_dcge8")
 }],
 "loop": false,
 "name": &"meleeAttack",
@@ -69,19 +67,5 @@ sprite_frames = SubResource("SpriteFrames_bcght")
 animation = &"meleeAttack"
 frame = 7
 frame_progress = 1.0
-
-[node name="ActionTimer" type="Timer" parent="."]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = -21.0
-offset_top = 19.0
-offset_right = 375.0
-offset_bottom = 72.0
-scale = Vector2(0.112157, 0.112157)
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="HBoxContainer"]
-layout_mode = 2
-texture_under = ExtResource("10_gjndm")
-texture_progress = ExtResource("11_hh7qq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
