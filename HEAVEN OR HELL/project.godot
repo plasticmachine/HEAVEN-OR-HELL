@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.1", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://art/HEAVEN/down/downwalk_1.png"
 
+[autoload]
+
+Spawning="*res://addons/BulletUpHell/Spawning.tscn"
+
 [display]
 
 window/size/viewport_width=3840
@@ -28,6 +32,10 @@ mouse_cursor/custom_image="res://art/misc/xjwmt5upomxa1-export.png"
 [dotnet]
 
 project/assembly_name="Reimu-s Bad Day"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg")
 
 [input]
 

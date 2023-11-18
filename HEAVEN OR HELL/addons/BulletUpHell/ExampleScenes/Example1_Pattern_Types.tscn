@@ -14,9 +14,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_u3j77"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 701, 125, 0, 0, 0, 0, 753, 91, 0, 0, 0, 0, 799, 123, 0, 0, 0, 0, 787, 73, 0, 0, 0, 0, 832, 48, 0, 0, 0, 0, 777, 39, 0, 0, 0, 0, 758, -13, 0, 0, 0, 0, 731, 36, 0, 0, 0, 0, 686, 41, 0, 0, 0, 0, 723, 71)
+"points": PackedVector2Array(0, 0, 0, 0, 718, 71.9968, 0, 0, 0, 0, 699.001, 119.997, 0, 0, 0, 0, 753, 88.9966, 0, 0, 0, 0, 799, 123, 0, 0, 0, 0, 787, 73, 0, 0, 0, 0, 832, 48, 0, 0, 0, 0, 777, 39, 0, 0, 0, 0, 758, -13, 0, 0, 0, 0, 731, 36, 0, 0, 0, 0, 686, 41, 0, 0, 0, 0, 715, 69.9968, 0, 0, 0, 0, 699.001, 125.997)
 }
-point_count = 10
+point_count = 12
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kt31x"]
 resource_name = "PatternOne"
@@ -26,6 +26,7 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
+forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
@@ -78,6 +79,7 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
+forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
@@ -135,6 +137,7 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
+forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
@@ -193,6 +196,7 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
+forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
@@ -253,6 +257,7 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
+forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
@@ -311,6 +316,7 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
+forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
@@ -383,6 +389,8 @@ spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
 spec_rotating_speed = 0.0
+spec_angle_no_colliding = null
+spec_angle_no_coll_offset = null
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
@@ -508,14 +516,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint2" type="Node2D" parent="SpawnPoints"]
 position = Vector2(86, 307)
@@ -529,14 +530,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint3" type="Node2D" parent="SpawnPoints"]
 position = Vector2(83, 510)
@@ -550,14 +544,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint4" type="Node2D" parent="SpawnPoints"]
 position = Vector2(746, 119)
@@ -571,14 +558,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint5" type="Node2D" parent="SpawnPoints"]
 position = Vector2(748, 271)
@@ -592,14 +572,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="SpawnPoint6" type="Node2D" parent="SpawnPoints"]
 position = Vector2(746, 465)
@@ -613,14 +586,7 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_id = null
-r_randomisation_chances = 0.0
-r_active_chances = 0.0
-r_shared_area_choice = ""
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
+trigger_container = NodePath("")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 17
@@ -634,10 +600,10 @@ offset_right = 40.0
 offset_bottom = 14.0
 
 [node name="Tuto" type="Label" parent="."]
-offset_left = 128.0
-offset_top = 103.999
-offset_right = 997.001
-offset_bottom = 303.999
+offset_left = -949.001
+offset_top = -300.996
+offset_right = -80.0004
+offset_bottom = -100.996
 text = "Patterns control the spawning positions of the bullets.
 There are different types of patterns.
 Circles, lines, or more complex custom ones (everything is fully explained in the documentation :
