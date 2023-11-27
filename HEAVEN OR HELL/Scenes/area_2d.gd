@@ -8,7 +8,7 @@ var meleeScript
 func _ready():
 	meleeScript = $Melee
 	screen_size = get_viewport_rect().size
-	hide()
+	#hide()
 
 
 func _process(delta):
