@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://cvx1mnumf2p38"]
+[gd_scene load_steps=29 format=3 uid="uid://cvx1mnumf2p38"]
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/ExampleScenes/ExampleScene.gd" id="1_3jldb"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHPattern.gd" id="2_ah2t8"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="3_d681h"]
+[ext_resource type="Texture2D" uid="uid://dg6gcbb5ea8cj" path="res://icon.svg" id="3_whrjg"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="4_3qlmj"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternLine.gd" id="5_vvcng"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCustomPoints.gd" id="6_gcika"]
@@ -11,10 +12,11 @@
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHBulletProperties.gd" id="9_x0nxu"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/BulletProps.gd" id="10_tkfof"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawnPoint.gd" id="11_iv1jv"]
+[ext_resource type="PackedScene" uid="uid://cp5lkboni2t1i" path="res://Scenes/area_2d.tscn" id="12_miufa"]
 
 [sub_resource type="Curve2D" id="Curve2D_u3j77"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 718, 71.9968, 0, 0, 0, 0, 699.001, 119.997, 0, 0, 0, 0, 753, 88.9966, 0, 0, 0, 0, 799, 123, 0, 0, 0, 0, 787, 73, 0, 0, 0, 0, 832, 48, 0, 0, 0, 0, 777, 39, 0, 0, 0, 0, 758, -13, 0, 0, 0, 0, 731, 36, 0, 0, 0, 0, 686, 41, 0, 0, 0, 0, 715, 69.9968, 0, 0, 0, 0, 699.001, 125.997)
+"points": PackedVector2Array(0, 0, 0, 0, 703, 74.9969, 0, 0, 0, 0, 711.001, 129.997, 0, 0, 0, 0, 753, 91, 0, 0, 0, 0, 799, 123, 0, 0, 0, 0, 787, 73, 0, 0, 0, 0, 832, 48, 0, 0, 0, 0, 777, 39, 0, 0, 0, 0, 758, -13, 0, 0, 0, 0, 731, 36, 0, 0, 0, 0, 677, 24.997)
 }
 point_count = 12
 
@@ -79,8 +81,8 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
-forced_lookat_mouse = false
-forced_pattern_lookat = true
+forced_lookat_mouse = true
+forced_pattern_lookat = false
 cooldown_stasis = false
 cooldown_spawn = 5.0
 cooldown_shoot = 0.0
@@ -194,12 +196,12 @@ center = 0
 symmetry_type = 0
 iterations = -1
 follows_parent = false
-forced_angle = 0.0
+forced_angle = -3.1416
 forced_target = NodePath("")
 forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
-cooldown_spawn = 5.0
+cooldown_spawn = 1.0
 cooldown_shoot = 0.0
 cooldown_next_spawn = 0.0
 cooldown_next_shoot = 0.0
@@ -239,9 +241,9 @@ r_cooldown_n_shoot_variation = Vector3(0, 0, 0)
 
 [sub_resource type="Curve2D" id="Curve2D_jpnr8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 763, 215, 0, 0, 0, 0, 739, 255, 0, 0, 0, 0, 684, 262, 0, 0, 0, 0, 719, 284, 0, 0, 0, 0, 713, 334, 0, 0, 0, 0, 760, 295, 0, 0, 0, 0, 799, 334, 0, 0, 0, 0, 791, 280, 0, 0, 0, 0, 829, 264, 0, 0, 0, 0, 780, 253, 0, 0, 0, 0, 768, 220)
+"points": PackedVector2Array(0, 0, 0, 0, 749.001, 223.997, 0, 0, 0, 0, 739, 255, 0, 0, 0, 0, 684, 262, 0, 0, 0, 0, 719, 284, 0, 0, 0, 0, 713, 334, 0, 0, 0, 0, 760, 295, 0, 0, 0, 0, 799, 334, 0, 0, 0, 0, 791, 280, 0, 0, 0, 0, 829, 264, 0, 0, 0, 0, 814.66, 247.963, 0, 0, 0, 0, 804.001, 239.996, 0, 0, 0, 0, 781.001, 214.997)
 }
-point_count = 11
+point_count = 12
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pxg84"]
 resource_name = "PatternCustomShape"
@@ -336,6 +338,65 @@ r_randomisation_chances = 1.0
 r_grid_choice = ""
 r_grid_x_variation = Vector3(0, 0, 0)
 r_grid_y_variation = Vector3(0, 0, 0)
+r_bullet_choice = ""
+r_bullet_nbr_choice = ""
+r_bullet_nbr_variation = Vector3(0, 0, 0)
+r_pattern_angle_choice = ""
+r_pattern_angle_variation = Vector3(0, 0, 0)
+r_infinite_iter_chances = 0.0
+r_iterations_choice = ""
+r_iterations_variation = Vector3(0, 0, 0)
+r_forced_angle_choice = ""
+r_forced_angle_variation = Vector3(0, 0, 0)
+r_forced_target_choice = []
+r_stasis_chances = 0.0
+r_cooldown_spawn_choice = ""
+r_cooldown_spawn_variation = Vector3(0, 0, 0)
+r_cooldown_shoot_choice = ""
+r_cooldown_shoot_variation = Vector3(0, 0, 0)
+r_cooldown_n_spawn_choice = ""
+r_cooldown_n_spawn_variation = Vector3(0, 0, 0)
+r_cooldown_n_shoot_choice = ""
+r_cooldown_n_shoot_variation = Vector3(0, 0, 0)
+
+[sub_resource type="Curve2D" id="Curve2D_lqr31"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56.0005, 114, 0, 0, 0, 0, 46.0001, 24.9997, 0, 0, 0, 0, -12.0001, -11, 0, 0, 0, 0, 44.9999, -24.0003, 0, 0, 0, 0, 61.9998, -45.0003, 0, 0, 0, 0, 67.9994, -128, 0, 0, 0, 0, 114, -50.0006, 0, 0, 0, 0, 218, -36.001, 0, 0, 0, 0, 155, 7.99924, 0, 0, 0, 0, 182, 90.9991, 0, 0, 0, 0, 102, 38.9995, 0, 0, 0, 0, 55.0005, 116)
+}
+point_count = 12
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_kahla"]
+resource_name = "PatternCustomShape"
+script = ExtResource("7_aiav0")
+bullet = "1"
+nbr = 32
+closed_shape = true
+center_pos = Vector2(93.66, -2.96)
+pattern_angle = 0.0004
+symmetric = false
+center = 0
+iterations = -1
+follows_parent = false
+forced_angle = 0.0004
+forced_target = NodePath("../../Sprite2D")
+forced_lookat_mouse = false
+forced_pattern_lookat = true
+cooldown_stasis = false
+cooldown_spawn = 1.0
+cooldown_shoot = 0.0
+cooldown_next_spawn = 0.0
+cooldown_next_shoot = 0.0
+wait_latence = 0
+wait_tween_momentum = 0
+wait_tween_length = 0.0
+wait_tween_time = 0.0
+layer_nbr = 1
+layer_cooldown_spawn = 0.0
+layer_pos_offset = 0.0
+layer_speed_offset = 0.0
+layer_angle_offset = 0.0
+r_randomisation_chances = 1.0
+r_symmetry_chances = 0.0
 r_bullet_choice = ""
 r_bullet_nbr_choice = ""
 r_bullet_nbr_variation = Vector3(0, 0, 0)
@@ -457,6 +518,7 @@ rotation = 6.28319
 script = ExtResource("1_3jldb")
 
 [node name="Patterns" type="Node2D" parent="."]
+position = Vector2(10, 2.99996)
 
 [node name="SpawnPattern" type="Path2D" parent="Patterns"]
 curve = SubResource("Curve2D_u3j77")
@@ -469,6 +531,7 @@ curve = SubResource("Curve2D_u3j77")
 script = ExtResource("2_ah2t8")
 id = "circle"
 pattern = SubResource("NavigationPolygon_iro43")
+preview_spawn = true
 
 [node name="SpawnPattern3" type="Path2D" parent="Patterns"]
 curve = SubResource("Curve2D_u3j77")
@@ -487,12 +550,22 @@ curve = SubResource("Curve2D_jpnr8")
 script = ExtResource("2_ah2t8")
 id = "shape"
 pattern = SubResource("NavigationPolygon_pxg84")
+preview_spawn = true
 
 [node name="SpawnPattern6" type="Path2D" parent="Patterns"]
 curve = SubResource("Curve2D_qvlio")
 script = ExtResource("2_ah2t8")
 id = "area"
 pattern = SubResource("NavigationPolygon_ctjs0")
+
+[node name="SpawnPattern7" type="Path2D" parent="Patterns"]
+position = Vector2(1439, 369.994)
+curve = SubResource("Curve2D_lqr31")
+script = ExtResource("2_ah2t8")
+id = "test"
+pattern = SubResource("NavigationPolygon_kahla")
+preview_spawn = true
+preview_shoot = true
 
 [node name="BulletProps" type="Node2D" parent="."]
 
@@ -505,7 +578,7 @@ props = SubResource("PackedDataContainer_yktta")
 [node name="SpawnPoints" type="Node2D" parent="."]
 
 [node name="SpawnPoint" type="Node2D" parent="SpawnPoints"]
-position = Vector2(86, 58)
+position = Vector2(897, 100.996)
 script = ExtResource("11_iv1jv")
 active = true
 auto_pattern_id = "one"
@@ -591,19 +664,25 @@ trigger_container = NodePath("")
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 17
 collision_mask = 33
+metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PackedVector2Array(1024, -8, 1024, 600, 0, 600, 0, 0, -56, 0, -48, 656, 1072, 640, 1056, -64, 0, -64, 8, 0)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2390, 875.989)
+texture = ExtResource("3_whrjg")
+
 [node name="FPS" type="Label" parent="."]
 offset_right = 40.0
-offset_bottom = 14.0
+offset_bottom = 23.0
 
 [node name="Tuto" type="Label" parent="."]
-offset_left = -949.001
-offset_top = -300.996
-offset_right = -80.0004
-offset_bottom = -100.996
+visible = false
+offset_left = 1010.0
+offset_top = 813.996
+offset_right = 1879.0
+offset_bottom = 1014.0
 text = "Patterns control the spawning positions of the bullets.
 There are different types of patterns.
 Circles, lines, or more complex custom ones (everything is fully explained in the documentation :
@@ -611,3 +690,23 @@ https://docs.google.com/document/d/1y2aPsn72dOxQ-wBNGqLlQvrw9-SV_z12a1MradBglF4/
 
 You can modify the properties of those patterns to create any pattern ever."
 autowrap_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("12_miufa")]
+position = Vector2(2034, 439.991)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="SpawnPoint7" type="Node2D" parent="Player"]
+script = ExtResource("11_iv1jv")
+active = true
+auto_pattern_id = "test"
+shared_area_name = "0"
+rotating_speed = 0.0
+pool_amount = 50
+auto_start_on_cam = true
+auto_start_after_time = 0.0
+auto_start_at_distance = 0.0
+auto_distance_from = NodePath("")
+trigger_container = NodePath("")
