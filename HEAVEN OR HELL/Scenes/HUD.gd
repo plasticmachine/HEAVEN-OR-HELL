@@ -3,8 +3,8 @@ extends CanvasLayer
 signal start_game #creates the signal to send to the main node
 
 func show_message(text):
-	$Message.text = text
-	$Message.show()
+	$TitleScreen.text = text
+	$TitleScreen.show()
 	$MessageTimer.start()
 
 func show_game_over():
@@ -12,7 +12,7 @@ func show_game_over():
 	await $MessageTimer.timeout #It's waitingd for the message timer to count down
 	
 	#Message.text = ("Reimu's no good very bad day")
-	$Message.show()
+	$TitleScreen.show()
 	await get_tree().create_timer(1.0).timeout
 	$StartButton.show()
 
@@ -28,7 +28,7 @@ func _on_start_button_pressed():
 	
 	
 func _on_message_timer_timeout():
-	$Message.hide()
+	$TitleScreen.hide()
 
 
 

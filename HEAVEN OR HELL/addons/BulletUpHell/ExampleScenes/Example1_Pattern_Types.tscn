@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cvx1mnumf2p38"]
+[gd_scene load_steps=33 format=3 uid="uid://cvx1mnumf2p38"]
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/ExampleScenes/ExampleScene.gd" id="1_3jldb"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHPattern.gd" id="2_ah2t8"]
@@ -16,9 +16,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_u3j77"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 703, 74.9969, 0, 0, 0, 0, 711.001, 129.997, 0, 0, 0, 0, 753, 91, 0, 0, 0, 0, 799, 123, 0, 0, 0, 0, 787, 73, 0, 0, 0, 0, 832, 48, 0, 0, 0, 0, 777, 39, 0, 0, 0, 0, 758, -13, 0, 0, 0, 0, 731, 36, 0, 0, 0, 0, 677, 24.997)
+"points": PackedVector2Array(0, 0, 0, 0, 703, 74.9969, 0, 0, 0, 0, 711.001, 129.997, 0, 0, 0, 0, 753, 91, 0, 0, 0, 0, 760.624, 108.241, 0, 0, 0, 0, 769.355, 109.828, 0, 0, 0, 0, 799, 123, 0, 0, 0, 0, 787, 73, 0, 0, 0, 0, 832, 48, 0, 0, 0, 0, 777, 39, 0, 0, 0, 0, 758, -13, 0, 0, 0, 0, 731, 36, 0, 0, 0, 0, 677, 24.997)
 }
-point_count = 10
+point_count = 12
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kt31x"]
 resource_name = "PatternOne"
@@ -361,15 +361,15 @@ r_cooldown_n_shoot_variation = Vector3(0, 0, 0)
 
 [sub_resource type="Curve2D" id="Curve2D_lqr31"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 56.0005, 114, 0, 0, 0, 0, 46.0001, 24.9997, 0, 0, 0, 0, -12.0001, -11, 0, 0, 0, 0, 44.9999, -24.0003, 0, 0, 0, 0, 61.9998, -45.0003, 0, 0, 0, 0, 67.9994, -128, 0, 0, 0, 0, 114, -50.0006, 0, 0, 0, 0, 218, -36.001, 0, 0, 0, 0, 155, 7.99924, 0, 0, 0, 0, 182, 90.9991, 0, 0, 0, 0, 102, 38.9995, 0, 0, 0, 0, 55.0005, 116)
+"points": PackedVector2Array(0, 0, 0, 0, 56.0005, 114, 0, 0, 0, 0, 46.0001, 24.9997, 0, 0, 0, 0, -12.0001, -11, 0, 0, 0, 0, 44.9999, -24.0003, 0, 0, 0, 0, 61.9998, -45.0003, 0, 0, 0, 0, 67.9994, -128, 0, 0, 0, 0, 114, -50.0006, 0, 0, 0, 0, 125.644, -53.8073, 0, 0, 0, 0, 218, -36.001, 0, 0, 0, 0, 155, 7.99924, 0, 0, 0, 0, 182, 90.9991, 0, 0, 0, 0, 102, 38.9995, 0, 0, 0, 0, 55.0005, 116)
 }
-point_count = 12
+point_count = 13
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kahla"]
 resource_name = "PatternCustomShape"
 script = ExtResource("7_aiav0")
-bullet = "1"
-nbr = 32
+bullet = "2"
+nbr = 22
 closed_shape = true
 center_pos = Vector2(93.66, -2.96)
 pattern_angle = 0.0004
@@ -513,6 +513,101 @@ r_scale_multi_curve_choice = []
 r_scale_multi_iter_variation = Vector3(0, 0, 0)
 r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
+[sub_resource type="Curve2D" id="Curve2D_b2qyu"]
+
+[sub_resource type="Curve" id="Curve_ycmq6"]
+
+[sub_resource type="Curve" id="Curve_jukcn"]
+
+[sub_resource type="PackedDataContainer" id="PackedDataContainer_xf2vs"]
+script = ExtResource("10_tkfof")
+speed = 300.0
+scale = 1
+angle = 0
+groups = []
+anim_idle_texture = "0"
+anim_spawn_texture = ""
+anim_waiting_texture = ""
+anim_delete_texture = ""
+anim_idle_collision = "0"
+anim_spawn_collision = ""
+anim_waiting_collision = ""
+anim_delete_collision = ""
+anim_idle_sfx = -1
+anim_spawn_sfx = -1
+anim_waiting_sfx = -1
+anim_delete_sfx = -1
+spec_bounces = 0
+spec_no_collision = false
+spec_modulate_loop = 0.0
+spec_skew = 0.0
+spec_trail_length = 0.0
+spec_trail_width = 0.0
+spec_trail_modulate = Color(1, 1, 1, 1)
+spec_rotating_speed = 0.0
+spec_angle_no_colliding = null
+spec_angle_no_coll_offset = null
+death_after_time = 30.0
+death_outside_box = Rect2(0, 0, 0, 0)
+death_from_collision = true
+a_direction_equation = ""
+a_curve_movement = 0
+a_speed_multiplier = SubResource("Curve_ycmq6")
+a_speed_multi_iterations = 0
+a_speed_multi_scale = 0.0
+trigger_container = ""
+trigger_wait_for_shot = true
+homing_type = 0
+homing_target = NodePath("")
+homing_steer = 0.0
+homing_time_start = 0
+homing_duration = 999
+scale_multi_iterations = 0
+scale_multiplier = SubResource("Curve_jukcn")
+scale_multi_scale = 1
+r_randomisation_chances = 1.0
+r_speed_choice = ""
+r_speed_variation = Vector3(0, 0, 0)
+r_scale_choice = ""
+r_scale_variation = Vector3(0, 0, 0)
+r_angle_choice = ""
+r_angle_variation = Vector3(0, 0, 0)
+r_group_choice = []
+r_bounce_choice = ""
+r_bounce_variation = Vector3(0, 0, 0)
+r_no_coll_chances = 0.0
+r_modulate_variation = Vector3(0, 0, 0)
+r_trail_length_variation = Vector3(0, 0, 0)
+r_trail_color_variation = Vector3(0, 0, 0)
+r_rotating_variation = Vector3(0, 0, 0)
+r_death_after_choice = ""
+r_death_after_variation = Vector3(0, 0, 0)
+r_death_outside_chances = 0.0
+r_dir_equation_choice = ""
+r_curve_choice = []
+r_speed_multi_curve_choice = []
+r_speed_multi_iter_variation = Vector3(0, 0, 0)
+r_speed_multi_scale_variation = Vector3(0, 0, 0)
+r_trigger_choice = ""
+r_wait_for_shot_chances = 0.0
+r_homing_target_choice = []
+r_special_target_choice = ""
+r_group_target_choice = ""
+r_pos_target_choice = ""
+r_steer_choice = ""
+r_steer_variation = Vector3(0, 0, 0)
+r_homing_delay_choice = ""
+r_homing_delay_variation = Vector3(0, 0, 0)
+r_homing_dur_choice = ""
+r_homing_dur_variation = Vector3(0, 0, 0)
+r_beam_length_choice = ""
+r_beam_length_variation = Vector3(0, 0, 0)
+r_beam_bounce_choice = ""
+r_beam_width_variation = Vector3(0, 0, 0)
+r_scale_multi_curve_choice = []
+r_scale_multi_iter_variation = Vector3(0, 0, 0)
+r_scale_multi_scale_variation = Vector3(0, 0, 0)
+
 [node name="Node2D" type="Node2D"]
 rotation = 6.28319
 script = ExtResource("1_3jldb")
@@ -527,6 +622,7 @@ id = "one"
 pattern = SubResource("NavigationPolygon_kt31x")
 
 [node name="SpawnPattern2" type="Path2D" parent="Patterns"]
+position = Vector2(-420, 87.0019)
 curve = SubResource("Curve2D_u3j77")
 script = ExtResource("2_ah2t8")
 id = "circle"
@@ -534,6 +630,7 @@ pattern = SubResource("NavigationPolygon_iro43")
 preview_spawn = true
 
 [node name="SpawnPattern3" type="Path2D" parent="Patterns"]
+position = Vector2(-274.999, 310.001)
 curve = SubResource("Curve2D_u3j77")
 script = ExtResource("2_ah2t8")
 id = "line"
@@ -574,6 +671,12 @@ curve = SubResource("Curve2D_kjhx3")
 script = ExtResource("9_x0nxu")
 id = "1"
 props = SubResource("PackedDataContainer_yktta")
+
+[node name="BulletPattern2" type="Path2D" parent="BulletProps"]
+curve = SubResource("Curve2D_b2qyu")
+script = ExtResource("9_x0nxu")
+id = "2"
+props = SubResource("PackedDataContainer_xf2vs")
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 
