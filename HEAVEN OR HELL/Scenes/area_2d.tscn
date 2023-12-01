@@ -82,7 +82,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f5thf"]
-radius = 8.0
+radius = 59.2
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_6cuoy")
@@ -93,7 +93,7 @@ sprite_frames = SubResource("SpriteFrames_lh664")
 animation = &"down_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_f5thf")
 
 [node name="Melee" parent="." instance=ExtResource("14_26wda")]
