@@ -7,3 +7,4 @@ var speed=500
 func _process(delta):
 	inc+=delta*speed
 	$PathFollow2D.h_offset=inc
+	$PathFollow2D.v_offset=inc

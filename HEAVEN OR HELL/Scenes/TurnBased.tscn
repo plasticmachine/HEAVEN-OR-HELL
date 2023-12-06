@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgwbosrq1svq4"]
+
+[ext_resource type="PackedScene" uid="uid://cgi43evcnmcqb" path="res://art/clown/clown.tscn" id="1_io4hj"]
+
+[node name="TurnBased" type="Node2D"]
+
+[node name="Clown" parent="." instance=ExtResource("1_io4hj")]
+position = Vector2(1858, 779)

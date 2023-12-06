@@ -41,6 +41,8 @@ func _on_message_timer_timeout():
 "
 
 [node name="HUD" type="CanvasLayer"]
+offset = Vector2(-0.495, 0)
+transform = Transform2D(1, 0, 0, 1, -0.495, 0)
 script = SubResource("GDScript_chawg")
 
 [node name="ScoreLabel" type="Label" parent="."]
