@@ -286,7 +286,7 @@ func spawn(spawner, id:String, shared_area:String="0"):
 	var bullet_props:Dictionary; var queued_instance:Dictionary; var bID; var is_object:bool; var is_bullet_node:bool
 	while iter != 0:
 		for l in pattern.layer_nbr:
-			if spawner is Node2D:
+			if spawner 	is Node2D:
 				ori_angle = spawner.rotation
 				pos = spawner.global_position
 			elif spawner is Dictionary:

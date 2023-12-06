@@ -1,1 +1,3 @@
-# whaddya doing in here? go play the game :3
+# HEAVEN OR HELL, NO TIME TO DWELL< 
+# FORTUNE AND FAME, DEATH AND DISMAY, ITS TIME TO PLAY THE GAME<
+# >.< hope u enjoy our stuff.

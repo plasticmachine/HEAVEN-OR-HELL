@@ -18,6 +18,8 @@ config/icon="res://art/HEAVEN/down/downwalk_1.png"
 
 [autoload]
 
+SceneManager="*res://addons/scene_manager/scene_manager.tscn"
+Scenes="*res://addons/scene_manager/scenes.gd"
 Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 
 [display]
@@ -35,7 +37,7 @@ project/assembly_name="Reimu-s Bad Day"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [input]
 
