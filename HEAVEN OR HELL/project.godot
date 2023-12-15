@@ -24,9 +24,10 @@ Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 
 [display]
 
-window/size/viewport_width=3840
-window/size/viewport_height=2160
+window/size/viewport_width=15360
+window/size/viewport_height=8640
 window/size/mode=3
+window/size/initial_screen=62235
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://art/misc/xjwmt5upomxa1-export.png"

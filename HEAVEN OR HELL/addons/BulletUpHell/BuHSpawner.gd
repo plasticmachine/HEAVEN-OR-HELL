@@ -284,9 +284,13 @@ func spawn(spawner, id:String, shared_area:String="0"):
 
 	var pos:Vector2; var ori_angle:float;
 	var bullet_props:Dictionary; var queued_instance:Dictionary; var bID; var is_object:bool; var is_bullet_node:bool
+	
+	
 	while iter != 0:
 		for l in pattern.layer_nbr:
-			if spawner 	is Node2D:
+			if spawner == null:
+				queue_free()
+			elif spawner 	is Node2D:
 				ori_angle = spawner.rotation
 				pos = spawner.global_position
 			elif spawner is Dictionary:
@@ -333,7 +337,10 @@ func spawn(spawner, id:String, shared_area:String="0"):
 					for g in bullet_props.get("groups", []):
 						bID.add_to_group(g)
 				
-			_plan_spawning(pattern, bullets)
+			if spawner == null:
+				queue_free()
+			elif spawner != null:
+				_plan_spawning(pattern, bullets)
 			
 			if l < pattern.layer_nbr-1: await get_tree().create_timer(pattern.layer_cooldown_spawn).timeout
 		if iter > 0: iter -= 1

@@ -28,8 +28,9 @@ func update_score(score):
 func update_difficulty(difficulty):
 	$DifficultyLabel.text = str(difficulty)
 
-#func _on_start_button_pressed():
-#	$StartButton.hide()
+func _on_start_button_pressed():
+	$StartButton.hide()
+	$TitleScreen.hide()
 #	start_game.emit()
 #
 #
@@ -66,14 +67,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -238.0
-offset_top = -132.0
-offset_right = 242.0
-offset_bottom = 2.0
+offset_left = -1994.5
+offset_top = -881.0
+offset_right = 2124.5
+offset_bottom = 871.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_nfbat")
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 434
 text = "HEAVEN OR HELL - TESTING"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -92,10 +93,11 @@ offset_bottom = 0.0499878
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_nfbat")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 679
 text = "NYA"
 script = ExtResource("2_ol0le")
-scene = "test"
+fade_out_pattern = ""
+fade_in_pattern = ""
 
 [node name="MessageTimer" type="Timer" parent="."]
 
