@@ -23,8 +23,10 @@ func update_difficulty(difficulty):
 	$DifficultyLabel.text = str(difficulty)
 
 func _on_start_button_pressed():
+	$TitleScreen.hide()
 	$StartButton.hide()
-	start_game.emit()
+	
+#	start_game.emit()
 	
 	
 func _on_message_timer_timeout():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgi43evcnmcqb"]
+[gd_scene load_steps=4 format=3 uid="uid://cgi43evcnmcqb"]
 
 [ext_resource type="Script" path="res://art/clown/EnemyCollision.gd" id="1_e8gkx"]
 [ext_resource type="Texture2D" uid="uid://c4ekrfr8ldksh" path="res://art/clown/clown.PNG" id="2_qvmsm"]
@@ -6,31 +6,18 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_kk6lu"]
 radius = 419.6
 
-[sub_resource type="Curve2D" id="Curve2D_g6hlu"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 10416.7, 0, 0, 0, 0, 0, 10406.1, 6380.84, 0, 0, 0, 0, 1637.75, 6301.08, 0, 0, 0, 0, -3945.48, 6237.27, 0, 0, 0, 0, -8630.08, 6375.52, 0, 0, 0, 0, -8630.08, -10.6344, 0, 0, 0, 0, 6824.33, -1.42871, 0, 0, 0, 0, 10411.4, -10.6344)
-}
-point_count = 8
-
 [node name="Clown" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2.27782, 2.27782)
 shape = SubResource("CircleShape2D_kk6lu")
 script = ExtResource("1_e8gkx")
+scene = "turnbased"
+fade_out_pattern = "scribbles"
+fade_in_pattern = "scribbles"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qvmsm")
-
-[node name="Path2D" type="Path2D" parent="."]
-scale = Vector2(0.188063, 0.188063)
-curve = SubResource("Curve2D_g6hlu")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(10413.7, 1815.25)
-rotation = -3.13611
-progress = 1815.25
-rotates = false
 
 [connection signal="area_entered" from="." to="CollisionShape2D" method="_on_clown_area_entered"]
 [connection signal="body_entered" from="." to="CollisionShape2D" method="_on_clown_body_entered"]

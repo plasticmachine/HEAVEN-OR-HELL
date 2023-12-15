@@ -1,8 +1,101 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=7 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="PackedScene" uid="uid://cgi43evcnmcqb" path="res://art/clown/clown.tscn" id="1_io4hj"]
+[ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/IMG_2136.PNG" id="2_fiwds"]
+[ext_resource type="Texture2D" uid="uid://d1bwfc5sda7nx" path="res://art/GUI/attackbutton.png" id="4_4revw"]
+[ext_resource type="Texture2D" uid="uid://csaflhacv74hn" path="res://art/HEAVEN/upleft/HVN_UPLFT_1.PNG" id="4_10oxp"]
+[ext_resource type="Texture2D" uid="uid://bv18fosbxg1dk" path="res://art/HEAVEN/upright/HVN_UPRIGHT_1.png" id="5_osko0"]
+[ext_resource type="Texture2D" uid="uid://c132vybk1rvbq" path="res://art/HEAVEN/up/HVN_UP_1.PNG" id="6_jryje"]
 
 [node name="TurnBased" type="Node2D"]
+position = Vector2(11, 181)
 
 [node name="Clown" parent="." instance=ExtResource("1_io4hj")]
-position = Vector2(1858, 779)
+position = Vector2(10796, 2256)
+scale = Vector2(3.568, 3.568)
+disable_mode = 1
+
+[node name="Clown2" parent="." instance=ExtResource("1_io4hj")]
+position = Vector2(4304, 6539)
+scale = Vector2(3.568, 3.568)
+disable_mode = 1
+
+[node name="Clown3" parent="." instance=ExtResource("1_io4hj")]
+position = Vector2(6180, 6606)
+scale = Vector2(3.568, 3.568)
+disable_mode = 1
+
+[node name="Clown4" parent="." instance=ExtResource("1_io4hj")]
+position = Vector2(10785, 6238)
+scale = Vector2(3.568, 3.568)
+disable_mode = 1
+
+[node name="Clown5" parent="." instance=ExtResource("1_io4hj")]
+position = Vector2(8373, 2224)
+scale = Vector2(3.568, 3.568)
+disable_mode = 1
+
+[node name="Clown6" parent="." instance=ExtResource("1_io4hj")]
+position = Vector2(3889, 1303)
+scale = Vector2(6.768, 6.768)
+disable_mode = 1
+
+[node name="Img2136" type="Sprite2D" parent="."]
+z_index = -785
+position = Vector2(7691, 4105)
+scale = Vector2(4.04635, 4.04635)
+texture = ExtResource("2_fiwds")
+metadata/_edit_lock_ = true
+
+[node name="Attackbutton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(5284, 7217.5)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6584, 7211.5)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(5284, 7999)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6584, 7993)
+texture = ExtResource("4_4revw")
+
+[node name="TestPlayerSpots" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="HvnUplft1" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(11348, 6186)
+scale = Vector2(3.19583, 3.19583)
+texture = ExtResource("4_10oxp")
+
+[node name="HvnUplft2" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(12471, 1532)
+scale = Vector2(6.35583, 6.35583)
+texture = ExtResource("4_10oxp")
+
+[node name="HvnUpright1" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(2800, 6064)
+scale = Vector2(5.92167, 5.92167)
+texture = ExtResource("5_osko0")
+
+[node name="HvnUpright2" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(2799, 1368)
+scale = Vector2(5.92167, 5.92167)
+texture = ExtResource("5_osko0")
+
+[node name="HvnUp1" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(7392, 6054)
+scale = Vector2(5.91167, 5.91167)
+texture = ExtResource("6_jryje")
+
+[node name="HvnUp2" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(7365, 1358)
+scale = Vector2(5.91167, 5.91167)
+texture = ExtResource("6_jryje")
