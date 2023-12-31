@@ -891,6 +891,7 @@ func bullet_movement(delta:float):
 	for b in poolBullets.keys():
 		B = poolBullets[b]
 		
+		
 		if B["state"] in [BState.Unactive, BState.QueuedFree]: continue
 		props = B["props"]
 		

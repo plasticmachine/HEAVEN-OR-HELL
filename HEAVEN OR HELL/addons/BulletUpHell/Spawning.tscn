@@ -1,10 +1,30 @@
-[gd_scene load_steps=10 format=3 uid="uid://gixop20d1d75"]
+[gd_scene load_steps=30 format=3 uid="uid://gixop20d1d75"]
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawner.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://bgcmgkafdb0hl" path="res://addons/BulletUpHell/BulletScene/Sprites/Bullet_3.png" id="2_3slxn"]
+[ext_resource type="Texture2D" uid="uid://61toyfq81eyw" path="res://art/bullets/CLOWN/BOWLINGBALL/IMG_2353.PNG" id="2_brny0"]
+[ext_resource type="Texture2D" uid="uid://bfyjk8g5mgro4" path="res://art/bullets/CLOWN/BOWLINGBALL/IMG_2354.PNG" id="3_3aq8j"]
 [ext_resource type="Texture2D" uid="uid://hfsijl7k5m62" path="res://addons/BulletUpHell/BulletScene/Sprites/Bullet_06.png" id="3_6fafs"]
+[ext_resource type="Texture2D" uid="uid://dcuydijov3" path="res://art/bullets/CLOWN/BOWLINGBALL/IMG_2355.PNG" id="4_3eh1a"]
 [ext_resource type="Texture2D" uid="uid://cfo1nc01id7e0" path="res://addons/BulletUpHell/BulletScene/Sprites/Bullet_11.png" id="4_gntuv"]
 [ext_resource type="AudioStream" uid="uid://c6x5p1wu4yo3q" path="res://addons/BulletUpHell/BulletScene/Hit Hurt.wav" id="5_rada6"]
+[ext_resource type="Texture2D" uid="uid://6xap1s4ohuc8" path="res://art/bullets/CLOWN/FIREWORK/0.png" id="8_yd0x0"]
+[ext_resource type="Texture2D" uid="uid://el4b0viurudt" path="res://art/bullets/CLOWN/FIREWORK/1.png" id="9_a3ae7"]
+[ext_resource type="Texture2D" uid="uid://ktn8dug8a1op" path="res://art/bullets/CLOWN/FIREWORK/2.png" id="10_3dbag"]
+[ext_resource type="Texture2D" uid="uid://m8ohtew10sav" path="res://art/bullets/CLOWN/FIREWORK/3.png" id="11_svcpk"]
+[ext_resource type="Texture2D" uid="uid://dn2bh2wwhoap0" path="res://art/bullets/CLOWN/FLIPCARD/0.png" id="12_qfal1"]
+[ext_resource type="Texture2D" uid="uid://cjbnbppr7gx0i" path="res://art/bullets/CLOWN/FLIPCARD/1.png" id="13_03mt5"]
+[ext_resource type="Texture2D" uid="uid://br0ftxoefdjou" path="res://art/bullets/CLOWN/FLIPCARD/2.png" id="14_ughon"]
+[ext_resource type="Texture2D" uid="uid://j6yke8mbr7ri" path="res://art/bullets/CLOWN/FLIPCARD/3.png" id="15_qr3cu"]
+[ext_resource type="Texture2D" uid="uid://7mglam1qfu35" path="res://art/bullets/CLOWN/FLIPCARD/4.png" id="16_2xejv"]
+[ext_resource type="Texture2D" uid="uid://bv63qqtmmg8ih" path="res://art/bullets/CLOWN/FLIPCARD/5.png" id="17_ejygd"]
+[ext_resource type="Texture2D" uid="uid://dcle46rmr0bts" path="res://art/bullets/CLOWN/FLIPCARD/6.png" id="18_5i38r"]
+[ext_resource type="Texture2D" uid="uid://dxdr6nhfuo704" path="res://art/bullets/CLOWN/FLIPCARD/7.png" id="19_5dwei"]
+[ext_resource type="Texture2D" uid="uid://b1p1lrvp1pty0" path="res://art/bullets/CLOWN/SPINCARD/0.png" id="20_mhsqb"]
+[ext_resource type="Texture2D" uid="uid://70wvkeln36ef" path="res://art/bullets/CLOWN/SPINCARD/1.png" id="21_0nqrd"]
+[ext_resource type="Texture2D" uid="uid://cooipj6esitdt" path="res://art/bullets/CLOWN/SPINCARD/2.png" id="22_f6gsw"]
+[ext_resource type="Texture2D" uid="uid://c0hb8iip7658b" path="res://art/bullets/CLOWN/SPINCARD/3.png" id="23_4qt51"]
+[ext_resource type="Texture2D" uid="uid://eww86ub06np5" path="res://art/bullets/CLOWN/SPINCARD/4.png" id="24_7m2u5"]
 
 [sub_resource type="Curve" id="4"]
 _data = [Vector2(0, 0.501305), 0.0, 0.880193, 0, 1, Vector2(0.244176, 0.716227), 2.21406, 2.21406, 0, 0, Vector2(0.515975, 1), -0.239755, -0.239755, 0, 0, Vector2(0.76004, 0.723903), -2.76758, -2.76758, 0, 0, Vector2(1, 0.501305), -1.40458, 0.0, 0, 0]
@@ -17,13 +37,24 @@ animations = [{
 "name": &"",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_3slxn")
-}],
+"frames": [],
 "loop": true,
 "name": &"0",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_brny0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3aq8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3eh1a")
+}],
+"loop": true,
+"name": &"BowlingBall",
+"speed": 60.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -37,7 +68,73 @@ animations = [{
 }],
 "loop": true,
 "name": &"Example",
-"speed": 1.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_yd0x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a3ae7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3dbag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_svcpk")
+}],
+"loop": true,
+"name": &"Firework",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_qfal1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_03mt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ughon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qr3cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2xejv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ejygd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5i38r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5dwei")
+}],
+"loop": true,
+"name": &"FlipCard",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_mhsqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0nqrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_f6gsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4qt51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7m2u5")
+}],
+"loop": true,
+"name": &"SpinCard",
+"speed": 25.0
 }]
 
 [sub_resource type="CircleShape2D" id="2"]
@@ -55,11 +152,12 @@ cull_fixed_screen = true
 
 [node name="0" type="Area2D" parent="SharedAreas"]
 
+[node name="1" type="Area2D" parent="SharedAreas"]
+
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("1")
-animation = &"Example"
-frame_progress = 0.608517
+animation = &"0"
 
 [node name="0" type="CollisionShape2D" parent="ShapeManager"]
 shape = SubResource("2")
