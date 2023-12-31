@@ -147,6 +147,8 @@ func _change_scene(scene, add_to_back: bool) -> bool:
 	# why I'm fixing this up by hand and I'm not using `get_tree().change_scene_to_packed()`
 	# fuction in here
 	if scene is PackedScene:
+		var previousScene = get_previous_scene()
+		previousScene.queue_free()
 		scene.get_local_scene()
 		var scene_instance = scene.instantiate()
 		var root = get_tree().get_root()

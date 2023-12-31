@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ekrfr8ldksh" path="res://art/clown/clown.PNG" id="2_qvmsm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kk6lu"]
-radius = 419.6
+radius = 132.88
 
 [node name="Clown" type="Area2D"]
 
