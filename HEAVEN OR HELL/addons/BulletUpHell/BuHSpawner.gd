@@ -944,6 +944,7 @@ func bullet_movement(delta:float):
 				var target_pos:Vector2
 				if typeof(B["homing_target"]) == TYPE_OBJECT:
 					target_pos = B["homing_target"].global_position
+					
 				else: target_pos = B["homing_target"]
 				target_angle = B["position"].angle_to(target_pos)
 				if B["position"].distance_to(target_pos) < HOMING_MARGIN:
