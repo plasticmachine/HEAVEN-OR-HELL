@@ -90,7 +90,7 @@ script = ExtResource("1_6cuoy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.503333, 0.503333)
 sprite_frames = SubResource("SpriteFrames_lh664")
-animation = &"up_right"
+animation = &"right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 2)

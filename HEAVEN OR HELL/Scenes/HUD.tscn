@@ -9,16 +9,11 @@ script/source = "extends CanvasLayer
 signal start_game #creates the signal to send to the main node
 
 func show_message(text):
-	$Message.text = text
-	$Message.show()
 	$MessageTimer.start()
 
 func show_game_over():
 	show_message(\"GAME OVER!\")
-	await $MessageTimer.timeout #It's waitingd for the message timer to count down
-	
-	#Message.text = (\"Reimu's no good very bad day\")
-	$Message.show()
+	await $MessageTimer.timeout #It's waiting for the message timer to count down
 	await get_tree().create_timer(1.0).timeout
 	$StartButton.show()
 
@@ -31,13 +26,8 @@ func update_difficulty(difficulty):
 func _on_start_button_pressed():
 	$StartButton.hide()
 	$TitleScreen.hide()
-#	start_game.emit()
-#
-#
-func _on_message_timer_timeout():
-	$Message.hide()
-
-
+	emit_signal(\"start_game\")
+	
 
 "
 
@@ -50,7 +40,7 @@ script = SubResource("GDScript_chawg")
 offset_right = 50.0
 offset_bottom = 67.0
 theme_override_fonts/font = ExtResource("1_nfbat")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 1049
 text = "0"
 
 [node name="DifficultyLabel" type="Label" parent="."]

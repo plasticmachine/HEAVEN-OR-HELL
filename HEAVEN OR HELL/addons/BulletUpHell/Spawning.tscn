@@ -114,7 +114,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"FlipCard",
-"speed": 25.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -133,7 +133,7 @@ animations = [{
 "texture": ExtResource("24_7m2u5")
 }],
 "loop": true,
-"name": &"SpinCard",
+"name": &"SwanCard",
 "speed": 25.0
 }]
 
@@ -157,7 +157,7 @@ cull_fixed_screen = true
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("1")
-animation = &"0"
+animation = &"Firework"
 
 [node name="0" type="CollisionShape2D" parent="ShapeManager"]
 shape = SubResource("2")

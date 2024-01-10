@@ -62,3 +62,15 @@ func _on_start_timer_timeout():
 	#print_debug(score)
 
 
+
+
+func _on_hud_start_game():
+	$Player.start($StartPosition.position) #resets the player position when new_game function is called
+	$StartTimer.start() #resets the start timer when new_game function is called
+	$Music.play()
+	get_tree().call_group("mobs", "queue_free")
+	score = 0
+	#difficulty = .60
+	$HUD.update_score(score)
+	$ScoreTimer.start()
+	#$HUD.update_difficulty(difficulty)

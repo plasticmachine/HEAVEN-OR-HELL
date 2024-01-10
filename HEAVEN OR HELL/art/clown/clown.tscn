@@ -1,23 +1,98 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgi43evcnmcqb"]
+[gd_scene load_steps=20 format=3 uid="uid://cgi43evcnmcqb"]
 
 [ext_resource type="Script" path="res://art/clown/EnemyCollision.gd" id="1_e8gkx"]
-[ext_resource type="Texture2D" uid="uid://c4ekrfr8ldksh" path="res://art/clown/clown.PNG" id="2_qvmsm"]
+[ext_resource type="Texture2D" uid="uid://ig1gobfve75l" path="res://art/clown/dance/0.PNG" id="2_ij333"]
+[ext_resource type="Texture2D" uid="uid://cuql7hrrs6kb3" path="res://art/clown/dance/1.PNG" id="3_kform"]
+[ext_resource type="Texture2D" uid="uid://bc1i4xqqpxnvl" path="res://art/clown/dance/2.PNG" id="4_827em"]
+[ext_resource type="Texture2D" uid="uid://nq0ygexhl8y6" path="res://art/clown/dance/3.PNG" id="5_8kk3b"]
+[ext_resource type="Texture2D" uid="uid://r8vw46muu1g1" path="res://art/clown/dance/4.PNG" id="6_jkc5s"]
+[ext_resource type="Texture2D" uid="uid://dw0gu7co3ekv4" path="res://art/clown/dance/5.PNG" id="7_mex6o"]
+[ext_resource type="Texture2D" uid="uid://4c4iyt7l25mj" path="res://art/clown/dance/6.PNG" id="8_0wyh2"]
+[ext_resource type="Texture2D" uid="uid://cnoavefun74mq" path="res://art/clown/dance/7.PNG" id="9_iglvt"]
+[ext_resource type="Texture2D" uid="uid://ofusbgapi6ak" path="res://art/clown/dance/8.PNG" id="10_mmws7"]
+[ext_resource type="Texture2D" uid="uid://bn50ar5qnu1ge" path="res://art/clown/dance/9.PNG" id="11_i2i53"]
+[ext_resource type="Texture2D" uid="uid://dggsgmegoc1gu" path="res://art/clown/dance/10.PNG" id="12_5eo2m"]
+[ext_resource type="Texture2D" uid="uid://ccnm641q28152" path="res://art/clown/dance/11.PNG" id="13_4meb2"]
+[ext_resource type="Texture2D" uid="uid://cbwvrahugf2jy" path="res://art/clown/dance/12.PNG" id="14_837vx"]
+[ext_resource type="Texture2D" uid="uid://ba3ywbgx5pn7n" path="res://art/clown/dance/13.PNG" id="15_pjpyt"]
+[ext_resource type="Texture2D" uid="uid://b8m03848idnfg" path="res://art/clown/dance/14.PNG" id="16_rh2ij"]
+[ext_resource type="Texture2D" uid="uid://mnhrkyweno0o" path="res://art/clown/dance/15.PNG" id="17_68c4x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0p1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ij333")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kform")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_827em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8kk3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jkc5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mex6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0wyh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iglvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mmws7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_i2i53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5eo2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4meb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_837vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pjpyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rh2ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_68c4x")
+}],
+"loop": true,
+"name": &"!clowndance",
+"speed": 15.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kk6lu"]
-radius = 132.88
+radius = 112.4
 
 [node name="Clown" type="Area2D"]
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.56, 0.56)
+sprite_frames = SubResource("SpriteFrames_i0p1m")
+animation = &"!clowndance"
+autoplay = "!clowndance"
+frame_progress = 0.333543
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(2.27782, 2.27782)
+scale = Vector2(1.92365, 1.92365)
 shape = SubResource("CircleShape2D_kk6lu")
 script = ExtResource("1_e8gkx")
 scene = "turnbased"
 fade_out_pattern = "scribbles"
 fade_in_pattern = "scribbles"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qvmsm")
 
 [connection signal="area_entered" from="." to="CollisionShape2D" method="_on_clown_area_entered"]
 [connection signal="body_entered" from="." to="CollisionShape2D" method="_on_clown_body_entered"]
