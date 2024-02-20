@@ -21,12 +21,12 @@ config/icon="res://art/HEAVEN/down/downwalk_1.png"
 SceneManager="*res://addons/scene_manager/scene_manager.tscn"
 Scenes="*res://addons/scene_manager/scenes.gd"
 Spawning="*res://addons/BulletUpHell/Spawning.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
-window/size/viewport_width=15360
-window/size/viewport_height=8640
-window/size/mode=3
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/initial_screen=62235
 window/size/borderless=true
 window/stretch/mode="canvas_items"
@@ -38,7 +38,7 @@ project/assembly_name="Reimu-s Bad Day"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [input]
 
@@ -79,6 +79,11 @@ Melee={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(142, 15),"global_position":Vector2(146, 58),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Dialogue/testingDialogue.en.translation")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/testingDialogue.dialogue", "res://Dialogue/moretesting.dialogue")
 
 [rendering]
 

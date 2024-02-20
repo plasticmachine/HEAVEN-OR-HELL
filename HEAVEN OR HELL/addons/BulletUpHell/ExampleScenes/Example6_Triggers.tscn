@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://addons/BulletUpHell/Triggers/TriggerCollision.gd" id="5_y0hpv"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawnPoint.gd" id="6_4dtj3"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Triggers/TriggerPos.gd" id="6_qjh5j"]
-[ext_resource type="Texture2D" uid="uid://bkxwlswnbkjql" path="res://addons/BulletUpHell/Sprites/NodeIcons5.png" id="12_n1q54"]
+[ext_resource type="Texture2D" uid="uid://6fkcp4b6ghnu" path="res://addons/BulletUpHell/Sprites/NodeIcons5.png" id="12_n1q54"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_4ye41"]
 script = ExtResource("3_gs7vq")
@@ -36,7 +36,6 @@ iterations = 1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
-forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 0.017
@@ -104,7 +103,6 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
-forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 2.0
@@ -150,7 +148,6 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
-forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 2.0
@@ -196,7 +193,6 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
-forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 2.0
@@ -266,8 +262,6 @@ spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
 spec_rotating_speed = 0.0
-spec_angle_no_colliding = null
-spec_angle_no_coll_offset = null
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
@@ -361,8 +355,6 @@ spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
 spec_rotating_speed = 0.0
-spec_angle_no_colliding = null
-spec_angle_no_coll_offset = null
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
@@ -450,8 +442,6 @@ spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
 spec_rotating_speed = 0.0
-spec_angle_no_colliding = null
-spec_angle_no_coll_offset = null
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
@@ -539,8 +529,6 @@ spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
 spec_rotating_speed = 0.0
-spec_angle_no_colliding = null
-spec_angle_no_coll_offset = null
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
@@ -619,6 +607,7 @@ advanced_controls = "0=0
 >q"
 triggers = Array[RichTextEffect]([SubResource("RichTextEffect_oap44")])
 patterns = Array[NavigationPolygon]([SubResource("NavigationPolygon_vnfc6")])
+pool_amount = null
 
 [node name="TriggerContainer3" type="Node" parent="."]
 script = ExtResource("2_fwqwm")
@@ -701,6 +690,13 @@ auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
 trigger_container = NodePath("../../TriggerContainer2")
+r_randomisation_chances = 0.0
+r_active_chances = 0.0
+r_shared_area_choice = ""
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint2" type="Node2D" parent="SpawnPoints"]
 position = Vector2(51, 206)
@@ -715,6 +711,13 @@ auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
 trigger_container = NodePath("")
+r_randomisation_chances = 0.0
+r_active_chances = 0.0
+r_shared_area_choice = ""
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint3" type="Node2D" parent="SpawnPoints"]
 position = Vector2(47, 334)
@@ -730,6 +733,13 @@ auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
 trigger_container = NodePath("")
+r_randomisation_chances = 0.0
+r_active_chances = 0.0
+r_shared_area_choice = ""
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 collision_layer = 17

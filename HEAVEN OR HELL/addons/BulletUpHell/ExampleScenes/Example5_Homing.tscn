@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHBulletProperties.gd" id="4_idnoj"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/BulletProps.gd" id="5_se254"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawnPoint.gd" id="6_bavsm"]
-[ext_resource type="Texture2D" uid="uid://bkxwlswnbkjql" path="res://addons/BulletUpHell/Sprites/NodeIcons5.png" id="7_h7md5"]
+[ext_resource type="Texture2D" uid="uid://6fkcp4b6ghnu" path="res://addons/BulletUpHell/Sprites/NodeIcons5.png" id="7_h7md5"]
 
 [sub_resource type="Curve2D" id="Curve2D_7sipy"]
 
@@ -18,7 +18,6 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
-forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
@@ -64,7 +63,6 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
-forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
@@ -110,7 +108,6 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
-forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
@@ -156,7 +153,6 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
-forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
@@ -202,7 +198,6 @@ iterations = -1
 follows_parent = false
 forced_angle = 0.0
 forced_target = NodePath("")
-forced_lookat_mouse = false
 forced_pattern_lookat = true
 cooldown_stasis = false
 cooldown_spawn = 5.0
@@ -272,8 +267,6 @@ spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
 spec_rotating_speed = 0.0
-spec_angle_no_colliding = null
-spec_angle_no_coll_offset = null
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
@@ -365,8 +358,6 @@ spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
 spec_rotating_speed = 0.0
-spec_angle_no_colliding = null
-spec_angle_no_coll_offset = null
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
@@ -458,8 +449,6 @@ spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
 spec_rotating_speed = 0.0
-spec_angle_no_colliding = null
-spec_angle_no_coll_offset = null
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
@@ -552,8 +541,6 @@ spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
 spec_rotating_speed = 0.0
-spec_angle_no_colliding = null
-spec_angle_no_coll_offset = null
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
@@ -651,8 +638,6 @@ spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
 spec_rotating_speed = 0.0
-spec_angle_no_colliding = null
-spec_angle_no_coll_offset = null
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
@@ -797,7 +782,14 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_container = NodePath("")
+trigger_id = null
+r_randomisation_chances = 0.0
+r_active_chances = 0.0
+r_shared_area_choice = ""
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint2" type="Node2D" parent="SpawnPoints"]
 position = Vector2(80, 56)
@@ -811,7 +803,14 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_container = NodePath("")
+trigger_id = null
+r_randomisation_chances = 0.0
+r_active_chances = 0.0
+r_shared_area_choice = ""
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint3" type="Node2D" parent="SpawnPoints"]
 position = Vector2(64, 392)
@@ -825,7 +824,14 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_container = NodePath("")
+trigger_id = null
+r_randomisation_chances = 0.0
+r_active_chances = 0.0
+r_shared_area_choice = ""
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint4" type="Node2D" parent="SpawnPoints"]
 position = Vector2(96, 392)
@@ -839,7 +845,14 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_container = NodePath("")
+trigger_id = null
+r_randomisation_chances = 0.0
+r_active_chances = 0.0
+r_shared_area_choice = ""
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
 
 [node name="SpawnPoint5" type="Node2D" parent="SpawnPoints"]
 position = Vector2(864, 40)
@@ -853,7 +866,14 @@ auto_start_on_cam = true
 auto_start_after_time = 0.0
 auto_start_at_distance = 5.0
 auto_distance_from = NodePath("")
-trigger_container = NodePath("")
+trigger_id = null
+r_randomisation_chances = 0.0
+r_active_chances = 0.0
+r_shared_area_choice = ""
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
 
 [node name="Target" type="Sprite2D" parent="."]
 position = Vector2(448, 168)

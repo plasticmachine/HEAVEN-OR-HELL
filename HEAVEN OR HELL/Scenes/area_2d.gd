@@ -70,6 +70,7 @@ func start(pos):
 
 #@warning_ignore("unused_parameter")
 func _on_body_entered(body):
-	hide() #player disappears after being hit
+	#hide() #player disappears after being hit
 #	hit.emit() #emits hit signal
 #	$CollisionShape2D.set_deferred("disabled", true) # disables the shape until its safe to bring it back, but it needs to be deffered because you cant call physics properties on a physics callback apparently idk
+	pass

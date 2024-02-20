@@ -1,12 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://gixop20d1d75"]
+[gd_scene load_steps=29 format=3 uid="uid://gixop20d1d75"]
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawner.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://bgcmgkafdb0hl" path="res://addons/BulletUpHell/BulletScene/Sprites/Bullet_3.png" id="2_3slxn"]
 [ext_resource type="Texture2D" uid="uid://61toyfq81eyw" path="res://art/bullets/CLOWN/BOWLINGBALL/IMG_2353.PNG" id="2_brny0"]
 [ext_resource type="Texture2D" uid="uid://bfyjk8g5mgro4" path="res://art/bullets/CLOWN/BOWLINGBALL/IMG_2354.PNG" id="3_3aq8j"]
-[ext_resource type="Texture2D" uid="uid://hfsijl7k5m62" path="res://addons/BulletUpHell/BulletScene/Sprites/Bullet_06.png" id="3_6fafs"]
 [ext_resource type="Texture2D" uid="uid://dcuydijov3" path="res://art/bullets/CLOWN/BOWLINGBALL/IMG_2355.PNG" id="4_3eh1a"]
-[ext_resource type="Texture2D" uid="uid://cfo1nc01id7e0" path="res://addons/BulletUpHell/BulletScene/Sprites/Bullet_11.png" id="4_gntuv"]
 [ext_resource type="AudioStream" uid="uid://c6x5p1wu4yo3q" path="res://addons/BulletUpHell/BulletScene/Hit Hurt.wav" id="5_rada6"]
 [ext_resource type="Texture2D" uid="uid://6xap1s4ohuc8" path="res://art/bullets/CLOWN/FIREWORK/0.png" id="8_yd0x0"]
 [ext_resource type="Texture2D" uid="uid://el4b0viurudt" path="res://art/bullets/CLOWN/FIREWORK/1.png" id="9_a3ae7"]
@@ -32,16 +29,6 @@ point_count = 5
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"0",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_brny0")
@@ -54,21 +41,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"BowlingBall",
-"speed": 60.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_3slxn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_6fafs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_gntuv")
-}],
-"loop": true,
-"name": &"Example",
-"speed": 10.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -85,7 +58,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Firework",
-"speed": 10.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -114,7 +87,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"FlipCard",
-"speed": 24.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -134,16 +107,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"SwanCard",
-"speed": 25.0
+"speed": 30.0
 }]
 
 [sub_resource type="CircleShape2D" id="2"]
+radius = 329.123
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qll5w"]
+size = Vector2(300, 96)
 
 [sub_resource type="ConvexPolygonShape2D" id="3"]
 points = PackedVector2Array(0, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww6ej"]
+size = Vector2(306.5, 116)
+
 [node name="BulletHellManager" type="Node2D"]
-z_index = 999
 script = ExtResource("1")
 rand_variation_list = Array[Curve]([SubResource("4")])
 cull_fixed_screen = true
@@ -152,18 +131,37 @@ cull_fixed_screen = true
 
 [node name="0" type="Area2D" parent="SharedAreas"]
 
-[node name="1" type="Area2D" parent="SharedAreas"]
-
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("1")
-animation = &"Firework"
+animation = &"BowlingBall"
 
-[node name="0" type="CollisionShape2D" parent="ShapeManager"]
+[node name="BowlingBall" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
+position = Vector2(61, 0)
 shape = SubResource("2")
+debug_color = Color(1, 0.0431373, 0, 0.419608)
+
+[node name="Firework" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
+position = Vector2(71, 2.84217e-14)
+rotation = 0.0070616
+scale = Vector2(1.06077, 0.471721)
+shape = SubResource("2")
+debug_color = Color(1, 0.0431373, 0, 0.419608)
+
+[node name="FlipCard" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_qll5w")
+debug_color = Color(1, 0.0431373, 0, 0.419608)
 
 [node name="LaserBeam" type="CollisionShape2D" parent="ShapeManager"]
 shape = SubResource("3")
+
+[node name="SwanCard" type="CollisionShape2D" parent="ShapeManager"]
+position = Vector2(5.75, -10)
+shape = SubResource("RectangleShape2D_ww6ej")
+debug_color = Color(1, 0.0431373, 0, 0.419608)
 
 [node name="SFX" type="Node2D" parent="."]
 

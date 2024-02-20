@@ -454,7 +454,7 @@ spec_angle_no_colliding = null
 spec_angle_no_coll_offset = null
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
-death_from_collision = true
+death_from_collision = false
 a_direction_equation = ""
 a_curve_movement = 0
 a_speed_multiplier = SubResource("Curve_vbs6u")
@@ -770,6 +770,7 @@ collision_mask = 33
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2(146, -0.000652091)
 polygon = PackedVector2Array(1024, -8, 1024, 600, 0, 600, 0, 0, -56, 0, -48, 656, 1072, 640, 1056, -64, 0, -64, 8, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

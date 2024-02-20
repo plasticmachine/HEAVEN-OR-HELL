@@ -1,0 +1,17 @@
+~ TestingDialogue
+Clown: [[Honk!|Meow?|Yippee!!]]
+- Honk
+	 Clown: [SPEED=10] Honk! Honk! Honk! Honk! Honk! Honk! Honk Honk! Honk! Honk!! Honk! Honk! Honk! Honk! Honk!
+- Meow
+	Clown: [shake rate=30 level=20]mrrrrow?[/shake]
+- Yippeeee
+	 Clown: [wave amp=50 freq=20]YIPPEEE!!!!!!!!!!!!![/wave] [wait=3]
+%.2 Hell: i dont think we should have to pay taxes
+Hell: i think the amount of taxes we pay is fair and just
+Heaven: and yeah i really do feel like we should pay more taxes
+%.1 Heaven: There is nothing i want more than to ask you to pay 60% of your wages to the government
+
+
+TestCharacter: testing how long the dialogue box goes for when you make a really long run on sentence, imagine if you actually talked and typed like this ladadlakdajdakdjnwkandsudnaw wow this one really goes on for a while holy shi t
+
+=> END

@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://cox5c6wprxw51" path="res://art/GUI/bg.png" id="14_b1rwq"]
 [ext_resource type="Texture2D" uid="uid://datk8wkaxjvlp" path="res://art/GUI/fill.png" id="15_2c8fj"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_f5thf"]
+radius = 59.2
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_lh664"]
 animations = [{
 "frames": [{
@@ -81,20 +84,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f5thf"]
-radius = 59.2
-
 [node name="Player" type="Area2D"]
 script = ExtResource("1_6cuoy")
+
+[node name="InteractionHurtbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f5thf")
+debug_color = Color(0.309804, 0.552941, 0.8, 0.419608)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="BulletHurtbox" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_f5thf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.503333, 0.503333)
 sprite_frames = SubResource("SpriteFrames_lh664")
 animation = &"right"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
-shape = SubResource("CircleShape2D_f5thf")
 
 [node name="Melee" parent="." instance=ExtResource("14_26wda")]
 position = Vector2(-1, -1)

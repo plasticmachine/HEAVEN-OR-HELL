@@ -435,6 +435,8 @@ func create_shape(shared_rid:RID, ColID:String, init:bool=false, count:int=0) ->
 	elif template_shape is SegmentShape2D:
 		new_shape = Phys.segment_shape_create()
 		Phys.shape_set_data(new_shape, [template_shape.a,template_shape.b])
+	elif template_shape is SegmentShape2D:
+		pass
 
 	Phys.area_add_shape(shared_rid, new_shape, \
 		Transform2D(arrayShapes[ColID][2],arrayShapes[ColID][1]+(UNACTIVE_ZONE*int(init))))
@@ -943,8 +945,8 @@ func bullet_movement(delta:float):
 				var target_angle:float
 				var target_pos:Vector2
 				if typeof(B["homing_target"]) == TYPE_OBJECT:
+					if not is_instance_valid(B["homing_target"]): return
 					target_pos = B["homing_target"].global_position
-					
 				else: target_pos = B["homing_target"]
 				target_angle = B["position"].angle_to(target_pos)
 				if B["position"].distance_to(target_pos) < HOMING_MARGIN:
