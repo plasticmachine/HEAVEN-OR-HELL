@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Reimu's Bad Day"
 run/main_scene="res://Scenes/main.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://art/HEAVEN/down/downwalk_1.png"
 
@@ -27,7 +27,6 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/initial_screen=62235
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://art/misc/xjwmt5upomxa1-export.png"
@@ -38,7 +37,7 @@ project/assembly_name="Reimu-s Bad Day"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [input]
 

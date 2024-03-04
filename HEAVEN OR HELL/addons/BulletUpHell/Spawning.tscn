@@ -107,20 +107,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"SwanCard",
-"speed": 30.0
+"speed": 15.0
 }]
 
 [sub_resource type="CircleShape2D" id="2"]
-radius = 329.123
+radius = 356.557
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qll5w"]
 size = Vector2(300, 96)
 
-[sub_resource type="ConvexPolygonShape2D" id="3"]
-points = PackedVector2Array(0, 0)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ww6ej"]
 size = Vector2(306.5, 116)
+
+[sub_resource type="ConvexPolygonShape2D" id="3"]
+points = PackedVector2Array(0, 0)
 
 [node name="BulletHellManager" type="Node2D"]
 script = ExtResource("1")
@@ -132,36 +132,36 @@ cull_fixed_screen = true
 [node name="0" type="Area2D" parent="SharedAreas"]
 
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.240001, 0.240001)
 sprite_frames = SubResource("1")
-animation = &"BowlingBall"
+animation = &"SwanCard"
+frame_progress = 0.871544
 
 [node name="BowlingBall" type="CollisionShape2D" parent="ShapeManager"]
-visible = false
 position = Vector2(61, 0)
+scale = Vector2(0.333334, 0.333334)
 shape = SubResource("2")
 debug_color = Color(1, 0.0431373, 0, 0.419608)
 
 [node name="Firework" type="CollisionShape2D" parent="ShapeManager"]
-visible = false
 position = Vector2(71, 2.84217e-14)
 rotation = 0.0070616
-scale = Vector2(1.06077, 0.471721)
+scale = Vector2(0.560789, 0.249381)
 shape = SubResource("2")
 debug_color = Color(1, 0.0431373, 0, 0.419608)
 
 [node name="FlipCard" type="CollisionShape2D" parent="ShapeManager"]
-visible = false
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_qll5w")
 debug_color = Color(1, 0.0431373, 0, 0.419608)
-
-[node name="LaserBeam" type="CollisionShape2D" parent="ShapeManager"]
-shape = SubResource("3")
 
 [node name="SwanCard" type="CollisionShape2D" parent="ShapeManager"]
 position = Vector2(5.75, -10)
 shape = SubResource("RectangleShape2D_ww6ej")
 debug_color = Color(1, 0.0431373, 0, 0.419608)
+
+[node name="LaserBeam" type="CollisionShape2D" parent="ShapeManager"]
+shape = SubResource("3")
 
 [node name="SFX" type="Node2D" parent="."]
 

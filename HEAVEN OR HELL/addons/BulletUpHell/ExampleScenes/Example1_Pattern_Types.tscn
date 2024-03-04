@@ -22,6 +22,7 @@ point_count = 12
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kt31x"]
 resource_name = "PatternOne"
+source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("3_d681h")
 bullet = "1"
 iterations = -1
@@ -68,6 +69,7 @@ r_cooldown_n_shoot_variation = Vector3(0, 0, 0)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_iro43"]
 resource_name = "PatternCircle"
+source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("4_3qlmj")
 bullet = "1"
 nbr = 5
@@ -128,6 +130,7 @@ r_cooldown_n_shoot_variation = Vector3(0, 0, 0)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_txvqr"]
 resource_name = "PatternLine"
+source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("5_vvcng")
 offset = Vector2(0, 15)
 center = 1
@@ -184,6 +187,7 @@ r_cooldown_n_shoot_variation = Vector3(0, 0, 0)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8sitp"]
 resource_name = "PatternCustomPoints"
+source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("6_gcika")
 bullet = "1"
 center_pos = Vector2(760, 60)
@@ -247,6 +251,7 @@ point_count = 12
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pxg84"]
 resource_name = "PatternCustomShape"
+source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("7_aiav0")
 bullet = "1"
 nbr = 5
@@ -306,6 +311,7 @@ point_count = 10
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ctjs0"]
 resource_name = "PatternCustomArea"
+source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("8_ky438")
 bullet = "1"
 nbr = 5
@@ -367,6 +373,7 @@ point_count = 13
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kahla"]
 resource_name = "PatternCustomShape"
+source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("7_aiav0")
 bullet = "2"
 nbr = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=11 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scenes/TurnBased.gd" id="1_h0a2a"]
 [ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/IMG_2136.PNG" id="2_fiwds"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://crl3iip0led10" path="res://art/HELL/upright/HLL_UPRIGHT.png" id="6_kw4m3"]
 [ext_resource type="Texture2D" uid="uid://doa126x42jfuc" path="res://art/HEAVEN/upright/HVN_UPRIGHT.png" id="7_4qsu8"]
 [ext_resource type="Texture2D" uid="uid://damkva1jjkcsg" path="res://art/clown/TurnBased/CLOWN_TBTEST.png" id="8_ky1fh"]
+[ext_resource type="Texture2D" uid="uid://cqd4gt1mf6tvx" path="res://art/HELL/turnbased/HLL_TB_Dark.PNG" id="9_mv1b7"]
+[ext_resource type="Texture2D" uid="uid://qb1askllryfb" path="res://art/HEAVEN/turnbased/HVN_TB_Dark.PNG" id="10_frxs5"]
 
 [node name="TurnBased" type="Node2D"]
 position = Vector2(11, 181)
@@ -79,5 +81,15 @@ metadata/_edit_lock_ = true
 
 [node name="ClownTbtest" type="Sprite2D" parent="."]
 position = Vector2(920, 363)
-scale = Vector2(0.485821, 0.485821)
+scale = Vector2(0.445821, 0.445821)
 texture = ExtResource("8_ky1fh")
+
+[node name="HllTbDark" type="Sprite2D" parent="."]
+position = Vector2(203, 936)
+scale = Vector2(0.733699, 0.733699)
+texture = ExtResource("9_mv1b7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1682, 934)
+scale = Vector2(0.733699, 0.733699)
+texture = ExtResource("10_frxs5")
