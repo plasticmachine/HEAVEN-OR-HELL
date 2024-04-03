@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHBulletProperties.gd" id="9_x0nxu"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/BulletProps.gd" id="10_tkfof"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawnPoint.gd" id="11_iv1jv"]
-[ext_resource type="PackedScene" uid="uid://cp5lkboni2t1i" path="res://Scenes/area_2d.tscn" id="12_miufa"]
+[ext_resource type="PackedScene" uid="uid://cp5lkboni2t1i" path="res://Scenes/Characters/area_2d.tscn" id="12_miufa"]
 
 [sub_resource type="Curve2D" id="Curve2D_u3j77"]
 _data = {

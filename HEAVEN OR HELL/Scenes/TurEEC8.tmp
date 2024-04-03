@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://cgwbosrq1svq4"]
+
+[ext_resource type="Script" path="res://Scenes/TurnBased.gd" id="1_h0a2a"]
+[ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/clown_tb.tscn" id="2_djc2d"]
+[ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/IMG_2136.PNG" id="2_fiwds"]
+[ext_resource type="Texture2D" uid="uid://d1bwfc5sda7nx" path="res://art/GUI/attackbutton.png" id="4_4revw"]
+[ext_resource type="Texture2D" uid="uid://gckqxmu260gq" path="res://art/HELL/upleft/HLL_UPLFT.PNG" id="4_udu1u"]
+[ext_resource type="Texture2D" uid="uid://dvngeb7w1fgm7" path="res://art/HEAVEN/upleft/HVN_UPLFT.PNG" id="5_hj7kl"]
+[ext_resource type="Texture2D" uid="uid://crl3iip0led10" path="res://art/HELL/upright/HLL_UPRIGHT.png" id="6_kw4m3"]
+[ext_resource type="Texture2D" uid="uid://doa126x42jfuc" path="res://art/HEAVEN/upright/HVN_UPRIGHT.png" id="7_4qsu8"]
+[ext_resource type="Texture2D" uid="uid://cqd4gt1mf6tvx" path="res://art/HELL/turnbased/HLL_TB_Dark.PNG" id="9_mv1b7"]
+[ext_resource type="Texture2D" uid="uid://qb1askllryfb" path="res://art/HEAVEN/turnbased/HVN_TB_Dark.PNG" id="10_frxs5"]
+
+[node name="TurnBased" type="Node2D"]
+position = Vector2(11, 181)
+script = ExtResource("1_h0a2a")
+
+[node name="ClownTb" parent="." instance=ExtResource("2_djc2d")]
+
+[node name="Img2136" type="Sprite2D" parent="."]
+z_index = -785
+position = Vector2(944, 361)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("2_fiwds")
+
+[node name="Attackbutton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(5284, 7217.5)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6584, 7211.5)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(5284, 7999)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6584, 7993)
+texture = ExtResource("4_4revw")
+
+[node name="TestPlayerSpots" type="Node2D" parent="."]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="HvnUplft1" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(11396, 5424)
+scale = Vector2(4.48035, 4.48035)
+texture = ExtResource("4_udu1u")
+metadata/_edit_lock_ = true
+
+[node name="HvnUplft2" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(11416.3, 1642.16)
+scale = Vector2(4.21635, 4.21635)
+texture = ExtResource("5_hj7kl")
+metadata/_edit_lock_ = true
+
+[node name="HvnUpright1" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(3675, 5574)
+scale = Vector2(4.17362, 4.17362)
+texture = ExtResource("6_kw4m3")
+metadata/_edit_lock_ = true
+
+[node name="HvnUpright2" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(3770, 1286)
+scale = Vector2(4.17387, 4.17387)
+texture = ExtResource("7_4qsu8")
+metadata/_edit_lock_ = true
+
+[node name="HvnUp1" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(7392, 6054)
+scale = Vector2(5.91167, 5.91167)
+metadata/_edit_lock_ = true
+
+[node name="HvnUp2" type="Sprite2D" parent="TestPlayerSpots"]
+position = Vector2(7365, 1358)
+scale = Vector2(5.91167, 5.91167)
+metadata/_edit_lock_ = true
+
+[node name="HllTbDark" type="Sprite2D" parent="."]
+position = Vector2(203, 936)
+scale = Vector2(0.733699, 0.733699)
+texture = ExtResource("9_mv1b7")
+
+[node name="HvnTbDark" type="Sprite2D" parent="."]
+position = Vector2(1682, 934)
+scale = Vector2(0.733699, 0.733699)
+texture = ExtResource("10_frxs5")

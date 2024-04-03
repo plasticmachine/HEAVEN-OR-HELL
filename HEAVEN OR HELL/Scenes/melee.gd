@@ -18,7 +18,7 @@ func _physics_process(delta):
 		actionTimer -= delta
 		
 	#Sees if the melee input is pressed, and it sees if the attack timer is zero and if both of those are true then it runs the attack() function
-	if Input.is_action_pressed("Melee") and actionTimer <= 0:
+	if Input.is_action_pressed("Melee_hell") and actionTimer <= 0:
 		attack()
 
 

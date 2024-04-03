@@ -104,10 +104,25 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("24_7m2u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_mhsqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0nqrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_f6gsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_4qt51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7m2u5")
 }],
 "loop": true,
 "name": &"SwanCard",
-"speed": 15.0
+"speed": 30.0
 }]
 
 [sub_resource type="CircleShape2D" id="2"]
@@ -135,7 +150,6 @@ cull_fixed_screen = true
 scale = Vector2(0.240001, 0.240001)
 sprite_frames = SubResource("1")
 animation = &"SwanCard"
-frame_progress = 0.871544
 
 [node name="BowlingBall" type="CollisionShape2D" parent="ShapeManager"]
 position = Vector2(61, 0)
@@ -151,7 +165,6 @@ shape = SubResource("2")
 debug_color = Color(1, 0.0431373, 0, 0.419608)
 
 [node name="FlipCard" type="CollisionShape2D" parent="ShapeManager"]
-position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_qll5w")
 debug_color = Color(1, 0.0431373, 0, 0.419608)
 

@@ -1,0 +1,128 @@
+[gd_scene load_steps=16 format=3 uid="uid://ldg2vsd26rqu"]
+
+[ext_resource type="Script" path="res://Scenes/area_2d.gd" id="1_2xahn"]
+[ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/down/HLL_DOWN.PNG" id="1_ngb26"]
+[ext_resource type="Texture2D" uid="uid://crnfxajwh44pq" path="res://art/HELL/downleft/HLL_DOWNLFT.PNG" id="2_jfx2o"]
+[ext_resource type="Texture2D" uid="uid://56maxi4bb07u" path="res://art/HELL/downright/HLL_DOWNRIGHT.png" id="3_iru1u"]
+[ext_resource type="Texture2D" uid="uid://c43pq2sycxv8q" path="res://art/HELL/left/HLL_LEFT.PNG" id="4_83xb8"]
+[ext_resource type="Texture2D" uid="uid://cxt68tr2kbcs" path="res://art/HELL/right/HLL_RIGHT.png" id="5_72rqs"]
+[ext_resource type="Texture2D" uid="uid://c4q23meu7245i" path="res://art/HELL/up/HLL_UP.PNG" id="6_7xbjm"]
+[ext_resource type="Texture2D" uid="uid://gckqxmu260gq" path="res://art/HELL/upleft/HLL_UPLFT.PNG" id="7_lrt2b"]
+[ext_resource type="Texture2D" uid="uid://crl3iip0led10" path="res://art/HELL/upright/HLL_UPRIGHT.png" id="8_x5ppc"]
+[ext_resource type="PackedScene" uid="uid://co8jc0uhro10o" path="res://Scenes/melee.tscn" id="9_s66nb"]
+[ext_resource type="Texture2D" uid="uid://cox5c6wprxw51" path="res://art/GUI/bg.png" id="10_1n2h5"]
+[ext_resource type="Texture2D" uid="uid://datk8wkaxjvlp" path="res://art/GUI/fill.png" id="11_w60cq"]
+[ext_resource type="Script" path="res://Scenes/ActionTimerBar.gd" id="12_mi25q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
+radius = 59.2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lblot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ngb26")
+}],
+"loop": true,
+"name": &"down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jfx2o")
+}],
+"loop": true,
+"name": &"down_left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iru1u")
+}],
+"loop": true,
+"name": &"down_right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_83xb8")
+}],
+"loop": true,
+"name": &"left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_72rqs")
+}],
+"loop": true,
+"name": &"right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7xbjm")
+}],
+"loop": true,
+"name": &"up",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_lrt2b")
+}],
+"loop": true,
+"name": &"up_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_x5ppc")
+}],
+"loop": true,
+"name": &"up_right",
+"speed": 5.0
+}]
+
+[node name="Hell" type="CharacterBody2D" groups=["Player"]]
+motion_mode = 1
+script = ExtResource("1_2xahn")
+speed = 450
+
+[node name="InteractionHurtbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7egpc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="BulletHurtbox" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_7egpc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lblot")
+animation = &"right"
+
+[node name="Melee" parent="." instance=ExtResource("9_s66nb")]
+position = Vector2(-1, -1)
+scale = Vector2(3.731, 3.731)
+attackCooldown = 15.0
+attackRange = 10.0
+attackWindow = 0.5
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = -133.0
+offset_top = 182.0
+offset_right = 263.0
+offset_bottom = 235.0
+scale = Vector2(0.644, 0.644)
+
+[node name="ActionTimerBar" type="TextureProgressBar" parent="HBoxContainer"]
+layout_mode = 2
+texture_under = ExtResource("10_1n2h5")
+texture_progress = ExtResource("11_w60cq")
+script = ExtResource("12_mi25q")
+
+[node name="ActionTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true

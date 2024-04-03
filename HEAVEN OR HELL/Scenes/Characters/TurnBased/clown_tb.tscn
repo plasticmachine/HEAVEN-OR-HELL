@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt06qpfhtfajd"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterStats.gd" id="1_bt10x"]
+[ext_resource type="Texture2D" uid="uid://damkva1jjkcsg" path="res://art/clown/TurnBased/CLOWN_TBTEST.png" id="2_y11lw"]
+
+[node name="ClownTb" type="Node2D"]
+script = ExtResource("1_bt10x")
+charactername = "Clown"
+heart = 100
+
+[node name="ClownTbtest" type="Sprite2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(920, 363)
+scale = Vector2(0.445821, 0.445821)
+texture = ExtResource("2_y11lw")
