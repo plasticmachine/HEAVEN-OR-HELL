@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://cp5lkboni2t1i"]
 
-[ext_resource type="Script" path="res://Scenes/area_2d.gd" id="1_6cuoy"]
+[ext_resource type="Script" path="res://Scenes/HellController.gd" id="1_6cuoy"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/down/HLL_DOWN.PNG" id="2_cb3ok"]
 [ext_resource type="Texture2D" uid="uid://crnfxajwh44pq" path="res://art/HELL/downleft/HLL_DOWNLFT.PNG" id="3_3sjnm"]
 [ext_resource type="Texture2D" uid="uid://56maxi4bb07u" path="res://art/HELL/downright/HLL_DOWNRIGHT.png" id="4_qpnur"]

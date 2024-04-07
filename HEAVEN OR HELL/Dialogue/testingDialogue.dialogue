@@ -1,11 +1,11 @@
 ~ TestingDialogue
 Clown: [[Honk!|Meow?|Yippee!!]]
-- Honk
+- Honk!
 	 Clown: [SPEED=10] Honk! Honk! Honk! Honk! Honk! Honk! Honk Honk! Honk! Honk!! Honk! Honk! Honk! Honk! Honk!
 - Meow
-	Clown: [shake rate=30 level=20]mrrrrow?[/shake]
+	Clown: [shake rate=30 level=20]<:HaatoProud:1194048042396033115>[/shake]
 - Yippeeee
-	 Clown: [wave amp=50 freq=20]YIPPEEE!!!!!!!!!!!!![/wave] [wait=3]
+	 Clown: [wave amp=100 freq=20]YIPPEEE!!!!!!!!!!!!![/wave] [wait=3]
 %.2 Hell: Oh, another friend?
 Hell: ... but you don't look like the other ones that have come from the sky.
 Heaven: Yeah, what's with this girl?

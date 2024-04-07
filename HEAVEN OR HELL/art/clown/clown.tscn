@@ -91,8 +91,8 @@ scale = Vector2(1.92365, 1.92365)
 shape = SubResource("CircleShape2D_kk6lu")
 script = ExtResource("1_e8gkx")
 scene = "turnbased"
-fade_out_pattern = "scribbles"
-fade_in_pattern = "scribbles"
+fade_out_speed = 0.1
+fade_in_speed = 0.1
 
 [connection signal="area_entered" from="." to="CollisionShape2D" method="_on_clown_area_entered"]
 [connection signal="body_entered" from="." to="CollisionShape2D" method="_on_clown_body_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://ldg2vsd26rqu"]
 
-[ext_resource type="Script" path="res://Scenes/area_2d.gd" id="1_2xahn"]
+[ext_resource type="Script" path="res://Scenes/HellController.gd" id="1_2xahn"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/down/HLL_DOWN.PNG" id="1_ngb26"]
 [ext_resource type="Texture2D" uid="uid://crnfxajwh44pq" path="res://art/HELL/downleft/HLL_DOWNLFT.PNG" id="2_jfx2o"]
 [ext_resource type="Texture2D" uid="uid://56maxi4bb07u" path="res://art/HELL/downright/HLL_DOWNRIGHT.png" id="3_iru1u"]
@@ -42,6 +42,14 @@ animations = [{
 "loop": true,
 "name": &"down_right",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ngb26")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -100,7 +108,7 @@ shape = SubResource("CircleShape2D_7egpc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lblot")
-animation = &"right"
+animation = &"idle"
 
 [node name="Melee" parent="." instance=ExtResource("9_s66nb")]
 position = Vector2(-1, -1)
