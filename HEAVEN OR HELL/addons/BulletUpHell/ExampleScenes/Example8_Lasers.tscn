@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgehynlluwe4k"]
+
+[ext_resource type="Script" path="res://addons/BulletUpHell/ExampleScenes/ExampleScene.gd" id="1_l5jb1"]
+[ext_resource type="PackedScene" uid="uid://bk1xxjdlsbpmm" path="res://addons/BulletUpHell/Bullet/LaserBeam.tscn" id="2_7gqwj"]
+[ext_resource type="Texture2D" uid="uid://dlxcljbtg73jg" path="res://addons/BulletUpHell/Sprites/NodeIcons22.png" id="3_4gicm"]
+[ext_resource type="PackedScene" uid="uid://bwu8g01loccyj" path="res://addons/BulletUpHell/ExampleScenes/PlayerTest.tscn" id="3_aixy7"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_l5jb1")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(1024, -8, 1024, 600, 0, 600, 0, 0, -56, 0, -48, 656, 1072, 640, 1056, -64, 0, -64, 8, 0)
+
+[node name="FPS" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 14.0
+
+[node name="Tuto" type="Label" parent="."]
+offset_left = 22.0
+offset_top = -322.0
+offset_right = 863.0
+offset_bottom = -114.0
+autowrap_mode = 2
+
+[node name="Laser" parent="." instance=ExtResource("2_7gqwj")]
+position = Vector2(498, 242)
+rotation = 21.4725
+laser_length = 1000.0
+update_cooldown = 0.1
+BOUNCE_OFFSET = 11.0
+on_end = 1
+
+[node name="NodeIcons22" type="Sprite2D" parent="Laser"]
+texture_filter = 1
+position = Vector2(0, 3.05176e-05)
+rotation = -0.792839
+texture = ExtResource("3_4gicm")
+
+[node name="Laser2" parent="." instance=ExtResource("2_7gqwj")]
+position = Vector2(240, 256)
+rotation = 21.4832
+laser_length = 500.0
+update_cooldown = 0.1
+show_collisions = true
+delay_collide = 3.0
+BOUNCE_OFFSET = 11.0
+on_end = 1
+
+[node name="NodeIcons22" type="Sprite2D" parent="Laser2"]
+texture_filter = 1
+position = Vector2(0, 3.05176e-05)
+rotation = -0.792839
+texture = ExtResource("3_4gicm")
+
+[node name="Laser3" parent="." instance=ExtResource("2_7gqwj")]
+position = Vector2(888, 384)
+rotation = 21.4832
+laser_length = 500.0
+update_cooldown = 0.1
+delay_collide = 3.0
+bounce_count = 2
+BOUNCE_OFFSET = 11.0
+on_end = 1
+
+[node name="NodeIcons22" type="Sprite2D" parent="Laser3"]
+texture_filter = 1
+position = Vector2(0, 3.05176e-05)
+rotation = -0.792839
+texture = ExtResource("3_4gicm")
+
+[node name="PlayerTest" parent="." instance=ExtResource("3_aixy7")]
+position = Vector2(640, 152)
+
+[node name="Laser4" parent="." instance=ExtResource("2_7gqwj")]
+position = Vector2(598, 350)
+rotation = 21.4873
+laser_length = 200.0
+update_cooldown = 0.1
+BOUNCE_OFFSET = 11.0
+on_end = 1
+
+[node name="Laser5" parent="." instance=ExtResource("2_7gqwj")]
+position = Vector2(676, 345)
+rotation = 1.02593
+laser_length = 200.0
+update_cooldown = 0.1
+
+[connection signal="area_shape_entered" from="PlayerTest" to="." method="_on_player_test_area_shape_entered"]

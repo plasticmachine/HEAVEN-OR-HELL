@@ -80,14 +80,14 @@ radius = 112.4
 [node name="Clown" type="Area2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.56, 0.56)
 sprite_frames = SubResource("SpriteFrames_i0p1m")
 animation = &"!clowndance"
 autoplay = "!clowndance"
 frame_progress = 0.333543
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.92365, 1.92365)
+position = Vector2(-24, 144)
+scale = Vector2(2.28, 2.28)
 shape = SubResource("CircleShape2D_kk6lu")
 script = ExtResource("1_e8gkx")
 scene = "turnbased"

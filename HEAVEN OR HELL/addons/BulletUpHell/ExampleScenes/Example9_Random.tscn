@@ -1,0 +1,369 @@
+[gd_scene load_steps=18 format=3 uid="uid://b8safy5x1ujdr"]
+
+[ext_resource type="Script" path="res://addons/BulletUpHell/ExampleScenes/ExampleScene.gd" id="1_6vo6g"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="2_fdwqf"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="3_7oyal"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternRandomizer.gd" id="4_gdf58"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="4_idogp"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="9_vhgkb"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="10_wyhe8"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="11_xc7uj"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_kt31x"]
+resource_name = "PatternOne"
+source_geometry_group_name = &"navigation_polygon_source_group"
+script = ExtResource("3_7oyal")
+bullet = "random"
+nbr = 1
+iterations = -1
+cooldown_spawn = 0.5
+cooldown_shoot = 0.0
+cooldown_next_spawn = 0.0
+cooldown_next_shoot = 0.0
+cooldown_layers = PackedVector2Array()
+cooldown_stasis = false
+pattern_angle = 0.0
+pattern_angle_target = NodePath("")
+pattern_angle_mouse = false
+wait_behavior = 0
+wait_tween_momentum = 0
+wait_tween_length = 0.0
+wait_tween_time = 0.0
+forced_angle = 0.0
+forced_target = NodePath("")
+forced_lookat_mouse = false
+forced_pattern_lookat = true
+bullet_list = Array[String]([])
+skip_step = 0
+skip_list = Array[PackedInt32Array]([])
+skip_in_list = true
+
+[sub_resource type="Resource" id="Resource_e2rlk"]
+script = ExtResource("4_gdf58")
+randomisation_chances = 1.0
+bullet_choice = PackedStringArray()
+nbr_choice = PackedInt32Array(5, 6, 1)
+nbr_variation = Vector3(0, 0, 0)
+nbr_reroll = true
+iterations_choice = PackedInt32Array()
+iterations_variation = Vector3(0, 0, 0)
+forced_angle_choice = PackedFloat32Array()
+forced_angle_variation = Vector3(0, 0, 0)
+forced_angle_reroll = false
+forced_target_choice = []
+symmetry_chances = 0.0
+center_choice = PackedInt32Array()
+stasis_chances = 0.0
+cooldown_spawn_choice = PackedFloat32Array()
+cooldown_spawn_variation = Vector3(0, 0, 0)
+cooldown_spawn_reroll = false
+cooldown_shoot_choice = PackedFloat32Array()
+cooldown_shoot_variation = Vector3(0, 0, 0)
+cooldown_shoot_reroll = false
+cooldown_next_spawn_choice = PackedFloat32Array()
+cooldown_next_spawn_variation = Vector3(0, 0, 0)
+cooldown_next_spawn_reroll = false
+cooldown_next_shoot_choice = PackedFloat32Array()
+cooldown_next_shoot_variation = Vector3(0, 0, 0)
+cooldown_next_shoot_reroll = false
+offset_x_variation = Vector3(0, 0, 0)
+offset_y_variation = Vector3(0, 0, 0)
+offset_x_reroll = false
+offset_y_reroll = false
+radius_choice = PackedFloat32Array()
+radius_variation = Vector3(0, 0, 0)
+radius_reroll = false
+angle_total_choice = PackedFloat32Array()
+angle_total_variation = Vector3(0, 0, 0)
+angle_total_reroll = false
+angle_decal_choice = PackedFloat32Array()
+angle_decal_variation = Vector3(0, 0, 0)
+angle_decal_reroll = false
+reversed_chances = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_iro43"]
+resource_name = "PatternCircle"
+source_geometry_group_name = &"navigation_polygon_source_group"
+script = ExtResource("4_idogp")
+radius = 50.0
+angle_total = 6.28319
+angle_decal = 0.0004
+center = 0
+symmetric = false
+bullet = "1"
+nbr = 5
+iterations = -1
+cooldown_spawn = 2.0
+cooldown_shoot = 0.0
+cooldown_next_spawn = 0.0
+cooldown_next_shoot = 0.0
+cooldown_layers = PackedVector2Array()
+cooldown_stasis = false
+pattern_angle = 0.0
+pattern_angle_target = NodePath("")
+pattern_angle_mouse = false
+wait_behavior = 0
+wait_tween_momentum = 0
+wait_tween_length = 0.0
+wait_tween_time = 0.0
+forced_angle = 0.0
+forced_target = NodePath("")
+forced_lookat_mouse = false
+forced_pattern_lookat = true
+bullet_list = Array[String]([])
+skip_step = 0
+skip_list = Array[PackedInt32Array]([])
+skip_in_list = true
+random = SubResource("Resource_e2rlk")
+
+[sub_resource type="Curve2D" id="Curve2D_kjhx3"]
+
+[sub_resource type="Curve" id="Curve_vbs6u"]
+
+[sub_resource type="Curve" id="Curve_2xsyn"]
+
+[sub_resource type="PackedDataContainer" id="PackedDataContainer_yktta"]
+script = ExtResource("10_wyhe8")
+damage = 1.0
+speed = 100.0
+scale = 1.0
+angle = 0.0
+groups = PackedStringArray()
+death_after_time = 30.0
+death_outside_box = Rect2(0, 0, 0, 0)
+death_from_collision = true
+death_speed_under = 0.0
+death_culling_overwrite = 3
+spec_modulate_loop = 0.0
+anim_more = Array[Resource("res://addons/BulletUpHell/Bullet/animStates.gd")]([])
+spec_trail_length = 0.0
+spec_trail_width = 0.0
+spec_trail_modulate = Color(1, 1, 1, 1)
+a_direction_equation = ""
+a_angular_equation = ""
+a_curve_movement = 0
+a_speed_multi_iterations = 0
+a_speed_multi_scale = 0.0
+a_speed_multiplier = SubResource("Curve_vbs6u")
+spec_bounces = 0
+spec_no_collision = false
+spec_rotating_speed = 0.0
+spec_only_spin_sprite = true
+scale_multi_iterations = 0
+scale_multiplier = SubResource("Curve_2xsyn")
+scale_multi_scale = 1.0
+trigger_container = ""
+trigger_wait_for_shot = true
+homing_type = 0
+homing_target = NodePath("")
+homing_steer = 0.0
+homing_time_start = 0.0
+homing_duration = 999.0
+homing_detection_dist = 0.0
+homing_start_signal = ""
+homing_range = Vector2(9999, 20)
+homing_imprecision = Vector2(0, 0)
+r_randomisation_chances = 1.0
+r_speed_choice = PackedFloat32Array()
+r_speed_variation = Vector3(0, 0, 0)
+r_scale_choice = PackedFloat32Array()
+r_scale_variation = Vector3(0, 0, 0)
+r_angle_choice = PackedFloat32Array()
+r_angle_variation = Vector3(0, 0, 0)
+r_group_choice = []
+r_bounce_choice = PackedInt32Array()
+r_bounce_variation = Vector3(0, 0, 0)
+r_no_coll_chances = 0.0
+r_modulate_variation = Vector3(0, 0, 0)
+r_trail_length_variation = Vector3(0, 0, 0)
+r_trail_color_variation = Vector3(0, 0, 0)
+r_rotating_variation = Vector3(0, 0, 0)
+r_death_after_choice = PackedFloat32Array()
+r_death_after_variation = Vector3(0, 0, 0)
+r_death_outside_chances = 0.0
+r_dir_equation_choice = PackedStringArray()
+r_curve_choice = []
+r_speed_multi_curve_choice = []
+r_speed_multi_iter_variation = Vector3(0, 0, 0)
+r_speed_multi_scale_variation = Vector3(0, 0, 0)
+r_trigger_choice = PackedStringArray()
+r_wait_for_shot_chances = 0.0
+r_homing_target_choice = []
+r_special_target_choice = PackedStringArray()
+r_group_target_choice = PackedStringArray()
+r_pos_target_choice = PackedVector2Array()
+r_steer_choice = PackedFloat32Array()
+r_steer_variation = Vector3(0, 0, 0)
+r_homing_delay_choice = PackedFloat32Array()
+r_homing_delay_variation = Vector3(0, 0, 0)
+r_homing_dur_choice = PackedFloat32Array()
+r_homing_dur_variation = Vector3(0, 0, 0)
+r_scale_multi_curve_choice = []
+r_scale_multi_iter_variation = Vector3(0, 0, 0)
+r_scale_multi_scale_variation = Vector3(0, 0, 0)
+
+[sub_resource type="PackedDataContainer" id="PackedDataContainer_pn5qn"]
+script = ExtResource("10_wyhe8")
+damage = 1.0
+speed = 100.0
+scale = 1.0
+angle = 0.0
+groups = PackedStringArray()
+death_after_time = 30.0
+death_outside_box = Rect2(0, 0, 0, 0)
+death_from_collision = true
+death_speed_under = 0.0
+death_culling_overwrite = 3
+spec_modulate_loop = 0.0
+anim_more = Array[Resource("res://addons/BulletUpHell/Bullet/animStates.gd")]([])
+spec_trail_length = 0.0
+spec_trail_width = 0.0
+spec_trail_modulate = Color(1, 1, 1, 1)
+a_direction_equation = ""
+a_angular_equation = ""
+a_curve_movement = 0
+a_speed_multi_iterations = 0
+a_speed_multi_scale = 0.0
+a_speed_multiplier = SubResource("Curve_vbs6u")
+spec_bounces = 0
+spec_no_collision = false
+spec_rotating_speed = 0.0
+spec_only_spin_sprite = true
+scale_multi_iterations = 0
+scale_multiplier = SubResource("Curve_2xsyn")
+scale_multi_scale = 1.0
+trigger_container = ""
+trigger_wait_for_shot = true
+homing_type = 0
+homing_target = NodePath("")
+homing_steer = 0.0
+homing_time_start = 0.0
+homing_duration = 999.0
+homing_detection_dist = 0.0
+homing_start_signal = ""
+homing_range = Vector2(9999, 20)
+homing_imprecision = Vector2(0, 0)
+r_randomisation_chances = 1.0
+r_speed_choice = PackedFloat32Array(-100, 100, 300)
+r_speed_variation = Vector3(0, 0, 0)
+r_scale_choice = PackedFloat32Array()
+r_scale_variation = Vector3(0, 0, 0)
+r_angle_choice = PackedFloat32Array()
+r_angle_variation = Vector3(0, 0, 0)
+r_group_choice = []
+r_bounce_choice = PackedInt32Array()
+r_bounce_variation = Vector3(0, 0, 0)
+r_no_coll_chances = 0.0
+r_modulate_variation = Vector3(0, 0, 0)
+r_trail_length_variation = Vector3(0, 0, 0)
+r_trail_color_variation = Vector3(0, 0, 0)
+r_rotating_variation = Vector3(0, 0, 0)
+r_death_after_choice = PackedFloat32Array()
+r_death_after_variation = Vector3(0, 0, 0)
+r_death_outside_chances = 0.0
+r_dir_equation_choice = PackedStringArray()
+r_curve_choice = []
+r_speed_multi_curve_choice = []
+r_speed_multi_iter_variation = Vector3(0, 0, 0)
+r_speed_multi_scale_variation = Vector3(0, 0, 0)
+r_trigger_choice = PackedStringArray()
+r_wait_for_shot_chances = 0.0
+r_homing_target_choice = []
+r_special_target_choice = PackedStringArray()
+r_group_target_choice = PackedStringArray()
+r_pos_target_choice = PackedVector2Array()
+r_steer_choice = PackedFloat32Array()
+r_steer_variation = Vector3(0, 0, 0)
+r_homing_delay_choice = PackedFloat32Array()
+r_homing_delay_variation = Vector3(0, 0, 0)
+r_homing_dur_choice = PackedFloat32Array()
+r_homing_dur_variation = Vector3(0, 0, 0)
+r_scale_multi_curve_choice = []
+r_scale_multi_iter_variation = Vector3(0, 0, 0)
+r_scale_multi_scale_variation = Vector3(0, 0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fti2u"]
+size = Vector2(122, 97.9995)
+
+[node name="Node2D" type="Node2D"]
+rotation = 6.28319
+script = ExtResource("1_6vo6g")
+
+[node name="Patterns" type="Node2D" parent="."]
+
+[node name="SpawnPattern" type="Path2D" parent="Patterns"]
+script = ExtResource("2_fdwqf")
+id = "one"
+pattern = SubResource("NavigationPolygon_kt31x")
+
+[node name="SpawnPattern2" type="Path2D" parent="Patterns"]
+script = ExtResource("2_fdwqf")
+id = "circle"
+pattern = SubResource("NavigationPolygon_iro43")
+
+[node name="BulletProps" type="Node2D" parent="."]
+
+[node name="BulletPattern" type="Path2D" parent="BulletProps"]
+curve = SubResource("Curve2D_kjhx3")
+script = ExtResource("9_vhgkb")
+id = "1"
+props = SubResource("PackedDataContainer_yktta")
+
+[node name="BulletPattern2" type="Path2D" parent="BulletProps"]
+curve = SubResource("Curve2D_kjhx3")
+script = ExtResource("9_vhgkb")
+id = "random"
+props = SubResource("PackedDataContainer_pn5qn")
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="SpawnPoint" type="Node2D" parent="SpawnPoints"]
+position = Vector2(86, 58)
+script = ExtResource("11_xc7uj")
+auto_pattern_id = "one"
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
+
+[node name="SpawnPoint2" type="Node2D" parent="SpawnPoints"]
+position = Vector2(86, 307)
+script = ExtResource("11_xc7uj")
+auto_pattern_id = "circle"
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+collision_layer = 17
+collision_mask = 33
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(1024, -8, 1024, 600, 0, 600, 0, 0, -56, 0, -48, 656, 1072, 640, 1056, -64, 0, -64, 8, 0)
+
+[node name="FPS" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 14.0
+
+[node name="Tuto" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 103.999
+offset_right = 997.001
+offset_bottom = 303.999
+text = "You can randomise bullet properties like speed or pattern properties like nbr.
+\"Reroll\" option will reroll the random value at every shot."
+autowrap_mode = 1
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+position = Vector2(240.003, 687.999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(51.0002, 38.9997)
+shape = SubResource("RectangleShape2D_fti2u")
