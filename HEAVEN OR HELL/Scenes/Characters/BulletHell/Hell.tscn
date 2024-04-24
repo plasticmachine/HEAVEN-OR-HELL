@@ -108,7 +108,7 @@ shape = SubResource("CircleShape2D_7egpc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lblot")
-animation = &"idle"
+animation = &"down"
 
 [node name="Melee" parent="." instance=ExtResource("9_s66nb")]
 position = Vector2(-1, -1)

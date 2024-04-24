@@ -131,7 +131,7 @@ func _get_scenes(root_path: String, ignores: Array) -> Dictionary:
 				var splits = original_root_path.split("/", false)
 				var file = splits[len(splits) - 1]
 				if file.get_extension() == "tscn":
-					files[file.replace("."+file.get_extension(), "")] = original_root_path
+					files[file.replace("."+file.get_extension(), "")] = original_root_path 
 
 	return files
 
@@ -194,7 +194,6 @@ func _add_scene_to_list(list_name: String, scene_name: String, scene_address: St
 # in currect place in currect section
 func add_scene_to_list(list_name: String, scene_name: String, scene_address: String, setting :ItemSetting) -> void:
 	_add_scene_to_list(list_name, scene_name, scene_address, setting)
-
 	# Removes and add in `All` section too so that it updates its place in list
 	var all_list = _get_one_list_node_by_name("All")
 	setting = all_list.get_node_by_scene_address(scene_address).get_setting()

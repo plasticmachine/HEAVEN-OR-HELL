@@ -72,6 +72,11 @@ animations = [{
 "loop": true,
 "name": &"!clowndance",
 "speed": 15.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"transition",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kk6lu"]
@@ -81,18 +86,14 @@ radius = 112.4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i0p1m")
-animation = &"!clowndance"
+animation = &"transition"
 autoplay = "!clowndance"
-frame_progress = 0.333543
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-24, 144)
 scale = Vector2(2.28, 2.28)
 shape = SubResource("CircleShape2D_kk6lu")
 script = ExtResource("1_e8gkx")
-scene = "turnbased"
-fade_out_speed = 0.1
-fade_in_speed = 0.1
 
 [connection signal="area_entered" from="." to="CollisionShape2D" method="_on_clown_area_entered"]
 [connection signal="body_entered" from="." to="CollisionShape2D" method="_on_clown_body_entered"]
