@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dc3dtyha2s3hj"
+path="res://.godot/imported/TurnBasedClown.dialogue-12b81b5c5fb600279de4c90eb8423b28.tres"
+
+[deps]
+
+source_file="res://Dialogue/TurnBasedClown.dialogue"
+dest_files=["res://.godot/imported/TurnBasedClown.dialogue-12b81b5c5fb600279de4c90eb8423b28.tres"]
+
+[params]
+
+defaults=true

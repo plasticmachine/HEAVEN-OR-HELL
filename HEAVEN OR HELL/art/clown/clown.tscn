@@ -86,7 +86,7 @@ radius = 112.4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i0p1m")
-animation = &"transition"
+animation = &"!clowndance"
 autoplay = "!clowndance"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

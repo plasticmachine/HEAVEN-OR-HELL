@@ -1,7 +1,7 @@
 ~ TestingDialogue
 Clown: [[Honk!|Meow?|Yippee!!]]
 - Honk!
-	 Clown: [SPEED=10] Honk! Honk! Honk! Honk! Honk! Honk! Honk Honk! Honk! Honk!! Honk! Honk! Honk! Honk! Honk!
+	 Clown: [SPEED=10] Honk! Honk! Honk! Honk! Honk! Honk! Honk Honk! Honk! Honk!! Honk! Honk! Honk! Honk! Honk! [SPEED=10]
 - Meow
 	Clown: [shake rate=30 level=20]<:HaatoProud:1194048042396033115>[/shake]
 - Yippeeee

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://tcfwrymqvqb4"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/TurnBased/hell_tb_functions.gd" id="1_ptquj"]
+[ext_resource type="Texture2D" uid="uid://cqd4gt1mf6tvx" path="res://art/HELL/turnbased/HLL_TB_Dark.PNG" id="1_qsudq"]
+[ext_resource type="Script" path="res://Scenes/Characters/TurnBased/Stats.gd" id="3_6fhue"]
+[ext_resource type="Resource" uid="uid://cu6pbtsqta4pg" path="res://Resources/HellStats.tres" id="4_5v6cb"]
+
+[node name="HellTb" type="Node2D"]
+script = ExtResource("1_ptquj")
+
+[node name="HllTbDark" type="Sprite2D" parent="."]
+position = Vector2(203, 936)
+scale = Vector2(0.733699, 0.733699)
+texture = ExtResource("1_qsudq")
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("3_6fhue")
+character_stats = ExtResource("4_5v6cb")
+
+[node name="Skills" type="Node" parent="."]

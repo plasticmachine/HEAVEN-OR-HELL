@@ -28,7 +28,6 @@ func _update_actionTimer(_value):
 
 func attack():
 	show()
-	
 	$MeleeHitbox.set_deferred("disabled", false)
 	$MeleeHitbox/AnimatedSprite2D.play("meleeAttack")
 	#gets the reference to the melee weapons hitbox
@@ -41,7 +40,7 @@ func attack():
 	#Calculates direction from the player character to the mouse cursor
 	var attack_direction = (mouse_position - global_position).normalized()
 	
-	print_debug(mouse_position, attack_direction)
+	#print_debug(mouse_position, attack_direction)
 	#Sets the melee range position and rotation based on the direction
 	range.position = attack_direction * attackRange
 	range.rotation = atan2(attack_direction.y, attack_direction.x)
@@ -51,7 +50,7 @@ func attack():
 	
 	await get_tree().create_timer(attackWindow).timeout
 	actionTimer = attackCooldown
-	print_debug(actionTimer)
+	#print_debug(actionTimer)
 	
 	hide()
 	$MeleeHitbox.set_deferred("disabled", true)

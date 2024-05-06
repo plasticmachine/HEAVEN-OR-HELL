@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ldg2vsd26rqu"]
+[gd_scene load_steps=18 format=3 uid="uid://ldg2vsd26rqu"]
 
 [ext_resource type="Script" path="res://Scenes/HellController.gd" id="1_2xahn"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/down/HLL_DOWN.PNG" id="1_ngb26"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cox5c6wprxw51" path="res://art/GUI/bg.png" id="10_1n2h5"]
 [ext_resource type="Texture2D" uid="uid://datk8wkaxjvlp" path="res://art/GUI/fill.png" id="11_w60cq"]
 [ext_resource type="Script" path="res://Scenes/ActionTimerBar.gd" id="12_mi25q"]
+[ext_resource type="Script" path="res://Scenes/Characters/TurnBased/Stats.gd" id="14_5ewi2"]
+[ext_resource type="Resource" uid="uid://cu6pbtsqta4pg" path="res://Resources/HellStats.tres" id="15_dxnc3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
 radius = 59.2
@@ -95,7 +97,6 @@ animations = [{
 [node name="Hell" type="CharacterBody2D" groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_2xahn")
-speed = 450
 
 [node name="InteractionHurtbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7egpc")
@@ -134,3 +135,7 @@ script = ExtResource("12_mi25q")
 [node name="ActionTimer" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("14_5ewi2")
+character_stats = ExtResource("15_dxnc3")

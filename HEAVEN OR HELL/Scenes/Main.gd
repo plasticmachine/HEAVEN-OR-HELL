@@ -28,7 +28,7 @@ func game_over(): #Connected to the "hit" signal
 	$DeathSound.play()
 	$HUD.show_game_over()
 	$ScoreTimer.stop() #stops the scoretimer when game_over function is called
-#	$MobTimer.stop() #stops the mobtimer when game_over function is called
+#	$MobTimer.stop() #stops tijawldijawlidjawlijdalkdjaldijaldjalidjalidjalidjawlijdalijdhe mobtimer when game_over function is called
 
 func _on_start_timer_timeout():
 #	$MobTimer.start() #starts the mob timer when the start timer times out
@@ -49,8 +49,7 @@ func _on_start_timer_timeout():
 #	mob.position = mob_spawn_location.position
 #
 #	#Adds some randomness to the direction the mob being spawned is facing
-#	direction += randf_range(-PI / 4, PI / 4)
-#
+#	direction += randf_range(-PI / 4, PI / 4)dwa
 #	#Chooses the Velocity for the mob being spawned
 #	var velocity = Vector2(randf_range(150.0, 250.0), 0.0) #sets that random range for the speed to 150 - 250
 #	mob.linear_velocity = velocity.rotated(direction) #uses the subclass for mob's rigidbody2D, not exactly sure what its doing 
@@ -60,7 +59,6 @@ func _on_start_timer_timeout():
 	
 #func _process(_delta):
 	#print_debug(score)
-
 
 
 

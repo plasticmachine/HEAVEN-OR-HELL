@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=17 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scenes/TurnBased.gd" id="1_h0a2a"]
 [ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
@@ -8,8 +8,45 @@
 [ext_resource type="Texture2D" uid="uid://dvngeb7w1fgm7" path="res://art/HEAVEN/upleft/HVN_UPLFT.PNG" id="5_hj7kl"]
 [ext_resource type="Texture2D" uid="uid://crl3iip0led10" path="res://art/HELL/upright/HLL_UPRIGHT.png" id="6_kw4m3"]
 [ext_resource type="Texture2D" uid="uid://doa126x42jfuc" path="res://art/HEAVEN/upright/HVN_UPRIGHT.png" id="7_4qsu8"]
-[ext_resource type="Texture2D" uid="uid://cqd4gt1mf6tvx" path="res://art/HELL/turnbased/HLL_TB_Dark.PNG" id="9_mv1b7"]
+[ext_resource type="PackedScene" uid="uid://tcfwrymqvqb4" path="res://Scenes/Characters/TurnBased/hell_tb.tscn" id="9_gxyuk"]
 [ext_resource type="Texture2D" uid="uid://qb1askllryfb" path="res://art/HEAVEN/turnbased/HVN_TB_Dark.PNG" id="10_frxs5"]
+[ext_resource type="FontFile" uid="uid://b2q20yvaohtoc" path="res://fonts/apple_kid.ttf" id="11_2k5sh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awxep"]
+bg_color = Color(0, 0, 0, 0.498039)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8l7pn"]
+font = ExtResource("11_2k5sh")
+font_size = 32
+shadow_size = 10566
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1u77"]
+bg_color = Color(0, 0, 0, 0.301961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2m07e"]
+bg_color = Color(0.992157, 0.411765, 0.513726, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryeqi"]
+bg_color = Color(0, 0.721569, 0.898039, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
 
 [node name="TurnBased" type="Node2D"]
 position = Vector2(11, 181)
@@ -22,26 +59,6 @@ z_index = -785
 position = Vector2(944, 361)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("2_fiwds")
-
-[node name="Attackbutton" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(5284, 7217.5)
-texture = ExtResource("4_4revw")
-
-[node name="Attackbutton2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(6584, 7211.5)
-texture = ExtResource("4_4revw")
-
-[node name="Attackbutton3" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(5284, 7999)
-texture = ExtResource("4_4revw")
-
-[node name="Attackbutton4" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(6584, 7993)
-texture = ExtResource("4_4revw")
 
 [node name="TestPlayerSpots" type="Node2D" parent="."]
 visible = false
@@ -81,12 +98,259 @@ position = Vector2(7365, 1358)
 scale = Vector2(5.91167, 5.91167)
 metadata/_edit_lock_ = true
 
-[node name="HllTbDark" type="Sprite2D" parent="."]
-position = Vector2(203, 936)
-scale = Vector2(0.733699, 0.733699)
-texture = ExtResource("9_mv1b7")
+[node name="PlayerSpots" type="Node2D" parent="."]
 
-[node name="HvnTbDark" type="Sprite2D" parent="."]
+[node name="HvnTbDark" type="Sprite2D" parent="PlayerSpots"]
 position = Vector2(1682, 934)
 scale = Vector2(0.733699, 0.733699)
 texture = ExtResource("10_frxs5")
+
+[node name="HellTb" parent="PlayerSpots" instance=ExtResource("9_gxyuk")]
+position = Vector2(-9, -96)
+
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -173.0
+offset_right = 1920.0
+offset_bottom = 907.0
+scale = Vector2(0.997992, 0.995164)
+
+[node name="Buttons" type="Control" parent="PlayerUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HellButtons" type="Control" parent="PlayerUI/Buttons"]
+anchors_preset = 0
+offset_top = 120.515
+offset_right = 40.0
+offset_bottom = 160.515
+
+[node name="Attackbutton" type="Sprite2D" parent="PlayerUI/Buttons/HellButtons"]
+position = Vector2(585.924, 743.528)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton2" type="Sprite2D" parent="PlayerUI/Buttons/HellButtons"]
+position = Vector2(738.23, 743.528)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton3" type="Sprite2D" parent="PlayerUI/Buttons/HellButtons"]
+position = Vector2(587.675, 833.636)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton4" type="Sprite2D" parent="PlayerUI/Buttons/HellButtons"]
+position = Vector2(738.23, 833.966)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("4_4revw")
+
+[node name="HeavenButtons" type="Control" parent="PlayerUI/Buttons"]
+anchors_preset = 0
+offset_left = 555.0
+offset_right = 595.0
+offset_bottom = 40.0
+
+[node name="Attackbutton" type="Sprite2D" parent="PlayerUI/Buttons/HeavenButtons"]
+position = Vector2(595.057, 864.043)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton2" type="Sprite2D" parent="PlayerUI/Buttons/HeavenButtons"]
+position = Vector2(747.363, 864.043)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton3" type="Sprite2D" parent="PlayerUI/Buttons/HeavenButtons"]
+position = Vector2(596.808, 954.151)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("4_4revw")
+
+[node name="Attackbutton4" type="Sprite2D" parent="PlayerUI/Buttons/HeavenButtons"]
+position = Vector2(747.363, 954.481)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("4_4revw")
+
+[node name="Data" type="Control" parent="PlayerUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HellData" type="Control" parent="PlayerUI/Data"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HellHeartData" type="Control" parent="PlayerUI/Data/HellData"]
+anchors_preset = 0
+offset_top = -66.3207
+offset_right = 40.0
+offset_bottom = -26.3207
+
+[node name="HellHeartPanel" type="Panel" parent="PlayerUI/Data/HellData/HellHeartData"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+offset_left = 522.048
+offset_top = 769.723
+offset_right = 801.823
+offset_bottom = 809.723
+theme_override_styles/panel = SubResource("StyleBoxFlat_awxep")
+
+[node name="HellHeartTextContainer" type="HBoxContainer" parent="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="HellHeartText" type="Label" parent="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartTextContainer"]
+z_index = 1
+layout_mode = 2
+text = "HEART"
+label_settings = SubResource("LabelSettings_8l7pn")
+horizontal_alignment = 3
+vertical_alignment = 2
+
+[node name="HellHeartBar" type="ProgressBar" parent="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel"]
+custom_minimum_size = Vector2(281.57, 40)
+layout_mode = 0
+offset_left = 0.00030579
+offset_top = -0.000613318
+offset_right = 281.57
+offset_bottom = 39.9994
+scale = Vector2(0.992759, 1.02564)
+theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2m07e")
+step = 0.25
+value = 100.0
+
+[node name="HellMagiaData" type="Control" parent="PlayerUI/Data/HellData"]
+anchors_preset = 0
+offset_top = -13.0632
+offset_right = 40.0
+offset_bottom = 26.9368
+
+[node name="HellMagiaPanel" type="Panel" parent="PlayerUI/Data/HellData/HellMagiaData"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+offset_left = 522.048
+offset_top = 769.723
+offset_right = 801.823
+offset_bottom = 809.723
+theme_override_styles/panel = SubResource("StyleBoxFlat_awxep")
+
+[node name="HellMagiaTextContainer" type="HBoxContainer" parent="PlayerUI/Data/HellData/HellMagiaData/HellMagiaPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="HellMagiaText" type="Label" parent="PlayerUI/Data/HellData/HellMagiaData/HellMagiaPanel/HellMagiaTextContainer"]
+z_index = 1
+layout_mode = 2
+text = "MAGIA"
+label_settings = SubResource("LabelSettings_8l7pn")
+horizontal_alignment = 3
+vertical_alignment = 2
+
+[node name="HellMagiaBar" type="ProgressBar" parent="PlayerUI/Data/HellData/HellMagiaData/HellMagiaPanel"]
+custom_minimum_size = Vector2(281.57, 40)
+layout_mode = 0
+offset_left = 0.00030579
+offset_top = -0.000613318
+offset_right = 281.57
+offset_bottom = 39.9994
+scale = Vector2(0.992759, 1.02564)
+theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ryeqi")
+step = 0.25
+value = 97.0
+
+[node name="HeavenData" type="Control" parent="PlayerUI/Data"]
+anchors_preset = 0
+offset_left = 566.137
+offset_right = 606.137
+offset_bottom = 40.0
+
+[node name="HeavenHeartData" type="Control" parent="PlayerUI/Data/HeavenData"]
+anchors_preset = 0
+offset_top = -66.3207
+offset_right = 40.0
+offset_bottom = -26.3207
+
+[node name="HeavenHeartPanel" type="Panel" parent="PlayerUI/Data/HeavenData/HeavenHeartData"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+offset_left = 522.048
+offset_top = 769.723
+offset_right = 801.823
+offset_bottom = 809.723
+theme_override_styles/panel = SubResource("StyleBoxFlat_awxep")
+
+[node name="HeavenHeartTextContainer" type="HBoxContainer" parent="PlayerUI/Data/HeavenData/HeavenHeartData/HeavenHeartPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="HeavenHeartText" type="Label" parent="PlayerUI/Data/HeavenData/HeavenHeartData/HeavenHeartPanel/HeavenHeartTextContainer"]
+z_index = 1
+layout_mode = 2
+text = "HEART"
+label_settings = SubResource("LabelSettings_8l7pn")
+horizontal_alignment = 3
+vertical_alignment = 2
+
+[node name="HeavenHeartBar" type="ProgressBar" parent="PlayerUI/Data/HeavenData/HeavenHeartData/HeavenHeartPanel"]
+custom_minimum_size = Vector2(281.57, 40)
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+scale = Vector2(0.992759, 1.02564)
+theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2m07e")
+step = 0.25
+value = 100.0
+
+[node name="HeavenMagiaData" type="Control" parent="PlayerUI/Data/HeavenData"]
+anchors_preset = 0
+offset_top = -13.0632
+offset_right = 40.0
+offset_bottom = 26.9368
+
+[node name="HeavenMagiaPanel" type="Panel" parent="PlayerUI/Data/HeavenData/HeavenMagiaData"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+offset_left = 522.048
+offset_top = 769.723
+offset_right = 801.823
+offset_bottom = 809.723
+theme_override_styles/panel = SubResource("StyleBoxFlat_awxep")
+
+[node name="HeavenMagiaTextContainer" type="HBoxContainer" parent="PlayerUI/Data/HeavenData/HeavenMagiaData/HeavenMagiaPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="HeavenMagiaText" type="Label" parent="PlayerUI/Data/HeavenData/HeavenMagiaData/HeavenMagiaPanel/HeavenMagiaTextContainer"]
+z_index = 1
+layout_mode = 2
+text = "MAGIA"
+label_settings = SubResource("LabelSettings_8l7pn")
+horizontal_alignment = 3
+vertical_alignment = 2
+
+[node name="HeavenMagiaBar" type="ProgressBar" parent="PlayerUI/Data/HeavenData/HeavenMagiaData/HeavenMagiaPanel"]
+custom_minimum_size = Vector2(281.57, 40)
+layout_mode = 0
+offset_left = 0.000366948
+offset_top = -0.000613318
+offset_right = 281.57
+offset_bottom = 39.9994
+scale = Vector2(0.992759, 1.02564)
+theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ryeqi")
+step = 0.25
+value = 85.25

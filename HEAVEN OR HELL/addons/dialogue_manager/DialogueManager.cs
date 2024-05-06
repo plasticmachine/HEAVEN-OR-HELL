@@ -159,14 +159,14 @@ namespace DialogueManagerRuntime
 
         public bool ThingHasMethod(GodotObject thing, string method)
         {
-            MethodInfo? info = thing.GetType().GetMethod(method, BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly);
+            MethodInfo? info = thing.GetType().GetMethod(method, BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public);
             return info != null;
         }
 
 
         public async void ResolveThingMethod(GodotObject thing, string method, Array<Variant> args)
         {
-            MethodInfo? info = thing.GetType().GetMethod(method, BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly);
+            MethodInfo? info = thing.GetType().GetMethod(method, BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public);
 
             if (info == null) return;
 
@@ -185,6 +185,9 @@ namespace DialogueManagerRuntime
                     _args[i] = argTypes[i].DefaultValue;
                 }
             }
+
+            // Add a single frame wait in case the method returns before signals can listen
+            await ToSignal(Engine.GetMainLoop(), SceneTree.SignalName.ProcessFrame);
 
             if (info.ReturnType == typeof(Task))
             {

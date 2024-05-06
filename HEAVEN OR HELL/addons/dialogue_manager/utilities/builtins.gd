@@ -11,8 +11,12 @@ const SUPPORTED_BUILTIN_TYPES = [
 	TYPE_DICTIONARY,
 	TYPE_QUATERNION,
 	TYPE_COLOR,
-	TYPE_SIGNAL
+	TYPE_SIGNAL,
+	TYPE_CALLABLE
 ]
+
+
+static var resolve_method_error: Error = OK
 
 
 static func is_supported(thing) -> bool:
@@ -37,6 +41,8 @@ static func resolve_property(builtin, property: String):
 
 
 static func resolve_method(thing, method_name: String, args: Array):
+	resolve_method_error = OK
+
 	# Resolve static methods manually
 	match typeof(thing):
 		TYPE_VECTOR2:
@@ -69,9 +75,14 @@ static func resolve_method(thing, method_name: String, args: Array):
 		assert(false, expression.get_error_text())
 	var result = expression.execute([thing] + args, null, false)
 	if expression.has_execute_failed():
-		assert(false, expression.get_error_text())
+		resolve_method_error = ERR_CANT_RESOLVE
+		return null
 
 	return result
+
+
+static func has_resolve_method_failed() -> bool:
+	return resolve_method_error != OK
 
 
 static func resolve_color_property(color: Color, property: String):
@@ -423,17 +434,17 @@ static func resolve_vector3_property(vector: Vector3, property: String):
 		"BACK":
 			return Vector3.BACK
 		"MODEL_LEFT":
-			return Vector3.MODEL_LEFT
+			return Vector3(1, 0, 0)
 		"MODEL_RIGHT":
-			return Vector3.MODEL_RIGHT
+			return Vector3(-1, 0, 0)
 		"MODEL_TOP":
-			return Vector3.MODEL_TOP
+			return Vector3(0, 1, 0)
 		"MODEL_BOTTOM":
-			return Vector3.MODEL_BOTTOM
+			return Vector3(0, -1, 0)
 		"MODEL_FRONT":
-			return Vector3.MODEL_FRONT
+			return Vector3(0, 0, 1)
 		"MODEL_REAR":
-			return Vector3.MODEL_REAR
+			return Vector3(0, 0, -1)
 
 	return vector[property]
 

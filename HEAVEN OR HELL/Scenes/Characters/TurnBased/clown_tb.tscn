@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dt06qpfhtfajd"]
 
-[ext_resource type="Script" path="res://Scripts/CharacterStats.gd" id="1_bt10x"]
+[ext_resource type="Script" path="res://Scripts/CharacterStatsOld.gd" id="1_bt10x"]
 [ext_resource type="Texture2D" uid="uid://damkva1jjkcsg" path="res://art/clown/TurnBased/CLOWN_TBTEST.png" id="2_y11lw"]
 
 [node name="ClownTb" type="Node2D"]
