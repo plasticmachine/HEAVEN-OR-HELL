@@ -1,6 +1,4 @@
 extends CharacterBody2D
-
-@onready var stats = $Stats
 signal hit
 var current_animation = "idle"
 var angle = 0
@@ -41,9 +39,8 @@ func _process(delta):
 			current_animation = "right"
 	
 	if Input.is_action_pressed("ui_accept"):
-		stats.character_stats.max_heart += 10
-		print_debug(stats.character_stats.max_heart)
-	velocity = input_dir * stats.character_stats.move_speed
+		hellstats.add_heart(10)
+	velocity = input_dir * movespeed
 	move_and_slide()
 	$AnimatedSprite2D.play(current_animation)
 

@@ -8,7 +8,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	TurnBasedClownDialogue()
-	hell.TestingStats()
 
 #func DialogueTesting():
 	#if Input.is_action_just_pressed("Melee_hell"):

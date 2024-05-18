@@ -1,16 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=21 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scenes/TurnBased.gd" id="1_h0a2a"]
 [ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
 [ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/IMG_2136.PNG" id="2_fiwds"]
-[ext_resource type="Texture2D" uid="uid://d1bwfc5sda7nx" path="res://art/GUI/attackbutton.png" id="4_4revw"]
+[ext_resource type="Texture2D" uid="uid://d1bwfc5sda7nx" path="res://art/GUI/battle_ui/buttons/attackbutton.png" id="4_4revw"]
 [ext_resource type="Texture2D" uid="uid://gckqxmu260gq" path="res://art/HELL/upleft/HLL_UPLFT.PNG" id="4_udu1u"]
 [ext_resource type="Texture2D" uid="uid://dvngeb7w1fgm7" path="res://art/HEAVEN/upleft/HVN_UPLFT.PNG" id="5_hj7kl"]
 [ext_resource type="Texture2D" uid="uid://crl3iip0led10" path="res://art/HELL/upright/HLL_UPRIGHT.png" id="6_kw4m3"]
 [ext_resource type="Texture2D" uid="uid://doa126x42jfuc" path="res://art/HEAVEN/upright/HVN_UPRIGHT.png" id="7_4qsu8"]
+[ext_resource type="PackedScene" uid="uid://bdorwiack3h01" path="res://Scenes/Characters/TurnBased/heaven_tb.tscn" id="8_n8gx8"]
 [ext_resource type="PackedScene" uid="uid://tcfwrymqvqb4" path="res://Scenes/Characters/TurnBased/hell_tb.tscn" id="9_gxyuk"]
-[ext_resource type="Texture2D" uid="uid://qb1askllryfb" path="res://art/HEAVEN/turnbased/HVN_TB_Dark.PNG" id="10_frxs5"]
+[ext_resource type="Script" path="res://Scenes/HellButtons.gd" id="10_gj12g"]
 [ext_resource type="FontFile" uid="uid://b2q20yvaohtoc" path="res://fonts/apple_kid.ttf" id="11_2k5sh"]
+[ext_resource type="Texture2D" uid="uid://bjd0m1na5kwkn" path="res://art/GUI/battle_ui/buttons/attackbutton_presseddown.png" id="11_mr243"]
+[ext_resource type="Script" path="res://Scenes/HeavenButtons.gd" id="13_11hfm"]
+[ext_resource type="Script" path="res://Scenes/HellHeartBar.gd" id="15_5slww"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awxep"]
 bg_color = Color(0, 0, 0, 0.498039)
@@ -100,10 +104,7 @@ metadata/_edit_lock_ = true
 
 [node name="PlayerSpots" type="Node2D" parent="."]
 
-[node name="HvnTbDark" type="Sprite2D" parent="PlayerSpots"]
-position = Vector2(1682, 934)
-scale = Vector2(0.733699, 0.733699)
-texture = ExtResource("10_frxs5")
+[node name="HeavenTb" parent="PlayerSpots" instance=ExtResource("8_n8gx8")]
 
 [node name="HellTb" parent="PlayerSpots" instance=ExtResource("9_gxyuk")]
 position = Vector2(-9, -96)
@@ -127,25 +128,58 @@ offset_top = 120.515
 offset_right = 40.0
 offset_bottom = 160.515
 
-[node name="Attackbutton" type="Sprite2D" parent="PlayerUI/Buttons/HellButtons"]
-position = Vector2(585.924, 743.528)
+[node name="Attackbutton1" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 512.028
+offset_top = 696.436
+offset_right = 1832.03
+offset_bottom = 1515.44
 scale = Vector2(0.115, 0.115)
-texture = ExtResource("4_4revw")
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
+script = ExtResource("10_gj12g")
 
-[node name="Attackbutton2" type="Sprite2D" parent="PlayerUI/Buttons/HellButtons"]
-position = Vector2(738.23, 743.528)
+[node name="Attackbutton2" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.795
+anchor_bottom = 2.355
+offset_left = 663.332
+offset_top = 696.436
+offset_right = 1831.53
+offset_bottom = 1421.24
 scale = Vector2(0.115, 0.115)
-texture = ExtResource("4_4revw")
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
 
-[node name="Attackbutton3" type="Sprite2D" parent="PlayerUI/Buttons/HellButtons"]
-position = Vector2(587.675, 833.636)
+[node name="Attackbutton3" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 512.028
+offset_top = 786.873
+offset_right = 1832.03
+offset_bottom = 1605.87
 scale = Vector2(0.115, 0.115)
-texture = ExtResource("4_4revw")
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
 
-[node name="Attackbutton4" type="Sprite2D" parent="PlayerUI/Buttons/HellButtons"]
-position = Vector2(738.23, 833.966)
+[node name="Attackbutton4" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.795
+anchor_bottom = 2.355
+offset_left = 663.332
+offset_top = 786.873
+offset_right = 1831.53
+offset_bottom = 1511.67
 scale = Vector2(0.115, 0.115)
-texture = ExtResource("4_4revw")
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
 
 [node name="HeavenButtons" type="Control" parent="PlayerUI/Buttons"]
 anchors_preset = 0
@@ -153,25 +187,58 @@ offset_left = 555.0
 offset_right = 595.0
 offset_bottom = 40.0
 
-[node name="Attackbutton" type="Sprite2D" parent="PlayerUI/Buttons/HeavenButtons"]
-position = Vector2(595.057, 864.043)
+[node name="Attackbutton1" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 519.157
+offset_top = 816.951
+offset_right = 1839.16
+offset_bottom = 1635.95
 scale = Vector2(0.115, 0.115)
-texture = ExtResource("4_4revw")
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
+script = ExtResource("13_11hfm")
 
-[node name="Attackbutton2" type="Sprite2D" parent="PlayerUI/Buttons/HeavenButtons"]
-position = Vector2(747.363, 864.043)
+[node name="Attackbutton2" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.795
+anchor_bottom = 2.355
+offset_left = 670.461
+offset_top = 816.951
+offset_right = 1838.66
+offset_bottom = 1541.75
 scale = Vector2(0.115, 0.115)
-texture = ExtResource("4_4revw")
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
 
-[node name="Attackbutton3" type="Sprite2D" parent="PlayerUI/Buttons/HeavenButtons"]
-position = Vector2(596.808, 954.151)
+[node name="Attackbutton3" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 519.157
+offset_top = 907.388
+offset_right = 1839.16
+offset_bottom = 1726.39
 scale = Vector2(0.115, 0.115)
-texture = ExtResource("4_4revw")
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
 
-[node name="Attackbutton4" type="Sprite2D" parent="PlayerUI/Buttons/HeavenButtons"]
-position = Vector2(747.363, 954.481)
+[node name="Attackbutton4" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.795
+anchor_bottom = 2.355
+offset_left = 670.461
+offset_top = 907.388
+offset_right = 1838.66
+offset_bottom = 1632.19
 scale = Vector2(0.115, 0.115)
-texture = ExtResource("4_4revw")
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
 
 [node name="Data" type="Control" parent="PlayerUI"]
 anchors_preset = 0
@@ -223,7 +290,7 @@ scale = Vector2(0.992759, 1.02564)
 theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2m07e")
 step = 0.25
-value = 100.0
+script = ExtResource("15_5slww")
 
 [node name="HellMagiaData" type="Control" parent="PlayerUI/Data/HellData"]
 anchors_preset = 0
@@ -354,3 +421,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ryeqi")
 step = 0.25
 value = 85.25
+
+[connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="PlayerUI/Buttons/HellButtons/Attackbutton1" method="_on_pressed"]
+[connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="PlayerUI/Buttons/HeavenButtons/Attackbutton1" method="_on_pressed"]
+[connection signal="value_changed" from="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartBar" to="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartBar" method="_on_value_changed"]

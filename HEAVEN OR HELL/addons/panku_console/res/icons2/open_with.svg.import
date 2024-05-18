@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1bwfc5sda7nx"
-path="res://.godot/imported/attackbutton.png-0bbb3d4cebadf1947fa7c589585860c2.ctex"
+uid="uid://b22jdciwq07ic"
+path="res://.godot/imported/open_with.svg-4c7b4bea2cb5c0a1af405d61d3d85fa3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/GUI/attackbutton.png"
-dest_files=["res://.godot/imported/attackbutton.png-0bbb3d4cebadf1947fa7c589585860c2.ctex"]
+source_file="res://addons/panku_console/res/icons2/open_with.svg"
+dest_files=["res://.godot/imported/open_with.svg-4c7b4bea2cb5c0a1af405d61d3d85fa3.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

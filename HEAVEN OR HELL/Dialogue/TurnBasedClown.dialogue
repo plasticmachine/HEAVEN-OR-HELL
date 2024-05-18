@@ -1,32 +1,38 @@
 ~ TurnBasedClown
+
 *this narrative section is going to have 3 different random variants*
-Silly on her feet, sadness in her eyes. Without faith without fear. [next]
-godless once again in search of something greater, something more meaningful, she approaches... [next]
-Hell: ... another fallen from the skies, this one looks different though doesnt she? [next]
-Heaven: Yeah ... something's off, stay behind me. [next]
+- DEBUG: Click this one to skip the dialogue here
+	 DEBUG: [wave amp=50 freq=10] have fun testing :D [/wave]
+- DEBUG: Click this one to run the first draft dialogue 
+	Silly on her feet, her eyes hang low.
+	Without faith without fear, hold all applause until the end of the show!!
+	godless once again in search of something greater, something more meaningful, she approaches... [next]
+	Hell: ... another fallen from the skies, this one looks different though doesnt she? [next]
+	Heaven: Yeah ... something's off, stay behind me. [next]
 
-Clown: [wave amp=50 freq=10] Hiya!!! [/wave] [wait=0.5] You finally caught up :D 
-Clown:  [wave amp=50 freq=10] Didja like my tricks? [/wave] [wait=0.3] [wave amp=100 freq=15]Huhh, huhh didja didja?? [/wave] 
-- Heaven: No more jokes! State your business falling out of the sky, or else.
-	Clown: Hehe, That's a [wave amp=50 freq=10]secret!![/wave] 
-	Clown: Mayyybeeee ... you could say ... im waiting for[shake rate=30 level=10] something[/shake] to happen?
-	Clown: It's a surprise!!
-	Hell: oh, well i mean a surprise does sound pretty fun!
-	Heaven: Goddamn it, we'll send you back above 
+	Clown: [wave amp=50 freq=10] Hiya!!! [/wave] [wait=0.5] You finally caught up :D 
+	Clown:  [wave amp=50 freq=10] Didja like my tricks? [/wave] [wait=0.3] [wave amp=100 freq=15]Huhh, huhh didja didja?? [/wave] 
+	- Heaven: No more jokes! State your business falling out of the sky, or else.
+		Clown: Hehe, That's a [wave amp=50 freq=10]secret!![/wave] 
+		Clown: Mayyybeeee ... you could say ... im waiting for[shake rate=30 level=10] something[/shake] to happen?
+		Clown: It's a surprise!!
+		Hell: oh, well i mean a surprise does sound pretty fun!
 
-- Hell: actually, i had a lot of fun!
-	Clown: [shake rate=30 level=20] [speed=2]*honk* [speed=2]*honk* [speed=2]*honk* [/shake] [speed=1] Haha!!! ^_^ Bless dolos ^_^ my faith has been renewed on this day!
-	Hell: ... who?
-	Clown: Blessed be! Blessed be!! We've been graced on this day, with [wave amp=20 freq=10]laughter!![/wave]
-	Heaven: I'm not laughing, clown. Explain yourself before we spill you across the clouds.
+	- Hell: actually, i had a lot of fun!
+		Clown: [shake rate=30 level=20] [speed=2]*honk* [speed=2]*honk* [speed=2]*honk* [/shake] [speed=1] Haha!!! ^_^ Bless dolos ^_^ my faith has been renewed on this day!
+		Hell: ... who?
+		Clown: Blessed be! Blessed be!! We've been graced on this day, with [wave amp=20 freq=10]laughter!![/wave]
+		Heaven: I'm not laughing, clown. Explain yourself before we spill you across the clouds.
 
-- Heaven: Have you come to die like the others?
-	Clown: [wave amp=50 freq=10]Welllllllll[/wave], aren't the funniest jokes the ones that are actually kind of true??? ^_^
-	Hell: yeah, actually now that i think about it you're right!
-	Heaven: No, no wait... That wasn't the point!
-	Heaven: Hold on, wait, what do you mean by that?
-	Clown: [wave amp=50 freq=10]Hahahaahahahahahaha!!![/wave][shake rate=30 level=20][speed=2]*honk* [speed=2]*honk* [speed=2]*honk* [/shake] [speed=1] Sorry!!! You know magicians and their secrets! or something like that?
+	- Heaven: Have you come to die like the others?
+		Clown: [wave amp=50 freq=10]Welllllllll[/wave], aren't the funniest jokes the ones that are actually kind of true??? ^_^
+		Hell: yeah, actually now that i think about it you're right!
+		Heaven: No, no wait... That wasn't the point!
+		Heaven: Hold on, wait, what do you mean by that?
+		Clown: [wave amp=50 freq=10]Hahahaahahahahahaha!!![/wave][shake rate=30 level=20][speed=2]*honk* [speed=2]*honk* [speed=2]*honk* [/shake] [speed=1] Sorry!!! You know magicians and their secrets! or something like that?
 
-Heaven / Hell: as above... so below!! Return to the clouds!!!
+
+
+		Heaven / Hell: ...
 
 => END

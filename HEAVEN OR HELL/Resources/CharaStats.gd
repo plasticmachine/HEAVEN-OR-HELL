@@ -14,15 +14,24 @@ class_name CharaStats
 @export var crit: int
 
 func add_heart(amount: int) -> void:
-	current_heart += amount
-	emit_signal("stat_changed", "current_heart", current_heart)
+	if max_heart > current_heart:
+		current_heart += amount
+		if max_heart < current_heart:
+			current_heart = max_heart
+			print_debug(character_name + "'s max health is " + str(max_heart))
+		print_debug(character_name + " has " + str(current_heart) + " heart!")
+	else:
+		current_heart = max_heart
+		print_debug(character_name + "'s max health is " + str(max_heart))
+	
+	#emit_signal("stat_changed", "current_heart", current_heart)
 func subtract_heart(amount: int) -> void:
 	current_heart -= amount
-	emit_signal("stat_changed", "current_heart", current_heart)
+	#emit_signal("stat_changed", "current_heart", current_heart)
 func multiply_heart(factor: float) -> void:
 	current_heart = int(current_heart * factor)
-	emit_signal("stat_changed", "current_heart", current_heart)
+	#emit_signal("stat_changed", "current_heart", current_heart)
 func divide_heart(divisor: float) -> void:
 	if divisor != 0:
 		current_heart = int(current_heart / divisor)
-	emit_signal("stat_changed", "current_heart", current_heart)
+	#emit_signal("stat_changed", "current_heart", current_heart)

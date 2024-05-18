@@ -1,6 +1,8 @@
 extends Node
+@onready var hellstats = "res://Resources/HellStats.tres"
 
-@export var character_stats : CharaStats
-	#set(value):
-		#character_stats = value
- 
+func save_stats():
+	ResourceSaver.save(hellstats)
+	
+func load_stats():
+	ResourceLoader.load(hellstats)
