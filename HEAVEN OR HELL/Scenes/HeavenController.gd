@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal hit
 var current_animation = "idle"
 var angle = 0
-@export var speed = 10 #speed of player
+var heavenstats = ResourceLoader.load("res://Resources/HeavenStats.tres")
 #var screen_size #size of game window
 var meleeScript
 
@@ -39,7 +39,7 @@ func _process(delta):
 			current_animation = "right"
 		
 		
-	velocity = input_dir * speed
+	velocity = input_dir * heavenstats.move_speed
 	move_and_slide()
 	$AnimatedSprite2D.play(current_animation)
 

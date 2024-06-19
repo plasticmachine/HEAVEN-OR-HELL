@@ -2,6 +2,7 @@ extends CharacterBody2D
 signal hit
 var current_animation = "idle"
 var angle = 0
+@export var hellstats : Resource
 #var screen_size #size of game window
 var meleeScript
 
@@ -37,15 +38,15 @@ func _process(delta):
 			current_animation = "down_right"
 		if angle == 0:
 			current_animation = "right"
-	
-	if Input.is_action_pressed("ui_accept"):
-		hellstats.add_heart(10)
-	velocity = input_dir * movespeed
+	hellstats.subtract_heart(10)
+	print_debug(hellstats.current_heart)
+	velocity = input_dir * hellstats.move_speed
 	move_and_slide()
 	$AnimatedSprite2D.play(current_animation)
 
 
 func start(pos):
+
 	
 	
 	position = pos

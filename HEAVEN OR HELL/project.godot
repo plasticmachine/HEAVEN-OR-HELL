@@ -24,8 +24,11 @@ scenes/error_scene_path="res://addons/yet_another_scene_manager/Scenes/Error.tsc
 
 Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-YASM="*res://addons/yet_another_scene_manager/Scenes.gd"
 Panku="*res://addons/panku_console/console.tscn"
+SceneManager="*res://addons/scene_manager/scene_manager.tscn"
+Scenes="*res://addons/scene_manager/scenes.gd"
+HellStats="*res://Resources/HellStats.tres"
+YASM="*res://addons/yet_another_scene_manager/Scenes.gd"
 
 [display]
 
@@ -42,7 +45,7 @@ project/assembly_name="Reimu-s Bad Day"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/yet_another_scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/yet_another_scene_manager/plugin.cfg")
 
 [input]
 

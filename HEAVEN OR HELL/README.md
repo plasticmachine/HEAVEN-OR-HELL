@@ -10,20 +10,20 @@ A universal inventory system for the Godot game engine (version 4.2 and newer).
 ## Table of Contents
 
 1. [Features](#features)
-    1. [Item Prototypes](#item-prototypes)
-    2. [Inventory Items](#inventory-items)
-    3. [Inventory Types](#inventory-types)
-    4. [Item Slots](#item-slots)
-    5. [UI Controls](#ui-controls)
+	1. [Item Prototypes](#item-prototypes)
+	2. [Inventory Items](#inventory-items)
+	3. [Inventory Types](#inventory-types)
+	4. [Item Slots](#item-slots)
+	5. [UI Controls](#ui-controls)
 2. [Installation](#installation)
 3. [Usage](#usage)
 4. [Creating Item Prototypes](#creating-item-prototypes)
-    1. [Minimal Item Protoset JSON](#minimal-item-protoset-json)
-    2. [Item prototypes for a Stack Based Inventory](#item-prototypes-for-a-stack-based-inventory)
-    3. [Item prototypes for a Grid Based Inventory](#item-prototypes-for-a-grid-based-inventory)
-    4. [Additional Prototype Fields](#additional-prototype-fields)
-    5. [Using the Protoset Editor (WIP)](#using-the-protoset-editor-wip)
-    6. [Editing item properties](#editing-item-properties)
+	1. [Minimal Item Protoset JSON](#minimal-item-protoset-json)
+	2. [Item prototypes for a Stack Based Inventory](#item-prototypes-for-a-stack-based-inventory)
+	3. [Item prototypes for a Grid Based Inventory](#item-prototypes-for-a-grid-based-inventory)
+	4. [Additional Prototype Fields](#additional-prototype-fields)
+	5. [Using the Protoset Editor (WIP)](#using-the-protoset-editor-wip)
+	6. [Editing item properties](#editing-item-properties)
 5. [Serialization](#serialization)
 6. [The Documentation](#the-documentation)
 7. [Examples](#examples)
@@ -73,11 +73,11 @@ User interfaces are usually unique for each project, but it often helps to have 
 
 1. Create an `addons` directory inside your project directory.
 2. Get the plugin from the AssetLib or from GitHub
-    * From the AssetLib: Open the AssetLib from the Godot editor and search for "GLoot". Click download and deselect everything except the `addons` directory when importing. 
+	* From the AssetLib: Open the AssetLib from the Godot editor and search for "GLoot". Click download and deselect everything except the `addons` directory when importing. 
 
-    ![](images/screenshots/ss_install_gloot.png)
+	![](images/screenshots/ss_install_gloot.png)
 
-    * From GitHub: Run `git clone https://github.com/peter-kish/gloot.git` and copy the contents of the `addons` directory to your projects `addons` directory.
+	* From GitHub: Run `git clone https://github.com/peter-kish/gloot.git` and copy the contents of the `addons` directory to your projects `addons` directory.
 4. Enable the plugin in `Project Settings > Plugins`.
 
 ## Usage
@@ -85,17 +85,17 @@ User interfaces are usually unique for each project, but it often helps to have 
 1. Create an [`ItemProtoset`](docs/item_protoset.md) resource that will hold all the item prototypes used by the inventory. The resource has a single property `json_data` that holds all item prototype information in JSON format (see [Creating Item Prototypes](#creating-item-prototypes) below).
 2. Create an inventory node in your scene. Set its capacity if needed (required for [`InventoryStacked`](docs/inventory_stacked.md) and [`InventoryGrid`](docs/inventory_grid.md)) and set its `item_protoset` property (previously created).
 3. Add items to the inventory in one of the following ways:
-    1. Add items using the custom control in the inspector:
+	1. Add items using the custom control in the inspector:
 
-    ![](images/screenshots/ss_inspector.png "Custom Inspector Control")
+	![](images/screenshots/ss_inspector.png "Custom Inspector Control")
 
-    2. Add items by creating `InventoryItem` nodes as child nodes of the inventory node.
-        > **NOTE**: When an `InventoryItem` node is added to an inventory node, its `protoset` property is automatically set to be the same as the `item_protoset` property of the inventory node.
+	2. Add items by creating `InventoryItem` nodes as child nodes of the inventory node.
+		> **NOTE**: When an `InventoryItem` node is added to an inventory node, its `protoset` property is automatically set to be the same as the `item_protoset` property of the inventory node.
 
-    3. Add items from code. Use [`create_and_add_item()`](docs/inventory.md) to create and add items based on the given prototype ID:
-    ```gd
-    inventory.create_and_add_item("Item1")
-    ```
+	3. Add items from code. Use [`create_and_add_item()`](docs/inventory.md) to create and add items based on the given prototype ID:
+	```gd
+	inventory.create_and_add_item("Item1")
+	```
 
 4. (*Optional*) Create [item slots](#item-slots) that will hold various items (for example the currently equipped weapon or armor).
 5. Create some [UI controls](#ui-controls) to display the created inventory and its contents.
@@ -119,9 +119,9 @@ Below is an example of a minimal item protoset JSON:
 
 ```json
 [
-    {
-        "id": "minimal_item"
-    }
+	{
+		"id": "minimal_item"
+	}
 ]
 ```
 
@@ -131,24 +131,24 @@ Prototypes of items contained in stack based inventories support the following a
 
 * `stack_size` - Defines the default stack size of the item. Newly created items that use this prototype will have this stack size. Has the value of 1 if not defined.
 * `weight` - Defines the unit weight of the item. Has the value of 1.0 if not defined.
-    **NOTE**: The total weight of an item is defined as its unit weight multiplied by its stack size.
+	**NOTE**: The total weight of an item is defined as its unit weight multiplied by its stack size.
 
 Example:
 ```json
 [
-    {
-        "id": "stackable_item",
-        "stack_size": 10
-    },
-    {
-        "id": "heavy_item",
-        "weight": 20.0
-    },
-    {
-        "id": "very_heavy_item",
-        "stack_size": 10,
-        "weight": 20.0
-    }
+	{
+		"id": "stackable_item",
+		"stack_size": 10
+	},
+	{
+		"id": "heavy_item",
+		"weight": 20.0
+	},
+	{
+		"id": "very_heavy_item",
+		"stack_size": 10,
+		"weight": 20.0
+	}
 ]
 ```
 
@@ -166,21 +166,21 @@ Prototypes of items contained in stack based inventories support the following a
 Example:
 ```json
 [
-    {
-        "id": "1x1_knife",
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "1x3_spear",
-        "width": 1,
-        "height": 3
-    },
-    {
-        "id": "2x2_bomb",
-        "width": 2,
-        "height": 2
-    }
+	{
+		"id": "1x1_knife",
+		"width": 1,
+		"height": 1
+	},
+	{
+		"id": "1x3_spear",
+		"width": 1,
+		"height": 3
+	},
+	{
+		"id": "2x2_bomb",
+		"width": 2,
+		"height": 2
+	}
 ]
 ```
 
@@ -191,12 +191,12 @@ Apart from the previously mentioned properties, item prototypes can hold all kin
 Example:
 ```json
 [
-    {
-        "id": "knife_01",
-        "weight": "2.0",
-        "name": "Kitchen Knife",
-        "description": "A knife intended to be used in food preparation."
-    }
+	{
+		"id": "knife_01",
+		"weight": "2.0",
+		"name": "Kitchen Knife",
+		"description": "A knife intended to be used in food preparation."
+	}
 ]
 ```
 
@@ -219,7 +219,7 @@ Item properties defined in the [`ItemProtoset`](docs/item_protoset.md) resource 
 # Decrease the size of an item stack by 1
 var stack_size: int = item.get_property("stack_size")
 if stack_size > 0:
-    item.set_property("stack_size", stack_size - 1)
+	item.set_property("stack_size", stack_size - 1)
 ```
 
 Item properties can also be modified and overridden using the inspector when an `InventoryItem` is selected. Properties marked with green color represent overridden properties. Some properties are disabled for editing, as they are managed by the plugin itself (for example `id` and `grid_position`).
@@ -247,8 +247,8 @@ Example:
 var inventory: Inventory = get_node("inventory")
 var res: JSONParseResult = JSON.parse(json)
 if res.error == OK:
-    var dict = res.result
-    inventory.deserialize(dict)
+	var dict = res.result
+	inventory.deserialize(dict)
 ```
 
 ## The Documentation

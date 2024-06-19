@@ -4,7 +4,7 @@
 script/source = "extends Control
 
 func _on_test_2_pressed():
-	YASM.load_scene(\"res://Scenes/main.tscn\")
+  YASM.load_scene(\"res://addons/yet_another_scene_manager/Scenes/Testing/Test2.tscn\")
 "
 
 [node name="Control" type="Control"]

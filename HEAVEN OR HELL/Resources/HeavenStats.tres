@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_lx6vb")
-character_name = "logan"
+character_name = "Heaven"
 move_speed = 3500
 max_heart = 100
 current_heart = 100

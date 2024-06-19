@@ -1,5 +1,5 @@
 extends ProgressBar
-var hellstats = preload("res://Resources/HellStats.tres")
+@onready var hellstats = load("res://Resources/HellStats.tres")
 @onready var hell_progress_bar = $"."
 
 
@@ -9,5 +9,5 @@ func _ready():
 	hell_progress_bar.value = hellstats.current_heart
 
 
-func _on_value_changed(value):
-	pass
+func _process(delta):
+	hell_progress_bar.value = hellstats.current_heart

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=24 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scenes/TurnBased.gd" id="1_h0a2a"]
 [ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
@@ -14,7 +14,10 @@
 [ext_resource type="FontFile" uid="uid://b2q20yvaohtoc" path="res://fonts/apple_kid.ttf" id="11_2k5sh"]
 [ext_resource type="Texture2D" uid="uid://bjd0m1na5kwkn" path="res://art/GUI/battle_ui/buttons/attackbutton_presseddown.png" id="11_mr243"]
 [ext_resource type="Script" path="res://Scenes/HeavenButtons.gd" id="13_11hfm"]
+[ext_resource type="Script" path="res://Scenes/HellButtons2.gd" id="13_ie6y5"]
 [ext_resource type="Script" path="res://Scenes/HellHeartBar.gd" id="15_5slww"]
+[ext_resource type="Texture2D" uid="uid://cqjy230u4evig" path="res://art/HEAVEN/down/HVN_DOWN.PNG" id="17_2gdkg"]
+[ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/down/HLL_DOWN.PNG" id="18_rydkr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awxep"]
 bg_color = Color(0, 0, 0, 0.498039)
@@ -57,6 +60,7 @@ position = Vector2(11, 181)
 script = ExtResource("1_h0a2a")
 
 [node name="ClownTb" parent="." instance=ExtResource("2_djc2d")]
+visible = false
 
 [node name="Img2136" type="Sprite2D" parent="."]
 z_index = -785
@@ -103,6 +107,7 @@ scale = Vector2(5.91167, 5.91167)
 metadata/_edit_lock_ = true
 
 [node name="PlayerSpots" type="Node2D" parent="."]
+visible = false
 
 [node name="HeavenTb" parent="PlayerSpots" instance=ExtResource("8_n8gx8")]
 
@@ -110,6 +115,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-9, -96)
 
 [node name="PlayerUI" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = -173.0
@@ -118,6 +124,7 @@ offset_bottom = 907.0
 scale = Vector2(0.997992, 0.995164)
 
 [node name="Buttons" type="Control" parent="PlayerUI"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -154,6 +161,7 @@ scale = Vector2(0.115, 0.115)
 texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
+script = ExtResource("13_ie6y5")
 
 [node name="Attackbutton3" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
 layout_direction = 1
@@ -289,7 +297,7 @@ offset_bottom = 39.9994
 scale = Vector2(0.992759, 1.02564)
 theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2m07e")
-step = 0.25
+step = 1.0
 script = ExtResource("15_5slww")
 
 [node name="HellMagiaData" type="Control" parent="PlayerUI/Data/HellData"]
@@ -332,7 +340,6 @@ scale = Vector2(0.992759, 1.02564)
 theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ryeqi")
 step = 0.25
-value = 97.0
 
 [node name="HeavenData" type="Control" parent="PlayerUI/Data"]
 anchors_preset = 0
@@ -378,7 +385,6 @@ scale = Vector2(0.992759, 1.02564)
 theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2m07e")
 step = 0.25
-value = 100.0
 
 [node name="HeavenMagiaData" type="Control" parent="PlayerUI/Data/HeavenData"]
 anchors_preset = 0
@@ -420,8 +426,20 @@ scale = Vector2(0.992759, 1.02564)
 theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ryeqi")
 step = 0.25
-value = 85.25
+
+[node name="HvnDown" type="Sprite2D" parent="."]
+position = Vector2(618, 392)
+rotation = 0.0506095
+scale = Vector2(0.189191, 0.189191)
+texture = ExtResource("17_2gdkg")
+
+[node name="HllDown" type="Sprite2D" parent="."]
+position = Vector2(463, 438)
+rotation = -3.10526
+scale = Vector2(-0.159953, -0.159953)
+texture = ExtResource("18_rydkr")
 
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="PlayerUI/Buttons/HellButtons/Attackbutton1" method="_on_pressed"]
+[connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="PlayerUI/Buttons/HellButtons/Attackbutton2" method="_on_pressed"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="PlayerUI/Buttons/HeavenButtons/Attackbutton1" method="_on_pressed"]
 [connection signal="value_changed" from="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartBar" to="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartBar" method="_on_value_changed"]

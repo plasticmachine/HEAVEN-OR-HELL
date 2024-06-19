@@ -1,6 +1,7 @@
 extends Resource
 class_name CharaStats
 
+
 @export var character_name: String = ""
 @export var move_speed: int
 @export var max_heart : int
@@ -12,6 +13,7 @@ class_name CharaStats
 @export var guts: int
 @export var luck: int
 @export var crit: int
+
 
 func add_heart(amount: int) -> void:
 	if max_heart > current_heart:
@@ -35,3 +37,4 @@ func divide_heart(divisor: float) -> void:
 	if divisor != 0:
 		current_heart = int(current_heart / divisor)
 	#emit_signal("stat_changed", "current_heart", current_heart)
+

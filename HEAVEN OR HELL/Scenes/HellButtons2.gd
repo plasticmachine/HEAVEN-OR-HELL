@@ -4,6 +4,5 @@ var hellstats = ResourceLoader.load("res://Resources/HellStats.tres")
 
 
 func _on_pressed():
-	hellstats.add_heart(10)
+	hellstats.subtract_heart(10)
 	ResourceSaver.save(hellstats)
-	#YASM.load_scene("res://Scenes/main.tscn",  [get_tree().create_timer(5.0).timeout])
