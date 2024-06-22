@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=25 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scenes/TurnBased.gd" id="1_h0a2a"]
 [ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
@@ -15,8 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://bjd0m1na5kwkn" path="res://art/GUI/battle_ui/buttons/attackbutton_presseddown.png" id="11_mr243"]
 [ext_resource type="Script" path="res://Scenes/HeavenButtons.gd" id="13_11hfm"]
 [ext_resource type="Script" path="res://Scenes/HellButtons2.gd" id="13_ie6y5"]
-[ext_resource type="Script" path="res://Scenes/HellHeartBar.gd" id="15_5slww"]
+[ext_resource type="Script" path="res://Scenes/HellBars.gd" id="15_5slww"]
 [ext_resource type="Texture2D" uid="uid://cqjy230u4evig" path="res://art/HEAVEN/down/HVN_DOWN.PNG" id="17_2gdkg"]
+[ext_resource type="Script" path="res://Scenes/HeavenBars.gd" id="17_kebos"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/down/HLL_DOWN.PNG" id="18_rydkr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awxep"]
@@ -60,7 +61,6 @@ position = Vector2(11, 181)
 script = ExtResource("1_h0a2a")
 
 [node name="ClownTb" parent="." instance=ExtResource("2_djc2d")]
-visible = false
 
 [node name="Img2136" type="Sprite2D" parent="."]
 z_index = -785
@@ -107,7 +107,6 @@ scale = Vector2(5.91167, 5.91167)
 metadata/_edit_lock_ = true
 
 [node name="PlayerSpots" type="Node2D" parent="."]
-visible = false
 
 [node name="HeavenTb" parent="PlayerSpots" instance=ExtResource("8_n8gx8")]
 
@@ -115,7 +114,6 @@ visible = false
 position = Vector2(-9, -96)
 
 [node name="PlayerUI" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = -173.0
@@ -124,7 +122,6 @@ offset_bottom = 907.0
 scale = Vector2(0.997992, 0.995164)
 
 [node name="Buttons" type="Control" parent="PlayerUI"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -339,7 +336,7 @@ offset_bottom = 39.9994
 scale = Vector2(0.992759, 1.02564)
 theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ryeqi")
-step = 0.25
+step = 1.0
 
 [node name="HeavenData" type="Control" parent="PlayerUI/Data"]
 anchors_preset = 0
@@ -385,6 +382,7 @@ scale = Vector2(0.992759, 1.02564)
 theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2m07e")
 step = 0.25
+script = ExtResource("17_kebos")
 
 [node name="HeavenMagiaData" type="Control" parent="PlayerUI/Data/HeavenData"]
 anchors_preset = 0
@@ -428,12 +426,14 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_ryeqi")
 step = 0.25
 
 [node name="HvnDown" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(618, 392)
 rotation = 0.0506095
 scale = Vector2(0.189191, 0.189191)
 texture = ExtResource("17_2gdkg")
 
 [node name="HllDown" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(463, 438)
 rotation = -3.10526
 scale = Vector2(-0.159953, -0.159953)

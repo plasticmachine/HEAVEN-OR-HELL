@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://blt4k2vyaqst6"]
+
+[ext_resource type="Script" path="res://Resources/CharaStats.gd" id="1_lx6vb"]
+
+[resource]
+script = ExtResource("1_lx6vb")
+character_name = "Heaven"
+move_speed = 3500
+max_heart = 100
+current_heart = 0
+max_magia = 100
+current_magia = 100
+malice = 20
+deviltry = 20
+guts = 10
+luck = 1
+crit = 10

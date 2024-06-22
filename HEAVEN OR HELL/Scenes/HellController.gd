@@ -9,7 +9,8 @@ var meleeScript
 
 func _ready():
 	meleeScript = $Melee
-	
+	hellstats.subtract_heart(10)
+	print_debug(hellstats.current_heart)
 	#screen_size = get_viewport_rect().size
 	#hide()
 
@@ -38,8 +39,8 @@ func _process(delta):
 			current_animation = "down_right"
 		if angle == 0:
 			current_animation = "right"
-	hellstats.subtract_heart(10)
-	print_debug(hellstats.current_heart)
+	#hellstats.subtract_heart(10)
+	#print_debug(hellstats.current_heart)
 	velocity = input_dir * hellstats.move_speed
 	move_and_slide()
 	$AnimatedSprite2D.play(current_animation)

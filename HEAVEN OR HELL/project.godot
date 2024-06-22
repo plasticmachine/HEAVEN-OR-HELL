@@ -15,6 +15,7 @@ config/description="a little game about an angel and a devil finding eachother i
 config/version=".3a"
 run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+run/max_fps=60
 boot_splash/image="res://art/reimu/down/Untitled_Artwork-21.png"
 config/icon="res://art/HEAVEN/down/downwalk_1.png"
 scenes/loading_scene_path="res://addons/yet_another_scene_manager/Scenes/Loading.tscn"
@@ -25,10 +26,8 @@ scenes/error_scene_path="res://addons/yet_another_scene_manager/Scenes/Error.tsc
 Spawning="*res://addons/BulletUpHell/Spawning.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Panku="*res://addons/panku_console/console.tscn"
-SceneManager="*res://addons/scene_manager/scene_manager.tscn"
-Scenes="*res://addons/scene_manager/scenes.gd"
-HellStats="*res://Resources/HellStats.tres"
 YASM="*res://addons/yet_another_scene_manager/Scenes.gd"
+StatSaver="*res://Scenes/stat_saver.tscn"
 
 [display]
 
@@ -45,7 +44,7 @@ project/assembly_name="Reimu-s Bad Day"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/yet_another_scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/yet_another_scene_manager/plugin.cfg")
 
 [input]
 

@@ -15,6 +15,7 @@ func _ready():
 		##print_debug(clownstats.heart)
 		#return
 
+
 func TurnBasedClownDialogue():
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/TurnBasedClown.dialogue"), "TurnBasedClown")
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -3,18 +3,22 @@ extends CharacterBody2D
 signal hit
 var current_animation = "idle"
 var angle = 0
-var heavenstats = ResourceLoader.load("res://Resources/HeavenStats.tres")
+var heavenstats = ResourceLoader.load("res://Resources/Stats/HeavenStats.tres")
 #var screen_size #size of game window
 var meleeScript
 
 
 func _ready():
 	meleeScript = $Melee
+	
 	#screen_size = get_viewport_rect().size
 	#hide()
 
 
 func _process(delta):
+	movement()
+
+func movement():
 	current_animation = "idle"
 	var input_dir = Input.get_vector("move_left_heaven", "move_right_heaven", "move_up_heaven","move_down_heaven")
 	if input_dir.length() != 0:
@@ -42,7 +46,6 @@ func _process(delta):
 	velocity = input_dir * heavenstats.move_speed
 	move_and_slide()
 	$AnimatedSprite2D.play(current_animation)
-
 
 func start(pos):
 	position = pos
