@@ -44,3 +44,4 @@ scale = Vector2(0.333159, 0.240973)
 texture = ExtResource("2_mge0u")
 
 [connection signal="pressed" from="Background/StartButton" to="Background/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="Background/ExitButton" to="Background/StartButton" method="_on_exit_button_pressed"]

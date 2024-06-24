@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=26 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scenes/TurnBased.gd" id="1_h0a2a"]
 [ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bjd0m1na5kwkn" path="res://art/GUI/battle_ui/buttons/attackbutton_presseddown.png" id="11_mr243"]
 [ext_resource type="Script" path="res://Scenes/HeavenButtons.gd" id="13_11hfm"]
 [ext_resource type="Script" path="res://Scenes/HellButtons2.gd" id="13_ie6y5"]
+[ext_resource type="Script" path="res://Scenes/Attackbutton3.gd" id="14_nfy1c"]
 [ext_resource type="Script" path="res://Scenes/HellBars.gd" id="15_5slww"]
 [ext_resource type="Texture2D" uid="uid://cqjy230u4evig" path="res://art/HEAVEN/down/HVN_DOWN.PNG" id="17_2gdkg"]
 [ext_resource type="Script" path="res://Scenes/HeavenBars.gd" id="17_kebos"]
@@ -171,6 +172,7 @@ scale = Vector2(0.115, 0.115)
 texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
+script = ExtResource("14_nfy1c")
 
 [node name="Attackbutton4" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
 layout_mode = 1
@@ -441,5 +443,6 @@ texture = ExtResource("18_rydkr")
 
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="PlayerUI/Buttons/HellButtons/Attackbutton1" method="_on_pressed"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="PlayerUI/Buttons/HellButtons/Attackbutton2" method="_on_pressed"]
+[connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="PlayerUI/Buttons/HellButtons/Attackbutton3" method="_on_pressed"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="PlayerUI/Buttons/HeavenButtons/Attackbutton1" method="_on_pressed"]
 [connection signal="value_changed" from="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartBar" to="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartBar" method="_on_value_changed"]
