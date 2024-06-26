@@ -6,6 +6,7 @@ class_name CharaStats
 @export var move_speed: int
 @export var max_heart : int
 @export var current_heart: int
+var rolling_health: int
 @export var max_magia : int
 @export var current_magia: int
 @export var malice: int
@@ -14,6 +15,7 @@ class_name CharaStats
 @export var luck: int
 @export var crit: int
 @export var crit_level: int
+
 ### MOVESPEED FUNCTIONS
 func add_move_speed(amount: int) -> void:
 		move_speed += amount
@@ -94,7 +96,6 @@ func add_malice(amount: int) -> void:
 		malice += amount
 		print_debug(character_name + " has " + str(malice) + " malice! (+" + str(amount) + ")")
 func subtract_malice(amount: int) -> void:
-	
 	if malice >= 1:
 		malice -= amount
 		print_debug(character_name + " has " + str(malice) + " malice! (-" + str(amount) + ")")
@@ -146,7 +147,7 @@ func divide_guts(divisor: float) -> void:
 	if divisor != 0:
 		guts = int(guts / divisor)
 	#emit_signal("stat_changed", "current_heart", current_heart
-### LUCK FUNCTIONS
+### LUCK FUNCTIONS  
 func add_luck(amount: int) -> void:
 		luck += amount
 		print_debug(character_name + " has " + str(luck) + " luck! (+" + str(amount) + ")")
@@ -169,15 +170,21 @@ func divide_luck(divisor: float) -> void:
 func add_crit(amount: int) -> void:
 		crit += amount
 		print_debug(character_name + " has " + str(crit) + " crit! (+" + str(amount) + ")")
-		if crit >= 1:
-			crit_level == 1
-			print_debug("with a " + str(crit)+ "% chance " + character_name + " can hit crits!!")
-		if crit >= 100 || crit > 199:
-			crit_level == 2
-			print_debug("with a " + str(crit/10) + "% chance " + character_name + " can hit double crits!!")
-		if crit >= 200:
-			crit_level == 3	
-			print_debug("with a " + str(crit/200) + "% chance " + character_name + " can hit triple crits!!")
+		if crit == 1 || crit <= 99:
+			crit_level = 1
+		if crit >= 100 || crit <= 199:
+			crit_level = 2
+		if crit > 199 || crit >= 300:
+			crit_level = 3	
+		if crit_level == 1:
+				print_debug("with a " + str(crit)+ "% chance " + character_name + " can hit single crits!!")
+		if crit_level == 2:
+			print_debug("with a " + str(crit)+ "% chance " + character_name + " can hit single crits!!")
+			print_debug("with a " + str(crit-100) + "% chance " + character_name + " can hit double crits!!")
+		if crit_level == 3:
+			print_debug("with a " + str(crit)+ "% chance " + character_name + " can hit single crits!!")
+			print_debug("with a " + str(crit-100) + "% chance " + character_name + " can hit double crits!!")
+			print_debug("with a " + str(crit-200) + "% chance " + character_name + " can hit triple crits!!")
 func subtract_crit(amount: int) -> void:
 	
 	if crit >= 1:
@@ -208,4 +215,4 @@ func reset_stats():
 	crit = 0
 	crit_level = 0
 	print_debug("reset all " + character_name + "'s stats to default")
-	print_debug( str(move_speed, max_heart, current_heart, max_magia, current_magia, malice, deviltry, guts, luck, crit, crit_level))
+	print_debug( str(move_speed) + str(max_heart) + str(current_heart) + str(max_magia) +  str(current_magia) +  str(malice) +  str(deviltry) + str(guts) + str(luck) + str(crit) + str(crit_level))

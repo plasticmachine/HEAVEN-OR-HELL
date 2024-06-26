@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/HellController.gd" id="1_2xahn"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/down/HLL_DOWN.PNG" id="1_ngb26"]
 [ext_resource type="Texture2D" uid="uid://crnfxajwh44pq" path="res://art/HELL/downleft/HLL_DOWNLFT.PNG" id="2_jfx2o"]
-[ext_resource type="Resource" uid="uid://ibufqr2keuwu" path="res://Resources/Stats/HellStats.tres" id="2_wk4ok"]
+[ext_resource type="Resource" uid="uid://36a8oci055hh" path="res://Resources/Stats/HellStats.tres" id="2_wk4ok"]
 [ext_resource type="Texture2D" uid="uid://56maxi4bb07u" path="res://art/HELL/downright/HLL_DOWNRIGHT.png" id="3_iru1u"]
 [ext_resource type="Texture2D" uid="uid://c43pq2sycxv8q" path="res://art/HELL/left/HLL_LEFT.PNG" id="4_83xb8"]
 [ext_resource type="Texture2D" uid="uid://cxt68tr2kbcs" path="res://art/HELL/right/HLL_RIGHT.png" id="5_72rqs"]
