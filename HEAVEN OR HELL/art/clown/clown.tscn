@@ -88,6 +88,8 @@ radius = 112.4
 sprite_frames = SubResource("SpriteFrames_i0p1m")
 animation = &"!clowndance"
 autoplay = "!clowndance"
+frame = 5
+frame_progress = 0.999991
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-24, 144)

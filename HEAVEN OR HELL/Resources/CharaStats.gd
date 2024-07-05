@@ -6,16 +6,15 @@ class_name CharaStats
 @export var move_speed: int
 @export var max_heart : int
 @export var current_heart: int
-var rolling_health: int
 @export var max_magia : int
 @export var current_magia: int
 @export var malice: int
 @export var deviltry: int
-@export var guts: int
+@export var guts: float
+@export var pain_tolerance: float
 @export var luck: int
 @export var crit: int
 @export var crit_level: int
-
 ### MOVESPEED FUNCTIONS
 func add_move_speed(amount: int) -> void:
 		move_speed += amount
@@ -103,12 +102,12 @@ func subtract_malice(amount: int) -> void:
 		malice == 0
 		print_debug(character_name + "'s violence has come to an end. ")
 func multiply_malice(factor: float) -> void:
+
 	malice = int(malice * factor)
-	#emit_signal("stat_changed", "current_heart", current_heart)
+	move_speed = int(malice * factor)
 func divide_malice(divisor: float) -> void:
 	if divisor != 0:
 		malice = int(malice / divisor)
-	#emit_signal("stat_changed", "current_heart", current_heart)
 ### DEVILTRY FUNCTIONS
 func add_deviltry(amount: int) -> void:
 		deviltry += amount
@@ -130,8 +129,12 @@ func divide_deviltry(divisor: float) -> void:
 	#emit_signal("stat_changed", "current_heart", current_heart)
 ### GUTS FUNCTIONS
 func add_guts(amount: int) -> void:
+	if guts < 50:
 		guts += amount
 		print_debug(character_name + " has " + str(guts) + " guts! (+" + str(amount) + ")")
+	else: 
+		guts = 50
+		print_debug(character_name + "'s max guts is 50")
 func subtract_guts(amount: int) -> void:
 	
 	if guts >= 1:
@@ -147,7 +150,7 @@ func divide_guts(divisor: float) -> void:
 	if divisor != 0:
 		guts = int(guts / divisor)
 	#emit_signal("stat_changed", "current_heart", current_heart
-### LUCK FUNCTIONS  
+### LUCK FUNCTIONS
 func add_luck(amount: int) -> void:
 		luck += amount
 		print_debug(character_name + " has " + str(luck) + " luck! (+" + str(amount) + ")")
@@ -189,7 +192,7 @@ func subtract_crit(amount: int) -> void:
 	
 	if crit >= 1:
 		crit -= amount
-		print_debug(character_name + " has " + str(crit) + " luck! (-" + str(amount) + ")")
+		print_debug(character_name + " has " + str(crit) + " crit! (-" + str(amount) + ")")
 	else:
 		crit == 0
 		print_debug(character_name + " has been completely pacified.")
@@ -202,8 +205,14 @@ func divide_crit(divisor: float) -> void:
 	#emit_signal("stat_changed", "current_heart", current_heart
 
 ### STAT FUNCTIONS
+func calc_pain_tolerance():
+	pain_tolerance = (guts / 50) * 8
+	#print_debug(pain_tolerance)
+
+
+
 func reset_stats():
-	move_speed = 300
+	move_speed = 3500
 	max_heart = 100
 	current_heart = 10
 	max_magia = 100
@@ -215,4 +224,4 @@ func reset_stats():
 	crit = 0
 	crit_level = 0
 	print_debug("reset all " + character_name + "'s stats to default")
-	print_debug( str(move_speed) + str(max_heart) + str(current_heart) + str(max_magia) +  str(current_magia) +  str(malice) +  str(deviltry) + str(guts) + str(luck) + str(crit) + str(crit_level))
+	print_debug( str(move_speed, max_heart, current_heart, max_magia, current_magia, malice, deviltry, guts, luck, crit, crit_level))

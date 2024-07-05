@@ -1,18 +1,19 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://36a8oci055hh"]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://ibufqr2keuwu"]
 
 [ext_resource type="Script" path="res://Resources/CharaStats.gd" id="1_r2u21"]
 
 [resource]
 script = ExtResource("1_r2u21")
 character_name = "Hell"
-move_speed = 300
+move_speed = 3500
 max_heart = 100
-current_heart = 20
+current_heart = 85
 max_magia = 100
-current_magia = 20
-malice = 20
-deviltry = 20
-guts = 20
-luck = 10
-crit = 25
-crit_level = 2
+current_magia = 100
+malice = 140
+deviltry = 140
+guts = 10.0
+pain_tolerance = 1.6
+luck = 130
+crit = 250
+crit_level = 3

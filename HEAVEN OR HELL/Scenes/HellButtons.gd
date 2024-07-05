@@ -8,7 +8,7 @@ func _on_pressed():
 	hellstats.add_magia(10)
 	hellstats.add_malice(10)
 	hellstats.add_deviltry(10)
-	hellstats.add_guts(10)
+	#hellstats.add_guts(10)
 	hellstats.add_crit(25)
 	hellstats.add_luck(10)
 	

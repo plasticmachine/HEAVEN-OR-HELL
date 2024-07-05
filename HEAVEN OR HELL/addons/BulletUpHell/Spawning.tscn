@@ -204,8 +204,9 @@ cull_viewport_refresh = 60.0
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
 texture_filter = 3
 sprite_frames = SubResource("1")
-animation = &"FlipCard"
-frame_progress = 0.307566
+animation = &"Firework"
+frame = 3
+frame_progress = 0.736884
 
 [node name="Default" type="CollisionShape2D" parent="ShapeManager"]
 shape = SubResource("CircleShape2D_qyokg")

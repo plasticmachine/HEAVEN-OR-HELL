@@ -2,9 +2,9 @@ extends ProgressBar
 @onready var hellstats = load("res://Resources/Stats/HellStats.tres")
 @onready var hell_heart_progress_bar = $"."
 @onready var hell_magia_progress_bar = $"../../../HellMagiaData/HellMagiaPanel/HellMagiaBar"
-@export var speed: int
+@export var duration: float
 
-
+#@onready var magia_tween = get_tree().create_tween()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,14 +20,15 @@ func get_heart_values():
 	
 	hell_heart_progress_bar.max_value = hellstats.max_heart
 	hell_heart_progress_bar.value = hellstats.current_heart
-	
-	
 func update_heart_bar():
-	#var tween = get_tree().create_tween()
-	hell_heart_progress_bar.value = hellstats.current_heart
-	#tween.interpolate_value(hell_heart_progress_bar.value, hellstats.rolling_health, hellstats.current_health, 3, tween.TRANS_LINEAR, tween.EASE_OUT )
-
-
+	hellstats.calc_pain_tolerance()
+	var heart_tween = get_tree().create_tween()
+	heart_tween.set_trans(Tween.TRANS_LINEAR)
+	heart_tween.set_ease(Tween.EASE_IN_OUT)
+	heart_tween.tween_property(self, "value", hellstats.current_heart, hellstats.pain_tolerance)
+	#hell_heart_progress_bar.value = hellstats.current_heart
+	
+	
 func get_magia_value():
 	hell_magia_progress_bar.max_value = hellstats.max_magia
 	hell_magia_progress_bar.value = hellstats.current_magia
