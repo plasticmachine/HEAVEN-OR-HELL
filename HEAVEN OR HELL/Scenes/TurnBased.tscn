@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=44 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scenes/TurnBased.gd" id="1_h0a2a"]
 [ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
@@ -30,6 +30,7 @@
 [ext_resource type="Script" path="res://Scenes/HellButtons2.gd" id="13_ie6y5"]
 [ext_resource type="Script" path="res://Scenes/Attackbutton3.gd" id="14_nfy1c"]
 [ext_resource type="Script" path="res://Scenes/HellBars.gd" id="15_5slww"]
+[ext_resource type="Script" path="res://Scenes/EnemyPath.gd" id="15_qlv6m"]
 [ext_resource type="Script" path="res://Scenes/Attackbutton2.gd" id="16_62r43"]
 [ext_resource type="Texture2D" uid="uid://cqjy230u4evig" path="res://art/HEAVEN/down/HVN_DOWN.PNG" id="17_2gdkg"]
 [ext_resource type="Script" path="res://Scenes/HeavenBars.gd" id="17_kebos"]
@@ -102,6 +103,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve2D" id="Curve2D_shoiy"]
+_data = {
+"points": PackedVector2Array(78.5663, 70.7757, -78.5663, -70.7757, 903, 241, -1636.15, -86.3523, 1636.15, 86.3523, -157, 1119, -2291.69, 99.8049, 2291.69, -99.8049, 1927, 1123, 17.5093, -186.522, -17.5093, 186.522, 1035, 244, 0, 0, 0, 0, 866, 283, -239.439, 75.2219, 239.439, -75.2219, 929, 98, 0, 0, 0, 0, 903, 242)
+}
+point_count = 7
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awxep"]
 bg_color = Color(0, 0, 0, 0.498039)
 
@@ -144,8 +151,6 @@ script = ExtResource("1_h0a2a")
 
 [node name="EnemySpot" type="Node2D" parent="."]
 
-[node name="ClownTb" parent="EnemySpot" instance=ExtResource("2_djc2d")]
-
 [node name="BattleEffectManager" type="AnimatedSprite2D" parent="EnemySpot"]
 z_index = 350
 position = Vector2(951, 511)
@@ -154,13 +159,27 @@ animation = &"basic_heal"
 autoplay = "hide"
 script = ExtResource("7_p1xji")
 
-[node name="BattleEffectManager2" type="AnimatedSprite2D" parent="EnemySpot"]
-z_index = 350
-position = Vector2(921, 511)
-sprite_frames = SubResource("SpriteFrames_jmycf")
-animation = &"basic_heal"
-autoplay = "hide"
-script = ExtResource("7_p1xji")
+[node name="EnemyHitSpot" type="Node2D" parent="EnemySpot"]
+position = Vector2(912, 139)
+
+[node name="EnemyEffectSpot" type="Node2D" parent="EnemySpot"]
+position = Vector2(983, 103)
+
+[node name="Path2D" type="Path2D" parent="EnemySpot"]
+curve = SubResource("Curve2D_shoiy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpot/Path2D"]
+position = Vector2(903, 241)
+rotation = 2.6014
+rotates = false
+cubic_interp = false
+script = ExtResource("15_qlv6m")
+speed = 700
+
+[node name="ClownTb" parent="EnemySpot/Path2D/PathFollow2D" instance=ExtResource("2_djc2d")]
+position = Vector2(656.652, 689.963)
+rotation = -2.6014
+scale = Vector2(1, 1)
 
 [node name="Img2136" type="Sprite2D" parent="."]
 z_index = -785

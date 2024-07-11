@@ -1,10 +1,7 @@
-extends Path2D
+extends Node2D
 
-var inc=0
-var speed=500
+@export var speed = 4
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	inc+=delta*speed
-	$PathFollow2D.h_offset=inc
-	$PathFollow2D.v_offset=inc
+func _physics_process(delta: float) -> void:
+	self.progress += speed * delta
+

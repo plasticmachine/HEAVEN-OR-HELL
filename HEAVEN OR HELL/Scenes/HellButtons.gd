@@ -1,11 +1,12 @@
 extends TextureButton
 var hellstats = ResourceLoader.load("res://Resources/Stats/HellStats.tres")
-var heavenstats= ResourceLoader.load("res://Resources/Stats/HeavenStats.tres")
+var heavenstats = ResourceLoader.load("res://Resources/Stats/HeavenStats.tres")
 @onready var effect_animation = $"../../../../EnemySpot/BattleEffectManager"
 
 
 func _on_pressed():
-	heavenstats.add_heart(50)
+	
+	hellstats.add_heart(50)
 	effect_animation.find_effect_spot_hell()
 	effect_animation.play("basic_heal")
 	

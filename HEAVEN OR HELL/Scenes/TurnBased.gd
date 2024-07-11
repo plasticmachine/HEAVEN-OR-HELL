@@ -23,3 +23,5 @@ func TurnBasedClownDialogue():
 func _process(delta):
 	#DialogueTesting()
 	pass
+
+

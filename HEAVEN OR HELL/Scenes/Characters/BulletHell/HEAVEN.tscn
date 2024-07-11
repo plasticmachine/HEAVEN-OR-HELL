@@ -1,18 +1,28 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2uwu4w0ss13g"]
+[gd_scene load_steps=26 format=3 uid="uid://b2uwu4w0ss13g"]
 
 [ext_resource type="Script" path="res://Scenes/HeavenController.gd" id="1_oafid"]
 [ext_resource type="Texture2D" uid="uid://cqjy230u4evig" path="res://art/HEAVEN/down/HVN_DOWN.PNG" id="2_wthhb"]
 [ext_resource type="Texture2D" uid="uid://cx8roq3eh02nm" path="res://art/HEAVEN/downleft/HVN_DOWNLFT.PNG" id="3_aasn2"]
 [ext_resource type="Texture2D" uid="uid://csg4irto0ffi8" path="res://art/HEAVEN/downright/HVN_DOWNRIGHT.png" id="4_7hota"]
-[ext_resource type="Texture2D" uid="uid://cors70ddbueqi" path="res://art/HEAVEN/left/HVN_LEFT.PNG" id="5_67auj"]
-[ext_resource type="Texture2D" uid="uid://6ahby4m5hfer" path="res://art/HEAVEN/right/HVN_RIGHT.png" id="6_j4sl1"]
+[ext_resource type="Texture2D" uid="uid://barq1ab4a12oc" path="res://art/HEAVEN/left/animation/IMG_4198.PNG" id="6_pjvnj"]
 [ext_resource type="Texture2D" uid="uid://co55qiygayggp" path="res://art/HEAVEN/up/HVN_UP.PNG" id="7_ho28a"]
+[ext_resource type="Texture2D" uid="uid://02f3rnibk66i" path="res://art/HEAVEN/left/animation/IMG_4199.PNG" id="7_tn70m"]
 [ext_resource type="Texture2D" uid="uid://dvngeb7w1fgm7" path="res://art/HEAVEN/upleft/HVN_UPLFT.PNG" id="8_6oo3p"]
+[ext_resource type="Texture2D" uid="uid://45enbld8qwbv" path="res://art/HEAVEN/left/animation/IMG_4200.PNG" id="8_8cgbu"]
+[ext_resource type="Texture2D" uid="uid://co85cwsucwm0x" path="res://art/HEAVEN/left/animation/IMG_4201.PNG" id="9_3qhws"]
 [ext_resource type="Texture2D" uid="uid://doa126x42jfuc" path="res://art/HEAVEN/upright/HVN_UPRIGHT.png" id="9_ww5ff"]
+[ext_resource type="Texture2D" uid="uid://cepiogua1hojj" path="res://art/HEAVEN/left/animation/IMG_4202.PNG" id="10_2te2i"]
 [ext_resource type="PackedScene" uid="uid://co8jc0uhro10o" path="res://Scenes/melee.tscn" id="10_al23b"]
+[ext_resource type="Texture2D" uid="uid://cxeekjt2ei0cn" path="res://art/HEAVEN/right/animation/Untitled_Artwork-2.png" id="11_0tobi"]
+[ext_resource type="Texture2D" uid="uid://4e7gocle1ckd" path="res://art/HEAVEN/left/animation/IMG_4203.PNG" id="11_2absr"]
 [ext_resource type="Texture2D" uid="uid://cox5c6wprxw51" path="res://art/GUI/bg.png" id="11_132pl"]
 [ext_resource type="Texture2D" uid="uid://datk8wkaxjvlp" path="res://art/GUI/fill.png" id="12_g72hy"]
+[ext_resource type="Texture2D" uid="uid://c7ct0w4alx5pm" path="res://art/HEAVEN/right/animation/Untitled_Artwork-3.png" id="12_j5lk8"]
+[ext_resource type="Texture2D" uid="uid://cmmx57b15pxgo" path="res://art/HEAVEN/right/animation/Untitled_Artwork-4.png" id="13_1yd3f"]
 [ext_resource type="Script" path="res://Scenes/ActionTimerBar.gd" id="13_vheeq"]
+[ext_resource type="Texture2D" uid="uid://dkexxcf3farv5" path="res://art/HEAVEN/right/animation/Untitled_Artwork-5.png" id="14_42re2"]
+[ext_resource type="Texture2D" uid="uid://dfavgf6j5xou1" path="res://art/HEAVEN/right/animation/Untitled_Artwork-6.png" id="15_fxiv2"]
+[ext_resource type="Texture2D" uid="uid://bjrvplku5ubi8" path="res://art/HEAVEN/right/animation/Untitled_Artwork-7.png" id="16_v3aub"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
 radius = 59.2
@@ -53,7 +63,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_67auj")
+"texture": ExtResource("6_pjvnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tn70m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8cgbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3qhws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2te2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2absr")
 }],
 "loop": true,
 "name": &"left",
@@ -61,7 +86,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_j4sl1")
+"texture": ExtResource("11_0tobi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_j5lk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1yd3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_42re2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fxiv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_v3aub")
 }],
 "loop": true,
 "name": &"right",
@@ -107,7 +147,8 @@ shape = SubResource("CircleShape2D_7egpc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lblot")
-animation = &"idle"
+animation = &"right"
+frame_progress = 0.950792
 
 [node name="Melee" parent="." instance=ExtResource("10_al23b")]
 position = Vector2(-1, -1)
