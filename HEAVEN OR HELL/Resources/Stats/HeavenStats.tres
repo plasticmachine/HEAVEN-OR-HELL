@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://blt4k2vyaqst6"]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://driup8jijsloo"]
 
 [ext_resource type="Script" path="res://Resources/CharaStats.gd" id="1_lx6vb"]
 
@@ -9,7 +9,7 @@ move_speed = 3500
 max_heart = 100
 current_heart = 100
 max_magia = 100
-current_magia = 50
+current_magia = 100
 malice = 20
 deviltry = 20
 guts = 10.0

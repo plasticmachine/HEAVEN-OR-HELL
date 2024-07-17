@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=45 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scenes/TurnBased.gd" id="1_h0a2a"]
 [ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
@@ -33,6 +33,7 @@
 [ext_resource type="Script" path="res://Scenes/EnemyPath.gd" id="15_qlv6m"]
 [ext_resource type="Script" path="res://Scenes/Attackbutton2.gd" id="16_62r43"]
 [ext_resource type="Texture2D" uid="uid://cqjy230u4evig" path="res://art/HEAVEN/down/HVN_DOWN.PNG" id="17_2gdkg"]
+[ext_resource type="AudioStream" uid="uid://dl4h5006li2gr" path="res://art/turnbased effects/healing effects/basic heal/current progress (1).wav" id="17_13n0m"]
 [ext_resource type="Script" path="res://Scenes/HeavenBars.gd" id="17_kebos"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/down/HLL_DOWN.PNG" id="18_rydkr"]
 [ext_resource type="Script" path="res://Scenes/healbutton.gd" id="30_n7j6j"]
@@ -179,7 +180,13 @@ speed = 700
 [node name="ClownTb" parent="EnemySpot/Path2D/PathFollow2D" instance=ExtResource("2_djc2d")]
 position = Vector2(656.652, 689.963)
 rotation = -2.6014
-scale = Vector2(1, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="EnemySpot/Path2D/PathFollow2D/ClownTb"]
+position = Vector2(916, 161.002)
+stream = ExtResource("17_13n0m")
+volume_db = -24.762
+autoplay = true
+max_distance = 2020.0
 
 [node name="Img2136" type="Sprite2D" parent="."]
 z_index = -785

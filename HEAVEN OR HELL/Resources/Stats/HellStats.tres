@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://ibufqr2keuwu"]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://ih3gy5pfgxcn"]
 
 [ext_resource type="Script" path="res://Resources/CharaStats.gd" id="1_r2u21"]
 
@@ -10,10 +10,10 @@ max_heart = 100
 current_heart = 100
 max_magia = 100
 current_magia = 0
-malice = 690
-deviltry = 690
+malice = 510
+deviltry = 510
 guts = 10.0
 pain_tolerance = 1.6
-luck = 680
+luck = 500
 crit = -50
 crit_level = 3
