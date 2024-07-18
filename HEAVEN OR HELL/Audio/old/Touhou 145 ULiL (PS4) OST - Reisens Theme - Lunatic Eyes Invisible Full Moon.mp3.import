@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://p3n2c6h8s2fp"
+path="res://.godot/imported/Touhou 145 ULiL (PS4) OST - Reisens Theme - Lunatic Eyes Invisible Full Moon.mp3-ea54a446146bd26801a1d71e075488e7.mp3str"
+
+[deps]
+
+source_file="res://Audio/old/Touhou 145 ULiL (PS4) OST - Reisens Theme - Lunatic Eyes Invisible Full Moon.mp3"
+dest_files=["res://.godot/imported/Touhou 145 ULiL (PS4) OST - Reisens Theme - Lunatic Eyes Invisible Full Moon.mp3-ea54a446146bd26801a1d71e075488e7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=46 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scenes/TurnBased.gd" id="1_h0a2a"]
 [ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
@@ -33,8 +33,8 @@
 [ext_resource type="Script" path="res://Scenes/EnemyPath.gd" id="15_qlv6m"]
 [ext_resource type="Script" path="res://Scenes/Attackbutton2.gd" id="16_62r43"]
 [ext_resource type="Texture2D" uid="uid://cqjy230u4evig" path="res://art/HEAVEN/down/HVN_DOWN.PNG" id="17_2gdkg"]
-[ext_resource type="AudioStream" uid="uid://dl4h5006li2gr" path="res://art/turnbased effects/healing effects/basic heal/current progress (1).wav" id="17_13n0m"]
 [ext_resource type="Script" path="res://Scenes/HeavenBars.gd" id="17_kebos"]
+[ext_resource type="AudioStream" uid="uid://bp4gmvnpy1x17" path="res://Audio/Music/Clown/Turnbased/making a song with only soundfonts.wav" id="17_y1u7i"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/down/HLL_DOWN.PNG" id="18_rydkr"]
 [ext_resource type="Script" path="res://Scenes/healbutton.gd" id="30_n7j6j"]
 
@@ -110,6 +110,12 @@ _data = {
 }
 point_count = 7
 
+[sub_resource type="Curve2D" id="Curve2D_f2lxk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1603, 245, 0, 0, 0, 0, 260, 245, 0, 0, 0, 0, 260, 245, 0, 0, 0, 0, 1603, 245, 0, 0, 0, 0, 1603, 245)
+}
+point_count = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awxep"]
 bg_color = Color(0, 0, 0, 0.498039)
 
@@ -154,41 +160,45 @@ script = ExtResource("1_h0a2a")
 
 [node name="BattleEffectManager" type="AnimatedSprite2D" parent="EnemySpot"]
 z_index = 350
-position = Vector2(951, 511)
 sprite_frames = SubResource("SpriteFrames_jmycf")
 animation = &"basic_heal"
 autoplay = "hide"
 script = ExtResource("7_p1xji")
 
-[node name="EnemyHitSpot" type="Node2D" parent="EnemySpot"]
-position = Vector2(912, 139)
-
-[node name="EnemyEffectSpot" type="Node2D" parent="EnemySpot"]
-position = Vector2(983, 103)
-
 [node name="Path2D" type="Path2D" parent="EnemySpot"]
+visible = false
 curve = SubResource("Curve2D_shoiy")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpot/Path2D"]
-position = Vector2(903, 241)
-rotation = 2.6014
+[node name="ClownDancePath" type="Path2D" parent="EnemySpot"]
+position = Vector2(0, 95)
+curve = SubResource("Curve2D_f2lxk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpot/ClownDancePath"]
+position = Vector2(1150.41, 245)
+rotation = 3.14
+progress = 452.591
 rotates = false
 cubic_interp = false
 script = ExtResource("15_qlv6m")
-speed = 700
+speed = 350
 
-[node name="ClownTb" parent="EnemySpot/Path2D/PathFollow2D" instance=ExtResource("2_djc2d")]
-position = Vector2(656.652, 689.963)
-rotation = -2.6014
+[node name="ClownTb" parent="EnemySpot/ClownDancePath/PathFollow2D" instance=ExtResource("2_djc2d")]
+rotation = -3.20617
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="EnemySpot/Path2D/PathFollow2D/ClownTb"]
-position = Vector2(916, 161.002)
-stream = ExtResource("17_13n0m")
+[node name="ClownTrack" type="AudioStreamPlayer2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
+position = Vector2(31, -143)
+stream = ExtResource("17_y1u7i")
 volume_db = -24.762
 autoplay = true
 max_distance = 2020.0
 
-[node name="Img2136" type="Sprite2D" parent="."]
+[node name="EnemyHitSpot" type="Node2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
+rotation = -1.58359
+
+[node name="EnemyEffectSpot" type="Node2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
+rotation = -3.10235
+
+[node name="Background" type="Sprite2D" parent="."]
 z_index = -785
 position = Vector2(944, 361)
 scale = Vector2(0.51, 0.51)
@@ -265,6 +275,7 @@ offset_top = -173.0
 offset_right = 1920.0
 offset_bottom = 907.0
 scale = Vector2(0.997992, 0.995164)
+metadata/_edit_lock_ = true
 
 [node name="Buttons" type="Control" parent="PlayerUI"]
 anchors_preset = 0
@@ -592,6 +603,7 @@ texture = ExtResource("18_rydkr")
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="PlayerUI/Buttons/HellButtons/Attackbutton2" method="_on_pressed"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="PlayerUI/Buttons/HellButtons/Attackbutton3" method="_on_pressed"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="PlayerUI/Buttons/HeavenButtons/Attackbutton1" method="_on_pressed"]
+[connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="EnemySpot/ClownDancePath/PathFollow2D/ClownTb" method="_on_attackbutton_2_pressed"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="PlayerUI/Buttons/HeavenButtons/Attackbutton2" method="_on_pressed"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton3" to="PlayerUI/Buttons/HeavenButtons/Attackbutton3" method="_on_pressed"]
 [connection signal="value_changed" from="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartBar" to="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartBar" method="_on_value_changed"]

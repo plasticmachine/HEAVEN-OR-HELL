@@ -1,6 +1,5 @@
 extends Node2D
-@onready var clown = $ClownTb
-@onready var hell = $PlayerSpots/HellTb
+#@onready var clown = $ClownTbs
 
 
 

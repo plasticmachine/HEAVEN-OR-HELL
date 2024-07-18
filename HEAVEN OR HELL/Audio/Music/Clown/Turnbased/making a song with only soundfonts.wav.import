@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bp4gmvnpy1x17"
+path="res://.godot/imported/making a song with only soundfonts.wav-bf382edd5da8a5b0a42216bc268e8aac.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Clown/Turnbased/making a song with only soundfonts.wav"
+dest_files=["res://.godot/imported/making a song with only soundfonts.wav-bf382edd5da8a5b0a42216bc268e8aac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

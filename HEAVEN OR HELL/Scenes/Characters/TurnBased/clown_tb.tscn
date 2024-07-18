@@ -1,19 +1,99 @@
-[gd_scene load_steps=9 format=3 uid="uid://dt06qpfhtfajd"]
+[gd_scene load_steps=23 format=3 uid="uid://dt06qpfhtfajd"]
 
-[ext_resource type="Script" path="res://Scripts/CharacterStatsOld.gd" id="1_bt10x"]
+[ext_resource type="Texture2D" uid="uid://n8jftbuyirgl" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-1.png" id="2_eba1o"]
 [ext_resource type="Texture2D" uid="uid://damkva1jjkcsg" path="res://art/clown/TurnBased/CLOWN_TBTEST.png" id="2_y11lw"]
+[ext_resource type="Texture2D" uid="uid://cfotdg8ca30fb" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-2.png" id="3_60psw"]
 [ext_resource type="Texture2D" uid="uid://bofbepkeq1c1l" path="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-1 (1).png" id="3_vfo8v"]
 [ext_resource type="Texture2D" uid="uid://3ak4jyq1ggog" path="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-2 (1).png" id="4_w7f7k"]
+[ext_resource type="Texture2D" uid="uid://rua0dpkvq31i" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-3.png" id="4_ypl8i"]
 [ext_resource type="Texture2D" uid="uid://dglrsk4gf3lbq" path="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-3 (1).png" id="5_ls15u"]
+[ext_resource type="Texture2D" uid="uid://gslghf60ngnk" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-4.png" id="5_mapnn"]
 [ext_resource type="Texture2D" uid="uid://h37eu3m3e0l4" path="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-4 (1).png" id="6_klxit"]
+[ext_resource type="Texture2D" uid="uid://cu0dnk01350s6" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-5.png" id="6_m8fou"]
 [ext_resource type="Texture2D" uid="uid://b6f3845k15xkg" path="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-5 (1).png" id="7_0mr4t"]
+[ext_resource type="Texture2D" uid="uid://c77lycpn463ho" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-6.png" id="7_ddmd5"]
+[ext_resource type="Texture2D" uid="uid://d4hxu2q4u8ttx" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-7.png" id="8_mkab4"]
+[ext_resource type="Texture2D" uid="uid://dvbcatq66ofkl" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-8.png" id="9_at1fr"]
+[ext_resource type="Texture2D" uid="uid://bhheememfg3xy" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-9.png" id="10_sd7w5"]
+[ext_resource type="Texture2D" uid="uid://bilc31csiaywn" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-10.png" id="11_i0jof"]
+[ext_resource type="Texture2D" uid="uid://cjjvp5jotl4cw" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-11.png" id="12_tm8se"]
+[ext_resource type="Texture2D" uid="uid://c7c5ufsur7dql" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-12.png" id="13_fjqof"]
+[ext_resource type="Texture2D" uid="uid://25bhugf8moss" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-13.png" id="14_tsihw"]
+[ext_resource type="Texture2D" uid="uid://eauy65e4acw8" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-14.png" id="15_xe1gs"]
+[ext_resource type="Script" path="res://Scenes/Characters/TurnBased/ClownTbAnimationManager.gd" id="21_rxlsl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2puv6"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"DefaultStance",
-"speed": 5.0
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eba1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_60psw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_60psw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ypl8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ypl8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mapnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mapnn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m8fou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ddmd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mkab4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mkab4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_at1fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sd7w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_i0jof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tm8se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tm8se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fjqof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fjqof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tsihw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tsihw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xe1gs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xe1gs")
+}],
+"loop": false,
+"name": &"Kicks",
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -49,9 +129,7 @@ animations = [{
 }]
 
 [node name="ClownTb" type="Node2D"]
-script = ExtResource("1_bt10x")
-charactername = "Clown"
-heart = 100
+script = ExtResource("21_rxlsl")
 
 [node name="ClownTbtest" type="Sprite2D" parent="."]
 visible = false
@@ -62,9 +140,9 @@ scale = Vector2(0.445821, 0.445821)
 texture = ExtResource("2_y11lw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(890, 363)
 scale = Vector2(0.467479, 0.467479)
 sprite_frames = SubResource("SpriteFrames_2puv6")
-animation = &"Spins"
+animation = &"Kicks"
 autoplay = "Spins"
-frame_progress = 0.0355448
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
