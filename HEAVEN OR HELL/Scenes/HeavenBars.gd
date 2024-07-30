@@ -33,4 +33,3 @@ func get_magia_value():
 	
 func update_magia_value():
 	heaven_magia_progress_bar.value = heavenstats.current_magia
-

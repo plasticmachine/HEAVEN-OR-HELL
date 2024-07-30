@@ -4,6 +4,7 @@ class_name CharaStats
 
 @export var character_name: String = ""
 @export var move_speed: int
+@export var run_speed: int
 @export var max_heart : int
 @export var current_heart: int
 @export var max_magia : int

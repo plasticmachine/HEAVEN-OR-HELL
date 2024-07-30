@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawner.gd" id="1"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="2_ai2re"]
-[ext_resource type="Texture2D" uid="uid://61toyfq81eyw" path="res://art/bullets/CLOWN/BOWLINGBALL/IMG_2353.PNG" id="3_nbhfe"]
-[ext_resource type="Texture2D" uid="uid://bfyjk8g5mgro4" path="res://art/bullets/CLOWN/BOWLINGBALL/IMG_2354.PNG" id="4_gyenv"]
-[ext_resource type="Texture2D" uid="uid://dcuydijov3" path="res://art/bullets/CLOWN/BOWLINGBALL/IMG_2355.PNG" id="5_7mbi0"]
+[ext_resource type="Texture2D" uid="uid://61toyfq81eyw" path="res://art/bullets/CLOWN/BOWLINGBALL/old/IMG_2353.PNG" id="3_nbhfe"]
+[ext_resource type="Texture2D" uid="uid://bfyjk8g5mgro4" path="res://art/bullets/CLOWN/BOWLINGBALL/old/IMG_2354.PNG" id="4_gyenv"]
+[ext_resource type="Texture2D" uid="uid://dcuydijov3" path="res://art/bullets/CLOWN/BOWLINGBALL/old/IMG_2355.PNG" id="5_7mbi0"]
 [ext_resource type="AudioStream" uid="uid://bckuln4ju0p2u" path="res://addons/BulletUpHell/Bullet/Hit Hurt.wav" id="5_rada6"]
 [ext_resource type="Texture2D" uid="uid://6xap1s4ohuc8" path="res://art/bullets/CLOWN/FIREWORK/0.png" id="6_45tvb"]
 [ext_resource type="Texture2D" uid="uid://el4b0viurudt" path="res://art/bullets/CLOWN/FIREWORK/1.png" id="7_x28r6"]

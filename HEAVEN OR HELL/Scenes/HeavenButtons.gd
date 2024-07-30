@@ -12,3 +12,4 @@ func _on_pressed():
 	
 	StatSaver.save_hellstats_to_file("res://Resources/Stats/HellStats.tres")
 	StatSaver.save_heavenstats_to_file("res://Resources/Stats/HeavenStats.tres")
+	StatSaver.save_clownstats_to_file("res://Resources/Stats/Clown.tres")

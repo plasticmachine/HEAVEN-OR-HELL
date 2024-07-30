@@ -45,7 +45,7 @@ func _on_start_timer_timeout():
 #	#Sets the mobs direction perpendicular to the path's direction
 #	var direction = mob_spawn_location.rotation + PI / 2
 #
-#	#Set the mobs position to a random location on the mobspawnerlocations path2D node
+#	#Set the mobswdasdawd position to a random location on the mobspawnerlocations path2D node
 #	mob.position = mob_spawn_location.position
 #
 #	#Adds some randomness to the direction the mob being spawned is facing
