@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://deecqqpf2gy63"]
 
-[ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/IMG_2136.PNG" id="1_nurjv"]
+[ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/TB/IMG_2136.PNG" id="1_nurjv"]
 [ext_resource type="Script" path="res://Scenes/MainMenuStart.gd" id="2_kfhon"]
 [ext_resource type="Texture2D" uid="uid://dpatl5wwkwt6m" path="res://art/backgrounds/Sprite-0001.png" id="2_mge0u"]
 

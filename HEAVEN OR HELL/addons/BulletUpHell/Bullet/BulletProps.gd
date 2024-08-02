@@ -9,6 +9,8 @@ class_name BulletProps
 @export_range(-PI,PI) var angle:float = 0
 @export var groups:PackedStringArray
 
+@export var custom_data:Dictionary = Spawning.custom_bullet_prop_data
+
 ## destruction
 @export_group("Destruction", "death_")
 @export_range(0, 999999, 0.001, "hide_slider") var death_after_time:float = 30
@@ -51,6 +53,7 @@ var curve:Curve2D = null
 @export var spec_no_collision:bool = false
 @export var spec_rotating_speed:float = 0.0
 @export var spec_only_spin_sprite:bool = true
+@export var spec_weight:float = 1
 #var spec_angle_no_colliding:float = 0.0
 #var spec_angle_no_coll_offset:float = 0.0
 ## advanced scale
@@ -88,8 +91,6 @@ var homing_detection_dist:float = 0
 var homing_start_signal:String = ""
 var homing_range:Vector2 = Vector2(9999, 20)
 var homing_imprecision:Vector2 = Vector2(0,0)
-
-var custom_data:Dictionary = Spawning.custom_bullet_prop_data
 
 @export_subgroup("","")
 ## random

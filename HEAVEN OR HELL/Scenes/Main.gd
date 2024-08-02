@@ -5,6 +5,11 @@ extends Node
 var score
 #var difficulty = 0.60
 
+
+func _ready():
+	Engine.max_fps = 60
+
+
 func _on_score_timer_timeout():
 	score += 1
 	#difficulty -= 0.01 #increases the score by one every time the score timer times out

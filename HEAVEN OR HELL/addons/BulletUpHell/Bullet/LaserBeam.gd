@@ -9,18 +9,21 @@ signal laser_built
 
 const INFINITE:float = -1
 
-#@export var button:bool = false : set = set_button
-@export var enabled:bool = true
+@export var enabled:bool = true : set = set_enabled
 @export_range(0, 99999, 1.0, "suffix:px") var laser_length:float = 80 : set = set_laser_length
 @export_range(0, 99999, 1.0, "suffix:px") var laser_width:float = 16 : set = set_laser_width
 @export_range(-1, 99999, 1.0, "suffix:px") var max_whole_length:float = INFINITE
+
+@export_range(INFINITE, 99999, 0.001, "suffix:sec") var update_cooldown:float = INFINITE : set = set_update_cooldown
+#@export_subgroup("Debug")
+@export var show_collisions:bool = false : set = set_show_collisions
+@export var casting:bool = true
+
+@export_group("Shot")
 @export_range(INFINITE, 99999, 0.001, "suffix:sec") var max_shot_duration:float = INFINITE
 @export_range(INFINITE, 99999, 0.001, "hide_slider", "suffix:px/sec") var speed:float = INFINITE : set = set_speed
 enum SPEED {None, Length, Width}
 @export var expand_on:SPEED = SPEED.None : set = set_speed_type
-
-@export_range(INFINITE, 99999, 0.001, "suffix:sec") var update_cooldown:float = INFINITE : set = set_update_cooldown
-@export var show_collisions:bool = false : set = set_show_collisions
 
 @export_group("Collisions")
 @export_range(0, 99999, 0.001, "suffix:sec") var delay_collide:float = 0
@@ -36,16 +39,18 @@ enum GROUPLIST {WhiteList, BlackList}
 @export var bounce_group_list:GROUPLIST = GROUPLIST.WhiteList
 @export_range(0, 99999, 0.001, "hide_slider", "suffix:sec") var bounce_cooldown:float = 0
 @export_file("*.tscn") var bounce_spawn_on_bounce:String
+@export_placeholder("Pattern ID") var bounce_pattern_on_bounce:String
 @export_subgroup("Advanced")
 @export_range(0, 99999, 1.0, "hide_slider", "suffix:px") var bounce_min_length:float = 0
 @export_range(0, 99999, 0.1, "suffix:px") var BOUNCE_OFFSET:float = 11
 
-enum END {Delete, Stay, ShrinkW} #  shrinkL
+enum END {Delete, Stay, ShrinkW, Disable} #  shrinkL
 @export_group("On End")
-@export_range(INFINITE, 99999, 0.001, "suffix:sec") var stay_duration:float = 3
+@export_range(INFINITE, 99999, 0.001, "suffix:sec") var stay_duration:float = -1
 @export var on_end:END = END.Delete
 @export var can_end_midair:bool = true
 @export_file("*.tscn") var spawn_on_end:String
+@export_placeholder("Pattern ID") var pattern_on_end:String
 
 enum TEXTUREMODE {None, Tile, Stretch}
 enum CAP {None, Box, Round}
@@ -58,12 +63,11 @@ enum CAP {None, Box, Round}
 ###
 
 @onready var tween:Tween
-var Phys = PhysicsServer2D
 
 var points:Array[Vector2]
 var shapes:Array[CollisionShape2D]
 
-var update_idx = 0
+var update_idx:float = 0
 var can_update:bool = true
 var current_duration:float = 0
 var spawn_parent:Node
@@ -71,12 +75,39 @@ var instance_end:Node
 var instance_bounce:Node
 var instance_hit:Node
 
+var was_enabled:bool = false
 
-func set_button(value):
-#	can_update = true
-	reset_cast()
+
+
+func _reset_nodes():
+	if not has_node("Line2D"):
+		var instance = Line2D.new()
+		instance.default_color = Color.RED
+		instance.joint_mode = Line2D.LINE_JOINT_ROUND
+		instance.name = "Line2D"
+		add_child(instance)
+	if not has_node("RayCast2D"):
+		var instance = RayCast2D.new()
+		instance.target_position = Vector2(80,0)
+		instance.name = "RayCast2D"
+		add_child(instance)
+
+func disable(remove_nodes:bool=false):
+	#points.clear()
+	#shapes.clear()
+	for n in get_children():
+		if n is CollisionShape2D: n.queue_free()
+	if remove_nodes:
+		$Line2D.queue_free()
+		$RayCast2D.queue_free()
+	else:
+		$Line2D.clear_points()
+		$RayCast2D.enabled = false
 
 func _ready():
+	if not enabled or not casting: return
+	points.clear()
+	_reset_nodes()
 	if spawn_on_end != "": instance_end = load(spawn_on_end).instantiate()
 	if spawn_on_hit != "": instance_hit = load(spawn_on_hit).instantiate()
 	if bounce_spawn_on_bounce != "": instance_bounce = load(bounce_spawn_on_bounce).instantiate()
@@ -86,9 +117,10 @@ func _ready():
 	init_shapes()
 	laser_built.connect(set_can_update)
 	reset_cast()
+	was_enabled = true
 
 func _physics_process(delta):
-	if not enabled: return
+	if not enabled or not casting: return
 	if update_cooldown == INFINITE: return
 
 	update_idx += delta
@@ -100,6 +132,7 @@ func _physics_process(delta):
 		reset_cast()
 
 func init_shapes():
+	shapes.clear()
 	var shape:CollisionShape2D
 	for s in bounce_count+1:
 		shape = CollisionShape2D.new()
@@ -156,7 +189,7 @@ func ray_cast():
 			elif current_length + $RayCast2D.target_position.x >= max_whole_length-bounce_min_length:
 				$RayCast2D.target_position.x = max_whole_length-current_length-bounce_min_length
 		if bounce_cooldown > 0:
-			await get_tree().create_timer(bounce_cooldown).timeout
+			await get_tree().create_timer(bounce_cooldown, false).timeout
 		
 		# put the shapecast at the endpoint and rotate it to bounce of the collider for the next iteration
 		$RayCast2D.global_rotation = ($RayCast2D.global_position-pos).bounce(angle).angle()+PI
@@ -239,8 +272,9 @@ func ray_is_built(p_idx):
 			if p == points.size()-1: continue
 			instance_bounce.global_position = points[p]+global_position
 			spawn_parent.call_deferred("add_child", instance_bounce.duplicate())
+	if bounce_pattern_on_bounce != "": Spawning.spawn(get_parent(), bounce_pattern_on_bounce)
 	
-	if delay_collide > 0: await get_tree().create_timer(delay_collide).timeout
+	if delay_collide > 0: await get_tree().create_timer(delay_collide, false).timeout
 	shapes[p_idx].disabled = false
 
 func expand_width(end:float=laser_width):
@@ -253,11 +287,12 @@ func end_cast():
 	if spawn_on_end != "":
 		instance_end.global_position = points[-1]+global_position
 		spawn_parent.call_deferred("add_child", instance_end.duplicate())
+	if pattern_on_end != "": Spawning.spawn(get_parent(), pattern_on_end)
 	
 	laser_built.emit()
 	
 	if stay_duration == INFINITE or Engine.is_editor_hint(): return
-	elif stay_duration > 0: await get_tree().create_timer(stay_duration).timeout
+	elif stay_duration > 0: await get_tree().create_timer(stay_duration, false).timeout
 	
 	match on_end:
 		END.Delete: queue_free()
@@ -266,6 +301,7 @@ func end_cast():
 			await tween.finished
 			queue_free()
 		END.Stay: pass
+		END.Disable: disable()
 
 
 func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
@@ -284,6 +320,8 @@ func can_expand_width():
 
 ## SETGETS
 
+
+
 func set_show_collisions(value):
 	show_collisions = value
 	for s in get_children():
@@ -292,6 +330,7 @@ func set_show_collisions(value):
 
 func set_collide_with(value):
 	collide_with = value
+	_reset_nodes()
 	$RayCast2D.collide_with_areas = (collide_with > 1)
 	$RayCast2D.collide_with_bodies = (collide_with%2 == 1)
 
@@ -299,26 +338,33 @@ func set_laser_length(value):
 	if max_whole_length != INFINITE:
 		value = min(value, max_whole_length)
 	laser_length = value
+	_reset_nodes()
 	$RayCast2D.target_position = Vector2(laser_length,0)
+	#reset_cast()
 
 func set_laser_width(value):
 	laser_width = value
+	_reset_nodes()
 	$Line2D.width = laser_width
 
 func set_cast_mask(value):
 	casting_mask = value
+	_reset_nodes()
 	$RayCast2D.collision_mask = casting_mask
 
 func set_texture(value):
 	texture = value
+	_reset_nodes()
 	$Line2D.texture = texture
 
 func set_texture_mode(value):
 	texture_mode = value
+	_reset_nodes()
 	$Line2D.texture_mode = texture_mode
 
 func set_cap_mode(value):
 	begin_cap_mode = value
+	_reset_nodes()
 	$Line2D.begin_cap_mode = begin_cap_mode
 
 func set_speed_type(value):
@@ -333,6 +379,7 @@ func set_speed(value):
 
 func set_width_curve(value):
 	width_curve = value
+	_reset_nodes()
 	$Line2D.width_curve = width_curve
 
 func set_update_cooldown(value):
@@ -342,3 +389,11 @@ func set_update_cooldown(value):
 
 func set_can_update():
 	can_update = true
+
+func set_enabled(value):
+	enabled = value
+	if not was_enabled: _ready()
+	elif not enabled: disable()
+	else: reset_cast()
+
+

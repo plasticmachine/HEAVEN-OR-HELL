@@ -18,6 +18,8 @@ var max_layer:int = 0
 @export var cooldown_stasis:bool = false
 
 @export_group("Spawning")
+enum INTERRUPT {Continue, Destroy, Shoot}
+@export var on_interruption:INTERRUPT = INTERRUPT.Continue
 @export_subgroup("Forced Spawning Angle", "pattern_")
 @export_range(-999999, 999999, 0.001, "hide_slider", "suffix:°", "radians_as_degrees") var pattern_angle:float = 0.0
 @export var pattern_angle_target:NodePath
@@ -37,6 +39,7 @@ enum MOMENTUM{None,TRANS_LINEAR,TRANS_SINE,TRANS_QUINT,TRANS_QUART,TRANS_QUAD,TR
 @export var forced_target:NodePath
 @export var forced_lookat_mouse:bool = false
 @export var forced_pattern_lookat:bool = true
+@export_range(0, 999999, 1) var impulse:int = 0
 
 @export_group("Advanced")
 @export var bullet_list:Array[String]

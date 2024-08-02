@@ -1,12 +1,13 @@
-[gd_scene load_steps=36 format=3 uid="uid://gixop20d1d75"]
+[gd_scene load_steps=37 format=3 uid="uid://gixop20d1d75"]
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawner.gd" id="1"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="2_ai2re"]
-[ext_resource type="Texture2D" uid="uid://61toyfq81eyw" path="res://art/bullets/CLOWN/BOWLINGBALL/old/IMG_2353.PNG" id="3_nbhfe"]
-[ext_resource type="Texture2D" uid="uid://bfyjk8g5mgro4" path="res://art/bullets/CLOWN/BOWLINGBALL/old/IMG_2354.PNG" id="4_gyenv"]
-[ext_resource type="Texture2D" uid="uid://dcuydijov3" path="res://art/bullets/CLOWN/BOWLINGBALL/old/IMG_2355.PNG" id="5_7mbi0"]
-[ext_resource type="AudioStream" uid="uid://bckuln4ju0p2u" path="res://addons/BulletUpHell/Bullet/Hit Hurt.wav" id="5_rada6"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="3_5wv4n"]
+[ext_resource type="Texture2D" uid="uid://dh3jdhhxrn83n" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Untitled_Artwork-2.png" id="4_dgjd2"]
+[ext_resource type="AudioStream" uid="uid://22wx6508egvq" path="res://addons/BulletUpHell/Bullet/Hit Hurt.wav" id="5_rada6"]
+[ext_resource type="Texture2D" uid="uid://bt2su3hqlnnm" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Untitled_Artwork-3.png" id="5_vedub"]
 [ext_resource type="Texture2D" uid="uid://6xap1s4ohuc8" path="res://art/bullets/CLOWN/FIREWORK/0.png" id="6_45tvb"]
+[ext_resource type="Texture2D" uid="uid://ccxuxofimrkn2" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Untitled_Artwork-4.png" id="6_o01ce"]
 [ext_resource type="Texture2D" uid="uid://el4b0viurudt" path="res://art/bullets/CLOWN/FIREWORK/1.png" id="7_x28r6"]
 [ext_resource type="Texture2D" uid="uid://ktn8dug8a1op" path="res://art/bullets/CLOWN/FIREWORK/2.png" id="8_olfg7"]
 [ext_resource type="Texture2D" uid="uid://m8ohtew10sav" path="res://art/bullets/CLOWN/FIREWORK/3.png" id="9_fk20i"]
@@ -78,13 +79,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_nbhfe")
+"texture": ExtResource("3_5wv4n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_gyenv")
+"texture": ExtResource("4_dgjd2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_7mbi0")
+"texture": ExtResource("5_vedub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o01ce")
 }],
 "loop": true,
 "name": &"BowlingBallAnim",
@@ -168,7 +172,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qyokg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iflvn"]
-radius = 96.3819
+radius = 132.061
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y56c1"]
 radius = 159.526
@@ -204,38 +208,41 @@ cull_viewport_refresh = 60.0
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
 texture_filter = 3
 sprite_frames = SubResource("1")
-animation = &"Firework"
-frame = 3
-frame_progress = 0.736884
+animation = &"BowlingBallAnim"
+frame_progress = 0.58219
 
 [node name="Default" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
 shape = SubResource("CircleShape2D_qyokg")
 debug_color = Color(0.847059, 0.305882, 0.560784, 0.419608)
 
 [node name="BowlingBallCol" type="CollisionShape2D" parent="ShapeManager"]
-position = Vector2(63, 0)
 shape = SubResource("CircleShape2D_iflvn")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
 [node name="Firework" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
 position = Vector2(86, 0)
 scale = Vector2(1.193, 0.394)
 shape = SubResource("CircleShape2D_y56c1")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
 [node name="SwanCard" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
 position = Vector2(-4.76837e-07, -5)
 scale = Vector2(1.03392, 1.06281)
 shape = SubResource("RectangleShape2D_14m3u")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
 [node name="FlipCard" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
 position = Vector2(2.38419e-07, 0)
 scale = Vector2(1.59278, 1.61663)
 shape = SubResource("RectangleShape2D_lknj7")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
 [node name="LaserBeam" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
 shape = SubResource("3")
 
 [node name="SFX" type="Node2D" parent="."]

@@ -22,11 +22,11 @@ func _ready():
 	for j in patterns.size(): Spawning.new_pattern(id+"/"+str(j), patterns[j])
 	Spawning.new_container(self)
 	
-	if advanced_controls != "":
-		commands = advanced_controls.split("\n", false)
-		for line in commands.size():
-			if "=" in commands[line]:
-				commands[line] = commands[line].split("=",false)
+	if advanced_controls == "": advanced_controls = "0=0\n>q"
+	commands = advanced_controls.split("\n", false)
+	for line in commands.size():
+		if "=" in commands[line]:
+			commands[line] = commands[line].split("=",false)
 
 func create_pool(shared_area_name:String, pool_amount:int):
 	if pool_amount <= 0: return
@@ -38,7 +38,7 @@ func define_trigger(res:Array, t:String, b, rid):
 	var curr_t = Spawning.trigger(id+"/"+t)
 	if not res.has(curr_t.resource_name): res.append(curr_t.resource_name)
 	if curr_t.resource_name == "TrigTime":
-		get_tree().create_timer(curr_t.time).connect("timeout",Callable(Spawning,"trig_timeout").bind(b, rid))
+		get_tree().create_timer(curr_t.time, false).connect("timeout",Callable(Spawning,"trig_timeout").bind(b, rid))
 
 
 func getCurrentTriggers(b, rid):

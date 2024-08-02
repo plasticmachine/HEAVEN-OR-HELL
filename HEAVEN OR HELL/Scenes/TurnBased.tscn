@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/TurnBased.gd" id="1_h0a2a"]
 [ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
-[ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/IMG_2136.PNG" id="2_fiwds"]
+[ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/TB/IMG_2136.PNG" id="2_fiwds"]
 [ext_resource type="Texture2D" uid="uid://41ergq2age6v" path="res://art/turnbased effects/healing effects/basic heal/1.PNG" id="3_bbatn"]
 [ext_resource type="Texture2D" uid="uid://c12hvwoutnhrh" path="res://art/turnbased effects/attack effects/basic slash/IMG_4078.PNG" id="3_kw0v5"]
 [ext_resource type="Texture2D" uid="uid://d1bwfc5sda7nx" path="res://art/GUI/battle_ui/buttons/attackbutton.png" id="4_4revw"]

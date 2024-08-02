@@ -1,5 +1,6 @@
 @tool
 extends Path2D
+class_name SpawnPattern
 
 @export_placeholder("ID") var id:String = ""
 @export var pattern:NavigationPolygon

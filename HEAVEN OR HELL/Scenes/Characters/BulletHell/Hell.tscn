@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://ldg2vsd26rqu"]
+[gd_scene load_steps=110 format=3 uid="uid://ldg2vsd26rqu"]
 
 [ext_resource type="Script" path="res://Scenes/HellController.gd" id="1_2xahn"]
 [ext_resource type="Resource" uid="uid://cih8efvnajufa" path="res://Resources/Stats/HellStats.tres" id="2_wk4ok"]
@@ -44,9 +44,12 @@
 [ext_resource type="Texture2D" uid="uid://7uyvf5gvdufr" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-4.png" id="34_kp8w8"]
 [ext_resource type="Texture2D" uid="uid://clpxgvqyndti7" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-5.png" id="35_idttu"]
 [ext_resource type="Script" path="res://Scenes/Characters/BulletHell/HellTransitions.gd" id="39_caaii"]
+[ext_resource type="Texture2D" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="45_r4d84"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
 radius = 59.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5dk0g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lblot"]
 animations = [{
@@ -860,16 +863,28 @@ motion_mode = 1
 script = ExtResource("1_2xahn")
 hellstats = ExtResource("2_wk4ok")
 
+[node name="DropShadow" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 0.447059)
+show_behind_parent = true
+position = Vector2(2, 565)
+scale = Vector2(1.682, 0.626)
+texture = ExtResource("45_r4d84")
+
 [node name="InteractionHurtbox" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_7egpc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
 
 [node name="BulletHurtbox" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
+z_as_relative = false
 shape = SubResource("CircleShape2D_7egpc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_5dk0g")
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_lblot")
 animation = &"down"
@@ -905,6 +920,7 @@ one_shot = true
 script = ExtResource("14_5ewi2")
 
 [node name="CameraDetectionArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CameraDetection" type="CollisionShape2D" parent="CameraDetectionArea"]
 position = Vector2(-1.5, 39)

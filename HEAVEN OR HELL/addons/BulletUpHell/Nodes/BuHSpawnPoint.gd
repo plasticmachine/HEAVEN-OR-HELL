@@ -30,6 +30,11 @@ var shared_area
 @export var auto_distance_from:NodePath
 @export var auto_trigger_container:NodePath
 
+@export_group("Preview", "preview_")
+@export var preview_activate:bool = false : set = _set_preview
+@export_range(1, 9999, 0.001, "suffix:iterations", "hide_slider") var preview_length:int = 10 : set = _set_preview_length
+@export_range(0.001, 60, 0.001, "suffix:s") var preview_delay:float = 1 : set = _set_preview_delay
+
 # random
 var r_active_chances:float = 1
 var r_rotating_variation:Vector3
@@ -49,10 +54,14 @@ var trigger_time:float = 0
 var trig_collider
 var trig_signal
 
+
 var auto_call:bool = false
 var can_respawn:bool = true
 var has_pattern:bool
 var vis:VisibleOnScreenNotifier2D
+var preview_points:Array[Array]
+var preview_cooldown:float = 1
+
 
 func _ready():
 	if Engine.is_editor_hint(): return
@@ -74,15 +83,9 @@ func _ready():
 	assert(has_pattern, "Spawner has no pattern to spawn.")
 	if auto_start_on_cam: _set_start_on_cam(true)
 	elif auto_distance_from != NodePath(): set_physics_process(true)
-	#else:
-		#if auto_start_after_time > float(0.0):
-			#await get_tree().create_timer(auto_start_after_time).timeout
-		#auto_call = true
-		#set_physics_process(active)
-		
 	if active:
 		if auto_start_after_time > float(0.0):
-			await get_tree().create_timer(auto_start_after_time).timeout
+			await get_tree().create_timer(auto_start_after_time, false).timeout
 		auto_call = true
 		set_physics_process(active)
 		
@@ -114,6 +117,16 @@ func _physics_process(delta):
 		can_respawn = false
 		if not rotating_speed > 0: set_physics_process(false)
 		#apply_randomness(false)
+
+func _draw():
+	if not Engine.is_editor_hint() or not preview_activate: return
+	for b in preview_points:
+		#print(b)
+		draw_polyline(b, Color.WEB_PURPLE, 2)
+		draw_circle(b[0], 10, Color.WEB_PURPLE)
+		for i in b.size()-1:
+			draw_circle(b[i+1], 5, Color.WEB_PURPLE)
+
 
 func spawn():
 	if patterns_multi.is_empty():
@@ -163,7 +176,7 @@ func set_pool():
 
 func on_screen(is_on):
 	if is_on and auto_start_after_time > float(0.0):
-		await get_tree().create_timer(auto_start_after_time).timeout
+		await get_tree().create_timer(auto_start_after_time, false).timeout
 	active = is_on
 	set_physics_process(active)
 
@@ -203,7 +216,38 @@ func _set_start_at_dist(value):
 	if Engine.is_editor_hint(): return
 	set_physics_process(value)
 
+func _set_preview(value):
+	if not Engine.is_editor_hint(): return
+	if auto_pattern_id == "":
+		push_warning("Preview only works with a non-empty auto_pattern_id.")
+		return
+		
+	preview_activate = value
+	while preview_activate == true:
+		var pattern_node = Spawning.get_SpawnPattern_with_id(auto_pattern_id)
+		if pattern_node == null:
+			preview_activate = false
+			push_warning("Didn't find a pattern to preview.")
+			return
+		var props_node = Spawning.get_BulletPattern_with_id(pattern_node.pattern.bullet)
+		if props_node == null:
+			preview_activate = false
+			push_warning("Didn't find bullet properties to preview.")
+			return
+		preview_points = Spawning.get_trajectory_preview(props_node.props, pattern_node.pattern, preview_length, preview_delay, self)
+		await get_tree().create_timer(1).timeout
+		queue_redraw()
+	
+	preview_points.clear()
+	queue_redraw()
 
+func _set_preview_length(value):
+	preview_length = value
+	_set_preview(preview_activate)
+
+func _set_preview_delay(value):
+	preview_delay = value
+	_set_preview(preview_activate)
 
 func _get_property_list() -> Array:
 	return [

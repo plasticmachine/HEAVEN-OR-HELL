@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://b2uwu4w0ss13g"]
+[gd_scene load_steps=90 format=3 uid="uid://b2uwu4w0ss13g"]
 
 [ext_resource type="Script" path="res://Scenes/HeavenController.gd" id="1_oafid"]
 [ext_resource type="Resource" uid="uid://bkdyrb5tt046q" path="res://Resources/Stats/HeavenStats.tres" id="2_irmi7"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://co55qiygayggp" path="res://art/HEAVEN/walk/up/HVN_UP.PNG" id="31_wpfij"]
 [ext_resource type="Texture2D" uid="uid://dvngeb7w1fgm7" path="res://art/HEAVEN/walk/upleft/HVN_UPLFT.PNG" id="32_65wup"]
 [ext_resource type="Texture2D" uid="uid://doa126x42jfuc" path="res://art/HEAVEN/walk/upright/HVN_UPRIGHT.png" id="33_1v8lp"]
+[ext_resource type="Texture2D" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="37_sao2a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
 radius = 59.2
@@ -891,3 +892,10 @@ parameters/walkBS/7/current_delta = 0.007009
 parameters/walkBS/8/current_length = 1.0
 parameters/walkBS/8/current_position = 1.0
 parameters/walkBS/8/current_delta = 0.0
+
+[node name="DropShadow" type="Sprite2D" parent="."]
+modulate = Color(0.00566115, 0.00566115, 0.00566115, 0.447059)
+show_behind_parent = true
+position = Vector2(2, 565)
+scale = Vector2(1.682, 0.626)
+texture = ExtResource("37_sao2a")
