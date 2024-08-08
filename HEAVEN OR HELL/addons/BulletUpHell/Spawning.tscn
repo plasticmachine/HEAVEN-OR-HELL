@@ -209,7 +209,7 @@ cull_viewport_refresh = 60.0
 texture_filter = 3
 sprite_frames = SubResource("1")
 animation = &"BowlingBallAnim"
-frame_progress = 0.58219
+frame_progress = 0.501431
 
 [node name="Default" type="CollisionShape2D" parent="ShapeManager"]
 visible = false

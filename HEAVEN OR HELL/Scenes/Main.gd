@@ -5,15 +5,21 @@ extends Node
 var score
 #var difficulty = 0.60
 
+@onready var BHCam = $Cameras/BH_1_Cam
+@onready var GroupCam = $Cameras/GroupCam
+
 
 func _ready():
 	Engine.max_fps = 60
 
 
-func _on_score_timer_timeout():
-	score += 1
+#func _on_score_timer_timeout():
+	#score += 1
+	#BHCam.set_priority(0)
+	#GroupCam.set_priority(1)
+	
 	#difficulty -= 0.01 #increases the score by one every time the score timer times out
-	$HUD.update_score(score)
+	#$HUD.update_score(score)
 	#$HUD.update_difficulty(difficulty)
 	
 

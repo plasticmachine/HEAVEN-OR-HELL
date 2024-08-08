@@ -1,7 +1,7 @@
 [gd_scene load_steps=110 format=3 uid="uid://ldg2vsd26rqu"]
 
 [ext_resource type="Script" path="res://Scenes/HellController.gd" id="1_2xahn"]
-[ext_resource type="Resource" uid="uid://cih8efvnajufa" path="res://Resources/Stats/HellStats.tres" id="2_wk4ok"]
+[ext_resource type="Resource" uid="uid://do01wkp604gp1" path="res://Resources/Stats/HellStats.tres" id="2_wk4ok"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/walk/down/HLL_DOWN.PNG" id="3_bqu8f"]
 [ext_resource type="Texture2D" uid="uid://crnfxajwh44pq" path="res://art/HELL/walk/downleft/HLL_DOWNLFT.PNG" id="4_v2xn7"]
 [ext_resource type="Texture2D" uid="uid://56maxi4bb07u" path="res://art/HELL/walk/downright/HLL_DOWNRIGHT.png" id="5_aidbu"]
@@ -44,7 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://7uyvf5gvdufr" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-4.png" id="34_kp8w8"]
 [ext_resource type="Texture2D" uid="uid://clpxgvqyndti7" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-5.png" id="35_idttu"]
 [ext_resource type="Script" path="res://Scenes/Characters/BulletHell/HellTransitions.gd" id="39_caaii"]
-[ext_resource type="Texture2D" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="45_r4d84"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="45_r4d84"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
 radius = 59.2
@@ -864,7 +864,6 @@ script = ExtResource("1_2xahn")
 hellstats = ExtResource("2_wk4ok")
 
 [node name="DropShadow" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(0, 0, 0, 0.447059)
 show_behind_parent = true
 position = Vector2(2, 565)
@@ -940,8 +939,8 @@ reset_on_save = false
 tree_root = SubResource("AnimationNodeStateMachine_estf3")
 anim_player = NodePath("../AnimationPlayer")
 parameters/current_length = 1.0
-parameters/current_position = 1.0
-parameters/current_delta = 0.0
+parameters/current_position = 0.409362
+parameters/current_delta = 0.005894
 parameters/End/current_length = null
 parameters/End/current_position = null
 parameters/End/current_delta = null
@@ -1016,22 +1015,22 @@ parameters/Start/current_delta = 0.0
 "parameters/Takeoff /output/current_position" = 0.50001
 "parameters/Takeoff /output/current_delta" = 0.0
 parameters/Walk/current_length = 1.0
-parameters/Walk/current_position = 1.0
-parameters/Walk/current_delta = 0.0
+parameters/Walk/current_position = 0.409362
+parameters/Walk/current_delta = 0.005894
 parameters/Walk/TimeScale/current_length = 1.0
-parameters/Walk/TimeScale/current_position = 1.0
-parameters/Walk/TimeScale/current_delta = 0.0
+parameters/Walk/TimeScale/current_position = 0.409362
+parameters/Walk/TimeScale/current_delta = 0.005894
 parameters/Walk/TimeScale/scale = 1.0
 parameters/Walk/WalkBS/current_length = 1.0
-parameters/Walk/WalkBS/current_position = 1.0
-parameters/Walk/WalkBS/current_delta = 0.0
+parameters/Walk/WalkBS/current_position = 0.409362
+parameters/Walk/WalkBS/current_delta = 0.005894
 parameters/Walk/WalkBS/blend_position = Vector2(0, 0)
 parameters/Walk/WalkBS/0/current_length = 1.0
 parameters/Walk/WalkBS/0/current_position = 1.0
 parameters/Walk/WalkBS/0/current_delta = 0.0
 parameters/Walk/WalkBS/1/current_length = 1.0
-parameters/Walk/WalkBS/1/current_position = 1.0
-parameters/Walk/WalkBS/1/current_delta = 0.0
+parameters/Walk/WalkBS/1/current_position = 0.409362
+parameters/Walk/WalkBS/1/current_delta = 0.005894
 parameters/Walk/WalkBS/2/current_length = 1.0
 parameters/Walk/WalkBS/2/current_position = 1.0
 parameters/Walk/WalkBS/2/current_delta = 0.0
@@ -1051,8 +1050,8 @@ parameters/Walk/WalkBS/7/current_length = 1.0
 parameters/Walk/WalkBS/7/current_position = 1.0
 parameters/Walk/WalkBS/7/current_delta = 0.0
 parameters/Walk/output/current_length = 1.0
-parameters/Walk/output/current_position = 1.0
-parameters/Walk/output/current_delta = 0.0
+parameters/Walk/output/current_position = 0.409362
+parameters/Walk/output/current_delta = 0.005894
 parameters/walkBS/current_length = 1.0
 parameters/walkBS/current_position = 1.0
 parameters/walkBS/current_delta = 0.0

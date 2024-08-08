@@ -1,7 +1,7 @@
 [gd_scene load_steps=90 format=3 uid="uid://b2uwu4w0ss13g"]
 
 [ext_resource type="Script" path="res://Scenes/HeavenController.gd" id="1_oafid"]
-[ext_resource type="Resource" uid="uid://bkdyrb5tt046q" path="res://Resources/Stats/HeavenStats.tres" id="2_irmi7"]
+[ext_resource type="Resource" uid="uid://b4xqtm8sehfs2" path="res://Resources/Stats/HeavenStats.tres" id="2_irmi7"]
 [ext_resource type="Texture2D" uid="uid://cqjy230u4evig" path="res://art/HEAVEN/walk/down/HVN_DOWN.PNG" id="2_kp6yn"]
 [ext_resource type="Texture2D" uid="uid://cx8roq3eh02nm" path="res://art/HEAVEN/walk/downleft/HVN_DOWNLFT.PNG" id="3_ept8c"]
 [ext_resource type="Texture2D" uid="uid://csg4irto0ffi8" path="res://art/HEAVEN/walk/downright/HVN_DOWNRIGHT.png" id="4_43dfs"]
@@ -36,7 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://co55qiygayggp" path="res://art/HEAVEN/walk/up/HVN_UP.PNG" id="31_wpfij"]
 [ext_resource type="Texture2D" uid="uid://dvngeb7w1fgm7" path="res://art/HEAVEN/walk/upleft/HVN_UPLFT.PNG" id="32_65wup"]
 [ext_resource type="Texture2D" uid="uid://doa126x42jfuc" path="res://art/HEAVEN/walk/upright/HVN_UPRIGHT.png" id="33_1v8lp"]
-[ext_resource type="Texture2D" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="37_sao2a"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="37_sao2a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
 radius = 59.2
@@ -730,12 +730,13 @@ shape = SubResource("CircleShape2D_7egpc")
 collision_layer = 2
 
 [node name="BulletHurtbox" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 1
 shape = SubResource("CircleShape2D_7egpc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -0.00225955
 sprite_frames = SubResource("SpriteFrames_lblot")
-animation = &"down"
+animation = &"idle"
 
 [node name="Melee" parent="." instance=ExtResource("10_al23b")]
 visible = false
@@ -764,6 +765,7 @@ wait_time = 15.0
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
 callback_mode_process = 2
 libraries = {
 "": SubResource("AnimationLibrary_ctgvh")
