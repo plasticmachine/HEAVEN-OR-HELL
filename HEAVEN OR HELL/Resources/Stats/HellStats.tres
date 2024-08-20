@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://do01wkp604gp1"]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Resources/CharaStats.gd" id="1_r2u21"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_r2u21"]
 
 [resource]
 script = ExtResource("1_r2u21")
@@ -8,7 +8,7 @@ character_name = "Hell"
 move_speed = 3500
 run_speed = 6000
 max_heart = 100
-current_heart = 10
+current_heart = 100
 max_magia = 100
 current_magia = 0
 malice = 460

@@ -96,7 +96,6 @@ frame_progress = 0.999991
 position = Vector2(-24, 144)
 scale = Vector2(2.28, 2.28)
 shape = SubResource("CircleShape2D_kk6lu")
-disabled = true
 script = ExtResource("1_e8gkx")
 
 [node name="DropShadow" type="Sprite2D" parent="."]

@@ -70,5 +70,3 @@ func _draw():
 #		for p in curve.get_point_count(): #TODO PORT GODOT 4
 #			draw_string(Label.new().get_font(""), curve.get_point_position(p), str(p), color=Color.RED)
 #			draw_string()
-
-

@@ -1,7 +1,6 @@
-[gd_scene load_steps=110 format=3 uid="uid://ldg2vsd26rqu"]
+[gd_scene load_steps=108 format=3 uid="uid://ldg2vsd26rqu"]
 
-[ext_resource type="Script" path="res://Scenes/HellController.gd" id="1_2xahn"]
-[ext_resource type="Resource" uid="uid://do01wkp604gp1" path="res://Resources/Stats/HellStats.tres" id="2_wk4ok"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HellController.gd" id="1_2xahn"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/walk/down/HLL_DOWN.PNG" id="3_bqu8f"]
 [ext_resource type="Texture2D" uid="uid://crnfxajwh44pq" path="res://art/HELL/walk/downleft/HLL_DOWNLFT.PNG" id="4_v2xn7"]
 [ext_resource type="Texture2D" uid="uid://56maxi4bb07u" path="res://art/HELL/walk/downright/HLL_DOWNRIGHT.png" id="5_aidbu"]
@@ -9,13 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://dttxy5n7milo0" path="res://art/HELL/walk/left/animation/Untitled_Artwork-2.png" id="7_508g0"]
 [ext_resource type="Texture2D" uid="uid://n64qo05mfmgt" path="res://art/HELL/walk/left/animation/Untitled_Artwork-3.png" id="8_hd4hd"]
 [ext_resource type="Texture2D" uid="uid://b2foy7k3asjc" path="res://art/HELL/walk/left/animation/Untitled_Artwork-4.png" id="9_dbnxp"]
-[ext_resource type="PackedScene" uid="uid://co8jc0uhro10o" path="res://Scenes/melee.tscn" id="9_s66nb"]
+[ext_resource type="PackedScene" uid="uid://co8jc0uhro10o" path="res://Scenes/old/melee.tscn" id="9_s66nb"]
 [ext_resource type="Texture2D" uid="uid://cox5c6wprxw51" path="res://art/GUI/bg.png" id="10_1n2h5"]
 [ext_resource type="Texture2D" uid="uid://bxac7icr04pjk" path="res://art/HELL/walk/left/animation/Untitled_Artwork-5.png" id="10_xb51a"]
 [ext_resource type="Texture2D" uid="uid://boq1dq68waoja" path="res://art/HELL/walk/left/animation/Untitled_Artwork-6.png" id="11_qhr7k"]
 [ext_resource type="Texture2D" uid="uid://datk8wkaxjvlp" path="res://art/GUI/fill.png" id="11_w60cq"]
 [ext_resource type="Texture2D" uid="uid://cm5ngxtemekec" path="res://art/HELL/walk/right/animation/Untitled_Artwork-1.png" id="12_8c4id"]
-[ext_resource type="Script" path="res://Scenes/ActionTimerBar.gd" id="12_mi25q"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/UI/HellHPBarBH.gd" id="12_mi25q"]
 [ext_resource type="Texture2D" uid="uid://dioxhh0lnpkl8" path="res://art/HELL/walk/right/animation/Untitled_Artwork-2.png" id="13_bclyw"]
 [ext_resource type="Script" path="res://Scenes/Characters/TurnBased/Stats.gd" id="14_5ewi2"]
 [ext_resource type="Texture2D" uid="uid://68o13ilotojy" path="res://art/HELL/walk/right/animation/Untitled_Artwork-3.png" id="14_ogi7m"]
@@ -43,10 +42,12 @@
 [ext_resource type="Texture2D" uid="uid://c4m8wdc064cdm" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-3.png" id="33_tsiqx"]
 [ext_resource type="Texture2D" uid="uid://7uyvf5gvdufr" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-4.png" id="34_kp8w8"]
 [ext_resource type="Texture2D" uid="uid://clpxgvqyndti7" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-5.png" id="35_idttu"]
-[ext_resource type="Script" path="res://Scenes/Characters/BulletHell/HellTransitions.gd" id="39_caaii"]
 [ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="45_r4d84"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
+radius = 59.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ff1ik"]
 radius = 59.2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5dk0g"]
@@ -76,6 +77,14 @@ animations = [{
 "loop": true,
 "name": &"down_right",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bqu8f")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -229,9 +238,6 @@ animations = [{
 "name": &"up_right",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_htxhs"]
-size = Vector2(611, 1094)
 
 [sub_resource type="Animation" id="Animation_ejxiw"]
 length = 0.001
@@ -777,7 +783,7 @@ snap = Vector2(1, 1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_0qw8f"]
-graph_offset = Vector2(-248.239, 108.635)
+graph_offset = Vector2(32, 116)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_ovn5r")
 nodes/TimeScale/position = Vector2(440, 240)
 nodes/WalkBS/node = SubResource("AnimationNodeBlendSpace2D_uasp7")
@@ -856,12 +862,11 @@ states/Walk/position = Vector2(374, 100)
 states/walkBS/node = SubResource("AnimationNodeBlendSpace2D_8rf3o")
 states/walkBS/position = Vector2(110, 279)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_ifnup"), "Run", "Walk", SubResource("AnimationNodeStateMachineTransition_7jp1g"), "Walk", "Takeoff ", SubResource("AnimationNodeStateMachineTransition_hjv7u"), "Takeoff ", "Run", SubResource("AnimationNodeStateMachineTransition_75aly")]
-graph_offset = Vector2(-21, 59)
+graph_offset = Vector2(-57, 47)
 
 [node name="Hell" type="CharacterBody2D" groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_2xahn")
-hellstats = ExtResource("2_wk4ok")
 
 [node name="DropShadow" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 0.447059)
@@ -871,28 +876,30 @@ scale = Vector2(1.682, 0.626)
 texture = ExtResource("45_r4d84")
 
 [node name="InteractionHurtbox" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CircleShape2D_7egpc")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
-
-[node name="BulletHurtbox" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 1
-z_as_relative = false
 shape = SubResource("CircleShape2D_7egpc")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1
+collision_layer = 255
+priority = 1
+
+[node name="BulletHurtbox" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+shape = SubResource("CircleShape2D_ff1ik")
+debug_color = Color(0.964375, 3.08037e-06, 0.493133, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_5dk0g")
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_lblot")
 animation = &"down"
-script = ExtResource("39_caaii")
 
 [node name="Melee" parent="." instance=ExtResource("9_s66nb")]
-visible = false
 position = Vector2(-1, -1)
 scale = Vector2(3.731, 3.731)
+monitoring = false
+monitorable = false
 attackCooldown = 15.0
 attackRange = 10.0
 attackWindow = 0.5
@@ -918,13 +925,6 @@ one_shot = true
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("14_5ewi2")
 
-[node name="CameraDetectionArea" type="Area2D" parent="."]
-visible = false
-
-[node name="CameraDetection" type="CollisionShape2D" parent="CameraDetectionArea"]
-position = Vector2(-1.5, 39)
-shape = SubResource("RectangleShape2D_htxhs")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 deterministic = true
 callback_mode_process = 2
@@ -939,8 +939,8 @@ reset_on_save = false
 tree_root = SubResource("AnimationNodeStateMachine_estf3")
 anim_player = NodePath("../AnimationPlayer")
 parameters/current_length = 1.0
-parameters/current_position = 0.409362
-parameters/current_delta = 0.005894
+parameters/current_position = 0.476634
+parameters/current_delta = 0.007012
 parameters/End/current_length = null
 parameters/End/current_position = null
 parameters/End/current_delta = null
@@ -1015,22 +1015,22 @@ parameters/Start/current_delta = 0.0
 "parameters/Takeoff /output/current_position" = 0.50001
 "parameters/Takeoff /output/current_delta" = 0.0
 parameters/Walk/current_length = 1.0
-parameters/Walk/current_position = 0.409362
-parameters/Walk/current_delta = 0.005894
+parameters/Walk/current_position = 0.476634
+parameters/Walk/current_delta = 0.007012
 parameters/Walk/TimeScale/current_length = 1.0
-parameters/Walk/TimeScale/current_position = 0.409362
-parameters/Walk/TimeScale/current_delta = 0.005894
+parameters/Walk/TimeScale/current_position = 0.476634
+parameters/Walk/TimeScale/current_delta = 0.007012
 parameters/Walk/TimeScale/scale = 1.0
 parameters/Walk/WalkBS/current_length = 1.0
-parameters/Walk/WalkBS/current_position = 0.409362
-parameters/Walk/WalkBS/current_delta = 0.005894
+parameters/Walk/WalkBS/current_position = 0.476634
+parameters/Walk/WalkBS/current_delta = 0.007012
 parameters/Walk/WalkBS/blend_position = Vector2(0, 0)
 parameters/Walk/WalkBS/0/current_length = 1.0
 parameters/Walk/WalkBS/0/current_position = 1.0
 parameters/Walk/WalkBS/0/current_delta = 0.0
 parameters/Walk/WalkBS/1/current_length = 1.0
-parameters/Walk/WalkBS/1/current_position = 0.409362
-parameters/Walk/WalkBS/1/current_delta = 0.005894
+parameters/Walk/WalkBS/1/current_position = 0.476634
+parameters/Walk/WalkBS/1/current_delta = 0.007012
 parameters/Walk/WalkBS/2/current_length = 1.0
 parameters/Walk/WalkBS/2/current_position = 1.0
 parameters/Walk/WalkBS/2/current_delta = 0.0
@@ -1050,8 +1050,8 @@ parameters/Walk/WalkBS/7/current_length = 1.0
 parameters/Walk/WalkBS/7/current_position = 1.0
 parameters/Walk/WalkBS/7/current_delta = 0.0
 parameters/Walk/output/current_length = 1.0
-parameters/Walk/output/current_position = 0.409362
-parameters/Walk/output/current_delta = 0.005894
+parameters/Walk/output/current_position = 0.476634
+parameters/Walk/output/current_delta = 0.007012
 parameters/walkBS/current_length = 1.0
 parameters/walkBS/current_position = 1.0
 parameters/walkBS/current_delta = 0.0
@@ -1084,4 +1084,5 @@ parameters/walkBS/8/current_length = 1.0
 parameters/walkBS/8/current_position = 1.0
 parameters/walkBS/8/current_delta = 0.0
 
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]

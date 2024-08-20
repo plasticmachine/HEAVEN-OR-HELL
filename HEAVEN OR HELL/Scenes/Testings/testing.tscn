@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://yqy673whmhtf"]
+
+[ext_resource type="Shader" path="res://Shaders/wind.gdshader" id="1_scdaq"]
+[ext_resource type="Texture2D" uid="uid://nekmc0mp1kup" path="res://art/backgrounds/BH/enviroment/Untitled_Artwork.png" id="2_vphlr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tas0h"]
+shader = ExtResource("1_scdaq")
+shader_parameter/speed = 5.0
+shader_parameter/minStrength = 0.147
+shader_parameter/maxStrength = 0.349
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = 1.0
+shader_parameter/heightOffset = 0.0
+shader_parameter/offset = 0.0
+
+[node name="UntitledArtwork" type="Sprite2D"]
+material = SubResource("ShaderMaterial_tas0h")
+position = Vector2(851, 633)
+texture = ExtResource("2_vphlr")

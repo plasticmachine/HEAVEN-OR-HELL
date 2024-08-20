@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqndmymbihv0q"]
+
+[ext_resource type="FontFile" uid="uid://dvq2ocj6bcsb6" path="res://fonts/DFPPOPCorn-W12.ttf" id="1_xsac0"]
+[ext_resource type="Script" path="res://Scenes/StartButton.gd" id="2_jegux"]
+
+[sub_resource type="GDScript" id="GDScript_chawg"]
+script/source = "extends CanvasLayer
+
+signal start_game #creates the signal to send to the main node
+
+func show_message(text):
+	$MessageTimer.start()
+
+func show_game_over():
+	show_message(\"GAME OVER!\")
+	await $MessageTimer.timeout #It's waiting for the message timer to count down
+	await get_tree().create_timer(1.0).timeout
+	$StartButton.show()
+
+func update_score(score):
+	$ScoreLabel.text = str(score)
+
+func update_difficulty(difficulty):
+	$DifficultyLabel.text = str(difficulty)
+
+func _on_start_button_pressed():
+	$StartButton.hide()
+	$TitleScreen.hide()
+	emit_signal(\"start_game\")
+	
+"
+
+[node name="HUD" type="CanvasLayer"]
+offset = Vector2(-0.495, 0)
+transform = Transform2D(1, 0, 0, 1, -0.495, 0)
+script = SubResource("GDScript_chawg")
+
+[node name="DifficultyLabel" type="Label" parent="."]
+offset_left = 1.495
+offset_top = 6.0
+offset_right = 239.495
+offset_bottom = 46.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_xsac0")
+theme_override_font_sizes/font_size = 36
+
+[node name="TitleScreen" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.505
+offset_top = -243.0
+offset_right = 3866.5
+offset_bottom = 1509.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.129671, 0.129671)
+theme_override_fonts/font = ExtResource("1_xsac0")
+theme_override_font_sizes/font_size = 434
+text = "HEAVEN OR HELL - TESTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.236
+anchor_top = 0.564
+anchor_right = 0.764
+anchor_bottom = 0.664
+offset_left = 390.375
+offset_top = -93.1199
+offset_right = 1011.62
+offset_bottom = 486.88
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.12, 0.12)
+theme_override_fonts/font = ExtResource("1_xsac0")
+theme_override_font_sizes/font_size = 679
+text = "NYA"
+script = ExtResource("2_jegux")
+scene = "main"
+fade_out_pattern = ""
+fade_in_pattern = ""
+
+[node name="MessageTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

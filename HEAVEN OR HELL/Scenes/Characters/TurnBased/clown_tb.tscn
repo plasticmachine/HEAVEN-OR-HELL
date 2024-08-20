@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://c7c5ufsur7dql" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-12.png" id="13_fjqof"]
 [ext_resource type="Texture2D" uid="uid://25bhugf8moss" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-13.png" id="14_tsihw"]
 [ext_resource type="Texture2D" uid="uid://eauy65e4acw8" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-14.png" id="15_xe1gs"]
-[ext_resource type="Script" path="res://Scenes/Characters/TurnBased/ClownTbAnimationManager.gd" id="21_rxlsl"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/Clown/ClownTbAnimationManager.gd" id="21_rxlsl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2puv6"]
 animations = [{

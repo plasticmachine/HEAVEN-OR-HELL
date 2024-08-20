@@ -1,7 +1,7 @@
 [gd_scene load_steps=90 format=3 uid="uid://b2uwu4w0ss13g"]
 
-[ext_resource type="Script" path="res://Scenes/HeavenController.gd" id="1_oafid"]
-[ext_resource type="Resource" uid="uid://b4xqtm8sehfs2" path="res://Resources/Stats/HeavenStats.tres" id="2_irmi7"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HeavenController.gd" id="1_re22k"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HeavenBulletChecker.gd" id="2_h3mt1"]
 [ext_resource type="Texture2D" uid="uid://cqjy230u4evig" path="res://art/HEAVEN/walk/down/HVN_DOWN.PNG" id="2_kp6yn"]
 [ext_resource type="Texture2D" uid="uid://cx8roq3eh02nm" path="res://art/HEAVEN/walk/downleft/HVN_DOWNLFT.PNG" id="3_ept8c"]
 [ext_resource type="Texture2D" uid="uid://csg4irto0ffi8" path="res://art/HEAVEN/walk/downright/HVN_DOWNRIGHT.png" id="4_43dfs"]
@@ -9,14 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://by6100quay6va" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-2.png" id="7_njlee"]
 [ext_resource type="Texture2D" uid="uid://c0fuyxig6lyfa" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-3.png" id="8_7p1fv"]
 [ext_resource type="Texture2D" uid="uid://crm13abd6wuva" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-4.png" id="9_hwd1m"]
-[ext_resource type="PackedScene" uid="uid://co8jc0uhro10o" path="res://Scenes/melee.tscn" id="10_al23b"]
+[ext_resource type="PackedScene" uid="uid://co8jc0uhro10o" path="res://Scenes/old/melee.tscn" id="10_al23b"]
 [ext_resource type="Texture2D" uid="uid://c62aikwi0xmmt" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-5.png" id="10_esl08"]
 [ext_resource type="Texture2D" uid="uid://cox5c6wprxw51" path="res://art/GUI/bg.png" id="11_132pl"]
 [ext_resource type="Texture2D" uid="uid://x5k8h4ofq5ay" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-6.png" id="11_q4wnu"]
 [ext_resource type="Texture2D" uid="uid://d138apigr777w" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-1.png" id="12_12bvf"]
 [ext_resource type="Texture2D" uid="uid://datk8wkaxjvlp" path="res://art/GUI/fill.png" id="12_g72hy"]
 [ext_resource type="Texture2D" uid="uid://buf10uakn1cxh" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-2.png" id="13_uvvjj"]
-[ext_resource type="Script" path="res://Scenes/ActionTimerBar.gd" id="13_vheeq"]
 [ext_resource type="Texture2D" uid="uid://bdurvvqm30h5b" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-3.png" id="14_kqr18"]
 [ext_resource type="Texture2D" uid="uid://beuyl8md6rt0p" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-4.png" id="15_bjvct"]
 [ext_resource type="Texture2D" uid="uid://cprbd4wviw33q" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-5.png" id="16_k1886"]
@@ -36,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://co55qiygayggp" path="res://art/HEAVEN/walk/up/HVN_UP.PNG" id="31_wpfij"]
 [ext_resource type="Texture2D" uid="uid://dvngeb7w1fgm7" path="res://art/HEAVEN/walk/upleft/HVN_UPLFT.PNG" id="32_65wup"]
 [ext_resource type="Texture2D" uid="uid://doa126x42jfuc" path="res://art/HEAVEN/walk/upright/HVN_UPRIGHT.png" id="33_1v8lp"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/UI/HeavenHPBarBH.gd" id="35_qyur8"]
 [ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="37_sao2a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
@@ -720,23 +720,26 @@ graph_offset = Vector2(-438.968, 94.381)
 
 [node name="Heaven" type="CharacterBody2D" groups=["Player"]]
 motion_mode = 1
-script = ExtResource("1_oafid")
-heavenstats = ExtResource("2_irmi7")
+script = ExtResource("1_re22k")
 
 [node name="InteractionHurtbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7egpc")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1
+collision_layer = 255
+priority = 1
+script = ExtResource("2_h3mt1")
 
-[node name="BulletHurtbox" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="BulletHurtbox" type="CollisionShape2D" parent="Area2D"]
 z_index = 1
 shape = SubResource("CircleShape2D_7egpc")
+debug_color = Color(0.964375, 3.08037e-06, 0.493133, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -0.00225955
 sprite_frames = SubResource("SpriteFrames_lblot")
-animation = &"idle"
+animation = &"down"
 
 [node name="Melee" parent="." instance=ExtResource("10_al23b")]
 visible = false
@@ -758,7 +761,7 @@ scale = Vector2(0.644, 0.644)
 layout_mode = 2
 texture_under = ExtResource("11_132pl")
 texture_progress = ExtResource("12_g72hy")
-script = ExtResource("13_vheeq")
+script = ExtResource("35_qyur8")
 
 [node name="ActionTimer" type="Timer" parent="."]
 wait_time = 15.0
@@ -901,3 +904,6 @@ show_behind_parent = true
 position = Vector2(2, 565)
 scale = Vector2(1.682, 0.626)
 texture = ExtResource("37_sao2a")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_entered" from="Area2D" to="Area2D" method="_on_area_shape_entered"]

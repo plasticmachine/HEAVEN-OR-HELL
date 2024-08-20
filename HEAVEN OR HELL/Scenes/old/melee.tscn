@@ -1,0 +1,71 @@
+[gd_scene load_steps=13 format=3 uid="uid://co8jc0uhro10o"]
+
+[ext_resource type="Script" path="res://Scripts/old/melee.gd" id="1_w5jkd"]
+[ext_resource type="Texture2D" uid="uid://ktqf0y1uxqpb" path="res://art/reimu/attack/sword4.png" id="2_rrvvf"]
+[ext_resource type="Texture2D" uid="uid://btucj1x8u1vxs" path="res://art/reimu/attack/sword5.png" id="3_vn4oj"]
+[ext_resource type="Texture2D" uid="uid://c2v7xf76i7sp3" path="res://art/reimu/attack/sword6.png" id="4_uoh3f"]
+[ext_resource type="Texture2D" uid="uid://cagy5sim6ptrv" path="res://art/reimu/attack/sword7.png" id="5_nuv1b"]
+[ext_resource type="Texture2D" uid="uid://deb1o1jsknmjf" path="res://art/reimu/attack/sword8.png" id="6_qhoie"]
+[ext_resource type="Texture2D" uid="uid://dvbvvyhk42o22" path="res://art/reimu/attack/sword9.png" id="7_r78oi"]
+[ext_resource type="Texture2D" uid="uid://ceec21bsfygl0" path="res://art/reimu/attack/sword10.png" id="8_8n2rw"]
+[ext_resource type="Texture2D" uid="uid://0t2ylkqj1x4r" path="res://art/reimu/attack/sword11.png" id="9_dcge8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0x67l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icdg6"]
+size = Vector2(27.8605, 56.272)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bcght"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rrvvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vn4oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uoh3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nuv1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qhoie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r78oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8n2rw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dcge8")
+}],
+"loop": false,
+"name": &"meleeAttack",
+"speed": 40.0
+}]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_w5jkd")
+
+[node name="MeleeRange" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0x67l")
+disabled = true
+
+[node name="MeleeHitbox" type="CollisionShape2D" parent="."]
+position = Vector2(24, 0)
+scale = Vector2(1.706, 1.706)
+shape = SubResource("RectangleShape2D_icdg6")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MeleeHitbox"]
+position = Vector2(8.7925, -2.93083)
+scale = Vector2(0.0984467, 0.0984467)
+sprite_frames = SubResource("SpriteFrames_bcght")
+animation = &"meleeAttack"
+frame = 7
+frame_progress = 1.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
