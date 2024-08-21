@@ -1,5 +1,4 @@
 extends CharacterBody2D
-signal hit
 var current_animation = "idle"
 var angle = 0
 
@@ -38,7 +37,7 @@ func _process(delta):
 	animate()
 
 
-func _movement(delta):
+func _movement(_delta):
 	current_animation = "idle"
 	var input_dir = Input.get_vector("move_left_hell", "move_right_hell", "move_up_hell","move_down_hell")
 	
@@ -122,7 +121,7 @@ func start(pos):
 		#$AnimationPlayer.play("run_right")
 
 
-func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+func _on_area_2d_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	if Spawning.is_bullet_in_group(Spawning.bullet("FlipCards"), "Bullets"):
 		hellstats.subtract_heart(50)
 		if hellstats.current_heart <= 0:

@@ -6,12 +6,16 @@
 script = ExtResource("1_r3df3")
 character_name = "Clown"
 move_speed = 0
+run_speed = 0
 max_heart = 0
 current_heart = 0
 max_magia = 0
 current_magia = 0
 malice = 0
 deviltry = 0
-guts = 0
+guts = 0.0
+pain_tolerance = 0.0
 luck = 0
 crit = 0
+crit_level = 0
+stat_resetter = true

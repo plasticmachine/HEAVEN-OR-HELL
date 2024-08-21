@@ -36,7 +36,7 @@ func _process(delta):
 	animate()
 
 
-func _movement(delta):
+func _movement(_delta):
 	current_animation = "idle"
 	var input_dir = Input.get_vector("move_left_heaven", "move_right_heaven", "move_up_heaven","move_down_heaven")
 	

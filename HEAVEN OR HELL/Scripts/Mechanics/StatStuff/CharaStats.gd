@@ -1,6 +1,6 @@
+
 extends Resource
 class_name CharaStats
-signal death
 
 @export var character_name: String = ""
 @export var move_speed: int
@@ -16,6 +16,7 @@ signal death
 @export var luck: int
 @export var crit: int
 @export var crit_level: int
+@export var stat_resetter: bool
 ### MOVESPEED FUNCTIONS
 func add_move_speed(amount: int) -> void:
 		move_speed += amount
@@ -26,7 +27,7 @@ func subtract_move_speed(amount: int) -> void:
 		move_speed -= amount
 		print_debug(character_name + " has " + str(move_speed) + " heart! (-" + str(amount) + ")")
 	else:
-		move_speed == 0
+		move_speed = 0
 		print_debug(character_name + " is as slow as a snail!!! ")
 	#emit_signal("stat_changed", "current_heart", current_heart)
 func multiply_move_speed(factor: float) -> void:
@@ -53,7 +54,7 @@ func subtract_heart(amount: int) -> void:
 		current_heart -= amount
 		print_debug(character_name + " has " + str(current_heart) + " heart! (-" + str(amount) + ")")
 	else:
-		current_heart == 0
+		current_heart = 0
 		
 		print_debug(character_name + " is already fucking dead!!! ")
 	#emit_signal("stat_changed", "current_heart", current_heart)
@@ -82,7 +83,7 @@ func subtract_magia(amount: int) -> void:
 		current_magia -= amount
 		print_debug(character_name + " has " + str(current_magia) + " magia! (-" + str(amount) + ")")
 	else:
-		current_magia == 0
+		current_magia = 0
 		print_debug(character_name + " is all out of juice!!! ")
 func multiply_magia(factor: float) -> void:
 	current_magia = int(current_magia * factor)
@@ -101,7 +102,7 @@ func subtract_malice(amount: int) -> void:
 		malice -= amount
 		print_debug(character_name + " has " + str(malice) + " malice! (-" + str(amount) + ")")
 	else:
-		malice == 0
+		malice = 0
 		print_debug(character_name + "'s violence has come to an end. ")
 func multiply_malice(factor: float) -> void:
 
@@ -120,7 +121,7 @@ func subtract_deviltry(amount: int) -> void:
 		deviltry -= amount
 		print_debug(character_name + " has " + str(deviltry) + " deviltry! (-" + str(amount) + ")")
 	else:
-		deviltry == 0
+		deviltry = 0
 		print_debug(character_name + "'s demons have gone quiet. ")
 func multiply_deviltry(factor: float) -> void:
 	deviltry = int(deviltry * factor)
@@ -143,7 +144,7 @@ func subtract_guts(amount: int) -> void:
 		guts -= amount
 		print_debug(character_name + "" + str(guts) + " guts! (-" + str(amount) + ")")
 	else:
-		guts == 0
+		guts = 0
 		print_debug(character_name + "'can draw inspiration from the world no longer.")
 func multiply_guts(factor: float) -> void:
 	guts = int(guts * factor)
@@ -162,7 +163,7 @@ func subtract_luck(amount: int) -> void:
 		luck -= amount
 		print_debug(character_name + " has " + str(luck) + " luck! (-" + str(amount) + ")")
 	else:
-		luck == 0
+		luck = 0
 		print_debug(character_name + " has seen too many black cats. ")
 func multiply_luck(factor: float) -> void:
 	luck = int(luck * factor)
@@ -196,7 +197,7 @@ func subtract_crit(amount: int) -> void:
 		crit -= amount
 		print_debug(character_name + " has " + str(crit) + " crit! (-" + str(amount) + ")")
 	else:
-		crit == 0
+		crit = 0
 		print_debug(character_name + " has been completely pacified.")
 func multiply_crit(factor: float) -> void:
 	crit = int(crit * factor)
@@ -213,7 +214,7 @@ func calc_pain_tolerance():
 
 
 
-func reset_stats():
+func reset_stats(): 
 	move_speed = 3500
 	max_heart = 100
 	current_heart = 10

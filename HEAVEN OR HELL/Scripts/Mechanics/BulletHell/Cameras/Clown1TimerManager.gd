@@ -17,5 +17,5 @@ func _on_clown_phase_1_timeout():
 	Phase_1_Bar.hide()
 
 
-func _process(delta):
+func _process(_delta):
 	Phase_1_Bar.value = Phase_1_Timer.time_left

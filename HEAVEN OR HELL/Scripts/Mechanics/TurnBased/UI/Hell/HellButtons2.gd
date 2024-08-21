@@ -1,6 +1,6 @@
 extends TextureButton
 var hellstats = ResourceLoader.load("res://Resources/Stats/HellStats.tres")
-var clownstats = ResourceLoader.load("res://Resources/Stats/Clown.tres")
+var clownstats = ResourceLoader.load("res://Resources/Stats/ClownStats.tres")
 @onready var effect_animation = $"../../../../EnemySpot/BattleEffectManager"
 
 
@@ -20,4 +20,4 @@ func _on_pressed():
 	
 	StatSaver.save_hellstats_to_file("res://Resources/Stats/HellStats.tres")
 	StatSaver.save_heavenstats_to_file("res://Resources/Stats/HeavenStats.tres")
-	StatSaver.save_clownstats_to_file("res://Resources/Stats/Clown.tres")
+	StatSaver.save_clownstats_to_file("res://Resources/Stats/ClownStats.tres")

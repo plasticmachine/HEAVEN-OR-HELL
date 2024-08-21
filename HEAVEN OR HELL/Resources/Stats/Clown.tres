@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_3k1x1"]
+
+[resource]
+script = ExtResource("1_3k1x1")
+character_name = "Clown"
+move_speed = 0
+run_speed = 0
+max_heart = 0
+current_heart = 0
+max_magia = 0
+current_magia = 0
+malice = 0
+deviltry = 0
+guts = 0.0
+pain_tolerance = 0.0
+luck = 0
+crit = 0
+crit_level = 0

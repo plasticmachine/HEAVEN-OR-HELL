@@ -282,7 +282,7 @@ groups = PackedStringArray("Bullets")
 custom_data = {
 "test": Vector3(0, 0, 0)
 }
-death_after_time = 30.0
+death_after_time = 3.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
 death_speed_under = 0.0
@@ -636,7 +636,7 @@ zoom = Vector2(0.15, 0.15)
 tween_resource = SubResource("Resource_phj3e")
 
 [node name="Camera2D" type="Camera2D" parent="Cameras"]
-physics_interpolation_mode = 2
+physics_interpolation_mode = 1
 position = Vector2(6617, 4776)
 zoom = Vector2(0.15, 0.15)
 process_callback = 0
@@ -673,6 +673,7 @@ scale = Vector2(26.9967, 2.48006)
 [node name="Phase1TextureProgress" type="TextureProgressBar" parent="Timers/TimerResources/Phase1Hbox"]
 layout_mode = 2
 max_value = 60.0
+value = 1.0
 texture_under = ExtResource("6_gqw3i")
 texture_progress = ExtResource("7_tg0k8")
 tint_under = Color(1, 1, 1, 0.364706)
@@ -777,7 +778,7 @@ r_start_distance_variation = Vector3(0, 0, 0)
 script = ExtResource("16_a4nmd")
 auto_pattern_id = "FlipCards"
 shared_area_name = "FlipCards"
-pool_amount = 90
+pool_amount = 40
 auto_start_at_distance = 0.0
 r_active_chances = 1.0
 r_rotating_variation = Vector3(0, 0, 0)

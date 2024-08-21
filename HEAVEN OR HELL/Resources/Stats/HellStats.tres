@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://ds2wg3d67fytg"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_r2u21"]
 
 [resource]
 script = ExtResource("1_r2u21")
 character_name = "Hell"
-move_speed = 3500
+move_speed = 0
 run_speed = 6000
 max_heart = 100
 current_heart = 100
@@ -18,3 +18,4 @@ pain_tolerance = 1.6
 luck = 450
 crit = -50
 crit_level = 3
+stat_resetter = false

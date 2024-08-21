@@ -31,7 +31,7 @@ func attack():
 	$MeleeHitbox.set_deferred("disabled", false)
 	$MeleeHitbox/AnimatedSprite2D.play("meleeAttack")
 	#gets the reference to the melee weapons hitbox
-	var range = $MeleeRange
+	var meleerange = $MeleeRange
 	var hitbox = $MeleeHitbox
 	
 	#Gets the global position of the mouse, where it is on screen
@@ -43,8 +43,8 @@ func attack():
 	
 	#print_debug(mouse_position, attack_direction)
 	#Sets the melee range position and rotation based on the direction
-	range.position = attack_direction * attackRange
-	range.rotation = atan2(attack_direction.y, attack_direction.x)
+	meleerange.position = attack_direction * attackRange
+	meleerange.rotation = atan2(attack_direction.y, attack_direction.x)
 	
 	hitbox.position = attack_direction * attackRange
 
