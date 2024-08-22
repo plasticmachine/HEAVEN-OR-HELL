@@ -1,22 +1,22 @@
-
+@tool
 extends Resource
 class_name CharaStats
 
 @export var character_name: String = ""
-@export var move_speed: int
-@export var run_speed: int
-@export var max_heart : int
-@export var current_heart: int
-@export var max_magia : int
-@export var current_magia: int
-@export var malice: int
-@export var deviltry: int
-@export var guts: float
-@export var pain_tolerance: float
-@export var luck: int
-@export var crit: int
-@export var crit_level: int
-@export var stat_resetter: bool
+@export var move_speed: int = 3500
+@export var run_speed: int = 8000
+@export var max_heart : int = 100
+@export var current_heart: int = 100
+@export var max_magia : int = 100
+@export var current_magia: int = 100
+@export var malice: int = 10
+@export var deviltry: int = 10
+@export var guts: float = 10
+@export var pain_tolerance: float 
+@export var luck: int = 0
+@export var crit: int = 0
+@export var crit_level: int = 0
+#@export var stat_resetter: bool
 ### MOVESPEED FUNCTIONS
 func add_move_speed(amount: int) -> void:
 		move_speed += amount
@@ -214,17 +214,19 @@ func calc_pain_tolerance():
 
 
 
-func reset_stats(): 
-	move_speed = 3500
-	max_heart = 100
-	current_heart = 10
-	max_magia = 100
-	current_magia = 10
-	malice = 10
-	deviltry = 10
-	guts = 10
-	luck = 0
-	crit = 0
-	crit_level = 0
-	print_debug("reset all " + character_name + "'s stats to default")
-	print_debug( str(move_speed, max_heart, current_heart, max_magia, current_magia, malice, deviltry, guts, luck, crit, crit_level))
+#func reset_stats():
+	#if Engine.is_editor_hint():
+		#if stat_resetter:
+			#move_speed = 3500
+			#max_heart = 100
+			#max_magia = 100
+			#current_heart = 100
+			#current_magia = 100
+			#malice = 10
+			#deviltry = 10
+			#guts = 10
+			#luck = 0
+			#crit = 0
+			#crit_level = 0
+			#print_debug("reset all " + character_name + "'s stats to default")
+			#print_debug( str(move_speed, max_heart, current_heart, max_magia, current_magia, malice, deviltry, guts, luck, crit, crit_level))

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://cr6nsx6s2hsa2"]
 
-[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_3k1x1"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_vavb2"]
 
 [resource]
-script = ExtResource("1_3k1x1")
+script = ExtResource("1_vavb2")
 character_name = "Clown"
 move_speed = 0
 run_speed = 0

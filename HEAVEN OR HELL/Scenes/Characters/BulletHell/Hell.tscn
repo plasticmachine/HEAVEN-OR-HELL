@@ -1,7 +1,8 @@
-[gd_scene load_steps=108 format=3 uid="uid://ldg2vsd26rqu"]
+[gd_scene load_steps=109 format=3 uid="uid://ldg2vsd26rqu"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HellController.gd" id="1_2xahn"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/walk/down/HLL_DOWN.PNG" id="3_bqu8f"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HellBulletChecker.gd" id="3_h8gmy"]
 [ext_resource type="Texture2D" uid="uid://crnfxajwh44pq" path="res://art/HELL/walk/downleft/HLL_DOWNLFT.PNG" id="4_v2xn7"]
 [ext_resource type="Texture2D" uid="uid://56maxi4bb07u" path="res://art/HELL/walk/downright/HLL_DOWNRIGHT.png" id="5_aidbu"]
 [ext_resource type="Texture2D" uid="uid://loulhlxmfntl" path="res://art/HELL/walk/left/animation/Untitled_Artwork-1.png" id="6_5utwl"]
@@ -42,7 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://c4m8wdc064cdm" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-3.png" id="33_tsiqx"]
 [ext_resource type="Texture2D" uid="uid://7uyvf5gvdufr" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-4.png" id="34_kp8w8"]
 [ext_resource type="Texture2D" uid="uid://clpxgvqyndti7" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-5.png" id="35_idttu"]
-[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="45_r4d84"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="45_r4d84"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
 radius = 59.2
@@ -883,6 +884,7 @@ shape = SubResource("CircleShape2D_7egpc")
 z_index = 1
 collision_layer = 255
 priority = 1
+script = ExtResource("3_h8gmy")
 
 [node name="BulletHurtbox" type="CollisionShape2D" parent="Area2D"]
 z_index = 1
@@ -939,8 +941,8 @@ reset_on_save = false
 tree_root = SubResource("AnimationNodeStateMachine_estf3")
 anim_player = NodePath("../AnimationPlayer")
 parameters/current_length = 1.0
-parameters/current_position = 0.476634
-parameters/current_delta = 0.007012
+parameters/current_position = 1.0
+parameters/current_delta = 0.0
 parameters/End/current_length = null
 parameters/End/current_position = null
 parameters/End/current_delta = null
@@ -1015,22 +1017,22 @@ parameters/Start/current_delta = 0.0
 "parameters/Takeoff /output/current_position" = 0.50001
 "parameters/Takeoff /output/current_delta" = 0.0
 parameters/Walk/current_length = 1.0
-parameters/Walk/current_position = 0.476634
-parameters/Walk/current_delta = 0.007012
+parameters/Walk/current_position = 1.0
+parameters/Walk/current_delta = 0.0
 parameters/Walk/TimeScale/current_length = 1.0
-parameters/Walk/TimeScale/current_position = 0.476634
-parameters/Walk/TimeScale/current_delta = 0.007012
+parameters/Walk/TimeScale/current_position = 1.0
+parameters/Walk/TimeScale/current_delta = 0.0
 parameters/Walk/TimeScale/scale = 1.0
 parameters/Walk/WalkBS/current_length = 1.0
-parameters/Walk/WalkBS/current_position = 0.476634
-parameters/Walk/WalkBS/current_delta = 0.007012
+parameters/Walk/WalkBS/current_position = 1.0
+parameters/Walk/WalkBS/current_delta = 0.0
 parameters/Walk/WalkBS/blend_position = Vector2(0, 0)
 parameters/Walk/WalkBS/0/current_length = 1.0
 parameters/Walk/WalkBS/0/current_position = 1.0
 parameters/Walk/WalkBS/0/current_delta = 0.0
 parameters/Walk/WalkBS/1/current_length = 1.0
-parameters/Walk/WalkBS/1/current_position = 0.476634
-parameters/Walk/WalkBS/1/current_delta = 0.007012
+parameters/Walk/WalkBS/1/current_position = 1.0
+parameters/Walk/WalkBS/1/current_delta = 0.0
 parameters/Walk/WalkBS/2/current_length = 1.0
 parameters/Walk/WalkBS/2/current_position = 1.0
 parameters/Walk/WalkBS/2/current_delta = 0.0
@@ -1050,8 +1052,8 @@ parameters/Walk/WalkBS/7/current_length = 1.0
 parameters/Walk/WalkBS/7/current_position = 1.0
 parameters/Walk/WalkBS/7/current_delta = 0.0
 parameters/Walk/output/current_length = 1.0
-parameters/Walk/output/current_position = 0.476634
-parameters/Walk/output/current_delta = 0.007012
+parameters/Walk/output/current_position = 1.0
+parameters/Walk/output/current_delta = 0.0
 parameters/walkBS/current_length = 1.0
 parameters/walkBS/current_position = 1.0
 parameters/walkBS/current_delta = 0.0
@@ -1085,4 +1087,5 @@ parameters/walkBS/8/current_position = 1.0
 parameters/walkBS/8/current_delta = 0.0
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_entered" from="Area2D" to="Area2D" method="_on_area_shape_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]

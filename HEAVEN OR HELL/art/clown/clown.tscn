@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ba3ywbgx5pn7n" path="res://art/clown/dance/13.PNG" id="15_pjpyt"]
 [ext_resource type="Texture2D" uid="uid://b8m03848idnfg" path="res://art/clown/dance/14.PNG" id="16_rh2ij"]
 [ext_resource type="Texture2D" uid="uid://mnhrkyweno0o" path="res://art/clown/dance/15.PNG" id="17_68c4x"]
-[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="18_bfayl"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="18_bfayl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i0p1m"]
 animations = [{

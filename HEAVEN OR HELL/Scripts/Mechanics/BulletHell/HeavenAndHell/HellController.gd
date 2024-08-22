@@ -119,12 +119,3 @@ func start(pos):
 #func _on_animation_player_animation_finished(anim_name):
 	#if anim_name == "takeoff_right":
 		#$AnimationPlayer.play("run_right")
-
-
-func _on_area_2d_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
-	if Spawning.is_bullet_in_group(Spawning.bullet("FlipCards"), "Bullets"):
-		hellstats.subtract_heart(50)
-		if hellstats.current_heart <= 0:
-			print_debug("DEAD!")
-			hide()
-			hellstats.move_speed = 0

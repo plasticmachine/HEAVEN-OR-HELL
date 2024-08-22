@@ -5,17 +5,16 @@
 [resource]
 script = ExtResource("1_r2u21")
 character_name = "Hell"
-move_speed = 0
-run_speed = 6000
+move_speed = 3500
+run_speed = 8000
 max_heart = 100
-current_heart = 100
+current_heart = 50
 max_magia = 100
-current_magia = 0
-malice = 460
-deviltry = 460
+current_magia = 100
+malice = 10
+deviltry = 10
 guts = 10.0
 pain_tolerance = 1.6
-luck = 450
-crit = -50
-crit_level = 3
-stat_resetter = false
+luck = 0
+crit = 0
+crit_level = 0
