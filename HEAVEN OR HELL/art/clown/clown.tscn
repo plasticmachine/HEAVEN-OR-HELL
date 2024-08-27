@@ -1,74 +1,74 @@
 [gd_scene load_steps=21 format=3 uid="uid://cgi43evcnmcqb"]
 
+[ext_resource type="Texture2D" uid="uid://myxqcsve702q" path="res://art/clown/dance/colored/Untitled_Artwork-1.png" id="1_0hgjm"]
 [ext_resource type="Script" path="res://art/clown/EnemyCollision.gd" id="1_e8gkx"]
-[ext_resource type="Texture2D" uid="uid://ig1gobfve75l" path="res://art/clown/dance/0.PNG" id="2_ij333"]
-[ext_resource type="Texture2D" uid="uid://cuql7hrrs6kb3" path="res://art/clown/dance/1.PNG" id="3_kform"]
-[ext_resource type="Texture2D" uid="uid://bc1i4xqqpxnvl" path="res://art/clown/dance/2.PNG" id="4_827em"]
-[ext_resource type="Texture2D" uid="uid://nq0ygexhl8y6" path="res://art/clown/dance/3.PNG" id="5_8kk3b"]
-[ext_resource type="Texture2D" uid="uid://r8vw46muu1g1" path="res://art/clown/dance/4.PNG" id="6_jkc5s"]
-[ext_resource type="Texture2D" uid="uid://dw0gu7co3ekv4" path="res://art/clown/dance/5.PNG" id="7_mex6o"]
-[ext_resource type="Texture2D" uid="uid://4c4iyt7l25mj" path="res://art/clown/dance/6.PNG" id="8_0wyh2"]
-[ext_resource type="Texture2D" uid="uid://cnoavefun74mq" path="res://art/clown/dance/7.PNG" id="9_iglvt"]
-[ext_resource type="Texture2D" uid="uid://ofusbgapi6ak" path="res://art/clown/dance/8.PNG" id="10_mmws7"]
-[ext_resource type="Texture2D" uid="uid://bn50ar5qnu1ge" path="res://art/clown/dance/9.PNG" id="11_i2i53"]
-[ext_resource type="Texture2D" uid="uid://dggsgmegoc1gu" path="res://art/clown/dance/10.PNG" id="12_5eo2m"]
-[ext_resource type="Texture2D" uid="uid://ccnm641q28152" path="res://art/clown/dance/11.PNG" id="13_4meb2"]
-[ext_resource type="Texture2D" uid="uid://cbwvrahugf2jy" path="res://art/clown/dance/12.PNG" id="14_837vx"]
-[ext_resource type="Texture2D" uid="uid://ba3ywbgx5pn7n" path="res://art/clown/dance/13.PNG" id="15_pjpyt"]
-[ext_resource type="Texture2D" uid="uid://b8m03848idnfg" path="res://art/clown/dance/14.PNG" id="16_rh2ij"]
-[ext_resource type="Texture2D" uid="uid://mnhrkyweno0o" path="res://art/clown/dance/15.PNG" id="17_68c4x"]
-[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="18_bfayl"]
+[ext_resource type="Texture2D" uid="uid://bjjlhtcxelpxq" path="res://art/clown/dance/colored/Untitled_Artwork-2.png" id="2_gdyc5"]
+[ext_resource type="Texture2D" uid="uid://bqbk0g26kfo4n" path="res://art/clown/dance/colored/Untitled_Artwork-3.png" id="3_iw1q7"]
+[ext_resource type="Texture2D" uid="uid://203gc5pl461g" path="res://art/clown/dance/colored/Untitled_Artwork-4.png" id="4_3tsdc"]
+[ext_resource type="Texture2D" uid="uid://cgrgu22gpixa1" path="res://art/clown/dance/colored/Untitled_Artwork-5.png" id="5_p8ief"]
+[ext_resource type="Texture2D" uid="uid://clpn13nnmvtdh" path="res://art/clown/dance/colored/Untitled_Artwork-6.png" id="6_w5r2a"]
+[ext_resource type="Texture2D" uid="uid://dtik18w0fexmn" path="res://art/clown/dance/colored/Untitled_Artwork-7.png" id="7_gcxl2"]
+[ext_resource type="Texture2D" uid="uid://71udmlfksatr" path="res://art/clown/dance/colored/Untitled_Artwork-8.png" id="8_tgpre"]
+[ext_resource type="Texture2D" uid="uid://cnh2bkd1tdr3y" path="res://art/clown/dance/colored/Untitled_Artwork-9.png" id="9_vi5dr"]
+[ext_resource type="Texture2D" uid="uid://clgyxd2pnobv6" path="res://art/clown/dance/colored/Untitled_Artwork-10.png" id="10_e8wg8"]
+[ext_resource type="Texture2D" uid="uid://o4w7ayb4pu11" path="res://art/clown/dance/colored/Untitled_Artwork-11.png" id="11_1kn0u"]
+[ext_resource type="Texture2D" uid="uid://dcxqdutfc4uq7" path="res://art/clown/dance/colored/Untitled_Artwork-12.png" id="12_tjn86"]
+[ext_resource type="Texture2D" uid="uid://wdv7e8dok46f" path="res://art/clown/dance/colored/Untitled_Artwork-13.png" id="13_hf3p3"]
+[ext_resource type="Texture2D" uid="uid://dumc48ipxywo7" path="res://art/clown/dance/colored/Untitled_Artwork-14.png" id="14_q3y4d"]
+[ext_resource type="Texture2D" uid="uid://djdyhk0m51tt3" path="res://art/clown/dance/colored/Untitled_Artwork-15.png" id="15_gcoj6"]
+[ext_resource type="Texture2D" uid="uid://0lcuff1it0ia" path="res://art/clown/dance/colored/Untitled_Artwork-16.png" id="16_drhfa"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="18_bfayl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i0p1m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ij333")
+"texture": ExtResource("1_0hgjm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_kform")
+"texture": ExtResource("2_gdyc5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_827em")
+"texture": ExtResource("3_iw1q7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_8kk3b")
+"texture": ExtResource("4_3tsdc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_jkc5s")
+"texture": ExtResource("5_p8ief")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_mex6o")
+"texture": ExtResource("6_w5r2a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_0wyh2")
+"texture": ExtResource("7_gcxl2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_iglvt")
+"texture": ExtResource("8_tgpre")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_mmws7")
+"texture": ExtResource("9_vi5dr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_i2i53")
+"texture": ExtResource("10_e8wg8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_5eo2m")
+"texture": ExtResource("11_1kn0u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_4meb2")
+"texture": ExtResource("12_tjn86")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_837vx")
+"texture": ExtResource("13_hf3p3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_pjpyt")
+"texture": ExtResource("14_q3y4d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_rh2ij")
+"texture": ExtResource("15_gcoj6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_68c4x")
+"texture": ExtResource("16_drhfa")
 }],
 "loop": true,
 "name": &"!clowndance",
@@ -89,13 +89,13 @@ radius = 112.4
 sprite_frames = SubResource("SpriteFrames_i0p1m")
 animation = &"!clowndance"
 autoplay = "!clowndance"
-frame = 5
 frame_progress = 0.999991
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-24, 144)
 scale = Vector2(2.28, 2.28)
 shape = SubResource("CircleShape2D_kk6lu")
+disabled = true
 script = ExtResource("1_e8gkx")
 
 [node name="DropShadow" type="Sprite2D" parent="."]

@@ -619,7 +619,7 @@ position = Vector2(6560, 7581)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-zoom = Vector2(0.161406, 0.161406)
+zoom = Vector2(0.01, 0.01)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)
@@ -753,7 +753,7 @@ progress = 12384.7
 rotates = false
 cubic_interp = false
 script = ExtResource("14_r45kx")
-speed = 4500
+speed = 1500
 
 [node name="Clown2" parent="Path2D/PathFollow2D" instance=ExtResource("15_oaur5")]
 position = Vector2(0, 267)
@@ -912,7 +912,6 @@ disabled = true
 script = ExtResource("21_rgnje")
 
 [node name="Background" type="Sprite2D" parent="."]
-visible = false
 z_index = -255
 position = Vector2(-74, 2)
 scale = Vector2(6.5, 6.5)

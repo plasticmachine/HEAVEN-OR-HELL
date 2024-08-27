@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc1i4xqqpxnvl"
-path="res://.godot/imported/2.PNG-f5eac32b8e4c4c867ea341101c987dd5.ctex"
+uid="uid://ba3ywbgx5pn7n"
+path="res://.godot/imported/13.PNG-af1e764054e41faf235e0b162e3dbb42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/clown/dance/2.PNG"
-dest_files=["res://.godot/imported/2.PNG-f5eac32b8e4c4c867ea341101c987dd5.ctex"]
+source_file="res://art/clown/dance/uncolored/13.PNG"
+dest_files=["res://.godot/imported/13.PNG-af1e764054e41faf235e0b162e3dbb42.ctex"]
 
 [params]
 
