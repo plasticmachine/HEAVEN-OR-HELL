@@ -4,6 +4,7 @@ var angle = 0
 
 enum {WALK, RUN, TAKEOFF}
 var state = WALK
+@onready var BulletCollision = $Area2D/BulletHurtbox
 @onready var animationTree = $AnimationTree
 @onready var state_machine = animationTree["parameters/playback"]
 
@@ -26,6 +27,7 @@ var animTree_state_keys = [
 var meleeScript
 
 func _ready():
+	add_to_group("Player")
 	meleeScript = $Melee
 	#hellstats.subtract_heart(10)
 	print_debug(hellstats.current_heart)
@@ -35,6 +37,7 @@ func _ready():
 func _process(delta):
 	_movement(delta)
 	animate()
+	check_death()
 
 
 func _movement(_delta):
@@ -119,3 +122,13 @@ func start(pos):
 #func _on_animation_player_animation_finished(anim_name):
 	#if anim_name == "takeoff_right":
 		#$AnimationPlayer.play("run_right")
+
+func check_death():
+	if hellstats.current_heart <= 0:
+		remove_from_group("Player")
+		hellstats.move_speed = 0
+		hellstats.run_speed = 0
+		BulletCollision.disabled = true
+		#print_debug(hellstats.character_name + " has died!")
+		hide()
+		

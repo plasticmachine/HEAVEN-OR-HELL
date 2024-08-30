@@ -7,7 +7,8 @@ var score
 
 @onready var BHCam = $Cameras/BH_1_Cam
 @onready var GroupCam = $Cameras/GroupCam
-
+@onready var Heaven = $Players/Heaven
+@onready var Hell = $Players/Hell
 
 func _ready():
 	Engine.max_fps = 60
@@ -68,10 +69,12 @@ func _on_start_timer_timeout():
 #	#Spawns the mob by adding it to the main scene
 #	add_child(mob)
 	
-#func _process(_delta):
-	#print_debug(score)
+func _process(_delta):
+	check_game_over()
 
-
+func check_game_over():
+	if !Hell.is_in_group("Player") and !Heaven.is_in_group("Player"):
+		YASM.load_scene("res://Scenes/Screens/Main_Menu.tscn")
 
 func _on_hud_start_game():
 	$Player.start($StartPosition.position) #resets the player position when new_game function is called

@@ -1,10 +1,12 @@
 extends CharacterBody2D
 var current_animation = "idle"
 var angle = 0
+var check_death_has_been_called_debug = false
 
 enum {WALK, RUN, TAKEOFF}
 var state = WALK
 
+@onready var BulletCollision = $Area2D/BulletHurtbox
 @onready var animationTree = $AnimationTree
 @onready var state_machine = animationTree["parameters/playback"]
 var blend_position : Vector2 = Vector2.ZERO
@@ -25,6 +27,7 @@ var animTree_state_keys = [
 var meleeScript
 
 func _ready():
+	add_to_group("Player")
 	meleeScript = $Melee
 	#heavenstats.subtract_heart(10)
 	print_debug(heavenstats.current_heart)
@@ -34,7 +37,7 @@ func _ready():
 func _process(delta):
 	_movement(delta)
 	animate()
-
+	check_death()
 
 func _movement(_delta):
 	current_animation = "idle"
@@ -107,7 +110,14 @@ func start(pos):
 	#$CollisionShape2D.disabled = false # makes sure the collision shape is on when starting
 
 #@warning_ignore("unused_parameter")
-
+func check_death():
+	if heavenstats.current_heart <= 0:
+		remove_from_group("Player")
+		heavenstats.move_speed = 0
+		heavenstats.run_speed = 0
+		BulletCollision.disabled = true
+		hide()
+		
 
 #func _on_animation_player_animation_finished(anim_name):
 	#if anim_name == "takeoff_right":

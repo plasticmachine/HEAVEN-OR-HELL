@@ -731,7 +731,7 @@ collision_layer = 255
 priority = 1
 script = ExtResource("2_h3mt1")
 
-[node name="BulletHurtbox" type="CollisionShape2D" parent="Area2D"]
+[node name="BulletHurtbox" type="CollisionShape2D" parent="Area2D" groups=["Player"]]
 z_index = 1
 shape = SubResource("CircleShape2D_7egpc")
 debug_color = Color(0.964375, 3.08037e-06, 0.493133, 0.42)
