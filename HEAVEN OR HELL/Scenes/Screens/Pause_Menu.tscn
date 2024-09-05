@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2or1vjh7ai0y"]
+
+[ext_resource type="Script" path="res://Scenes/Screens/pause_menu.gd" id="1_27v7y"]
+[ext_resource type="FontFile" uid="uid://b2q20yvaohtoc" path="res://fonts/apple_kid.ttf" id="1_ndpr2"]
+[ext_resource type="Texture2D" uid="uid://10h3tbmpp4h8" path="res://art/bullets/spirit_bullets.png" id="3_rtty7"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_27v7y")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 967.0
+offset_top = 391.0
+offset_right = 1007.0
+offset_bottom = 431.0
+
+[node name="unpause_button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.0
+offset_top = 258.0
+offset_right = 109.0
+offset_bottom = 331.0
+grow_horizontal = 2
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("1_ndpr2")
+theme_override_font_sizes/font_size = 80
+text = "UNPAUSE"
+metadata/_edit_use_anchors_ = true
+
+[node name="pause_text" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.5
+offset_top = -122.5
+offset_right = 337.5
+offset_bottom = 122.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ndpr2")
+theme_override_font_sizes/font_size = 300
+text = "PAUSED
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Control"]
+position = Vector2(166455, 1595)
+scale = Vector2(29.96, 29.96)
+energy = 0.4
+blend_mode = 1
+shadow_enabled = true
+shadow_color = Color(1, 1, 1, 0)
+texture = ExtResource("3_rtty7")
+texture_scale = 50.0
+
+[connection signal="pressed" from="Control/unpause_button" to="." method="_on_unpause_button_pressed"]

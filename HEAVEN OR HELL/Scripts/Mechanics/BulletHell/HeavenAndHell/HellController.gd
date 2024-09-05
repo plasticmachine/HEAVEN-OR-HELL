@@ -1,9 +1,11 @@
 extends CharacterBody2D
 var current_animation = "idle"
 var angle = 0
+var is_dead := false
 
 enum {WALK, RUN, TAKEOFF}
 var state = WALK
+
 @onready var BulletCollision = $Area2D/BulletHurtbox
 @onready var animationTree = $AnimationTree
 @onready var state_machine = animationTree["parameters/playback"]
@@ -125,6 +127,7 @@ func start(pos):
 
 func check_death():
 	if hellstats.current_heart <= 0:
+		is_dead = true
 		remove_from_group("Player")
 		hellstats.move_speed = 0
 		hellstats.run_speed = 0

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 var current_animation = "idle"
 var angle = 0
-var check_death_has_been_called_debug = false
+var is_dead
 
 enum {WALK, RUN, TAKEOFF}
 var state = WALK
@@ -27,6 +27,7 @@ var animTree_state_keys = [
 var meleeScript
 
 func _ready():
+	
 	add_to_group("Player")
 	meleeScript = $Melee
 	#heavenstats.subtract_heart(10)
@@ -102,6 +103,7 @@ func _movement(_delta):
 func animate() -> void:
 	state_machine.travel(animTree_state_keys[state])
 	animationTree.set(blend_pos_path[state], blend_position)
+
 func start(pos):
 	
 	
@@ -109,9 +111,11 @@ func start(pos):
 	show() # makes sure the player is visible when resetting the game
 	#$CollisionShape2D.disabled = false # makes sure the collision shape is on when starting
 
+
 #@warning_ignore("unused_parameter")
 func check_death():
 	if heavenstats.current_heart <= 0:
+		is_dead = true
 		remove_from_group("Player")
 		heavenstats.move_speed = 0
 		heavenstats.run_speed = 0

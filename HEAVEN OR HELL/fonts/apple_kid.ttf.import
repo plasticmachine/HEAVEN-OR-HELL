@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/apple_kid.ttf-d677efe311447d1bd20fec3b50d7d45
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

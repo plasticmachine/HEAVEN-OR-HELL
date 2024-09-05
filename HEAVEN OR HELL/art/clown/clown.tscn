@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cgi43evcnmcqb"]
+[gd_scene load_steps=22 format=3 uid="uid://cgi43evcnmcqb"]
 
 [ext_resource type="Texture2D" uid="uid://myxqcsve702q" path="res://art/clown/dance/colored/Untitled_Artwork-1.png" id="1_0hgjm"]
 [ext_resource type="Script" path="res://art/clown/EnemyCollision.gd" id="1_e8gkx"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://djdyhk0m51tt3" path="res://art/clown/dance/colored/Untitled_Artwork-15.png" id="15_gcoj6"]
 [ext_resource type="Texture2D" uid="uid://0lcuff1it0ia" path="res://art/clown/dance/colored/Untitled_Artwork-16.png" id="16_drhfa"]
 [ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="18_bfayl"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="19_d267f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i0p1m"]
 animations = [{
@@ -104,6 +105,47 @@ show_behind_parent = true
 position = Vector2(-1, 497)
 scale = Vector2(2.042, 0.759983)
 texture = ExtResource("18_bfayl")
+
+[node name="SCardSpawn" type="Node2D" parent="."]
+script = ExtResource("19_d267f")
+active = false
+auto_pattern_id = "SwanCards"
+shared_area_name = "SwanCards"
+auto_start_on_cam = false
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
+
+[node name="FCardSpawner" type="Node2D" parent="."]
+script = ExtResource("19_d267f")
+auto_pattern_id = "FlipCards"
+shared_area_name = "FlipCards"
+pool_amount = 40
+auto_start_at_distance = 0.0
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
+
+[node name="BowlSpawningPoint" type="Node2D" parent="."]
+script = ExtResource("19_d267f")
+active = false
+auto_pattern_id = "Bowling"
+shared_area_name = "BowlingBall"
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
 
 [connection signal="area_entered" from="." to="CollisionShape2D" method="_on_clown_area_entered"]
 [connection signal="body_entered" from="." to="CollisionShape2D" method="_on_clown_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cjqun4874qmcb"]
+[gd_scene load_steps=60 format=3 uid="uid://cjqun4874qmcb"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/LevelManagers/BHCLOWN_MANAGER.gd" id="1_ql545"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_b0jdw"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b2uwu4w0ss13g" path="res://Scenes/Characters/BulletHell/HEAVEN.tscn" id="20_hqc1t"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/Cameras/Clown1AreaSwitcher.gd" id="21_rgnje"]
 [ext_resource type="Texture2D" uid="uid://bvk7xp3ft8mcc" path="res://art/backgrounds/BH/background.png" id="22_nmcwu"]
+[ext_resource type="PackedScene" uid="uid://c2or1vjh7ai0y" path="res://Scenes/Screens/Pause_Menu.tscn" id="23_tt3m4"]
 
 [sub_resource type="Resource" id="Resource_vyos7"]
 script = ExtResource("3_i6jsc")
@@ -32,6 +33,12 @@ ease = 2
 [sub_resource type="Resource" id="Resource_phj3e"]
 script = ExtResource("3_i6jsc")
 duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_niu14"]
+script = ExtResource("3_i6jsc")
+duration = 10.0
 transition = 0
 ease = 2
 
@@ -94,7 +101,7 @@ symmetric = true
 symmetry_type = 1
 bullet = "FlipCards"
 nbr = 10
-iterations = -1
+iterations = 75
 cooldown_spawn = 0.8
 cooldown_shoot = 0.0
 cooldown_next_spawn = 0.0
@@ -441,13 +448,13 @@ homing_type = 3
 homing_group = "Player"
 homing_select_in_group = 3
 homing_steer = 5500.0
-homing_time_start = 0.1
-homing_duration = 60.0
+homing_time_start = 1.0
+homing_duration = 999999.0
 homing_detection_dist = 9.22337e+18
 homing_start_signal = ""
-homing_range = Vector2(9999, 20)
+homing_range = Vector2(9.22337e+18, 10)
 homing_imprecision = Vector2(0, 0)
-r_randomisation_chances = 1.0
+r_randomisation_chances = 0.0
 r_speed_choice = PackedFloat32Array()
 r_speed_variation = Vector3(0, 0, 0)
 r_scale_choice = PackedFloat32Array()
@@ -592,6 +599,12 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve2D" id="Curve2D_cl67s"]
+_data = {
+"points": PackedVector2Array(27511.4, 3822.17, -27511.4, -3822.17, 8648.91, 2120.51, 0, 0, 0, 0, 4570.74, -6413.41)
+}
+point_count = 2
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s1o53"]
 shader = ExtResource("19_5i5vi")
 shader_parameter/borderScale = 2.0
@@ -600,26 +613,22 @@ shader_parameter/color = null
 shader_parameter/debug = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6fkc"]
-size = Vector2(344.386, 261.327)
+size = Vector2(2929.36, 1661.48)
 
 [node name="Main" type="Node"]
+process_mode = 1
 script = ExtResource("1_ql545")
-
-[node name="SubViewport" type="SubViewport" parent="."]
-snap_2d_transforms_to_pixel = true
-size = Vector2i(11520, 6480)
-size_2d_override = Vector2i(11520, 6480)
 
 [node name="Cameras" type="Node2D" parent="."]
 
 [node name="GroupCam" type="Node2D" parent="Cameras" node_paths=PackedStringArray("follow_targets")]
 physics_interpolation_mode = 1
 auto_translate_mode = 1
-position = Vector2(6560, 7581)
+position = Vector2(5137.5, 7263)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-zoom = Vector2(0.161406, 0.161406)
+zoom = Vector2(0.23875, 0.23875)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)
@@ -634,6 +643,13 @@ script = ExtResource("2_b0jdw")
 priority = 1
 zoom = Vector2(0.15, 0.15)
 tween_resource = SubResource("Resource_phj3e")
+
+[node name="BH_2_Cam" type="Node2D" parent="Cameras"]
+position = Vector2(3107, -4706)
+script = ExtResource("2_b0jdw")
+zoom = Vector2(0.15, 0.15)
+frame_preview = false
+tween_resource = SubResource("Resource_niu14")
 
 [node name="Camera2D" type="Camera2D" parent="Cameras"]
 physics_interpolation_mode = 2
@@ -652,6 +668,9 @@ offset_top = -913.683
 offset_right = -1692.0
 offset_bottom = -873.683
 metadata/_edit_use_anchors_ = true
+
+[node name="PauseMenu" parent="Cameras" instance=ExtResource("23_tt3m4")]
+visible = false
 
 [node name="Timers" type="Node" parent="."]
 script = ExtResource("5_ff680")
@@ -748,8 +767,8 @@ position = Vector2(2545, -786)
 curve = SubResource("Curve2D_j5ktt")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(10128.7, 2103)
-progress = 12384.7
+position = Vector2(1664.44, 2101.63)
+progress = 20848.9
 rotates = false
 cubic_interp = false
 script = ExtResource("14_r45kx")
@@ -760,46 +779,16 @@ position = Vector2(0, 267)
 collision_layer = 3
 collision_mask = 3
 
-[node name="SCardSpawn" type="Node2D" parent="Path2D/PathFollow2D/Clown2"]
-script = ExtResource("16_a4nmd")
-active = false
-auto_pattern_id = "SwanCards"
-shared_area_name = "SwanCards"
-auto_start_on_cam = false
-r_active_chances = 1.0
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
-r_start_distance_choice = ""
-r_start_distance_variation = Vector3(0, 0, 0)
+[node name="Path2D" type="Path2D" parent="Path2D"]
+curve = SubResource("Curve2D_cl67s")
 
-[node name="FCardSpawner" type="Node2D" parent="Path2D/PathFollow2D/Clown2"]
-script = ExtResource("16_a4nmd")
-auto_pattern_id = "FlipCards"
-shared_area_name = "FlipCards"
-pool_amount = 40
-auto_start_at_distance = 0.0
-r_active_chances = 1.0
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
-r_start_distance_choice = ""
-r_start_distance_variation = Vector3(0, 0, 0)
-
-[node name="BowlSpawningPoint" type="Node2D" parent="Path2D/PathFollow2D/Clown2"]
-script = ExtResource("16_a4nmd")
-active = false
-auto_pattern_id = "Bowling"
-shared_area_name = "BowlingBall"
-r_active_chances = 1.0
-r_rotating_variation = Vector3(0, 0, 0)
-r_pattern_choice = ""
-r_start_time_choice = ""
-r_start_time_variation = Vector3(0, 0, 0)
-r_start_distance_choice = ""
-r_start_distance_variation = Vector3(0, 0, 0)
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D/Path2D"]
+position = Vector2(8648.91, 2120.51)
+rotates = false
+cubic_interp = false
+loop = false
+script = ExtResource("14_r45kx")
+speed = 1500
 
 [node name="TestBlotchy" type="Sprite2D" parent="."]
 visible = false
@@ -873,23 +862,55 @@ scale = Vector2(0.132, -0.078)
 position = Vector2(1568.18, 13512.8)
 rotation = -1.57416
 scale = Vector2(8.42236, 2.1017)
-polygon = PackedVector2Array(15100, 243, -140, 162, -160, -60, 15140, -19)
+polygon = PackedVector2Array(13023.8, 305.321, 1799.09, 182.854, 1779.54, -98.5683, 13031.6, 24.2677)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Phase_1_Walls"]
 position = Vector2(1022.73, -2692.31)
 scale = Vector2(6.78914, 6.89377)
-polygon = PackedVector2Array(15100, 243, -140, 162, -160, -60, 15140, -19)
+polygon = PackedVector2Array(14554.2, 264.081, 46.8659, 174.815, 47.9818, 1.86011, 14558.7, 79.9685)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Phase_1_Walls"]
 position = Vector2(-83.3333, -96038.5)
 scale = Vector2(7.06059, 7.06059)
-polygon = PackedVector2Array(15100, 243, -140, 162, -160, -60, 15140, -19)
+polygon = PackedVector2Array(14165.3, 236.057, 192.061, 161.61, 192.061, -12.7051, 14168.5, 108.952)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Phase_1_Walls"]
 position = Vector2(99719.7, 12012.8)
 rotation = -1.57416
 scale = Vector2(20.6984, -4.13108)
-polygon = PackedVector2Array(15100, 243, -140, 162, -160, -60, 15140, -19)
+polygon = PackedVector2Array(5139.14, -27.9258, 618.27, 163.797, 623.086, -43.5078, 5139.07, -136.121)
+
+[node name="Phase_2_Walls" type="StaticBody2D" parent="."]
+position = Vector2(-3559, -8534)
+scale = Vector2(0.132, -0.078)
+collision_layer = 2
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Phase_2_Walls"]
+position = Vector2(1939.39, -111282)
+rotation = 1.5708
+scale = Vector2(8.58122, 2.10174)
+polygon = PackedVector2Array(11404.3, 273.782, 1799.09, 182.854, 1779.54, -98.5683, 11404.3, -10.9805)
+one_way_collision = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Phase_2_Walls"]
+position = Vector2(143.942, -16397.4)
+scale = Vector2(6.78914, 6.89377)
+polygon = PackedVector2Array(14554.2, 264.081, 46.8659, 174.815, 47.9818, 1.86011, 14558.7, 79.9685)
+one_way_collision = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Phase_2_Walls"]
+position = Vector2(101197, -94448.7)
+rotation = 3.14159
+scale = Vector2(7.06059, 7.06059)
+polygon = PackedVector2Array(14165.3, 236.057, 192.061, 161.61, 194.208, 78.0778, 14168.5, 108.952)
+one_way_collision = true
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Phase_2_Walls"]
+position = Vector2(99287.9, -120795)
+rotation = 1.5708
+scale = Vector2(20.6984, -4.13108)
+polygon = PackedVector2Array(5139.14, -27.9258, 1244.37, -33.0078, 1246.23, -115.531, 5139.07, -136.121)
+one_way_collision = true
 
 [node name="Players" type="Node2D" parent="."]
 position = Vector2(12606, 9242)
@@ -897,18 +918,17 @@ position = Vector2(12606, 9242)
 [node name="Hell" parent="Players" instance=ExtResource("18_nimnx")]
 physics_interpolation_mode = 2
 material = SubResource("ShaderMaterial_s1o53")
-position = Vector2(-11992, -1661)
+position = Vector2(-10364, -1979)
 
 [node name="Heaven" parent="Players" instance=ExtResource("20_hqc1t")]
-position = Vector2(0, -1622)
+position = Vector2(-4473, -1895)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Phase_2_Trigger" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-12080, 7418)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase_2_Trigger"]
+position = Vector2(3093, -4723)
 scale = Vector2(4.36, 4.33229)
 shape = SubResource("RectangleShape2D_o6fkc")
-disabled = true
 script = ExtResource("21_rgnje")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -916,14 +936,8 @@ z_index = -255
 position = Vector2(-74, 2)
 scale = Vector2(6.5, 6.5)
 texture = ExtResource("22_nmcwu")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(614, 5948)
-energy = 0.25
-blend_mode = 1
-shadow_enabled = true
-shadow_color = Color(1, 1, 1, 0)
-texture_scale = 50.0
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="Timers/clown_PHASE_1" to="Timers" method="_on_clown_phase_1_timeout"]
-[connection signal="area_shape_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_area_2d_area_shape_entered"]
+[connection signal="area_shape_entered" from="Phase_2_Trigger" to="Timers" method="_on_BH_phase_2_area_entered"]
+[connection signal="area_shape_entered" from="Phase_2_Trigger" to="Phase_2_Trigger/CollisionShape2D" method="_on_area_2d_area_shape_entered"]

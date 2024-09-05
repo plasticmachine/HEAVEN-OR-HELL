@@ -4,15 +4,17 @@ extends Node
 #@export var mobTimer_scene: PackedScene
 var score
 #var difficulty = 0.60
-
+@onready var PauseMenu = $Cameras/PauseMenu
 @onready var BHCam = $Cameras/BH_1_Cam
 @onready var GroupCam = $Cameras/GroupCam
 @onready var Heaven = $Players/Heaven
 @onready var Hell = $Players/Hell
 
+@onready var Firework_Properties = $BulletProps/FireworkProperties
+
 func _ready():
 	Engine.max_fps = 60
-
+	
 
 #func _on_score_timer_timeout():
 	#score += 1
@@ -71,8 +73,28 @@ func _on_start_timer_timeout():
 	
 func _process(_delta):
 	check_game_over()
+	check_for_pause()
+	#print_debug(Engine.get_frames_per_second())
+
+func check_for_pause():
+	if Input.is_action_pressed("pause_heaven") || Input.is_action_pressed("pause_hell"):
+		PauseMenu.show()
+		get_tree().paused = true
+		
+func _notification(what) -> void:
+		if what == MainLoop.NOTIFICATION_APPLICATION_FOCUS_OUT:
+			PauseMenu.show()
+			get_tree().paused = true
+	#elif Input.is_action_pressed("pause_heaven") and get_tree().paused == true:
+		#get_tree().paused = false
 
 func check_game_over():
+	if Hell.is_dead == true:
+		GroupCam.erase_follow_targets(Hell)
+	
+	if Heaven.is_dead == true:
+		GroupCam.erase_follow_targets(Heaven)
+	
 	if !Hell.is_in_group("Player") and !Heaven.is_in_group("Player"):
 		YASM.load_scene("res://Scenes/Screens/Main_Menu.tscn")
 
