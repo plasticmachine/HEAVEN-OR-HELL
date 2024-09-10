@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cjqun4874qmcb"]
+[gd_scene load_steps=65 format=3 uid="uid://cjqun4874qmcb"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/LevelManagers/BHCLOWN_MANAGER.gd" id="1_ql545"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_b0jdw"]
@@ -40,6 +40,12 @@ ease = 2
 [sub_resource type="Resource" id="Resource_niu14"]
 script = ExtResource("3_i6jsc")
 duration = 10.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_dws4u"]
+script = ExtResource("3_i6jsc")
+duration = 1.0
 transition = 0
 ease = 2
 
@@ -655,6 +661,8 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve2D" id="Curve2D_m527w"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6fkc"]
 size = Vector2(2929.36, 1661.48)
 
@@ -679,7 +687,7 @@ position = Vector2(5137.5, 7263)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-zoom = Vector2(0.242, 0.242)
+zoom = Vector2(0.23875, 0.23875)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)
@@ -707,6 +715,10 @@ position = Vector2(-8290, -3273)
 script = ExtResource("2_b0jdw")
 zoom = Vector2(0.15, 0.15)
 tween_resource = SubResource("Resource_phj3e")
+
+[node name="BH_4_Cam" type="Node2D" parent="Cameras"]
+script = ExtResource("2_b0jdw")
+tween_resource = SubResource("Resource_dws4u")
 
 [node name="Camera2D" type="Camera2D" parent="Cameras"]
 physics_interpolation_mode = 2
@@ -743,6 +755,8 @@ one_shot = true
 [node name="clown_PHASE_3" type="Timer" parent="Timers"]
 wait_time = 5.0
 one_shot = true
+
+[node name="clown_PHASE_4" type="Timer" parent="Timers"]
 
 [node name="TimerResources" type="Node" parent="Timers"]
 
@@ -787,6 +801,23 @@ offset_bottom = -5888.0
 scale = Vector2(26.9967, 2.48006)
 
 [node name="Phase3TextureProgress" type="TextureProgressBar" parent="Timers/TimerResources/Phase3Hbox"]
+visible = false
+layout_mode = 2
+max_value = 5.0
+value = 1.0
+texture_under = ExtResource("6_gqw3i")
+texture_progress = ExtResource("7_tg0k8")
+tint_under = Color(1, 1, 1, 0.364706)
+tint_progress = Color(1, 1, 1, 0.32549)
+
+[node name="Phase4Hbox" type="HBoxContainer" parent="Timers/TimerResources"]
+offset_left = -13705.0
+offset_top = -5941.0
+offset_right = -13309.0
+offset_bottom = -5888.0
+scale = Vector2(26.9967, 2.48006)
+
+[node name="Phase4TextureProgress" type="TextureProgressBar" parent="Timers/TimerResources/Phase4Hbox"]
 visible = false
 layout_mode = 2
 max_value = 5.0
@@ -911,6 +942,12 @@ loop = false
 script = ExtResource("14_r45kx")
 speed = 1500
 
+[node name="Phase_4_Travel" type="Path2D" parent="Path2D"]
+curve = SubResource("Curve2D_m527w")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D/Phase_4_Travel"]
+script = ExtResource("14_r45kx")
+
 [node name="Phase_1_Walls" type="StaticBody2D" parent="."]
 position = Vector2(-5, 959)
 scale = Vector2(0.132, -0.078)
@@ -1002,6 +1039,38 @@ scale = Vector2(20.6984, -4.13108)
 polygon = PackedVector2Array(5701.55, -78.7554, 1244.37, -33.0078, 1246.23, -115.531, 5704.65, -150.275)
 one_way_collision = true
 
+[node name="Phase_4_Walls" type="StaticBody2D" parent="."]
+position = Vector2(-14943, -7124)
+scale = Vector2(0.132, -0.078)
+collision_layer = 2
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Phase_4_Walls"]
+position = Vector2(1878.81, -101179)
+rotation = 1.5708
+scale = Vector2(8.58122, 2.10174)
+polygon = PackedVector2Array(11404.3, 273.782, 694.719, 191.027, 690.237, 43.2422, 11404.3, -10.9805)
+one_way_collision = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Phase_4_Walls"]
+position = Vector2(143.949, -3320.51)
+scale = Vector2(6.78914, 6.89377)
+polygon = PackedVector2Array(14554.2, 264.081, 46.8659, 174.815, 47.9818, 1.86011, 14558.7, 79.9685)
+one_way_collision = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Phase_4_Walls"]
+position = Vector2(101197, -94448.7)
+rotation = 3.14159
+scale = Vector2(7.06059, 7.06059)
+polygon = PackedVector2Array(14165.3, 236.057, 192.061, 161.61, 194.208, 78.0778, 14168.5, 108.952)
+one_way_collision = true
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Phase_4_Walls"]
+position = Vector2(99287.9, -120795)
+rotation = 1.5708
+scale = Vector2(20.6984, -4.13108)
+polygon = PackedVector2Array(5701.55, -78.7554, 1244.37, -33.0078, 1246.23, -115.531, 5704.65, -150.275)
+one_way_collision = true
+
 [node name="Phase_2_Trigger" type="Area2D" parent="."]
 metadata/_edit_lock_ = true
 
@@ -1020,12 +1089,20 @@ scale = Vector2(4.36, 4.33229)
 shape = SubResource("RectangleShape2D_o6fkc")
 disabled = true
 
+[node name="Phase_4_Trigger" type="Area2D" parent="."]
+position = Vector2(-8938, 1249)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Phase_4_Trigger"]
+position = Vector2(622, -4509)
+scale = Vector2(4.36, 4.33229)
+shape = SubResource("RectangleShape2D_o6fkc")
+disabled = true
+
 [node name="TestBlotchy" type="Sprite2D" parent="."]
 visible = false
 z_index = -225
 position = Vector2(1645, 8187)
 texture = ExtResource("17_in4j4")
-metadata/_edit_lock_ = true
 
 [node name="TestBlotchy2" type="Sprite2D" parent="TestBlotchy"]
 position = Vector2(-11, -3269)
@@ -1116,13 +1193,14 @@ position = Vector2(-10364, -1979)
 position = Vector2(-4473, -1895)
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 z_index = -255
 position = Vector2(-74, 2)
 scale = Vector2(6.5, 6.5)
 texture = ExtResource("22_nmcwu")
-metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="Timers/clown_PHASE_1" to="Timers" method="_on_clown_phase_1_timeout"]
 [connection signal="timeout" from="Timers/clown_PHASE_2" to="Timers" method="_on_clown_phase_2_timeout"]
 [connection signal="area_shape_entered" from="Phase_2_Trigger" to="Timers" method="_on_BH_phase_2_area_entered"]
 [connection signal="area_shape_entered" from="Phase_3_Trigger" to="Timers" method="_on_phase_3_trigger_area_shape_entered"]
+[connection signal="area_shape_entered" from="Phase_4_Trigger" to="Timers" method="_on_phase_3_trigger_area_shape_entered"]

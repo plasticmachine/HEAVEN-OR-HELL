@@ -25,11 +25,17 @@ extends Node
 @onready var Phase_3_Collision = $"../Phase_3_Walls"
 @onready var Phase_3_Trigger_Collision = $"../Phase_3_Trigger/CollisionShape2D"
 @onready var Phase_3_Bar = $TimerResources/Phase3Hbox/Phase3TextureProgress
-
+@onready var Phase_4_Travel_PathFollow2D = $"../Path2D/Phase_4_Travel/PathFollow2D"
+@onready var Phase_4_Timer = $clown_PHASE_4
+@onready var Phase_4_Collision = $"../Phase_4_Walls"
+@onready var Phase_4_Trigger_Collision = $"../Phase_4_Trigger"
+@onready var Phase_4_Bar = $TimerResources/Phase4Hbox/Phase4TextureProgress
+@onready var BH_4_Cam = $"../Cameras/BH_4_Cam"
 
 #a bunch of variables for use in various functions
 @onready var BH_2_triggerable := false
 @onready var BH_3_triggerable := false
+@onready var BH_4_triggerable := false
 
 func _ready():
 	BH_1_PathFollow2D.active = true
