@@ -1,47 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://deecqqpf2gy63"]
+[gd_scene load_steps=5 format=3 uid="uid://deecqqpf2gy63"]
 
 [ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/TB/IMG_2136.PNG" id="1_nurjv"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/Screens/MainMenuStart.gd" id="2_kfhon"]
 [ext_resource type="Texture2D" uid="uid://dpatl5wwkwt6m" path="res://art/backgrounds/Sprite-0001.png" id="2_mge0u"]
+[ext_resource type="AudioStream" uid="uid://dngok0eljvqfy" path="res://Audio/Music/Menus/Main/Bleached.mp3" id="3_eq5f0"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(874, 711)
-scale = Vector2(0.559998, 0.559998)
+position = Vector2(980, 774)
+scale = Vector2(0.957, 0.957)
 texture = ExtResource("1_nurjv")
 
 [node name="StartButton" type="Button" parent="Background"]
-offset_left = -108.929
-offset_top = -67.8572
-offset_right = -12.9289
-offset_bottom = -36.8572
-scale = Vector2(3.5, 3.5)
+offset_left = -616.51
+offset_top = -148.38
+offset_right = -520.51
+offset_bottom = -117.38
+scale = Vector2(2.28788, 2.28788)
 text = "Start Game"
 script = ExtResource("2_kfhon")
 
 [node name="OptionsButton" type="Button" parent="Background"]
-offset_left = -108.929
-offset_top = 71.4289
-offset_right = -12.9289
-offset_bottom = 102.429
-scale = Vector2(3.5, 3.5)
+offset_left = -616.51
+offset_top = -52.2466
+offset_right = -520.51
+offset_bottom = -21.2465
+scale = Vector2(2.28788, 2.28788)
 text = "Options
 "
 
 [node name="ExitButton" type="Button" parent="Background"]
-offset_left = -108.929
-offset_top = 221.429
-offset_right = -12.9289
-offset_bottom = 252.429
-scale = Vector2(3.5, 3.5)
+offset_left = -615.465
+offset_top = 50.1568
+offset_right = -519.465
+offset_bottom = 81.1568
+scale = Vector2(2.28788, 2.28788)
 text = "Exit
 "
 
 [node name="Sprite-0001" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(849, 656)
 scale = Vector2(0.333159, 0.240973)
 texture = ExtResource("2_mge0u")
+
+[node name="menu_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_eq5f0")
+volume_db = -22.088
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="Background/StartButton" to="Background/StartButton" method="_on_pressed"]
 [connection signal="pressed" from="Background/ExitButton" to="Background/StartButton" method="_on_exit_button_pressed"]

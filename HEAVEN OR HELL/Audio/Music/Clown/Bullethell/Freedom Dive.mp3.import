@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1apqopat15uh"
+path="res://.godot/imported/Freedom Dive.mp3-697a367a3e398b78dfa2a32efbaf81a9.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Clown/Bullethell/Freedom Dive.mp3"
+dest_files=["res://.godot/imported/Freedom Dive.mp3-697a367a3e398b78dfa2a32efbaf81a9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

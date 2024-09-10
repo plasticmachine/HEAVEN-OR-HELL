@@ -31,17 +31,18 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 YASM="*res://addons/yet_another_scene_manager/Scenes.gd"
 StatSaver="*res://Scenes/StatStuff/stat_saver.tscn"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
-Panku="*res://addons/panku_console/console.tscn"
 TurnityManager="*res://addons/turnity/turn_manager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=4
-window/size/borderless=true
+window/size/mode=3
+window/size/initial_position_type=0
+window/size/window_width_override=2560
+window/size/window_height_override=1440
 window/stretch/mode="canvas_items"
-window/vsync/vsync_mode=2
+window/stretch/aspect="expand"
 mouse_cursor/custom_image="res://art/misc/xjwmt5upomxa1-export.png"
 
 [dotnet]
@@ -50,7 +51,7 @@ project/assembly_name="Reimu-s Bad Day"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/turnity/plugin.cfg", "res://addons/yet_another_scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/turnity/plugin.cfg", "res://addons/yet_another_scene_manager/plugin.cfg")
 
 [global_group]
 

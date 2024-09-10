@@ -26,7 +26,7 @@
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellButtons2.gd" id="13_ie6y5"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/Attackbutton3.gd" id="14_nfy1c"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellBars.gd" id="15_5slww"]
-[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/EnemyPath.gd" id="15_qlv6m"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/LevelManagers/EnemyPath.gd" id="15_qlv6m"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/Attackbutton2.gd" id="16_62r43"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/HeavenBars.gd" id="17_kebos"]
 [ext_resource type="AudioStream" uid="uid://bp4gmvnpy1x17" path="res://Audio/Music/Clown/Turnbased/making a song with only soundfonts.wav" id="17_y1u7i"]

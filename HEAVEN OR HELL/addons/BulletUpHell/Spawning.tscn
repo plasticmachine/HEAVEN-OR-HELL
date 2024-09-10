@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawner.gd" id="1"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="2_ai2re"]
-[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="3_5wv4n"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="3_5wv4n"]
 [ext_resource type="Texture2D" uid="uid://dh3jdhhxrn83n" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Untitled_Artwork-2.png" id="4_dgjd2"]
 [ext_resource type="AudioStream" uid="uid://22wx6508egvq" path="res://addons/BulletUpHell/Bullet/Hit Hurt.wav" id="5_rada6"]
 [ext_resource type="Texture2D" uid="uid://bt2su3hqlnnm" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Untitled_Artwork-3.png" id="5_vedub"]
@@ -113,6 +113,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_cmm3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku5xe")
+}],
+"loop": true,
+"name": &"Collision",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("18_phtky")
 }],
 "loop": true,
@@ -167,6 +184,143 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_gdbbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_txnne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_td4eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_261mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1an6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_avrhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_q2u75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_44cxq")
+}],
+"loop": true,
+"name": &"FlipCardSpawn",
+"speed": 45.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmm3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku5xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmm3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku5xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmm3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku5xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmm3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku5xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmm3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku5xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmm3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku5xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmm3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku5xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmm3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku5xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmm3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_seux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ckqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku5xe")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_cmm3n")
 }, {
 "duration": 1.0,
@@ -215,7 +369,7 @@ radius = 159.526
 size = Vector2(320.14, 115.731)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lknj7"]
-size = Vector2(190.518, 85.3628)
+size = Vector2(190.062, 76.7028)
 
 [sub_resource type="ConvexPolygonShape2D" id="3"]
 points = PackedVector2Array(0, 0)
@@ -229,6 +383,7 @@ default_shoot = SubResource("Resource_143us")
 default_waiting = SubResource("Resource_mg64w")
 default_delete = SubResource("Resource_h5vdn")
 cull_trigger = false
+cull_culling_rate = 1.002
 cull_margin = 999999.0
 cull_viewport_refresh = 60.0
 
@@ -257,8 +412,10 @@ cull_viewport_refresh = 60.0
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
 z_index = 1
 texture_filter = 3
+scale = Vector2(2, 2)
 sprite_frames = SubResource("1")
-animation = &"Firework"
+animation = &"Spawning"
+frame_progress = 0.795773
 
 [node name="Default" type="CollisionShape2D" parent="ShapeManager"]
 visible = false
@@ -271,6 +428,7 @@ shape = SubResource("CircleShape2D_iflvn")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
 [node name="Firework" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
 position = Vector2(86, 0)
 scale = Vector2(1.193, 0.394)
 shape = SubResource("CircleShape2D_y56c1")
@@ -285,7 +443,7 @@ debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
 [node name="FlipCard" type="CollisionShape2D" parent="ShapeManager"]
 visible = false
-position = Vector2(2.38419e-07, 0)
+position = Vector2(-0.363313, 7.00001)
 scale = Vector2(1.59278, 1.61663)
 shape = SubResource("RectangleShape2D_lknj7")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)

@@ -4,13 +4,13 @@ extends Area2D
 
 func _on_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	if area == Spawning.get_shared_area("FlipCards"):
-		hellstats.subtract_heart(Spawning.bullet("FlipCards").damage)
+		hellstats.subtract_heart((Spawning.bullet("FlipCards").damage) / (hellstats.guts / 20))
 	
 	if area == Spawning.get_shared_area("Firework"):
-		hellstats.subtract_heart(Spawning.bullet("Firework").damage)
+		hellstats.subtract_heart((Spawning.bullet("Firework").damage) / (hellstats.guts / 20))
 	
 	if area == Spawning.get_shared_area("BowlingBall"):
-		hellstats.subtract_heart(Spawning.bullet("Bowling").damage)
+		hellstats.subtract_heart((Spawning.bullet("BowlingBall").damage) / (hellstats.guts / 20))
 	
 	if area == Spawning.get_shared_area("SwanCards"):
-		hellstats.subtract_heart(Spawning.bullet("SwanCards").damage)
+		hellstats.subtract_heart((Spawning.bullet("SwanCards").damage) / (hellstats.guts / 20))

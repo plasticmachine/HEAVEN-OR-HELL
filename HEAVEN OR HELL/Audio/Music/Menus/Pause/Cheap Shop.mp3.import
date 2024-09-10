@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d04aiou676l0h"
+path="res://.godot/imported/Cheap Shop.mp3-2bcd6d2fc80738a74732826e182de938.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Menus/Pause/Cheap Shop.mp3"
+dest_files=["res://.godot/imported/Cheap Shop.mp3-2bcd6d2fc80738a74732826e182de938.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

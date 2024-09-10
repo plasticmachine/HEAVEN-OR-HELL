@@ -6,7 +6,7 @@ var is_dead := false
 enum {WALK, RUN, TAKEOFF}
 var state = WALK
 
-@onready var BulletCollision = $Area2D/BulletHurtbox
+@onready var BulletCollision = $PlayerArea/BulletHurtbox
 @onready var animationTree = $AnimationTree
 @onready var state_machine = animationTree["parameters/playback"]
 
