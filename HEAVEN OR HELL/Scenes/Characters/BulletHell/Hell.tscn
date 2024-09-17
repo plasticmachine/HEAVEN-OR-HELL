@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://ldg2vsd26rqu"]
+[gd_scene load_steps=108 format=3 uid="uid://ldg2vsd26rqu"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HellController.gd" id="1_2xahn"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/walk/down/HLL_DOWN.PNG" id="3_bqu8f"]
@@ -45,11 +45,9 @@
 [ext_resource type="Texture2D" uid="uid://clpxgvqyndti7" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-5.png" id="35_idttu"]
 [ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="45_r4d84"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
-radius = 59.2
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ff1ik"]
-radius = 59.2
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_et7q0"]
+radius = 242.0
+height = 1194.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5dk0g"]
 
@@ -878,7 +876,8 @@ texture = ExtResource("45_r4d84")
 
 [node name="InteractionHurtbox" type="CollisionShape2D" parent="."]
 z_index = 1
-shape = SubResource("CircleShape2D_7egpc")
+scale = Vector2(1, 0.88)
+shape = SubResource("CapsuleShape2D_et7q0")
 
 [node name="PlayerArea" type="Area2D" parent="." groups=["Player"]]
 z_index = 1
@@ -888,7 +887,8 @@ script = ExtResource("3_h8gmy")
 
 [node name="BulletHurtbox" type="CollisionShape2D" parent="PlayerArea"]
 z_index = 1
-shape = SubResource("CircleShape2D_ff1ik")
+scale = Vector2(1, 0.88)
+shape = SubResource("CapsuleShape2D_et7q0")
 debug_color = Color(0.964375, 3.08037e-06, 0.493133, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

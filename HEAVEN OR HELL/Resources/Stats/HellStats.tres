@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://ds2wg3d67fytg"]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://crlggfguj7ru0"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_r2u21"]
 
@@ -14,7 +14,7 @@ current_magia = 100
 malice = 10
 deviltry = 10
 guts = 15.0
-pain_tolerance = 1.6
+pain_tolerance = 2.4
 luck = 0
 crit = 0
 crit_level = 0

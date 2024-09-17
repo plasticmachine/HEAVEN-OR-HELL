@@ -85,6 +85,8 @@ animations = [{
 radius = 112.4
 
 [node name="Clown" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i0p1m")
@@ -96,7 +98,6 @@ frame_progress = 0.838497
 position = Vector2(-24, 144)
 scale = Vector2(2.28, 2.28)
 shape = SubResource("CircleShape2D_kk6lu")
-disabled = true
 script = ExtResource("1_e8gkx")
 
 [node name="DropShadow" type="Sprite2D" parent="."]

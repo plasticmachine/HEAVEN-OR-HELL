@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://gixop20d1d75"]
+[gd_scene load_steps=47 format=3 uid="uid://gixop20d1d75"]
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawner.gd" id="1"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="2_ai2re"]
@@ -8,9 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://bt2su3hqlnnm" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Untitled_Artwork-3.png" id="5_vedub"]
 [ext_resource type="Texture2D" uid="uid://6xap1s4ohuc8" path="res://art/bullets/CLOWN/FIREWORK/0.png" id="6_45tvb"]
 [ext_resource type="Texture2D" uid="uid://ccxuxofimrkn2" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Untitled_Artwork-4.png" id="6_o01ce"]
+[ext_resource type="Texture2D" uid="uid://bqgx874fun38c" path="res://art/bullets/CLOWN/BOWLINGPINS/BowlingPins.PNG" id="7_tc8yf"]
 [ext_resource type="Texture2D" uid="uid://el4b0viurudt" path="res://art/bullets/CLOWN/FIREWORK/1.png" id="7_x28r6"]
+[ext_resource type="Texture2D" uid="uid://euvimw46w4rn" path="res://art/bullets/CLOWN/BOWLINGPINS/2.PNG" id="8_fe4hq"]
 [ext_resource type="Texture2D" uid="uid://ktn8dug8a1op" path="res://art/bullets/CLOWN/FIREWORK/2.png" id="8_olfg7"]
+[ext_resource type="Texture2D" uid="uid://com107a5wfm46" path="res://art/bullets/CLOWN/BOWLINGPINS/3.PNG" id="9_farbv"]
 [ext_resource type="Texture2D" uid="uid://m8ohtew10sav" path="res://art/bullets/CLOWN/FIREWORK/3.png" id="9_fk20i"]
+[ext_resource type="Texture2D" uid="uid://0owjoij10fal" path="res://art/bullets/CLOWN/BOWLINGPINS/4.PNG" id="10_adk0g"]
 [ext_resource type="Texture2D" uid="uid://dn2bh2wwhoap0" path="res://art/bullets/CLOWN/FLIPCARD/0.png" id="10_gdbbs"]
 [ext_resource type="Texture2D" uid="uid://cjbnbppr7gx0i" path="res://art/bullets/CLOWN/FLIPCARD/1.png" id="11_txnne"]
 [ext_resource type="Texture2D" uid="uid://br0ftxoefdjou" path="res://art/bullets/CLOWN/FLIPCARD/2.png" id="12_td4eg"]
@@ -110,6 +114,23 @@ animations = [{
 "loop": true,
 "name": &"BowlingAnim",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tc8yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fe4hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_farbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_adk0g")
+}],
+"loop": true,
+"name": &"BowlingPin",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -371,6 +392,9 @@ size = Vector2(320.14, 115.731)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lknj7"]
 size = Vector2(190.062, 76.7028)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flen2"]
+size = Vector2(117, 288)
+
 [sub_resource type="ConvexPolygonShape2D" id="3"]
 points = PackedVector2Array(0, 0)
 
@@ -397,9 +421,7 @@ cull_viewport_refresh = 60.0
 
 [node name="BowlingBall" type="Area2D" parent="SharedAreas"]
 
-[node name="4" type="Area2D" parent="SharedAreas"]
-
-[node name="5" type="Area2D" parent="SharedAreas"]
+[node name="BowlingPin" type="Area2D" parent="SharedAreas"]
 
 [node name="6" type="Area2D" parent="SharedAreas"]
 
@@ -410,46 +432,44 @@ cull_viewport_refresh = 60.0
 [node name="9" type="Area2D" parent="SharedAreas"]
 
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
-z_index = 1
 texture_filter = 3
 scale = Vector2(2, 2)
 sprite_frames = SubResource("1")
-animation = &"Spawning"
-frame_progress = 0.795773
+animation = &"BowlingPin"
 
 [node name="Default" type="CollisionShape2D" parent="ShapeManager"]
-visible = false
 shape = SubResource("CircleShape2D_qyokg")
 debug_color = Color(0.847059, 0.305882, 0.560784, 0.419608)
 
 [node name="BowlingCol" type="CollisionShape2D" parent="ShapeManager"]
-visible = false
+scale = Vector2(1.08, 1.08)
 shape = SubResource("CircleShape2D_iflvn")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
 [node name="Firework" type="CollisionShape2D" parent="ShapeManager"]
-visible = false
 position = Vector2(86, 0)
 scale = Vector2(1.193, 0.394)
 shape = SubResource("CircleShape2D_y56c1")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
 [node name="SwanCard" type="CollisionShape2D" parent="ShapeManager"]
-visible = false
 position = Vector2(-4.76837e-07, -5)
 scale = Vector2(1.03392, 1.06281)
 shape = SubResource("RectangleShape2D_14m3u")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
 [node name="FlipCard" type="CollisionShape2D" parent="ShapeManager"]
-visible = false
 position = Vector2(-0.363313, 7.00001)
 scale = Vector2(1.59278, 1.61663)
 shape = SubResource("RectangleShape2D_lknj7")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
+[node name="PinCol" type="CollisionShape2D" parent="ShapeManager"]
+position = Vector2(-1, 100.5)
+shape = SubResource("RectangleShape2D_flen2")
+debug_color = Color(0.0363593, 0.600313, 0.692527, 0.42)
+
 [node name="LaserBeam" type="CollisionShape2D" parent="ShapeManager"]
-visible = false
 shape = SubResource("3")
 
 [node name="SFX" type="Node2D" parent="."]

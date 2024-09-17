@@ -39,6 +39,13 @@ func _process(delta):
 	_movement(delta)
 	animate()
 	check_death()
+	debug_controls()
+
+func debug_controls():
+	if Input.is_action_just_pressed("DEBUG_heaven_all_stats_up_(+10)"):
+		heavenstats.add_all(10)
+	if Input.is_action_just_pressed("DEBUG_heaven_all_stats_down_(-10)"):
+		heavenstats.subtract_all(10)
 
 func _movement(_delta):
 	current_animation = "idle"

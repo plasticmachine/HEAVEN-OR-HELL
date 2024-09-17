@@ -1,4 +1,9 @@
 extends CollisionShape2D
+#signal enable_collision
+
+func enable():
+	enable()
+	#enable_collision.emit
 
 func _on_clown_body_entered(body):
 	if body.is_in_group("Player"):

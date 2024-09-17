@@ -207,6 +207,55 @@ func divide_crit(divisor: float) -> void:
 		crit = int(crit / divisor)
 	#emit_signal("stat_changed", "current_heart", current_heart
 
+
+### DEBUG FUNCTIONS
+func add_all(amount: int) -> void:
+	move_speed += amount
+	run_speed += amount
+	max_heart += amount
+	current_heart += amount
+	max_magia += amount
+	current_magia += amount
+	malice += amount
+	deviltry += amount
+	guts += amount
+	luck += amount
+	crit += amount
+	print_debug(character_name + "increased all stats by " + str(amount) + ")" )
+	print_debug(character_name + " has " + str(move_speed) + " movement speed! (+ " + str(amount) + ")")
+	print_debug(character_name + " has " + str(max_heart) + " max heart! (+" + str(amount) + ")")
+	print_debug(character_name + " has " + str(current_heart) + " heart! (+" + str(amount) + ")")
+	print_debug(character_name + " has " + str(max_magia) + " max magia! (+" + str(amount) + ")")
+	print_debug(character_name + " has " + str(current_magia) + " magia! (+" + str(amount) + ")")
+	print_debug(character_name + " has " + str(malice) + " malice! (+ " + str(amount) + ")")
+	print_debug(character_name + " has " + str(deviltry) + " deviltry! (+ " + str(amount) + ")")
+	print_debug(character_name + " has " + str(guts) + " guts! (+ " + str(amount) + ")")
+	print_debug(character_name + " has " + str(luck) + " luck! (+ " + str(amount) + ")")
+	print_debug(character_name + " has " + str(crit) + " crit! (+ " + str(amount) + ")")
+func subtract_all(amount: int) -> void:
+	move_speed -= amount
+	run_speed -= amount
+	max_heart -= amount
+	current_heart -= amount
+	max_magia -= amount
+	current_magia -= amount
+	malice -= amount
+	deviltry -= amount
+	guts -= amount
+	luck -= amount
+	crit -= amount
+	print_debug(character_name + " decreased all stats by " + str(amount) + ")" )
+	print_debug(character_name + " has " + str(move_speed) + " movement speed! (- " + str(amount) + ")")
+	print_debug(character_name + " has " + str(max_heart) + " max heart! (-" + str(amount) + ")")
+	print_debug(character_name + " has " + str(current_heart) + " heart! (-" + str(amount) + ")")
+	print_debug(character_name + " has " + str(max_magia) + " max magia! (-" + str(amount) + ")")
+	print_debug(character_name + " has " + str(current_magia) + " magia! (-" + str(amount) + ")")
+	print_debug(character_name + " has " + str(malice) + " malice! (- " + str(amount) + ")")
+	print_debug(character_name + " has " + str(deviltry) + " deviltry! (- " + str(amount) + ")")
+	print_debug(character_name + " has " + str(guts) + " guts! (- " + str(amount) + ")")
+	print_debug(character_name + " has " + str(luck) + " luck! (- " + str(amount) + ")")
+	print_debug(character_name + " has " + str(crit) + " crit! (- " + str(amount) + ")")
+
 ### STAT FUNCTIONS
 func calc_pain_tolerance():
 	pain_tolerance = (guts / 50) * 8
