@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://cjqun4874qmcb"]
+[gd_scene load_steps=76 format=3 uid="uid://cjqun4874qmcb"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/LevelManagers/BHCLOWN_MANAGER.gd" id="1_ql545"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_b0jdw"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="13_73ydn"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternRandomizer.gd" id="13_abdsv"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/LevelManagers/EnemyPath.gd" id="14_r45kx"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="14_tis2b"]
 [ext_resource type="PackedScene" uid="uid://cgi43evcnmcqb" path="res://art/clown/clown.tscn" id="15_oaur5"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="16_a4nmd"]
 [ext_resource type="Texture2D" uid="uid://cqwu6r4ofvrbr" path="res://art/backgrounds/test_blotchy.PNG" id="17_in4j4"]
@@ -284,6 +285,87 @@ skip_list = Array[PackedInt32Array]([])
 skip_in_list = true
 random = SubResource("Resource_ylxly")
 
+[sub_resource type="Curve2D" id="Curve2D_00f5m"]
+
+[sub_resource type="Resource" id="Resource_eii2m"]
+script = ExtResource("13_abdsv")
+randomisation_chances = 0.0
+bullet_choice = PackedStringArray()
+nbr_choice = PackedInt32Array(20, 20, 20, 20, 10, 10, 10, 30, 35)
+nbr_variation = Vector3(0, 0, 0)
+nbr_reroll = false
+iterations_choice = PackedInt32Array()
+iterations_variation = Vector3(0, 0, 0)
+forced_angle_choice = PackedFloat32Array()
+forced_angle_variation = Vector3(0, 0, 0)
+forced_angle_reroll = false
+forced_target_choice = []
+symmetry_chances = 0.0
+center_choice = PackedInt32Array()
+stasis_chances = 50.0
+cooldown_spawn_choice = PackedFloat32Array()
+cooldown_spawn_variation = Vector3(0, 0, 0)
+cooldown_spawn_reroll = false
+cooldown_shoot_choice = PackedFloat32Array()
+cooldown_shoot_variation = Vector3(0, 0, 0)
+cooldown_shoot_reroll = false
+cooldown_next_spawn_choice = PackedFloat32Array()
+cooldown_next_spawn_variation = Vector3(0, 0, 0)
+cooldown_next_spawn_reroll = false
+cooldown_next_shoot_choice = PackedFloat32Array()
+cooldown_next_shoot_variation = Vector3(0, 0, 0)
+cooldown_next_shoot_reroll = false
+offset_x_variation = Vector3(0, 0, 0)
+offset_y_variation = Vector3(0, 0, 0)
+offset_x_reroll = false
+offset_y_reroll = false
+radius_choice = PackedFloat32Array()
+radius_variation = Vector3(0, 0, 0)
+radius_reroll = false
+angle_total_choice = PackedFloat32Array()
+angle_total_variation = Vector3(0, 0, 0)
+angle_total_reroll = false
+angle_decal_choice = PackedFloat32Array()
+angle_decal_variation = Vector3(0, 0, 0)
+angle_decal_reroll = false
+reversed_chances = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_uti0y"]
+resource_name = "PatternCircle"
+script = ExtResource("14_tis2b")
+radius = 600.0
+angle_total = 6.28319
+angle_decal = 6.28319
+center = 0
+symmetric = false
+bullet = "SwanCards"
+nbr = 20
+iterations = -1
+cooldown_spawn = 1.26
+cooldown_shoot = 0.0
+cooldown_next_spawn = 0.0
+cooldown_next_shoot = 0.0
+cooldown_layers = PackedVector2Array()
+cooldown_stasis = false
+on_interruption = 0
+pattern_angle = 0.0
+pattern_angle_target = NodePath("")
+pattern_angle_mouse = false
+wait_behavior = 3
+wait_tween_momentum = 0
+wait_tween_length = 0.0
+wait_tween_time = 0.0
+forced_angle = 0.0
+forced_target = NodePath("")
+forced_lookat_mouse = false
+forced_pattern_lookat = false
+impulse = 0
+bullet_list = Array[String]([])
+skip_step = 0
+skip_list = Array[PackedInt32Array]([])
+skip_in_list = true
+random = SubResource("Resource_eii2m")
+
 [sub_resource type="Curve2D" id="Curve2D_b2wxo"]
 
 [sub_resource type="Curve" id="Curve_rxx5i"]
@@ -303,7 +385,7 @@ tex_skew = 0.0
 script = ExtResource("13_73ydn")
 damage = 1.0
 speed = 3000.0
-scale = 1.8
+scale = 1.5
 angle = 0.0
 groups = PackedStringArray()
 custom_data = {
@@ -328,26 +410,25 @@ a_speed_multi_scale = 0.0
 a_speed_multiplier = SubResource("Curve_rxx5i")
 spec_bounces = 0
 spec_no_collision = false
-spec_rotating_speed = 0.0
-spec_only_spin_sprite = true
+spec_rotating_speed = 0.5
+spec_only_spin_sprite = false
 spec_weight = 1.0
 scale_multi_iterations = 0
 scale_multiplier = SubResource("Curve_po7ux")
 scale_multi_scale = 1.0
 trigger_container = ""
 trigger_wait_for_shot = true
-homing_type = 3
-homing_group = "Player"
-homing_select_in_group = 4
-homing_steer = 2000.0
-homing_time_start = 0.0
+homing_type = 0
+homing_target = NodePath("")
+homing_steer = 10.0
+homing_time_start = 1.0
 homing_duration = 999.0
-homing_detection_dist = 0.0
+homing_detection_dist = 99999.0
 homing_start_signal = ""
 homing_range = Vector2(9999, 20)
-homing_imprecision = Vector2(0, 0)
+homing_imprecision = Vector2(200, 200)
 r_randomisation_chances = 1.0
-r_speed_choice = PackedFloat32Array()
+r_speed_choice = PackedFloat32Array(400, 400, 400, 400, 2000, 3000, 3000, 3000, 3000, 3000)
 r_speed_variation = Vector3(0, 0, 0)
 r_scale_choice = PackedFloat32Array()
 r_scale_variation = Vector3(0, 0, 0)
@@ -837,6 +918,12 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve2D" id="Curve2D_7gbuf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -15576, -2969, 0, 0, 0, 0, -12617, -948, 0, 0, 0, 0, -11016, -4527, 0, 0, 0, 0, -9805, -1137, 0, 0, 0, 0, -13048, -3424, 0, 0, 0, 0, -9159, -3438, 0, 0, 0, 0, -12550, -975, -7109.02, -2281.78, 7109.02, 2281.78, -8548, -4057, 0, 0, 0, 0, -14239, -340, 0, 0, 0, 0, -15569, -2977)
+}
+point_count = 10
+
 [sub_resource type="Curve2D" id="Curve2D_m527w"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -16462, -2242, 0, 0, 0, 0, -14569, 3082, 0, 0, 0, 0, -10804, 488, 0, 0, 0, 0, -8958, 3871, 0, 0, 0, 0, -5723, 2310, 0, 0, 0, 0, -3460, 5297, 0, 0, 0, 0, -5638, 9894)
@@ -867,7 +954,7 @@ position = Vector2(5137.5, 7263)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-zoom = Vector2(0.055, 0.055)
+zoom = Vector2(0.22975, 0.22975)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)
@@ -929,16 +1016,14 @@ BowlingRightSpawnOffsetTime = 3
 BowlingLeftSpawnOffsetTime = 6
 
 [node name="clown_PHASE_1" type="Timer" parent="Timers"]
-wait_time = 60.0
 one_shot = true
 autostart = true
 
 [node name="clown_PHASE_2" type="Timer" parent="Timers"]
-wait_time = 60.0
 one_shot = true
 
 [node name="clown_PHASE_3" type="Timer" parent="Timers"]
-wait_time = 5.0
+wait_time = 60.0
 one_shot = true
 
 [node name="clown_PHASE_4" type="Timer" parent="Timers"]
@@ -990,7 +1075,7 @@ scale = Vector2(26.9967, 2.48006)
 [node name="Phase3TextureProgress" type="TextureProgressBar" parent="Timers/TimerResources/Phase3Hbox"]
 visible = false
 layout_mode = 2
-max_value = 5.0
+max_value = 60.0
 value = 1.0
 texture_under = ExtResource("6_gqw3i")
 texture_progress = ExtResource("7_tg0k8")
@@ -1068,6 +1153,14 @@ script = ExtResource("8_sthy8")
 id = "BowlingPins"
 pattern = SubResource("NavigationPolygon_hpbv1")
 
+[node name="P3Swans" type="Path2D" parent="Patterns"]
+curve = SubResource("Curve2D_00f5m")
+script = ExtResource("8_sthy8")
+id = "P3Swans"
+pattern = SubResource("NavigationPolygon_uti0y")
+preview_spawn = true
+preview_shoot = true
+
 [node name="BulletProps" type="Node2D" parent="."]
 position = Vector2(7684, 2381)
 metadata/_edit_lock_ = true
@@ -1136,6 +1229,23 @@ r_start_time_variation = Vector3(0, 0, 0)
 r_start_distance_choice = ""
 r_start_distance_variation = Vector3(0, 0, 0)
 
+[node name="Phase3_SwanCard" type="Node2D" parent="Path2D/Phase_1_Movement/Clown2"]
+script = ExtResource("16_a4nmd")
+active = false
+auto_pattern_id = "P3Swans"
+shared_area_name = "SwanCards"
+process_id = 6
+rotating_speed = 100.0
+pool_amount = 500
+auto_start_on_cam = false
+r_active_chances = 1.0
+r_rotating_variation = Vector3(0, 0, 0)
+r_pattern_choice = ""
+r_start_time_choice = ""
+r_start_time_variation = Vector3(0, 0, 0)
+r_start_distance_choice = ""
+r_start_distance_variation = Vector3(0, 0, 0)
+
 [node name="Phase_2_Travel" type="Path2D" parent="Path2D"]
 curve = SubResource("Curve2D_cl67s")
 
@@ -1155,6 +1265,17 @@ position = Vector2(4582, -6397)
 rotates = false
 cubic_interp = false
 loop = false
+script = ExtResource("14_r45kx")
+speed = 4000
+
+[node name="Phase_3_Movement" type="Path2D" parent="Path2D"]
+curve = SubResource("Curve2D_7gbuf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D/Phase_3_Movement"]
+position = Vector2(-15576, -2969)
+scale = Vector2(1, 1)
+rotates = false
+cubic_interp = false
 script = ExtResource("14_r45kx")
 speed = 4000
 
@@ -1436,6 +1557,7 @@ position = Vector2(-10364, -1979)
 position = Vector2(-4473, -1895)
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 z_index = -255
 position = Vector2(-74, 2)
 scale = Vector2(6.5, 6.5)

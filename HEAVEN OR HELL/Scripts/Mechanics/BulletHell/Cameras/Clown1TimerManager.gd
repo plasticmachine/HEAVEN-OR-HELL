@@ -7,6 +7,7 @@ extends Node
 @onready var BowlingSpawnRight = $"../BowlSpawningRight"
 @onready var BowlingSpawnLeft = $"../BowlSpawningLeft"
 @onready var BowlingPinSpawn = $"../Path2D/Phase_1_Movement/Clown2/BowlingPinSpawner"
+@onready var Phase3SwansSpawn = $"../Path2D/Phase_1_Movement/Clown2/Phase3_SwanCard"
 
 @onready var Heaven = $"../Players/Heaven"
 @onready var Hell = $"../Players/Hell"
@@ -27,6 +28,7 @@ extends Node
 @onready var Phase_2_Bar = $TimerResources/Phase2Hbox/Phase2TextureProgress
 @onready var BH_3_Cam = $"../Cameras/BH_3_Cam"
 @onready var Phase_3_Travel_PathFollow2D = $"../Path2D/Phase_3_Travel/PathFollow2D"
+@onready var Phase_3_Movement_PathFollow2D = $"../Path2D/Phase_3_Movement/PathFollow2D"
 @onready var Phase_3_Timer = $clown_PHASE_3
 @onready var Phase_3_Collision = $"../Phase_3_Walls"
 @onready var Phase_3_Trigger_Collision = $"../Phase_3_Trigger/CollisionShape2D"
@@ -138,8 +140,13 @@ func _clown_phase_3_BH():
 	BH_3_Cam.set_priority(1)
 	Phase_3_Bar.show()
 	Phase_3_Timer.start()
-
-
+	Phase_3_Travel_PathFollow2D.remove_child(ClownBH)
+	Phase_3_Travel_PathFollow2D.active = false
+	Phase_3_Movement_PathFollow2D.add_child(ClownBH)
+	Phase_3_Movement_PathFollow2D.active = true
+	
+	Phase3SwansSpawn.spawn()
+	
 func _on_clown_phase_3_timeout():
 	BH_3_Cam.set_priority(0)
 	GroupCam.set_priority(1)
@@ -148,8 +155,8 @@ func _on_clown_phase_3_timeout():
 	_clown_phase_4_travel()
 
 func _clown_phase_4_travel():
-	Phase_3_Travel_PathFollow2D.remove_child(ClownBH)
-	Phase_3_Travel_PathFollow2D.active = false
+	Phase_3_Movement_PathFollow2D.remove_child(ClownBH)
+	Phase_3_Movement_PathFollow2D.active = false
 	Phase_4_Travel_PathFollow2D.add_child(ClownBH)
 	Phase_4_Travel_PathFollow2D.active = true
 
