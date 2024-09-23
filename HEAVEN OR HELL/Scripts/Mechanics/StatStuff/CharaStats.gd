@@ -12,11 +12,14 @@ class_name CharaStats
 @export var malice: int = 10
 @export var deviltry: int = 10
 @export var guts: float = 10
+var BH_defense: float
 @export var pain_tolerance: float 
 @export var luck: int = 0
 @export var crit: int = 0
 @export var crit_level: int = 0
 #@export var stat_resetter: bool
+
+
 ### MOVESPEED FUNCTIONS
 func add_move_speed(amount: int) -> void:
 		move_speed += amount
@@ -261,6 +264,38 @@ func calc_pain_tolerance():
 	pain_tolerance = (guts / 50) * 8
 	#print_debug(pain_tolerance)
 
+func calc_BH_defense():
+	#listing each case to allow individual tweaking per guts stage
+	
+	match guts:
+		50.0: 
+			BH_defense = guts / 25
+			##PUT LOGIC FOR GUTS MAX BUFF PASSIVE: (null a hit every 30 seconds (in combat) / every 10 turns [TB/BH])
+		45.0: 
+			BH_defense = guts / 25
+		40.0: 
+			BH_defense = guts / 25
+		35.0: 
+			BH_defense = guts / 25
+		30.0: 
+			BH_defense = guts / 25
+		25.0: 
+			BH_defense = guts / 25
+		20.0: 
+			BH_defense = (guts / 25)  #120% damage taken
+		15.0: 
+			BH_defense = (guts / 25) + 0.1  #140% damage taken (.7 BHD)
+			print_debug(BH_defense)
+		10.0:
+			BH_defense = (guts / 25) + 0.2 #160% damage taken (.6 BHD)
+			print_debug(BH_defense)
+		5.0: 
+			BH_defense = (guts / 25) + 0.3 #180% damage taken (.5 BHD)
+			print_debug(BH_defense)
+		0.0: 
+			BH_defense = (guts / 25) + 0.5 #200% damage taken
+			print_debug(BH_defense)
+			##PUT LOGIC FOR GUTS MIN DEBUFF PASSIVE: (1/4th of all incoming damage is dealt to your partner as well [TB/BH])
 
 
 #func reset_stats():

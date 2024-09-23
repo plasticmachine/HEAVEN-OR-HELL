@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr0i2ficqchfj"
-path="res://.godot/imported/BowlingBall.png-38ad0542dd9195c325e4f4047c5db00e.ctex"
+uid="uid://cs8sqsh7dl6wn"
+path="res://.godot/imported/1.png-c96384f26566b5cb539e39a086bbe13e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png"
-dest_files=["res://.godot/imported/BowlingBall.png-38ad0542dd9195c325e4f4047c5db00e.ctex"]
+source_file="res://art/bullets/CLOWN/BALLOON/1.png"
+dest_files=["res://.godot/imported/1.png-c96384f26566b5cb539e39a086bbe13e.ctex"]
 
 [params]
 

@@ -1,12 +1,16 @@
-[gd_scene load_steps=47 format=3 uid="uid://gixop20d1d75"]
+[gd_scene load_steps=52 format=3 uid="uid://gixop20d1d75"]
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawner.gd" id="1"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="2_ai2re"]
-[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="3_5wv4n"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="3_5wv4n"]
+[ext_resource type="Texture2D" uid="uid://ck6e5mshstgq6" path="res://art/bullets/CLOWN/BALLOON/0.png" id="3_s285v"]
 [ext_resource type="Texture2D" uid="uid://dh3jdhhxrn83n" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Untitled_Artwork-2.png" id="4_dgjd2"]
+[ext_resource type="Texture2D" uid="uid://cs8sqsh7dl6wn" path="res://art/bullets/CLOWN/BALLOON/1.png" id="4_lw0ip"]
 [ext_resource type="AudioStream" uid="uid://22wx6508egvq" path="res://addons/BulletUpHell/Bullet/Hit Hurt.wav" id="5_rada6"]
+[ext_resource type="Texture2D" uid="uid://qsbo7xuw7p5p" path="res://art/bullets/CLOWN/BALLOON/2.png" id="5_ss8a1"]
 [ext_resource type="Texture2D" uid="uid://bt2su3hqlnnm" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Untitled_Artwork-3.png" id="5_vedub"]
 [ext_resource type="Texture2D" uid="uid://6xap1s4ohuc8" path="res://art/bullets/CLOWN/FIREWORK/0.png" id="6_45tvb"]
+[ext_resource type="Texture2D" uid="uid://o3tdriodlg18" path="res://art/bullets/CLOWN/BALLOON/3.png" id="6_lj6ta"]
 [ext_resource type="Texture2D" uid="uid://ccxuxofimrkn2" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Untitled_Artwork-4.png" id="6_o01ce"]
 [ext_resource type="Texture2D" uid="uid://el4b0viurudt" path="res://art/bullets/CLOWN/FIREWORK/1.png" id="7_x28r6"]
 [ext_resource type="Texture2D" uid="uid://euvimw46w4rn" path="res://art/bullets/CLOWN/BOWLINGPINS/2.PNG" id="8_fe4hq"]
@@ -97,6 +101,23 @@ animations = [{
 "loop": true,
 "name": &"",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_s285v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lw0ip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ss8a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lj6ta")
+}],
+"loop": true,
+"name": &"Balloon",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -398,6 +419,10 @@ size = Vector2(118.151, 576.072)
 [sub_resource type="ConvexPolygonShape2D" id="3"]
 points = PackedVector2Array(0, 0)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4no15"]
+radius = 170.5
+height = 374.0
+
 [node name="BulletHellManager" type="Node2D"]
 z_index = 999
 script = ExtResource("1")
@@ -423,20 +448,20 @@ cull_viewport_refresh = 60.0
 
 [node name="BowlingPin" type="Area2D" parent="SharedAreas"]
 
-[node name="6" type="Area2D" parent="SharedAreas"]
+[node name="P3Balloons" type="Area2D" parent="SharedAreas"]
 
 [node name="7" type="Area2D" parent="SharedAreas"]
 
 [node name="8" type="Area2D" parent="SharedAreas"]
 
 [node name="9" type="Area2D" parent="SharedAreas"]
-visible = false
 
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
 texture_filter = 3
 scale = Vector2(2, 2)
 sprite_frames = SubResource("1")
-animation = &""
+animation = &"Balloon"
+frame_progress = 0.643339
 
 [node name="Default" type="CollisionShape2D" parent="ShapeManager"]
 visible = false
@@ -464,12 +489,14 @@ shape = SubResource("RectangleShape2D_14m3u")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
 [node name="FlipCard" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
 position = Vector2(-0.363313, 7.00001)
 scale = Vector2(1.59278, 1.61663)
 shape = SubResource("RectangleShape2D_lknj7")
 debug_color = Color(0.94902, 0.196078, 0.305882, 0.419608)
 
 [node name="PinCol" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
 position = Vector2(0.249999, -3.24999)
 scale = Vector2(1.02834, 1.00595)
 shape = SubResource("RectangleShape2D_flen2")
@@ -478,6 +505,11 @@ debug_color = Color(0.0363593, 0.600313, 0.692527, 0.42)
 [node name="LaserBeam" type="CollisionShape2D" parent="ShapeManager"]
 visible = false
 shape = SubResource("3")
+
+[node name="BalloonCol" type="CollisionShape2D" parent="ShapeManager"]
+visible = false
+position = Vector2(0, -231.5)
+shape = SubResource("CapsuleShape2D_4no15")
 
 [node name="SFX" type="Node2D" parent="."]
 

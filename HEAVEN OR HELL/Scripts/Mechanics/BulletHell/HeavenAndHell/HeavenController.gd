@@ -27,14 +27,12 @@ var animTree_state_keys = [
 var meleeScript
 
 func _ready():
-	
 	add_to_group("Player")
 	meleeScript = $Melee
 	#heavenstats.subtract_heart(10)
 	print_debug(heavenstats.current_heart)
 	#screen_size = get_viewport_rect().size
 	#hide()
-	
 func _process(delta):
 	_movement(delta)
 	animate()

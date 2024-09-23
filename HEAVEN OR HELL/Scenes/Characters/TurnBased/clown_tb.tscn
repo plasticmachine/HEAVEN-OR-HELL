@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dt06qpfhtfajd"]
+[gd_scene load_steps=47 format=3 uid="uid://dt06qpfhtfajd"]
 
 [ext_resource type="Texture2D" uid="uid://n8jftbuyirgl" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-1.png" id="2_eba1o"]
 [ext_resource type="Texture2D" uid="uid://damkva1jjkcsg" path="res://art/clown/TurnBased/CLOWN_TBTEST.png" id="2_y11lw"]
@@ -329,11 +329,6 @@ advance_mode = 2
 break_loop_at_end = true
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_igbqc"]
-break_loop_at_end = true
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hpc3e"]
 break_loop_at_end = true
 switch_mode = 2
@@ -355,7 +350,7 @@ states/idle/node = SubResource("AnimationNodeAnimation_rj4b0")
 states/idle/position = Vector2(464, 107)
 "states/idle 2/node" = SubResource("AnimationNodeAnimation_25uld")
 "states/idle 2/position" = Vector2(1234, 145)
-transitions = ["Spins", "Kicks 2", SubResource("AnimationNodeStateMachineTransition_46kgh"), "Kicks 2", "Spins 2", SubResource("AnimationNodeStateMachineTransition_vy4x2"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "idle", "Spins", SubResource("AnimationNodeStateMachineTransition_igbqc"), "Spins 2", "idle 2", SubResource("AnimationNodeStateMachineTransition_hpc3e")]
+transitions = ["Spins", "Kicks 2", SubResource("AnimationNodeStateMachineTransition_46kgh"), "Kicks 2", "Spins 2", SubResource("AnimationNodeStateMachineTransition_vy4x2"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "Spins 2", "idle 2", SubResource("AnimationNodeStateMachineTransition_hpc3e")]
 graph_offset = Vector2(0, 63.6926)
 
 [node name="ClownTb" type="Node2D"]
@@ -385,11 +380,46 @@ libraries = {
 autoplay = "idle"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_oqbrf")
 anim_player = NodePath("../AnimationPlayer")
+parameters/current_length = 8.5
+parameters/current_position = 0.167591
+parameters/current_delta = 0.007018
 parameters/conditions/kicks = false
 parameters/conditions/returnspin = false
+parameters/BlendSpace1D/current_length = 0
+parameters/BlendSpace1D/current_position = 0
+parameters/BlendSpace1D/current_delta = 0
 parameters/BlendSpace1D/blend_position = 0.178167
+parameters/BlendSpace1D/0/current_length = null
+parameters/BlendSpace1D/0/current_position = null
+parameters/BlendSpace1D/0/current_delta = null
+parameters/BlendSpace1D/1/current_length = null
+parameters/BlendSpace1D/1/current_position = null
+parameters/BlendSpace1D/1/current_delta = null
+parameters/BlendSpace1D/2/current_length = null
+parameters/BlendSpace1D/2/current_position = null
+parameters/BlendSpace1D/2/current_delta = null
+parameters/End/current_length = null
+parameters/End/current_position = null
+parameters/End/current_delta = null
+"parameters/Kicks 2/current_length" = 1.22223
+"parameters/Kicks 2/current_position" = 1.22223
+"parameters/Kicks 2/current_delta" = 0.012003
+parameters/Spins/current_length = 0.500006
+parameters/Spins/current_position = 0.17883
+parameters/Spins/current_delta = 0.006025
+"parameters/Spins 2/current_length" = 0.500006
+"parameters/Spins 2/current_position" = 0.447812
+"parameters/Spins 2/current_delta" = 0.007015
+parameters/Start/current_length = 0.0
+parameters/Start/current_position = 0.0
+parameters/Start/current_delta = 0.0
+parameters/idle/current_length = 8.5
+parameters/idle/current_position = 0.167591
+parameters/idle/current_delta = 0.007018
+"parameters/idle 2/current_length" = null
+"parameters/idle 2/current_position" = null
+"parameters/idle 2/current_delta" = null
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -7,7 +7,7 @@ extends Node
 @onready var BowlingSpawnRight = $"../BowlSpawningRight"
 @onready var BowlingSpawnLeft = $"../BowlSpawningLeft"
 @onready var BowlingPinSpawn = $"../Path2D/Phase_1_Movement/Clown2/BowlingPinSpawner"
-@onready var Phase3SwansSpawn = $"../Path2D/Phase_1_Movement/Clown2/Phase3_SwanCard"
+@onready var Phase3BalloonSpawn = $"../Path2D/Phase_1_Movement/Clown2/Phase3_Balloons"
 
 @onready var Heaven = $"../Players/Heaven"
 @onready var Hell = $"../Players/Hell"
@@ -145,7 +145,7 @@ func _clown_phase_3_BH():
 	Phase_3_Movement_PathFollow2D.add_child(ClownBH)
 	Phase_3_Movement_PathFollow2D.active = true
 	
-	Phase3SwansSpawn.spawn()
+	Phase3BalloonSpawn.spawn()
 	
 func _on_clown_phase_3_timeout():
 	BH_3_Cam.set_priority(0)

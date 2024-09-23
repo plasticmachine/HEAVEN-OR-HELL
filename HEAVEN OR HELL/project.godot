@@ -32,7 +32,6 @@ YASM="*res://addons/yet_another_scene_manager/Scenes.gd"
 StatSaver="*res://Scenes/StatStuff/stat_saver.tscn"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 TurnityManager="*res://addons/turnity/turn_manager.gd"
-Panku="*res://addons/panku_console/console.tscn"
 
 [display]
 
@@ -52,7 +51,7 @@ project/assembly_name="Reimu-s Bad Day"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/turnity/plugin.cfg", "res://addons/yet_another_scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/turnity/plugin.cfg", "res://addons/yet_another_scene_manager/plugin.cfg")
 
 [global_group]
 

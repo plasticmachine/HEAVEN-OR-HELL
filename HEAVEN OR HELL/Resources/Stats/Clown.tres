@@ -1,14 +1,14 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://1qb6xiiq1lw7"]
 
-[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_omfii"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_1sxxg"]
 
 [resource]
-script = ExtResource("1_omfii")
+script = ExtResource("1_1sxxg")
 character_name = "Clown"
 move_speed = 3500
 run_speed = 8000
 max_heart = 100
-current_heart = 0
+current_heart = 100
 max_magia = 100
 current_magia = 100
 malice = 10

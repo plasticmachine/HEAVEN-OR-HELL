@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://cjqun4874qmcb"]
+[gd_scene load_steps=77 format=3 uid="uid://cjqun4874qmcb"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/LevelManagers/BHCLOWN_MANAGER.gd" id="1_ql545"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_b0jdw"]
@@ -289,9 +289,9 @@ random = SubResource("Resource_ylxly")
 
 [sub_resource type="Resource" id="Resource_eii2m"]
 script = ExtResource("13_abdsv")
-randomisation_chances = 0.0
+randomisation_chances = 1.0
 bullet_choice = PackedStringArray()
-nbr_choice = PackedInt32Array(20, 20, 20, 20, 10, 10, 10, 30, 35)
+nbr_choice = PackedInt32Array(10, 20, 20, 20, 30, 30)
 nbr_variation = Vector3(0, 0, 0)
 nbr_reroll = false
 iterations_choice = PackedInt32Array()
@@ -335,11 +335,11 @@ resource_name = "PatternCircle"
 script = ExtResource("14_tis2b")
 radius = 600.0
 angle_total = 6.28319
-angle_decal = 6.28319
+angle_decal = 0.0
 center = 0
 symmetric = false
-bullet = "SwanCards"
-nbr = 20
+bullet = "P3Balloons"
+nbr = 10
 iterations = -1
 cooldown_spawn = 1.26
 cooldown_shoot = 0.0
@@ -347,14 +347,14 @@ cooldown_next_spawn = 0.0
 cooldown_next_shoot = 0.0
 cooldown_layers = PackedVector2Array()
 cooldown_stasis = false
-on_interruption = 0
+on_interruption = 2
 pattern_angle = 0.0
 pattern_angle_target = NodePath("")
 pattern_angle_mouse = false
-wait_behavior = 3
-wait_tween_momentum = 0
-wait_tween_length = 0.0
-wait_tween_time = 0.0
+wait_behavior = 1
+wait_tween_momentum = 1
+wait_tween_length = 1.0
+wait_tween_time = 1.0
 forced_angle = 0.0
 forced_target = NodePath("")
 forced_lookat_mouse = false
@@ -372,9 +372,9 @@ random = SubResource("Resource_eii2m")
 
 [sub_resource type="Resource" id="Resource_rs6ny"]
 script = ExtResource("12_f3vpb")
-ID = "SwanCard"
-texture = "SwanCard"
-collision = "SwanCard"
+ID = "P3Balloons"
+texture = "Balloon"
+collision = "BalloonCol"
 SFX = ""
 tex_scale = 1.0
 tex_skew = 0.0
@@ -383,15 +383,15 @@ tex_skew = 0.0
 
 [sub_resource type="PackedDataContainer" id="PackedDataContainer_fcf6x"]
 script = ExtResource("13_73ydn")
-damage = 1.0
+damage = 10.0
 speed = 3000.0
-scale = 1.5
+scale = 1.0
 angle = 0.0
 groups = PackedStringArray()
 custom_data = {
 "test": Vector3(0, 2, 3)
 }
-death_after_time = 10.0
+death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
 death_speed_under = 0.0
@@ -428,7 +428,7 @@ homing_start_signal = ""
 homing_range = Vector2(9999, 20)
 homing_imprecision = Vector2(200, 200)
 r_randomisation_chances = 1.0
-r_speed_choice = PackedFloat32Array(400, 400, 400, 400, 2000, 3000, 3000, 3000, 3000, 3000)
+r_speed_choice = PackedFloat32Array(400, 400, 400, 3000, 3000, 3000, 3000, 3000, 3000, 3000)
 r_speed_variation = Vector3(0, 0, 0)
 r_scale_choice = PackedFloat32Array()
 r_scale_variation = Vector3(0, 0, 0)
@@ -626,7 +626,7 @@ scale = 4.0
 angle = -0.687593
 groups = PackedStringArray("Bullet")
 custom_data = {}
-death_after_time = 30.0
+death_after_time = 15.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
 death_speed_under = 0.0
@@ -900,6 +900,8 @@ r_scale_multi_curve_choice = []
 r_scale_multi_iter_variation = Vector3(0, 0, 0)
 r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
+[sub_resource type="Curve2D" id="Curve2D_rmdvi"]
+
 [sub_resource type="Curve2D" id="Curve2D_j5ktt"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -2198, 2758, 0, 0, 0, 0, 10149, 2103, 0, 0, 0, 0, -2200, 2101, 0, 0, 0, 0, 10156, 2763, 0, 0, 0, 0, -2197, 2762)
@@ -954,7 +956,7 @@ position = Vector2(5137.5, 7263)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-zoom = Vector2(0.22975, 0.22975)
+zoom = Vector2(0.27863, 0.27863)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)
@@ -1020,6 +1022,7 @@ one_shot = true
 autostart = true
 
 [node name="clown_PHASE_2" type="Timer" parent="Timers"]
+wait_time = 60.0
 one_shot = true
 
 [node name="clown_PHASE_3" type="Timer" parent="Timers"]
@@ -1027,7 +1030,7 @@ wait_time = 60.0
 one_shot = true
 
 [node name="clown_PHASE_4" type="Timer" parent="Timers"]
-wait_time = 5.0
+wait_time = 60.0
 one_shot = true
 
 [node name="TimerResources" type="Node" parent="Timers"]
@@ -1156,7 +1159,7 @@ pattern = SubResource("NavigationPolygon_hpbv1")
 [node name="P3Swans" type="Path2D" parent="Patterns"]
 curve = SubResource("Curve2D_00f5m")
 script = ExtResource("8_sthy8")
-id = "P3Swans"
+id = "P3Balloons"
 pattern = SubResource("NavigationPolygon_uti0y")
 preview_spawn = true
 preview_shoot = true
@@ -1195,6 +1198,12 @@ script = ExtResource("11_5i667")
 id = "BowlingPins"
 props = SubResource("PackedDataContainer_nv8cu")
 
+[node name="P3BalloonsProperties" type="Path2D" parent="BulletProps"]
+curve = SubResource("Curve2D_rmdvi")
+script = ExtResource("11_5i667")
+id = "P3Balloons"
+props = SubResource("PackedDataContainer_fcf6x")
+
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(2545, -786)
 curve = SubResource("Curve2D_j5ktt")
@@ -1229,11 +1238,11 @@ r_start_time_variation = Vector3(0, 0, 0)
 r_start_distance_choice = ""
 r_start_distance_variation = Vector3(0, 0, 0)
 
-[node name="Phase3_SwanCard" type="Node2D" parent="Path2D/Phase_1_Movement/Clown2"]
+[node name="Phase3_Balloons" type="Node2D" parent="Path2D/Phase_1_Movement/Clown2"]
 script = ExtResource("16_a4nmd")
 active = false
-auto_pattern_id = "P3Swans"
-shared_area_name = "SwanCards"
+auto_pattern_id = "P3Balloons"
+shared_area_name = "P3Balloons"
 process_id = 6
 rotating_speed = 100.0
 pool_amount = 500
@@ -1273,7 +1282,6 @@ curve = SubResource("Curve2D_7gbuf")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D/Phase_3_Movement"]
 position = Vector2(-15576, -2969)
-scale = Vector2(1, 1)
 rotates = false
 cubic_interp = false
 script = ExtResource("14_r45kx")
@@ -1557,7 +1565,6 @@ position = Vector2(-10364, -1979)
 position = Vector2(-4473, -1895)
 
 [node name="Background" type="Sprite2D" parent="."]
-visible = false
 z_index = -255
 position = Vector2(-74, 2)
 scale = Vector2(6.5, 6.5)

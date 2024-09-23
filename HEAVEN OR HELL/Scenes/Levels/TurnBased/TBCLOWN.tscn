@@ -177,6 +177,7 @@ rotates = false
 cubic_interp = false
 script = ExtResource("15_qlv6m")
 speed = 350
+active = true
 
 [node name="ClownTb" parent="EnemySpot/ClownDancePath/PathFollow2D" instance=ExtResource("2_djc2d")]
 position = Vector2(188.421, -7.69994)
