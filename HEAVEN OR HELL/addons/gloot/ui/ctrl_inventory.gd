@@ -3,11 +3,18 @@
 class_name CtrlInventory
 extends Control
 
+## A UI control representing a basic [Inventory].
+##
+## Displays a list of items in the inventory.
+
+## Emitted when an [InventoryItem] is activated (i.e. double clicked).
 signal inventory_item_activated(item)
+## Emitted when the context menu of an [InventoryItem] is activated (i.e. right clicked).
 signal inventory_item_context_activated(item)
 
 enum SelectMode {SELECT_SINGLE = ItemList.SELECT_SINGLE, SELECT_MULTI = ItemList.SELECT_MULTI}
 
+## Path to an [Inventory] node.
 @export var inventory_path: NodePath :
     set(new_inv_path):
         inventory_path = new_inv_path
@@ -22,8 +29,10 @@ enum SelectMode {SELECT_SINGLE = ItemList.SELECT_SINGLE, SELECT_MULTI = ItemList
         inventory = node
         update_configuration_warnings()
 
-
+## The default icon that will be used for items with no [code]image[/code] property.
 @export var default_item_icon: Texture2D
+
+## Single or multi select mode (hold CTRL to select multiple items).
 @export_enum("Single", "Multi") var select_mode: int = SelectMode.SELECT_SINGLE :
     set(new_select_mode):
         if select_mode == new_select_mode:
@@ -32,6 +41,8 @@ enum SelectMode {SELECT_SINGLE = ItemList.SELECT_SINGLE, SELECT_MULTI = ItemList
         if is_instance_valid(_item_list):
             _item_list.deselect_all();
             _item_list.select_mode = select_mode
+
+## The [Inventory] node linked to this control.
 var inventory: Inventory = null :
     set(new_inventory):
         if new_inventory == inventory:
@@ -45,9 +56,6 @@ var inventory: Inventory = null :
 var _vbox_container: VBoxContainer
 var _item_list: ItemList
 var _refresh_queued: bool = false
-
-const KEY_IMAGE = "image"
-const KEY_NAME = "name"
 
 
 func _get_configuration_warnings() -> PackedStringArray:
@@ -91,8 +99,8 @@ func _connect_inventory_signals() -> void:
 
     if !inventory.contents_changed.is_connected(_queue_refresh):
         inventory.contents_changed.connect(_queue_refresh)
-    if !inventory.item_modified.is_connected(_on_item_modified):
-        inventory.item_modified.connect(_on_item_modified)
+    if !inventory.item_property_changed.is_connected(_on_item_property_changed):
+        inventory.item_property_changed.connect(_on_item_property_changed)
 
 
 func _disconnect_inventory_signals() -> void:
@@ -101,8 +109,8 @@ func _disconnect_inventory_signals() -> void:
 
     if inventory.contents_changed.is_connected(_queue_refresh):
         inventory.contents_changed.disconnect(_queue_refresh)
-    if inventory.item_modified.is_connected(_on_item_modified):
-        inventory.item_modified.disconnect(_on_item_modified)
+    if inventory.item_property_changed.is_connected(_on_item_property_changed):
+        inventory.item_property_changed.disconnect(_on_item_property_changed)
 
 
 func _on_list_item_activated(index: int) -> void:
@@ -114,8 +122,9 @@ func _on_list_item_clicked(index: int, at_position: Vector2, mouse_button_index:
         inventory_item_context_activated.emit(_get_inventory_item(index))
 
 
-func _on_item_modified(_item: InventoryItem) -> void:
-    _queue_refresh()
+func _on_item_property_changed(_item: InventoryItem, property_name: String) -> void:
+    if property_name in [InventoryItem.KEY_NAME, InventoryItem.KEY_IMAGE]:
+        _queue_refresh()
 
 
 func _process(_delta) -> void:
@@ -162,14 +171,15 @@ func _get_item_title(item: InventoryItem) -> String:
 
     return title
 
-
+## Returns the currently selected item. In case multiple items are selected,
+## the first one is returned.
 func get_selected_inventory_item() -> InventoryItem:
     if _item_list.get_selected_items().is_empty():
         return null
 
     return _get_inventory_item(_item_list.get_selected_items()[0])
 
-
+## Returns all the currently selected items.
 func get_selected_inventory_items() -> Array[InventoryItem]:
     var result: Array[InventoryItem]
     var indexes = _item_list.get_selected_items()
@@ -184,11 +194,11 @@ func _get_inventory_item(index: int) -> InventoryItem:
 
     return _item_list.get_item_metadata(index)
 
-
+## Deselects the selected item.
 func deselect_inventory_item() -> void:
     _item_list.deselect_all()
 
-
+## Selects the given item.
 func select_inventory_item(item: InventoryItem) -> void:
     _item_list.deselect_all()
     for index in _item_list.item_count:

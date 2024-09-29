@@ -27,7 +27,7 @@ var occupied_space: float :
     get:
         return _occupied_space
     set(new_occupied_space):
-        assert(false, "occupied_space is read-only!")
+        push_error("occupied_space is read-only!")
 
 
 func _init(inventory: Inventory) -> void:
@@ -46,8 +46,13 @@ func _on_item_removed(item: InventoryItem) -> void:
     _calculate_occupied_space()
 
     
-func _on_item_modified(item: InventoryItem) -> void:
-    _calculate_occupied_space()
+func _on_item_property_changed(item: InventoryItem, property_name: String) -> void:
+    var relevant_properties = [
+        KEY_WEIGHT,
+        StacksConstraint.KEY_STACK_SIZE,
+    ]
+    if property_name in relevant_properties:
+        _calculate_occupied_space()
 
 
 func _on_pre_item_swap(item1: InventoryItem, item2: InventoryItem) -> bool:

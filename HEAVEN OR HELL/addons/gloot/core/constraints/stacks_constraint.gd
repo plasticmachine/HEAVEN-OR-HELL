@@ -129,13 +129,15 @@ func add_item_automerge(
         if _merge_stacks(target_item, item) == MergeResult.SUCCESS:
             return true
 
-    assert(inventory.add_item(item))
+    var add_item_success = inventory.add_item(item)
+    assert(add_item_success)
     return true
 
 
 static func _merge_stacks(item_dst: InventoryItem, item_src: InventoryItem) -> int:
     assert(item_dst != null, "item_dst is null!")
     assert(item_src != null, "item_src is null!")
+    assert(items_mergable(item_dst, item_src), "Items must be mergable!")
 
     var src_size: int = get_item_stack_size(item_src)
     assert(src_size > 0, "Item stack size must be greater than 0!")
@@ -146,8 +148,10 @@ static func _merge_stacks(item_dst: InventoryItem, item_src: InventoryItem) -> i
     if free_dst_stack_space <= 0:
         return MergeResult.FAIL
 
-    assert(set_item_stack_size(item_src, max(src_size - free_dst_stack_space, 0)))
-    assert(set_item_stack_size(item_dst, min(dst_size + src_size, dst_max_size)))
+    var decrease_src_item_success = set_item_stack_size(item_src, max(src_size - free_dst_stack_space, 0))
+    assert(decrease_src_item_success)
+    var increase_dst_item_success = set_item_stack_size(item_dst, min(dst_size + src_size, dst_max_size))
+    assert(increase_dst_item_success)
 
     if free_dst_stack_space >= src_size:
         return MergeResult.SUCCESS
@@ -170,8 +174,10 @@ static func split_stack(item: InventoryItem, new_stack_size: int) -> InventoryIt
     if new_item.get_parent():
         new_item.get_parent().remove_child(new_item)
 
-    assert(set_item_stack_size(new_item, new_stack_size))
-    assert(set_item_stack_size(item, stack_size - new_stack_size))
+    var new_item_success = set_item_stack_size(new_item, new_stack_size)
+    assert(new_item_success)
+    var split_out_item_success = set_item_stack_size(item, stack_size - new_stack_size)
+    assert(split_out_item_success)
     return new_item
 
 
@@ -182,7 +188,8 @@ func split_stack_safe(item: InventoryItem, new_stack_size: int) -> InventoryItem
 
     var new_item = split_stack(item, new_stack_size)
     if new_item:
-        assert(inventory.add_item(new_item))
+        var add_item_success = inventory.add_item(new_item)
+        assert(add_item_success)
     return new_item
 
 
@@ -237,15 +244,15 @@ func get_free_stack_space_for(item: InventoryItem) -> ItemCount:
     return item_count
 
 
-func pack_item(item: InventoryItem) -> void:
-    var free_stack_space := get_free_stack_space_for(item)
-    if free_stack_space.eq(ItemCount.zero()):
+static func pack_item(item: InventoryItem) -> void:
+    if !is_instance_valid(item.get_inventory()):
         return
-    var stacks_size := ItemCount.new(get_item_stack_size(item))
-    if stacks_size.gt(free_stack_space):
-        item = split_stack(item, free_stack_space.count)
+        
+    var sc := item.get_inventory()._constraint_manager.get_stacks_constraint()
+    if sc == null:
+        return
 
-    var mergable_items = get_mergable_items(item)
+    var mergable_items = sc.get_mergable_items(item)
     for mergable_item in mergable_items:
         var merge_result := _merge_stacks(mergable_item, item)
         if merge_result == MergeResult.SUCCESS:
@@ -263,46 +270,53 @@ func transfer_autosplit(item: InventoryItem, destination: Inventory) -> Inventor
 
     var item_count := _get_space_for_single_item(destination, item)
     assert(!item_count.eq(ItemCount.inf()), "Item count shouldn't be infinite!")
-    var count = item_count.count
 
-    if count <= 0:
+    if item_count.le(ItemCount.zero()):
         return null
 
-    var new_item: InventoryItem = split_stack(item, count)
+    var new_item: InventoryItem = split_stack(item, item_count.count)
     assert(new_item != null)
-    assert(destination.add_item(new_item))
+
+    var add_item_success = destination.add_item(new_item)
+    assert(add_item_success)
     return new_item
 
 
 func _get_space_for_single_item(inventory: Inventory, item: InventoryItem) -> ItemCount:
     var single_item := item.duplicate()
-    assert(set_item_stack_size(single_item, 1))
+    var set_item_stack_size_success = set_item_stack_size(single_item, 1)
+    assert(set_item_stack_size_success)
     var count := inventory._constraint_manager.get_space_for(single_item)
     single_item.free()
     return count
 
 
 func transfer_autosplitmerge(item: InventoryItem, destination: Inventory) -> bool:
-    assert(inventory._constraint_manager.get_configuration() == destination._constraint_manager.get_configuration())
-    var new_item := transfer_autosplit(item, destination)
-    if new_item:
-        # Item could have been packed already
-        # TODO: Find a more elegant way of handling this
-        if new_item.is_queued_for_deletion():
-            return true
-        destination._constraint_manager.get_stacks_constraint().pack_item(new_item)
-        return true
-    return false
+    if destination._constraint_manager.has_space_for(item):
+        # No need for splitting
+        return transfer_automerge(item, destination)
+
+    var item_count := _get_space_for_single_item(destination, item)
+    if item_count.eq(ItemCount.zero()):
+        return false
+    var new_item: InventoryItem = split_stack(item, item_count.count)
+    var transfer_success = transfer_automerge(new_item, destination)
+    assert(transfer_success)
+    return true
 
 
 func transfer_automerge(item: InventoryItem, destination: Inventory) -> bool:
     assert(inventory._constraint_manager.get_configuration() == destination._constraint_manager.get_configuration())
-    if inventory.transfer(item, destination):
-        # Item could have been packed already
-        # TODO: Find a more elegant way of handling this
+
+    if !destination._constraint_manager.has_space_for(item):
+        return false
+    for i in destination.get_items():
+        if items_mergable(i, item):
+            _merge_stacks(i, item)
         if item.is_queued_for_deletion():
+            # Stack size reached 0
             return true
-        destination._constraint_manager.get_stacks_constraint().pack_item(item)
-        return true
-    return false
+    var add_item_success = destination.add_item(item)
+    assert(add_item_success)
+    return true
 

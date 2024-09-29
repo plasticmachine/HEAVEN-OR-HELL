@@ -23,8 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://ldg2vsd26rqu" path="res://Scenes/Characters/BulletHell/Hell.tscn" id="18_nimnx"]
 [ext_resource type="Shader" path="res://art/shaders/shadow.gdshader" id="19_5i5vi"]
 [ext_resource type="PackedScene" uid="uid://b2uwu4w0ss13g" path="res://Scenes/Characters/BulletHell/HEAVEN.tscn" id="20_hqc1t"]
-[ext_resource type="Texture2D" uid="uid://bvk7xp3ft8mcc" path="res://art/backgrounds/BH/background.png" id="22_nmcwu"]
 [ext_resource type="PackedScene" uid="uid://c2or1vjh7ai0y" path="res://Scenes/Screens/Pause_Menu.tscn" id="23_tt3m4"]
+[ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/TB/IMG_2136.PNG" id="25_0fx2l"]
 
 [sub_resource type="Resource" id="Resource_vyos7"]
 script = ExtResource("3_i6jsc")
@@ -494,7 +494,7 @@ tex_skew = 0.0
 script = ExtResource("13_73ydn")
 damage = 10.0
 speed = 3000.0
-scale = 2.5
+scale = 2.0
 angle = 0.000407346
 groups = PackedStringArray("Bullets")
 custom_data = {
@@ -956,7 +956,7 @@ position = Vector2(5137.5, 7263)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-zoom = Vector2(0.27863, 0.27863)
+zoom = Vector2(0.232, 0.232)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)
@@ -1018,6 +1018,7 @@ BowlingRightSpawnOffsetTime = 3
 BowlingLeftSpawnOffsetTime = 6
 
 [node name="clown_PHASE_1" type="Timer" parent="Timers"]
+wait_time = 100.0
 one_shot = true
 autostart = true
 
@@ -1566,9 +1567,9 @@ position = Vector2(-4473, -1895)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -255
-position = Vector2(-74, 2)
+position = Vector2(611, 191)
 scale = Vector2(6.5, 6.5)
-texture = ExtResource("22_nmcwu")
+texture = ExtResource("25_0fx2l")
 region_rect = Rect2(-2533, -2162, 10300, 7803)
 
 [connection signal="timeout" from="Timers/clown_PHASE_1" to="Timers" method="_on_clown_phase_1_timeout"]

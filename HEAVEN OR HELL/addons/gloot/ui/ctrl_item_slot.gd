@@ -3,12 +3,24 @@
 class_name CtrlItemSlot
 extends Control
 
-const CtrlInventoryRect = preload("res://addons/gloot/ui/ctrl_inventory_item_rect.gd")
+## A UI control representing an inventory slot ([ItemSlot]).
+##
+## Displays the texture of the set item and its name. If not item is set,
+## it displays the given default texture.
+
+const CtrlInventoryItemRect = preload("res://addons/gloot/ui/ctrl_inventory_item_rect.gd")
 const CtrlDropZone = preload("res://addons/gloot/ui/ctrl_drop_zone.gd")
 const CtrlDragable = preload("res://addons/gloot/ui/ctrl_dragable.gd")
 const StacksConstraint = preload("res://addons/gloot/core/constraints/stacks_constraint.gd")
 
+## Emitted when the mouse enters the [Rect2] area of the control representing
+## the given [InventoryItem].
+signal item_mouse_entered(item)
+## Emitted when the mouse leaves the [Rect2] area of the control representing
+## the given [InventoryItem].
+signal item_mouse_exited(item)
 
+## Path to an [ItemSlot] node.
 @export var item_slot_path: NodePath :
     set(new_item_slot_path):
         if item_slot_path == new_item_slot_path:
@@ -26,12 +38,17 @@ const StacksConstraint = preload("res://addons/gloot/core/constraints/stacks_con
         item_slot = node
         _refresh()
         update_configuration_warnings()
+
+## The default icon that will be used for items with no [code]image[/code]
+## property.
 @export var default_item_icon: Texture2D :
     set(new_default_item_icon):
         if default_item_icon == new_default_item_icon:
             return
         default_item_icon = new_default_item_icon
         _refresh()
+
+## The item texture is displayed if set to true.
 @export var item_texture_visible: bool = true :
     set(new_item_texture_visible):
         if item_texture_visible == new_item_texture_visible:
@@ -39,6 +56,8 @@ const StacksConstraint = preload("res://addons/gloot/core/constraints/stacks_con
         item_texture_visible = new_item_texture_visible
         if is_instance_valid(_ctrl_inventory_item_rect):
             _ctrl_inventory_item_rect.visible = item_texture_visible
+
+## The item name label is displayed if set to true.
 @export var label_visible: bool = true :
     set(new_label_visible):
         if label_visible == new_label_visible:
@@ -46,6 +65,7 @@ const StacksConstraint = preload("res://addons/gloot/core/constraints/stacks_con
         label_visible = new_label_visible
         if is_instance_valid(_label):
             _label.visible = label_visible
+
 @export_group("Icon Behavior", "icon_")
 @export var icon_stretch_mode: TextureRect.StretchMode = TextureRect.StretchMode.STRETCH_KEEP_CENTERED :
     set(new_icon_stretch_mode):
@@ -83,6 +103,8 @@ const StacksConstraint = preload("res://addons/gloot/core/constraints/stacks_con
         label_clip_text = new_label_clip_text
         if is_instance_valid(_label):
             _label.clip_text = label_clip_text
+
+## The [ItemSlot] node linked to this control.
 var item_slot: ItemSlotBase :
     set(new_item_slot):
         if new_item_slot == item_slot:
@@ -94,7 +116,7 @@ var item_slot: ItemSlotBase :
         
         _refresh()
 var _hbox_container: HBoxContainer
-var _ctrl_inventory_item_rect: CtrlInventoryRect
+var _ctrl_inventory_item_rect: CtrlInventoryItemRect
 var _label: Label
 var _ctrl_drop_zone: CtrlDropZone
 
@@ -144,12 +166,14 @@ func _ready():
     add_child(_hbox_container)
     _hbox_container.resized.connect(func(): size = _hbox_container.size)
 
-    _ctrl_inventory_item_rect = CtrlInventoryRect.new()
+    _ctrl_inventory_item_rect = CtrlInventoryItemRect.new()
     _ctrl_inventory_item_rect.visible = item_texture_visible
     _ctrl_inventory_item_rect.size_flags_horizontal = SIZE_EXPAND_FILL
     _ctrl_inventory_item_rect.size_flags_vertical = SIZE_EXPAND_FILL
     _ctrl_inventory_item_rect.item_slot = item_slot
     _ctrl_inventory_item_rect.stretch_mode = icon_stretch_mode
+    _ctrl_inventory_item_rect.mouse_entered.connect(_on_mouse_entered)
+    _ctrl_inventory_item_rect.mouse_exited.connect(_on_mouse_exited)
     _hbox_container.add_child(_ctrl_inventory_item_rect)
 
     _ctrl_drop_zone = CtrlDropZone.new()
@@ -230,6 +254,21 @@ func _on_any_dragable_dropped(dragable: CtrlDragable, zone: CtrlDropZone, drop_p
     _ctrl_drop_zone.deactivate()
 
 
+func _on_mouse_entered():
+    var item = item_slot.get_item()
+    emit_signal("item_mouse_entered", item)
+
+
+func _on_mouse_exited():
+    var item = item_slot.get_item()
+    emit_signal("item_mouse_exited", item)
+
+
+func _notification(what: int) -> void:
+    if what == NOTIFICATION_DRAG_END:
+        _ctrl_drop_zone.deactivate()
+
+
 func _refresh() -> void:
     _clear()
 
@@ -241,7 +280,7 @@ func _refresh() -> void:
 
     var item = item_slot.get_item()
     if is_instance_valid(_label):
-        _label.text = item.get_property(CtrlInventory.KEY_NAME, item.prototype_id)
+        _label.text = item.get_property(InventoryItem.KEY_NAME, item.prototype_id)
     if is_instance_valid(_ctrl_inventory_item_rect):
         _ctrl_inventory_item_rect.item = item
         if item.get_texture():
