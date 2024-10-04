@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=43 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/LevelManagers/TBCLOWN_MANAGER.gd" id="1_h0a2a"]
 [ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
@@ -30,7 +30,10 @@
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/Attackbutton2.gd" id="16_62r43"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/HeavenBars.gd" id="17_kebos"]
 [ext_resource type="AudioStream" uid="uid://bp4gmvnpy1x17" path="res://Audio/Music/Clown/Turnbased/making a song with only soundfonts.wav" id="17_y1u7i"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellButtons4.gd" id="26_30vdi"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/attackbutton_4.gd" id="30_bgbie"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/healbutton.gd" id="30_n7j6j"]
+[ext_resource type="Script" path="res://addons/turnity/turn_socket.gd" id="32_ygs82"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jmycf"]
 animations = [{
@@ -150,9 +153,9 @@ expand_margin_bottom = 1.0
 position = Vector2(11, 181)
 script = ExtResource("1_h0a2a")
 
-[node name="EnemySpot" type="Node2D" parent="."]
+[node name="BattleEffectManagerPosition" type="Node2D" parent="."]
 
-[node name="BattleEffectManager" type="AnimatedSprite2D" parent="EnemySpot"]
+[node name="BattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
 z_index = 350
 sprite_frames = SubResource("SpriteFrames_jmycf")
 animation = &"basic_heal"
@@ -161,27 +164,30 @@ frame = 9
 frame_progress = 1.0
 script = ExtResource("7_p1xji")
 
+[node name="EnemySpot" type="Node2D" parent="."]
+position = Vector2(946, 339)
+
 [node name="Path2D" type="Path2D" parent="EnemySpot"]
 visible = false
+position = Vector2(-946, -339)
 curve = SubResource("Curve2D_shoiy")
 
 [node name="ClownDancePath" type="Path2D" parent="EnemySpot"]
-position = Vector2(0, 95)
+position = Vector2(-946, -244)
 curve = SubResource("Curve2D_f2lxk")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="EnemySpot/ClownDancePath"]
-position = Vector2(1150.41, 245)
-rotation = 3.14
-progress = 452.591
+position = Vector2(931.5, 245)
+progress = 671.5
 rotates = false
 cubic_interp = false
 script = ExtResource("15_qlv6m")
 speed = 350
 active = true
+wait_time = 45.0
 
 [node name="ClownTb" parent="EnemySpot/ClownDancePath/PathFollow2D" instance=ExtResource("2_djc2d")]
-position = Vector2(188.421, -7.69994)
-rotation = -3.20617
+position = Vector2(0.00012207, -1)
 
 [node name="ClownTrack" type="AudioStreamPlayer2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
 position = Vector2(31, -143)
@@ -191,7 +197,6 @@ max_distance = 9940.0
 panning_strength = 2.0
 
 [node name="EnemyHitSpot" type="Node2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
-rotation = -1.58359
 
 [node name="EnemyEffectSpot" type="Node2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
 rotation = -3.10235
@@ -293,6 +298,9 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("10_gj12g")
+skill_tempo = 9
+skill_cost = 15
+percent_heal = 0.25
 
 [node name="Attackbutton2" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
 layout_mode = 1
@@ -308,6 +316,8 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("13_ie6y5")
+skill_tempo = 5
+damage_dealt = 35
 
 [node name="Attackbutton3" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
 layout_direction = 1
@@ -321,6 +331,9 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("14_nfy1c")
+skill_tempo = 3
+damage_dealt = 90
+skill_cost = 20
 
 [node name="Attackbutton4" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
 layout_mode = 1
@@ -335,6 +348,8 @@ scale = Vector2(0.115, 0.115)
 texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
+script = ExtResource("26_30vdi")
+skill_tempo = 1.0
 
 [node name="HeavenButtons" type="Control" parent="PlayerUI/Buttons"]
 anchors_preset = 0
@@ -354,6 +369,9 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("13_11hfm")
+skill_tempo = 9
+percent_heal = 0.25
+skill_cost = 15
 
 [node name="Attackbutton2" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
 layout_mode = 1
@@ -369,6 +387,7 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("16_62r43")
+damage_dealt = 35
 
 [node name="Attackbutton3" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
 layout_direction = 1
@@ -382,6 +401,9 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("30_n7j6j")
+skill_tempo = 10
+percent_heal = 0.35
+percent_regen = 0.5
 
 [node name="Attackbutton4" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
 layout_mode = 1
@@ -396,6 +418,8 @@ scale = Vector2(0.115, 0.115)
 texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
+script = ExtResource("30_bgbie")
+skill_tempo = 1
 
 [node name="Data" type="Control" parent="PlayerUI"]
 anchors_preset = 0
@@ -590,11 +614,35 @@ position = Vector2(463, 438)
 rotation = -3.10526
 scale = Vector2(-0.159953, -0.159953)
 
+[node name="Sockets" type="Node" parent="."]
+
+[node name="ClownSocket" type="Node" parent="Sockets" node_paths=PackedStringArray("actor")]
+script = ExtResource("32_ygs82")
+actor = NodePath("../../EnemySpot/ClownDancePath/PathFollow2D/ClownTb")
+
+[node name="HeavenSocket" type="Node" parent="Sockets" node_paths=PackedStringArray("actor")]
+script = ExtResource("32_ygs82")
+actor = NodePath("../../PlayerSpots/HeavenTb")
+
+[node name="HellSocket" type="Node" parent="Sockets" node_paths=PackedStringArray("actor")]
+script = ExtResource("32_ygs82")
+actor = NodePath("../../PlayerSpots/HellTb")
+
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="." method="_on_hell_action_commited_skill_1"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="PlayerUI/Buttons/HellButtons/Attackbutton1" method="_on_pressed"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="." method="_on_hell_action_commited_skill_2"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="PlayerUI/Buttons/HellButtons/Attackbutton2" method="_on_pressed"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="." method="_on_attackbutton_3_hell_action_commited"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="." method="_on_hell_action_commited_skill_3"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="PlayerUI/Buttons/HellButtons/Attackbutton3" method="_on_pressed"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton4" to="." method="_on_hell_action_commited_skill_4"]
+[connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton4" to="PlayerUI/Buttons/HellButtons/Attackbutton4" method="_on_pressed"]
+[connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="." method="_on_heaven_action_commited_skill_1"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="PlayerUI/Buttons/HeavenButtons/Attackbutton1" method="_on_pressed"]
+[connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="." method="_on_heaven_action_commited_skill_2"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="EnemySpot/ClownDancePath/PathFollow2D/ClownTb" method="_on_attackbutton_2_pressed"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="PlayerUI/Buttons/HeavenButtons/Attackbutton2" method="_on_pressed"]
+[connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton3" to="." method="_on_heaven_action_commited_skill_3"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton3" to="PlayerUI/Buttons/HeavenButtons/Attackbutton3" method="_on_pressed"]
-[connection signal="value_changed" from="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartBar" to="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartBar" method="_on_value_changed"]
+[connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton4" to="." method="_on_heaven_action_commited_skill_4"]
+[connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton4" to="PlayerUI/Buttons/HeavenButtons/Attackbutton4" method="_on_pressed"]

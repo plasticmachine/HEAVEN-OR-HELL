@@ -2,7 +2,7 @@ extends Node
 
 var Hellstats = "res://Resources/Stats/HellStats.tres"
 var Heavenstats = "res://Resources/Stats/HeavenStats.tres"
-var Clownstats = "res://Resources/Stats/Clown.tres"
+var Clownstats = "res://Resources/Stats/ClownStats.tres"
 @export var HellStatsResource: Resource
 @export var HeavenStatsResource: Resource
 @export var ClownStatsResource: Resource

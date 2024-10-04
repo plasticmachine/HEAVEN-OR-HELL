@@ -457,11 +457,11 @@ cull_viewport_refresh = 60.0
 [node name="9" type="Area2D" parent="SharedAreas"]
 
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 3
 scale = Vector2(2, 2)
 sprite_frames = SubResource("1")
-animation = &"Balloon"
-frame_progress = 0.643339
+animation = &""
 
 [node name="Default" type="CollisionShape2D" parent="ShapeManager"]
 visible = false

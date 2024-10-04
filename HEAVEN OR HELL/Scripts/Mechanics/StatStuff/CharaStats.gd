@@ -20,6 +20,8 @@ var BH_defense: float
 #@export var stat_resetter: bool
 
 
+@export var current_tempo: int = 5
+
 ### MOVESPEED FUNCTIONS
 func add_move_speed(amount: int) -> void:
 		move_speed += amount
@@ -210,6 +212,11 @@ func divide_crit(divisor: float) -> void:
 		crit = int(crit / divisor)
 	#emit_signal("stat_changed", "current_heart", current_heart
 
+
+
+func convert_tempo(amount: int) -> void:
+	current_tempo = amount
+	print_debug(character_name + " used a move with " + str(current_tempo) + " tempo!" )
 
 ### DEBUG FUNCTIONS
 func add_all(amount: int) -> void:

@@ -144,4 +144,3 @@ func on_ended_turn():
 
 func on_timeout():
 	ended_turn.emit()
-

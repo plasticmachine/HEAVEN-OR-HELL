@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
-@onready var EnemyHitSpot = $"../ClownDancePath/PathFollow2D/ClownTb/EnemyHitSpot"
-@onready var EnemyEffectSpot = $"../ClownDancePath/PathFollow2D/ClownTb/EnemyEffectSpot"
+@onready var EnemyHitSpot = $"../../EnemySpot/ClownDancePath/PathFollow2D/ClownTb/EnemyHitSpot"
+@onready var EnemyEffectSpot = $"../../EnemySpot/ClownDancePath/PathFollow2D/ClownTb/EnemyEffectSpot"
 @onready var HeavenHitSpot = $"../../PlayerSpots/UISpots/HeavenHitSpot"
 @onready var HellHitSpot = $"../../PlayerSpots/UISpots/HellHitSpot"
 @onready var HeavenEffectSpot = $"../../PlayerSpots/UISpots/HeavenEffectSpot"

@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c3ir72qpe6bsv"]
+
+[ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/Skills/Skills.gd" id="1_vmpoq"]
+
+[resource]
+script = ExtResource("1_vmpoq")

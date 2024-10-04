@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdorwiack3h01"]
+[gd_scene load_steps=2 format=3 uid="uid://bdorwiack3h01"]
 
-[ext_resource type="Script" path="res://Scenes/Characters/TurnBased/Stats.gd" id="1_xj8gu"]
 [ext_resource type="Texture2D" uid="uid://qb1askllryfb" path="res://art/HEAVEN/turnbased/HVN_TB_Dark.PNG" id="2_7q6gi"]
 
 [node name="HeavenTb" type="Node2D"]
@@ -9,8 +8,3 @@
 position = Vector2(1682, 934)
 scale = Vector2(0.733699, 0.733699)
 texture = ExtResource("2_7q6gi")
-
-[node name="Stats" type="Node" parent="."]
-script = ExtResource("1_xj8gu")
-
-[node name="Skills" type="Node" parent="."]

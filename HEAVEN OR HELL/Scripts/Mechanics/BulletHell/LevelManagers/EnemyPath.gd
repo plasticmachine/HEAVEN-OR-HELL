@@ -2,9 +2,12 @@ extends Node2D
 
 @export var speed = 4
 @export var active := false
+@export var wait_time: float = 0.0
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	if active:
+		await get_tree().create_timer(wait_time).timeout
 		start_progress(delta)
-func start_progress(delta: float):
+		
+func start_progress(delta: float): 
 	self.progress += speed * delta
