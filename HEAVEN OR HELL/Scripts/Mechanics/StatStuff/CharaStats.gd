@@ -21,7 +21,7 @@ var BH_defense: float
 
 
 @export var current_tempo: int = 5
-
+@export var current_skill_power: int
 ### MOVESPEED FUNCTIONS
 func add_move_speed(amount: int) -> void:
 		move_speed += amount
@@ -213,6 +213,11 @@ func divide_crit(divisor: float) -> void:
 	#emit_signal("stat_changed", "current_heart", current_heart
 
 
+### SKILL FUNCTIONS
+
+func convert_skill_power(amount: int) -> void:
+	current_skill_power = amount
+	print_debug(character_name + " used a move with " + str(current_skill_power) + " power!")
 
 func convert_tempo(amount: int) -> void:
 	current_tempo = amount

@@ -3,6 +3,7 @@ signal heaven_action_commited
 
 var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 @onready var effect_animation = $"../../../../BattleEffectManagerPosition/BattleEffectManager"
+@onready var skills = $"res://Scripts/Mechanics/TurnBased/Skills/Skills.gd"
 
 @export var skill_tempo: int = 5
 @export var percent_heal: float
@@ -14,6 +15,10 @@ func _on_pressed():
 
 #test skill that heals some percentage of heaven's HP
 func skill_effect():
+	
+	#TO BE MADE
+	skills.define_skill_slot_one()
+	
 	heavenstats.subtract_magia(skill_cost)
 	heavenstats.add_heart(heavenstats.current_heart * percent_heal)
 	effect_animation.find_effect_spot_heaven()

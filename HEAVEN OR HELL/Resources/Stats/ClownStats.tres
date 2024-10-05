@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_r3df3")
-character_name = "Heaven"
+character_name = "Clown"
 move_speed = 3500
 run_speed = 8000
 max_heart = 100

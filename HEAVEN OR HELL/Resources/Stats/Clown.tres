@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://cj8nipgprdrl4"]
 
-[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_bpvos"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_e17u4"]
 
 [resource]
-script = ExtResource("1_bpvos")
+script = ExtResource("1_e17u4")
 character_name = "Heaven"
 move_speed = 3500
 run_speed = 8000
 max_heart = 100
-current_heart = 100000
+current_heart = -5
 max_magia = 100
-current_magia = 70
+current_magia = 100
 malice = 10
 deviltry = 10
 guts = 15.0

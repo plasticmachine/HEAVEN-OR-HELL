@@ -992,7 +992,7 @@ zoom = Vector2(0.15, 0.15)
 tween_resource = SubResource("Resource_phj3e")
 
 [node name="Camera2D" type="Camera2D" parent="Cameras"]
-physics_interpolation_mode = 2
+physics_interpolation_mode = 1
 position = Vector2(6617, 4776)
 zoom = Vector2(0.15, 0.15)
 process_callback = 0

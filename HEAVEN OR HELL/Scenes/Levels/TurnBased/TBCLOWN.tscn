@@ -628,12 +628,14 @@ actor = NodePath("../../PlayerSpots/HeavenTb")
 script = ExtResource("32_ygs82")
 actor = NodePath("../../PlayerSpots/HellTb")
 
+[connection signal="clown_skill_search" from="." to="EnemySpot/ClownDancePath/PathFollow2D/ClownTb" method="_on_first_action_committed"]
+[connection signal="action_committed" from="EnemySpot/ClownDancePath/PathFollow2D/ClownTb" to="." method="_on_clown_tb_action_committed"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="." method="_on_hell_action_commited_skill_1"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="PlayerUI/Buttons/HellButtons/Attackbutton1" method="_on_pressed"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="." method="_on_hell_action_commited_skill_2"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="PlayerUI/Buttons/HellButtons/Attackbutton2" method="_on_pressed"]
-[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="." method="_on_attackbutton_3_hell_action_commited"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="." method="_on_hell_action_commited_skill_3"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="." method="_on_attackbutton_3_hell_action_commited"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="PlayerUI/Buttons/HellButtons/Attackbutton3" method="_on_pressed"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton4" to="." method="_on_hell_action_commited_skill_4"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton4" to="PlayerUI/Buttons/HellButtons/Attackbutton4" method="_on_pressed"]

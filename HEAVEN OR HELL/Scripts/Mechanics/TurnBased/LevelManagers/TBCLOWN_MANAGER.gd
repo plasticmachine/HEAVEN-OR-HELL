@@ -1,5 +1,8 @@
 extends Node2D
 #@onready var clown = $ClownTbs
+
+signal clown_skill_search
+
 var turn_count: int
 var turn_queue_amount: int
 var turn_pop_amount: int = 2
@@ -8,6 +11,7 @@ var hellstats = preload("res://Resources/Stats/HellStats.tres")
 var clownstats = preload("res://Resources/Stats/ClownStats.tres")
 var heavenskill: int
 var hellskill: int
+var clwnskill: int
 #var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 #@onready var ClownSocket = $Sockets/ClownSocket
 #@onready var HeavenSocket = $Sockets/HeavenSocket
@@ -33,7 +37,6 @@ func _ready():
 	TurnBasedClownDialogue()
 	
 	#_init_battle()
-
 #func DialogueTesting():
 	#if Input.is_action_just_pressed("Melee_hell"):
 		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/testingDialogue.dialogue"), "TestingDialogue")
@@ -126,30 +129,28 @@ func turn_queue_pop_check():
 		turn_count += 1
 		print_debug("turn queue cleared!")
 		print_debug("turncount is " + str(turn_count) )
-		enable_hell_buttons()
-		enable_heaven_buttons()
+		enable_all_buttons()
 
+
+#connecting signal thats emitted from heaven's attackbuttons (populated with skill effect)
 func _on_heaven_action_commited_skill_1():
 	heavenskill = 1
 	turn_queue_amount += 1
 	print_debug("this is commiting an action!")
 	turn_queue_pop_check()
 	disable_heaven_buttons()
-
 func _on_heaven_action_commited_skill_2():
 	heavenskill = 2
 	turn_queue_amount += 1
 	print_debug("this is commiting an action!")
 	turn_queue_pop_check()
 	disable_heaven_buttons()
-
 func _on_heaven_action_commited_skill_3():
 	heavenskill = 3
 	turn_queue_amount += 1
 	print_debug("this is commiting an action!")
 	turn_queue_pop_check()
 	disable_heaven_buttons()
-
 func _on_heaven_action_commited_skill_4():
 	heavenskill = 4
 	turn_queue_amount += 1
@@ -157,6 +158,7 @@ func _on_heaven_action_commited_skill_4():
 	turn_queue_pop_check()
 	disable_heaven_buttons()
 
+#connecting signal thats emitted from hell's attackbuttons (populated with skill effect)
 func _on_hell_action_commited_skill_1():
 	hellskill = 1
 	turn_queue_amount += 1
@@ -184,30 +186,50 @@ func _on_hell_action_commited_skill_4():
 
 
 
-
-
+#enabling/disabling all buttons functionality
 func enable_hell_buttons():
 	hell_action_button_1.disabled = false
 	hell_action_button_2.disabled = false
 	hell_action_button_3.disabled = false
 	hell_action_button_4.disabled = false
-
 func disable_hell_buttons():
 	hell_action_button_1.disabled = true
 	hell_action_button_2.disabled = true
 	hell_action_button_3.disabled = true
 	hell_action_button_4.disabled = true
-
-
+	clown_skill_search.emit()
 func enable_heaven_buttons():
 	heaven_action_button_1.disabled = false
 	heaven_action_button_2.disabled = false
 	heaven_action_button_3.disabled = false
 	heaven_action_button_4.disabled = false
-
-
 func disable_heaven_buttons():
 	heaven_action_button_1.disabled = true
 	heaven_action_button_2.disabled = true
 	heaven_action_button_3.disabled = true
 	heaven_action_button_4.disabled = true
+	clown_skill_search.emit()
+func disable_all_buttons():
+	heaven_action_button_1.disabled = true
+	heaven_action_button_2.disabled = true
+	heaven_action_button_3.disabled = true
+	heaven_action_button_4.disabled = true
+	
+	hell_action_button_1.disabled = true
+	hell_action_button_2.disabled = true
+	hell_action_button_3.disabled = true
+	hell_action_button_4.disabled = true
+func enable_all_buttons():
+	heaven_action_button_1.disabled = false
+	heaven_action_button_2.disabled = false
+	heaven_action_button_3.disabled = false
+	heaven_action_button_4.disabled = false
+	
+	hell_action_button_1.disabled = false
+	hell_action_button_2.disabled = false
+	hell_action_button_3.disabled = false
+	hell_action_button_4.disabled = false
+
+
+func _on_clown_tb_action_committed() -> void:
+	print_debug("CLWN COMMITTED ACTIONCLWN COMMITTED ACTIONCLWN COMMITTED ACTIONCLWN COMMITTED ACTIONCLWN COMMITTED ACTION")
