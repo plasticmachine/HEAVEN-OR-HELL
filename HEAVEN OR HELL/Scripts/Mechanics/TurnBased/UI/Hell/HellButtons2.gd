@@ -2,23 +2,16 @@ extends TextureButton
 signal hell_action_commited
 
 var hellstats = ResourceLoader.load("res://Resources/Stats/HellStats.tres")
-var clownstats = ResourceLoader.load("res://Resources/Stats/ClownStats.tres")
 var heavenstats = ResourceLoader.load("res://Resources/Stats/HeavenStats.tres")
-@onready var effect_animation = $"../../../../BattleEffectManagerPosition/BattleEffectManager"
+var clownstats = ResourceLoader.load("res://Resources/Stats/ClownStats.tres")
+@onready var skills = $"../../../../SkillManager"
 
-@export var skill_tempo: int
-@export var damage_dealt: int
 
 func _on_pressed():
 	hell_action_commited.emit()
-	hellstats.convert_tempo(skill_tempo)
 
-#test skill that deals damage to the boss
 func skill_effect():
-	clownstats.subtract_heart(damage_dealt)
-	effect_animation.find_attack_spot_enemy()
-	effect_animation.play("basic_slash")
-	
+	skills.define_skill_slot_2_hell()
 	
 	StatSaver.save_hellstats_to_file("res://Resources/Stats/HellStats.tres")
 	StatSaver.save_heavenstats_to_file("res://Resources/Stats/HeavenStats.tres")

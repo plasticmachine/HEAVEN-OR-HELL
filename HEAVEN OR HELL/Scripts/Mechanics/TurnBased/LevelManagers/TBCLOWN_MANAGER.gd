@@ -232,4 +232,4 @@ func enable_all_buttons():
 
 
 func _on_clown_tb_action_committed() -> void:
-	print_debug("CLWN COMMITTED ACTIONCLWN COMMITTED ACTIONCLWN COMMITTED ACTIONCLWN COMMITTED ACTIONCLWN COMMITTED ACTION")
+	print_debug("CLOWN COMMITTED ACTION!!")

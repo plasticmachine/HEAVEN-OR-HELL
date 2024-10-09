@@ -4,7 +4,7 @@ signal hell_action_commited
 var hellstats = ResourceLoader.load("res://Resources/Stats/HellStats.tres")
 var heavenstats = ResourceLoader.load("res://Resources/Stats/HeavenStats.tres")
 var clownstats = ResourceLoader.load("res://Resources/Stats/ClownStats.tres")
-@onready var effect_animation = $"../../../../BattleEffectManagerPosition/BattleEffectManager"
+@onready var skills = $"../../../../SkillManager"
 
 @export var skill_tempo: int
 @export var damage_dealt: int

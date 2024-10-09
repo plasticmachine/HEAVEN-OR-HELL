@@ -2,6 +2,7 @@ extends TextureButton
 signal heaven_action_commited
 
 var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
+var hellstats = preload("res://Resources/Stats/HellStats.tres")
 var clownstats = preload("res://Resources/Stats/ClownStats.tres")
 @onready var effect_animation = $"../../../../BattleEffectManagerPosition/BattleEffectManager"
 
@@ -14,14 +15,14 @@ var clownstats = preload("res://Resources/Stats/ClownStats.tres")
 func _on_pressed():
 	heavenstats.convert_tempo(skill_tempo)
 	heaven_action_commited.emit()
+	
 
 #test skill that deals damage to the boss
 func skill_effect():
-	clownstats.subtract_heart(damage_dealt)
-	effect_animation.find_attack_spot_enemy()
-	effect_animation.play("basic_slash")
+	effect_animation.find_attack_spot_heaven()
+	effect_animation.play("basic_heal")
+	heavenstats.add_heart(50)
 	
-	
-	StatSaver.save_hellstats_to_file("res://Resources/Stats/HellStats.tres")
-	StatSaver.save_heavenstats_to_file("res://Resources/Stats/HeavenStats.tres")
-	StatSaver.save_clownstats_to_file("res://Resources/Stats/HeavenStats.tres")
+	effect_animation.find_attack_spot_hell()
+	effect_animation.play("basic_heal")
+	hellstats.add_heart(50)

@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_e17u4")
-character_name = "Heaven"
+character_name = "Clown"
 move_speed = 3500
 run_speed = 8000
 max_heart = 100
-current_heart = -5
+current_heart = 100
 max_magia = 100
 current_magia = 100
 malice = 10
@@ -19,3 +19,4 @@ luck = 0
 crit = 0
 crit_level = 0
 current_tempo = 10
+current_skill_power = 0

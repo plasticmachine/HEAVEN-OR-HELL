@@ -4,9 +4,7 @@ signal hell_action_commited
 var hellstats = ResourceLoader.load("res://Resources/Stats/HellStats.tres")
 var heavenstats = ResourceLoader.load("res://Resources/Stats/HeavenStats.tres")
 var clownstats = ResourceLoader.load("res://Resources/Stats/ClownStats.tres")
-@onready var effect_animation = $"../../../../BattleEffectManagerPosition/BattleEffectManager"
-
-@export var skill_tempo: float
+@onready var skills = $"../../../../SkillManager"
 
 
 func _on_pressed():
