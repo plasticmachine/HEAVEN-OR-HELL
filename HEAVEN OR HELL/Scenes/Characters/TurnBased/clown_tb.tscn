@@ -361,6 +361,7 @@ graph_offset = Vector2(0, 63.6926)
 [node name="ClownTb" type="Node2D"]
 position = Vector2(874, 512)
 script = ExtResource("21_rxlsl")
+skill_1_name = "Twirl"
 
 [node name="ClownTbtest" type="Sprite2D" parent="."]
 visible = false
@@ -387,44 +388,8 @@ autoplay = "idle"
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_oqbrf")
 anim_player = NodePath("../AnimationPlayer")
-parameters/current_length = false
-parameters/current_position = false
-parameters/current_delta = false
 parameters/conditions/kicks = false
 parameters/conditions/returnspin = false
-parameters/BlendSpace1D/current_length = 0
-parameters/BlendSpace1D/current_position = 0
-parameters/BlendSpace1D/current_delta = 0
 parameters/BlendSpace1D/blend_position = 0.00112617
-parameters/BlendSpace1D/0/current_length = null
-parameters/BlendSpace1D/0/current_position = null
-parameters/BlendSpace1D/0/current_delta = null
-parameters/BlendSpace1D/1/current_length = null
-parameters/BlendSpace1D/1/current_position = null
-parameters/BlendSpace1D/1/current_delta = null
-parameters/BlendSpace1D/2/current_length = null
-parameters/BlendSpace1D/2/current_position = null
-parameters/BlendSpace1D/2/current_delta = null
-parameters/End/current_length = null
-parameters/End/current_position = null
-parameters/End/current_delta = null
-"parameters/Kicks 2/current_length" = null
-"parameters/Kicks 2/current_position" = null
-"parameters/Kicks 2/current_delta" = null
-parameters/Spins/current_length = null
-parameters/Spins/current_position = null
-parameters/Spins/current_delta = null
-"parameters/Spins 2/current_length" = null
-"parameters/Spins 2/current_position" = null
-"parameters/Spins 2/current_delta" = null
-parameters/Start/current_length = null
-parameters/Start/current_position = null
-parameters/Start/current_delta = null
-parameters/idle/current_length = null
-parameters/idle/current_position = null
-parameters/idle/current_delta = null
-"parameters/idle 2/current_length" = null
-"parameters/idle 2/current_position" = null
-"parameters/idle 2/current_delta" = null
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

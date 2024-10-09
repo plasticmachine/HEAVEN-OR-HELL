@@ -159,7 +159,10 @@ script = ExtResource("1_h0a2a")
 script = ExtResource("2_1jhkk")
 heaven_target_ID = 3
 skill_slot_1_skill_heaven = 1
-test_2_heaven_cost_1 = 15
+ID_1_heaven_skill_name = "Slash!"
+ID_2_heaven_skill_name = "Shoot!"
+ID_3_heaven_skill_name = "Acquire Intent"
+ID_4_heaven_skill_name = "Reclaim Will"
 
 [node name="DamageCalculation" type="Node2D" parent="."]
 script = ExtResource("2_jufi4")

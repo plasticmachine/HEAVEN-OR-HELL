@@ -6,6 +6,8 @@ signal clown_skill_search
 var turn_count: int
 var turn_queue_amount: int
 var turn_pop_amount: int = 2
+
+var wait_for_next_turn_time: float = 2
 var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 var hellstats = preload("res://Resources/Stats/HellStats.tres")
 var clownstats = preload("res://Resources/Stats/ClownStats.tres")
@@ -19,6 +21,7 @@ var clwnskill: int
 
 @onready var HeavenTB = $PlayerSpots/HeavenTb
 @onready var HellTB = $PlayerSpots/HellTb
+@onready var ClownTB = $EnemySpot/ClownDancePath/PathFollow2D/ClownTb
 
 @onready var heaven_action_button_1 = $PlayerUI/Buttons/HeavenButtons/Attackbutton1
 @onready var heaven_action_button_2 = $PlayerUI/Buttons/HeavenButtons/Attackbutton2
@@ -70,48 +73,77 @@ func turn_queue_pop_check():
 	if turn_queue_amount == turn_pop_amount:
 		#this is where im going to put the function that actually runs all of the skill functions
 		print_debug("this is when stuff would happen!")
-		if hellstats.current_tempo > heavenstats.current_tempo:
+		
+		
+		
+		if hellstats.current_tempo > heavenstats.current_tempo > clownstats.current_tempo:
 			#choosing which skill its going to use (hell)
 			match hellskill:
 				1: hell_action_button_1.skill_effect()
 				2: hell_action_button_2.skill_effect()
 				3: hell_action_button_3.skill_effect()
 				4: hell_action_button_4.skill_effect()
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(wait_for_next_turn_time).timeout
 			#choosing which skill its going to use (heaven)
 			match heavenskill:
 				1: heaven_action_button_1.skill_effect()
 				2: heaven_action_button_2.skill_effect()
 				3: heaven_action_button_3.skill_effect()
 				4: heaven_action_button_4.skill_effect()
-		if heavenstats.current_tempo > hellstats.current_tempo:
+			await get_tree().create_timer(wait_for_next_turn_time).timeout
+			match ClownTB.clownskill:
+				1: ClownTB.skill_1_effect()
+				2: ClownTB.skill_2_effect()
+		if heavenstats.current_tempo > hellstats.current_tempo  :
 			match heavenskill:
 				1: heaven_action_button_1.skill_effect()
 				2: heaven_action_button_2.skill_effect()
 				3: heaven_action_button_3.skill_effect()
 				4: heaven_action_button_4.skill_effect()
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(wait_for_next_turn_time).timeout
 			match hellskill:
 				1: hell_action_button_1.skill_effect()
 				2: hell_action_button_2.skill_effect()
 				3: hell_action_button_3.skill_effect()
 				4: hell_action_button_4.skill_effect()
-		if heavenstats.current_tempo == hellstats.current_tempo:
+		if heavenstats.current_tempo == hellstats.current_tempo == clownstats.current_tempo:
 			print_debug("equal tempo detected: rolling a dice...")
-			var rand_num = [1,2].pick_random()
+			var rand_num = [1,2,3].pick_random()
 			if rand_num == 1:
+				var num = [1,2].pick_random()
 				print_debug("rolling... done! heaven goes first")
 				match heavenskill:
 					1: heaven_action_button_1.skill_effect()
 					2: heaven_action_button_2.skill_effect()
 					3: heaven_action_button_3.skill_effect()
 					4: heaven_action_button_4.skill_effect()
-				await get_tree().create_timer(2).timeout
-				match hellskill:
-					1: hell_action_button_1.skill_effect()
-					2: hell_action_button_2.skill_effect()
-					3: hell_action_button_3.skill_effect()
-					4: hell_action_button_4.skill_effect()
+				await get_tree().create_timer(wait_for_next_turn_time).timeout
+				if num == 1:
+					match hellskill:
+						1: hell_action_button_1.skill_effect()
+						2: hell_action_button_2.skill_effect()
+						3: hell_action_button_3.skill_effect()
+						4: hell_action_button_4.skill_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					match ClownTB.clownskill:
+						1: ClownTB.skill_1_effect()
+						2: ClownTB.skill_2_effect()
+				if num == 2:
+					match ClownTB.clownskill:
+						1: ClownTB.skill_1_effect()
+						2: ClownTB.skill_2_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					match hellskill:
+						1: hell_action_button_1.skill_effect()
+						2: hell_action_button_2.skill_effect()
+						3: hell_action_button_3.skill_effect()
+						4: hell_action_button_4.skill_effect()
+
+
+
+
+				
+				
 			if rand_num == 2:
 				print_debug("rolling... done! hell goes first")
 				match hellskill:
@@ -119,7 +151,7 @@ func turn_queue_pop_check():
 					2: hell_action_button_2.skill_effect()
 					3: hell_action_button_3.skill_effect()
 					4: hell_action_button_4.skill_effect()
-				await get_tree().create_timer(2).timeout
+				await get_tree().create_timer(wait_for_next_turn_time).timeout
 				match heavenskill:
 					1: heaven_action_button_1.skill_effect()
 					2: heaven_action_button_2.skill_effect()
