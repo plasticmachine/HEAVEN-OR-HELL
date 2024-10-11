@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://crlggfguj7ru0"]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://bxm6e3fi1d2g6"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_r2u21"]
 
@@ -18,5 +18,5 @@ pain_tolerance = 1.6
 luck = 0
 crit = 0
 crit_level = 0
-current_tempo = 3
-current_skill_power = 0
+current_tempo = 10
+current_skill_power = 35

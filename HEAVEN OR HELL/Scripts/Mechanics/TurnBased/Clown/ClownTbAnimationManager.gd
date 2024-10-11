@@ -8,7 +8,7 @@ signal action_committed
 @onready var damagecalc = $"../../../../DamageCalculation"
 @onready var turnbased_manager = $"../../../.."
 @onready var effect_animation = $"../../../../BattleEffectManagerPosition/BattleEffectManager"
-@onready var clownskill
+@onready var clownskill: int
 
 
 @export_group("Skill_1")
@@ -49,15 +49,20 @@ signal action_committed
 
 
 func _on_first_action_committed() -> void:
+	var phase_1_threshold = clownstats.max_heart * .75
+	var phase_2_threshold = clownstats.max_heart * .50
+	var phase_3_threshold = clownstats.max_heart * .25
+	var phase_4_threshold = clownstats.max_heart * .15
+	
 	if turnbased_manager.turn_queue_amount == 1 and heavenstats.current_heart > 0 and hellstats.current_heart > 0:
-		if clownstats.current_heart >= clownstats.max_heart * .75:
+		if clownstats.current_heart >= phase_1_threshold:
 			var num = [1,1,2].pick_random()
 			match num:
 				1:
 					clownskill = 1
 				2:
 					clownskill = 2
-		if clownstats.current_heart >= clownstats.max_heart * .50:
+		if clownstats.current_heart <= phase_2_threshold:
 			var num = [3,4,5,6].pick_random()
 			match num:
 				3:
@@ -68,7 +73,7 @@ func _on_first_action_committed() -> void:
 					clownskill = 5
 				6:
 					clownskill = 6
-		if clownstats.current_heart >= clownstats.max_heart * .25:
+		if clownstats.current_heart <= phase_3_threshold:
 			var num = [5,6,7,8,9,10].pick_random()
 			match num:
 				5:
@@ -83,7 +88,7 @@ func _on_first_action_committed() -> void:
 					clownskill = 7
 				8: 
 					clownskill = 8
-		if clownstats.current_heart >= clownstats.max_heart * .15:
+		if clownstats.current_heart <= phase_4_threshold:
 			var num = [9,10].pick_random()
 			match num:
 				9:
@@ -112,7 +117,6 @@ func skill_1_effect():
 			damagecalc.clown_to_heaven_malice_damagecalc()
 			effect_animation.find_attack_spot_hell()
 			effect_animation.play("basic_slash")
-			hellstats.subtract_heart(skill_1_power)
 			
 func skill_2_effect():
 	clownskill = 2

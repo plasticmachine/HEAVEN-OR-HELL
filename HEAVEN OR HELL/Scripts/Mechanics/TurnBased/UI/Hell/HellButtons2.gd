@@ -1,18 +1,11 @@
 extends TextureButton
 signal hell_action_commited
 
-var hellstats = ResourceLoader.load("res://Resources/Stats/HellStats.tres")
-var heavenstats = ResourceLoader.load("res://Resources/Stats/HeavenStats.tres")
-var clownstats = ResourceLoader.load("res://Resources/Stats/ClownStats.tres")
 @onready var skills = $"../../../../SkillManager"
-
 
 func _on_pressed():
 	hell_action_commited.emit()
 
+#finds what skill to put in skill slot two to use it for skill_effect() in the TBmanager script
 func skill_effect():
 	skills.define_skill_slot_2_hell()
-	
-	StatSaver.save_hellstats_to_file("res://Resources/Stats/HellStats.tres")
-	StatSaver.save_heavenstats_to_file("res://Resources/Stats/HeavenStats.tres")
-	StatSaver.save_clownstats_to_file("res://Resources/Stats/ClownStats.tres")

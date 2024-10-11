@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=46 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/LevelManagers/TBCLOWN_MANAGER.gd" id="1_h0a2a"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/Skills/Skills.gd" id="2_1jhkk"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d1bwfc5sda7nx" path="res://art/GUI/battle_ui/buttons/attackbutton.png" id="4_4revw"]
 [ext_resource type="Texture2D" uid="uid://co35vcjirugsc" path="res://art/turnbased effects/healing effects/basic heal/2.PNG" id="4_a3xkn"]
 [ext_resource type="Texture2D" uid="uid://gvx1tms0dl5r" path="res://art/turnbased effects/attack effects/basic slash/IMG_4079.PNG" id="4_c8yiy"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/StatusEffects/status_effects.gd" id="4_dqrpe"]
 [ext_resource type="Texture2D" uid="uid://clifhufb0q740" path="res://art/turnbased effects/healing effects/basic heal/3.PNG" id="5_d3l8a"]
 [ext_resource type="Texture2D" uid="uid://bnd6h5s5yni02" path="res://art/turnbased effects/attack effects/basic slash/IMG_4080.PNG" id="5_nhpj3"]
 [ext_resource type="Texture2D" uid="uid://8be71ofaxcce" path="res://art/turnbased effects/attack effects/basic slash/IMG_4081.PNG" id="6_gjmh1"]
@@ -158,14 +159,37 @@ script = ExtResource("1_h0a2a")
 [node name="SkillManager" type="Node2D" parent="."]
 script = ExtResource("2_1jhkk")
 heaven_target_ID = 3
+hell_target_ID = 3
 skill_slot_1_skill_heaven = 1
+skill_slot_2_skill_heaven = 2
+skill_slot_3_skill_heaven = 3
+skill_slot_4_skill_heaven = 4
+skill_slot_1_skill_hell = 1
+skill_slot_2_skill_hell = 2
+skill_slot_3_skill_hell = 2
+skill_slot_4_skill_hell = 1
 ID_1_heaven_skill_name = "Slash!"
+ID_1_heaven_tempo = 3
+ID_1_heaven_power = 35
 ID_2_heaven_skill_name = "Shoot!"
+ID_2_heaven_power = 55
+ID_2_heaven_cost_1 = 15
 ID_3_heaven_skill_name = "Acquire Intent"
+ID_3_heaven_cost_1 = 15
+ID_3_heaven_effect_length = 2
+ID_3_heaven_increase_1 = 5
 ID_4_heaven_skill_name = "Reclaim Will"
+ID_1_hell_skill_name = "Slash!"
+ID_1_hell_tempo = 3
+ID_2_hell_skill_name = "Shoot!"
+ID_2_hell_power = 55
+ID_2_hell_cost_1 = 15
 
 [node name="DamageCalculation" type="Node2D" parent="."]
 script = ExtResource("2_jufi4")
+
+[node name="StatusEffects" type="Node2D" parent="."]
+script = ExtResource("4_dqrpe")
 
 [node name="BattleEffectManagerPosition" type="Node2D" parent="."]
 
@@ -202,6 +226,12 @@ wait_time = 45.0
 
 [node name="ClownTb" parent="EnemySpot/ClownDancePath/PathFollow2D" instance=ExtResource("2_djc2d")]
 position = Vector2(0.00012207, -1)
+skill_1_tempo = 9
+skill_1_power = 35
+skill_2_tempo = 1
+skill_2_heal = 50
+skill_2_malice_buff = 5
+skill_2_deviltry_buff = 5
 
 [node name="ClownTrack" type="AudioStreamPlayer2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
 position = Vector2(31, -143)
@@ -312,9 +342,6 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("10_gj12g")
-skill_tempo = 9
-skill_cost = 15
-percent_heal = 0.25
 
 [node name="Attackbutton2" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
 layout_mode = 1
@@ -343,9 +370,6 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("14_nfy1c")
-skill_tempo = 3
-damage_dealt = 90
-skill_cost = 20
 
 [node name="Attackbutton4" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
 layout_mode = 1
@@ -361,7 +385,6 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("26_30vdi")
-skill_tempo = 1.0
 
 [node name="HeavenButtons" type="Control" parent="PlayerUI/Buttons"]
 anchors_preset = 0
@@ -381,9 +404,6 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("13_11hfm")
-skill_tempo = 9
-percent_heal = 0.25
-skill_cost = 15
 
 [node name="Attackbutton2" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
 layout_mode = 1
@@ -399,7 +419,6 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("16_62r43")
-damage_dealt = 35
 
 [node name="Attackbutton3" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
 layout_direction = 1
@@ -413,9 +432,6 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("30_n7j6j")
-skill_tempo = 10
-percent_heal = 0.35
-percent_regen = 0.5
 
 [node name="Attackbutton4" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
 layout_mode = 1
@@ -431,7 +447,6 @@ texture_normal = ExtResource("4_4revw")
 texture_pressed = ExtResource("11_mr243")
 texture_hover = ExtResource("4_4revw")
 script = ExtResource("30_bgbie")
-skill_tempo = 1
 
 [node name="Data" type="Control" parent="PlayerUI"]
 anchors_preset = 0
@@ -641,11 +656,15 @@ script = ExtResource("32_ygs82")
 actor = NodePath("../../PlayerSpots/HellTb")
 
 [connection signal="clown_skill_search" from="." to="EnemySpot/ClownDancePath/PathFollow2D/ClownTb" method="_on_first_action_committed"]
+[connection signal="skill_effect_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_skill_effect_wear_off_set"]
 [connection signal="action_committed" from="EnemySpot/ClownDancePath/PathFollow2D/ClownTb" to="." method="_on_clown_tb_action_committed"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="." method="_on_hell_action_commited_skill_1"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="PlayerUI/Buttons/HellButtons/Attackbutton1" method="_on_pressed"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="." method="_on_hell_action_commited_skill_2"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="PlayerUI/Buttons/HellButtons/Attackbutton2" method="_on_pressed"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="." method="_on_hell_action_commited_skill_3"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="PlayerUI/Buttons/HellButtons/Attackbutton3" method="_on_pressed"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton4" to="." method="_on_hell_action_commited_skill_4"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton4" to="PlayerUI/Buttons/HellButtons/Attackbutton4" method="_on_pressed"]
 [connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="." method="_on_heaven_action_commited_skill_1"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="PlayerUI/Buttons/HeavenButtons/Attackbutton1" method="_on_pressed"]
