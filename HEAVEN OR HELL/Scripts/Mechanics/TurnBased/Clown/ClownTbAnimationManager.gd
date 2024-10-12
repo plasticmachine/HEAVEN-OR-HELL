@@ -60,8 +60,10 @@ func _on_first_action_committed() -> void:
 			match num:
 				1:
 					clownskill = 1
+					print_debug("clown used skill 1")
 				2:
 					clownskill = 2
+					print_debug("clown used skill 2")
 		if clownstats.current_heart <= phase_2_threshold:
 			var num = [3,4,5,6].pick_random()
 			match num:

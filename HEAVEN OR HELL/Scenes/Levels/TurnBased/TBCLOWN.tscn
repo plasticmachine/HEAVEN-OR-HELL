@@ -196,9 +196,9 @@ script = ExtResource("4_dqrpe")
 [node name="BattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
 z_index = 350
 sprite_frames = SubResource("SpriteFrames_jmycf")
-animation = &"basic_heal"
+animation = &"basic_slash"
 autoplay = "hide"
-frame = 9
+frame = 5
 frame_progress = 1.0
 script = ExtResource("7_p1xji")
 
@@ -228,7 +228,7 @@ wait_time = 45.0
 position = Vector2(0.00012207, -1)
 skill_1_tempo = 9
 skill_1_power = 35
-skill_2_tempo = 1
+skill_2_tempo = 9
 skill_2_heal = 50
 skill_2_malice_buff = 5
 skill_2_deviltry_buff = 5
@@ -243,7 +243,6 @@ panning_strength = 2.0
 [node name="EnemyHitSpot" type="Node2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
 
 [node name="EnemyEffectSpot" type="Node2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
-rotation = -3.10235
 
 [node name="TestPlayerSpots" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
