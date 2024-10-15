@@ -8,7 +8,7 @@ extends Node2D
 @onready var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 var ID_3_Heaven_disable_turn
-
+var ID_5_Heaven_disable_turn
 
 
 func _on_skill_manager_skill_effect_wear_off_set():

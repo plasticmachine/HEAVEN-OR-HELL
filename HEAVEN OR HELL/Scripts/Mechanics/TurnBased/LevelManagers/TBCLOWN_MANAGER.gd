@@ -21,7 +21,7 @@ var clwnskill: int
 
 @onready var HeavenTB = $PlayerSpots/HeavenTb
 @onready var HellTB = $PlayerSpots/HellTb
-@onready var ClownTB = $EnemySpot/ClownDancePath/PathFollow2D/ClownTb
+@onready var ClownTB = $EnemySpot2/ClownDancePath/PathFollow2D/ClownTb
 
 @onready var heaven_action_button_1 = $PlayerUI/Buttons/HeavenButtons/Attackbutton1
 @onready var heaven_action_button_2 = $PlayerUI/Buttons/HeavenButtons/Attackbutton2

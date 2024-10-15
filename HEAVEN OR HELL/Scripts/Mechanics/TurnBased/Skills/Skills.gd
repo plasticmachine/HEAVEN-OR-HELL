@@ -121,6 +121,174 @@ signal skill_effect_wear_off_set
 @export var ID_4_heaven_percent_decrease_2: int 
 @export var ID_4_heaven_percent_decrease_3: int 
 
+@export_group("Heaven Skill: Test 5")
+@export_subgroup("Variables: Test 5")
+@export var ID_5_heaven_skill_name: String
+@export var ID_5_heaven_skill_image: Image
+@export var ID_5_heaven_tempo: int 
+@export var ID_5_heaven_power: int 
+@export var ID_5_heaven_cost_1: int 
+@export var ID_5_heaven_cost_2: int 
+@export var ID_5_heaven_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 5")
+@export var ID_5_heaven_increase_1: int 
+@export var ID_5_heaven_increase_2: int 
+@export var ID_5_heaven_increase_3: int 
+@export var ID_5_heaven_decrease_1: int 
+@export var ID_5_heaven_decrease_2: int 
+@export var ID_5_heaven_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 3")
+@export var ID_5_heaven_percent_increase_1: int 
+@export var ID_5_heaven_percent_increase_2: int 
+@export var ID_5_heaven_percent_increase_3: int 
+@export var ID_5_heaven_percent_decrease_1: int 
+@export var ID_5_heaven_percent_decrease_2: int 
+@export var ID_5_heaven_percent_decrease_3: int 
+
+@export_group("Heaven Skill: Test 6")
+@export_subgroup("Variables: Test 6")
+@export var ID_6_heaven_skill_name: String
+@export var ID_6_heaven_skill_image: Image
+@export var ID_6_heaven_tempo: int 
+@export var ID_6_heaven_power: int 
+@export var ID_6_heaven_cost_1: int 
+@export var ID_6_heaven_cost_2: int 
+@export var ID_6_heaven_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 6")
+@export var ID_6_heaven_increase_1: int 
+@export var ID_6_heaven_increase_2: int 
+@export var ID_6_heaven_increase_3: int 
+@export var ID_6_heaven_decrease_1: int 
+@export var ID_6_heaven_decrease_2: int 
+@export var ID_6_heaven_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 3")
+@export var ID_6_heaven_percent_increase_1: int 
+@export var ID_6_heaven_percent_increase_2: int 
+@export var ID_6_heaven_percent_increase_3: int 
+@export var ID_6_heaven_percent_decrease_1: int 
+@export var ID_6_heaven_percent_decrease_2: int 
+@export var ID_6_heaven_percent_decrease_3: int 
+
+@export_group("Heaven Skill: Test 7")
+@export_subgroup("Variables: Test 7")
+@export var ID_7_heaven_skill_name: String
+@export var ID_7_heaven_skill_image: Image
+@export var ID_7_heaven_tempo: int 
+@export var ID_7_heaven_power: int 
+@export var ID_7_heaven_cost_1: int 
+@export var ID_7_heaven_cost_2: int 
+@export var ID_7_heaven_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 7")
+@export var ID_7_heaven_increase_1: int 
+@export var ID_7_heaven_increase_2: int 
+@export var ID_7_heaven_increase_3: int 
+@export var ID_7_heaven_decrease_1: int 
+@export var ID_7_heaven_decrease_2: int 
+@export var ID_7_heaven_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 3")
+@export var ID_7_heaven_percent_increase_1: int 
+@export var ID_7_heaven_percent_increase_2: int 
+@export var ID_7_heaven_percent_increase_3: int 
+@export var ID_7_heaven_percent_decrease_1: int 
+@export var ID_7_heaven_percent_decrease_2: int 
+@export var ID_7_heaven_percent_decrease_3: int 
+
+@export_group("Heaven Skill: Test 8")
+@export_subgroup("Variables: Test 8")
+@export var ID_8_heaven_skill_name: String
+@export var ID_8_heaven_skill_image: Image
+@export var ID_8_heaven_tempo: int 
+@export var ID_8_heaven_power: int 
+@export var ID_8_heaven_cost_1: int 
+@export var ID_8_heaven_cost_2: int 
+@export var ID_8_heaven_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 8")
+@export var ID_8_heaven_increase_1: int 
+@export var ID_8_heaven_increase_2: int 
+@export var ID_8_heaven_increase_3: int 
+@export var ID_8_heaven_decrease_1: int 
+@export var ID_8_heaven_decrease_2: int 
+@export var ID_8_heaven_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 3")
+@export var ID_8_heaven_percent_increase_1: int 
+@export var ID_8_heaven_percent_increase_2: int 
+@export var ID_8_heaven_percent_increase_3: int 
+@export var ID_8_heaven_percent_decrease_1: int 
+@export var ID_8_heaven_percent_decrease_2: int 
+@export var ID_8_heaven_percent_decrease_3: int 
+
+@export_group("Heaven Skill: Test 9")
+@export_subgroup("Variables: Test 9")
+@export var ID_9_heaven_skill_name: String
+@export var ID_9_heaven_skill_image: Image
+@export var ID_9_heaven_tempo: int 
+@export var ID_9_heaven_power: int 
+@export var ID_9_heaven_cost_1: int 
+@export var ID_9_heaven_cost_2: int 
+@export var ID_9_heaven_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 9")
+@export var ID_9_heaven_increase_1: int 
+@export var ID_9_heaven_increase_2: int 
+@export var ID_9_heaven_increase_3: int 
+@export var ID_9_heaven_decrease_1: int 
+@export var ID_9_heaven_decrease_2: int 
+@export var ID_9_heaven_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 3")
+@export var ID_9_heaven_percent_increase_1: int 
+@export var ID_9_heaven_percent_increase_2: int 
+@export var ID_9_heaven_percent_increase_3: int 
+@export var ID_9_heaven_percent_decrease_1: int 
+@export var ID_9_heaven_percent_decrease_2: int 
+@export var ID_9_heaven_percent_decrease_3: int 
+
+@export_group("Heaven Skill: Test 10")
+@export_subgroup("Variables: Test 10")
+@export var ID_10_heaven_skill_name: String
+@export var ID_10_heaven_skill_image: Image
+@export var ID_10_heaven_tempo: int 
+@export var ID_10_heaven_power: int 
+@export var ID_10_heaven_cost_1: int 
+@export var ID_10_heaven_cost_2: int 
+@export var ID_10_heaven_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 10")
+@export var ID_10_heaven_increase_1: int 
+@export var ID_10_heaven_increase_2: int 
+@export var ID_10_heaven_increase_3: int 
+@export var ID_10_heaven_decrease_1: int 
+@export var ID_10_heaven_decrease_2: int 
+@export var ID_10_heaven_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 3")
+@export var ID_10_heaven_percent_increase_1: int 
+@export var ID_10_heaven_percent_increase_2: int 
+@export var ID_10_heaven_percent_increase_3: int 
+@export var ID_10_heaven_percent_decrease_1: int 
+@export var ID_10_heaven_percent_decrease_2: int 
+@export var ID_10_heaven_percent_decrease_3: int 
+
+@export_group("Heaven Skill: Test 11")
+@export_subgroup("Variables: Test 11")
+@export var ID_11_heaven_skill_name: String
+@export var ID_11_heaven_skill_image: Image
+@export var ID_11_heaven_tempo: int 
+@export var ID_11_heaven_power: int 
+@export var ID_11_heaven_cost_1: int 
+@export var ID_11_heaven_cost_2: int 
+@export var ID_11_heaven_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 11")
+@export var ID_11_heaven_increase_1: int 
+@export var ID_11_heaven_increase_2: int 
+@export var ID_11_heaven_increase_3: int 
+@export var ID_11_heaven_decrease_1: int 
+@export var ID_11_heaven_decrease_2: int 
+@export var ID_11_heaven_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 3")
+@export var ID_11_heaven_percent_increase_1: int 
+@export var ID_11_heaven_percent_increase_2: int 
+@export var ID_11_heaven_percent_increase_3: int 
+@export var ID_11_heaven_percent_decrease_1: int 
+@export var ID_11_heaven_percent_decrease_2: int 
+@export var ID_11_heaven_percent_decrease_3: int 
+
 @export_group("Hell Skill: Test 1")
 @export_subgroup("Variables: Test 1")
 @export var ID_1_hell_skill_name: String
@@ -459,9 +627,9 @@ func define_skill_slot_4_hell():
 ###       HEAVEN SKILLS
 #test skill that just does damage based off of malice
 func skill_ID_1_heaven():
-	print_debug(heavenstats.character_name + " locked in " + ID_1_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	
 	heavenstats.convert_tempo(ID_1_heaven_tempo)
+	print_debug(heavenstats.character_name + " locked in " + ID_1_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	heavenstats.convert_skill_power(ID_1_heaven_power)
 	
 	match heaven_target_ID:
@@ -478,9 +646,9 @@ func skill_ID_1_heaven():
 			effect_animation.play("basic_slash")
 #test skill that just does damage based off of deviltry, but spends a little magia bar
 func skill_ID_2_heaven():
-	print_debug(heavenstats.character_name + " locked in " + ID_2_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
-	
+
 	heavenstats.convert_tempo(ID_2_heaven_tempo)
+	print_debug(heavenstats.character_name + " locked in " + ID_2_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	heavenstats.convert_skill_power(ID_2_heaven_tempo)
 	heavenstats.subtract_magia(ID_2_heaven_cost_1)
 	
@@ -498,9 +666,45 @@ func skill_ID_2_heaven():
 			effect_animation.play("basic_slash")
 
 func skill_ID_3_heaven():
-	print_debug(heavenstats.character_name + " locked in " + ID_3_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	heavenstats.convert_tempo(ID_3_heaven_tempo)
+	print_debug(heavenstats.character_name + " used " + ID_3_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	heavenstats.add_malice(ID_3_heaven_increase_1)
+	heavenstats.subtract_magia(ID_3_heaven_cost_1)
+	
+	effect_animation.find_effect_spot_heaven()
+	effect_animation.play("basic_heal")
+	
+	skill_effect_wear_off_set.emit()
+	
+func skill_ID_4_heaven():
+	print_debug(heavenstats.character_name + " used " + ID_4_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
+	heavenstats.convert_tempo(ID_4_heaven_tempo)
+	heavenstats.add_heart(ID_4_heaven_increase_1)
+	heavenstats.subtract_magia(ID_4_heaven_cost_1)
+	
+	effect_animation.find_effect_spot_heaven()
+	effect_animation.play("basic_heal")
+
+func skill_ID_5_heaven():
+	
+	
+	heavenstats.convert_tempo(ID_5_heaven_tempo)
+	print_debug(heavenstats.character_name + " used " + ID_5_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
+	
+	heavenstats.subtract_heart(ID_5_heaven_cost_1)
+	effect_animation.find_attack_spot_heaven()
+	effect_animation.play("basic_slash")
+	
+	await get_tree().create_timer(.5).timeout
+	
+	hellstats.add_magia(ID_5_heaven_increase_1)
+	hellstats.add_deviltry(ID_5_heaven_increase_2)
+	hellstats.add_malice(ID_5_heaven_increase_3)
+	
+	effect_animation.find_effect_spot_hell()
+	effect_animation.play("basic_heal")
+	
+	
 	skill_effect_wear_off_set.emit()
 ###       HELL SKILLS
 #test skill that just does damage based off of malice

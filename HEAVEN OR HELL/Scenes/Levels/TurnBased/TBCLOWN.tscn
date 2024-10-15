@@ -202,19 +202,16 @@ frame = 5
 frame_progress = 1.0
 script = ExtResource("7_p1xji")
 
-[node name="EnemySpot" type="Node2D" parent="."]
-position = Vector2(946, 339)
+[node name="EnemySpot2" type="Node2D" parent="."]
 
-[node name="Path2D" type="Path2D" parent="EnemySpot"]
-visible = false
-position = Vector2(-946, -339)
+[node name="Path2D" type="Path2D" parent="EnemySpot2"]
 curve = SubResource("Curve2D_shoiy")
 
-[node name="ClownDancePath" type="Path2D" parent="EnemySpot"]
-position = Vector2(-946, -244)
+[node name="ClownDancePath" type="Path2D" parent="EnemySpot2"]
+position = Vector2(0, 95)
 curve = SubResource("Curve2D_f2lxk")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpot/ClownDancePath"]
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpot2/ClownDancePath"]
 position = Vector2(931.5, 245)
 progress = 671.5
 rotates = false
@@ -224,8 +221,8 @@ speed = 350
 active = true
 wait_time = 45.0
 
-[node name="ClownTb" parent="EnemySpot/ClownDancePath/PathFollow2D" instance=ExtResource("2_djc2d")]
-position = Vector2(0.00012207, -1)
+[node name="ClownTb" parent="EnemySpot2/ClownDancePath/PathFollow2D" instance=ExtResource("2_djc2d")]
+position = Vector2(0, 0)
 skill_1_tempo = 9
 skill_1_power = 35
 skill_2_tempo = 9
@@ -233,16 +230,20 @@ skill_2_heal = 50
 skill_2_malice_buff = 5
 skill_2_deviltry_buff = 5
 
-[node name="ClownTrack" type="AudioStreamPlayer2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
+[node name="ClownTrack" type="AudioStreamPlayer2D" parent="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb"]
 position = Vector2(31, -143)
 stream = ExtResource("17_y1u7i")
 autoplay = true
 max_distance = 9940.0
 panning_strength = 2.0
 
-[node name="EnemyHitSpot" type="Node2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
+[node name="EnemyHitSpot" type="Node2D" parent="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb"]
+position = Vector2(14.4999, 0)
 
-[node name="EnemyEffectSpot" type="Node2D" parent="EnemySpot/ClownDancePath/PathFollow2D/ClownTb"]
+[node name="EnemyEffectSpot" type="Node2D" parent="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb"]
+position = Vector2(14.4999, 0)
+
+[node name="EnemySpot" type="Node2D" parent="."]
 
 [node name="TestPlayerSpots" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -644,7 +645,7 @@ scale = Vector2(-0.159953, -0.159953)
 
 [node name="ClownSocket" type="Node" parent="Sockets" node_paths=PackedStringArray("actor")]
 script = ExtResource("32_ygs82")
-actor = NodePath("../../EnemySpot/ClownDancePath/PathFollow2D/ClownTb")
+actor = NodePath("../../EnemySpot2/ClownDancePath/PathFollow2D/ClownTb")
 
 [node name="HeavenSocket" type="Node" parent="Sockets" node_paths=PackedStringArray("actor")]
 script = ExtResource("32_ygs82")
@@ -654,9 +655,9 @@ actor = NodePath("../../PlayerSpots/HeavenTb")
 script = ExtResource("32_ygs82")
 actor = NodePath("../../PlayerSpots/HellTb")
 
-[connection signal="clown_skill_search" from="." to="EnemySpot/ClownDancePath/PathFollow2D/ClownTb" method="_on_first_action_committed"]
+[connection signal="clown_skill_search" from="." to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_first_action_committed"]
 [connection signal="skill_effect_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_skill_effect_wear_off_set"]
-[connection signal="action_committed" from="EnemySpot/ClownDancePath/PathFollow2D/ClownTb" to="." method="_on_clown_tb_action_committed"]
+[connection signal="action_committed" from="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" to="." method="_on_clown_tb_action_committed"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="." method="_on_hell_action_commited_skill_1"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="PlayerUI/Buttons/HellButtons/Attackbutton1" method="_on_pressed"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="." method="_on_hell_action_commited_skill_2"]
@@ -668,7 +669,7 @@ actor = NodePath("../../PlayerSpots/HellTb")
 [connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="." method="_on_heaven_action_commited_skill_1"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="PlayerUI/Buttons/HeavenButtons/Attackbutton1" method="_on_pressed"]
 [connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="." method="_on_heaven_action_commited_skill_2"]
-[connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="EnemySpot/ClownDancePath/PathFollow2D/ClownTb" method="_on_attackbutton_2_pressed"]
+[connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_attackbutton_2_pressed"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="PlayerUI/Buttons/HeavenButtons/Attackbutton2" method="_on_pressed"]
 [connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton3" to="." method="_on_heaven_action_commited_skill_3"]
 [connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton3" to="PlayerUI/Buttons/HeavenButtons/Attackbutton3" method="_on_pressed"]
