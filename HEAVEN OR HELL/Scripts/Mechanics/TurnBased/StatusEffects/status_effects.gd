@@ -26,7 +26,9 @@ func check_if_effects_worn_off():
 			hellstats.subtract_malice(SkillManager.ID_5_heaven_increase_1)
 			hellstats.subtract_malice(SkillManager.ID_5_heaven_increase_1)
 
-
-func apply_debuff()
-	if TurnBasedManager.turn_count < ID_6_Heaven_disable_turn:
-		
+func holy_swords():
+	var num = [4,5,6].pick_random()
+	var holy_swords_disable_turn = (TurnBasedManager.turn_count + num)
+	
+	#if TurnBasedManager.turn_count > holy_swords_disable_turn
+	
