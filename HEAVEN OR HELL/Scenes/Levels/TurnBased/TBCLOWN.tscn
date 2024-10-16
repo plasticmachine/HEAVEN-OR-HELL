@@ -155,6 +155,7 @@ expand_margin_bottom = 1.0
 [node name="TurnBased" type="Node2D"]
 position = Vector2(11, 181)
 script = ExtResource("1_h0a2a")
+BOSS_ID = 3
 
 [node name="SkillManager" type="Node2D" parent="."]
 script = ExtResource("2_1jhkk")
@@ -656,6 +657,7 @@ script = ExtResource("32_ygs82")
 actor = NodePath("../../PlayerSpots/HellTb")
 
 [connection signal="clown_skill_search" from="." to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_first_action_committed"]
+[connection signal="heaven_ID_5_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_heaven_id_5_wear_off_set"]
 [connection signal="skill_effect_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_skill_effect_wear_off_set"]
 [connection signal="action_committed" from="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" to="." method="_on_clown_tb_action_committed"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="." method="_on_hell_action_commited_skill_1"]

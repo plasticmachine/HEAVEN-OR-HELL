@@ -1,6 +1,6 @@
 extends Node2D
 signal skill_effect_wear_off_set
-
+signal heaven_ID_5_wear_off_set
 
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @onready var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
@@ -687,7 +687,6 @@ func skill_ID_4_heaven():
 
 func skill_ID_5_heaven():
 	
-	
 	heavenstats.convert_tempo(ID_5_heaven_tempo)
 	print_debug(heavenstats.character_name + " used " + ID_5_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	
@@ -703,7 +702,6 @@ func skill_ID_5_heaven():
 	
 	effect_animation.find_effect_spot_hell()
 	effect_animation.play("basic_heal")
-	
 	
 	skill_effect_wear_off_set.emit()
 ###       HELL SKILLS

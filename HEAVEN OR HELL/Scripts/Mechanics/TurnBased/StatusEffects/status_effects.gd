@@ -9,13 +9,24 @@ extends Node2D
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 var ID_3_Heaven_disable_turn
 var ID_5_Heaven_disable_turn
+var ID_6_Heaven_disable_turn
 
 
-func _on_skill_manager_skill_effect_wear_off_set():
+func _on_skill_manager_skill_effect_wear_off_set() -> void:
 	ID_3_Heaven_disable_turn = TurnBasedManager.turn_count + SkillManager.ID_3_heaven_effect_length
-	
-	
+
+func _on_skill_manager_heaven_id_5_wear_off_set() -> void:
+	ID_5_Heaven_disable_turn = TurnBasedManager.turn_count + SkillManager.ID_5_heaven_effect_length
+
 func check_if_effects_worn_off():
 	match TurnBasedManager.turn_count:
 		ID_3_Heaven_disable_turn:
 			heavenstats.subtract_malice(SkillManager.ID_3_heaven_increase_1)
+		ID_5_Heaven_disable_turn:
+			hellstats.subtract_malice(SkillManager.ID_5_heaven_increase_1)
+			hellstats.subtract_malice(SkillManager.ID_5_heaven_increase_1)
+
+
+func apply_debuff()
+	if TurnBasedManager.turn_count < ID_6_Heaven_disable_turn:
+		
