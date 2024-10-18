@@ -19,9 +19,13 @@ var BH_defense: float
 @export var crit_level: int = 0
 #@export var stat_resetter: bool
 
-
+@export_category("skill stuff (dont change)")
 @export var current_tempo: int = 5
 @export var current_skill_power: int
+@export_category("status effects (dont change)")
+@export var status_effect_1: int
+@export var status_effect_2: int
+@export var status_effect_3: int
 ### MOVESPEED FUNCTIONS
 func add_move_speed(amount: int) -> void:
 		move_speed += amount

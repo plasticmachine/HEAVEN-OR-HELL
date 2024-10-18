@@ -8,7 +8,7 @@ signal heaven_ID_5_wear_off_set
 @onready var effect_animation = $"../BattleEffectManagerPosition/BattleEffectManager"
 
 @onready var damage_calc = $"../DamageCalculation"
-@onready var statseffects
+@onready var status_effects = $"../StatusEffects"
 
 @export var heaven_target_ID: int
 @export var hell_target_ID: int
@@ -42,12 +42,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_1_heaven_decrease_2: int 
 @export var ID_1_heaven_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 1")
-@export var ID_1_heaven_percent_increase_1: int 
-@export var ID_1_heaven_percent_increase_2: int 
-@export var ID_1_heaven_percent_increase_3: int 
-@export var ID_1_heaven_percent_decrease_1: int 
-@export var ID_1_heaven_percent_decrease_2: int 
-@export var ID_1_heaven_percent_decrease_3: int 
+@export var ID_1_heaven_percent_increase_1: float 
+@export var ID_1_heaven_percent_increase_2: float 
+@export var ID_1_heaven_percent_increase_3: float 
+@export var ID_1_heaven_percent_decrease_1: float 
+@export var ID_1_heaven_percent_decrease_2: float 
+@export var ID_1_heaven_percent_decrease_3: float 
 
 @export_group("Heaven Skill: Test 2")
 @export_subgroup("Variables: Test 2")
@@ -66,12 +66,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_2_heaven_decrease_2: int 
 @export var ID_2_heaven_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 2")
-@export var ID_2_heaven_percent_increase_1: int 
-@export var ID_2_heaven_percent_increase_2: int 
-@export var ID_2_heaven_percent_increase_3: int 
-@export var ID_2_heaven_percent_decrease_1: int 
-@export var ID_2_heaven_percent_decrease_2: int 
-@export var ID_2_heaven_percent_decrease_3: int 
+@export var ID_2_heaven_percent_increase_1: float 
+@export var ID_2_heaven_percent_increase_2: float 
+@export var ID_2_heaven_percent_increase_3: float 
+@export var ID_2_heaven_percent_decrease_1: float 
+@export var ID_2_heaven_percent_decrease_2: float 
+@export var ID_2_heaven_percent_decrease_3: float 
 
 @export_group("Heaven Skill: Test 3")
 @export_subgroup("Variables: Test 3")
@@ -90,12 +90,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_3_heaven_decrease_2: int 
 @export var ID_3_heaven_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 3")
-@export var ID_3_heaven_percent_increase_1: int 
-@export var ID_3_heaven_percent_increase_2: int 
-@export var ID_3_heaven_percent_increase_3: int 
-@export var ID_3_heaven_percent_decrease_1: int 
-@export var ID_3_heaven_percent_decrease_2: int 
-@export var ID_3_heaven_percent_decrease_3: int 
+@export var ID_3_heaven_percent_increase_1: float 
+@export var ID_3_heaven_percent_increase_2: float 
+@export var ID_3_heaven_percent_increase_3: float 
+@export var ID_3_heaven_percent_decrease_1: float 
+@export var ID_3_heaven_percent_decrease_2: float 
+@export var ID_3_heaven_percent_decrease_3: float 
 
 @export_group("Heaven Skill: Test 4")
 @export_subgroup("Variables: Test 4")
@@ -114,12 +114,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_4_heaven_decrease_2: int 
 @export var ID_4_heaven_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 3")
-@export var ID_4_heaven_percent_increase_1: int 
-@export var ID_4_heaven_percent_increase_2: int 
-@export var ID_4_heaven_percent_increase_3: int 
-@export var ID_4_heaven_percent_decrease_1: int 
-@export var ID_4_heaven_percent_decrease_2: int 
-@export var ID_4_heaven_percent_decrease_3: int 
+@export var ID_4_heaven_percent_increase_1: float 
+@export var ID_4_heaven_percent_increase_2: float 
+@export var ID_4_heaven_percent_increase_3: float 
+@export var ID_4_heaven_percent_decrease_1: float 
+@export var ID_4_heaven_percent_decrease_2: float 
+@export var ID_4_heaven_percent_decrease_3: float 
 
 @export_group("Heaven Skill: Test 5")
 @export_subgroup("Variables: Test 5")
@@ -138,12 +138,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_5_heaven_decrease_2: int 
 @export var ID_5_heaven_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 3")
-@export var ID_5_heaven_percent_increase_1: int 
-@export var ID_5_heaven_percent_increase_2: int 
-@export var ID_5_heaven_percent_increase_3: int 
-@export var ID_5_heaven_percent_decrease_1: int 
-@export var ID_5_heaven_percent_decrease_2: int 
-@export var ID_5_heaven_percent_decrease_3: int 
+@export var ID_5_heaven_percent_increase_1: float 
+@export var ID_5_heaven_percent_increase_2: float 
+@export var ID_5_heaven_percent_increase_3: float 
+@export var ID_5_heaven_percent_decrease_1: float 
+@export var ID_5_heaven_percent_decrease_2: float 
+@export var ID_5_heaven_percent_decrease_3: float 
 
 @export_group("Heaven Skill: Test 6")
 @export_subgroup("Variables: Test 6")
@@ -162,12 +162,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_6_heaven_decrease_2: int 
 @export var ID_6_heaven_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 3")
-@export var ID_6_heaven_percent_increase_1: int 
-@export var ID_6_heaven_percent_increase_2: int 
-@export var ID_6_heaven_percent_increase_3: int 
-@export var ID_6_heaven_percent_decrease_1: int 
-@export var ID_6_heaven_percent_decrease_2: int 
-@export var ID_6_heaven_percent_decrease_3: int 
+@export var ID_6_heaven_percent_increase_1: float 
+@export var ID_6_heaven_percent_increase_2: float 
+@export var ID_6_heaven_percent_increase_3: float 
+@export var ID_6_heaven_percent_decrease_1: float
+@export var ID_6_heaven_percent_decrease_2: float 
+@export var ID_6_heaven_percent_decrease_3: float 
 
 @export_group("Heaven Skill: Test 7")
 @export_subgroup("Variables: Test 7")
@@ -186,12 +186,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_7_heaven_decrease_2: int 
 @export var ID_7_heaven_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 3")
-@export var ID_7_heaven_percent_increase_1: int 
-@export var ID_7_heaven_percent_increase_2: int 
-@export var ID_7_heaven_percent_increase_3: int 
-@export var ID_7_heaven_percent_decrease_1: int 
-@export var ID_7_heaven_percent_decrease_2: int 
-@export var ID_7_heaven_percent_decrease_3: int 
+@export var ID_7_heaven_percent_increase_1: float 
+@export var ID_7_heaven_percent_increase_2: float 
+@export var ID_7_heaven_percent_increase_3: float 
+@export var ID_7_heaven_percent_decrease_1: float 
+@export var ID_7_heaven_percent_decrease_2: float 
+@export var ID_7_heaven_percent_decrease_3: float 
 
 @export_group("Heaven Skill: Test 8")
 @export_subgroup("Variables: Test 8")
@@ -210,12 +210,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_8_heaven_decrease_2: int 
 @export var ID_8_heaven_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 3")
-@export var ID_8_heaven_percent_increase_1: int 
-@export var ID_8_heaven_percent_increase_2: int 
-@export var ID_8_heaven_percent_increase_3: int 
-@export var ID_8_heaven_percent_decrease_1: int 
-@export var ID_8_heaven_percent_decrease_2: int 
-@export var ID_8_heaven_percent_decrease_3: int 
+@export var ID_8_heaven_percent_increase_1: float 
+@export var ID_8_heaven_percent_increase_2: float 
+@export var ID_8_heaven_percent_increase_3: float 
+@export var ID_8_heaven_percent_decrease_1: float 
+@export var ID_8_heaven_percent_decrease_2: float 
+@export var ID_8_heaven_percent_decrease_3: float 
 
 @export_group("Heaven Skill: Test 9")
 @export_subgroup("Variables: Test 9")
@@ -234,12 +234,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_9_heaven_decrease_2: int 
 @export var ID_9_heaven_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 3")
-@export var ID_9_heaven_percent_increase_1: int 
-@export var ID_9_heaven_percent_increase_2: int 
-@export var ID_9_heaven_percent_increase_3: int 
-@export var ID_9_heaven_percent_decrease_1: int 
-@export var ID_9_heaven_percent_decrease_2: int 
-@export var ID_9_heaven_percent_decrease_3: int 
+@export var ID_9_heaven_percent_increase_1: float 
+@export var ID_9_heaven_percent_increase_2: float 
+@export var ID_9_heaven_percent_increase_3: float 
+@export var ID_9_heaven_percent_decrease_1: float 
+@export var ID_9_heaven_percent_decrease_2: float 
+@export var ID_9_heaven_percent_decrease_3: float 
 
 @export_group("Heaven Skill: Test 10")
 @export_subgroup("Variables: Test 10")
@@ -258,12 +258,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_10_heaven_decrease_2: int 
 @export var ID_10_heaven_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 3")
-@export var ID_10_heaven_percent_increase_1: int 
-@export var ID_10_heaven_percent_increase_2: int 
-@export var ID_10_heaven_percent_increase_3: int 
-@export var ID_10_heaven_percent_decrease_1: int 
-@export var ID_10_heaven_percent_decrease_2: int 
-@export var ID_10_heaven_percent_decrease_3: int 
+@export var ID_10_heaven_percent_increase_1: float 
+@export var ID_10_heaven_percent_increase_2: float 
+@export var ID_10_heaven_percent_increase_3: float 
+@export var ID_10_heaven_percent_decrease_1: float 
+@export var ID_10_heaven_percent_decrease_2: float 
+@export var ID_10_heaven_percent_decrease_3: float 
 
 @export_group("Heaven Skill: Test 11")
 @export_subgroup("Variables: Test 11")
@@ -282,12 +282,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_11_heaven_decrease_2: int 
 @export var ID_11_heaven_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 3")
-@export var ID_11_heaven_percent_increase_1: int 
-@export var ID_11_heaven_percent_increase_2: int 
-@export var ID_11_heaven_percent_increase_3: int 
-@export var ID_11_heaven_percent_decrease_1: int 
-@export var ID_11_heaven_percent_decrease_2: int 
-@export var ID_11_heaven_percent_decrease_3: int 
+@export var ID_11_heaven_percent_increase_1: float 
+@export var ID_11_heaven_percent_increase_2: float 
+@export var ID_11_heaven_percent_increase_3: float 
+@export var ID_11_heaven_percent_decrease_1: float 
+@export var ID_11_heaven_percent_decrease_2: float 
+@export var ID_11_heaven_percent_decrease_3: float 
 
 @export_group("Hell Skill: Test 1")
 @export_subgroup("Variables: Test 1")
@@ -306,12 +306,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_1_hell_decrease_2: int 
 @export var ID_1_hell_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 1")
-@export var ID_1_hell_percent_increase_1: int 
-@export var ID_1_hell_percent_increase_2: int 
-@export var ID_1_hell_percent_increase_3: int 
-@export var ID_1_hell_percent_decrease_1: int 
-@export var ID_1_hell_percent_decrease_2: int 
-@export var ID_1_hell_percent_decrease_3: int 
+@export var ID_1_hell_percent_increase_1: float 
+@export var ID_1_hell_percent_increase_2: float 
+@export var ID_1_hell_percent_increase_3: float 
+@export var ID_1_hell_percent_decrease_1: float 
+@export var ID_1_hell_percent_decrease_2: float 
+@export var ID_1_hell_percent_decrease_3: float 
 
 @export_group("Hell Skill: Test 2")
 @export_subgroup("Variables: Test 2")
@@ -330,12 +330,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_2_hell_decrease_2: int 
 @export var ID_2_hell_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 2")
-@export var ID_2_hell_percent_increase_1: int 
-@export var ID_2_hell_percent_increase_2: int 
-@export var ID_2_hell_percent_increase_3: int 
-@export var ID_2_hell_percent_decrease_1: int 
-@export var ID_2_hell_percent_decrease_2: int 
-@export var ID_2_hell_percent_decrease_3: int 
+@export var ID_2_hell_percent_increase_1: float 
+@export var ID_2_hell_percent_increase_2: float 
+@export var ID_2_hell_percent_increase_3: float 
+@export var ID_2_hell_percent_decrease_1: float 
+@export var ID_2_hell_percent_decrease_2: float 
+@export var ID_2_hell_percent_decrease_3: float 
 
 @export_group("Hell Skill: Test 3")
 @export_subgroup("Variables: Test 3")
@@ -354,12 +354,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_3_hell_decrease_2: int 
 @export var ID_3_hell_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 3")
-@export var ID_3_hell_percent_increase_1: int 
-@export var ID_3_hell_percent_increase_2: int 
-@export var ID_3_hell_percent_increase_3: int 
-@export var ID_3_hell_percent_decrease_1: int 
-@export var ID_3_hell_percent_decrease_2: int 
-@export var ID_3_hell_percent_decrease_3: int 
+@export var ID_3_hell_percent_increase_1: float 
+@export var ID_3_hell_percent_increase_2: float 
+@export var ID_3_hell_percent_increase_3: float 
+@export var ID_3_hell_percent_decrease_1: float 
+@export var ID_3_hell_percent_decrease_2: float 
+@export var ID_3_hell_percent_decrease_3: float 
 
 @export_group("Hell Skill: Test 4")
 @export_subgroup("Variables: Test 4")
@@ -378,12 +378,12 @@ signal heaven_ID_5_wear_off_set
 @export var ID_4_hell_decrease_2: int 
 @export var ID_4_hell_decrease_3: int 
 @export_subgroup("Percentage Increases + Decreases: Test 3")
-@export var ID_4_hell_percent_increase_1: int 
-@export var ID_4_hell_percent_increase_2: int 
-@export var ID_4_hell_percent_increase_3: int 
-@export var ID_4_hell_percent_decrease_1: int 
-@export var ID_4_hell_percent_decrease_2: int 
-@export var ID_4_hell_percent_decrease_3: int 
+@export var ID_4_hell_percent_increase_1: float 
+@export var ID_4_hell_percent_increase_2: float 
+@export var ID_4_hell_percent_increase_3: float 
+@export var ID_4_hell_percent_decrease_1: float 
+@export var ID_4_hell_percent_decrease_2: float 
+@export var ID_4_hell_percent_decrease_3: float 
 
 ### TARGET_ID = 1: HEAVEN 2: HELL 3: CLOWN
 
@@ -492,8 +492,7 @@ func define_skill_slot_4_heaven():
 			pass
 			#skill_ID_5_heaven()
 		6:
-			pass
-			#skill_ID_6_heaven()
+			skill_ID_6_heaven()
 		7:
 			pass
 			#skill_ID_7_heaven()
@@ -702,8 +701,58 @@ func skill_ID_5_heaven():
 	
 	effect_animation.find_effect_spot_hell()
 	effect_animation.play("basic_heal")
+	await get_tree().create_timer(.1).timeout
+	effect_animation.play("basic_heal")
+	await get_tree().create_timer(.1).timeout
+	effect_animation.play("basic_heal")
 	
 	skill_effect_wear_off_set.emit()
+
+func skill_ID_6_heaven():
+	var skill_ID_6_cost = heavenstats.max_magia * ID_6_heaven_percent_decrease_1
+	
+	heavenstats.convert_tempo(ID_6_heaven_tempo)
+	print_debug(heavenstats.character_name + " used " + ID_6_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
+	heavenstats.subtract_magia(skill_ID_6_cost)
+	
+	status_effects.holy_swords_set()
+	
+func skill_ID_7_heaven():
+	var rand_choice = [1,2].pick_random()
+	var num = [0, 0, 0, 9].pick_random()
+	
+	
+	heavenstats.convert_tempo(ID_7_heaven_tempo + num)
+	
+	
+	match rand_choice:
+		1:
+			hellstats.subtract_deviltry(ID_7_heaven_increase_1)
+			effect_animation.find_effect_spot_hell()
+			effect_animation.play("basic_slash")
+			
+			await get_tree().create_timer(.1).timeout
+			
+			heavenstats.add_malice(ID_7_heaven_increase_1)
+			effect_animation.find_effect_spot_heaven()
+			effect_animation.play("basic_heal")
+			
+		2:
+			heavenstats.subtract_deviltry(ID_7_heaven_increase_1)
+			effect_animation.find_effect_spot_heaven()
+			effect_animation.play("basic_slash")
+			
+			await get_tree().create_timer(.1).timeout
+			
+			hellstats.add_malice(ID_7_heaven_increase_1)
+			effect_animation.find_effect_spot_hell()
+			effect_animation.play("basic_heal")
+func skill_ID_8_heaven():
+	pass
+	
+	
+
+
 ###       HELL SKILLS
 #test skill that just does damage based off of malice
 func skill_ID_1_hell():

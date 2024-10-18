@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=45 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/LevelManagers/TBCLOWN_MANAGER.gd" id="1_h0a2a"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/Skills/Skills.gd" id="2_1jhkk"]
@@ -36,7 +36,6 @@
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellButtons4.gd" id="26_30vdi"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/attackbutton_4.gd" id="30_bgbie"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/healbutton.gd" id="30_n7j6j"]
-[ext_resource type="Script" path="res://addons/turnity/turn_socket.gd" id="32_ygs82"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jmycf"]
 animations = [{
@@ -164,7 +163,7 @@ hell_target_ID = 3
 skill_slot_1_skill_heaven = 1
 skill_slot_2_skill_heaven = 2
 skill_slot_3_skill_heaven = 3
-skill_slot_4_skill_heaven = 4
+skill_slot_4_skill_heaven = 6
 skill_slot_1_skill_hell = 1
 skill_slot_2_skill_hell = 2
 skill_slot_3_skill_hell = 2
@@ -173,16 +172,38 @@ ID_1_heaven_skill_name = "Slash!"
 ID_1_heaven_tempo = 3
 ID_1_heaven_power = 35
 ID_2_heaven_skill_name = "Shoot!"
+ID_2_heaven_tempo = 4
 ID_2_heaven_power = 55
 ID_2_heaven_cost_1 = 15
 ID_3_heaven_skill_name = "Acquire Intent"
+ID_3_heaven_tempo = 5
 ID_3_heaven_cost_1 = 15
 ID_3_heaven_effect_length = 2
 ID_3_heaven_increase_1 = 5
 ID_4_heaven_skill_name = "Reclaim Will"
+ID_4_heaven_tempo = 5
+ID_4_heaven_effect_length = 2
+ID_5_heaven_skill_name = "Indignation!"
+ID_5_heaven_tempo = 8
+ID_5_heaven_cost_1 = 35
+ID_5_heaven_increase_1 = 50
+ID_5_heaven_increase_2 = 5
+ID_5_heaven_increase_3 = 5
+ID_6_heaven_skill_name = "Blessed Blades"
+ID_6_heaven_tempo = 1
+ID_6_heaven_cost_1 = 45
+ID_6_heaven_effect_length = 3
+ID_6_heaven_percent_decrease_1 = 0.35
+ID_7_heaven_skill_name = "Faltered Faith"
+ID_7_heaven_tempo = 1
+ID_7_heaven_increase_1 = 5
+ID_8_heaven_skill_name = "Higher Ground"
+ID_8_heaven_tempo = 2
 ID_1_hell_skill_name = "Slash!"
 ID_1_hell_tempo = 3
+ID_1_hell_power = 35
 ID_2_hell_skill_name = "Shoot!"
+ID_2_hell_tempo = 4
 ID_2_hell_power = 55
 ID_2_hell_cost_1 = 15
 
@@ -218,9 +239,6 @@ progress = 671.5
 rotates = false
 cubic_interp = false
 script = ExtResource("15_qlv6m")
-speed = 350
-active = true
-wait_time = 45.0
 
 [node name="ClownTb" parent="EnemySpot2/ClownDancePath/PathFollow2D" instance=ExtResource("2_djc2d")]
 position = Vector2(0, 0)
@@ -641,20 +659,6 @@ visible = false
 position = Vector2(463, 438)
 rotation = -3.10526
 scale = Vector2(-0.159953, -0.159953)
-
-[node name="Sockets" type="Node" parent="."]
-
-[node name="ClownSocket" type="Node" parent="Sockets" node_paths=PackedStringArray("actor")]
-script = ExtResource("32_ygs82")
-actor = NodePath("../../EnemySpot2/ClownDancePath/PathFollow2D/ClownTb")
-
-[node name="HeavenSocket" type="Node" parent="Sockets" node_paths=PackedStringArray("actor")]
-script = ExtResource("32_ygs82")
-actor = NodePath("../../PlayerSpots/HeavenTb")
-
-[node name="HellSocket" type="Node" parent="Sockets" node_paths=PackedStringArray("actor")]
-script = ExtResource("32_ygs82")
-actor = NodePath("../../PlayerSpots/HellTb")
 
 [connection signal="clown_skill_search" from="." to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_first_action_committed"]
 [connection signal="heaven_ID_5_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_heaven_id_5_wear_off_set"]

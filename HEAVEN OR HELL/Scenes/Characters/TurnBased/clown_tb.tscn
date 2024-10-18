@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dt06qpfhtfajd"]
+[gd_scene load_steps=47 format=3 uid="uid://dt06qpfhtfajd"]
 
 [ext_resource type="Texture2D" uid="uid://n8jftbuyirgl" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-1.png" id="2_eba1o"]
 [ext_resource type="Texture2D" uid="uid://damkva1jjkcsg" path="res://art/clown/TurnBased/CLOWN_TBTEST.png" id="2_y11lw"]
@@ -310,7 +310,7 @@ animation = &"idle"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rj4b0"]
 animation = &"idle"
 use_custom_timeline = true
-timeline_length = 45.0
+timeline_length = 1e+11
 stretch_time_scale = false
 start_offset = 0.0
 loop_mode = 1
@@ -335,11 +335,6 @@ switch_mode = 2
 advance_mode = 2
 advance_condition = &"returnspin"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l43ja"]
-break_loop_at_end = true
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_oqbrf"]
 states/BlendSpace1D/node = SubResource("AnimationNodeBlendSpace1D_abx6s")
 states/BlendSpace1D/position = Vector2(361, 211)
@@ -355,7 +350,7 @@ states/idle/node = SubResource("AnimationNodeAnimation_rj4b0")
 states/idle/position = Vector2(444, 120)
 "states/idle 2/node" = SubResource("AnimationNodeAnimation_25uld")
 "states/idle 2/position" = Vector2(1234, 145)
-transitions = ["Spins", "Kicks 2", SubResource("AnimationNodeStateMachineTransition_46kgh"), "Kicks 2", "Spins 2", SubResource("AnimationNodeStateMachineTransition_vy4x2"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "Spins 2", "idle 2", SubResource("AnimationNodeStateMachineTransition_hpc3e"), "idle", "Spins", SubResource("AnimationNodeStateMachineTransition_l43ja")]
+transitions = ["Spins", "Kicks 2", SubResource("AnimationNodeStateMachineTransition_46kgh"), "Kicks 2", "Spins 2", SubResource("AnimationNodeStateMachineTransition_vy4x2"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "Spins 2", "idle 2", SubResource("AnimationNodeStateMachineTransition_hpc3e")]
 graph_offset = Vector2(0, 63.6926)
 
 [node name="ClownTb" type="Node2D"]

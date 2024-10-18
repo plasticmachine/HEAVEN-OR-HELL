@@ -36,12 +36,19 @@ var clwnskill: int
 
 @onready var StatusEffects = $StatusEffects
 
+
+
 @export var BOSS_ID: int
 #var clownstats = Stats.get_character_stats(clown)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Engine.max_fps = 144
 	TurnBasedClownDialogue()
+	
+	heavenstats.current_skill_power = 0
+	heavenstats.current_tempo = 0
+	hellstats.current_skill_power = 0
+	hellstats.current_tempo = 0
 	
 	#_init_battle()
 #func DialogueTesting():
@@ -56,7 +63,7 @@ func TurnBasedClownDialogue():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#DialogueTesting()
-	if clownstats.current_heart == 0:
+	if clownstats.current_heart <= 0:
 		YASM.load_scene("res://Scenes/Screens/Main_Menu.tscn")
 	if heavenstats.current_heart <= 0:
 		HeavenTB.hide()
@@ -68,12 +75,19 @@ func _process(delta):
 		disable_hell_buttons()
 		turn_pop_amount = 1
 		hellskill = 0
-	if heavenstats.current_heart == 0 and hellstats.current_heart == 0:
+	if heavenstats.current_heart <= 0 and hellstats.current_heart <= 0:
 		YASM.load_scene("res://Scenes/Screens/Main_Menu.tscn")
 	
 
 
 func turn_queue_pop_check():
+	var hell_turn_order = hellstats.current_tempo
+	var heaven_turn_order = heavenstats.current_tempo
+	var clown_turn_order = clownstats.current_tempo
+	
+	
+	var turn_order = [hell_turn_order, heaven_turn_order, clown_turn_order]
+	
 	match BOSS_ID:
 		3:
 			if turn_queue_amount == turn_pop_amount:
@@ -403,6 +417,7 @@ func turn_queue_pop_check():
 				#print_debug(str(heavenskill) + " and " + str(heavenstats.current_tempo))
 				#print_debug(str(hellskill) + " and " + str(hellstats.current_tempo))
 				#print_debug(str(ClownTB.clownskill) + " and " + str(clownstats.current_tempo))
+				StatusEffects.check_if_effects_active_end_turn()
 				StatusEffects.check_if_effects_worn_off()
 				turn_queue_amount = 0
 				turn_count += 1
