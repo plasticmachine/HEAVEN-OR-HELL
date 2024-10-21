@@ -400,28 +400,30 @@ func define_skill_slot_1_heaven():
 		2:
 			skill_ID_2_heaven()
 		3:
-			pass
-			#skill_ID_3_heaven()
+			
+			skill_ID_3_heaven()
 		4:
-			pass
-			#skill_ID_4_heaven()
+			
+			skill_ID_4_heaven()
 		5:
-			pass
-			#skill_ID_5_heaven()
+			
+			skill_ID_5_heaven()
 		6:
-			pass
-			#skill_ID_6_heaven()
+			
+			skill_ID_6_heaven()
 		7:
-			pass
-			#skill_ID_7_heaven()
+			
+			skill_ID_7_heaven()
 		8:
-			pass
-			#skill_ID_8_heaven()
+			
+			skill_ID_8_heaven()
 		9:
-			pass
-			#skill_ID_9_heaven()
+			
+			skill_ID_9_heaven()
 		10:
-			pass
+			skill_ID_10_heaven()
+		11:
+			skill_ID_11_heaven()
 func define_skill_slot_2_heaven():
 	match skill_slot_2_skill_heaven:
 		1:
@@ -429,28 +431,30 @@ func define_skill_slot_2_heaven():
 		2:
 			skill_ID_2_heaven()
 		3:
-			pass
-			#skill_ID_3_heaven()
+			
+			skill_ID_3_heaven()
 		4:
-			pass
-			#skill_ID_4_heaven()
+			
+			skill_ID_4_heaven()
 		5:
-			pass
-			#skill_ID_5_heaven()
+			
+			skill_ID_5_heaven()
 		6:
-			pass
-			#skill_ID_6_heaven()
+			
+			skill_ID_6_heaven()
 		7:
-			pass
-			#skill_ID_7_heaven()
+			
+			skill_ID_7_heaven()
 		8:
-			pass
-			#skill_ID_8_heaven()
+			
+			skill_ID_8_heaven()
 		9:
-			pass
-			#skill_ID_9_heaven()
+			
+			skill_ID_9_heaven()
 		10:
-			pass
+			skill_ID_10_heaven()
+		11: 
+			skill_ID_11_heaven()
 func define_skill_slot_3_heaven():
 	match skill_slot_3_skill_heaven:
 		1:
@@ -458,28 +462,30 @@ func define_skill_slot_3_heaven():
 		2:
 			skill_ID_2_heaven()
 		3:
-			pass
-			#skill_ID_3_heaven()
+			
+			skill_ID_3_heaven()
 		4:
-			pass
-			#skill_ID_4_heaven()
+			
+			skill_ID_4_heaven()
 		5:
-			pass
-			#skill_ID_5_heaven()
+			
+			skill_ID_5_heaven()
 		6:
-			pass
-			#skill_ID_6_heaven()
+			
+			skill_ID_6_heaven()
 		7:
-			pass
-			#skill_ID_7_heaven()
+			
+			skill_ID_7_heaven()
 		8:
-			pass
-			#skill_ID_8_heaven()
+			
+			skill_ID_8_heaven()
 		9:
-			pass
-			#skill_ID_9_heaven()
+			
+			skill_ID_9_heaven()
 		10:
-			pass
+			skill_ID_10_heaven()
+		11:
+			skill_ID_11_heaven()
 func define_skill_slot_4_heaven():
 	match skill_slot_4_skill_heaven:
 		1:
@@ -487,27 +493,29 @@ func define_skill_slot_4_heaven():
 		2:
 			skill_ID_2_heaven()
 		3:
-			pass
-			#skill_ID_3_heaven()
+			
+			skill_ID_3_heaven()
 		4:
-			pass
-			#skill_ID_4_heaven()
+			
+			skill_ID_4_heaven()
 		5:
-			pass
-			#skill_ID_5_heaven()
+			
+			skill_ID_5_heaven()
 		6:
 			skill_ID_6_heaven()
 		7:
-			pass
-			#skill_ID_7_heaven()
+			
+			skill_ID_7_heaven()
 		8:
-			pass
-			#skill_ID_8_heaven()
+			
+			skill_ID_8_heaven()
 		9:
-			pass
-			#skill_ID_9_heaven()
+			
+			skill_ID_9_heaven()
 		10:
-			pass
+			skill_ID_10_heaven()
+		11:
+			skill_ID_11_heaven()
 ###       SKILL SLOTS HELL
 func define_skill_slot_1_hell():
 	match skill_slot_1_skill_hell:
@@ -1095,3 +1103,9 @@ func skill_ID_2_hell():
 			damage_calc.hell_to_clown_malice_damagecalc()
 			effect_animation.find_attack_spot_enemy()
 			effect_animation.play("basic_slash")
+
+func skill_ID_3_hell():
+	pass
+
+func skill_ID_4_hell():
+	pass
