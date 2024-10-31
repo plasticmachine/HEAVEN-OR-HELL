@@ -56,7 +56,7 @@ func _on_first_action_committed() -> void:
 	
 	if turnbased_manager.turn_queue_amount == 1 and heavenstats.current_heart > 0 and hellstats.current_heart > 0:
 		if clownstats.current_heart >= phase_1_threshold:
-			var num = [1,2].pick_random()
+			var num = [2,2].pick_random()
 			match num:
 				1:
 					clownskill = 1

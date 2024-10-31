@@ -2,6 +2,8 @@ extends Node2D
 signal skill_effect_wear_off_set
 signal heaven_ID_5_wear_off_set
 
+signal hell_ID_3_wear_off_set
+
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @onready var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 @onready var clownstats = preload("res://Resources/Stats/ClownStats.tres")
@@ -1158,7 +1160,17 @@ func skill_ID_2_hell():
 func skill_ID_3_hell():
 	print_debug(hellstats.character_name + " locked in " + ID_2_hell_skill_name + " (" + str(hellstats.current_tempo) + " tempo)" )
 	hellstats.convert_tempo(ID_3_hell_tempo)
+	hellstats.subtract_magia(ID_3_hell_cost_1)
+	effect_animation.find_effect_spot_hell()
+	effect_animation.play("magia_use")
 	
+	await get_tree().create_timer(.3).timeout
+	
+	hellstats.add_deviltry(ID_3_hell_increase_1)
+	effect_animation.play("basic_buff")
+	
+	
+	hell_ID_3_wear_off_set.emit()
 	
 	
 func skill_ID_4_hell():

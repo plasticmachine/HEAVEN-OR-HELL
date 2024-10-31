@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/BulletUpHell/BuHSpawner.gd" id="1"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="2_ai2re"]
-[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="3_5wv4n"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="3_5wv4n"]
 [ext_resource type="Texture2D" uid="uid://ck6e5mshstgq6" path="res://art/bullets/CLOWN/BALLOON/0.png" id="3_s285v"]
 [ext_resource type="Texture2D" uid="uid://dh3jdhhxrn83n" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Untitled_Artwork-2.png" id="4_dgjd2"]
 [ext_resource type="Texture2D" uid="uid://cs8sqsh7dl6wn" path="res://art/bullets/CLOWN/BALLOON/1.png" id="4_lw0ip"]

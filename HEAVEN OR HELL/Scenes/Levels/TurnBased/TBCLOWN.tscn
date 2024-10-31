@@ -387,9 +387,9 @@ script = ExtResource("4_dqrpe")
 z_index = 350
 scale = Vector2(1, 1.01221)
 sprite_frames = SubResource("SpriteFrames_jmycf")
-animation = &"magia_use"
+animation = &"basic_buff"
 autoplay = "hide"
-frame = 7
+frame = 11
 frame_progress = 1.0
 script = ExtResource("7_p1xji")
 VFX_buffer = 0.5
@@ -832,6 +832,7 @@ scale = Vector2(-0.159953, -0.159953)
 
 [connection signal="clown_skill_search" from="." to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_first_action_committed"]
 [connection signal="heaven_ID_5_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_heaven_id_5_wear_off_set"]
+[connection signal="hell_ID_3_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_hell_id_3_wear_off_set"]
 [connection signal="skill_effect_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_skill_effect_wear_off_set"]
 [connection signal="action_committed" from="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" to="." method="_on_clown_tb_action_committed"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="." method="_on_hell_action_commited_skill_1"]
