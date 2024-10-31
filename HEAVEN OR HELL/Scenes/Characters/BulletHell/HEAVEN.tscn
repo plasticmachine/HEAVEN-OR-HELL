@@ -2,34 +2,34 @@
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HeavenController.gd" id="1_re22k"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HeavenBulletChecker.gd" id="2_h3mt1"]
+[ext_resource type="Texture2D" uid="uid://cdxt1vbt33ptu" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-1.png" id="3_b4yuk"]
+[ext_resource type="Texture2D" uid="uid://c1u735x11tc4u" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-2.png" id="4_ch2xs"]
+[ext_resource type="Texture2D" uid="uid://chwtw84b614j5" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-3.png" id="5_qcpuf"]
+[ext_resource type="Texture2D" uid="uid://bwxrff8lq0qbj" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-4.png" id="6_axyui"]
 [ext_resource type="Texture2D" uid="uid://dwtlwfrsfw2qi" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-1.png" id="6_rfs6b"]
+[ext_resource type="Texture2D" uid="uid://b3mmpvmantick" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-5.png" id="7_awfry"]
 [ext_resource type="Texture2D" uid="uid://by6100quay6va" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-2.png" id="7_njlee"]
 [ext_resource type="Texture2D" uid="uid://c0fuyxig6lyfa" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-3.png" id="8_7p1fv"]
-[ext_resource type="Texture2D" uid="uid://ba8sp05642uu7" path="res://art/HEAVEN/test/testwalk/down_right/0 (1).png" id="9_fk5m4"]
+[ext_resource type="Texture2D" uid="uid://bd6ghly5eu7o6" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-6.png" id="8_tb4dr"]
 [ext_resource type="Texture2D" uid="uid://crm13abd6wuva" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-4.png" id="9_hwd1m"]
-[ext_resource type="Texture2D" uid="uid://b02jkb4wo3nfa" path="res://art/HEAVEN/test/testwalk/down_left/0 (1).png" id="9_sn16u"]
-[ext_resource type="Texture2D" uid="uid://d2x0acyo84qyx" path="res://art/HEAVEN/test/testwalk/down_left/1 (1).png" id="10_1evoh"]
+[ext_resource type="Texture2D" uid="uid://dkjg8wrxbnbj8" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-1.png" id="9_uhj5l"]
+[ext_resource type="Texture2D" uid="uid://dxjlddip2b2o0" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-2.png" id="10_0s70b"]
 [ext_resource type="PackedScene" uid="uid://co8jc0uhro10o" path="res://Scenes/old/melee.tscn" id="10_al23b"]
 [ext_resource type="Texture2D" uid="uid://c62aikwi0xmmt" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-5.png" id="10_esl08"]
-[ext_resource type="Texture2D" uid="uid://bq0u5asymwsog" path="res://art/HEAVEN/test/testwalk/down_right/1 (1).png" id="10_iuk0j"]
 [ext_resource type="Texture2D" uid="uid://cox5c6wprxw51" path="res://art/GUI/bg.png" id="11_132pl"]
-[ext_resource type="Texture2D" uid="uid://dmwtpnpmhvofs" path="res://art/HEAVEN/test/testidle/Stand0.png" id="11_fmbmg"]
-[ext_resource type="Texture2D" uid="uid://npmatw1e1hob" path="res://art/HEAVEN/test/testwalk/down_right/2 (1).png" id="11_osnhc"]
 [ext_resource type="Texture2D" uid="uid://x5k8h4ofq5ay" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-6.png" id="11_q4wnu"]
-[ext_resource type="Texture2D" uid="uid://b4nxhe28mf6wm" path="res://art/HEAVEN/test/testwalk/down_left/2 (1).png" id="11_qfdxs"]
-[ext_resource type="Texture2D" uid="uid://l8urrjlw70bp" path="res://art/HEAVEN/test/testwalk/down_left/3 (1).png" id="12_0h85h"]
-[ext_resource type="Texture2D" uid="uid://bh5qbqyt4yauh" path="res://art/HEAVEN/test/testidle/Stand1.png" id="12_1ky0a"]
+[ext_resource type="Texture2D" uid="uid://bobbvf36200h1" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-3.png" id="11_t5wad"]
 [ext_resource type="Texture2D" uid="uid://d138apigr777w" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-1.png" id="12_12bvf"]
 [ext_resource type="Texture2D" uid="uid://datk8wkaxjvlp" path="res://art/GUI/fill.png" id="12_g72hy"]
-[ext_resource type="Texture2D" uid="uid://cpkmogdfu1nmo" path="res://art/HEAVEN/test/testwalk/down_right/3 (1).png" id="12_ls0vk"]
-[ext_resource type="Texture2D" uid="uid://bulh7763vnmb8" path="res://art/HEAVEN/test/testwalk/down_right/4.png" id="13_83yss"]
-[ext_resource type="Texture2D" uid="uid://b02kfslwq7ui5" path="res://art/HEAVEN/test/testwalk/down_left/4.png" id="13_17567"]
+[ext_resource type="Texture2D" uid="uid://cfxf8k41eq62i" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-4.png" id="12_xi4c8"]
+[ext_resource type="Texture2D" uid="uid://ccwaloaiojysx" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-5.png" id="13_tksws"]
 [ext_resource type="Texture2D" uid="uid://buf10uakn1cxh" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-2.png" id="13_uvvjj"]
-[ext_resource type="Texture2D" uid="uid://dqxcxdm48vgb4" path="res://art/HEAVEN/test/testwalk/down_right/5.png" id="14_3fdwi"]
+[ext_resource type="Texture2D" uid="uid://bkujtq3y3f6d7" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-6.png" id="14_enhgm"]
 [ext_resource type="Texture2D" uid="uid://bdurvvqm30h5b" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-3.png" id="14_kqr18"]
-[ext_resource type="Texture2D" uid="uid://cy2gx8sps6xey" path="res://art/HEAVEN/test/testwalk/down_left/5.png" id="14_t1b5t"]
+[ext_resource type="Texture2D" uid="uid://db7ra4gp25jfl" path="res://art/HEAVEN/test/testidle/Untitled_Artwork-1.png" id="15_b6yvr"]
 [ext_resource type="Texture2D" uid="uid://beuyl8md6rt0p" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-4.png" id="15_bjvct"]
 [ext_resource type="Texture2D" uid="uid://cprbd4wviw33q" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-5.png" id="16_k1886"]
+[ext_resource type="Texture2D" uid="uid://bhnhsdxv66xwp" path="res://art/HEAVEN/test/testidle/Untitled_Artwork-2.png" id="16_u8v2n"]
 [ext_resource type="Texture2D" uid="uid://cwwxqykutoob1" path="res://art/HEAVEN/run/left_run/Untitled_Artwork-1.png" id="17_770ew"]
 [ext_resource type="Texture2D" uid="uid://dsn6fruqd1us" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-6.png" id="17_nla6y"]
 [ext_resource type="Texture2D" uid="uid://cpayr2u8unjab" path="res://art/HEAVEN/run/left_run/Untitled_Artwork-2.png" id="18_dj5ee"]
@@ -79,22 +79,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_sn16u")
+"texture": ExtResource("3_b4yuk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_1evoh")
+"texture": ExtResource("4_ch2xs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_qfdxs")
+"texture": ExtResource("5_qcpuf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_0h85h")
+"texture": ExtResource("6_axyui")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_17567")
+"texture": ExtResource("7_awfry")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_t1b5t")
+"texture": ExtResource("8_tb4dr")
 }],
 "loop": true,
 "name": &"down_left",
@@ -102,22 +102,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_fk5m4")
+"texture": ExtResource("9_uhj5l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_iuk0j")
+"texture": ExtResource("10_0s70b")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_osnhc")
+"texture": ExtResource("11_t5wad")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_ls0vk")
+"texture": ExtResource("12_xi4c8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_83yss")
+"texture": ExtResource("13_tksws")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_3fdwi")
+"texture": ExtResource("14_enhgm")
 }],
 "loop": true,
 "name": &"down_right",
@@ -125,10 +125,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_fmbmg")
+"texture": ExtResource("15_b6yvr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_1ky0a")
+"texture": ExtResource("16_u8v2n")
 }],
 "loop": true,
 "name": &"idle",
@@ -683,7 +683,7 @@ node_connections = [&"TimeScale", 0, &"RunBS", &"output", 0, &"TimeScale"]
 animation = &"down_left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_he0q2"]
-animation = &"down_left"
+animation = &"down_right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xieaa"]
 animation = &"down_right"
@@ -695,13 +695,13 @@ animation = &"down_left"
 animation = &"down_right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k2wr7"]
-animation = &"up_right"
+animation = &"down_right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ef1ov"]
-animation = &"up"
+animation = &"down_left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dgnn7"]
-animation = &"up_left"
+animation = &"down_left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jnag5"]
 animation = &"idle"
@@ -729,7 +729,7 @@ snap = Vector2(1, 1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_0qw8f"]
-graph_offset = Vector2(-14.2855, 9.72129)
+graph_offset = Vector2(-139.801, -15.9001)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_ovn5r")
 nodes/TimeScale/position = Vector2(440, 240)
 nodes/WalkBS/node = SubResource("AnimationNodeBlendSpace2D_uasp7")
@@ -803,7 +803,7 @@ states/Walk/position = Vector2(374, 100)
 states/walkBS/node = SubResource("AnimationNodeBlendSpace2D_8rf3o")
 states/walkBS/position = Vector2(110, 279)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_ifnup"), "Run", "Walk", SubResource("AnimationNodeStateMachineTransition_7jp1g"), "Walk", "Run", SubResource("AnimationNodeStateMachineTransition_75dca")]
-graph_offset = Vector2(-438.968, -105.321)
+graph_offset = Vector2(-394.968, 78.679)
 
 [node name="Heaven" type="CharacterBody2D" groups=["Player"]]
 process_mode = 1
@@ -828,7 +828,7 @@ shape = SubResource("CircleShape2D_7egpc")
 debug_color = Color(0.964375, 3.08037e-06, 0.493133, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-rotation = -0.00225955
+position = Vector2(29, 36)
 sprite_frames = SubResource("SpriteFrames_lblot")
 animation = &"down"
 
@@ -871,8 +871,8 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Run/RunBS/blend_position = Vector2(0, 0)
 parameters/Run/TimeScale/scale = 1.0
 parameters/Walk/TimeScale/scale = 1.0
-parameters/Walk/WalkBS/blend_position = Vector2(-0.000614643, 0.012987)
-parameters/walkBS/blend_position = Vector2(0.00184393, 0.0638298)
+parameters/Walk/WalkBS/blend_position = Vector2(-1, -1.00955)
+parameters/walkBS/blend_position = Vector2(0.00979829, -0.00715995)
 
 [node name="DropShadow" type="Sprite2D" parent="."]
 modulate = Color(0.00566115, 0.00566115, 0.00566115, 0.447059)

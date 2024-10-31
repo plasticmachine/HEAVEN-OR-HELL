@@ -1,13 +1,13 @@
 extends AnimatedSprite2D
-@onready var EnemyHitSpot = $"../../EnemySpot2/ClownDancePath/PathFollow2D/ClownTb/EnemyHitSpot"
-@onready var EnemyEffectSpot = $"../../EnemySpot2/ClownDancePath/PathFollow2D/ClownTb/EnemyEffectSpot"
+@onready var EnemyHitSpot = $"../../EnemySpot2/EnemyHitSpot"
+@onready var EnemyEffectSpot = $"../../EnemySpot2/EnemyEffectSpot"
 @onready var HeavenHitSpot = $"../../PlayerSpots/UISpots/HeavenHitSpot"
 @onready var HellHitSpot = $"../../PlayerSpots/UISpots/HellHitSpot"
 @onready var HeavenEffectSpot = $"../../PlayerSpots/UISpots/HeavenEffectSpot"
 @onready var HellEffectSpot = $"../../PlayerSpots/UISpots/HellEffectSpot"
 @onready var EffectAnimationManager = $"."
 
-
+@export var VFX_buffer: float
 
 func find_attack_spot_heaven():
 	EffectAnimationManager.position = HeavenHitSpot.position

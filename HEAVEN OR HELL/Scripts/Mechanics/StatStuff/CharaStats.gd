@@ -26,6 +26,10 @@ var BH_defense: float
 @export var status_effect_1: int
 @export var status_effect_2: int
 @export var status_effect_3: int
+@export_category("special status effects (dont change/non-public)")
+@export var special_status_effect_1: int
+@export var special_status_effect_2: int
+@export var special_status_effect_3: int
 ### MOVESPEED FUNCTIONS
 func add_move_speed(amount: int) -> void:
 		move_speed += amount
@@ -96,6 +100,7 @@ func subtract_magia(amount: int) -> void:
 		print_debug(character_name + " is all out of juice!!! ")
 func multiply_magia(factor: float) -> void:
 	current_magia = int(current_magia * factor)
+	print_debug(character_name + " has " + str(current_magia) + " magia! (*" + str(factor) + ")")
 	#emit_signal("stat_changed", "current_heart", current_heart)
 func divide_magia(divisor: float) -> void:
 
@@ -116,16 +121,17 @@ func subtract_malice(amount: int) -> void:
 func multiply_malice(factor: float) -> void:
 
 	malice = int(malice * factor)
-	move_speed = int(malice * factor)
+	print_debug(character_name + " has " + str(malice) + " malice! (*" + str(factor) + ")")
+	#move_speed = int(malice * factor)
 func divide_malice(divisor: float) -> void:
 	if divisor != 0:
 		malice = int(malice / divisor)
+	print_debug(character_name + " has " + str(malice) + " malice! (/" + str(divisor) + ")")
 ### DEVILTRY FUNCTIONS
 func add_deviltry(amount: int) -> void:
 		deviltry += amount
 		print_debug(character_name + " has " + str(deviltry) + " deviltry! (+" + str(amount) + ")")
 func subtract_deviltry(amount: int) -> void:
-	
 	if deviltry >= 1:
 		deviltry -= amount
 		print_debug(character_name + " has " + str(deviltry) + " deviltry! (-" + str(amount) + ")")
@@ -134,10 +140,12 @@ func subtract_deviltry(amount: int) -> void:
 		print_debug(character_name + "'s demons have gone quiet. ")
 func multiply_deviltry(factor: float) -> void:
 	deviltry = int(deviltry * factor)
+	print_debug(character_name + " has " + str(deviltry) + " deviltry! (*" + str(factor) + ")")
 	#emit_signal("stat_changed", "current_heart", current_heart)
 func divide_deviltry(divisor: float) -> void:
 	if divisor != 0:
 		deviltry = int(deviltry / divisor)
+	print_debug(character_name + " has " + str(deviltry) + " deviltry! (/" + str(divisor) + ")")
 	#emit_signal("stat_changed", "current_heart", current_heart)
 ### GUTS FUNCTIONS
 func add_guts(amount: int) -> void:

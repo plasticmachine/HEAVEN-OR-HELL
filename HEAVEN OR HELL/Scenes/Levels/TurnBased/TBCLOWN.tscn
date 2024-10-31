@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=74 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/LevelManagers/TBCLOWN_MANAGER.gd" id="1_h0a2a"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/Skills/Skills.gd" id="2_1jhkk"]
@@ -11,34 +11,148 @@
 [ext_resource type="Texture2D" uid="uid://co35vcjirugsc" path="res://art/turnbased effects/healing effects/basic heal/2.PNG" id="4_a3xkn"]
 [ext_resource type="Texture2D" uid="uid://gvx1tms0dl5r" path="res://art/turnbased effects/attack effects/basic slash/IMG_4079.PNG" id="4_c8yiy"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/StatusEffects/status_effects.gd" id="4_dqrpe"]
+[ext_resource type="Texture2D" uid="uid://c3h7qr67wg605" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-1.png" id="5_baws1"]
 [ext_resource type="Texture2D" uid="uid://clifhufb0q740" path="res://art/turnbased effects/healing effects/basic heal/3.PNG" id="5_d3l8a"]
 [ext_resource type="Texture2D" uid="uid://bnd6h5s5yni02" path="res://art/turnbased effects/attack effects/basic slash/IMG_4080.PNG" id="5_nhpj3"]
+[ext_resource type="Texture2D" uid="uid://ch7tmeqcadg0h" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-2.png" id="6_cenyr"]
 [ext_resource type="Texture2D" uid="uid://8be71ofaxcce" path="res://art/turnbased effects/attack effects/basic slash/IMG_4081.PNG" id="6_gjmh1"]
 [ext_resource type="Texture2D" uid="uid://cpovtvw6kmfje" path="res://art/turnbased effects/healing effects/basic heal/4.PNG" id="6_jph3p"]
+[ext_resource type="Texture2D" uid="uid://dfq7o3txvpiof" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-3.png" id="7_78jwt"]
 [ext_resource type="Texture2D" uid="uid://tjug0kwa66mt" path="res://art/turnbased effects/healing effects/basic heal/5.PNG" id="7_hq7uk"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/AttackEffectSpotFinder.gd" id="7_p1xji"]
 [ext_resource type="Texture2D" uid="uid://b36m3akxxgtex" path="res://art/turnbased effects/healing effects/basic heal/6.PNG" id="8_0um1u"]
 [ext_resource type="PackedScene" uid="uid://bdorwiack3h01" path="res://Scenes/Characters/TurnBased/heaven_tb.tscn" id="8_n8gx8"]
+[ext_resource type="Texture2D" uid="uid://bijeyym6otiva" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-4.png" id="8_vql0d"]
 [ext_resource type="Texture2D" uid="uid://b5blcjxhy1d4i" path="res://art/turnbased effects/healing effects/basic heal/7.PNG" id="9_fdglc"]
 [ext_resource type="PackedScene" uid="uid://tcfwrymqvqb4" path="res://Scenes/Characters/TurnBased/hell_tb.tscn" id="9_gxyuk"]
+[ext_resource type="Texture2D" uid="uid://dcaqbf8fago0n" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-5.png" id="9_l22l7"]
 [ext_resource type="Texture2D" uid="uid://c4ssty68gh7vj" path="res://art/turnbased effects/healing effects/basic heal/8.PNG" id="10_8elgt"]
+[ext_resource type="Texture2D" uid="uid://cxptkvlsxh02v" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-6.png" id="10_b1arx"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellButtons.gd" id="10_gj12g"]
 [ext_resource type="FontFile" uid="uid://b2q20yvaohtoc" path="res://fonts/apple_kid.ttf" id="11_2k5sh"]
 [ext_resource type="Texture2D" uid="uid://bjd0m1na5kwkn" path="res://art/GUI/battle_ui/buttons/attackbutton_presseddown.png" id="11_mr243"]
+[ext_resource type="Texture2D" uid="uid://dleoeqqfoxp0" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-7.png" id="11_s0wjc"]
+[ext_resource type="Texture2D" uid="uid://xiwacvb5o588" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-8.png" id="12_dsedb"]
+[ext_resource type="Texture2D" uid="uid://dmf2fx8qplufk" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-9.png" id="13_8ysl1"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/HeavenButtons.gd" id="13_11hfm"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellButtons2.gd" id="13_ie6y5"]
+[ext_resource type="Texture2D" uid="uid://c08uehpbrfmbv" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-10.png" id="14_l6lxb"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/Attackbutton3.gd" id="14_nfy1c"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellBars.gd" id="15_5slww"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/LevelManagers/EnemyPath.gd" id="15_qlv6m"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/Attackbutton2.gd" id="16_62r43"]
+[ext_resource type="Texture2D" uid="uid://cjjcecg5xh700" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-1.png" id="16_djwqd"]
+[ext_resource type="Texture2D" uid="uid://cc1ud6s3ff4lg" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-2.png" id="17_7nb4h"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/HeavenBars.gd" id="17_kebos"]
 [ext_resource type="AudioStream" uid="uid://bp4gmvnpy1x17" path="res://Audio/Music/Clown/Turnbased/making a song with only soundfonts.wav" id="17_y1u7i"]
+[ext_resource type="Texture2D" uid="uid://c653cksfutsic" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-3.png" id="18_u5yjf"]
+[ext_resource type="Texture2D" uid="uid://dlnspc16er4ti" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-4.png" id="19_hh2io"]
+[ext_resource type="Texture2D" uid="uid://cqpy6ntbs8uk3" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-5.png" id="20_oen7n"]
+[ext_resource type="Texture2D" uid="uid://dvujjn20k0cgn" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-6.png" id="21_j8itc"]
+[ext_resource type="Texture2D" uid="uid://bt6g8qltu4bar" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-7.png" id="22_24j5r"]
+[ext_resource type="Texture2D" uid="uid://cemrqjvfj86nj" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-8.png" id="23_46skd"]
+[ext_resource type="Texture2D" uid="uid://daoolronbr5xi" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-9.png" id="24_48drj"]
+[ext_resource type="Texture2D" uid="uid://cufu6vrje0gul" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-10.png" id="25_0rlyn"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellButtons4.gd" id="26_30vdi"]
+[ext_resource type="Texture2D" uid="uid://1beggdenv32y" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-11.png" id="26_rynsc"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/attackbutton_4.gd" id="30_bgbie"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/healbutton.gd" id="30_n7j6j"]
+[ext_resource type="Texture2D" uid="uid://ckrcrah1yc2c0" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-1.png" id="38_33bvc"]
+[ext_resource type="Texture2D" uid="uid://cvu4wwcsitdbf" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-2.png" id="39_ygfgu"]
+[ext_resource type="Texture2D" uid="uid://ccqamucophh8a" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-3.png" id="40_c3ybj"]
+[ext_resource type="Texture2D" uid="uid://btl20ci0t5d4n" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-4.png" id="41_mrt8t"]
+[ext_resource type="Texture2D" uid="uid://datektqsuswyv" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-5.png" id="42_fmo1i"]
+[ext_resource type="Texture2D" uid="uid://dujnx6ryb3ar2" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-6.png" id="43_7a5d4"]
+[ext_resource type="Texture2D" uid="uid://dp7auo0e48gm2" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-7.png" id="44_1wo5p"]
+[ext_resource type="Texture2D" uid="uid://bndlpixd48pfs" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-8.png" id="45_ryms0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jmycf"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_baws1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cenyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_78jwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vql0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l22l7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_b1arx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s0wjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dsedb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8ysl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_l6lxb")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"basic_buff",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_djwqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7nb4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u5yjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hh2io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_oen7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_j8itc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_24j5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_46skd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_48drj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0rlyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rynsc")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"basic_debuff",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": null
@@ -72,7 +186,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"basic_heal",
-"speed": 14.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -101,6 +215,40 @@ animations = [{
 "loop": true,
 "name": &"hide",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"magia_replenish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_33bvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ygfgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_c3ybj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_mrt8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_fmo1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_7a5d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_1wo5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ryms0")
+}],
+"loop": false,
+"name": &"magia_use",
+"speed": 12.0
 }]
 
 [sub_resource type="Curve2D" id="Curve2D_shoiy"]
@@ -157,19 +305,20 @@ script = ExtResource("1_h0a2a")
 BOSS_ID = 3
 
 [node name="SkillManager" type="Node2D" parent="."]
+scale = Vector2(0.998722, 1.0287)
 script = ExtResource("2_1jhkk")
 heaven_target_ID = 3
 hell_target_ID = 3
-skill_slot_1_skill_heaven = 1
-skill_slot_2_skill_heaven = 2
-skill_slot_3_skill_heaven = 3
-skill_slot_4_skill_heaven = 6
+skill_slot_1_skill_heaven = 6
+skill_slot_2_skill_heaven = 5
+skill_slot_3_skill_heaven = 6
+skill_slot_4_skill_heaven = 11
 skill_slot_1_skill_hell = 1
 skill_slot_2_skill_hell = 2
 skill_slot_3_skill_hell = 2
 skill_slot_4_skill_hell = 1
 ID_1_heaven_skill_name = "Slash!"
-ID_1_heaven_tempo = 3
+ID_1_heaven_tempo = 10
 ID_1_heaven_power = 35
 ID_2_heaven_skill_name = "Shoot!"
 ID_2_heaven_tempo = 4
@@ -201,10 +350,25 @@ ID_8_heaven_skill_name = "Higher Ground"
 ID_8_heaven_tempo = 2
 ID_10_heaven_skill_name = "At The Gates"
 ID_10_heaven_tempo = 2
-ID_10_heaven_power_1 = 100
+ID_10_heaven_power_1 = 33
+ID_10_heaven_power_2 = 66
+ID_10_heaven_power_3 = 100
+ID_10_heaven_decrease_1 = 5
+ID_10_heaven_decrease_2 = 7
+ID_10_heaven_decrease_3 = 10
+ID_10_heaven_percent_decrease_1 = 0.85
+ID_10_heaven_percent_decrease_2 = 0.7
+ID_10_heaven_percent_decrease_3 = 0.5
 ID_11_heaven_skill_name = "Colliding Stars"
+ID_11_heaven_tempo = 2
+ID_11_heaven_power_1 = 33
+ID_11_heaven_power_2 = 66
+ID_11_heaven_power_3 = 100
+ID_11_heaven_increase_1 = 5
+ID_11_heaven_increase_2 = 7
+ID_11_heaven_increase_3 = 10
 ID_1_hell_skill_name = "Slash!"
-ID_1_hell_tempo = 3
+ID_1_hell_tempo = 10
 ID_1_hell_power = 35
 ID_2_hell_skill_name = "Shoot!"
 ID_2_hell_tempo = 4
@@ -221,12 +385,14 @@ script = ExtResource("4_dqrpe")
 
 [node name="BattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
 z_index = 350
+scale = Vector2(1, 1.01221)
 sprite_frames = SubResource("SpriteFrames_jmycf")
-animation = &"basic_slash"
+animation = &"magia_use"
 autoplay = "hide"
-frame = 5
+frame = 7
 frame_progress = 1.0
 script = ExtResource("7_p1xji")
+VFX_buffer = 0.5
 
 [node name="EnemySpot2" type="Node2D" parent="."]
 
@@ -260,11 +426,11 @@ autoplay = true
 max_distance = 9940.0
 panning_strength = 2.0
 
-[node name="EnemyHitSpot" type="Node2D" parent="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb"]
-position = Vector2(14.4999, 0)
+[node name="EnemyHitSpot" type="Node2D" parent="EnemySpot2"]
+position = Vector2(946, 340)
 
-[node name="EnemyEffectSpot" type="Node2D" parent="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb"]
-position = Vector2(14.4999, 0)
+[node name="EnemyEffectSpot" type="Node2D" parent="EnemySpot2"]
+position = Vector2(946, 340)
 
 [node name="EnemySpot" type="Node2D" parent="."]
 

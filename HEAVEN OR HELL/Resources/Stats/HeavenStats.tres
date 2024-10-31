@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://cwjgpch1kv74j"]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://bhhdl4myirwwb"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_lx6vb"]
 
@@ -8,18 +8,21 @@ character_name = "Heaven"
 move_speed = 3500
 run_speed = 8000
 max_heart = 100
-current_heart = 100
+current_heart = 66
 max_magia = 100
-current_magia = 0
-malice = 65
-deviltry = 50
-guts = 50.0
-pain_tolerance = 800.0
+current_magia = 100
+malice = 10
+deviltry = 25
+guts = 25.0
+pain_tolerance = 4.0
 luck = 0
 crit = 0
 crit_level = 0
-current_tempo = 4
-current_skill_power = 4
+current_tempo = 10
+current_skill_power = 35
 status_effect_1 = 0
 status_effect_2 = 0
 status_effect_3 = 0
+special_status_effect_1 = 0
+special_status_effect_2 = 0
+special_status_effect_3 = 0

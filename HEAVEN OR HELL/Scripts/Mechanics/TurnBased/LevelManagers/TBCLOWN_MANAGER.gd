@@ -50,6 +50,11 @@ func _ready():
 	hellstats.current_skill_power = 0
 	hellstats.current_tempo = 0
 	
+	
+	match BOSS_ID:
+		3:
+			clownstats.current_skill_power = 0
+			clownstats.current_tempo = 0
 	#_init_battle()
 #func DialogueTesting():
 	#if Input.is_action_just_pressed("Melee_hell"):
@@ -92,7 +97,7 @@ func turn_queue_pop_check():
 		3:
 			if turn_queue_amount == turn_pop_amount:
 				#this is where im going to put the function that actually runs all of the skill functions
-				if (hellstats.current_tempo > heavenstats.current_tempo) and (heavenstats.current_tempo > clownstats.current_tempo):
+				if (hellstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo > clownstats.current_tempo):
 					#choosing which skill its going to use (hell)
 					match hellskill:
 						1: hell_action_button_1.skill_effect()
@@ -110,7 +115,7 @@ func turn_queue_pop_check():
 					match ClownTB.clownskill:
 						1: ClownTB.skill_1_effect()
 						2: ClownTB.skill_2_effect()
-				if (hellstats.current_tempo > clownstats.current_tempo) and (clownstats.current_tempo > heavenstats.current_tempo):
+				if (hellstats.current_tempo > clownstats.current_tempo) && (clownstats.current_tempo > heavenstats.current_tempo):
 					#choosing which skill its going to use (hell)
 					match hellskill:
 						1: hell_action_button_1.skill_effect()
@@ -129,7 +134,7 @@ func turn_queue_pop_check():
 						3: heaven_action_button_3.skill_effect()
 						4: heaven_action_button_4.skill_effect()
 
-				if (heavenstats.current_tempo > hellstats.current_tempo) and  (hellstats.current_tempo > clownstats.current_tempo):
+				if (heavenstats.current_tempo > hellstats.current_tempo) &&  (hellstats.current_tempo > clownstats.current_tempo):
 					match heavenskill:
 						1: heaven_action_button_1.skill_effect()
 						2: heaven_action_button_2.skill_effect()
@@ -145,7 +150,7 @@ func turn_queue_pop_check():
 					match ClownTB.clownskill:
 						1: ClownTB.skill_1_effect()
 						2: ClownTB.skill_2_effect()
-				if (heavenstats.current_tempo > clownstats.current_tempo) and (clownstats.current_tempo > hellstats.current_tempo):
+				if (heavenstats.current_tempo > clownstats.current_tempo) && (clownstats.current_tempo > hellstats.current_tempo):
 					match heavenskill:
 						1: heaven_action_button_1.skill_effect()
 						2: heaven_action_button_2.skill_effect()
@@ -162,7 +167,7 @@ func turn_queue_pop_check():
 						3: hell_action_button_3.skill_effect()
 						4: hell_action_button_4.skill_effect()
 
-				if (clownstats.current_tempo > heavenstats.current_tempo) and (heavenstats.current_tempo > hellstats.current_tempo):
+				if (clownstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo > hellstats.current_tempo):
 					match ClownTB.clownskill:
 						1: ClownTB.skill_1_effect()
 						2: ClownTB.skill_2_effect()
@@ -178,7 +183,7 @@ func turn_queue_pop_check():
 						2: hell_action_button_2.skill_effect()
 						3: hell_action_button_3.skill_effect()
 						4: hell_action_button_4.skill_effect()
-				if (clownstats.current_tempo > hellstats.current_tempo) and (hellstats.current_tempo > heavenstats.current_tempo):
+				if (clownstats.current_tempo > hellstats.current_tempo) && (hellstats.current_tempo > heavenstats.current_tempo):
 					match ClownTB.clownskill:
 						1: ClownTB.skill_1_effect()
 						2: ClownTB.skill_2_effect()
@@ -195,7 +200,7 @@ func turn_queue_pop_check():
 						3: heaven_action_button_3.skill_effect()
 						4: heaven_action_button_4.skill_effect()
 
-				if (heavenstats.current_tempo == hellstats.current_tempo) and (hellstats.current_tempo == clownstats.current_tempo):
+				if (heavenstats.current_tempo == hellstats.current_tempo) && (hellstats.current_tempo == clownstats.current_tempo):
 					print_debug("equal tempo detected: rolling a dice...")
 					var rand_num = [1,2,3].pick_random()
 					if rand_num == 1:
@@ -286,7 +291,7 @@ func turn_queue_pop_check():
 								2: hell_action_button_2.skill_effect()
 								3: hell_action_button_3.skill_effect()
 								4: hell_action_button_4.skill_effect()
-				if (heavenstats.current_tempo == hellstats.current_tempo) and (hellstats.current_tempo > clownstats.current_tempo):
+				if (heavenstats.current_tempo == hellstats.current_tempo) && (hellstats.current_tempo > clownstats.current_tempo):
 					print_debug("equal tempo detected: rolling a dice...")
 					var rand_num = [1,2].pick_random()
 					
@@ -302,6 +307,10 @@ func turn_queue_pop_check():
 							2: heaven_action_button_2.skill_effect()
 							3: heaven_action_button_3.skill_effect()
 							4: heaven_action_button_4.skill_effect()
+						await get_tree().create_timer(wait_for_next_turn_time).timeout
+						match ClownTB.clownskill:
+							1: ClownTB.skill_1_effect()
+							2: ClownTB.skill_2_effect()
 					if rand_num == 2:
 						match heavenskill:
 							1: heaven_action_button_1.skill_effect()
@@ -314,11 +323,11 @@ func turn_queue_pop_check():
 							2: hell_action_button_2.skill_effect()
 							3: hell_action_button_3.skill_effect()
 							4: hell_action_button_4.skill_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					match ClownTB.clownskill:
-						1: ClownTB.skill_1_effect()
-						2: ClownTB.skill_2_effect()
-				if (heavenstats.current_tempo > hellstats.current_tempo) and (hellstats.current_tempo == clownstats.current_tempo):
+						await get_tree().create_timer(wait_for_next_turn_time).timeout
+						match ClownTB.clownskill:
+							1: ClownTB.skill_1_effect()
+							2: ClownTB.skill_2_effect()
+				if (heavenstats.current_tempo > hellstats.current_tempo) && (hellstats.current_tempo == clownstats.current_tempo):
 					print_debug("equal tempo detected: rolling a dice...")
 					var rand_num = [1,2].pick_random()
 					match heavenskill:
@@ -349,7 +358,7 @@ func turn_queue_pop_check():
 							2: hell_action_button_2.skill_effect()
 							3: hell_action_button_3.skill_effect()
 							4: hell_action_button_4.skill_effect()
-				if (hellstats.current_tempo > heavenstats.current_tempo) and (heavenstats.current_tempo == clownstats.current_tempo):
+				if (hellstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo == clownstats.current_tempo):
 					print_debug("equal tempo detected: rolling a dice...")
 					var rand_num = [1,2].pick_random()
 					match hellskill:
@@ -380,9 +389,10 @@ func turn_queue_pop_check():
 							2: heaven_action_button_2.skill_effect()
 							3: heaven_action_button_3.skill_effect()
 							4: heaven_action_button_4.skill_effect()
-				if (clownstats.current_tempo > heavenstats.current_tempo) and (heavenstats.current_tempo == hellstats.current_tempo):
+				if (clownstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo == hellstats.current_tempo):
 					print_debug("equal tempo detected: rolling a dice...")
 					var rand_num = [1,2].pick_random()
+					print_debug(rand_num)
 					match ClownTB.clownskill:
 						1: ClownTB.skill_1_effect()
 						2: ClownTB.skill_2_effect()

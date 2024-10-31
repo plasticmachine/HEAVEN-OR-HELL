@@ -956,7 +956,7 @@ position = Vector2(5137.5, 7263)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-zoom = Vector2(0.01, 0.01)
+zoom = Vector2(0.097, 0.097)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)
@@ -1218,6 +1218,7 @@ script = ExtResource("14_r45kx")
 speed = 2000
 
 [node name="Clown2" parent="Path2D/Phase_1_Movement" instance=ExtResource("15_oaur5")]
+visible = false
 position = Vector2(0, 267)
 collision_layer = 1
 

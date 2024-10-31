@@ -9,7 +9,7 @@ signal action_committed
 @onready var turnbased_manager = $"../../../.."
 @onready var effect_animation = $"../../../../BattleEffectManagerPosition/BattleEffectManager"
 @onready var clownskill: int
-
+@onready var clownTB_animation = $AnimationTree
 
 @export_group("Skill_1")
 @export var skill_1_name: String
@@ -56,7 +56,7 @@ func _on_first_action_committed() -> void:
 	
 	if turnbased_manager.turn_queue_amount == 1 and heavenstats.current_heart > 0 and hellstats.current_heart > 0:
 		if clownstats.current_heart >= phase_1_threshold:
-			var num = [1,1,2].pick_random()
+			var num = [1,2].pick_random()
 			match num:
 				1:
 					clownskill = 1
@@ -66,9 +66,11 @@ func _on_first_action_committed() -> void:
 					print_debug("clown used skill 2")
 		if clownstats.current_heart <= phase_2_threshold:
 			var num = [3,4,5,6].pick_random()
+			clownTB_animation.set("parameters/conditions/PHASE2", true)
 			match num:
 				3:
 					clownskill = 3
+					print_debug(("clown used skill 3"))
 				4: 
 					clownskill = 4
 				5: 
@@ -77,6 +79,8 @@ func _on_first_action_committed() -> void:
 					clownskill = 6
 		if clownstats.current_heart <= phase_3_threshold:
 			var num = [5,6,7,8,9,10].pick_random()
+			clownTB_animation.set("parameters/conditions/PHASE2", false)
+			clownTB_animation.set("parameters/conditions/PHASE3", true)
 			match num:
 				5:
 					clownskill = 3
@@ -91,6 +95,9 @@ func _on_first_action_committed() -> void:
 				8: 
 					clownskill = 8
 		if clownstats.current_heart <= phase_4_threshold:
+			clownTB_animation.set("parameters/conditions/PHASE3", false)
+			clownTB_animation.set("parameters/conditions/PHASE4", true)
+			
 			var num = [9,10].pick_random()
 			match num:
 				9:
@@ -116,16 +123,19 @@ func skill_1_effect():
 			effect_animation.find_attack_spot_heaven()
 			effect_animation.play("basic_slash")
 		2:
-			damagecalc.clown_to_heaven_malice_damagecalc()
+			damagecalc.clown_to_hell_malice_damagecalc()
 			effect_animation.find_attack_spot_hell()
 			effect_animation.play("basic_slash")
 			
 func skill_2_effect():
 	clownskill = 2
-	var num = [1,2,3].pick_random()
+	var num = [2,2,2].pick_random()
 	clownstats.convert_tempo(skill_2_tempo)
-		
 	
+	clownTB_animation.set("parameters/conditions/BUFF1", true)
+	
+	await get_tree().create_timer(1).timeout
+
 	match num:
 		1:
 			effect_animation.find_effect_spot_enemy()
@@ -133,9 +143,16 @@ func skill_2_effect():
 			clownstats.add_heart(skill_2_heal)
 		2:
 			effect_animation.find_effect_spot_enemy()
-			effect_animation.play("basic_heal")
+			effect_animation.play("basic_buff")
 			clownstats.add_malice(skill_2_malice_buff)
 		3:
 			effect_animation.find_effect_spot_enemy()
-			effect_animation.play("basic_heal")
+			effect_animation.play("basic_buff")
 			clownstats.add_deviltry(skill_2_deviltry_buff)
+	clownTB_animation.set("parameters/conditions/BUFF1", false)
+
+func skill_3_effect():
+	clownskill = 3
+	var rand_target = [1,2]
+	clownstats.convert_tempo(skill_3_tempo)
+	clownstats.convert_skill_power(skill_3_power)

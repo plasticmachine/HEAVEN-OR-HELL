@@ -389,6 +389,9 @@ signal heaven_ID_5_wear_off_set
 @export var ID_4_hell_percent_decrease_2: float 
 @export var ID_4_hell_percent_decrease_3: float 
 
+
+@export var VFX_buffer: float
+
 ### TARGET_ID = 1: HEAVEN 2: HELL 3: CLOWN
 
 ### SKILL SLOTS
@@ -660,8 +663,13 @@ func skill_ID_2_heaven():
 
 	heavenstats.convert_tempo(ID_2_heaven_tempo)
 	print_debug(heavenstats.character_name + " locked in " + ID_2_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
-	heavenstats.convert_skill_power(ID_2_heaven_tempo)
+	heavenstats.convert_skill_power(ID_2_heaven_power)
 	heavenstats.subtract_magia(ID_2_heaven_cost_1)
+	effect_animation.find_effect_spot_heaven()
+	effect_animation.play("magia_use")
+	
+	await get_tree().create_timer(effect_animation.VFX_buffer).timeout
+	
 	
 	match heaven_target_ID:
 		2:
@@ -681,9 +689,11 @@ func skill_ID_3_heaven():
 	print_debug(heavenstats.character_name + " used " + ID_3_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	heavenstats.add_malice(ID_3_heaven_increase_1)
 	heavenstats.subtract_magia(ID_3_heaven_cost_1)
+	effect_animation.find_effect_spot_heaven()
+	effect_animation.play("magia_use")
 	
 	effect_animation.find_effect_spot_heaven()
-	effect_animation.play("basic_heal")
+	effect_animation.play("basic_buff")
 	
 	skill_effect_wear_off_set.emit()
 	
@@ -692,6 +702,8 @@ func skill_ID_4_heaven():
 	heavenstats.convert_tempo(ID_4_heaven_tempo)
 	heavenstats.add_heart(ID_4_heaven_increase_1)
 	heavenstats.subtract_magia(ID_4_heaven_cost_1)
+	effect_animation.find_effect_spot_heaven()
+	effect_animation.play("magia_use")
 	
 	effect_animation.find_effect_spot_heaven()
 	effect_animation.play("basic_heal")
@@ -708,15 +720,18 @@ func skill_ID_5_heaven():
 	await get_tree().create_timer(.5).timeout
 	
 	hellstats.add_magia(ID_5_heaven_increase_1)
+	effect_animation.find_effect_spot_hell()
+	effect_animation.play("magia_use")
+	
+	await get_tree().create_timer(.2).timeout
+	
 	hellstats.add_deviltry(ID_5_heaven_increase_2)
 	hellstats.add_malice(ID_5_heaven_increase_3)
 	
 	effect_animation.find_effect_spot_hell()
-	effect_animation.play("basic_heal")
-	await get_tree().create_timer(.1).timeout
-	effect_animation.play("basic_heal")
-	await get_tree().create_timer(.1).timeout
-	effect_animation.play("basic_heal")
+	effect_animation.play("basic_buff")
+	await get_tree().create_timer(.2).timeout
+	effect_animation.play("basic_buff")
 	
 	skill_effect_wear_off_set.emit()
 
@@ -726,6 +741,8 @@ func skill_ID_6_heaven():
 	heavenstats.convert_tempo(ID_6_heaven_tempo)
 	print_debug(heavenstats.character_name + " used " + ID_6_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	heavenstats.subtract_magia(skill_ID_6_cost)
+	effect_animation.find_effect_spot_heaven()
+	effect_animation.play("magia_use")
 	
 	status_effects.holy_swords_set()
 	
@@ -741,24 +758,24 @@ func skill_ID_7_heaven():
 		1:
 			hellstats.subtract_deviltry(ID_7_heaven_increase_1)
 			effect_animation.find_effect_spot_hell()
-			effect_animation.play("basic_slash")
+			effect_animation.play("basic_debuff")
 			
 			await get_tree().create_timer(.1).timeout
 			
 			heavenstats.add_malice(ID_7_heaven_increase_1)
 			effect_animation.find_effect_spot_heaven()
-			effect_animation.play("basic_heal")
+			effect_animation.play("basic_buff")
 			
 		2:
 			heavenstats.subtract_deviltry(ID_7_heaven_increase_1)
 			effect_animation.find_effect_spot_heaven()
-			effect_animation.play("basic_slash")
+			effect_animation.play("basic_debuff")
 			
 			await get_tree().create_timer(.1).timeout
 			
 			hellstats.add_malice(ID_7_heaven_increase_1)
 			effect_animation.find_effect_spot_hell()
-			effect_animation.play("basic_heal")
+			effect_animation.play("basic_buff")
 func skill_ID_8_heaven():
 	#make this one last bc its kinda hard, but its the one thats basically tailwind from pokemon
 	pass
@@ -779,7 +796,7 @@ func skill_ID_9_heaven():
 			
 			heavenstats.add_magia(damage_calc.heaven_to_hell_malice_damagecalc().total_damage)
 			effect_animation.find_effect_spot_heaven()
-			effect_animation.play("basic_heal")
+			effect_animation.play("magia_use")
 			
 		3:
 			damage_calc.heaven_to_clown_malice_damagecalc()
@@ -790,7 +807,7 @@ func skill_ID_9_heaven():
 			
 			hellstats.add_magia(damage_calc.heaven_to_clown_malice_damagecalc().total_damage)
 			effect_animation.find_effect_spot_hell()
-			effect_animation.play("basic_heal")
+			effect_animation.play("magia_use")
 
 func skill_ID_10_heaven():
 	### BE SURE TO MAKE THE SKILL POWER FOR THESE RANGES EQUALLY SPACED APART, 1 IS WEAKEST, 3 IS STRONGEST
@@ -798,17 +815,18 @@ func skill_ID_10_heaven():
 	heavenstats.convert_tempo(ID_10_heaven_tempo)
 	print_debug(heavenstats.character_name + " used " + ID_10_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	
-	if heavenstats.current_magia <= (heavenstats.max_magia * .66):
+	if heavenstats.current_magia <= (heavenstats.max_magia * .75):
 		stage = 2
 		heavenstats.convert_skill_power(ID_10_heaven_power_2)
-	if heavenstats.current_magia <= (heavenstats.max_magia * .33):
+	if heavenstats.current_magia <= (heavenstats.max_magia * .50):
 		stage = 1
-
 	else:
 		stage = 3
 		heavenstats.convert_skill_power(ID_10_heaven_power_3)
 	
-	
+	heavenstats.subtract_magia(heavenstats.current_magia)
+	effect_animation.find_effect_spot_heaven()
+	effect_animation.play("magia_use")
 	match heaven_target_ID:
 		2:
 			match stage:
@@ -827,10 +845,10 @@ func skill_ID_10_heaven():
 						1:
 							hellstats.subtract_guts(ID_10_heaven_decrease_1)
 						2:
-							hellstats.divide_deviltry(ID_10_heaven_percent_decrease_1)
+							hellstats.multiply_deviltry(ID_10_heaven_percent_decrease_1)
 						3:
-							hellstats.divide_malice(ID_10_heaven_percent_decrease_1)
-					effect_animation.play("basic_slash")
+							hellstats.multiply_malice(ID_10_heaven_percent_decrease_1)
+					effect_animation.play("basic_debuff")
 				2:
 					var rand_num = [1,2,3].pick_random()
 					
@@ -846,10 +864,10 @@ func skill_ID_10_heaven():
 						1:
 							hellstats.subtract_guts(ID_10_heaven_decrease_2)
 						2:
-							hellstats.divide_deviltry(ID_10_heaven_percent_decrease_2)
+							hellstats.multiply_deviltry(ID_10_heaven_percent_decrease_2)
 						3:
-							hellstats.divide_malice(ID_10_heaven_percent_decrease_2)
-					effect_animation.play("basic_slash")
+							hellstats.multiply_malice(ID_10_heaven_percent_decrease_2)
+					effect_animation.play("basic_debuff")
 				3:
 					var rand_num = [1,2,3].pick_random()
 					
@@ -865,10 +883,10 @@ func skill_ID_10_heaven():
 						1:
 							hellstats.subtract_guts(ID_10_heaven_decrease_3)
 						2:
-							hellstats.divide_deviltry(ID_10_heaven_percent_decrease_3)
+							hellstats.multiply_deviltry(ID_10_heaven_percent_decrease_3)
 						3:
-							hellstats.divide_malice(ID_10_heaven_percent_decrease_3)
-					effect_animation.play("basic_slash")
+							hellstats.multiply_malice(ID_10_heaven_percent_decrease_3)
+					effect_animation.play("basic_debuff")
 		3:
 			match stage:
 				1:
@@ -877,7 +895,7 @@ func skill_ID_10_heaven():
 					heavenstats.convert_skill_power(ID_10_heaven_power_1)
 					damage_calc.heaven_to_clown_malice_damagecalc()
 					
-					effect_animation.find_effect_spot_clown()
+					effect_animation.find_effect_spot_enemy()
 					effect_animation.play("basic_slash")
 					
 					await get_tree().create_timer(.3).timeout
@@ -886,17 +904,17 @@ func skill_ID_10_heaven():
 						1:
 							clownstats.subtract_guts(ID_10_heaven_decrease_1)
 						2:
-							clownstats.divide_deviltry(ID_10_heaven_percent_decrease_1)
+							clownstats.multiply_deviltry(ID_10_heaven_percent_decrease_1)
 						3:
-							clownstats.divide_malice(ID_10_heaven_percent_decrease_1)
-					effect_animation.play("basic_slash")
+							clownstats.multiply_malice(ID_10_heaven_percent_decrease_1)
+					effect_animation.play("basic_debuff")
 				2:
 					var rand_num = [1,2,3].pick_random()
 					
 					heavenstats.convert_skill_power(ID_10_heaven_power_2)
 					damage_calc.heaven_to_clown_malice_damagecalc()
 					
-					effect_animation.find_effect_spot_clown()
+					effect_animation.find_effect_spot_enemy()
 					effect_animation.play("basic_slash")
 					
 					await get_tree().create_timer(.3).timeout
@@ -905,17 +923,17 @@ func skill_ID_10_heaven():
 						1:
 							clownstats.subtract_guts(ID_10_heaven_decrease_2)
 						2:
-							clownstats.divide_deviltry(ID_10_heaven_percent_decrease_2)
+							clownstats.multiply_deviltry(ID_10_heaven_percent_decrease_2)
 						3:
-							clownstats.divide_malice(ID_10_heaven_percent_decrease_2)
-					effect_animation.play("basic_slash")
+							clownstats.multiply_malice(ID_10_heaven_percent_decrease_2)
+					effect_animation.play("basic_debuff")
 				3:
 					var rand_num = [1,2,3].pick_random()
 					
 					heavenstats.convert_skill_power(ID_10_heaven_power_3)
 					damage_calc.heaven_to_clown_malice_damagecalc()
 					
-					effect_animation.find_effect_spot_clown()
+					effect_animation.find_effect_spot_enemy()
 					effect_animation.play("basic_slash")
 					
 					await get_tree().create_timer(.3).timeout
@@ -924,27 +942,32 @@ func skill_ID_10_heaven():
 						1:
 							clownstats.subtract_guts(ID_10_heaven_decrease_3)
 						2:
-							clownstats.divide_deviltry(ID_10_heaven_percent_decrease_3)
+							clownstats.multiply_deviltry(ID_10_heaven_percent_decrease_3)
 						3:
-							clownstats.divide_malice(ID_10_heaven_percent_decrease_3)
-					effect_animation.play("basic_slash")
+							clownstats.multiply_malice(ID_10_heaven_percent_decrease_3)
+					effect_animation.play("basic_debuff")
 
 func skill_ID_11_heaven():
 	### BE SURE TO MAKE THE SKILL POWER FOR THESE RANGES EQUALLY SPACED APART, 11 IS WEAKEST, 3 IS STRONGEST
 	var stage
 	heavenstats.convert_tempo(ID_11_heaven_tempo)
+
 	print_debug(heavenstats.character_name + " used " + ID_11_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	
-	if heavenstats.current_magia <= (heavenstats.max_magia * .66):
+	if heavenstats.current_magia <= (heavenstats.max_magia * .75):
 		stage = 2
 		heavenstats.convert_skill_power(ID_11_heaven_power_2)
-	if heavenstats.current_magia <= (heavenstats.max_magia * .33):
+	if heavenstats.current_magia <= (heavenstats.max_magia * .50):
 		stage = 1
-
 	else:
 		stage = 3
 		heavenstats.convert_skill_power(ID_11_heaven_power_3)
 	
+	heavenstats.subtract_magia(heavenstats.current_magia)
+	effect_animation.find_effect_spot_heaven()
+	effect_animation.play("magia_use")
+	
+	await get_tree().create_timer(.3).timeout
 	
 	match heaven_target_ID:
 		2:
@@ -962,12 +985,22 @@ func skill_ID_11_heaven():
 					
 					match rand_num:
 						1:
-							hellstats.subtract_guts(ID_11_heaven_decrease_1)
+							hellstats.add_guts(ID_11_heaven_increase_1)
+							heavenstats.add_guts(ID_11_heaven_increase_1)
 						2:
-							hellstats.divide_deviltry(ID_11_heaven_percent_decrease_1)
+							hellstats.multiply_deviltry(ID_11_heaven_percent_increase_1)
+							heavenstats.multiply_deviltry(ID_11_heaven_percent_increase_1)
 						3:
-							hellstats.divide_deviltry(ID_11_heaven_percent_decrease_1)
-					effect_animation.play("basic_slash")
+							hellstats.multiply_malice(ID_11_heaven_percent_increase_1)
+							heavenstats.multiply_malice(ID_11_heaven_percent_increase_1)
+					effect_animation.find_effect_spot_heaven()
+					effect_animation.play("basic_buff")
+					
+					await get_tree().create_timer(.3).timeout
+					
+					effect_animation.find_effect_spot_hell()
+					effect_animation.play("basic_buff")
+					
 				2:
 					var rand_num = [1,2,3].pick_random()
 					
@@ -981,12 +1014,15 @@ func skill_ID_11_heaven():
 					
 					match rand_num:
 						1:
-							hellstats.subtract_guts(ID_11_heaven_decrease_2)
+							hellstats.add_guts(ID_11_heaven_increase_2)
+							heavenstats.add_guts(ID_11_heaven_increase_2)
 						2:
-							hellstats.divide_deviltry(ID_11_heaven_percent_decrease_2)
+							hellstats.multiply_deviltry(ID_11_heaven_percent_increase_2)
+							heavenstats.multiply_deviltry(ID_11_heaven_percent_increase_2)
 						3:
-							hellstats.divide_deviltry(ID_11_heaven_percent_decrease_2)
-					effect_animation.play("basic_slash")
+							hellstats.multiply_malice(ID_11_heaven_percent_increase_2)
+							heavenstats.multiply_malice(ID_11_heaven_percent_increase_2)
+					effect_animation.play("basic_buff")
 				3:
 					var rand_num = [1,2,3].pick_random()
 					
@@ -1000,12 +1036,15 @@ func skill_ID_11_heaven():
 					
 					match rand_num:
 						1:
-							hellstats.subtract_guts(ID_11_heaven_decrease_3)
+							hellstats.add_guts(ID_11_heaven_increase_3)
+							heavenstats.add_guts(ID_11_heaven_increase_3)
 						2:
-							hellstats.divide_deviltry(ID_11_heaven_percent_decrease_3)
+							hellstats.multiply_deviltry(ID_11_heaven_percent_increase_3)
+							heavenstats.multiply_deviltry(ID_11_heaven_percent_increase_3)
 						3:
-							hellstats.divide_deviltry(ID_11_heaven_percent_decrease_3)
-					effect_animation.play("basic_slash")
+							hellstats.multiply_malice(ID_11_heaven_percent_increase_3)
+							heavenstats.multiply_malice(ID_11_heaven_percent_increase_3)
+					effect_animation.play("basic_buff")
 		3:
 			match stage:
 				1:
@@ -1014,57 +1053,66 @@ func skill_ID_11_heaven():
 					heavenstats.convert_skill_power(ID_11_heaven_power_1)
 					damage_calc.heaven_to_clown_deviltry_damagecalc()
 					
-					effect_animation.find_effect_spot_clown()
+					effect_animation.find_effect_spot_enemy()
 					effect_animation.play("basic_slash")
 					
 					await get_tree().create_timer(.3).timeout
 					
 					match rand_num:
 						1:
-							clownstats.subtract_guts(ID_11_heaven_decrease_1)
+							hellstats.add_guts(ID_11_heaven_increase_1)
+							heavenstats.add_guts(ID_11_heaven_increase_1)
 						2:
-							clownstats.divide_malice(ID_11_heaven_percent_decrease_1)
+							hellstats.multiply_deviltry(ID_11_heaven_percent_increase_1)
+							heavenstats.multiply_deviltry(ID_11_heaven_percent_increase_1)
 						3:
-							clownstats.divide_deviltry(ID_11_heaven_percent_decrease_1)
-					effect_animation.play("basic_slash")
+							hellstats.multiply_malice(ID_11_heaven_percent_increase_1)
+							heavenstats.multiply_malice(ID_11_heaven_percent_increase_1)
+					effect_animation.play("basic_buff")
 				2:
 					var rand_num = [1,2,3].pick_random()
 					
 					heavenstats.convert_skill_power(ID_11_heaven_power_2)
 					damage_calc.heaven_to_clown_deviltry_damagecalc()
 					
-					effect_animation.find_effect_spot_clown()
+					effect_animation.find_effect_spot_enemy()
 					effect_animation.play("basic_slash")
 					
 					await get_tree().create_timer(.3).timeout
 					
 					match rand_num:
 						1:
-							clownstats.subtract_guts(ID_11_heaven_decrease_2)
+							hellstats.add_guts(ID_11_heaven_increase_2)
+							heavenstats.add_guts(ID_11_heaven_increase_2)
 						2:
-							clownstats.divide_malice(ID_11_heaven_percent_decrease_2)
+							hellstats.multiply_deviltry(ID_11_heaven_percent_increase_2)
+							heavenstats.multiply_deviltry(ID_11_heaven_percent_increase_2)
 						3:
-							clownstats.divide_deviltry(ID_11_heaven_percent_decrease_2)
-					effect_animation.play("basic_slash")
+							hellstats.multiply_malice(ID_11_heaven_percent_increase_2)
+							heavenstats.multiply_malice(ID_11_heaven_percent_increase_2)
+					effect_animation.play("basic_buff")
 				3:
 					var rand_num = [1,2,3].pick_random()
 					
 					heavenstats.convert_skill_power(ID_11_heaven_power_3)
 					damage_calc.heaven_to_clown_deviltry_damagecalc()
 					
-					effect_animation.find_effect_spot_clown()
+					effect_animation.find_effect_spot_enemy()
 					effect_animation.play("basic_slash")
 					
 					await get_tree().create_timer(.3).timeout
 					
 					match rand_num:
 						1:
-							clownstats.subtract_guts(ID_11_heaven_decrease_3)
-						2:
-							clownstats.divide_malice(ID_11_heaven_percent_decrease_3)
+							hellstats.add_guts(ID_11_heaven_increase_3)
+							heavenstats.add_guts(ID_11_heaven_increase_3)
 						3:
-							clownstats.divide_deviltry(ID_11_heaven_percent_decrease_3)
-					effect_animation.play("basic_slash")
+							hellstats.multiply_deviltry(ID_11_heaven_percent_increase_3)
+							heavenstats.multiply_deviltry(ID_11_heaven_percent_increase_3)
+						3:
+							hellstats.multiply_malice(ID_11_heaven_percent_increase_3)
+							heavenstats.multiply_malice(ID_11_heaven_percent_increase_3)
+					effect_animation.play("basic_buff")
 ###       HELL SKILLS
 #test skill that just does damage based off of malice
 func skill_ID_1_hell():
@@ -1089,7 +1137,10 @@ func skill_ID_2_hell():
 	print_debug(hellstats.character_name + " locked in " + ID_2_hell_skill_name + " (" + str(hellstats.current_tempo) + " tempo)" )
 	hellstats.convert_tempo(ID_2_hell_tempo)
 	hellstats.convert_skill_power(ID_2_hell_power)
+	
 	hellstats.subtract_magia(ID_2_hell_cost_1)
+	effect_animation.find_effect_spot_heaven()
+	effect_animation.play("magia_use")
 	
 	match hell_target_ID:
 		2:
@@ -1105,7 +1156,10 @@ func skill_ID_2_hell():
 			effect_animation.play("basic_slash")
 
 func skill_ID_3_hell():
-	pass
-
+	print_debug(hellstats.character_name + " locked in " + ID_2_hell_skill_name + " (" + str(hellstats.current_tempo) + " tempo)" )
+	hellstats.convert_tempo(ID_3_hell_tempo)
+	
+	
+	
 func skill_ID_4_hell():
 	pass
