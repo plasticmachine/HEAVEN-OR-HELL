@@ -918,7 +918,7 @@ material = SubResource("ShaderMaterial_5dk0g")
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_lblot")
 animation = &"down_right"
-frame = 3
+frame = 4
 
 [node name="Melee" parent="." instance=ExtResource("9_s66nb")]
 position = Vector2(-1, -1)

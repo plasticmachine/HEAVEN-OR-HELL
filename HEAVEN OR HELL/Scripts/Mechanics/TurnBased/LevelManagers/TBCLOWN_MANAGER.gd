@@ -2,6 +2,11 @@ extends Node2D
 #@onready var clown = $ClownTbs
 
 signal clown_skill_search
+signal heaven_enable
+signal heaven_disable
+signal hell_enable
+signal hell_disable
+
 
 var turn_count: int
 var turn_queue_amount: int
@@ -14,6 +19,10 @@ var clownstats = preload("res://Resources/Stats/ClownStats.tres")
 var heavenskill: int
 var hellskill: int
 var clwnskill: int
+
+
+
+
 #var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 #@onready var ClownSocket = $Sockets/ClownSocket
 #@onready var HeavenSocket = $Sockets/HeavenSocket
@@ -36,7 +45,7 @@ var clwnskill: int
 
 @onready var StatusEffects = $StatusEffects
 
-
+@export var debug_mode: bool
 
 @export var BOSS_ID: int
 #var clownstats = Stats.get_character_stats(clown)
@@ -55,6 +64,14 @@ func _ready():
 		3:
 			clownstats.current_skill_power = 0
 			clownstats.current_tempo = 0
+			clownstats.special_status_effect_1 = 0
+			clownstats.special_status_effect_2 = 0
+			clownstats.special_status_effect_3 = 0
+	
+	if debug_mode == true:
+		heavenstats.reset_stats()
+		hellstats.reset_stats()
+	
 	#_init_battle()
 #func DialogueTesting():
 	#if Input.is_action_just_pressed("Melee_hell"):
@@ -500,23 +517,27 @@ func enable_hell_buttons():
 	hell_action_button_2.disabled = false
 	hell_action_button_3.disabled = false
 	hell_action_button_4.disabled = false
+	hell_enable.emit()
 func disable_hell_buttons():
 	hell_action_button_1.disabled = true
 	hell_action_button_2.disabled = true
 	hell_action_button_3.disabled = true
 	hell_action_button_4.disabled = true
 	clown_skill_search.emit()
+	hell_disable.emit()
 func enable_heaven_buttons():
 	heaven_action_button_1.disabled = false
 	heaven_action_button_2.disabled = false
 	heaven_action_button_3.disabled = false
 	heaven_action_button_4.disabled = false
+	heaven_enable.emit()
 func disable_heaven_buttons():
 	heaven_action_button_1.disabled = true
 	heaven_action_button_2.disabled = true
 	heaven_action_button_3.disabled = true
 	heaven_action_button_4.disabled = true
 	clown_skill_search.emit()
+	heaven_disable.emit()
 func disable_all_buttons():
 	heaven_action_button_1.disabled = true
 	heaven_action_button_2.disabled = true
@@ -527,6 +548,8 @@ func disable_all_buttons():
 	hell_action_button_2.disabled = true
 	hell_action_button_3.disabled = true
 	hell_action_button_4.disabled = true
+	heaven_disable.emit()
+	hell_disable.emit()
 func enable_all_buttons():
 	heaven_action_button_1.disabled = false
 	heaven_action_button_2.disabled = false
@@ -537,7 +560,8 @@ func enable_all_buttons():
 	hell_action_button_2.disabled = false
 	hell_action_button_3.disabled = false
 	hell_action_button_4.disabled = false
-
+	heaven_enable.emit()
+	hell_enable.emit()
 
 func _on_clown_tb_action_committed() -> void:
 	print_debug("Boss chose their action")

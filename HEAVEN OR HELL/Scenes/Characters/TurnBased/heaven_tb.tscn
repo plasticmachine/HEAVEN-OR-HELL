@@ -1,10 +1,94 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdorwiack3h01"]
+[gd_scene load_steps=5 format=3 uid="uid://bdorwiack3h01"]
 
 [ext_resource type="Texture2D" uid="uid://qb1askllryfb" path="res://art/HEAVEN/turnbased/HVN_TB_Dark.PNG" id="2_7q6gi"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/HeavenTBAnimationManager.gd" id="2_67wdh"]
+[ext_resource type="Texture2D" uid="uid://i1e6c5h8wlo4" path="res://art/HEAVEN/turnbased/HVN_TB_Bright.PNG" id="3_m3dbd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1hfb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7q6gi")
+}],
+"loop": true,
+"name": &"disable",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7q6gi")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7q6gi")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7q6gi")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7q6gi")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7q6gi")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7q6gi")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7q6gi")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7q6gi")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7q6gi")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_m3dbd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="HeavenTb" type="Node2D"]
+script = ExtResource("2_67wdh")
+damage_blink_timer_sec = 1.5
 
-[node name="HvnTbDark" type="Sprite2D" parent="."]
-position = Vector2(1682, 934)
-scale = Vector2(0.733699, 0.733699)
-texture = ExtResource("2_7q6gi")
+[node name="HeavenTbAnimation" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.712129, 0.712129, 0.712129, 1)
+position = Vector2(1682, 931)
+scale = Vector2(0.716082, 0.716082)
+sprite_frames = SubResource("SpriteFrames_1hfb2")
+animation = &"hit"
+autoplay = "idle"
+frame = 10
+frame_progress = 0.69519

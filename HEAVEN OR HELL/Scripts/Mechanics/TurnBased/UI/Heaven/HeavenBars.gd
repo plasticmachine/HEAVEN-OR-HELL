@@ -20,6 +20,8 @@ func get_heart_values():
 	heaven_heart_progress_bar.max_value = heavenstats.max_heart
 	heaven_heart_progress_bar.value = heavenstats.current_heart
 func update_heart_bar():
+	heaven_heart_progress_bar.max_value = heavenstats.max_heart
+	
 	var heart_tween = get_tree().create_tween()
 	heart_tween.set_trans(Tween.TRANS_LINEAR)
 	heart_tween.set_ease(Tween.EASE_IN_OUT)
@@ -32,4 +34,5 @@ func get_magia_value():
 	heaven_magia_progress_bar.value = heavenstats.current_magia
 	
 func update_magia_value():
+	heaven_magia_progress_bar.max_value = heavenstats.max_magia
 	heaven_magia_progress_bar.value = heavenstats.current_magia

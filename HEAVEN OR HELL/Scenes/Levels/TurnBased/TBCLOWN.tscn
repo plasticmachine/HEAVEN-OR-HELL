@@ -302,6 +302,7 @@ expand_margin_bottom = 1.0
 [node name="TurnBased" type="Node2D"]
 position = Vector2(11, 181)
 script = ExtResource("1_h0a2a")
+debug_mode = true
 BOSS_ID = 3
 
 [node name="SkillManager" type="Node2D" parent="."]
@@ -831,9 +832,15 @@ rotation = -3.10526
 scale = Vector2(-0.159953, -0.159953)
 
 [connection signal="clown_skill_search" from="." to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_first_action_committed"]
+[connection signal="heaven_disable" from="." to="PlayerSpots/HeavenTb" method="_on_turn_based_heaven_disable"]
+[connection signal="heaven_enable" from="." to="PlayerSpots/HeavenTb" method="_on_turn_based_heaven_enable"]
+[connection signal="hell_disable" from="." to="PlayerSpots/HellTb" method="_on_turn_based_hell_disable"]
+[connection signal="hell_enable" from="." to="PlayerSpots/HellTb" method="_on_turn_based_hell_enable"]
 [connection signal="heaven_ID_5_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_heaven_id_5_wear_off_set"]
 [connection signal="hell_ID_3_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_hell_id_3_wear_off_set"]
 [connection signal="skill_effect_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_skill_effect_wear_off_set"]
+[connection signal="heaven_damage_taken" from="DamageCalculation" to="PlayerSpots/HeavenTb" method="_on_heaven_damage_taken"]
+[connection signal="hell_damage_taken" from="DamageCalculation" to="PlayerSpots/HellTb" method="_on_hell_damage_taken"]
 [connection signal="action_committed" from="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" to="." method="_on_clown_tb_action_committed"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="." method="_on_hell_action_commited_skill_1"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="PlayerUI/Buttons/HellButtons/Attackbutton1" method="_on_pressed"]

@@ -322,19 +322,17 @@ func calc_BH_defense():
 			##PUT LOGIC FOR GUTS MIN DEBUFF PASSIVE: (1/4th of all incoming damage is dealt to your partner as well [TB/BH])
 
 
-#func reset_stats():
-	#if Engine.is_editor_hint():
-		#if stat_resetter:
-			#move_speed = 3500
-			#max_heart = 100
-			#max_magia = 100
-			#current_heart = 100
-			#current_magia = 100
-			#malice = 10
-			#deviltry = 10
-			#guts = 10
-			#luck = 0
-			#crit = 0
-			#crit_level = 0
-			#print_debug("reset all " + character_name + "'s stats to default")
-			#print_debug( str(move_speed, max_heart, current_heart, max_magia, current_magia, malice, deviltry, guts, luck, crit, crit_level))
+func reset_stats():
+			move_speed = 3500
+			max_heart = 300
+			max_magia = 300
+			current_heart = 300
+			current_magia = 300
+			malice = 10
+			deviltry = 10
+			guts = 10
+			luck = 0
+			crit = 0
+			crit_level = 0
+			print_debug("reset all " + character_name + "'s stats to default")
+			print_debug( str(move_speed, max_heart, current_heart, max_magia, current_magia, malice, deviltry, guts, luck, crit, crit_level))

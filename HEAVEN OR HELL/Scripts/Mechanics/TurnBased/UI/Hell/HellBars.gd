@@ -21,6 +21,9 @@ func get_heart_values():
 	hell_heart_progress_bar.max_value = hellstats.max_heart
 	hell_heart_progress_bar.value = hellstats.current_heart
 func update_heart_bar():
+	
+	hell_heart_progress_bar.max_value = hellstats.max_heart
+	
 	var heart_tween = get_tree().create_tween()
 	heart_tween.set_trans(Tween.TRANS_LINEAR)
 	heart_tween.set_ease(Tween.EASE_IN_OUT)
@@ -33,4 +36,5 @@ func get_magia_value():
 	hell_magia_progress_bar.value = hellstats.current_magia
 	
 func update_magia_value():
+	hell_magia_progress_bar.max_value = hellstats.max_magia
 	hell_magia_progress_bar.value = hellstats.current_magia
