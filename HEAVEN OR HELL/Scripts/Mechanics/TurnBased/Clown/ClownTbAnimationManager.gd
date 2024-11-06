@@ -60,17 +60,19 @@ func _on_first_action_committed() -> void:
 			match num:
 				1:
 					clownskill = 1
-					print_debug("clown used skill 1")
+					clownstats.convert_tempo(skill_1_tempo)
+					print_debug("clown is preparing skill 1")
 				2:
 					clownskill = 2
-					print_debug("clown used skill 2")
+					clownstats.convert_tempo(skill_2_tempo)
+					print_debug("clown is preparing skill 2")
 		if clownstats.current_heart <= phase_2_threshold:
 			var num = [3,4,5,6].pick_random()
 			clownTB_animation.set("parameters/conditions/PHASE2", true)
 			match num:
 				3:
 					clownskill = 3
-					print_debug(("clown used skill 3"))
+					print_debug(("clown is preparing skill 3"))
 				4: 
 					clownskill = 4
 				5: 
@@ -111,7 +113,7 @@ func _on_first_action_committed() -> void:
 
 
 
-#test skill that just randomly does power to heaven or hell
+#test skill that just randomly does damage to heaven or hell
 func skill_1_effect():
 	var num = [1,2].pick_random()
 	clownstats.convert_tempo(skill_1_tempo)

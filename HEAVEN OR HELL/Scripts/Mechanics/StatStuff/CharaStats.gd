@@ -229,11 +229,11 @@ func divide_crit(divisor: float) -> void:
 
 func convert_skill_power(amount: int) -> void:
 	current_skill_power = amount
-	print_debug(character_name + " used a move with " + str(current_skill_power) + " power!")
+	print_debug(character_name + " used a move that had  " + str(current_skill_power) + " power!")
 
 func convert_tempo(amount: int) -> void:
 	current_tempo = amount
-	print_debug(character_name + " used a move with " + str(current_tempo) + " tempo!" )
+	print_debug(character_name + " locked in a move with " + str(current_tempo) + " tempo!" )
 
 ### DEBUG FUNCTIONS
 func add_all(amount: int) -> void:

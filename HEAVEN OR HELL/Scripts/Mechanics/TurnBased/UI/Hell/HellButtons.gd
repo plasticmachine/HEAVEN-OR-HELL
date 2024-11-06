@@ -5,6 +5,8 @@ signal hell_action_commited
 
 func _on_pressed():
 	hell_action_commited.emit()
+	
+	#match skills.define_skill_slot_1_hell():
 
 #finds what skill to put in skill slot one to use it for skill_effect() in the TBmanager script
 func skill_effect():

@@ -644,8 +644,6 @@ func define_skill_slot_4_hell():
 #test skill that just does damage based off of malice
 func skill_ID_1_heaven():
 	
-	heavenstats.convert_tempo(ID_1_heaven_tempo)
-	print_debug(heavenstats.character_name + " locked in " + ID_1_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	heavenstats.convert_skill_power(ID_1_heaven_power)
 	
 	match heaven_target_ID:
@@ -662,9 +660,7 @@ func skill_ID_1_heaven():
 			effect_animation.play("basic_slash")
 #test skill that just does damage based off of deviltry, but spends a little magia bar
 func skill_ID_2_heaven():
-
-	heavenstats.convert_tempo(ID_2_heaven_tempo)
-	print_debug(heavenstats.character_name + " locked in " + ID_2_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
+	#heavenstats.convert_tempo(ID_2_heaven_tempo)
 	heavenstats.convert_skill_power(ID_2_heaven_power)
 	heavenstats.subtract_magia(ID_2_heaven_cost_1)
 	effect_animation.find_effect_spot_heaven()
@@ -687,8 +683,7 @@ func skill_ID_2_heaven():
 			effect_animation.play("basic_slash")
 
 func skill_ID_3_heaven():
-	heavenstats.convert_tempo(ID_3_heaven_tempo)
-	print_debug(heavenstats.character_name + " used " + ID_3_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
+	#heavenstats.convert_tempo(ID_3_heaven_tempo)
 	heavenstats.add_malice(ID_3_heaven_increase_1)
 	heavenstats.subtract_magia(ID_3_heaven_cost_1)
 	effect_animation.find_effect_spot_heaven()
@@ -701,7 +696,7 @@ func skill_ID_3_heaven():
 	
 func skill_ID_4_heaven():
 	print_debug(heavenstats.character_name + " used " + ID_4_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
-	heavenstats.convert_tempo(ID_4_heaven_tempo)
+	#heavenstats.convert_tempo(ID_4_heaven_tempo)
 	heavenstats.add_heart(ID_4_heaven_increase_1)
 	heavenstats.subtract_magia(ID_4_heaven_cost_1)
 	effect_animation.find_effect_spot_heaven()
@@ -712,7 +707,7 @@ func skill_ID_4_heaven():
 
 func skill_ID_5_heaven():
 	
-	heavenstats.convert_tempo(ID_5_heaven_tempo)
+	#heavenstats.convert_tempo(ID_5_heaven_tempo)
 	print_debug(heavenstats.character_name + " used " + ID_5_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	
 	heavenstats.subtract_heart(ID_5_heaven_cost_1)
@@ -740,7 +735,7 @@ func skill_ID_5_heaven():
 func skill_ID_6_heaven():
 	var skill_ID_6_cost = heavenstats.max_magia * ID_6_heaven_percent_decrease_1
 	
-	heavenstats.convert_tempo(ID_6_heaven_tempo)
+	#heavenstats.convert_tempo(ID_6_heaven_tempo)
 	print_debug(heavenstats.character_name + " used " + ID_6_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	heavenstats.subtract_magia(skill_ID_6_cost)
 	effect_animation.find_effect_spot_heaven()
@@ -1175,3 +1170,29 @@ func skill_ID_3_hell():
 	
 func skill_ID_4_hell():
 	pass
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+func skill_ID_1_heaven_tempo_convert():
+	heavenstats.convert_tempo(ID_1_heaven_tempo)
+func skill_ID_2_heaven_tempo_convert():
+	heavenstats.convert_tempo(ID_2_heaven_tempo)
+func skill_ID_3_heaven_tempo_convert():
+	heavenstats.convert_tempo(ID_3_heaven_tempo)
+func skill_ID_4_heaven_tempo_convert():
+	heavenstats.convert_tempo(ID_4_heaven_tempo)
+func skill_ID_5_heaven_tempo_convert():
+	heavenstats.convert_tempo(ID_5_heaven_tempo)
+
+func skill_ID_1_hell_tempo_convert():
+	hellstats.convert_tempo(ID_1_hell_tempo)
