@@ -18,35 +18,45 @@ signal action_committed
 
 
 @export_group("Skill_2")
+@export var skill_2_name: String
 @export var skill_2_tempo: int
 @export var skill_2_heal: int
 @export var skill_2_malice_buff: int
 @export var skill_2_deviltry_buff: int
 
 @export_group("Skill_3")
+@export var skill_3_name: String
 @export var skill_3_tempo: int
 @export var skill_3_power: int
 
 @export_group("Skill_4")
+@export var skill_4_name: String
 @export var skill_4_tempo: int
 @export var skill_4_power: int
 @export_group("Skill_5")
+@export var skill_5_name: String
 @export var skill_5_tempo: int
 @export var skill_5_power: int
 @export_group("Skill_6")
+@export var skill_6_name: String
 @export var skill_6_tempo: int
 @export var skill_6_power: int
 @export_group("Skill_7")
+@export var skill_7_name: String
 @export var skill_7_tempo: int
 @export var skill_7_power: int
 @export_group("Skill_8")
+@export var skill_8_name: String
 @export var skill_8_tempo: int
 @export var skill_8_power: int
 @export_group("Skill_9")
+@export var skill_9_name: String
 @export var skill_9_tempo: int
+@export var skill_9_power: int
 @export_group("Skill_10")
+@export var skill_10_name: String
 @export var skill_10_tempo: int
-
+@export var skill_10_power: int
 
 func _on_first_action_committed() -> void:
 	var phase_1_threshold = clownstats.max_heart * .75
@@ -56,16 +66,16 @@ func _on_first_action_committed() -> void:
 	
 	if turnbased_manager.turn_queue_amount == 1 and heavenstats.current_heart > 0 and hellstats.current_heart > 0:
 		if clownstats.current_heart >= phase_1_threshold:
-			var num = [1,1].pick_random()
+			var num = [1,2].pick_random()
 			match num:
 				1:
 					clownskill = 1
 					clownstats.convert_tempo(skill_1_tempo)
-					print_debug("clown is preparing skill 1")
+					print_debug("clown is preparing " + skill_1_name + " (ID: 01)")
 				2:
 					clownskill = 2
 					clownstats.convert_tempo(skill_2_tempo)
-					print_debug("clown is preparing skill 2")
+					print_debug("clown is preparing " + skill_2_name + " (ID: 02)")
 		if clownstats.current_heart <= phase_2_threshold:
 			var num = [3,4,5,6].pick_random()
 			clownTB_animation.set("parameters/conditions/PHASE2", true)

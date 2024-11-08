@@ -470,7 +470,14 @@ graph_offset = Vector2(-139, -65.0672)
 [node name="ClownTb" type="Node2D"]
 position = Vector2(874, 512)
 script = ExtResource("21_rxlsl")
-skill_1_name = "Twirl"
+skill_1_name = "Twirl..."
+skill_1_tempo = 9
+skill_1_power = 35
+skill_2_name = "Breathe in! Breathe Out!"
+skill_2_tempo = 2
+skill_2_heal = 50
+skill_2_malice_buff = 5
+skill_2_deviltry_buff = 5
 
 [node name="ClownTbtest" type="Sprite2D" parent="."]
 visible = false

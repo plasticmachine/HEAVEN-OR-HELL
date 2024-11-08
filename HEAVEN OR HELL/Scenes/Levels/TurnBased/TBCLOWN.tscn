@@ -413,12 +413,7 @@ script = ExtResource("15_qlv6m")
 
 [node name="ClownTb" parent="EnemySpot2/ClownDancePath/PathFollow2D" instance=ExtResource("2_djc2d")]
 position = Vector2(0, 0)
-skill_1_tempo = 9
-skill_1_power = 35
 skill_2_tempo = 9
-skill_2_heal = 50
-skill_2_malice_buff = 5
-skill_2_deviltry_buff = 5
 
 [node name="ClownTrack" type="AudioStreamPlayer2D" parent="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb"]
 position = Vector2(31, -143)

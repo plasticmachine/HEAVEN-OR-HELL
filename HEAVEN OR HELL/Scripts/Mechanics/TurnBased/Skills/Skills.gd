@@ -1114,7 +1114,6 @@ func skill_ID_11_heaven():
 #test skill that just does damage based off of malice
 func skill_ID_1_hell():
 	print_debug(hellstats.character_name + " locked in " + ID_1_hell_skill_name + " (" + str(hellstats.current_tempo) + " tempo)" )
-	hellstats.convert_tempo(ID_1_hell_tempo)
 	hellstats.convert_skill_power(ID_1_hell_power)
 	
 	match hell_target_ID:
@@ -1132,7 +1131,6 @@ func skill_ID_1_hell():
 #test skill that just does damage based off of deviltry, but spends a little magia bar
 func skill_ID_2_hell():
 	print_debug(hellstats.character_name + " locked in " + ID_2_hell_skill_name + " (" + str(hellstats.current_tempo) + " tempo)" )
-	hellstats.convert_tempo(ID_2_hell_tempo)
 	hellstats.convert_skill_power(ID_2_hell_power)
 	
 	hellstats.subtract_magia(ID_2_hell_cost_1)
@@ -1151,10 +1149,8 @@ func skill_ID_2_hell():
 			damage_calc.hell_to_clown_malice_damagecalc()
 			effect_animation.find_attack_spot_enemy()
 			effect_animation.play("basic_slash")
-
 func skill_ID_3_hell():
 	print_debug(hellstats.character_name + " locked in " + ID_2_hell_skill_name + " (" + str(hellstats.current_tempo) + " tempo)" )
-	hellstats.convert_tempo(ID_3_hell_tempo)
 	hellstats.subtract_magia(ID_3_hell_cost_1)
 	effect_animation.find_effect_spot_hell()
 	effect_animation.play("magia_use")
@@ -1165,24 +1161,10 @@ func skill_ID_3_hell():
 	effect_animation.play("basic_buff")
 	
 	
-	hell_ID_3_wear_off_set.emit()
-	
-	
+	hell_ID_3_wear_off_set.emit()	
 func skill_ID_4_hell():
 	pass
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 func skill_ID_1_heaven_tempo_convert():
 	heavenstats.convert_tempo(ID_1_heaven_tempo)
 func skill_ID_2_heaven_tempo_convert():
@@ -1193,6 +1175,37 @@ func skill_ID_4_heaven_tempo_convert():
 	heavenstats.convert_tempo(ID_4_heaven_tempo)
 func skill_ID_5_heaven_tempo_convert():
 	heavenstats.convert_tempo(ID_5_heaven_tempo)
-
+func skill_ID_6_heaven_tempo_convert():
+	heavenstats.convert_tempo(ID_6_heaven_tempo)
+func skill_ID_7_heaven_tempo_convert():
+	heavenstats.convert_tempo(ID_7_heaven_tempo)
+func skill_ID_8_heaven_tempo_convert():
+	heavenstats.convert_tempo(ID_8_heaven_tempo)
+func skill_ID_10_heaven_tempo_convert():
+	heavenstats.convert_tempo(ID_10_heaven_tempo)
+func skill_ID_11_heaven_tempo_convert():
+	heavenstats.convert_tempo(ID_11_heaven_tempo)
+	
 func skill_ID_1_hell_tempo_convert():
 	hellstats.convert_tempo(ID_1_hell_tempo)
+func skill_ID_2_hell_tempo_convert():
+	hellstats.convert_tempo(ID_2_hell_tempo)
+func skill_ID_3_hell_tempo_convert():
+	hellstats.convert_tempo(ID_3_hell_tempo)
+func skill_ID_4_hell_tempo_convert():
+	hellstats.convert_tempo(ID_4_hell_tempo)
+#func skill_ID_5_hell_tempo_convert():
+	#hellstats.convert_tempo(ID_5_hell_tempo)
+#func skill_ID_6_hell_tempo_convert():
+	#hellstats.convert_tempo(ID_6_hell_tempo)
+#func skill_ID_7_hell_tempo_convert():
+	#hellstats.convert_tempo(ID_7_hell_tempo)
+#func skill_ID_8_hell_tempo_convert():
+	#hellstats.convert_tempo(ID_8_hell_tempo)
+#func skill_ID_9_hell_tempo_convert():
+	#hellstats.convert_tempo(ID_9_hell_tempo)
+#func skill_ID_10_hell_tempo_convert():
+	#hellstats.convert_tempo(ID_10_hell_tempo)
+#func skill_ID_11_hell_tempo_convert():
+	#hellstats.convert_tempo(ID_11_hell_tempo)
+	

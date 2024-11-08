@@ -49,6 +49,23 @@ func holy_swords_set():
 				clownstats.special_status_effect_1 = 1
 	#if TurnBasedManager.turn_count > holy_swords_disable_turn
 
+#SPECIAL_STATUS_ID_2 (SIGIL)
+func sigil_set_and_toss():
+	var num = [4,5,6].pick_random()
+	var sigil_disable_turn = (TurnBasedManager.turn_count + num)
+	
+	match heavenstats.special_status_effect_1 || heavenstats.special_status_effect_2 || heavenstats.special_status_effect_3:
+		2:
+			match SkillManager.heaven_target_ID:
+				1:
+					pass
+					#self target
+				
+				2:
+					pass
+					#run the script that checks the special status slots
+	
+
 
 
 #Checks if status effects are active and then actually enacts what the status is supposed to do 
