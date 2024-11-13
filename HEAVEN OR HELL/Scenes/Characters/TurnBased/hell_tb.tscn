@@ -99,4 +99,4 @@ sprite_frames = SubResource("SpriteFrames_wepe7")
 animation = &"hit"
 autoplay = "idle"
 frame = 16
-frame_progress = 1.0
+frame_progress = 0.49095

@@ -956,7 +956,7 @@ position = Vector2(5137.5, 7263)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-zoom = Vector2(0.204975, 0.204975)
+zoom = Vector2(0.266839, 0.266839)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)
@@ -1218,7 +1218,6 @@ script = ExtResource("14_r45kx")
 speed = 2000
 
 [node name="Clown2" parent="Path2D/Phase_1_Movement" instance=ExtResource("15_oaur5")]
-visible = false
 position = Vector2(0, 267)
 collision_layer = 1
 
@@ -1560,6 +1559,7 @@ metadata/_edit_lock_ = true
 
 [node name="Hell" parent="Players" instance=ExtResource("18_nimnx")]
 physics_interpolation_mode = 2
+visible = false
 material = SubResource("ShaderMaterial_s1o53")
 position = Vector2(-10364, -1979)
 
@@ -1567,6 +1567,7 @@ position = Vector2(-10364, -1979)
 position = Vector2(-4473, -1895)
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 z_index = -255
 position = Vector2(611, 191)
 scale = Vector2(6.5, 6.5)

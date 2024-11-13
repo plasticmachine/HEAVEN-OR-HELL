@@ -47,7 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://dvngeb7w1fgm7" path="res://art/HEAVEN/walk/upleft/HVN_UPLFT.PNG" id="32_65wup"]
 [ext_resource type="Texture2D" uid="uid://doa126x42jfuc" path="res://art/HEAVEN/walk/upright/HVN_UPRIGHT.png" id="33_1v8lp"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/UI/HeavenHPBarBH.gd" id="35_qyur8"]
-[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="37_sao2a"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="37_sao2a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
 radius = 133.135
@@ -811,17 +811,20 @@ motion_mode = 1
 script = ExtResource("1_re22k")
 
 [node name="InteractionHurtbox" type="CollisionShape2D" parent="."]
+visible = false
 z_index = 35
 position = Vector2(-34, 143)
 shape = SubResource("CircleShape2D_7egpc")
 
 [node name="PlayerArea" type="Area2D" parent="." groups=["Player"]]
+visible = false
 z_index = 1
 collision_layer = 255
 priority = 1
 script = ExtResource("2_h3mt1")
 
 [node name="BulletHurtbox" type="CollisionShape2D" parent="PlayerArea" groups=["Player"]]
+visible = false
 z_index = 1
 position = Vector2(-34, 143)
 shape = SubResource("CircleShape2D_7egpc")

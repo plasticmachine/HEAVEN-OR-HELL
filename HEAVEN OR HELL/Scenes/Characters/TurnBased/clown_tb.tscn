@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dt06qpfhtfajd"]
+[gd_scene load_steps=90 format=3 uid="uid://dt06qpfhtfajd"]
 
 [ext_resource type="Texture2D" uid="uid://n8jftbuyirgl" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-1.png" id="2_eba1o"]
 [ext_resource type="Texture2D" uid="uid://damkva1jjkcsg" path="res://art/clown/TurnBased/CLOWN_TBTEST.png" id="2_y11lw"]
@@ -41,6 +41,25 @@
 [ext_resource type="Texture2D" uid="uid://behowd5nrxt8x" path="res://art/clown/TurnBased/ClownBuff1/Untitled_Artwork-13.png" id="39_trr6s"]
 [ext_resource type="Texture2D" uid="uid://cvd2k3yjm1yde" path="res://art/clown/TurnBased/ClownBuff1/Untitled_Artwork-14.png" id="40_on4wh"]
 [ext_resource type="Texture2D" uid="uid://ct4eijbq1ja4r" path="res://art/clown/TurnBased/ClownBuff1/Untitled_Artwork-15.png" id="41_fsuic"]
+[ext_resource type="Texture2D" uid="uid://dckjcsgn6cmbb" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-1.png" id="42_fr83q"]
+[ext_resource type="Texture2D" uid="uid://bxpo0r6aclex7" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-2.png" id="43_pcnbm"]
+[ext_resource type="Texture2D" uid="uid://b0ihsuoy6tp7q" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-3.png" id="44_sc3b6"]
+[ext_resource type="Texture2D" uid="uid://bfi6jjo6y47g" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-4.png" id="45_o68fm"]
+[ext_resource type="Texture2D" uid="uid://cehpxoopbhswe" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-5.png" id="46_sqbub"]
+[ext_resource type="Texture2D" uid="uid://boancpmkbeens" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-6.png" id="47_o0xxu"]
+[ext_resource type="Texture2D" uid="uid://rt7mcgd4vyex" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-7.png" id="48_eyx0g"]
+[ext_resource type="Texture2D" uid="uid://roq8eevkn040" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-8.png" id="49_i5hrh"]
+[ext_resource type="Texture2D" uid="uid://db1yaoqmsg2pw" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-9.png" id="50_547ue"]
+[ext_resource type="Texture2D" uid="uid://c67kb38cyqla7" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-10.png" id="51_jiuav"]
+[ext_resource type="Texture2D" uid="uid://cvuq5qieyuw8o" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-11.png" id="52_mog5p"]
+[ext_resource type="Texture2D" uid="uid://ctmpo3rnlu2y3" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-12.png" id="53_7ui1i"]
+[ext_resource type="Texture2D" uid="uid://dv4pnrwr1tsjf" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-13.png" id="54_5rt4n"]
+[ext_resource type="Texture2D" uid="uid://dhkyv473wagc3" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-14.png" id="55_1krh4"]
+[ext_resource type="Texture2D" uid="uid://dimsk6x1dw2s" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-15.png" id="56_rxhpv"]
+[ext_resource type="Texture2D" uid="uid://bycsoupt86jjp" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-16.png" id="57_15hk3"]
+[ext_resource type="Texture2D" uid="uid://ci2ap5k4nmmlv" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-17.png" id="58_4w4jr"]
+[ext_resource type="Texture2D" uid="uid://g5o7kr4dtlyt" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-18.png" id="59_i1nx8"]
+[ext_resource type="Texture2D" uid="uid://bn04vv2blbsyh" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-19.png" id="60_sq5yn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2puv6"]
 animations = [{
@@ -216,6 +235,68 @@ animations = [{
 "loop": false,
 "name": &"Stage_1_Buff",
 "speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_fr83q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_pcnbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_sc3b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_o68fm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_sqbub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_o0xxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_eyx0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_i5hrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_547ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_jiuav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_mog5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_7ui1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_5rt4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_1krh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_rxhpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_15hk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_4w4jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_i1nx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_sq5yn")
+}],
+"loop": false,
+"name": &"Throw",
+"speed": 10.0
 }]
 
 [sub_resource type="Animation" id="Animation_gcrxe"]
@@ -334,6 +415,36 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 
+[sub_resource type="Animation" id="Animation_bkj85"]
+resource_name = "Throw"
+length = 1.58334
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1, 1.08333, 1.16667, 1.25, 1.33333, 1.41667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Throw"]
+}
+
 [sub_resource type="Animation" id="Animation_2gtrr"]
 resource_name = "idle"
 length = 0.83335
@@ -370,6 +481,7 @@ _data = {
 "Kicks": SubResource("Animation_hlv15"),
 "RESET": SubResource("Animation_10nlo"),
 "Spins": SubResource("Animation_y4d6l"),
+"Throw": SubResource("Animation_bkj85"),
 "idle": SubResource("Animation_2gtrr")
 }
 
@@ -413,6 +525,9 @@ states/idle/node = SubResource("AnimationNodeAnimation_fope2")
 states/idle/position = Vector2(344, 82)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_u0yac")]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nw3vd"]
+animation = &"Throw"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rj4b0"]
 animation = &"idle"
 
@@ -449,6 +564,19 @@ break_loop_at_end = true
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xgr8x"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"THROW"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8k7hh"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_oqbrf"]
 states/BlendSpace1D/node = SubResource("AnimationNodeBlendSpace1D_abx6s")
 states/BlendSpace1D/position = Vector2(369, 293)
@@ -462,15 +590,17 @@ states/Spins/position = Vector2(564, 120)
 states/Start/position = Vector2(122, 101)
 states/StateMachine/node = SubResource("AnimationNodeStateMachine_qv7tn")
 states/StateMachine/position = Vector2(557, 536.933)
+states/Throw/node = SubResource("AnimationNodeAnimation_nw3vd")
+states/Throw/position = Vector2(265, 223.933)
 states/idle/node = SubResource("AnimationNodeAnimation_rj4b0")
-states/idle/position = Vector2(322, 120)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "idle", "Spins", SubResource("AnimationNodeStateMachineTransition_64rtj"), "Buff1", "idle", SubResource("AnimationNodeStateMachineTransition_7wpfe"), "idle", "Buff1", SubResource("AnimationNodeStateMachineTransition_lk75y"), "Spins", "Kicks", SubResource("AnimationNodeStateMachineTransition_vrt1w"), "Kicks", "Spins", SubResource("AnimationNodeStateMachineTransition_7h37o")]
-graph_offset = Vector2(-139, -65.0672)
+states/idle/position = Vector2(307, 112)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "idle", "Spins", SubResource("AnimationNodeStateMachineTransition_64rtj"), "Buff1", "idle", SubResource("AnimationNodeStateMachineTransition_7wpfe"), "idle", "Buff1", SubResource("AnimationNodeStateMachineTransition_lk75y"), "Spins", "Kicks", SubResource("AnimationNodeStateMachineTransition_vrt1w"), "Kicks", "Spins", SubResource("AnimationNodeStateMachineTransition_7h37o"), "idle", "Throw", SubResource("AnimationNodeStateMachineTransition_xgr8x"), "Throw", "idle", SubResource("AnimationNodeStateMachineTransition_8k7hh")]
+graph_offset = Vector2(-266, -13.0672)
 
 [node name="ClownTb" type="Node2D"]
 position = Vector2(874, 512)
 script = ExtResource("21_rxlsl")
-skill_1_name = "Twirl..."
+skill_1_name = "Throw!"
 skill_1_tempo = 9
 skill_1_power = 35
 skill_2_name = "Breathe in! Breathe Out!"
@@ -502,12 +632,12 @@ libraries = {
 autoplay = "idle"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-reset_on_save = false
 tree_root = SubResource("AnimationNodeStateMachine_oqbrf")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/BUFF1 = false
 parameters/conditions/KICKS = false
 parameters/conditions/PHASE2 = false
+parameters/conditions/THROW = false
 parameters/BlendSpace1D/blend_position = 0.00168824
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

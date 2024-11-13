@@ -92,9 +92,10 @@ collision_mask = 0
 sprite_frames = SubResource("SpriteFrames_i0p1m")
 animation = &"!clowndance"
 autoplay = "!clowndance"
-frame_progress = 0.838497
+frame_progress = 0.625638
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-24, 144)
 scale = Vector2(2.28, 2.28)
 shape = SubResource("CircleShape2D_kk6lu")

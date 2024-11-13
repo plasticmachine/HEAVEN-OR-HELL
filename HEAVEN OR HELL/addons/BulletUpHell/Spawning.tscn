@@ -396,7 +396,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"SwanCard",
-"speed": 30.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qyokg"]
@@ -457,11 +457,11 @@ cull_viewport_refresh = 60.0
 [node name="9" type="Area2D" parent="SharedAreas"]
 
 [node name="ShapeManager" type="AnimatedSprite2D" parent="."]
-visible = false
 texture_filter = 3
 scale = Vector2(2, 2)
 sprite_frames = SubResource("1")
-animation = &""
+animation = &"SwanCard"
+frame_progress = 0.799491
 
 [node name="Default" type="CollisionShape2D" parent="ShapeManager"]
 visible = false
