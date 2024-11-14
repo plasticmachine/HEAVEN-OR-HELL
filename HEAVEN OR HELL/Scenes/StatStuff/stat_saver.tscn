@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dtt37exn5ho7k"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/GlobalStatSave.gd" id="1_6rcjp"]
-[ext_resource type="Resource" uid="uid://k76wyjtxbuc2" path="res://Resources/Stats/HellStats.tres" id="2_y0m84"]
-[ext_resource type="Resource" uid="uid://bhhnyq1t1bps7" path="res://Resources/Stats/HeavenStats.tres" id="3_dfyyv"]
-[ext_resource type="Resource" uid="uid://cm0udyybv7q2v" path="res://Resources/Stats/ClownStats.tres" id="4_d4cus"]
+[ext_resource type="Resource" uid="uid://ip2g3cilh7yr" path="res://Resources/Stats/HellStats.tres" id="2_y0m84"]
+[ext_resource type="Resource" uid="uid://bo07j4sndyxh5" path="res://Resources/Stats/HeavenStats.tres" id="3_dfyyv"]
+[ext_resource type="Resource" uid="uid://wr0hbx4qhbhk" path="res://Resources/Stats/ClownStats.tres" id="4_d4cus"]
 
 [node name="StatSaver" type="Node2D"]
 script = ExtResource("1_6rcjp")

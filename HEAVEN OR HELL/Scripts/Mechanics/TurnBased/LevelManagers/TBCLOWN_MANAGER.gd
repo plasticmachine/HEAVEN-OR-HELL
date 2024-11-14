@@ -101,7 +101,28 @@ func _process(delta):
 		YASM.load_scene("res://Scenes/Screens/Main_Menu.tscn")
 	
 
+func sort_ascending(a, b):
+	if a[1] < b[1]:
+		return true
+	return false
 
+func sort_and_randomize_equal_values(arr: Array) -> Array:
+	arr.sort_custom(sort_ascending)
+	var i = 0
+	while i < arr.size():
+		var start = i
+		
+		while i < arr.size() and arr[i][1] == arr[start][1]:
+			i += 1
+		var sub_array = arr.slice(start, i)
+		sub_array.shuffle()
+		arr.insert(start, sub_array)
+	return arr
+
+func sort_descending(a, b):
+	if a[1] > b[1]:
+		return true
+	return false
 func turn_queue_pop_check():
 	var hell_turn_order = hellstats.current_tempo
 	var heaven_turn_order = heavenstats.current_tempo
@@ -111,10 +132,18 @@ func turn_queue_pop_check():
 		3:
 			
 			if turn_queue_amount == turn_pop_amount:
-				var turn_order = [hell_turn_order, heaven_turn_order, clown_turn_order]
-				turn_order.sort
+				var tempo_array = [["hell: ", hell_turn_order], ["heaven: ", heaven_turn_order], ["clown: ", clown_turn_order]]
+				
+				var turn_order = sort_and_randomize_equal_values(tempo_array)
 				print(turn_order)
 				#this is where im going to put the function that actually runs all of the skill functions
+				
+				
+				
+				
+				
+				
+				
 				if (hellstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo > clownstats.current_tempo):
 					#choosing which skill its going to use (hell)
 					match hell_skill_slot:

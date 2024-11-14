@@ -126,7 +126,7 @@ func _on_first_action_committed() -> void:
 #test skill that just randomly does damage to heaven or hell
 func skill_1_effect():
 	var num = [1,2].pick_random()
-	clownstats.convert_tempo(skill_1_tempo)
+	#clownstats.convert_tempo(skill_1_tempo)
 	clownstats.convert_skill_power(skill_1_power)
 	
 	clownTB_animation.set("parameters/conditions/THROW", true)
@@ -146,7 +146,7 @@ func skill_1_effect():
 func skill_2_effect():
 	clownskill = 2
 	var num = [2,2,2].pick_random()
-	clownstats.convert_tempo(skill_2_tempo)
+	#clownstats.convert_tempo(skill_2_tempo)
 	
 	clownTB_animation.set("parameters/conditions/BUFF1", true)
 	
@@ -170,5 +170,5 @@ func skill_2_effect():
 func skill_3_effect():
 	clownskill = 3
 	var rand_target = [1,2]
-	clownstats.convert_tempo(skill_3_tempo)
+	#clownstats.convert_tempo(skill_3_tempo)
 	clownstats.convert_skill_power(skill_3_power)
