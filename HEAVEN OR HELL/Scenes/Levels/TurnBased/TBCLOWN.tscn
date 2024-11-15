@@ -372,7 +372,6 @@ ID_1_hell_skill_name = "Slash!"
 ID_1_hell_tempo = 10
 ID_1_hell_power = 35
 ID_2_hell_skill_name = "Shoot!"
-ID_2_hell_tempo = 4
 ID_2_hell_power = 55
 ID_2_hell_cost_1 = 15
 

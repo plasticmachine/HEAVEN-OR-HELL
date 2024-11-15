@@ -104,20 +104,23 @@ func _process(delta):
 func sort_ascending(a, b):
 	if a[1] < b[1]:
 		return true
-	return false
-
-func sort_and_randomize_equal_values(arr: Array) -> Array:
-	arr.sort_custom(sort_ascending)
-	var i = 0
-	while i < arr.size():
-		var start = i
-		
-		while i < arr.size() and arr[i][1] == arr[start][1]:
-			i += 1
-		var sub_array = arr.slice(start, i)
-		sub_array.shuffle()
-		arr.insert(start, sub_array)
-	return arr
+	if a[1] > b[1]:
+		return false
+	if a[1] == b[1]:
+		return randf() < .5
+#func sort_and_randomize_equal_values(arr: Array) -> Array:
+	#arr.sort_custom(sort_ascending)
+	#var i = 0
+	#while i < arr.size():
+		#var start = i
+		#
+		#while i < arr.size() and arr[i][1] == arr[start][1]:
+			#i += 1
+		#var sub_array = arr.slice(start, i)
+		#sub_array.shuffle()
+		#arr.clear()
+		#arr.insert(start, sub_array)
+	#return arr
 
 func sort_descending(a, b):
 	if a[1] > b[1]:
@@ -132,16 +135,16 @@ func turn_queue_pop_check():
 		3:
 			
 			if turn_queue_amount == turn_pop_amount:
-				var tempo_array = [["hell: ", hell_turn_order], ["heaven: ", heaven_turn_order], ["clown: ", clown_turn_order]]
+				var tempo_array = [["hell: ", hell_turn_order], ["heaven: ", heaven_turn_order], ["enemy: ", clown_turn_order]]
 				
-				var turn_order = sort_and_randomize_equal_values(tempo_array)
-				print(turn_order)
+				tempo_array.sort_custom(sort_ascending)
+				print(tempo_array)
 				#this is where im going to put the function that actually runs all of the skill functions
 				
 				
 				
-				
-				
+				if tempo_array.back() == [["hell: ", hell_turn_order]]:
+					print("this is working!")
 				
 				
 				if (hellstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo > clownstats.current_tempo):
