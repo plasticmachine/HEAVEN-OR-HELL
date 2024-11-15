@@ -146,346 +146,424 @@ func turn_queue_pop_check():
 				
 				if "hell: " in tempo_array[0][0] && "heaven: " in tempo_array[2][0]:
 					print("Hell / Clown / Heaven ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
+					match hell_skill_slot:
+						1: hell_action_button_1.skill_effect()
+						2: hell_action_button_2.skill_effect()
+						3: hell_action_button_3.skill_effect()
+						4: hell_action_button_4.skill_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#choosing which skill its going to use (heaven)
+					match ClownTB.clownskill:
+						1: ClownTB.skill_1_effect()
+						2: ClownTB.skill_2_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					match heaven_skill_slot:
+						1: heaven_action_button_1.skill_effect()
+						2: heaven_action_button_2.skill_effect()
+						3: heaven_action_button_3.skill_effect()
+						4: heaven_action_button_4.skill_effect()
 				if "hell: " in tempo_array[0][0] && "enemy: " in tempo_array[2][0]:
 					print("Hell / Heaven / Clown ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
+					match hell_skill_slot:
+						1: hell_action_button_1.skill_effect()
+						2: hell_action_button_2.skill_effect()
+						3: hell_action_button_3.skill_effect()
+						4: hell_action_button_4.skill_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#choosing which skill its going to use (heaven)
+					match heaven_skill_slot:
+						1: heaven_action_button_1.skill_effect()
+						2: heaven_action_button_2.skill_effect()
+						3: heaven_action_button_3.skill_effect()
+						4: heaven_action_button_4.skill_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					match ClownTB.clownskill:
+						1: ClownTB.skill_1_effect()
+						2: ClownTB.skill_2_effect()
 				if "heaven: " in tempo_array[0][0] && "hell: " in tempo_array[2][0]:
 					print("Heaven / Clown / Hell ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
 				if "heaven: " in tempo_array[0][0] && "enemy: " in tempo_array[2][0]:
 					print("Heaven / Hell / Clown ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
+					match heaven_skill_slot:
+						1: heaven_action_button_1.skill_effect()
+						2: heaven_action_button_2.skill_effect()
+						3: heaven_action_button_3.skill_effect()
+						4: heaven_action_button_4.skill_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					match hell_skill_slot:
+						1: hell_action_button_1.skill_effect()
+						2: hell_action_button_2.skill_effect()
+						3: hell_action_button_3.skill_effect()
+						4: hell_action_button_4.skill_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					match ClownTB.clownskill:
+						1: ClownTB.skill_1_effect()
+						2: ClownTB.skill_2_effect()
 				if "enemy: " in tempo_array[0][0] && "heaven: " in tempo_array[2][0]:
 					print("Clown / Hell / Heaven ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
+					match ClownTB.clownskill:
+						1: ClownTB.skill_1_effect()
+						2: ClownTB.skill_2_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					match hell_skill_slot:
+						1: hell_action_button_1.skill_effect()
+						2: hell_action_button_2.skill_effect()
+						3: hell_action_button_3.skill_effect()
+						4: hell_action_button_4.skill_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					match heaven_skill_slot:
+						1: heaven_action_button_1.skill_effect()
+						2: heaven_action_button_2.skill_effect()
+						3: heaven_action_button_3.skill_effect()
+						4: heaven_action_button_4.skill_effect()
 				if "enemy: " in tempo_array[0][0] && "hell: " in tempo_array[2][0]:
 					print("Clown / Heaven / Hell ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
+					match ClownTB.clownskill:
+						1: ClownTB.skill_1_effect()
+						2: ClownTB.skill_2_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					match heaven_skill_slot:
+						1: heaven_action_button_1.skill_effect()
+						2: heaven_action_button_2.skill_effect()
+						3: heaven_action_button_3.skill_effect()
+						4: heaven_action_button_4.skill_effect()
+					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					match hell_skill_slot:
+						1: hell_action_button_1.skill_effect()
+						2: hell_action_button_2.skill_effect()
+						3: hell_action_button_3.skill_effect()
+						4: hell_action_button_4.skill_effect()
 			
 				
 				
-				if (hellstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo > clownstats.current_tempo):
-					#choosing which skill its going to use (hell)
-					match hell_skill_slot:
-						1: hell_action_button_1.skill_effect()
-						2: hell_action_button_2.skill_effect()
-						3: hell_action_button_3.skill_effect()
-						4: hell_action_button_4.skill_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					#choosing which skill its going to use (heaven)
-					match heaven_skill_slot:
-						1: heaven_action_button_1.skill_effect()
-						2: heaven_action_button_2.skill_effect()
-						3: heaven_action_button_3.skill_effect()
-						4: heaven_action_button_4.skill_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					match ClownTB.clownskill:
-						1: ClownTB.skill_1_effect()
-						2: ClownTB.skill_2_effect()
-				if (hellstats.current_tempo > clownstats.current_tempo) && (clownstats.current_tempo > heavenstats.current_tempo):
-					#choosing which skill its going to use (hell)
-					match hell_skill_slot:
-						1: hell_action_button_1.skill_effect()
-						2: hell_action_button_2.skill_effect()
-						3: hell_action_button_3.skill_effect()
-						4: hell_action_button_4.skill_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					#choosing which skill its going to use (heaven)
-					match ClownTB.clownskill:
-						1: ClownTB.skill_1_effect()
-						2: ClownTB.skill_2_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					match heaven_skill_slot:
-						1: heaven_action_button_1.skill_effect()
-						2: heaven_action_button_2.skill_effect()
-						3: heaven_action_button_3.skill_effect()
-						4: heaven_action_button_4.skill_effect()
-
-				if (heavenstats.current_tempo > hellstats.current_tempo) &&  (hellstats.current_tempo > clownstats.current_tempo):
-					match heaven_skill_slot:
-						1: heaven_action_button_1.skill_effect()
-						2: heaven_action_button_2.skill_effect()
-						3: heaven_action_button_3.skill_effect()
-						4: heaven_action_button_4.skill_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					match hell_skill_slot:
-						1: hell_action_button_1.skill_effect()
-						2: hell_action_button_2.skill_effect()
-						3: hell_action_button_3.skill_effect()
-						4: hell_action_button_4.skill_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					match ClownTB.clownskill:
-						1: ClownTB.skill_1_effect()
-						2: ClownTB.skill_2_effect()
-				if (heavenstats.current_tempo > clownstats.current_tempo) && (clownstats.current_tempo > hellstats.current_tempo):
-					match heaven_skill_slot:
-						1: heaven_action_button_1.skill_effect()
-						2: heaven_action_button_2.skill_effect()
-						3: heaven_action_button_3.skill_effect()
-						4: heaven_action_button_4.skill_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					match ClownTB.clownskill:
-						1: ClownTB.skill_1_effect()
-						2: ClownTB.skill_2_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					match hell_skill_slot:
-						1: hell_action_button_1.skill_effect()
-						2: hell_action_button_2.skill_effect()
-						3: hell_action_button_3.skill_effect()
-						4: hell_action_button_4.skill_effect()
-
-				if (clownstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo > hellstats.current_tempo):
-					match ClownTB.clownskill:
-						1: ClownTB.skill_1_effect()
-						2: ClownTB.skill_2_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					match heaven_skill_slot:
-						1: heaven_action_button_1.skill_effect()
-						2: heaven_action_button_2.skill_effect()
-						3: heaven_action_button_3.skill_effect()
-						4: heaven_action_button_4.skill_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					match hell_skill_slot:
-						1: hell_action_button_1.skill_effect()
-						2: hell_action_button_2.skill_effect()
-						3: hell_action_button_3.skill_effect()
-						4: hell_action_button_4.skill_effect()
-				if (clownstats.current_tempo > hellstats.current_tempo) && (hellstats.current_tempo > heavenstats.current_tempo):
-					match ClownTB.clownskill:
-						1: ClownTB.skill_1_effect()
-						2: ClownTB.skill_2_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					match hell_skill_slot:
-						1: hell_action_button_1.skill_effect()
-						2: hell_action_button_2.skill_effect()
-						3: hell_action_button_3.skill_effect()
-						4: hell_action_button_4.skill_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
-					match heaven_skill_slot:
-						1: heaven_action_button_1.skill_effect()
-						2: heaven_action_button_2.skill_effect()
-						3: heaven_action_button_3.skill_effect()
-						4: heaven_action_button_4.skill_effect()
-
-				if (heavenstats.current_tempo == hellstats.current_tempo) && (hellstats.current_tempo == clownstats.current_tempo):
-					print_debug("equal tempo detected: rolling a dice...")
-					var rand_num = [1,2,3].pick_random()
-					if rand_num == 1:
-						print_debug("rolling... done! heaven goes first")
-						var num = [1,2].pick_random()
-						match heaven_skill_slot:
-							1: heaven_action_button_1.skill_effect()
-							2: heaven_action_button_2.skill_effect()
-							3: heaven_action_button_3.skill_effect()
-							4: heaven_action_button_4.skill_effect()
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						if num == 1:
-							match hell_skill_slot:
-								1: hell_action_button_1.skill_effect()
-								2: hell_action_button_2.skill_effect()
-								3: hell_action_button_3.skill_effect()
-								4: hell_action_button_4.skill_effect()
-							await get_tree().create_timer(wait_for_next_turn_time).timeout
-							match ClownTB.clownskill:
-								1: ClownTB.skill_1_effect()
-								2: ClownTB.skill_2_effect()
-						if num == 2:
-							print_debug("rolling... done! heaven goes first [HEAVEN / BOSS / HELL]")
-							match ClownTB.clownskill:
-								1: ClownTB.skill_1_effect()
-								2: ClownTB.skill_2_effect()
-							await get_tree().create_timer(wait_for_next_turn_time).timeout
-							match hell_skill_slot:
-								1: hell_action_button_1.skill_effect()
-								2: hell_action_button_2.skill_effect()
-								3: hell_action_button_3.skill_effect()
-								4: hell_action_button_4.skill_effect()
-					if rand_num == 2:
-						var num = [1,2].pick_random()
-						print_debug("rolling... done! hell goes first")
-						match hell_skill_slot:
-							1: hell_action_button_1.skill_effect()
-							2: hell_action_button_2.skill_effect()
-							3: hell_action_button_3.skill_effect()
-							4: hell_action_button_4.skill_effect()
-						if num == 1:
-							match heaven_skill_slot:
-								1: heaven_action_button_1.skill_effect()
-								2: heaven_action_button_2.skill_effect()
-								3: heaven_action_button_3.skill_effect()
-								4: heaven_action_button_4.skill_effect()
-							await get_tree().create_timer(wait_for_next_turn_time).timeout
-							match ClownTB.clownskill:
-								1: ClownTB.skill_1_effect()
-								2: ClownTB.skill_2_effect()
-						if num == 2:
-							match ClownTB.clownskill:
-								1: ClownTB.skill_1_effect()
-								2: ClownTB.skill_2_effect()
-							await get_tree().create_timer(wait_for_next_turn_time).timeout
-							match heaven_skill_slot:
-								1: heaven_action_button_1.skill_effect()
-								2: heaven_action_button_2.skill_effect()
-								3: heaven_action_button_3.skill_effect()
-								4: heaven_action_button_4.skill_effect()
-					if rand_num == 3:
-						print_debug("rolling... done! boss goes first")
-						var num = [1,2].pick_random()
-						match ClownTB.clownskill:
-								1: ClownTB.skill_1_effect()
-								2: ClownTB.skill_2_effect()
-						if num == 1:
-							match hell_skill_slot:
-								1: hell_action_button_1.skill_effect()
-								2: hell_action_button_2.skill_effect()
-								3: hell_action_button_3.skill_effect()
-								4: hell_action_button_4.skill_effect()
-							await get_tree().create_timer(wait_for_next_turn_time).timeout
-							match heaven_skill_slot:
-								1: heaven_action_button_1.skill_effect()
-								2: heaven_action_button_2.skill_effect()
-								3: heaven_action_button_3.skill_effect()
-								4: heaven_action_button_4.skill_effect()
-						if num == 2:
-							match heaven_skill_slot:
-								1: heaven_action_button_1.skill_effect()
-								2: heaven_action_button_2.skill_effect()
-								3: heaven_action_button_3.skill_effect()
-								4: heaven_action_button_4.skill_effect()
-							await get_tree().create_timer(wait_for_next_turn_time).timeout
-							match hell_skill_slot:
-								1: hell_action_button_1.skill_effect()
-								2: hell_action_button_2.skill_effect()
-								3: hell_action_button_3.skill_effect()
-								4: hell_action_button_4.skill_effect()
-				if (heavenstats.current_tempo == hellstats.current_tempo) && (hellstats.current_tempo > clownstats.current_tempo):
-					print_debug("equal tempo detected: rolling a dice...")
-					var rand_num = [1,2].pick_random()
-					
-					if rand_num == 1:
-						match hell_skill_slot:
-							1: hell_action_button_1.skill_effect()
-							2: hell_action_button_2.skill_effect()
-							3: hell_action_button_3.skill_effect()
-							4: hell_action_button_4.skill_effect()
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match heaven_skill_slot:
-							1: heaven_action_button_1.skill_effect()
-							2: heaven_action_button_2.skill_effect()
-							3: heaven_action_button_3.skill_effect()
-							4: heaven_action_button_4.skill_effect()
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match ClownTB.clownskill:
-							1: ClownTB.skill_1_effect()
-							2: ClownTB.skill_2_effect()
-					if rand_num == 2:
-						match heaven_skill_slot:
-							1: heaven_action_button_1.skill_effect()
-							2: heaven_action_button_2.skill_effect()
-							3: heaven_action_button_3.skill_effect()
-							4: heaven_action_button_4.skill_effect()
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match hell_skill_slot:
-							1: hell_action_button_1.skill_effect()
-							2: hell_action_button_2.skill_effect()
-							3: hell_action_button_3.skill_effect()
-							4: hell_action_button_4.skill_effect()
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match ClownTB.clownskill:
-							1: ClownTB.skill_1_effect()
-							2: ClownTB.skill_2_effect()
-				if (heavenstats.current_tempo > hellstats.current_tempo) && (hellstats.current_tempo == clownstats.current_tempo):
-					print_debug("equal tempo detected: rolling a dice...")
-					var rand_num = [1,2].pick_random()
-					match heaven_skill_slot:
-						1: heaven_action_button_1.skill_effect()
-						2: heaven_action_button_2.skill_effect()
-						3: heaven_action_button_3.skill_effect()
-						4: heaven_action_button_4.skill_effect()
-					if rand_num == 1:
-						print_debug("rolling... done! heaven goes first [HEAVEN / HELL / BOSS]")
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match hell_skill_slot:
-							1: hell_action_button_1.skill_effect()
-							2: hell_action_button_2.skill_effect()
-							3: hell_action_button_3.skill_effect()
-							4: hell_action_button_4.skill_effect()
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match ClownTB.clownskill:
-							1: ClownTB.skill_1_effect()
-							2: ClownTB.skill_2_effect()
-					if rand_num == 2:
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match ClownTB.clownskill:
-							1: ClownTB.skill_1_effect()
-							2: ClownTB.skill_2_effect()
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match hell_skill_slot:
-							1: hell_action_button_1.skill_effect()
-							2: hell_action_button_2.skill_effect()
-							3: hell_action_button_3.skill_effect()
-							4: hell_action_button_4.skill_effect()
-				if (hellstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo == clownstats.current_tempo):
-					print_debug("equal tempo detected: rolling a dice...")
-					var rand_num = [1,2].pick_random()
-					match hell_skill_slot:
-						1: hell_action_button_1.skill_effect()
-						2: hell_action_button_2.skill_effect()
-						3: hell_action_button_3.skill_effect()
-						4: hell_action_button_4.skill_effect()
-					if rand_num == 1:
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match heaven_skill_slot:
-							1: heaven_action_button_1.skill_effect()
-							2: heaven_action_button_2.skill_effect()
-							3: heaven_action_button_3.skill_effect()
-							4: heaven_action_button_4.skill_effect()
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match ClownTB.clownskill:
-							1: ClownTB.skill_1_effect()
-							2: ClownTB.skill_2_effect()
-							
-					if rand_num == 2:
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match ClownTB.clownskill:
-							1: ClownTB.skill_1_effect()
-							2: ClownTB.skill_2_effect()
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match heaven_skill_slot:
-							1: heaven_action_button_1.skill_effect()
-							2: heaven_action_button_2.skill_effect()
-							3: heaven_action_button_3.skill_effect()
-							4: heaven_action_button_4.skill_effect()
-				if (clownstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo == hellstats.current_tempo):
-					print_debug("equal tempo detected: rolling a dice...")
-					var rand_num = [1,2].pick_random()
-					print_debug(rand_num)
-					match ClownTB.clownskill:
-						1: ClownTB.skill_1_effect()
-						2: ClownTB.skill_2_effect()
-					if rand_num == 1:
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match heaven_skill_slot:
-							1: heaven_action_button_1.skill_effect()
-							2: heaven_action_button_2.skill_effect()
-							3: heaven_action_button_3.skill_effect()
-							4: heaven_action_button_4.skill_effect()
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match hell_skill_slot:
-							1: hell_action_button_1.skill_effect()
-							2: hell_action_button_2.skill_effect()
-							3: hell_action_button_3.skill_effect()
-							4: hell_action_button_4.skill_effect()
-						print_debug("turn order was BOSS / HEAVEN / HELL")
-					if rand_num == 2:
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match hell_skill_slot:
-							1: hell_action_button_1.skill_effect()
-							2: hell_action_button_2.skill_effect()
-							3: hell_action_button_3.skill_effect()
-							4: hell_action_button_4.skill_effect()
-						await get_tree().create_timer(wait_for_next_turn_time).timeout
-						match heaven_skill_slot:
-							1: heaven_action_button_1.skill_effect()
-							2: heaven_action_button_2.skill_effect()
-							3: heaven_action_button_3.skill_effect()
-							4: heaven_action_button_4.skill_effect()
-						print_debug("turn order was BOSS / HELL / HEAVEN")
+				#if (hellstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo > clownstats.current_tempo):
+					##choosing which skill its going to use (hell)
+					#match hell_skill_slot:
+						#1: hell_action_button_1.skill_effect()
+						#2: hell_action_button_2.skill_effect()
+						#3: hell_action_button_3.skill_effect()
+						#4: hell_action_button_4.skill_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					##choosing which skill its going to use (heaven)
+					#match heaven_skill_slot:
+						#1: heaven_action_button_1.skill_effect()
+						#2: heaven_action_button_2.skill_effect()
+						#3: heaven_action_button_3.skill_effect()
+						#4: heaven_action_button_4.skill_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#match ClownTB.clownskill:
+						#1: ClownTB.skill_1_effect()
+						#2: ClownTB.skill_2_effect()
+				#if (hellstats.current_tempo > clownstats.current_tempo) && (clownstats.current_tempo > heavenstats.current_tempo):
+					##choosing which skill its going to use (hell)
+					#match hell_skill_slot:
+						#1: hell_action_button_1.skill_effect()
+						#2: hell_action_button_2.skill_effect()
+						#3: hell_action_button_3.skill_effect()
+						#4: hell_action_button_4.skill_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					##choosing which skill its going to use (heaven)
+					#match ClownTB.clownskill:
+						#1: ClownTB.skill_1_effect()
+						#2: ClownTB.skill_2_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#match heaven_skill_slot:
+						#1: heaven_action_button_1.skill_effect()
+						#2: heaven_action_button_2.skill_effect()
+						#3: heaven_action_button_3.skill_effect()
+						#4: heaven_action_button_4.skill_effect()
+#
+				#if (heavenstats.current_tempo > hellstats.current_tempo) &&  (hellstats.current_tempo > clownstats.current_tempo):
+					#match heaven_skill_slot:
+						#1: heaven_action_button_1.skill_effect()
+						#2: heaven_action_button_2.skill_effect()
+						#3: heaven_action_button_3.skill_effect()
+						#4: heaven_action_button_4.skill_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#match hell_skill_slot:
+						#1: hell_action_button_1.skill_effect()
+						#2: hell_action_button_2.skill_effect()
+						#3: hell_action_button_3.skill_effect()
+						#4: hell_action_button_4.skill_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#match ClownTB.clownskill:
+						#1: ClownTB.skill_1_effect()
+						#2: ClownTB.skill_2_effect()
+				#if (heavenstats.current_tempo > clownstats.current_tempo) && (clownstats.current_tempo > hellstats.current_tempo):
+					#match heaven_skill_slot:
+						#1: heaven_action_button_1.skill_effect()
+						#2: heaven_action_button_2.skill_effect()
+						#3: heaven_action_button_3.skill_effect()
+						#4: heaven_action_button_4.skill_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#match ClownTB.clownskill:
+						#1: ClownTB.skill_1_effect()
+						#2: ClownTB.skill_2_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#match hell_skill_slot:
+						#1: hell_action_button_1.skill_effect()
+						#2: hell_action_button_2.skill_effect()
+						#3: hell_action_button_3.skill_effect()
+						#4: hell_action_button_4.skill_effect()
+#
+				#if (clownstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo > hellstats.current_tempo):
+					#match ClownTB.clownskill:
+						#1: ClownTB.skill_1_effect()
+						#2: ClownTB.skill_2_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#match heaven_skill_slot:
+						#1: heaven_action_button_1.skill_effect()
+						#2: heaven_action_button_2.skill_effect()
+						#3: heaven_action_button_3.skill_effect()
+						#4: heaven_action_button_4.skill_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#match hell_skill_slot:
+						#1: hell_action_button_1.skill_effect()
+						#2: hell_action_button_2.skill_effect()
+						#3: hell_action_button_3.skill_effect()
+						#4: hell_action_button_4.skill_effect()
+				#if (clownstats.current_tempo > hellstats.current_tempo) && (hellstats.current_tempo > heavenstats.current_tempo):
+					#match ClownTB.clownskill:
+						#1: ClownTB.skill_1_effect()
+						#2: ClownTB.skill_2_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#match hell_skill_slot:
+						#1: hell_action_button_1.skill_effect()
+						#2: hell_action_button_2.skill_effect()
+						#3: hell_action_button_3.skill_effect()
+						#4: hell_action_button_4.skill_effect()
+					#await get_tree().create_timer(wait_for_next_turn_time).timeout
+					#match heaven_skill_slot:
+						#1: heaven_action_button_1.skill_effect()
+						#2: heaven_action_button_2.skill_effect()
+						#3: heaven_action_button_3.skill_effect()
+						#4: heaven_action_button_4.skill_effect()
+#
+				#if (heavenstats.current_tempo == hellstats.current_tempo) && (hellstats.current_tempo == clownstats.current_tempo):
+					#print_debug("equal tempo detected: rolling a dice...")
+					#var rand_num = [1,2,3].pick_random()
+					#if rand_num == 1:
+						#print_debug("rolling... done! heaven goes first")
+						#var num = [1,2].pick_random()
+						#match heaven_skill_slot:
+							#1: heaven_action_button_1.skill_effect()
+							#2: heaven_action_button_2.skill_effect()
+							#3: heaven_action_button_3.skill_effect()
+							#4: heaven_action_button_4.skill_effect()
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#if num == 1:
+							#match hell_skill_slot:
+								#1: hell_action_button_1.skill_effect()
+								#2: hell_action_button_2.skill_effect()
+								#3: hell_action_button_3.skill_effect()
+								#4: hell_action_button_4.skill_effect()
+							#await get_tree().create_timer(wait_for_next_turn_time).timeout
+							#match ClownTB.clownskill:
+								#1: ClownTB.skill_1_effect()
+								#2: ClownTB.skill_2_effect()
+						#if num == 2:
+							#print_debug("rolling... done! heaven goes first [HEAVEN / BOSS / HELL]")
+							#match ClownTB.clownskill:
+								#1: ClownTB.skill_1_effect()
+								#2: ClownTB.skill_2_effect()
+							#await get_tree().create_timer(wait_for_next_turn_time).timeout
+							#match hell_skill_slot:
+								#1: hell_action_button_1.skill_effect()
+								#2: hell_action_button_2.skill_effect()
+								#3: hell_action_button_3.skill_effect()
+								#4: hell_action_button_4.skill_effect()
+					#if rand_num == 2:
+						#var num = [1,2].pick_random()
+						#print_debug("rolling... done! hell goes first")
+						#match hell_skill_slot:
+							#1: hell_action_button_1.skill_effect()
+							#2: hell_action_button_2.skill_effect()
+							#3: hell_action_button_3.skill_effect()
+							#4: hell_action_button_4.skill_effect()
+						#if num == 1:
+							#match heaven_skill_slot:
+								#1: heaven_action_button_1.skill_effect()
+								#2: heaven_action_button_2.skill_effect()
+								#3: heaven_action_button_3.skill_effect()
+								#4: heaven_action_button_4.skill_effect()
+							#await get_tree().create_timer(wait_for_next_turn_time).timeout
+							#match ClownTB.clownskill:
+								#1: ClownTB.skill_1_effect()
+								#2: ClownTB.skill_2_effect()
+						#if num == 2:
+							#match ClownTB.clownskill:
+								#1: ClownTB.skill_1_effect()
+								#2: ClownTB.skill_2_effect()
+							#await get_tree().create_timer(wait_for_next_turn_time).timeout
+							#match heaven_skill_slot:
+								#1: heaven_action_button_1.skill_effect()
+								#2: heaven_action_button_2.skill_effect()
+								#3: heaven_action_button_3.skill_effect()
+								#4: heaven_action_button_4.skill_effect()
+					#if rand_num == 3:
+						#print_debug("rolling... done! boss goes first")
+						#var num = [1,2].pick_random()
+						#match ClownTB.clownskill:
+								#1: ClownTB.skill_1_effect()
+								#2: ClownTB.skill_2_effect()
+						#if num == 1:
+							#match hell_skill_slot:
+								#1: hell_action_button_1.skill_effect()
+								#2: hell_action_button_2.skill_effect()
+								#3: hell_action_button_3.skill_effect()
+								#4: hell_action_button_4.skill_effect()
+							#await get_tree().create_timer(wait_for_next_turn_time).timeout
+							#match heaven_skill_slot:
+								#1: heaven_action_button_1.skill_effect()
+								#2: heaven_action_button_2.skill_effect()
+								#3: heaven_action_button_3.skill_effect()
+								#4: heaven_action_button_4.skill_effect()
+						#if num == 2:
+							#match heaven_skill_slot:
+								#1: heaven_action_button_1.skill_effect()
+								#2: heaven_action_button_2.skill_effect()
+								#3: heaven_action_button_3.skill_effect()
+								#4: heaven_action_button_4.skill_effect()
+							#await get_tree().create_timer(wait_for_next_turn_time).timeout
+							#match hell_skill_slot:
+								#1: hell_action_button_1.skill_effect()
+								#2: hell_action_button_2.skill_effect()
+								#3: hell_action_button_3.skill_effect()
+								#4: hell_action_button_4.skill_effect()
+				#if (heavenstats.current_tempo == hellstats.current_tempo) && (hellstats.current_tempo > clownstats.current_tempo):
+					#print_debug("equal tempo detected: rolling a dice...")
+					#var rand_num = [1,2].pick_random()
+					#
+					#if rand_num == 1:
+						#match hell_skill_slot:
+							#1: hell_action_button_1.skill_effect()
+							#2: hell_action_button_2.skill_effect()
+							#3: hell_action_button_3.skill_effect()
+							#4: hell_action_button_4.skill_effect()
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match heaven_skill_slot:
+							#1: heaven_action_button_1.skill_effect()
+							#2: heaven_action_button_2.skill_effect()
+							#3: heaven_action_button_3.skill_effect()
+							#4: heaven_action_button_4.skill_effect()
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match ClownTB.clownskill:
+							#1: ClownTB.skill_1_effect()
+							#2: ClownTB.skill_2_effect()
+					#if rand_num == 2:
+						#match heaven_skill_slot:
+							#1: heaven_action_button_1.skill_effect()
+							#2: heaven_action_button_2.skill_effect()
+							#3: heaven_action_button_3.skill_effect()
+							#4: heaven_action_button_4.skill_effect()
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match hell_skill_slot:
+							#1: hell_action_button_1.skill_effect()
+							#2: hell_action_button_2.skill_effect()
+							#3: hell_action_button_3.skill_effect()
+							#4: hell_action_button_4.skill_effect()
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match ClownTB.clownskill:
+							#1: ClownTB.skill_1_effect()
+							#2: ClownTB.skill_2_effect()
+				#if (heavenstats.current_tempo > hellstats.current_tempo) && (hellstats.current_tempo == clownstats.current_tempo):
+					#print_debug("equal tempo detected: rolling a dice...")
+					#var rand_num = [1,2].pick_random()
+					#match heaven_skill_slot:
+						#1: heaven_action_button_1.skill_effect()
+						#2: heaven_action_button_2.skill_effect()
+						#3: heaven_action_button_3.skill_effect()
+						#4: heaven_action_button_4.skill_effect()
+					#if rand_num == 1:
+						#print_debug("rolling... done! heaven goes first [HEAVEN / HELL / BOSS]")
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match hell_skill_slot:
+							#1: hell_action_button_1.skill_effect()
+							#2: hell_action_button_2.skill_effect()
+							#3: hell_action_button_3.skill_effect()
+							#4: hell_action_button_4.skill_effect()
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match ClownTB.clownskill:
+							#1: ClownTB.skill_1_effect()
+							#2: ClownTB.skill_2_effect()
+					#if rand_num == 2:
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match ClownTB.clownskill:
+							#1: ClownTB.skill_1_effect()
+							#2: ClownTB.skill_2_effect()
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match hell_skill_slot:
+							#1: hell_action_button_1.skill_effect()
+							#2: hell_action_button_2.skill_effect()
+							#3: hell_action_button_3.skill_effect()
+							#4: hell_action_button_4.skill_effect()
+				#if (hellstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo == clownstats.current_tempo):
+					#print_debug("equal tempo detected: rolling a dice...")
+					#var rand_num = [1,2].pick_random()
+					#match hell_skill_slot:
+						#1: hell_action_button_1.skill_effect()
+						#2: hell_action_button_2.skill_effect()
+						#3: hell_action_button_3.skill_effect()
+						#4: hell_action_button_4.skill_effect()
+					#if rand_num == 1:
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match heaven_skill_slot:
+							#1: heaven_action_button_1.skill_effect()
+							#2: heaven_action_button_2.skill_effect()
+							#3: heaven_action_button_3.skill_effect()
+							#4: heaven_action_button_4.skill_effect()
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match ClownTB.clownskill:
+							#1: ClownTB.skill_1_effect()
+							#2: ClownTB.skill_2_effect()
+							#
+					#if rand_num == 2:
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match ClownTB.clownskill:
+							#1: ClownTB.skill_1_effect()
+							#2: ClownTB.skill_2_effect()
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match heaven_skill_slot:
+							#1: heaven_action_button_1.skill_effect()
+							#2: heaven_action_button_2.skill_effect()
+							#3: heaven_action_button_3.skill_effect()
+							#4: heaven_action_button_4.skill_effect()
+				#if (clownstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo == hellstats.current_tempo):
+					#print_debug("equal tempo detected: rolling a dice...")
+					#var rand_num = [1,2].pick_random()
+					#print_debug(rand_num)
+					#match ClownTB.clownskill:
+						#1: ClownTB.skill_1_effect()
+						#2: ClownTB.skill_2_effect()
+					#if rand_num == 1:
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match heaven_skill_slot:
+							#1: heaven_action_button_1.skill_effect()
+							#2: heaven_action_button_2.skill_effect()
+							#3: heaven_action_button_3.skill_effect()
+							#4: heaven_action_button_4.skill_effect()
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match hell_skill_slot:
+							#1: hell_action_button_1.skill_effect()
+							#2: hell_action_button_2.skill_effect()
+							#3: hell_action_button_3.skill_effect()
+							#4: hell_action_button_4.skill_effect()
+						#print_debug("turn order was BOSS / HEAVEN / HELL")
+					#if rand_num == 2:
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match hell_skill_slot:
+							#1: hell_action_button_1.skill_effect()
+							#2: hell_action_button_2.skill_effect()
+							#3: hell_action_button_3.skill_effect()
+							#4: hell_action_button_4.skill_effect()
+						#await get_tree().create_timer(wait_for_next_turn_time).timeout
+						#match heaven_skill_slot:
+							#1: heaven_action_button_1.skill_effect()
+							#2: heaven_action_button_2.skill_effect()
+							#3: heaven_action_button_3.skill_effect()
+							#4: heaven_action_button_4.skill_effect()
+						#print_debug("turn order was BOSS / HELL / HEAVEN")
+				await get_tree().create_timer(wait_for_next_turn_time).timeout
 				turn_queue_amount = 0
 				turn_count += 1
 				print_debug("turn queue cleared!")

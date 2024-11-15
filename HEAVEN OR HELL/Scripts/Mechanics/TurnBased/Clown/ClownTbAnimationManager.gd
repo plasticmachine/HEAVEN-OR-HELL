@@ -66,7 +66,7 @@ func _on_first_action_committed() -> void:
 	
 	if turnbased_manager.turn_queue_amount == 1 and heavenstats.current_heart > 0 and hellstats.current_heart > 0:
 		if clownstats.current_heart >= phase_1_threshold:
-			var num = [2,2].pick_random()
+			var num = [1,2].pick_random()
 			match num:
 				1:
 					clownskill = 1
@@ -76,7 +76,7 @@ func _on_first_action_committed() -> void:
 					clownskill = 2
 					clownstats.convert_tempo(skill_2_tempo)
 					print_debug("clown is preparing " + skill_2_name + " (ID: 02)")
-		if clownstats.current_heart <= phase_2_threshold:
+		if clownstats.current_heart <= phase_1_threshold:
 			var num = [3,4,5,6].pick_random()
 			clownTB_animation.set("parameters/conditions/PHASE2", true)
 			match num:
