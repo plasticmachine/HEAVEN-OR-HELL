@@ -125,7 +125,10 @@ func sort_ascending(a, b):
 func sort_descending(a, b):
 	if a[1] > b[1]:
 		return true
-	return false
+	if a[1] < b[1]:
+		return false
+	if a[1] == b[1]:
+		return randf() < .5
 func turn_queue_pop_check():
 	var hell_turn_order = hellstats.current_tempo
 	var heaven_turn_order = heavenstats.current_tempo
@@ -137,14 +140,23 @@ func turn_queue_pop_check():
 			if turn_queue_amount == turn_pop_amount:
 				var tempo_array = [["hell: ", hell_turn_order], ["heaven: ", heaven_turn_order], ["enemy: ", clown_turn_order]]
 				
-				tempo_array.sort_custom(sort_ascending)
+				tempo_array.sort_custom(sort_descending)
 				print(tempo_array)
 				#this is where im going to put the function that actually runs all of the skill functions
 				
-				
-				
-				if tempo_array.back() == [["hell: ", hell_turn_order]]:
-					print("this is working!")
+				if "hell: " in tempo_array[0][0] && "heaven: " in tempo_array[2][0]:
+					print("Hell / Clown / Heaven ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
+				if "hell: " in tempo_array[0][0] && "enemy: " in tempo_array[2][0]:
+					print("Hell / Heaven / Clown ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
+				if "heaven: " in tempo_array[0][0] && "hell: " in tempo_array[2][0]:
+					print("Heaven / Clown / Hell ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
+				if "heaven: " in tempo_array[0][0] && "enemy: " in tempo_array[2][0]:
+					print("Heaven / Hell / Clown ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
+				if "enemy: " in tempo_array[0][0] && "heaven: " in tempo_array[2][0]:
+					print("Clown / Hell / Heaven ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
+				if "enemy: " in tempo_array[0][0] && "hell: " in tempo_array[2][0]:
+					print("Clown / Heaven / Hell ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
+			
 				
 				
 				if (hellstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo > clownstats.current_tempo):
