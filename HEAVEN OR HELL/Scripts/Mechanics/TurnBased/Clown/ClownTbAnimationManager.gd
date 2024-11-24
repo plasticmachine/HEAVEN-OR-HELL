@@ -28,6 +28,10 @@ signal action_committed
 @export var skill_3_name: String
 @export var skill_3_tempo: int
 @export var skill_3_power: int
+@export var skill_3_guts_debuff: int
+@export var skill_3_deviltry_debuff: int
+@export var skill_3_malice_debuff: int
+@export var skill_3_malice_buff_multiplier: float
 
 @export_group("Skill_4")
 @export var skill_4_name: String
@@ -58,6 +62,10 @@ signal action_committed
 @export var skill_10_tempo: int
 @export var skill_10_power: int
 
+
+
+
+
 func _on_first_action_committed() -> void:
 	var phase_1_threshold = clownstats.max_heart * .75
 	var phase_2_threshold = clownstats.max_heart * .50
@@ -78,20 +86,27 @@ func _on_first_action_committed() -> void:
 					print_debug("clown is preparing " + skill_2_name + " (ID: 02)")
 		if clownstats.current_heart <= phase_1_threshold:
 			var num = [3,4,5,6].pick_random()
-			clownTB_animation.set("parameters/conditions/PHASE2", true)
+			clownTB_animation.set("parameters/conditions/PHASE1", true)
 			match num:
 				3:
 					clownskill = 3
 					print_debug(("clown is preparing skill 3"))
 				4: 
 					clownskill = 4
+					print_debug(("clown is preparing skill 4"))
 				5: 
 					clownskill = 5
+					print_debug(("clown is preparing skill 5"))
 				6:
 					clownskill = 6
+					print_debug(("clown is preparing skill 6"))
+					
+			clownTB_animation.set("parameters/conditions/PHASE1", false)
+			print_debug("switching to phase2, conditional := false")
 		if clownstats.current_heart <= phase_3_threshold:
 			var num = [5,6,7,8,9,10].pick_random()
 			clownTB_animation.set("parameters/conditions/PHASE2", false)
+			print_debug("switching to phase3, conditional := false")
 			clownTB_animation.set("parameters/conditions/PHASE3", true)
 			match num:
 				5:
@@ -109,7 +124,7 @@ func _on_first_action_committed() -> void:
 		if clownstats.current_heart <= phase_4_threshold:
 			clownTB_animation.set("parameters/conditions/PHASE3", false)
 			clownTB_animation.set("parameters/conditions/PHASE4", true)
-			
+			print_debug("switching to phase4, conditional := false")
 			var num = [9,10].pick_random()
 			match num:
 				9:
@@ -169,6 +184,52 @@ func skill_2_effect():
 
 func skill_3_effect():
 	clownskill = 3
-	var rand_target = [1,2]
+	var rand_target = [1,2].pick_random()
+	var rand_effect = [1,2].pick_random()
+	var crit_effect = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2].pick_random() #1/20 chance
+	
+	clownTB_animation.set("parameters/conditions/KICKS", true)
 	#clownstats.convert_tempo(skill_3_tempo)
 	clownstats.convert_skill_power(skill_3_power)
+	
+	match rand_target:
+		1:
+			match rand_effect:
+				
+				1:
+					damagecalc.clown_to_heaven_deviltry_damagecalc()
+					effect_animation.find_effect_spot_heaven()
+					effect_animation.play("basic_slash")
+					heavenstats.subtract_guts(skill_3_guts_debuff)
+					await get_tree().create_timer(.5).timeout
+					effect_animation.play("basic_debuff")
+				2:
+					effect_animation.find_effect_spot_heaven()
+					effect_animation.play("basic_slash")
+					match crit_effect:
+						1:
+							# keep this between 1.05 and 1.10 (max 5% -> 10% increase) % increase to maintain scaling
+							clownstats.multiply_deviltry(skill_3_malice_buff_multiplier)
+						2:
+							clownstats.multiply_deviltry(skill_3_malice_buff_multiplier + .10 ) #1/20 chance to turn buff into double buff)
+					await get_tree().create_timer(.5).timeout
+					effect_animation.play("basic_debuff")
+		2:
+			match rand_effect:
+				
+				1:
+					damagecalc.clown_to_hell_deviltry_damagecalc()
+					effect_animation.find_effect_spot_hell()
+					effect_animation.play("basic_slash")
+					hellstats.subtract_guts(skill_3_guts_debuff)
+					await get_tree().create_timer(.5).timeout
+					effect_animation.play("basic_debuff")
+				2:
+					effect_animation.find_effect_spot_hell()
+					effect_animation.play("basic_slash")
+					# keep this between 1.05 and 1.10 (max 5% -> 10% increase) % increase to maintain scaling
+					clownstats.multiply_deviltry(skill_3_malice_buff_multiplier)
+					await get_tree().create_timer(.5).timeout
+					effect_animation.play("basic_debuff")
+					
+	clownTB_animation.set("parameters/conditions/KICKS", false)

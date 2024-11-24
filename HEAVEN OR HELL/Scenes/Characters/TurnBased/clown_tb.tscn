@@ -538,7 +538,7 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_64rtj"]
 switch_mode = 2
 advance_mode = 2
-advance_condition = &"PHASE2"
+advance_condition = &"PHASE1"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7wpfe"]
 break_loop_at_end = true
@@ -604,10 +604,15 @@ skill_1_name = "Throw!"
 skill_1_tempo = 5
 skill_1_power = 35
 skill_2_name = "Breathe in! Breathe Out!"
-skill_2_tempo = 1
+skill_2_tempo = 3
 skill_2_heal = 50
 skill_2_malice_buff = 5
 skill_2_deviltry_buff = 5
+skill_3_name = "Kick!"
+skill_3_tempo = 6
+skill_3_power = 55
+skill_3_guts_debuff = 3
+skill_3_malice_buff_multiplier = 1.1
 
 [node name="ClownTbtest" type="Sprite2D" parent="."]
 visible = false
@@ -636,7 +641,7 @@ tree_root = SubResource("AnimationNodeStateMachine_oqbrf")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/BUFF1 = false
 parameters/conditions/KICKS = false
-parameters/conditions/PHASE2 = false
+parameters/conditions/PHASE1 = false
 parameters/conditions/THROW = false
 parameters/BlendSpace1D/blend_position = 0.00168824
 
