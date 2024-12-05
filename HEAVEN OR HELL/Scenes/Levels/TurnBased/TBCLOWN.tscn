@@ -388,10 +388,8 @@ script = ExtResource("4_dqrpe")
 z_index = 350
 scale = Vector2(1, 1.01221)
 sprite_frames = SubResource("SpriteFrames_jmycf")
-animation = &"basic_buff"
+animation = &"hide"
 autoplay = "hide"
-frame = 11
-frame_progress = 1.0
 script = ExtResource("7_p1xji")
 VFX_buffer = 0.5
 
