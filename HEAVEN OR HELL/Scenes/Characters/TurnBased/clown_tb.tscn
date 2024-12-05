@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://dt06qpfhtfajd"]
+[gd_scene load_steps=91 format=3 uid="uid://dt06qpfhtfajd"]
 
 [ext_resource type="Texture2D" uid="uid://n8jftbuyirgl" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-1.png" id="2_eba1o"]
 [ext_resource type="Texture2D" uid="uid://damkva1jjkcsg" path="res://art/clown/TurnBased/CLOWN_TBTEST.png" id="2_y11lw"]
@@ -81,7 +81,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -332,6 +332,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_hlv15"]
 resource_name = "new_animation"
 length = 1.22223
+loop_mode = 1
 step = 0.0555556
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -449,7 +450,7 @@ tracks/1/keys = {
 resource_name = "idle"
 length = 0.83335
 loop_mode = 1
-step = 0.166667
+step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -536,9 +537,8 @@ break_loop_at_end = true
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_64rtj"]
-switch_mode = 2
 advance_mode = 2
-advance_condition = &"PHASE1"
+advance_condition = &"PHASE2"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7wpfe"]
 break_loop_at_end = true
@@ -555,12 +555,14 @@ advance_condition = &"BUFF1"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vrt1w"]
 break_loop_at_end = true
+reset = false
 switch_mode = 2
 advance_mode = 2
 advance_condition = &"KICKS"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7h37o"]
 break_loop_at_end = true
+reset = false
 switch_mode = 2
 advance_mode = 2
 
@@ -577,6 +579,10 @@ reset = false
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h3v6w"]
+advance_mode = 2
+advance_condition = &"PHASE1"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_oqbrf"]
 states/BlendSpace1D/node = SubResource("AnimationNodeBlendSpace1D_abx6s")
 states/BlendSpace1D/position = Vector2(369, 293)
@@ -586,15 +592,15 @@ states/End/position = Vector2(1569, 120)
 states/Kicks/node = SubResource("AnimationNodeAnimation_gapij")
 states/Kicks/position = Vector2(628, 16.9328)
 states/Spins/node = SubResource("AnimationNodeAnimation_ckpw4")
-states/Spins/position = Vector2(564, 120)
+states/Spins/position = Vector2(566, 120)
 states/Start/position = Vector2(122, 101)
 states/StateMachine/node = SubResource("AnimationNodeStateMachine_qv7tn")
 states/StateMachine/position = Vector2(557, 536.933)
 states/Throw/node = SubResource("AnimationNodeAnimation_nw3vd")
 states/Throw/position = Vector2(265, 223.933)
 states/idle/node = SubResource("AnimationNodeAnimation_rj4b0")
-states/idle/position = Vector2(307, 112)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "idle", "Spins", SubResource("AnimationNodeStateMachineTransition_64rtj"), "Buff1", "idle", SubResource("AnimationNodeStateMachineTransition_7wpfe"), "idle", "Buff1", SubResource("AnimationNodeStateMachineTransition_lk75y"), "Spins", "Kicks", SubResource("AnimationNodeStateMachineTransition_vrt1w"), "Kicks", "Spins", SubResource("AnimationNodeStateMachineTransition_7h37o"), "idle", "Throw", SubResource("AnimationNodeStateMachineTransition_xgr8x"), "Throw", "idle", SubResource("AnimationNodeStateMachineTransition_8k7hh")]
+states/idle/position = Vector2(306, 112)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "idle", "Spins", SubResource("AnimationNodeStateMachineTransition_64rtj"), "Buff1", "idle", SubResource("AnimationNodeStateMachineTransition_7wpfe"), "idle", "Buff1", SubResource("AnimationNodeStateMachineTransition_lk75y"), "Spins", "Kicks", SubResource("AnimationNodeStateMachineTransition_vrt1w"), "Kicks", "Spins", SubResource("AnimationNodeStateMachineTransition_7h37o"), "idle", "Throw", SubResource("AnimationNodeStateMachineTransition_xgr8x"), "Throw", "idle", SubResource("AnimationNodeStateMachineTransition_8k7hh"), "Spins", "idle", SubResource("AnimationNodeStateMachineTransition_h3v6w")]
 graph_offset = Vector2(-266, -13.0672)
 
 [node name="ClownTb" type="Node2D"]
@@ -612,7 +618,13 @@ skill_3_name = "Kick!"
 skill_3_tempo = 6
 skill_3_power = 55
 skill_3_guts_debuff = 3
+skill_3_deviltry_debuff = 5
+skill_3_malice_debuff = 5
 skill_3_malice_buff_multiplier = 1.1
+phase_1_threshold = 1.0
+phase_2_threshold = 0.75
+phase_3_threshold = 0.5
+phase_4_threshold = 0.25
 
 [node name="ClownTbtest" type="Sprite2D" parent="."]
 visible = false
@@ -642,6 +654,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/BUFF1 = false
 parameters/conditions/KICKS = false
 parameters/conditions/PHASE1 = false
+parameters/conditions/PHASE2 = false
 parameters/conditions/THROW = false
 parameters/BlendSpace1D/blend_position = 0.00168824
 

@@ -410,6 +410,7 @@ progress = 671.5
 rotates = false
 cubic_interp = false
 script = ExtResource("15_qlv6m")
+speed = 100
 
 [node name="ClownTb" parent="EnemySpot2/ClownDancePath/PathFollow2D" instance=ExtResource("2_djc2d")]
 position = Vector2(0, 0)
