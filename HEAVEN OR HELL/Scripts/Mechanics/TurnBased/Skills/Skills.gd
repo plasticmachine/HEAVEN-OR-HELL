@@ -383,13 +383,157 @@ signal hell_ID_3_wear_off_set
 @export var ID_4_hell_decrease_1: int 
 @export var ID_4_hell_decrease_2: int 
 @export var ID_4_hell_decrease_3: int 
-@export_subgroup("Percentage Increases + Decreases: Test 3")
+@export_subgroup("Percentage Increases + Decreases: Test 4")
 @export var ID_4_hell_percent_increase_1: float 
 @export var ID_4_hell_percent_increase_2: float 
 @export var ID_4_hell_percent_increase_3: float 
 @export var ID_4_hell_percent_decrease_1: float 
 @export var ID_4_hell_percent_decrease_2: float 
 @export var ID_4_hell_percent_decrease_3: float 
+
+@export_group("Hell Skill: Test 5")
+@export_subgroup("Variables: Test 5")
+@export var ID_5_hell_skill_name: String
+@export var ID_5_hell_skill_image: Image
+@export var ID_5_hell_tempo: int 
+@export var ID_5_hell_power: int 
+@export var ID_5_hell_cost_1: int 
+@export var ID_5_hell_cost_2: int 
+@export var ID_5_hell_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 5")
+@export var ID_5_hell_increase_1: int 
+@export var ID_5_hell_increase_2: int 
+@export var ID_5_hell_increase_3: int 
+@export var ID_5_hell_decrease_1: int 
+@export var ID_5_hell_decrease_2: int 
+@export var ID_5_hell_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 5")
+@export var ID_5_hell_percent_increase_1: float 
+@export var ID_5_hell_percent_increase_2: float 
+@export var ID_5_hell_percent_increase_3: float 
+@export var ID_5_hell_percent_decrease_1: float 
+@export var ID_5_hell_percent_decrease_2: float 
+@export var ID_5_hell_percent_decrease_3: float 
+
+@export_group("Hell Skill: Test 6")
+@export_subgroup("Variables: Test 6")
+@export var ID_6_hell_skill_name: String
+@export var ID_6_hell_skill_image: Image
+@export var ID_6_hell_tempo: int 
+@export var ID_6_hell_power: int 
+@export var ID_6_hell_cost_1: int 
+@export var ID_6_hell_cost_2: int 
+@export var ID_6_hell_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 6")
+@export var ID_6_hell_increase_1: int 
+@export var ID_6_hell_increase_2: int 
+@export var ID_6_hell_increase_3: int 
+@export var ID_6_hell_decrease_1: int 
+@export var ID_6_hell_decrease_2: int 
+@export var ID_6_hell_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 6")
+@export var ID_6_hell_percent_increase_1: float 
+@export var ID_6_hell_percent_increase_2: float 
+@export var ID_6_hell_percent_increase_3: float 
+@export var ID_6_hell_percent_decrease_1: float 
+@export var ID_6_hell_percent_decrease_2: float 
+@export var ID_6_hell_percent_decrease_3: float 
+
+@export_group("Hell Skill: Test 7")
+@export_subgroup("Variables: Test 7")
+@export var ID_7_hell_skill_name: String
+@export var ID_7_hell_skill_image: Image
+@export var ID_7_hell_tempo: int 
+@export var ID_7_hell_power: int 
+@export var ID_7_hell_cost_1: int 
+@export var ID_7_hell_cost_2: int 
+@export var ID_7_hell_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 7")
+@export var ID_7_hell_increase_1: int 
+@export var ID_7_hell_increase_2: int 
+@export var ID_7_hell_increase_3: int 
+@export var ID_7_hell_decrease_1: int 
+@export var ID_7_hell_decrease_2: int 
+@export var ID_7_hell_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 7")
+@export var ID_7_hell_percent_increase_1: float 
+@export var ID_7_hell_percent_increase_2: float 
+@export var ID_7_hell_percent_increase_3: float 
+@export var ID_7_hell_percent_decrease_1: float 
+@export var ID_7_hell_percent_decrease_2: float 
+@export var ID_7_hell_percent_decrease_3: float 
+
+@export_group("Hell Skill: Test 8")
+@export_subgroup("Variables: Test 8")
+@export var ID_8_hell_skill_name: String
+@export var ID_8_hell_skill_image: Image
+@export var ID_8_hell_tempo: int 
+@export var ID_8_hell_power: int 
+@export var ID_8_hell_cost_1: int 
+@export var ID_8_hell_cost_2: int 
+@export var ID_8_hell_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 8")
+@export var ID_8_hell_increase_1: int 
+@export var ID_8_hell_increase_2: int 
+@export var ID_8_hell_increase_3: int 
+@export var ID_8_hell_decrease_1: int 
+@export var ID_8_hell_decrease_2: int 
+@export var ID_8_hell_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 8")
+@export var ID_8_hell_percent_increase_1: float 
+@export var ID_8_hell_percent_increase_2: float 
+@export var ID_8_hell_percent_increase_3: float 
+@export var ID_8_hell_percent_decrease_1: float 
+@export var ID_8_hell_percent_decrease_2: float 
+@export var ID_8_hell_percent_decrease_3: float 
+
+@export_group("Hell Skill: Test 9")
+@export_subgroup("Variables: Test 9")
+@export var ID_9_hell_skill_name: String
+@export var ID_9_hell_skill_image: Image
+@export var ID_9_hell_tempo: int 
+@export var ID_9_hell_power: int 
+@export var ID_9_hell_cost_1: int 
+@export var ID_9_hell_cost_2: int 
+@export var ID_9_hell_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 9")
+@export var ID_9_hell_increase_1: int 
+@export var ID_9_hell_increase_2: int 
+@export var ID_9_hell_increase_3: int 
+@export var ID_9_hell_decrease_1: int 
+@export var ID_9_hell_decrease_2: int 
+@export var ID_9_hell_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 9")
+@export var ID_9_hell_percent_increase_1: float 
+@export var ID_9_hell_percent_increase_2: float 
+@export var ID_9_hell_percent_increase_3: float 
+@export var ID_9_hell_percent_decrease_1: float 
+@export var ID_9_hell_percent_decrease_2: float 
+@export var ID_9_hell_percent_decrease_3: float 
+
+@export_group("Hell Skill: Test 10")
+@export_subgroup("Variables: Test 10")
+@export var ID_10_hell_skill_name: String
+@export var ID_10_hell_skill_image: Image
+@export var ID_10_hell_tempo: int 
+@export var ID_10_hell_power: int 
+@export var ID_10_hell_cost_1: int 
+@export var ID_10_hell_cost_2: int 
+@export var ID_10_hell_effect_length: int 
+@export_subgroup("Flat Increases + Decreases: Test 10")
+@export var ID_10_hell_increase_1: int 
+@export var ID_10_hell_increase_2: int 
+@export var ID_10_hell_increase_3: int 
+@export var ID_10_hell_decrease_1: int 
+@export var ID_10_hell_decrease_2: int 
+@export var ID_10_hell_decrease_3: int 
+@export_subgroup("Percentage Increases + Decreases: Test 10")
+@export var ID_10_hell_percent_increase_1: float 
+@export var ID_10_hell_percent_increase_2: float 
+@export var ID_10_hell_percent_increase_3: float 
+@export var ID_10_hell_percent_decrease_1: float 
+@export var ID_10_hell_percent_decrease_2: float 
+@export var ID_10_hell_percent_decrease_3: float 
 
 
 @export var VFX_buffer: float
@@ -530,13 +674,13 @@ func define_skill_slot_1_hell():
 			skill_ID_2_hell()
 		3:
 			pass
-			#skill_ID_3_hell()
+			skill_ID_3_hell()
 		4:
 			pass
-			#skill_ID_4_hell()
+			skill_ID_4_hell()
 		5:
 			pass
-			#skill_ID_5_hell()
+			skill_ID_5_hell()
 		6:
 			pass
 			#skill_ID_6_hell()
@@ -559,13 +703,13 @@ func define_skill_slot_2_hell():
 			skill_ID_2_hell()
 		3:
 			pass
-			#skill_ID_3_hell()
+			skill_ID_3_hell()
 		4:
 			pass
-			#skill_ID_4_hell()
+			skill_ID_4_hell()
 		5:
 			pass
-			#skill_ID_5_hell()
+			skill_ID_5_hell()
 		6:
 			pass
 			#skill_ID_6_hell()
@@ -588,13 +732,13 @@ func define_skill_slot_3_hell():
 			skill_ID_2_hell()
 		3:
 			pass
-			#skill_ID_3_hell()
+			skill_ID_3_hell()
 		4:
 			pass
-			#skill_ID_4_hell()
+			skill_ID_4_hell()
 		5:
 			pass
-			#skill_ID_5_hell()
+			skill_ID_5_hell()
 		6:
 			pass
 			#skill_ID_6_hell()
@@ -617,13 +761,13 @@ func define_skill_slot_4_hell():
 			skill_ID_2_hell()
 		3:
 			pass
-			#skill_ID_3_hell()
+			skill_ID_3_hell()
 		4:
 			pass
-			#skill_ID_4_hell()
+			skill_ID_4_hell()
 		5:
 			pass
-			#skill_ID_5_hell()
+			skill_ID_5_hell()
 		6:
 			pass
 			#skill_ID_6_hell()
@@ -1163,8 +1307,68 @@ func skill_ID_3_hell():
 	
 	hell_ID_3_wear_off_set.emit()	
 func skill_ID_4_hell():
-	pass
+	print_debug(hellstats.character_name + "locked in " + ID_4_hell_skill_name + " (" + str(hellstats.current_tempo) + "tempo)")
+	hellstats.subtract_heart(ID_4_hell_cost_1)
+	effect_animation.find_effect_spot_hell()
+	effect_animation.play("basic_slash")
+	
+	await get_tree().create_timer(.3).timeout
+	
+	hellstats.add_magia(ID_4_hell_increase_1)
+	effect_animation.play("magia_replenish")
 
+
+	## potentially in the future, change this to be a chance based skill that selects either heaven or hell to take self damage
+	## possibly extend that to the buff to deviltry or malice, either that is random also OR it depends on who the self damage targets
+	## seems interesting, if not just a good way to make this skill feel different 
+func skill_ID_5_hell():
+	print_debug(hellstats.character_name + "locked in " + ID_5_hell_skill_name)
+	hellstats.subtract_heart(ID_5_hell_cost_1)
+	heavenstats.subtract_heart(ID_5_hell_cost_2) #HEAVEN COST IS MORE THAN HELL
+	effect_animation.find_effect_spot_hell()
+	effect_animation.play("basic_slash")
+	
+	await get_tree().create_timer(.3).timeout
+	effect_animation.find_effect_spot_heaven()
+	effect_animation.play("basic_slash")
+	
+	
+	effect_animation.find_effect_spot_hell()
+	effect_animation.play("basic_buff")
+	hellstats.multiply_deviltry(ID_5_hell_percent_increase_1) ##INCREASE BY 15% 
+	hellstats.multiply_malice(ID_5_hell_percent_increase_1) ##INCREASE BY 15%
+	
+	
+
+	#skill that decreases the target's guts at the cost of user's guts. 
+func skill_ID_6_hell():
+	print_debug(hellstats.character_name + "locked in " + ID_6_hell_skill_name)
+	hellstats.subtract_guts(ID_5_hell_decrease_1) ##KEEP THIS LOWER THAN TARGET DECREASE
+	effect_animation.find_effect_spot_hell()
+	effect_animation.play("basic_debuff")
+	await get_tree().create_timer(.3).timeout
+	
+	match hell_target_ID:
+		
+		2:
+			heavenstats.subtract_guts(ID_5_hell_decrease_2) ## !!!! KEEP THIS HIGHER THAN USER DECREASE (this should be about 1.35x the user decrease)
+			effect_animation.find_effect_spot_heaven()
+			effect_animation.play("basic_debuff")
+			await get_tree().create_timer(.3).timeout
+		
+		3:
+			clownstats.subtract_guts(ID_5_hell_decrease_2) ## !!!! KEEP THIS HIGHER THAN USER DECREASE (this should be about 1.35x the user decrease)
+			effect_animation.find_effect_spot_clown()
+			effect_animation.play("basic_debuff")
+			await get_tree().create_timer(.3).timeout
+	
+
+	#skill that does burst damage based off of total offensive stat, decreases chosen stat by some small percentage
+func skill_ID_7_hell():
+	print_debug(hellstats.character_name + "locked in " + ID_6_hell_skill_name)
+	
+	
+	
 func skill_ID_1_heaven_tempo_convert():
 	heavenstats.convert_tempo(ID_1_heaven_tempo)
 func skill_ID_2_heaven_tempo_convert():
