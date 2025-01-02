@@ -54,6 +54,7 @@ func _ready():
 	Engine.max_fps = 144
 	TurnBasedClownDialogue()
 	
+	
 	heavenstats.current_skill_power = 0
 	heavenstats.current_tempo = 0
 	hellstats.current_skill_power = 0
