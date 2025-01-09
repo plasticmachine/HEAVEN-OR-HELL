@@ -5,5 +5,5 @@ SYSTEM: {{heavenstats.character_name}} hit {{hellstats.character_name}} for {{Da
 SYSTEM: {{clownstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}
 => END
 ~ CLOWN_DAMAGING_HELL_MALICE
-SYSTEM: {{clownstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.clown_to_hell_malice_damagecalc()}}
+SYSTEM: {{clownstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}
 => END

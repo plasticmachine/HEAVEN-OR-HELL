@@ -184,7 +184,6 @@ func skill_1_effect():
 			damagecalc.clown_to_hell_malice_damagecalc()
 			effect_animation.find_attack_spot_hell()
 			effect_animation.play("basic_slash")
-			DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "CLOWN_DAMAGING_HELL_MALICE")
 	
 	clownTB_animation.set("parameters/conditions/THROW", false)
 	
