@@ -104,7 +104,7 @@ func _on_first_action_committed() -> void:
 	if turnbased_manager.turn_queue_amount == 1 and heavenstats.current_heart > 0 and hellstats.current_heart > 0:
 		match PHASE:
 			1:
-				var num = [1,2].pick_random()
+				var num = [1,1].pick_random()
 				match num:
 					1:
 						clownskill = 1
@@ -168,7 +168,7 @@ func _on_first_action_committed() -> void:
 
 #test skill that just randomly does damage to heaven or hell
 func skill_1_effect():
-	var num = [1,2].pick_random()
+	var num = [2,2].pick_random()
 	#clownstats.convert_tempo(skill_1_tempo)
 	clownstats.convert_skill_power(skill_1_power)
 	
@@ -184,11 +184,13 @@ func skill_1_effect():
 			damagecalc.clown_to_hell_malice_damagecalc()
 			effect_animation.find_attack_spot_hell()
 			effect_animation.play("basic_slash")
+			DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "CLOWN_DAMAGING_HELL_MALICE")
 	
 	clownTB_animation.set("parameters/conditions/THROW", false)
+	
 func skill_2_effect():
 	clownskill = 2
-	var num = [2,2,2].pick_random()
+	var num = [1,2,3].pick_random()
 	#clownstats.convert_tempo(skill_2_tempo)
 	
 	clownTB_animation.set("parameters/conditions/BUFF1", true)
@@ -220,6 +222,7 @@ func skill_3_effect():
 	#clownstats.convert_tempo(skill_3_tempo)
 	clownstats.convert_skill_power(skill_3_power)
 	
+	await get_tree().create_timer(1).timeout
 	match rand_target:
 		1:
 			match rand_effect:

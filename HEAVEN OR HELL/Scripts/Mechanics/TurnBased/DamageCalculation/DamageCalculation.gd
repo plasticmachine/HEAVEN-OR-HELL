@@ -6,6 +6,7 @@ signal heaven_damage_taken
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @onready var clownstats = preload("res://Resources/Stats/ClownStats.tres")
 @onready var variance = [.8, .85, .9, .95, 1.0, 1.05, 1.1, 1.5, 1.2]
+@onready var total_damage_text
 
 ### PLAYER DAMAGE CALCS
 	## HEAVEN DAMAGE CALCS
@@ -15,6 +16,7 @@ func heaven_to_clown_malice_damagecalc():
 	
 	total_damage = outgoing_damage / clownstats.guts * variance.pick_random()
 	clownstats.subtract_heart(total_damage)
+	total_damage_text = total_damage
 func heaven_to_clown_deviltry_damagecalc():
 	var total_damage: int
 	var outgoing_damage = heavenstats.current_skill_power * heavenstats.deviltry
@@ -73,6 +75,7 @@ func clown_to_heaven_malice_damagecalc():
 	total_damage = outgoing_damage / heavenstats.guts * variance.pick_random()
 	heavenstats.subtract_heart(total_damage)
 	heaven_damage_taken.emit()
+	total_damage_text = total_damage
 func clown_to_heaven_deviltry_damagecalc():
 	var total_damage: int
 	var outgoing_damage = clownstats.current_skill_power * clownstats.deviltry
@@ -81,12 +84,13 @@ func clown_to_heaven_deviltry_damagecalc():
 	heavenstats.subtract_heart(total_damage)
 	heaven_damage_taken.emit()
 func clown_to_hell_malice_damagecalc():
-	var total_damage: int
+	var total_damage_1: int
 	var outgoing_damage = clownstats.current_skill_power * clownstats.malice
 	
-	total_damage = outgoing_damage / hellstats.guts * variance.pick_random()
-	hellstats.subtract_heart(total_damage)
+	total_damage_1 = outgoing_damage / hellstats.guts * variance.pick_random()
+	hellstats.subtract_heart(total_damage_1)
 	hell_damage_taken.emit()
+	total_damage_text = total_damage_1
 func clown_to_hell_deviltry_damagecalc():
 	var total_damage: int
 	var outgoing_damage = clownstats.current_skill_power * clownstats.deviltry

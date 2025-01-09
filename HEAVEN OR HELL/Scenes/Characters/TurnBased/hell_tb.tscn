@@ -98,5 +98,3 @@ scale = Vector2(0.760001, 0.760001)
 sprite_frames = SubResource("SpriteFrames_wepe7")
 animation = &"hit"
 autoplay = "idle"
-frame = 16
-frame_progress = 0.49095

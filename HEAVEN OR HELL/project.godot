@@ -32,6 +32,7 @@ YASM="*res://addons/yet_another_scene_manager/Scenes.gd"
 StatSaver="*res://Scenes/StatStuff/stat_saver.tscn"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Panku="*res://addons/panku_console/console.tscn"
+DamageCalculation="*res://Scripts/Mechanics/TurnBased/DamageCalculation/DamageCalculation.gd"
 
 [display]
 

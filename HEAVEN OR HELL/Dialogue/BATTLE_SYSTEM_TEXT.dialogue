@@ -1,11 +1,9 @@
-~ this_is_a_node_title
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ HEAVEN_DAMAGING_HELL_MALICE
+SYSTEM: {{heavenstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}
+=> END
+~ CLOWN_DAMAGING_HEAVEN_MALICE
+SYSTEM: {{clownstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}
+=> END
+~ CLOWN_DAMAGING_HELL_MALICE
+SYSTEM: {{clownstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.clown_to_hell_malice_damagecalc()}}
 => END
