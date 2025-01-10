@@ -3,20 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://n8jftbuyirgl" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-1.png" id="2_eba1o"]
 [ext_resource type="Texture2D" uid="uid://damkva1jjkcsg" path="res://art/clown/TurnBased/CLOWN_TBTEST.png" id="2_y11lw"]
 [ext_resource type="Texture2D" uid="uid://cfotdg8ca30fb" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-2.png" id="3_60psw"]
-[ext_resource type="Texture2D" uid="uid://cyeukl6e5we64" path="res://art/clown/TurnBased/ClownIdle/Untitled_Artwork-1.png" id="3_rsrwd"]
+[ext_resource type="Texture2D" uid="uid://dnuoiomb1xyfi" path="res://art/clown/TurnBased/ClownIdle/colored/0.png" id="3_nqj4r"]
 [ext_resource type="Texture2D" uid="uid://bofbepkeq1c1l" path="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-1 (1).png" id="3_vfo8v"]
-[ext_resource type="Texture2D" uid="uid://cuvnjlcy0etuf" path="res://art/clown/TurnBased/ClownIdle/Untitled_Artwork-2.png" id="4_h5bpx"]
+[ext_resource type="Texture2D" uid="uid://bbiajdjwx8gd1" path="res://art/clown/TurnBased/ClownIdle/colored/1.png" id="4_orvqt"]
 [ext_resource type="Texture2D" uid="uid://3ak4jyq1ggog" path="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-2 (1).png" id="4_w7f7k"]
 [ext_resource type="Texture2D" uid="uid://rua0dpkvq31i" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-3.png" id="4_ypl8i"]
 [ext_resource type="Texture2D" uid="uid://dglrsk4gf3lbq" path="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-3 (1).png" id="5_ls15u"]
 [ext_resource type="Texture2D" uid="uid://gslghf60ngnk" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-4.png" id="5_mapnn"]
-[ext_resource type="Texture2D" uid="uid://dydftotb0ned3" path="res://art/clown/TurnBased/ClownIdle/Untitled_Artwork-3.png" id="5_qdjmu"]
-[ext_resource type="Texture2D" uid="uid://b8vcfh10ftvhg" path="res://art/clown/TurnBased/ClownIdle/Untitled_Artwork-4.png" id="6_2r8s1"]
+[ext_resource type="Texture2D" uid="uid://dlxtf2e8cmgq" path="res://art/clown/TurnBased/ClownIdle/colored/2.png" id="5_rboqp"]
 [ext_resource type="Texture2D" uid="uid://h37eu3m3e0l4" path="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-4 (1).png" id="6_klxit"]
 [ext_resource type="Texture2D" uid="uid://cu0dnk01350s6" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-5.png" id="6_m8fou"]
+[ext_resource type="Texture2D" uid="uid://dmdbkh08flmr" path="res://art/clown/TurnBased/ClownIdle/colored/3.png" id="6_ri2y1"]
 [ext_resource type="Texture2D" uid="uid://b6f3845k15xkg" path="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-5 (1).png" id="7_0mr4t"]
 [ext_resource type="Texture2D" uid="uid://c77lycpn463ho" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-6.png" id="7_ddmd5"]
-[ext_resource type="Texture2D" uid="uid://cq8aopdutl8p5" path="res://art/clown/TurnBased/ClownIdle/Untitled_Artwork-5.png" id="7_mqwbt"]
+[ext_resource type="Texture2D" uid="uid://c7533jxbp4c05" path="res://art/clown/TurnBased/ClownIdle/colored/4.png" id="7_ijefb"]
 [ext_resource type="Texture2D" uid="uid://d4hxu2q4u8ttx" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-7.png" id="8_mkab4"]
 [ext_resource type="Texture2D" uid="uid://dvbcatq66ofkl" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-8.png" id="9_at1fr"]
 [ext_resource type="Texture2D" uid="uid://bhheememfg3xy" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-9.png" id="10_sd7w5"]
@@ -65,19 +65,19 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_rsrwd")
+"texture": ExtResource("3_nqj4r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_h5bpx")
+"texture": ExtResource("4_orvqt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_qdjmu")
+"texture": ExtResource("5_rboqp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_2r8s1")
+"texture": ExtResource("6_ri2y1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_mqwbt")
+"texture": ExtResource("7_ijefb")
 }],
 "loop": true,
 "name": &"Idle",

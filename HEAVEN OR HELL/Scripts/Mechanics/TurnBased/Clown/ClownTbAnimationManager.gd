@@ -104,7 +104,7 @@ func _on_first_action_committed() -> void:
 	if turnbased_manager.turn_queue_amount == 1 and heavenstats.current_heart > 0 and hellstats.current_heart > 0:
 		match PHASE:
 			1:
-				var num = [1,1].pick_random()
+				var num = [1,2].pick_random()
 				match num:
 					1:
 						clownskill = 1
@@ -168,7 +168,7 @@ func _on_first_action_committed() -> void:
 
 #test skill that just randomly does damage to heaven or hell
 func skill_1_effect():
-	var num = [2,2].pick_random()
+	var num = [1,2].pick_random()
 	#clownstats.convert_tempo(skill_1_tempo)
 	clownstats.convert_skill_power(skill_1_power)
 	
@@ -234,6 +234,7 @@ func skill_3_effect():
 					await get_tree().create_timer(.5).timeout
 					effect_animation.play("basic_debuff")
 				2:
+					damagecalc.clown_to_heaven_deviltry_damagecalc()
 					effect_animation.find_effect_spot_heaven()
 					effect_animation.play("basic_slash")
 					match crit_effect:
@@ -255,10 +256,15 @@ func skill_3_effect():
 					await get_tree().create_timer(.5).timeout
 					effect_animation.play("basic_debuff")
 				2:
+					damagecalc.clown_to_hell_deviltry_damagecalc()
 					effect_animation.find_effect_spot_hell()
 					effect_animation.play("basic_slash")
-					# keep this between 1.05 and 1.10 (max 5% -> 10% increase) % increase to maintain scaling
-					clownstats.multiply_deviltry(skill_3_malice_buff_multiplier)
+					match crit_effect:
+						1:
+							# keep this between 1.05 and 1.10 (max 5% -> 10% increase) % increase to maintain scaling
+							clownstats.multiply_deviltry(skill_3_malice_buff_multiplier)
+						2:
+							clownstats.multiply_deviltry(skill_3_malice_buff_multiplier + .10 ) #1/20 chance to turn buff into double buff)
 					await get_tree().create_timer(.5).timeout
 					effect_animation.play("basic_debuff")
 					
