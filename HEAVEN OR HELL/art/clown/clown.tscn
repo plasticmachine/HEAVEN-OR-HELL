@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dumc48ipxywo7" path="res://art/clown/dance/colored/Untitled_Artwork-14.png" id="14_q3y4d"]
 [ext_resource type="Texture2D" uid="uid://djdyhk0m51tt3" path="res://art/clown/dance/colored/Untitled_Artwork-15.png" id="15_gcoj6"]
 [ext_resource type="Texture2D" uid="uid://0lcuff1it0ia" path="res://art/clown/dance/colored/Untitled_Artwork-16.png" id="16_drhfa"]
-[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="18_bfayl"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="18_bfayl"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="19_d267f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i0p1m"]

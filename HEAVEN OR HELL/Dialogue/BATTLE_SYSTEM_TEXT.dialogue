@@ -1,9 +1,37 @@
 ~ HEAVEN_DAMAGING_HELL_MALICE
-SYSTEM: {{heavenstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}
+SYSTEM: Using a MALICE skill {{heavenstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
+~ HEAVEN_DAMAGING_HELL_DEVILTRY
+SYSTEM: Using a DEVILTRY skill {{heavenstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HELL_DAMAGING_HEAVEN_MALICE
+SYSTEM: Using a MALICE skill {{hellstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HELL_DAMAGING_HEAVEN_DEVILTRY
+SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END!	
+~ HEAVEN_DAMAGING_CLOWN_MALICE
+SYSTEM: Using a MALICE skill {{heavenstats.character_name}} hit {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HEAVEN_DAMAGING_CLOWN_DEVILTRY
+SYSTEM: Using a DEVILTRY skill {{heavenstats.character_name}} hit {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HELL_DAMAGING_CLOWN_MALICE
+SYSTEM: Using a MALICE skill {{hellstats.character_name}} hit {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HELL_DAMAGING_CLOWN_DEVILTRY
+SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+
 ~ CLOWN_DAMAGING_HEAVEN_MALICE
-SYSTEM: {{clownstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}
+SYSTEM: Using a MALICE skill {{clownstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ CLOWN_DAMAGING_HEAVEN_DEVILTRY
+SYSTEM: Using a DEVILTRY skill {{clownstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
 ~ CLOWN_DAMAGING_HELL_MALICE
-SYSTEM: {{clownstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}
+SYSTEM: Using a MALICE skill {{clownstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
+~ CLOWN_DAMAGING_HELL_DEVILTRY
+SYSTEM: Using a DEVILTRY skill {{clownstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END!
