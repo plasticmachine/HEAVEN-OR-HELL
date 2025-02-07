@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://tcfwrymqvqb4"]
+[gd_scene load_steps=6 format=3 uid="uid://tcfwrymqvqb4"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/TurnBased/hellTBAnimation.gd" id="1_8t303"]
 [ext_resource type="Texture2D" uid="uid://cqd4gt1mf6tvx" path="res://art/HELL/turnbased/HLL_TB_Dark.PNG" id="1_qsudq"]
 [ext_resource type="Texture2D" uid="uid://6ntrmegkdsir" path="res://art/HELL/turnbased/HLL_TB_Bright.PNG" id="3_8mtur"]
+[ext_resource type="PackedScene" uid="uid://cy1c1be6qg2a4" path="res://Scenes/Keychains/TestInventoryDisplay.tscn" id="4_vp12s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wepe7"]
 animations = [{
@@ -83,14 +84,6 @@ animations = [{
 script = ExtResource("1_8t303")
 damage_blink_timer_sec = 1.5
 
-[node name="HllTbDark" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(203, 936)
-scale = Vector2(0.733699, 0.733699)
-texture = ExtResource("1_qsudq")
-
-[node name="Skills" type="Node" parent="."]
-
 [node name="HellTbAnimation" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.753984, 0.753984, 0.753984, 1)
 position = Vector2(204, 942)
@@ -98,3 +91,5 @@ scale = Vector2(0.760001, 0.760001)
 sprite_frames = SubResource("SpriteFrames_wepe7")
 animation = &"hit"
 autoplay = "idle"
+
+[node name="TestInventoryDisplay" parent="." instance=ExtResource("4_vp12s")]

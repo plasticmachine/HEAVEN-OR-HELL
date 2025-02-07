@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdorwiack3h01"]
+[gd_scene load_steps=9 format=3 uid="uid://bdorwiack3h01"]
 
 [ext_resource type="Texture2D" uid="uid://qb1askllryfb" path="res://art/HEAVEN/turnbased/HVN_TB_Dark.PNG" id="2_7q6gi"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/HeavenTBAnimationManager.gd" id="2_67wdh"]
+[ext_resource type="PackedScene" uid="uid://byrkhhsviajgy" path="res://Scenes/Keychains/TestItem2D.tscn" id="2_rgxtv"]
 [ext_resource type="Texture2D" uid="uid://i1e6c5h8wlo4" path="res://art/HEAVEN/turnbased/HVN_TB_Bright.PNG" id="3_m3dbd"]
+[ext_resource type="PackedScene" uid="uid://cy1c1be6qg2a4" path="res://Scenes/Keychains/TestInventoryDisplay.tscn" id="4_ye887"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/inventory.gd" id="5_7kpab"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1hfb2"]
 animations = [{
@@ -79,9 +82,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="HeavenTb" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uotwc"]
+
+[node name="HeavenTb" type="Node2D" node_paths=PackedStringArray("inventory", "inventory_display")]
 script = ExtResource("2_67wdh")
 damage_blink_timer_sec = 1.5
+inventory = NodePath("InventoryManager")
+inventory_display = NodePath("TestInventoryDisplay")
+
+[node name="TestItem2d" parent="." instance=ExtResource("2_rgxtv")]
 
 [node name="HeavenTbAnimation" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.712129, 0.712129, 0.712129, 1)
@@ -92,3 +101,20 @@ animation = &"hit"
 autoplay = "idle"
 frame = 10
 frame_progress = 0.69519
+
+[node name="TestInventoryDisplay" parent="." instance=ExtResource("4_ye887")]
+offset_left = 1290.0
+offset_right = 1290.0
+
+[node name="InventoryManager" type="Node2D" parent="."]
+script = ExtResource("5_7kpab")
+
+[node name="TestAreaDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestAreaDetection"]
+position = Vector2(905, 509)
+scale = Vector2(107.918, 56.2982)
+shape = SubResource("RectangleShape2D_uotwc")
+
+[connection signal="inventory_updated" from="InventoryManager" to="." method="_on_inventory_manager_inventory_updated"]
+[connection signal="area_entered" from="TestAreaDetection" to="." method="_on_test_area_detection_area_entered"]

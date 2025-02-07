@@ -70,6 +70,8 @@ func _ready():
 			clownstats.special_status_effect_3 = 0
 	
 	if debug_mode == true:
+		
+		
 		heavenstats.reset_stats()
 		hellstats.reset_stats()
 	

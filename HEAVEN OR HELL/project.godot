@@ -56,7 +56,7 @@ version_control/movie_file=""
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gloot/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/yet_another_scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/BulletUpHell/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/yet_another_scene_manager/plugin.cfg")
 
 [global_group]
 
@@ -168,6 +168,26 @@ DEBUG_heaven_all_stats_up_(+10)={
 DEBUG_heaven_all_stats_down_(-10)={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194335,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+DEBUG_heaven_add_test_keychain_2D={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":49,"key_label":0,"unicode":33,"location":0,"echo":false,"script":null)
+]
+}
+DEBUG_heaven_remove_test_keychain_2D={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":50,"key_label":0,"unicode":64,"location":0,"echo":false,"script":null)
+]
+}
+DEBUG_hell_add_test_keychain_2D={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":51,"key_label":0,"unicode":35,"location":0,"echo":false,"script":null)
+]
+}
+DEBUG_hell_remove_test_keychain_2D={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":52,"key_label":0,"unicode":36,"location":0,"echo":false,"script":null)
 ]
 }
 

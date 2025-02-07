@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cq50iw1dbliy7"]
+
+[node name="TestItem3d" type="Area3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]

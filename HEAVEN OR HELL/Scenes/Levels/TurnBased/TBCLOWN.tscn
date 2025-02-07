@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=75 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/LevelManagers/TBCLOWN_MANAGER.gd" id="1_h0a2a"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/Skills/Skills.gd" id="2_1jhkk"]
@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://dujnx6ryb3ar2" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-6.png" id="43_7a5d4"]
 [ext_resource type="Texture2D" uid="uid://dp7auo0e48gm2" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-7.png" id="44_1wo5p"]
 [ext_resource type="Texture2D" uid="uid://bndlpixd48pfs" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-8.png" id="45_ryms0"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/inventory.gd" id="66_5g7pt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jmycf"]
 animations = [{
@@ -812,6 +813,12 @@ scale = Vector2(0.992759, 1.02564)
 theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ryeqi")
 step = 0.25
+
+[node name="KEYCHAINTESTING" type="Control" parent="PlayerUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("66_5g7pt")
 
 [node name="HvnDown" type="Sprite2D" parent="."]
 visible = false

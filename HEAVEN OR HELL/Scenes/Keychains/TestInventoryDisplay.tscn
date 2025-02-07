@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy1c1be6qg2a4"]
+
+[ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/InventoryDisplay.gd" id="1_8p6n7"]
+
+[node name="TestInventoryDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8p6n7")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer4"]
+layout_mode = 2
