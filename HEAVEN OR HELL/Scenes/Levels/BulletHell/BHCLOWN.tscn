@@ -956,11 +956,7 @@ position = Vector2(5137.5, 7263)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-<<<<<<< Updated upstream
-zoom = Vector2(0.2245, 0.2245)
-=======
-zoom = Vector2(0.29175, 0.29175)
->>>>>>> Stashed changes
+zoom = Vector2(0.1801, 0.1801)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)

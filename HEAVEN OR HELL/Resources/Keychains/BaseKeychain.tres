@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="KeychainResource" load_steps=2 format=3 uid="uid://dksndmfkgdxcx"]
+
+[ext_resource type="Script" path="res://Resources/Keychains/BaseKeychain.gd" id="1_6t8fl"]
+
+[resource]
+script = ExtResource("1_6t8fl")
+keychain_id = 0
+keychain_name = ""
+keychain_description = ""
+keychain_rarity = ""

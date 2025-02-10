@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="KeychainResource" load_steps=3 format=3 uid="uid://c014t5nlltc7h"]
+
+[ext_resource type="Script" path="res://Resources/Keychains/BaseKeychain.gd" id="1_0hxmn"]
+[ext_resource type="Texture2D" uid="uid://cka7i76shxe33" path="res://art/reimu/down/Untitled_Artwork-21.png" id="1_qkutw"]
+
+[resource]
+script = ExtResource("1_0hxmn")
+keychain_id = 3
+keychain_name = "pumpkin"
+keychain_description = "pumpkin"
+keychain_rarity = "pumpkin"
+keychain_texture = ExtResource("1_qkutw")

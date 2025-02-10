@@ -82,7 +82,7 @@ func animation_phase_shift_check():
 	if (clownstats.current_heart <= phase_1_HP_gate && clownstats.current_heart > phase_2_HP_gate ):
 		clownTB_animation.set("parameters/conditions/PHASE1", true)
 		PHASE = 1
-		print_debug("PHASE: 1")
+		#print_debug("PHASE: 1")
 	
 	#if  phase_1_HP_gate >= clownstats.current_heart >= phase_2_HP_gate:
 		#clownTB_animation.set("parameters/conditions/PHASE1", true)
@@ -94,7 +94,7 @@ func animation_phase_shift_check():
 		clownTB_animation.set("parameters/conditions/PHASE2", true)
 		clown_phase_2_path_follow.active = true
 		PHASE = 2
-		print_debug("PHASE: 2")
+		#print_debug("PHASE: 2")
 
 
 func _process(delta):

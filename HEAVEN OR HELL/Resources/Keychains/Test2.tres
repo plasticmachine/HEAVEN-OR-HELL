@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="KeychainResource" load_steps=3 format=3 uid="uid://ceuh4evwfu06c"]
+
+[ext_resource type="Texture2D" uid="uid://c6ukpp3ky566r" path="res://art/reimu/down/downwalk_1.png" id="1_w7bju"]
+[ext_resource type="Script" path="res://Resources/Keychains/BaseKeychain.gd" id="2_pxiar"]
+
+[resource]
+script = ExtResource("2_pxiar")
+keychain_id = 2
+keychain_name = "Reimu"
+keychain_description = "\"its Reimu!\""
+keychain_rarity = "ULTRA RARE!"
+keychain_texture = ExtResource("1_w7bju")

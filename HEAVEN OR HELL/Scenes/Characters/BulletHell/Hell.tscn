@@ -55,7 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://c4m8wdc064cdm" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-3.png" id="33_tsiqx"]
 [ext_resource type="Texture2D" uid="uid://7uyvf5gvdufr" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-4.png" id="34_kp8w8"]
 [ext_resource type="Texture2D" uid="uid://clpxgvqyndti7" path="res://art/HELL/run/right_takeoff/Untitled_Artwork-5.png" id="35_idttu"]
-[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/BowlingBall.png" id="45_r4d84"]
+[ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="45_r4d84"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q7yvp"]
 radius = 59.2
