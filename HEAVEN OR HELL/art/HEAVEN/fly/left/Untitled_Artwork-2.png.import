@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h37eu3m3e0l4"
-path="res://.godot/imported/Untitled_Artwork-4 (1).png-099efb187ebd7cb7d0d5e6410cc084b2.ctex"
+uid="uid://d33hnj2ngrju4"
+path="res://.godot/imported/Untitled_Artwork-2.png-6c1e8f19b0b3f0fe7acadda226088f9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-4 (1).png"
-dest_files=["res://.godot/imported/Untitled_Artwork-4 (1).png-099efb187ebd7cb7d0d5e6410cc084b2.ctex"]
+source_file="res://art/HEAVEN/fly/left/Untitled_Artwork-2.png"
+dest_files=["res://.godot/imported/Untitled_Artwork-2.png-6c1e8f19b0b3f0fe7acadda226088f9d.ctex"]
 
 [params]
 

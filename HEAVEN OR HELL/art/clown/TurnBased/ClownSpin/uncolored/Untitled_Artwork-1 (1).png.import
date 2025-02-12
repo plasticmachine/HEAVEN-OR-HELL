@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bofbepkeq1c1l"
-path="res://.godot/imported/Untitled_Artwork-1 (1).png-2adb967135d9dd91ffc922ebbd4ff097.ctex"
+path="res://.godot/imported/Untitled_Artwork-1 (1).png-2dc5b35179f0c69c2cc3e41a4c839b4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/clown/TurnBased/ClownSpin/Untitled_Artwork-1 (1).png"
-dest_files=["res://.godot/imported/Untitled_Artwork-1 (1).png-2adb967135d9dd91ffc922ebbd4ff097.ctex"]
+source_file="res://art/clown/TurnBased/ClownSpin/uncolored/Untitled_Artwork-1 (1).png"
+dest_files=["res://.godot/imported/Untitled_Artwork-1 (1).png-2dc5b35179f0c69c2cc3e41a4c839b4a.ctex"]
 
 [params]
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdp3mwc8pn1w0"]
+
+[ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/InventoryDisplayLeft.gd" id="1_xhmq6"]
+
+[node name="HellInventoryDisplay" type="CanvasLayer"]
+script = ExtResource("1_xhmq6")
+
+[node name="InventoryContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 13.0
+offset_right = -1.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2

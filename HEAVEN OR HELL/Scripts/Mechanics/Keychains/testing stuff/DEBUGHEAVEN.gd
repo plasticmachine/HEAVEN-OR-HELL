@@ -13,17 +13,17 @@ func _ready():
 	inventory_functions.debug_add_keychain(keychain2)
 
 	# Print the inventory
-	inventory_functions.debug_print_inventory()
+	inventory_functions.debug_print_heaven_inventory()
 
 	# Drop an keychain
 	inventory_functions.debug_remove_keychain(1)
-	inventory_functions.debug_print_inventory()
+	inventory_functions.debug_print_heaven_inventory()
 
 
 func _process(delta):
 	if Input.is_action_just_pressed("DEBUG_heaven_add_test_keychain_2D"):
-		inventory_functions.debug_add_keychain(keychain3)
-		inventory_functions.debug_print_inventory()
+		inventory_functions.debug_add_keychain(keychain1)
+		inventory_functions.debug_print_heaven_inventory()
 	if Input.is_action_just_pressed("DEBUG_heaven_remove_test_keychain_2D"):
 		inventory_functions.debug_remove_keychain(1)
-		inventory_functions.debug_print_inventory()
+		inventory_functions.debug_print_heaven_inventory()

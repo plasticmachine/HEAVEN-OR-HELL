@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://tcfwrymqvqb4"]
+[gd_scene load_steps=9 format=3 uid="uid://tcfwrymqvqb4"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/TurnBased/hellTBAnimation.gd" id="1_8t303"]
 [ext_resource type="Texture2D" uid="uid://cqd4gt1mf6tvx" path="res://art/HELL/turnbased/HLL_TB_Dark.PNG" id="1_qsudq"]
 [ext_resource type="Texture2D" uid="uid://6ntrmegkdsir" path="res://art/HELL/turnbased/HLL_TB_Bright.PNG" id="3_8mtur"]
-[ext_resource type="PackedScene" uid="uid://cy1c1be6qg2a4" path="res://Scenes/Keychains/TestInventoryDisplay.tscn" id="4_vp12s"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/inventory.gd" id="4_17j3l"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/hell_inventory_functions.gd" id="5_71qnj"]
+[ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/DEBUGHELL.gd" id="6_jlxl7"]
+[ext_resource type="PackedScene" uid="uid://bdp3mwc8pn1w0" path="res://Scenes/Keychains/HellInventoryDisplay.tscn" id="7_qhq1h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wepe7"]
 animations = [{
@@ -91,5 +94,23 @@ scale = Vector2(0.760001, 0.760001)
 sprite_frames = SubResource("SpriteFrames_wepe7")
 animation = &"hit"
 autoplay = "idle"
+frame = 16
+frame_progress = 0.92529
 
-[node name="TestInventoryDisplay" parent="." instance=ExtResource("4_vp12s")]
+[node name="InventoryManager" type="Node2D" parent="."]
+script = ExtResource("4_17j3l")
+MAX_UNIQUE_KEYCHAINS = 5
+
+[node name="HellInventoryFunctions" type="Node2D" parent="." node_paths=PackedStringArray("hell_inventory")]
+script = ExtResource("5_71qnj")
+hell_inventory = NodePath("../InventoryManager")
+
+[node name="DEBUG" type="Node2D" parent="." node_paths=PackedStringArray("inventory_functions")]
+script = ExtResource("6_jlxl7")
+inventory_functions = NodePath("../HellInventoryFunctions")
+
+[node name="HellInventoryDisplay" parent="." node_paths=PackedStringArray("inventory_manager") instance=ExtResource("7_qhq1h")]
+inventory_manager = NodePath("../InventoryManager")
+keychain_spacing = 175
+
+[connection signal="inventory_changed" from="InventoryManager" to="HellInventoryDisplay" method="update_hud"]

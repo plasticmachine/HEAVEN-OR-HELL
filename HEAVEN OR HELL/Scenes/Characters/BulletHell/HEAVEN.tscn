@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://b2uwu4w0ss13g"]
+[gd_scene load_steps=101 format=3 uid="uid://b2uwu4w0ss13g"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HeavenController.gd" id="1_re22k"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HeavenBulletChecker.gd" id="2_h3mt1"]
@@ -6,40 +6,40 @@
 [ext_resource type="Texture2D" uid="uid://c1u735x11tc4u" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-2.png" id="4_ch2xs"]
 [ext_resource type="Texture2D" uid="uid://chwtw84b614j5" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-3.png" id="5_qcpuf"]
 [ext_resource type="Texture2D" uid="uid://bwxrff8lq0qbj" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-4.png" id="6_axyui"]
-[ext_resource type="Texture2D" uid="uid://dwtlwfrsfw2qi" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-1.png" id="6_rfs6b"]
 [ext_resource type="Texture2D" uid="uid://b3mmpvmantick" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-5.png" id="7_awfry"]
-[ext_resource type="Texture2D" uid="uid://by6100quay6va" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-2.png" id="7_njlee"]
-[ext_resource type="Texture2D" uid="uid://c0fuyxig6lyfa" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-3.png" id="8_7p1fv"]
 [ext_resource type="Texture2D" uid="uid://bd6ghly5eu7o6" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-6.png" id="8_tb4dr"]
-[ext_resource type="Texture2D" uid="uid://crm13abd6wuva" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-4.png" id="9_hwd1m"]
 [ext_resource type="Texture2D" uid="uid://dkjg8wrxbnbj8" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-1.png" id="9_uhj5l"]
 [ext_resource type="Texture2D" uid="uid://dxjlddip2b2o0" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-2.png" id="10_0s70b"]
 [ext_resource type="PackedScene" uid="uid://co8jc0uhro10o" path="res://Scenes/old/melee.tscn" id="10_al23b"]
-[ext_resource type="Texture2D" uid="uid://c62aikwi0xmmt" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-5.png" id="10_esl08"]
 [ext_resource type="Texture2D" uid="uid://cox5c6wprxw51" path="res://art/GUI/bg.png" id="11_132pl"]
-[ext_resource type="Texture2D" uid="uid://x5k8h4ofq5ay" path="res://art/HEAVEN/walk/left/animation/Untitled_Artwork-6.png" id="11_q4wnu"]
 [ext_resource type="Texture2D" uid="uid://bobbvf36200h1" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-3.png" id="11_t5wad"]
-[ext_resource type="Texture2D" uid="uid://d138apigr777w" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-1.png" id="12_12bvf"]
 [ext_resource type="Texture2D" uid="uid://datk8wkaxjvlp" path="res://art/GUI/fill.png" id="12_g72hy"]
 [ext_resource type="Texture2D" uid="uid://cfxf8k41eq62i" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-4.png" id="12_xi4c8"]
 [ext_resource type="Texture2D" uid="uid://ccwaloaiojysx" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-5.png" id="13_tksws"]
-[ext_resource type="Texture2D" uid="uid://buf10uakn1cxh" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-2.png" id="13_uvvjj"]
 [ext_resource type="Texture2D" uid="uid://bkujtq3y3f6d7" path="res://art/HEAVEN/test/testwalk/down_right/Untitled_Artwork-6.png" id="14_enhgm"]
-[ext_resource type="Texture2D" uid="uid://bdurvvqm30h5b" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-3.png" id="14_kqr18"]
 [ext_resource type="Texture2D" uid="uid://db7ra4gp25jfl" path="res://art/HEAVEN/test/testidle/Untitled_Artwork-1.png" id="15_b6yvr"]
-[ext_resource type="Texture2D" uid="uid://beuyl8md6rt0p" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-4.png" id="15_bjvct"]
-[ext_resource type="Texture2D" uid="uid://cprbd4wviw33q" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-5.png" id="16_k1886"]
 [ext_resource type="Texture2D" uid="uid://bhnhsdxv66xwp" path="res://art/HEAVEN/test/testidle/Untitled_Artwork-2.png" id="16_u8v2n"]
 [ext_resource type="Texture2D" uid="uid://cwwxqykutoob1" path="res://art/HEAVEN/run/left_run/Untitled_Artwork-1.png" id="17_770ew"]
-[ext_resource type="Texture2D" uid="uid://dsn6fruqd1us" path="res://art/HEAVEN/walk/right/animation/Untitled_Artwork-6.png" id="17_nla6y"]
+[ext_resource type="Texture2D" uid="uid://6alo0tc1gbel" path="res://art/HEAVEN/fly/left/Untitled_Artwork-1.png" id="17_fwgni"]
+[ext_resource type="Texture2D" uid="uid://d33hnj2ngrju4" path="res://art/HEAVEN/fly/left/Untitled_Artwork-2.png" id="18_4ur50"]
 [ext_resource type="Texture2D" uid="uid://cpayr2u8unjab" path="res://art/HEAVEN/run/left_run/Untitled_Artwork-2.png" id="18_dj5ee"]
+[ext_resource type="Texture2D" uid="uid://diru7x76o0qnt" path="res://art/HEAVEN/fly/left/Untitled_Artwork-3.png" id="19_ogp5a"]
 [ext_resource type="Texture2D" uid="uid://dyi7kmq2xvu41" path="res://art/HEAVEN/run/left_run/Untitled_Artwork-3.png" id="19_qnmpc"]
+[ext_resource type="Texture2D" uid="uid://f1grq5oh3gtx" path="res://art/HEAVEN/fly/left/Untitled_Artwork-4.png" id="20_a5ltn"]
 [ext_resource type="Texture2D" uid="uid://c02ycovdhd68t" path="res://art/HEAVEN/run/left_run/Untitled_Artwork-4.png" id="20_ijx1u"]
+[ext_resource type="Texture2D" uid="uid://dxa23vt8x2bjj" path="res://art/HEAVEN/fly/left/Untitled_Artwork-5.png" id="21_0vtp8"]
 [ext_resource type="Texture2D" uid="uid://cbx8ocah260rg" path="res://art/HEAVEN/run/left_run/Untitled_Artwork-5.png" id="21_6pmif"]
+[ext_resource type="Texture2D" uid="uid://hiuh1gh13b84" path="res://art/HEAVEN/fly/left/Untitled_Artwork-6.png" id="22_l8rsm"]
 [ext_resource type="Texture2D" uid="uid://dv4bf1erdrwoo" path="res://art/HEAVEN/run/left_run/Untitled_Artwork-6.png" id="22_txwy0"]
+[ext_resource type="Texture2D" uid="uid://by66ysixf2bqh" path="res://art/HEAVEN/fly/right/Untitled_Artwork-1.png" id="23_24hvt"]
+[ext_resource type="Texture2D" uid="uid://bkkteprwjeusm" path="res://art/HEAVEN/fly/right/Untitled_Artwork-2.png" id="24_h0thb"]
 [ext_resource type="Texture2D" uid="uid://dyktj31dtv5jg" path="res://art/HEAVEN/run/right_run/Untitled_Artwork-1.png" id="25_0ccmy"]
+[ext_resource type="Texture2D" uid="uid://ch18xgi4qepeu" path="res://art/HEAVEN/fly/right/Untitled_Artwork-3.png" id="25_pudu1"]
 [ext_resource type="Texture2D" uid="uid://bp8l8gbh7qd68" path="res://art/HEAVEN/run/right_run/Untitled_Artwork-2.png" id="26_h4gtf"]
+[ext_resource type="Texture2D" uid="uid://bwwn5hf5ywahb" path="res://art/HEAVEN/fly/right/Untitled_Artwork-4.png" id="26_jilqx"]
 [ext_resource type="Texture2D" uid="uid://cvdqw55nn7pv8" path="res://art/HEAVEN/run/right_run/Untitled_Artwork-3.png" id="27_hc2on"]
+[ext_resource type="Texture2D" uid="uid://bf4gb2oiufjrl" path="res://art/HEAVEN/fly/right/Untitled_Artwork-5.png" id="27_snr8l"]
+[ext_resource type="Texture2D" uid="uid://psaluk4mwuqw" path="res://art/HEAVEN/fly/right/Untitled_Artwork-6.png" id="28_3u2gy"]
 [ext_resource type="Texture2D" uid="uid://b4xe7kr3dkk0n" path="res://art/HEAVEN/run/right_run/Untitled_Artwork-4.png" id="28_3133m"]
 [ext_resource type="Texture2D" uid="uid://dvxmsj3waypug" path="res://art/HEAVEN/run/right_run/Untitled_Artwork-5.png" id="29_fatw6"]
 [ext_resource type="Texture2D" uid="uid://dy7j5t8yec8wk" path="res://art/HEAVEN/run/right_run/Untitled_Artwork-6.png" id="30_t5jkg"]
@@ -136,49 +136,73 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_rfs6b")
+"texture": ExtResource("17_fwgni")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_njlee")
+"texture": ExtResource("17_fwgni")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_7p1fv")
+"texture": ExtResource("18_4ur50")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_hwd1m")
+"texture": ExtResource("19_ogp5a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_esl08")
+"texture": ExtResource("20_a5ltn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_q4wnu")
+"texture": ExtResource("20_a5ltn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0vtp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_0vtp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_l8rsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_l8rsm")
 }],
 "loop": true,
 "name": &"left",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_12bvf")
+"texture": ExtResource("23_24hvt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_uvvjj")
+"texture": ExtResource("23_24hvt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_kqr18")
+"texture": ExtResource("24_h0thb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_bjvct")
+"texture": ExtResource("25_pudu1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_k1886")
+"texture": ExtResource("26_jilqx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_nla6y")
+"texture": ExtResource("26_jilqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_snr8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_snr8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3u2gy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3u2gy")
 }],
 "loop": true,
 "name": &"right",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -251,60 +275,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_83glv"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_6m16l"]
+resource_name = "RESET"
+length = 0.0166684
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"down"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_6nbqc"]
-resource_name = "down"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"down"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_dwiup"]
@@ -399,9 +384,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_nt00e"]
 resource_name = "left"
-length = 0.60001
+length = 0.666673
 loop_mode = 1
-step = 0.1
+step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -421,17 +406,17 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 
 [sub_resource type="Animation" id="Animation_jpfi1"]
 resource_name = "right"
-length = 0.60001
+length = 0.666673
 loop_mode = 1
-step = 0.1
+step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -451,10 +436,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 
 [sub_resource type="Animation" id="Animation_8jvll"]
@@ -603,8 +588,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ctgvh"]
 _data = {
-"RESET": SubResource("Animation_83glv"),
-"down": SubResource("Animation_6nbqc"),
+"RESET": SubResource("Animation_6m16l"),
 "down_left": SubResource("Animation_dwiup"),
 "down_right": SubResource("Animation_o7ykt"),
 "idle": SubResource("Animation_lhk5n"),
@@ -689,10 +673,10 @@ animation = &"down_right"
 animation = &"down_right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_blcut"]
-animation = &"down_left"
+animation = &"left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sedex"]
-animation = &"down_right"
+animation = &"right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k2wr7"]
 animation = &"down_right"
@@ -729,7 +713,7 @@ snap = Vector2(1, 1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_0qw8f"]
-graph_offset = Vector2(-139.801, -15.9001)
+graph_offset = Vector2(-225.032, 53.4655)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_ovn5r")
 nodes/TimeScale/position = Vector2(440, 240)
 nodes/WalkBS/node = SubResource("AnimationNodeBlendSpace2D_uasp7")
@@ -803,7 +787,7 @@ states/Walk/position = Vector2(374, 100)
 states/walkBS/node = SubResource("AnimationNodeBlendSpace2D_8rf3o")
 states/walkBS/position = Vector2(110, 279)
 transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_ifnup"), "Run", "Walk", SubResource("AnimationNodeStateMachineTransition_7jp1g"), "Walk", "Run", SubResource("AnimationNodeStateMachineTransition_75dca")]
-graph_offset = Vector2(-394.968, 78.679)
+graph_offset = Vector2(-170.968, 106.679)
 
 [node name="Heaven" type="CharacterBody2D" groups=["Player"]]
 process_mode = 1
@@ -811,21 +795,18 @@ motion_mode = 1
 script = ExtResource("1_re22k")
 
 [node name="InteractionHurtbox" type="CollisionShape2D" parent="."]
-visible = false
 z_index = 35
 position = Vector2(-34, 143)
 shape = SubResource("CircleShape2D_7egpc")
 
 [node name="PlayerArea" type="Area2D" parent="." groups=["Player"]]
-visible = false
 z_index = 1
 collision_layer = 255
 priority = 1
 script = ExtResource("2_h3mt1")
 
 [node name="BulletHurtbox" type="CollisionShape2D" parent="PlayerArea" groups=["Player"]]
-visible = false
-z_index = 1
+z_index = 3636
 position = Vector2(-34, 143)
 shape = SubResource("CircleShape2D_7egpc")
 debug_color = Color(0.964375, 3.08037e-06, 0.493133, 0.42)
@@ -833,10 +814,9 @@ debug_color = Color(0.964375, 3.08037e-06, 0.493133, 0.42)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(101, 142)
 sprite_frames = SubResource("SpriteFrames_lblot")
-animation = &"down"
+animation = &"right"
 
 [node name="Melee" parent="." instance=ExtResource("10_al23b")]
-visible = false
 position = Vector2(-1, -1)
 scale = Vector2(3.731, 3.731)
 attackCooldown = 15.0
@@ -866,16 +846,19 @@ callback_mode_process = 2
 libraries = {
 "": SubResource("AnimationLibrary_ctgvh")
 }
+autoplay = "idle"
+playback_auto_capture = false
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 physics_interpolation_mode = 1
+deterministic = false
 tree_root = SubResource("AnimationNodeStateMachine_yd8ct")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Run/RunBS/blend_position = Vector2(0, 0)
+parameters/Run/RunBS/blend_position = Vector2(0.770723, -0.156951)
 parameters/Run/TimeScale/scale = 1.0
 parameters/Walk/TimeScale/scale = 1.0
-parameters/Walk/WalkBS/blend_position = Vector2(-1, -1.00955)
-parameters/walkBS/blend_position = Vector2(0.00979829, -0.00715995)
+parameters/Walk/WalkBS/blend_position = Vector2(0.989418, 0.0638298)
+parameters/walkBS/blend_position = Vector2(-0.332158, -0.818627)
 
 [node name="DropShadow" type="Sprite2D" parent="."]
 modulate = Color(0.00566115, 0.00566115, 0.00566115, 0.447059)

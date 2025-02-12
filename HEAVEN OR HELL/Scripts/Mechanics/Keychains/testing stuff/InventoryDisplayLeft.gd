@@ -20,6 +20,8 @@ func _on_inventory_manager_inventory_changed():
 func update_hud():
 	if inventory_manager.keychains.size() > displayed_keychains_count:
 		add_new_keychains_to_hud()
+	if inventory_manager.keychains.size() < displayed_keychains_count:
+		remove_keychain_from_hud(1)
 	else:
 		update_current_hud()
 
@@ -57,6 +59,16 @@ func add_new_keychains_to_hud():
 		$InventoryContainer.add_child(container)
 		
 	displayed_keychains_count = current_keychains_count
+### kinda works!!! lol
+func remove_keychain_from_hud(index: int) -> void:
+	var container = $InventoryContainer.get_child(index)
+	$InventoryContainer.remove_child(container)
+	container.queue_free()
+	displayed_keychains_count -= 1
+	
+	for i in range(index, $InventoryContainer.get_child_count()):
+			var child = $InventoryContainer.get_child(i)
+			child.position.x -= keychain_spacing
 
 func update_current_hud():
 	for i in range(displayed_keychains_count):

@@ -7,6 +7,6 @@
 script = ExtResource("1_on6y5")
 keychain_id = 1
 keychain_name = "Cirno!"
-keychain_description = "\"its cirno!\""
-keychain_rarity = "ULTRA RARE!"
+keychain_description = "\"CIRNO! THE MOVIE!\""
+keychain_rarity = "..."
 keychain_texture = ExtResource("1_3qhi7")

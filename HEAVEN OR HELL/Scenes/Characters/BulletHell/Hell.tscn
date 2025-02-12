@@ -917,7 +917,7 @@ debug_color = Color(0.964375, 3.08037e-06, 0.493133, 0.42)
 material = SubResource("ShaderMaterial_5dk0g")
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_lblot")
-animation = &"down_right"
+animation = &"idle"
 frame = 1
 
 [node name="Melee" parent="." instance=ExtResource("9_s66nb")]
