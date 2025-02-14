@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://2smx4wcs5yle"]
+[gd_scene load_steps=77 format=3 uid="uid://cjqun4874qmcb"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/LevelManagers/BHCLOWN_MANAGER.gd" id="1_ql545"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_b0jdw"]
@@ -942,12 +942,6 @@ shader_parameter/offset = Vector2(-10, -10)
 shader_parameter/color = null
 shader_parameter/debug = false
 
-[sub_resource type="Curve2D" id="Curve2D_rmnyb"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 30279, 5412, 0, 0, 0, 0, -2292, 5355)
-}
-point_count = 2
-
 [node name="Main" type="Node"]
 process_mode = 1
 script = ExtResource("1_ql545")
@@ -962,7 +956,7 @@ position = Vector2(5137.5, 7263)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-zoom = Vector2(0.2235, 0.2235)
+zoom = Vector2(0.290583, 0.290583)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)
@@ -1222,7 +1216,7 @@ script = ExtResource("14_r45kx")
 speed = 2000
 
 [node name="Clown2" parent="Path2D/Phase_1_Movement" instance=ExtResource("15_oaur5")]
-position = Vector2(-0.442383, 267.374)
+position = Vector2(0, 267)
 collision_layer = 1
 
 [node name="BowlingPinSpawner" type="Node2D" parent="Path2D/Phase_1_Movement/Clown2"]
@@ -1563,28 +1557,18 @@ metadata/_edit_lock_ = true
 
 [node name="Hell" parent="Players" instance=ExtResource("18_nimnx")]
 physics_interpolation_mode = 2
-visible = false
 material = SubResource("ShaderMaterial_s1o53")
 position = Vector2(-10364, -1979)
 
 [node name="Heaven" parent="Players" instance=ExtResource("20_hqc1t")]
 position = Vector2(-4473, -1895)
+scale = Vector2(0.869, 0.869)
 
-[node name="Path2D2" type="Path2D" parent="."]
-curve = SubResource("Curve2D_rmnyb")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
-position = Vector2(30279, 5412)
-rotation = -3.13984
-script = ExtResource("14_r45kx")
-speed = 400
-active = true
-
-[node name="Background" type="Sprite2D" parent="Path2D2/PathFollow2D"]
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
 z_index = -255
-position = Vector2(15379.3, -2043.65)
-rotation = 3.13421
-scale = Vector2(17.545, 17.545)
+position = Vector2(611, 191)
+scale = Vector2(6.5, 6.5)
 texture = ExtResource("25_0fx2l")
 region_rect = Rect2(-2533, -2162, 10300, 7803)
 

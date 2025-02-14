@@ -440,6 +440,7 @@ scale = Vector2(0.51, 0.51)
 texture = ExtResource("2_fiwds")
 
 [node name="HvnUplft1" type="Sprite2D" parent="TestPlayerSpots"]
+visible = false
 position = Vector2(11396, 5424)
 scale = Vector2(4.48035, 4.48035)
 metadata/_edit_lock_ = true
@@ -821,13 +822,11 @@ offset_bottom = 40.0
 script = ExtResource("66_5g7pt")
 
 [node name="HvnDown" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(618, 392)
 rotation = 0.0506095
 scale = Vector2(0.189191, 0.189191)
 
 [node name="HllDown" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(463, 438)
 rotation = -3.10526
 scale = Vector2(-0.159953, -0.159953)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6alo0tc1gbel"
-path="res://.godot/imported/Untitled_Artwork-1.png-1788bb038af8b177de6dc8b2c1aff78c.ctex"
+uid="uid://f1grq5oh3gtx"
+path="res://.godot/imported/Untitled_Artwork-4.png-a65b9f3fe57ce5936b9a33ab529f0f48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/HEAVEN/fly/left/Untitled_Artwork-1.png"
-dest_files=["res://.godot/imported/Untitled_Artwork-1.png-1788bb038af8b177de6dc8b2c1aff78c.ctex"]
+source_file="res://art/HEAVEN/fly/uncolored/left/Untitled_Artwork-4.png"
+dest_files=["res://.godot/imported/Untitled_Artwork-4.png-a65b9f3fe57ce5936b9a33ab529f0f48.ctex"]
 
 [params]
 
