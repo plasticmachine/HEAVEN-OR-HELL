@@ -8,6 +8,7 @@ var state = WALK
 
 @onready var BulletCollision = $PlayerArea/BulletHurtbox
 @onready var animationTree = $AnimationTree
+@export var BHbossNode: Node2D
 @onready var state_machine = animationTree["parameters/playback"]
 var blend_position : Vector2 = Vector2.ZERO
 var blend_pos_path = [
@@ -33,11 +34,14 @@ func _ready():
 	print_debug(heavenstats.current_heart)
 	#screen_size = get_viewport_rect().size
 	#hide()
+	check_relative_location_to_boss()
 func _process(delta):
 	_movement(delta)
 	animate()
 	check_death()
 	debug_controls()
+	check_if_nodes_have_crossed()
+
 
 func debug_controls():
 	if Input.is_action_just_pressed("DEBUG_heaven_all_stats_up_(+10)"):
@@ -128,6 +132,21 @@ func check_death():
 		hide()
 		
 
+
+#func check_relative_location_to_boss():
+	#
+	#if BHbossNode:
+		#if global_position.x <= BHbossNode.global_position.x:
+			#scale.x = abs(scale.x)
+		#else:
+			#scale.x = -abs(scale.x)
+			#
+ #
+#
+#func check_if_nodes_have_crossed():
+	#if global_position.x < BHbossNode.global_position.x or global_position.x > BHbossNode.global_position.x:
+		#check_relative_location_to_boss()
+	
 #func _on_animation_player_animation_finished(anim_name):
 	#if anim_name == "takeoff_right":
 		#$AnimationPlayer.play("run_right")
