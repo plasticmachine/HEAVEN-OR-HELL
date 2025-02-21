@@ -269,3 +269,10 @@ func skill_3_effect():
 					effect_animation.play("basic_debuff")
 					
 	clownTB_animation.set("parameters/conditions/KICKS", false)
+
+
+func _on_damage_calculation_clown_damage_taken() -> void:
+	clownTB_animation.set('parameters/conditions/DAMAGE1', true)
+	await get_tree().create_timer(.5).timeout
+	
+	clownTB_animation.set('parameters/conditions/DAMAGE1', false)

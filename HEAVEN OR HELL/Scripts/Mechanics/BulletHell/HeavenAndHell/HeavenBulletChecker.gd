@@ -24,7 +24,7 @@ func _on_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_ind
 	if area == Spawning.get_shared_area("BowlingPin"):
 		heavenstats.calc_BH_defense()
 		heavenstats.subtract_heart((Spawning.bullet("BowlingPins").damage) / heavenstats.BH_defense)
-	
-	if area == Spawning.get_shared_area("Balloon"):
-		heavenstats.calc_BH_defense()
-		heavenstats.subtract_heart((Spawning.bullet("Balloons").damage) / heavenstats.BH_defense)
+	#
+	#if area == Spawning.get_shared_area("Balloon"):
+		#heavenstats.calc_BH_defense()
+		#heavenstats.subtract_heart((Spawning.bullet("Balloons").damage) / heavenstats.BH_defense)

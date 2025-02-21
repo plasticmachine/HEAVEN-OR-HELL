@@ -815,6 +815,7 @@ debug_color = Color(0.964375, 3.08037e-06, 0.493133, 0.42)
 position = Vector2(101, 142)
 sprite_frames = SubResource("SpriteFrames_lblot")
 animation = &"right"
+flip_h = true
 
 [node name="Melee" parent="." instance=ExtResource("10_al23b")]
 position = Vector2(-1, -1)
@@ -861,6 +862,7 @@ parameters/Walk/WalkBS/blend_position = Vector2(-0.998864, -0.0106384)
 parameters/walkBS/blend_position = Vector2(0, 0)
 
 [node name="DropShadow" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.00566115, 0.00566115, 0.00566115, 0.447059)
 show_behind_parent = true
 position = Vector2(2, 471)

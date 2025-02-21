@@ -16,8 +16,6 @@ var ID_5_Heaven_disable_turn
 var ID_6_Heaven_disable_turn
 var ID_8_Heaven_disable_turn
 
-
-
 var ID_3_Hell_disable_turn
 
 ### STATUS EFFECT DISABLE TURNS
@@ -49,6 +47,7 @@ func holy_swords_set():
 				clownstats.special_status_effect_1 = 1
 	#if TurnBasedManager.turn_count > holy_swords_disable_turn
 
+
 #SPECIAL_STATUS_ID_2 (SIGIL)
 func sigil_set_and_toss():
 	var num = [4,5,6].pick_random()
@@ -64,7 +63,6 @@ func sigil_set_and_toss():
 				2:
 					pass
 					#run the script that checks the special status slots
-	
 
 
 
@@ -77,9 +75,9 @@ func check_if_effects_active_end_turn():
 	### 	1:
 	###			new actor1_skill_power? old actor1_skill_power? consistent skill power? 
 	###			damagecalc.actor1_to_actor2() 
-	
-	
-	
+
+
+
 	match clownstats.special_status_effect_1:
 		0:
 			pass

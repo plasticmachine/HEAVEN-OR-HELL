@@ -40,7 +40,9 @@ func _process(delta):
 	animate()
 	check_death()
 	debug_controls()
-	check_if_nodes_have_crossed()
+	check_relative_location_to_boss()
+#func _physics_process(delta: float) -> void:
+		#check_relative_location_to_boss()
 
 
 func debug_controls():
@@ -133,20 +135,19 @@ func check_death():
 		
 
 
-#func check_relative_location_to_boss():
-	#
-	#if BHbossNode:
-		#if global_position.x <= BHbossNode.global_position.x:
-			#scale.x = abs(scale.x)
+func check_relative_location_to_boss():
+	var distance = 	global_position.x - BHbossNode.global_position.x 
+
+	if BHbossNode:
+		if distance == 0:
+			scale.x = -abs(scale.x)
 		#else:
 			#scale.x = -abs(scale.x)
-			#
- #
-#
+ 
+
 #func check_if_nodes_have_crossed():
-	#if global_position.x < BHbossNode.global_position.x or global_position.x > BHbossNode.global_position.x:
 		#check_relative_location_to_boss()
-	
+	#
 #func _on_animation_player_animation_finished(anim_name):
 	#if anim_name == "takeoff_right":
 		#$AnimationPlayer.play("run_right")

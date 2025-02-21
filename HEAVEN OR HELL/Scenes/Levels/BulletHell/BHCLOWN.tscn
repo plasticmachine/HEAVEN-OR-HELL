@@ -927,12 +927,12 @@ point_count = 2
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s61ws"]
 shader = ExtResource("25_vpfkv")
 shader_parameter/progress = 0.0
-shader_parameter/meltiness = 1.0
+shader_parameter/meltiness = 6.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yglda"]
 shader = ExtResource("25_vpfkv")
 shader_parameter/progress = 0.0
-shader_parameter/meltiness = 1.0
+shader_parameter/meltiness = 0.995
 
 [node name="Main" type="Node"]
 process_mode = 1
@@ -948,7 +948,7 @@ position = Vector2(4805.5, 7263)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-zoom = Vector2(0.3005, 0.3005)
+zoom = Vector2(0.18475, 0.18475)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)
@@ -1008,7 +1008,7 @@ visible = false
 script = ExtResource("5_ff680")
 
 [node name="clown_PHASE_1" type="Timer" parent="Timers"]
-wait_time = 100.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 
@@ -1035,7 +1035,7 @@ scale = Vector2(26.9967, 2.48006)
 
 [node name="Phase1TextureProgress" type="TextureProgressBar" parent="Timers/TimerResources/Phase1Hbox"]
 layout_mode = 2
-max_value = 60.0
+max_value = 10.0
 value = 1.0
 texture_under = ExtResource("6_gqw3i")
 texture_progress = ExtResource("7_tg0k8")
@@ -1377,7 +1377,7 @@ speed = 400
 active = true
 
 [node name="Background" type="Sprite2D" parent="Path2D2/PathFollow2D"]
-z_index = -255
+z_index = -254
 material = SubResource("ShaderMaterial_s61ws")
 position = Vector2(-63.4973, 1.32963)
 rotation = 3.13421
@@ -1385,9 +1385,9 @@ scale = Vector2(15.9738, 16.5941)
 texture = ExtResource("25_0fx2l")
 region_rect = Rect2(-2533, -2162, 10300, 7803)
 script = ExtResource("27_7d0lq")
+progress_speed = 0.001
 
 [node name="Background2" type="Sprite2D" parent="Path2D2/PathFollow2D"]
-visible = false
 z_index = -255
 material = SubResource("ShaderMaterial_yglda")
 position = Vector2(171.937, -4626.07)
@@ -1397,6 +1397,7 @@ texture = ExtResource("26_ghih4")
 region_rect = Rect2(-2533, -2162, 10300, 7803)
 
 [connection signal="timeout" from="Timers/clown_PHASE_1" to="Timers" method="_on_clown_phase_1_timeout"]
+[connection signal="timeout" from="Timers/clown_PHASE_1" to="Path2D2/PathFollow2D/Background" method="_on_clown_phase_1_timeout"]
 [connection signal="timeout" from="Timers/clown_PHASE_2" to="Timers" method="_on_clown_phase_2_timeout"]
 [connection signal="timeout" from="Timers/clown_PHASE_3" to="Timers" method="_on_clown_phase_3_timeout"]
 [connection signal="timeout" from="Timers/clown_PHASE_4" to="Timers" method="_on_clown_phase_4_timeout"]

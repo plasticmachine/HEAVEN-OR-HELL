@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://cgi43evcnmcqb"]
+[gd_scene load_steps=23 format=3 uid="uid://cgi43evcnmcqb"]
 
 [ext_resource type="Texture2D" uid="uid://myxqcsve702q" path="res://art/clown/dance/colored/Untitled_Artwork-1.png" id="1_0hgjm"]
 [ext_resource type="Script" path="res://art/clown/EnemyCollision.gd" id="1_e8gkx"]
+[ext_resource type="Script" path="res://art/clown/SideSwapChecker.gd" id="1_yx5dw"]
 [ext_resource type="Texture2D" uid="uid://bjjlhtcxelpxq" path="res://art/clown/dance/colored/Untitled_Artwork-2.png" id="2_gdyc5"]
 [ext_resource type="Texture2D" uid="uid://bqbk0g26kfo4n" path="res://art/clown/dance/colored/Untitled_Artwork-3.png" id="3_iw1q7"]
 [ext_resource type="Texture2D" uid="uid://203gc5pl461g" path="res://art/clown/dance/colored/Untitled_Artwork-4.png" id="4_3tsdc"]
@@ -87,6 +88,7 @@ radius = 112.4
 [node name="Clown" type="Area2D"]
 collision_layer = 0
 collision_mask = 0
+script = ExtResource("1_yx5dw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i0p1m")

@@ -1,20 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdorwiack3h01"]
+[gd_scene load_steps=19 format=3 uid="uid://bdorwiack3h01"]
 
-[ext_resource type="Texture2D" uid="uid://qb1askllryfb" path="res://art/HEAVEN/turnbased/HVN_TB_Dark.PNG" id="2_7q6gi"]
+[ext_resource type="Texture2D" uid="uid://qb1askllryfb" path="res://art/HEAVEN/turnbased/idle/HVN_TB_Dark.PNG" id="2_7q6gi"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/HeavenTBAnimationManager.gd" id="2_67wdh"]
-[ext_resource type="Texture2D" uid="uid://i1e6c5h8wlo4" path="res://art/HEAVEN/turnbased/HVN_TB_Bright.PNG" id="3_m3dbd"]
+[ext_resource type="Texture2D" uid="uid://dyhudt51tauqv" path="res://art/HEAVEN/turnbased/idle/dark/Untitled_Artwork.png" id="2_n2gje"]
+[ext_resource type="Texture2D" uid="uid://c6bcffnq56tjc" path="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-1.png" id="3_0kxym"]
 [ext_resource type="PackedScene" uid="uid://c78nm2c1qev16" path="res://Scenes/Keychains/HeavenInventoryDisplay.tscn" id="4_0d727"]
+[ext_resource type="Texture2D" uid="uid://by8pqo6ioq44v" path="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-2.png" id="4_hgt8n"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/inventory.gd" id="5_7kpab"]
+[ext_resource type="Texture2D" uid="uid://bnkp3ykahijwl" path="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-3.png" id="5_eb0b0"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/heaven_inventory_functions.gd" id="6_dfshg"]
+[ext_resource type="Texture2D" uid="uid://bbcfanube500v" path="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-4.png" id="6_gwunw"]
+[ext_resource type="Texture2D" uid="uid://ddsyybllev4b1" path="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-5.png" id="7_ir6i1"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/DEBUGHEAVEN.gd" id="7_mq0ys"]
+[ext_resource type="Texture2D" uid="uid://u1cnmaig4yq0" path="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-6.png" id="8_dcr8j"]
+[ext_resource type="Texture2D" uid="uid://burmovs6tiwa" path="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-7.png" id="9_kdnq4"]
+[ext_resource type="Texture2D" uid="uid://c86wk76kbbfm0" path="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-8.png" id="10_lgo12"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1hfb2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7q6gi")
+"texture": ExtResource("2_n2gje")
 }],
-"loop": true,
+"loop": false,
 "name": &"disable",
 "speed": 5.0
 }, {
@@ -76,12 +84,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_m3dbd")
+"texture": ExtResource("3_0kxym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hgt8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eb0b0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gwunw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ir6i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dcr8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kdnq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lgo12")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 6.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjiw0"]
+size = Vector2(27.9688, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5edlt"]
+size = Vector2(143, 80)
 
 [node name="HeavenTb" type="Node2D"]
 script = ExtResource("2_67wdh")
@@ -90,12 +125,10 @@ damage_blink_timer_sec = 1.5
 [node name="HeavenTbAnimation" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.712129, 0.712129, 0.712129, 1)
 position = Vector2(1682, 931)
-scale = Vector2(0.716082, 0.716082)
+scale = Vector2(0.796082, 0.796082)
 sprite_frames = SubResource("SpriteFrames_1hfb2")
-animation = &"hit"
+animation = &"disable"
 autoplay = "idle"
-frame = 10
-frame_progress = 0.69519
 
 [node name="InventoryManager" type="Node2D" parent="."]
 script = ExtResource("5_7kpab")
@@ -110,9 +143,25 @@ script = ExtResource("7_mq0ys")
 inventory_functions = NodePath("../HeavenInventoryFunctions")
 
 [node name="HeavenInventoryDisplay" parent="." node_paths=PackedStringArray("inventory_manager") instance=ExtResource("4_0d727")]
+visible = false
 inventory_manager = NodePath("../InventoryManager")
 keychain_spacing = -175
 keychain_size = Vector2(0, 0)
 label_y_offset = 16
+
+[node name="BlockArea" type="Area2D" parent="."]
+position = Vector2(1612, 844)
+
+[node name="BlockBox" type="CollisionShape2D" parent="BlockArea"]
+position = Vector2(0.999878, -130)
+scale = Vector2(5.12, 5.12)
+shape = SubResource("RectangleShape2D_xjiw0")
+
+[node name="ParryArea" type="Area2D" parent="."]
+position = Vector2(1612, 844)
+
+[node name="ParryBox" type="CollisionShape2D" parent="ParryArea"]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_5edlt")
 
 [connection signal="inventory_changed" from="InventoryManager" to="HeavenInventoryDisplay" method="update_hud"]

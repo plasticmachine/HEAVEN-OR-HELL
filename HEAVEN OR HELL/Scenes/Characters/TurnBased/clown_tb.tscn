@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://dt06qpfhtfajd"]
+[gd_scene load_steps=101 format=3 uid="uid://dt06qpfhtfajd"]
 
 [ext_resource type="Texture2D" uid="uid://n8jftbuyirgl" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-1.png" id="2_eba1o"]
 [ext_resource type="Texture2D" uid="uid://damkva1jjkcsg" path="res://art/clown/TurnBased/CLOWN_TBTEST.png" id="2_y11lw"]
@@ -22,10 +22,16 @@
 [ext_resource type="Texture2D" uid="uid://eauy65e4acw8" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-14.png" id="15_xe1gs"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/Clown/ClownTbAnimationManager.gd" id="21_rxlsl"]
 [ext_resource type="Texture2D" uid="uid://bpuc27uvjc2tl" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-1.png" id="22_gixf8"]
+[ext_resource type="Texture2D" uid="uid://d0o4swln5jyed" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-1.png" id="22_t6r17"]
 [ext_resource type="Texture2D" uid="uid://ckqpov07srvkp" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-2.png" id="23_3ggi2"]
+[ext_resource type="Texture2D" uid="uid://ccosupehdsq3y" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-2.png" id="23_qtmyy"]
 [ext_resource type="Texture2D" uid="uid://d37sa6w3qctia" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-3.png" id="24_2vku4"]
+[ext_resource type="Texture2D" uid="uid://gdl7xfy2jsut" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-3.png" id="24_oegv2"]
 [ext_resource type="Texture2D" uid="uid://ci2gw001u6hr0" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-4.png" id="25_tq1dc"]
+[ext_resource type="Texture2D" uid="uid://b7co48b8xvbsg" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-4.png" id="25_xs6nm"]
 [ext_resource type="Texture2D" uid="uid://b8v3d5p16rof" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-5.png" id="26_3ubkp"]
+[ext_resource type="Texture2D" uid="uid://eq6nnk4rg88l" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-5.png" id="26_t1ogs"]
+[ext_resource type="Texture2D" uid="uid://debygplhsf7nh" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-6.png" id="27_m1puk"]
 [ext_resource type="Texture2D" uid="uid://bfrk3bvow8u7e" path="res://art/clown/TurnBased/ClownBuff1/Untitled_Artwork-1.png" id="27_u4djn"]
 [ext_resource type="Texture2D" uid="uid://b27p30igu176e" path="res://art/clown/TurnBased/ClownBuff1/Untitled_Artwork-2.png" id="28_qdg83"]
 [ext_resource type="Texture2D" uid="uid://be4oqwrpgy8tu" path="res://art/clown/TurnBased/ClownBuff1/Untitled_Artwork-3.png" id="29_h8u7m"]
@@ -153,6 +159,41 @@ animations = [{
 "loop": false,
 "name": &"Kicks",
 "speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_t6r17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_t6r17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qtmyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qtmyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_oegv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xs6nm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_t1ogs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_t1ogs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_m1puk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_m1puk")
+}],
+"loop": false,
+"name": &"Phase_1_Damage",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -476,9 +517,40 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
+[sub_resource type="Animation" id="Animation_m7c7x"]
+resource_name = "damage1"
+length = 1.00001
+loop_mode = 1
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Phase_1_Damage"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jrs4b"]
 _data = {
 "Buff1": SubResource("Animation_gcrxe"),
+"Damage1": SubResource("Animation_m7c7x"),
 "Kicks": SubResource("Animation_hlv15"),
 "RESET": SubResource("Animation_10nlo"),
 "Spins": SubResource("Animation_y4d6l"),
@@ -506,6 +578,9 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t6imc"]
 animation = &"Buff1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5yeve"]
+animation = &"Damage1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gapij"]
 animation = &"Kicks"
@@ -583,11 +658,25 @@ advance_mode = 2
 advance_mode = 2
 advance_condition = &"PHASE1"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2rpsa"]
+break_loop_at_end = true
+reset = false
+advance_mode = 2
+advance_condition = &"DAMAGE1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vvgn1"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_oqbrf"]
 states/BlendSpace1D/node = SubResource("AnimationNodeBlendSpace1D_abx6s")
 states/BlendSpace1D/position = Vector2(369, 293)
 states/Buff1/node = SubResource("AnimationNodeAnimation_t6imc")
-states/Buff1/position = Vector2(381, 16.9328)
+states/Buff1/position = Vector2(369, 16.9328)
+states/Damage1/node = SubResource("AnimationNodeAnimation_5yeve")
+states/Damage1/position = Vector2(405, 223.933)
 states/End/position = Vector2(1569, 120)
 states/Kicks/node = SubResource("AnimationNodeAnimation_gapij")
 states/Kicks/position = Vector2(628, 16.9328)
@@ -600,8 +689,8 @@ states/Throw/node = SubResource("AnimationNodeAnimation_nw3vd")
 states/Throw/position = Vector2(265, 223.933)
 states/idle/node = SubResource("AnimationNodeAnimation_rj4b0")
 states/idle/position = Vector2(306, 112)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "idle", "Spins", SubResource("AnimationNodeStateMachineTransition_64rtj"), "Buff1", "idle", SubResource("AnimationNodeStateMachineTransition_7wpfe"), "idle", "Buff1", SubResource("AnimationNodeStateMachineTransition_lk75y"), "Spins", "Kicks", SubResource("AnimationNodeStateMachineTransition_vrt1w"), "Kicks", "Spins", SubResource("AnimationNodeStateMachineTransition_7h37o"), "idle", "Throw", SubResource("AnimationNodeStateMachineTransition_xgr8x"), "Throw", "idle", SubResource("AnimationNodeStateMachineTransition_8k7hh"), "Spins", "idle", SubResource("AnimationNodeStateMachineTransition_h3v6w")]
-graph_offset = Vector2(-266, -13.0672)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "idle", "Spins", SubResource("AnimationNodeStateMachineTransition_64rtj"), "Buff1", "idle", SubResource("AnimationNodeStateMachineTransition_7wpfe"), "idle", "Buff1", SubResource("AnimationNodeStateMachineTransition_lk75y"), "Spins", "Kicks", SubResource("AnimationNodeStateMachineTransition_vrt1w"), "Kicks", "Spins", SubResource("AnimationNodeStateMachineTransition_7h37o"), "idle", "Throw", SubResource("AnimationNodeStateMachineTransition_xgr8x"), "Throw", "idle", SubResource("AnimationNodeStateMachineTransition_8k7hh"), "Spins", "idle", SubResource("AnimationNodeStateMachineTransition_h3v6w"), "idle", "Damage1", SubResource("AnimationNodeStateMachineTransition_2rpsa"), "Damage1", "idle", SubResource("AnimationNodeStateMachineTransition_vvgn1")]
+graph_offset = Vector2(-127, -30.0672)
 
 [node name="ClownTb" type="Node2D"]
 position = Vector2(874, 512)
@@ -649,10 +738,12 @@ libraries = {
 autoplay = "idle"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+deterministic = false
 reset_on_save = false
 tree_root = SubResource("AnimationNodeStateMachine_oqbrf")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/BUFF1 = false
+parameters/conditions/DAMAGE1 = false
 parameters/conditions/KICKS = false
 parameters/conditions/PHASE1 = false
 parameters/conditions/PHASE2 = false

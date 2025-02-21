@@ -1,25 +1,26 @@
 extends Node
-#@onready var SwanCardSpawn = $"../Path2D/PathFollow2D/Clown2/SCardSpawn"
-#@onready var FlipCardSpawn = $"../Path2D/PathFollow2D/Clown2/FCardSpawner"
-#@export var BowlingRightSpawnOffsetTime := 5
-#@export var BowlingLeftSpawnOffsetTime := 5
-#
-#@onready var BowlingSpawnRight = $"../BowlSpawningRight"
-#@onready var BowlingSpawnLeft = $"../BowlSpawningLeft"
-#@onready var BowlingPinSpawn = $"../Path2D/Phase_1_Movement/Clown2/BowlingPinSpawner"
-#@onready var Phase3BalloonSpawn = $"../Path2D/Phase_1_Movement/Clown2/Phase3_Balloons"
-#
-#@onready var Heaven = $"../Players/Heaven"
-#@onready var Hell = $"../Players/Hell"
-#
-#
-#@onready var ClownBH = $"../Path2D/Phase_1_Movement/Clown2"
-#@onready var GroupCam = $"../Cameras/GroupCam"
-#@onready var BH_1_Cam = $"../Cameras/BH_1_Cam"
-#@onready var BH_1_PathFollow2D = $"../Path2D/Phase_1_Movement"
-#@onready var Phase_1_Timer = $clown_PHASE_1
-#@onready var Phase_1_Collision = $"../Phase_1_Walls"
-#@onready var Phase_1_Bar = $TimerResources/Phase1Hbox/Phase1TextureProgress
+
+@onready var SwanCardSpawn = $"../Path2D/PathFollow2D/Clown2/SCardSpawn"
+@onready var FlipCardSpawn = $"../Path2D/PathFollow2D/Clown2/FCardSpawner"
+@export var BowlingRightSpawnOffsetTime := 5
+@export var BowlingLeftSpawnOffsetTime := 5
+
+@onready var BowlingSpawnRight = $"../BowlSpawningRight"
+@onready var BowlingSpawnLeft = $"../BowlSpawningLeft"
+@onready var BowlingPinSpawn = $"../Path2D/Phase_1_Movement/Clown2/BowlingPinSpawner"
+@onready var Phase3BalloonSpawn = $"../Path2D/Phase_1_Movement/Clown2/Phase3_Balloons"
+
+@onready var Heaven = $"../Players/Heaven"
+@onready var Hell = $"../Players/Hell"
+
+
+@onready var ClownBH = $"../Path2D/Phase_1_Movement/Clown2"
+@onready var GroupCam = $"../Cameras/GroupCam"
+@onready var BH_1_Cam = $"../Cameras/BH_1_Cam"
+@onready var BH_1_PathFollow2D = $"../Path2D/Phase_1_Movement"
+@onready var Phase_1_Timer = $clown_PHASE_1
+@onready var Phase_1_Collision = $"../Phase_1_Walls"
+@onready var Phase_1_Bar = $TimerResources/Phase1Hbox/Phase1TextureProgress
 #@onready var BH_2_Cam = $"../Cameras/BH_2_Cam"
 #@onready var Phase_2_Travel_PathFollow2D = $"../Path2D/Phase_2_Travel/PathFollow2D"
 #@onready var Phase_2_Timer = $clown_PHASE_2
@@ -39,21 +40,21 @@ extends Node
 #@onready var Phase_4_Trigger_Collision = $"../Phase_4_Trigger/CollisionShape2D"
 #@onready var Phase_4_Bar = $TimerResources/Phase4Hbox/Phase4TextureProgress
 #@onready var BH_4_Cam = $"../Cameras/BH_4_Cam"
-#
-##a bunch of variables for use in various functions
-#@onready var BH_2_triggerable := false
-#@onready var BH_3_triggerable := false
-#@onready var BH_4_triggerable := false
-#
-#func _ready():
-	#BH_1_PathFollow2D.active = true
-#
-#func _process(_delta):
-	#Phase_1_Bar.value = Phase_1_Timer.time_left
+
+#a bunch of variables for use in various functions
+@onready var BH_2_triggerable := false
+@onready var BH_3_triggerable := false
+@onready var BH_4_triggerable := false
+
+func _ready():
+	BH_1_PathFollow2D.active = true
+
+func _process(_delta):
+	Phase_1_Bar.value = Phase_1_Timer.time_left
 	#Phase_2_Bar.value = Phase_2_Timer.time_left
 	#Phase_3_Bar.value = Phase_3_Timer.time_left
 	#Phase_4_Bar.value = Phase_4_Timer.time_left
-	#
+	
 	#if Phase_2_Travel_PathFollow2D.progress_ratio < .99:
 		#Phase_2_Trigger_Collision.set_deferred("disabled", false)
 		#BH_2_triggerable = false
@@ -67,19 +68,19 @@ extends Node
 		#Phase_4_Trigger_Collision.set_deferred("disabled", false)
 	#else:
 		#BH_4_triggerable = true
-	##print_debug(Phase_2_Timer.time_left)
-	##
-	##
-	##print_debug(BH_2_triggerable)
-#
-#func _on_clown_phase_1_timeout():
-	#BH_1_Cam.set_priority(0)
+	#print_debug(Phase_2_Timer.time_left)
+	#
+	#
+	#print_debug(BH_2_triggerable)
+
+func _on_clown_phase_1_timeout():
+	BH_1_Cam.set_priority(0)
 	#GroupCam.set_priority(1)
 	#Phase_1_Collision.collision_layer = 2
-	#Phase_1_Bar.hide()
+	Phase_1_Bar.hide()
 	#_clown_phase_2_travel()
-	#Spawning.process_kill(1)
-	#Spawning.process_kill(2)
+	Spawning.process_kill(1)
+	Spawning.process_kill(2)
 #
 #func _clown_phase_2_travel():
 	#ClownBH.remove_child(BowlingPinSpawn)

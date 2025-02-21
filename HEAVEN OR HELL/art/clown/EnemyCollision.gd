@@ -1,6 +1,10 @@
 extends CollisionShape2D
+signal heaven_crossed
 #signal enable_collision
 
+
+@export var HEAVEN: Node2D
+@export var HELL: Node2D
 func enable():
 	enable()
 	#enable_collision.emit

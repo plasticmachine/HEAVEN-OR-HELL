@@ -6,10 +6,8 @@ extends Node2D
 func _on_turn_based_hell_disable():
 	hellTBAnimation.play("disable")
 
-
 func _on_turn_based_hell_enable():
 	hellTBAnimation.play("idle")
-
 
 func _on_hell_damage_taken():
 	hellTBAnimation.play("hit")

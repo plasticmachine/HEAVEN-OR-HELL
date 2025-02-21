@@ -12,7 +12,7 @@ var turn_count: int
 var turn_queue_amount: int
 var turn_pop_amount: int = 2
 
-var wait_for_next_turn_time: float = 2
+var wait_for_next_turn_time: float = 2.5
 var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 var hellstats = preload("res://Resources/Stats/HellStats.tres")
 var clownstats = preload("res://Resources/Stats/ClownStats.tres")

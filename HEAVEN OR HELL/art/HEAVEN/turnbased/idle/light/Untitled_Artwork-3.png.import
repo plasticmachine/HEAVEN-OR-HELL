@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qb1askllryfb"
-path="res://.godot/imported/HVN_TB_Dark.PNG-83a2640804c47285f81148b44ace5d18.ctex"
+uid="uid://bnkp3ykahijwl"
+path="res://.godot/imported/Untitled_Artwork-3.png-152b36f96162d9d6b35700a44b245501.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/HEAVEN/turnbased/HVN_TB_Dark.PNG"
-dest_files=["res://.godot/imported/HVN_TB_Dark.PNG-83a2640804c47285f81148b44ace5d18.ctex"]
+source_file="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-3.png"
+dest_files=["res://.godot/imported/Untitled_Artwork-3.png-152b36f96162d9d6b35700a44b245501.ctex"]
 
 [params]
 

@@ -434,6 +434,7 @@ position = Vector2(946, 340)
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="TestPlayerSpots"]
+visible = false
 z_index = -785
 position = Vector2(944.001, 361)
 scale = Vector2(0.51, 0.51)
@@ -839,6 +840,7 @@ scale = Vector2(-0.159953, -0.159953)
 [connection signal="heaven_ID_5_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_heaven_id_5_wear_off_set"]
 [connection signal="hell_ID_3_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_hell_id_3_wear_off_set"]
 [connection signal="skill_effect_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_skill_effect_wear_off_set"]
+[connection signal="clown_damage_taken" from="DamageCalculation" to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_damage_calculation_clown_damage_taken"]
 [connection signal="heaven_damage_taken" from="DamageCalculation" to="PlayerSpots/HeavenTb" method="_on_heaven_damage_taken"]
 [connection signal="hell_damage_taken" from="DamageCalculation" to="PlayerSpots/HellTb" method="_on_hell_damage_taken"]
 [connection signal="action_committed" from="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" to="." method="_on_clown_tb_action_committed"]
