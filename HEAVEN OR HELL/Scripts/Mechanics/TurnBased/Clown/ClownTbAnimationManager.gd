@@ -272,7 +272,12 @@ func skill_3_effect():
 
 
 func _on_damage_calculation_clown_damage_taken() -> void:
-	clownTB_animation.set('parameters/conditions/DAMAGE1', true)
-	await get_tree().create_timer(.5).timeout
-	
-	clownTB_animation.set('parameters/conditions/DAMAGE1', false)
+	match PHASE:
+		1:
+			clownTB_animation.set('parameters/conditions/DAMAGE1', true)
+			await get_tree().create_timer(.5).timeout
+			clownTB_animation.set('parameters/conditions/DAMAGE1', false)
+		2:
+			clownTB_animation.set('parameters/conditions/DAMAGE2', true)
+			await get_tree().create_timer(.5).timeout
+			clownTB_animation.set('parameters/conditions/DAMAGE2', false)
