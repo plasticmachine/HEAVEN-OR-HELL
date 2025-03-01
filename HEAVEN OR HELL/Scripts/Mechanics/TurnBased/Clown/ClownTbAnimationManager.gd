@@ -44,6 +44,7 @@ signal action_committed
 @export var skill_5_name: String
 @export var skill_5_tempo: int
 @export var skill_5_power: int
+@export var skill_5_count: int
 @export_group("Skill_6")
 @export var skill_6_name: String
 @export var skill_6_tempo: int
@@ -115,7 +116,7 @@ func _on_first_action_committed() -> void:
 						clownstats.convert_tempo(skill_2_tempo)
 						print_debug("clown is preparing " + skill_2_name + " (ID: 02)")
 			2:
-				var num = [3,3,3,3].pick_random()
+				var num = [3,4].pick_random()
 				match num:
 					3:
 						clownskill = 3
@@ -123,6 +124,7 @@ func _on_first_action_committed() -> void:
 						print_debug("clown is preparing " + skill_3_name + " (ID: 03)")
 					4: 
 						clownskill = 4
+						clownstats.convert_tempo(skill_4_tempo)
 						print_debug(("clown is preparing skill 4"))
 					5: 
 						clownskill = 5
@@ -188,7 +190,7 @@ func skill_1_effect():
 	clownTB_animation.set("parameters/conditions/THROW", false)
 	
 func skill_2_effect():
-	clownskill = 2
+	#clownskill = 2
 	var num = [1,2,3].pick_random()
 	#clownstats.convert_tempo(skill_2_tempo)
 	
@@ -212,64 +214,115 @@ func skill_2_effect():
 	clownTB_animation.set("parameters/conditions/BUFF1", false)
 
 func skill_3_effect():
-	clownskill = 3
+	#PHASE-2 KICK-RANDBUFF
+	#clownskill = 3
 	var rand_target = [1,2].pick_random()
+	var rand_target_2 = [1,2].pick_random()
 	var rand_effect = [1,2].pick_random()
-	var crit_effect = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2].pick_random() #1/20 chance
+	var crit_chance = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2].pick_random() #1/20 chance
 	
 	clownTB_animation.set("parameters/conditions/KICKS", true)
 	#clownstats.convert_tempo(skill_3_tempo)
 	clownstats.convert_skill_power(skill_3_power)
 	
 	await get_tree().create_timer(1).timeout
-	match rand_target:
+	#is this too messy?? i dont know?
+	match skill_5_count:
+		0:
+			match rand_target:
+				1:
+					match rand_effect:
+						
+						1:
+							damagecalc.clown_to_heaven_deviltry_damagecalc()
+							effect_animation.find_effect_spot_heaven()
+							effect_animation.play("basic_slash")
+							heavenstats.subtract_guts(skill_3_guts_debuff)
+							await get_tree().create_timer(.5).timeout
+							effect_animation.play("basic_debuff")
+						2:
+							damagecalc.clown_to_heaven_deviltry_damagecalc()
+							effect_animation.find_effect_spot_heaven()
+							effect_animation.play("basic_slash")
+							await get_tree().create_timer(.5).timeout
+							match crit_chance:
+								1:
+									# keep this between 1.05 and 1.10 (max 5% -> 10% increase) % increase to maintain scaling
+									clownstats.multiply_deviltry(skill_3_malice_buff_multiplier)
+									effect_animation.play("basic_buff")
+								2:
+									clownstats.multiply_deviltry(skill_3_malice_buff_multiplier + .10 ) #1/20 chance to turn buff into double buff)
+									effect_animation.play("basic_buff")
+							await get_tree().create_timer(.5).timeout
+							effect_animation.play("basic_debuff")
+				2:
+					match rand_effect:
+						
+						1:
+							damagecalc.clown_to_hell_deviltry_damagecalc()
+							effect_animation.find_effect_spot_hell()
+							effect_animation.play("basic_slash")
+							hellstats.subtract_guts(skill_3_guts_debuff)
+							await get_tree().create_timer(.5).timeout
+							effect_animation.play("basic_debuff")
+						2:
+							damagecalc.clown_to_hell_deviltry_damagecalc()
+							effect_animation.find_effect_spot_hell()
+							effect_animation.play("basic_slash")
+							await get_tree().create_timer(.5).timeout
+							match crit_chance:
+								1:
+									# keep this between 1.05 and 1.10 (max 5% -> 10% increase) % increase to maintain scaling
+									clownstats.multiply_deviltry(skill_3_malice_buff_multiplier)
+									effect_animation.find_effect_spot_enemy()
+									effect_animation.play("basic_buff")
+								2:
+									clownstats.multiply_deviltry(skill_3_malice_buff_multiplier + .10 ) #1/20 chance to turn buff into double buff)
+									effect_animation.find_effect_spot_enemy()
+									effect_animation.play("basic_buff")
+							await get_tree().create_timer(.5).timeout
+							effect_animation.play("basic_debuff")
+							
+			clownTB_animation.set("parameters/conditions/KICKS", false)
 		1:
-			match rand_effect:
-				
+			## DOUBLE-KICK (CAN TARGET SAME TARGET TWICE, OR TWO DIFFERENT TARGETS)
+			match rand_target:
 				1:
 					damagecalc.clown_to_heaven_deviltry_damagecalc()
 					effect_animation.find_effect_spot_heaven()
 					effect_animation.play("basic_slash")
-					heavenstats.subtract_guts(skill_3_guts_debuff)
 					await get_tree().create_timer(.5).timeout
-					effect_animation.play("basic_debuff")
 				2:
+					damagecalc.clown_to_hell_deviltry_damagecalc()
+					effect_animation.find_effect_spot_hell()
+					effect_animation.play("basic_slash")
+					await get_tree().create_timer(.5).timeout
+			match rand_target_2:
+				1:
 					damagecalc.clown_to_heaven_deviltry_damagecalc()
 					effect_animation.find_effect_spot_heaven()
 					effect_animation.play("basic_slash")
-					match crit_effect:
-						1:
-							# keep this between 1.05 and 1.10 (max 5% -> 10% increase) % increase to maintain scaling
-							clownstats.multiply_deviltry(skill_3_malice_buff_multiplier)
-						2:
-							clownstats.multiply_deviltry(skill_3_malice_buff_multiplier + .10 ) #1/20 chance to turn buff into double buff)
 					await get_tree().create_timer(.5).timeout
-					effect_animation.play("basic_debuff")
-		2:
-			match rand_effect:
-				
-				1:
-					damagecalc.clown_to_hell_deviltry_damagecalc()
-					effect_animation.find_effect_spot_hell()
-					effect_animation.play("basic_slash")
-					hellstats.subtract_guts(skill_3_guts_debuff)
-					await get_tree().create_timer(.5).timeout
-					effect_animation.play("basic_debuff")
 				2:
 					damagecalc.clown_to_hell_deviltry_damagecalc()
 					effect_animation.find_effect_spot_hell()
 					effect_animation.play("basic_slash")
-					match crit_effect:
-						1:
-							# keep this between 1.05 and 1.10 (max 5% -> 10% increase) % increase to maintain scaling
-							clownstats.multiply_deviltry(skill_3_malice_buff_multiplier)
-						2:
-							clownstats.multiply_deviltry(skill_3_malice_buff_multiplier + .10 ) #1/20 chance to turn buff into double buff)
 					await get_tree().create_timer(.5).timeout
-					effect_animation.play("basic_debuff")
-					
-	clownTB_animation.set("parameters/conditions/KICKS", false)
+			clownTB_animation.set("parameters/conditions/KICKS", false)
+			skill_5_count = 0
+func skill_4_effect():
+	#PHASE-2 SPIN-BUFF
+	clownskill = 4
+	clownTB_animation.set("parameters/conditions/SPINS2", true)
+	clown_phase_2_path_follow.speed += 1200
+	await get_tree().create_timer(2).timeout
+	clownTB_animation.set("parameters/conditions/SPINS2", false)
+	skill_5_count += 1
+	
 
+#func skill_5_effect():
+	##PHASE-2 DOUBLE-KICK (CAN TARGET SAME TARGET TWICE)
+	#clownskill = 5
 
 func _on_damage_calculation_clown_damage_taken() -> void:
 	match PHASE:

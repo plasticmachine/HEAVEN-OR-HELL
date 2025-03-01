@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cuu1vp12wg8bo" path="res://art/HELL/turnbased/idle/light/Untitled_Artwork-3.png" id="6_ccb1j"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/DEBUGHELL.gd" id="6_jlxl7"]
 [ext_resource type="Texture2D" uid="uid://dmdsuhv1lqtgj" path="res://art/HELL/turnbased/idle/light/Untitled_Artwork-4.png" id="7_87xxy"]
-[ext_resource type="PackedScene" uid="uid://bdp3mwc8pn1w0" path="res://Scenes/Keychains/HellInventoryDisplay.tscn" id="7_qhq1h"]
+[ext_resource type="PackedScene" path="res://Scenes/Keychains/HellInventoryDisplay.tscn" id="7_qhq1h"]
 [ext_resource type="Texture2D" uid="uid://d2h2wl8u45cat" path="res://art/HELL/turnbased/idle/light/Untitled_Artwork-5.png" id="8_01ecc"]
 [ext_resource type="Texture2D" uid="uid://ddoxgliv0bik4" path="res://art/HELL/turnbased/idle/light/Untitled_Artwork-6.png" id="9_dj7pk"]
 
@@ -119,8 +119,9 @@ modulate = Color(0.712129, 0.712129, 0.712129, 1)
 position = Vector2(204, 942)
 scale = Vector2(0.760001, 0.760001)
 sprite_frames = SubResource("SpriteFrames_wepe7")
-animation = &"disable"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.697002
 
 [node name="InventoryManager" type="Node2D" parent="."]
 script = ExtResource("4_17j3l")
@@ -135,7 +136,6 @@ script = ExtResource("6_jlxl7")
 inventory_functions = NodePath("../HellInventoryFunctions")
 
 [node name="HellInventoryDisplay" parent="." node_paths=PackedStringArray("inventory_manager") instance=ExtResource("7_qhq1h")]
-visible = false
 inventory_manager = NodePath("../InventoryManager")
 keychain_spacing = 175
 
