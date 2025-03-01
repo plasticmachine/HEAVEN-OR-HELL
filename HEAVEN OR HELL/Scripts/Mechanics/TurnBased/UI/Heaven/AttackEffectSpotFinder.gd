@@ -1,4 +1,5 @@
 extends AnimatedSprite2D
+
 @onready var EnemyHitSpot = $"../../EnemySpot2/EnemyHitSpot"
 @onready var EnemyEffectSpot = $"../../EnemySpot2/EnemyEffectSpot"
 @onready var HeavenHitSpot = $"../../PlayerSpots/UISpots/HeavenHitSpot"

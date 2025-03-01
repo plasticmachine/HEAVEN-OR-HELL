@@ -179,11 +179,11 @@ func skill_1_effect():
 	
 	match num:
 		1:
-			damagecalc.clown_to_heaven_malice_damagecalc()
+			damagecalc.clown_to_heaven_deviltry_damagecalc()
 			effect_animation.find_attack_spot_heaven()
 			effect_animation.play("basic_slash")
 		2:
-			damagecalc.clown_to_hell_malice_damagecalc()
+			damagecalc.clown_to_hell_deviltry_damagecalc()
 			effect_animation.find_attack_spot_hell()
 			effect_animation.play("basic_slash")
 	
@@ -218,6 +218,7 @@ func skill_3_effect():
 	#clownskill = 3
 	var rand_target = [1,2].pick_random()
 	var rand_target_2 = [1,2].pick_random()
+	var rand_target_3 = [1,2].pick_random()
 	var rand_effect = [1,2].pick_random()
 	var crit_chance = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2].pick_random() #1/20 chance
 	
@@ -234,7 +235,7 @@ func skill_3_effect():
 					match rand_effect:
 						
 						1:
-							damagecalc.clown_to_heaven_deviltry_damagecalc()
+							damagecalc.clown_to_heaven_malice_damagecalc()
 							effect_animation.find_effect_spot_heaven()
 							effect_animation.play("basic_slash")
 							heavenstats.subtract_guts(skill_3_guts_debuff)
@@ -309,6 +310,41 @@ func skill_3_effect():
 					effect_animation.play("basic_slash")
 					await get_tree().create_timer(.5).timeout
 			clownTB_animation.set("parameters/conditions/KICKS", false)
+		2:
+			match rand_target:
+				1:
+					damagecalc.clown_to_heaven_deviltry_damagecalc()
+					effect_animation.find_effect_spot_heaven()
+					effect_animation.play("basic_slash")
+					await get_tree().create_timer(.5).timeout
+				2:
+					damagecalc.clown_to_hell_deviltry_damagecalc()
+					effect_animation.find_effect_spot_hell()
+					effect_animation.play("basic_slash")
+					await get_tree().create_timer(.5).timeout
+			match rand_target_2:
+				1:
+					damagecalc.clown_to_heaven_deviltry_damagecalc()
+					effect_animation.find_effect_spot_heaven()
+					effect_animation.play("basic_slash")
+					await get_tree().create_timer(.5).timeout
+				2:
+					damagecalc.clown_to_hell_deviltry_damagecalc()
+					effect_animation.find_effect_spot_hell()
+					effect_animation.play("basic_slash")
+					await get_tree().create_timer(.5).timeout
+			match rand_target_3:
+				1:
+					damagecalc.clown_to_heaven_deviltry_damagecalc()
+					effect_animation.find_effect_spot_heaven()
+					effect_animation.play("basic_slash")
+					await get_tree().create_timer(.5).timeout
+				2:
+					damagecalc.clown_to_hell_deviltry_damagecalc()
+					effect_animation.find_effect_spot_hell()
+					effect_animation.play("basic_slash")
+					await get_tree().create_timer(.5).timeout
+			clownTB_animation.set("parameters/conditionds/KICKS", false)
 			skill_5_count = 0
 func skill_4_effect():
 	#PHASE-2 SPIN-BUFF
@@ -317,8 +353,10 @@ func skill_4_effect():
 	clown_phase_2_path_follow.speed += 1200
 	await get_tree().create_timer(2).timeout
 	clownTB_animation.set("parameters/conditions/SPINS2", false)
+	#skill_5_count caps at 5
 	skill_5_count += 1
-	
+	if skill_5_count >= 5:
+		skill_5_count = 5
 
 #func skill_5_effect():
 	##PHASE-2 DOUBLE-KICK (CAN TARGET SAME TARGET TWICE)
