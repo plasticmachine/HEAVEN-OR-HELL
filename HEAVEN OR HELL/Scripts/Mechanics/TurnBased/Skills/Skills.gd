@@ -417,7 +417,8 @@ signal hell_ID_3_wear_off_set
 @export var ID_5_hell_power: int 
 @export var ID_5_hell_cost_1: int 
 @export var ID_5_hell_cost_2: int 
-@export var ID_5_hell_effect_length: int 
+@export var ID_5_hell_effect_length: int
+@export var ID_5_hell_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 5")
 @export var ID_5_hell_increase_1: int 
 @export var ID_5_hell_increase_2: int 
@@ -825,6 +826,8 @@ func skill_ID_1_heaven():
 			damage_calc.heaven_to_clown_malice_damagecalc()
 			effect_animation.find_attack_spot_enemy()
 			effect_animation.play("basic_slash")
+	await get_tree().create_timer(ID_1_heaven_animation_buffer)
+	heaven_turn_end = true
 #test skill that just does damage based off of deviltry, but spends a little magia bar
 func skill_ID_2_heaven():
 	#heavenstats.convert_tempo(ID_2_heaven_tempo)
@@ -848,7 +851,9 @@ func skill_ID_2_heaven():
 			damage_calc.heaven_to_clown_deviltry_damagecalc()
 			effect_animation.find_attack_spot_enemy()
 			effect_animation.play("basic_slash")
-
+	
+	await get_tree().create_timer(ID_2_heaven_animation_buffer)
+	heaven_turn_end = true
 func skill_ID_3_heaven():
 	#heavenstats.convert_tempo(ID_3_heaven_tempo)
 	heavenstats.add_malice(ID_3_heaven_increase_1)
@@ -861,6 +866,8 @@ func skill_ID_3_heaven():
 	
 	skill_effect_wear_off_set.emit()
 	
+	await get_tree().create_timer(ID_3_heaven_animation_buffer)
+	heaven_turn_end = true
 func skill_ID_4_heaven():
 	print_debug(heavenstats.character_name + " used " + ID_4_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	#heavenstats.convert_tempo(ID_4_heaven_tempo)
@@ -871,7 +878,9 @@ func skill_ID_4_heaven():
 	
 	effect_animation.find_effect_spot_heaven()
 	effect_animation.play("basic_heal")
-
+	
+	await get_tree().create_timer(ID_4_heaven_animation_buffer)
+	heaven_turn_end = true
 func skill_ID_5_heaven():
 	
 	#heavenstats.convert_tempo(ID_5_heaven_tempo)
@@ -898,7 +907,9 @@ func skill_ID_5_heaven():
 	effect_animation.play("basic_buff")
 	
 	skill_effect_wear_off_set.emit()
-
+	
+	await get_tree().create_timer(ID_5_heaven_animation_buffer)
+	heaven_turn_end = true
 func skill_ID_6_heaven():
 	var skill_ID_6_cost = heavenstats.max_magia * ID_6_heaven_percent_decrease_1
 	
@@ -910,6 +921,8 @@ func skill_ID_6_heaven():
 	
 	status_effects.holy_swords_set()
 	
+	await get_tree().create_timer(ID_6_heaven_animation_buffer)
+	heaven_turn_end = true
 func skill_ID_7_heaven():
 	var rand_choice = [1,2].pick_random()
 	var num = [0, 0, 0, 9].pick_random()
@@ -940,6 +953,9 @@ func skill_ID_7_heaven():
 			hellstats.add_malice(ID_7_heaven_increase_1)
 			effect_animation.find_effect_spot_hell()
 			effect_animation.play("basic_buff")
+			
+	await get_tree().create_timer(ID_7_heaven_animation_buffer)
+	heaven_turn_end = true
 func skill_ID_8_heaven():
 	#make this one last bc its kinda hard, but its the one thats basically tailwind from pokemon
 	pass
@@ -972,6 +988,9 @@ func skill_ID_9_heaven():
 			hellstats.add_magia(damage_calc.heaven_to_clown_malice_damagecalc().total_damage)
 			effect_animation.find_effect_spot_hell()
 			effect_animation.play("magia_use")
+	
+	await get_tree().create_timer(ID_9_heaven_animation_buffer)
+	heaven_turn_end = true
 
 func skill_ID_10_heaven():
 	### BE SURE TO MAKE THE SKILL POWER FOR THESE RANGES EQUALLY SPACED APART, 1 IS WEAKEST, 3 IS STRONGEST
@@ -1110,7 +1129,9 @@ func skill_ID_10_heaven():
 						3:
 							clownstats.multiply_malice(ID_10_heaven_percent_decrease_3)
 					effect_animation.play("basic_debuff")
-
+	
+	await get_tree().create_timer(ID_10_heaven_animation_buffer)
+	heaven_turn_end = true
 func skill_ID_11_heaven():
 	### BE SURE TO MAKE THE SKILL POWER FOR THESE RANGES EQUALLY SPACED APART, 11 IS WEAKEST, 3 IS STRONGEST
 	var stage
@@ -1277,6 +1298,9 @@ func skill_ID_11_heaven():
 							hellstats.multiply_malice(ID_11_heaven_percent_increase_3)
 							heavenstats.multiply_malice(ID_11_heaven_percent_increase_3)
 					effect_animation.play("basic_buff")
+					
+	await get_tree().create_timer(ID_11_heaven_animation_buffer)
+	heaven_turn_end = true
 ###       HELL SKILLS
 #test skill that just does damage based off of malice
 func skill_ID_1_hell():
@@ -1294,7 +1318,9 @@ func skill_ID_1_hell():
 			print_debug(str(hellstats.character_name) + " used  " + str(ID_1_hell_skill_name) + " on " + str(clownstats.character_name) + " (" + str(hellstats.current_tempo) + " tempo)" )
 			damage_calc.hell_to_clown_malice_damagecalc()
 			effect_animation.find_attack_spot_enemy()
-			effect_animation.play("basic_slash")	
+			effect_animation.play("basic_slash")
+	await get_tree().create_timer(ID_1_hell_animation_buffer)
+	hell_turn_end = true
 #test skill that just does damage based off of deviltry, but spends a little magia bar
 func skill_ID_2_hell():
 	print_debug(hellstats.character_name + " locked in " + ID_2_hell_skill_name + " (" + str(hellstats.current_tempo) + " tempo)" )
@@ -1316,6 +1342,8 @@ func skill_ID_2_hell():
 			damage_calc.hell_to_clown_malice_damagecalc()
 			effect_animation.find_attack_spot_enemy()
 			effect_animation.play("basic_slash")
+	await get_tree().create_timer(ID_2_hell_animation_buffer)
+	hell_turn_end = true
 func skill_ID_3_hell():
 	print_debug(hellstats.character_name + " locked in " + ID_2_hell_skill_name + " (" + str(hellstats.current_tempo) + " tempo)" )
 	hellstats.subtract_magia(ID_3_hell_cost_1)
@@ -1328,7 +1356,9 @@ func skill_ID_3_hell():
 	effect_animation.play("basic_buff")
 	
 	
-	hell_ID_3_wear_off_set.emit()	
+	hell_ID_3_wear_off_set.emit()
+	await get_tree().create_timer(ID_3_hell_animation_buffer)
+	hell_turn_end = true
 func skill_ID_4_hell():
 	print_debug(hellstats.character_name + "locked in " + ID_4_hell_skill_name + " (" + str(hellstats.current_tempo) + "tempo)")
 	hellstats.subtract_heart(ID_4_hell_cost_1)
@@ -1339,8 +1369,10 @@ func skill_ID_4_hell():
 	
 	hellstats.add_magia(ID_4_hell_increase_1)
 	effect_animation.play("magia_replenish")
-
-
+	
+	
+	await get_tree().create_timer(ID_4_hell_animation_buffer)
+	hell_turn_end = true
 	## potentially in the future, change this to be a chance based skill that selects either heaven or hell to take self damage
 	## possibly extend that to the buff to deviltry or malice, either that is random also OR it depends on who the self damage targets
 	## seems interesting, if not just a good way to make this skill feel different 
@@ -1362,7 +1394,8 @@ func skill_ID_5_hell():
 	hellstats.multiply_malice(ID_5_hell_percent_increase_1) ##INCREASE BY 15%
 	
 	
-
+	await get_tree().create_timer(ID_5_hell_animation_buffer)
+	hell_turn_end = true
 	#skill that decreases the target's guts at the cost of user's guts. 
 func skill_ID_6_hell():
 	print_debug(hellstats.character_name + "locked in " + ID_6_hell_skill_name)
@@ -1385,7 +1418,8 @@ func skill_ID_6_hell():
 			effect_animation.play("basic_debuff")
 			await get_tree().create_timer(.3).timeout
 	
-
+	await get_tree().create_timer(ID_6_hell_animation_buffer)
+	hell_turn_end = true
 	#skill that does burst damage based off of total offensive stat, decreases chosen stat by some small percentage
 func skill_ID_7_hell():
 	print_debug(hellstats.character_name + "locked in " + ID_6_hell_skill_name)
