@@ -7,13 +7,16 @@ signal hell_ID_3_wear_off_set
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @onready var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 @onready var clownstats = preload("res://Resources/Stats/ClownStats.tres")
-@onready var effect_animation = $"../BattleEffectManagerPosition/BattleEffectManager"
+@onready var effect_animation = $"../BattleEffectManagerPosition/ClownBattleEffectManager"
 
 @onready var damage_calc = $"../DamageCalculation"
 @onready var status_effects = $"../StatusEffects"
 
 @export var heaven_target_ID: int
 @export var hell_target_ID: int
+
+@onready var hell_turn_end
+@onready var heaven_turn_end
 
 #export these for now for testing purposes, but in the future make these private so only the inventory system can change these values
 @export_group("Heaven Skill Slots: TESTING")
@@ -36,6 +39,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_1_heaven_cost_1: int 
 @export var ID_1_heaven_cost_2: int 
 @export var ID_1_heaven_effect_length: int 
+@export var ID_1_heaven_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 1")
 @export var ID_1_heaven_increase_1: int 
 @export var ID_1_heaven_increase_2: int 
@@ -60,6 +64,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_2_heaven_cost_1: int 
 @export var ID_2_heaven_cost_2: int 
 @export var ID_2_heaven_effect_length: int 
+@export var ID_2_heaven_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 2")
 @export var ID_2_heaven_increase_1: int 
 @export var ID_2_heaven_increase_2: int 
@@ -84,6 +89,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_3_heaven_cost_1: int 
 @export var ID_3_heaven_cost_2: int 
 @export var ID_3_heaven_effect_length: int 
+@export var ID_3_heaven_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 3")
 @export var ID_3_heaven_increase_1: int 
 @export var ID_3_heaven_increase_2: int 
@@ -108,6 +114,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_4_heaven_cost_1: int 
 @export var ID_4_heaven_cost_2: int 
 @export var ID_4_heaven_effect_length: int 
+@export var ID_4_heaven_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 4")
 @export var ID_4_heaven_increase_1: int 
 @export var ID_4_heaven_increase_2: int 
@@ -132,6 +139,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_5_heaven_cost_1: int 
 @export var ID_5_heaven_cost_2: int 
 @export var ID_5_heaven_effect_length: int 
+@export var ID_5_heaven_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 5")
 @export var ID_5_heaven_increase_1: int 
 @export var ID_5_heaven_increase_2: int 
@@ -156,6 +164,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_6_heaven_cost_1: int 
 @export var ID_6_heaven_cost_2: int 
 @export var ID_6_heaven_effect_length: int 
+@export var ID_6_heaven_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 6")
 @export var ID_6_heaven_increase_1: int 
 @export var ID_6_heaven_increase_2: int 
@@ -180,6 +189,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_7_heaven_cost_1: int 
 @export var ID_7_heaven_cost_2: int 
 @export var ID_7_heaven_effect_length: int 
+@export var ID_7_heaven_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 7")
 @export var ID_7_heaven_increase_1: int 
 @export var ID_7_heaven_increase_2: int 
@@ -204,6 +214,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_8_heaven_cost_1: int 
 @export var ID_8_heaven_cost_2: int 
 @export var ID_8_heaven_effect_length: int 
+@export var ID_8_heaven_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 8")
 @export var ID_8_heaven_increase_1: int 
 @export var ID_8_heaven_increase_2: int 
@@ -227,7 +238,8 @@ signal hell_ID_3_wear_off_set
 @export var ID_9_heaven_power: int 
 @export var ID_9_heaven_cost_1: int 
 @export var ID_9_heaven_cost_2: int 
-@export var ID_9_heaven_effect_length: int 
+@export var ID_9_heaven_effect_length: int
+@export var ID_9_heaven_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 9")
 @export var ID_9_heaven_increase_1: int 
 @export var ID_9_heaven_increase_2: int 
@@ -254,6 +266,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_10_heaven_cost_1: int 
 @export var ID_10_heaven_cost_2: int 
 @export var ID_10_heaven_effect_length: int 
+@export var ID_10_heaven_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 10")
 @export var ID_10_heaven_increase_1: int 
 @export var ID_10_heaven_increase_2: int 
@@ -280,6 +293,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_11_heaven_cost_1: int 
 @export var ID_11_heaven_cost_2: int 
 @export var ID_11_heaven_effect_length: int 
+@export var ID_11_heaven_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 11")
 @export var ID_11_heaven_increase_1: int 
 @export var ID_11_heaven_increase_2: int 
@@ -304,6 +318,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_1_hell_cost_1: int 
 @export var ID_1_hell_cost_2: int 
 @export var ID_1_hell_effect_length: int 
+@export var ID_1_hell_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 1")
 @export var ID_1_hell_increase_1: int 
 @export var ID_1_hell_increase_2: int 
@@ -328,6 +343,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_2_hell_cost_1: int 
 @export var ID_2_hell_cost_2: int 
 @export var ID_2_hell_effect_length: int 
+@export var ID_2_hell_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 2")
 @export var ID_2_hell_increase_1: int 
 @export var ID_2_hell_increase_2: int 
@@ -352,6 +368,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_3_hell_cost_1: int 
 @export var ID_3_hell_cost_2: int 
 @export var ID_3_hell_effect_length: int 
+@export var ID_3_hell_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 3")
 @export var ID_3_hell_increase_1: int 
 @export var ID_3_hell_increase_2: int 
@@ -376,6 +393,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_4_hell_cost_1: int 
 @export var ID_4_hell_cost_2: int 
 @export var ID_4_hell_effect_length: int 
+@export var ID_4_hell_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 4")
 @export var ID_4_hell_increase_1: int 
 @export var ID_4_hell_increase_2: int 
@@ -424,6 +442,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_6_hell_cost_1: int 
 @export var ID_6_hell_cost_2: int 
 @export var ID_6_hell_effect_length: int 
+@export var ID_6_hell_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 6")
 @export var ID_6_hell_increase_1: int 
 @export var ID_6_hell_increase_2: int 
@@ -448,6 +467,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_7_hell_cost_1: int 
 @export var ID_7_hell_cost_2: int 
 @export var ID_7_hell_effect_length: int 
+@export var ID_7_hell_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 7")
 @export var ID_7_hell_increase_1: int 
 @export var ID_7_hell_increase_2: int 
@@ -472,6 +492,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_8_hell_cost_1: int 
 @export var ID_8_hell_cost_2: int 
 @export var ID_8_hell_effect_length: int 
+@export var ID_8_hell_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 8")
 @export var ID_8_hell_increase_1: int 
 @export var ID_8_hell_increase_2: int 
@@ -496,6 +517,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_9_hell_cost_1: int 
 @export var ID_9_hell_cost_2: int 
 @export var ID_9_hell_effect_length: int 
+@export var ID_9_hell_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 9")
 @export var ID_9_hell_increase_1: int 
 @export var ID_9_hell_increase_2: int 
@@ -520,6 +542,7 @@ signal hell_ID_3_wear_off_set
 @export var ID_10_hell_cost_1: int 
 @export var ID_10_hell_cost_2: int 
 @export var ID_10_hell_effect_length: int 
+@export var ID_10_hell_animation_buffer: float
 @export_subgroup("Flat Increases + Decreases: Test 10")
 @export var ID_10_hell_increase_1: int 
 @export var ID_10_hell_increase_2: int 

@@ -1,9 +1,12 @@
 extends Node2D
 signal action_committed
 
+
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @onready var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 @onready var clownstats = preload("res://Resources/Stats/ClownStats.tres")
+@onready var clown_turn_end := false
+
 
 @onready var damagecalc = $"../../../../DamageCalculation"
 @onready var turnbased_manager = $"../../../.."
@@ -18,6 +21,7 @@ signal action_committed
 @export var skill_1_name: String
 @export var skill_1_tempo: int
 @export var skill_1_power: int
+@export var skill_1_animation_buffer: float
 
 
 @export_group("Skill_2")
@@ -26,6 +30,7 @@ signal action_committed
 @export var skill_2_heal: int
 @export var skill_2_malice_buff: int
 @export var skill_2_deviltry_buff: int
+@export var skill_2_animation_buffer: float
 
 @export_group("Skill_3")
 @export var skill_3_name: String
@@ -35,36 +40,44 @@ signal action_committed
 @export var skill_3_deviltry_debuff: int
 @export var skill_3_malice_debuff: int
 @export var skill_3_malice_buff_multiplier: float
+@export var skill_3_animation_buffer: float
 
 @export_group("Skill_4")
 @export var skill_4_name: String
 @export var skill_4_tempo: int
 @export var skill_4_power: int
+@export var skill_4_animation_buffer: float
 @export_group("Skill_5")
 @export var skill_5_name: String
 @export var skill_5_tempo: int
 @export var skill_5_power: int
 @export var skill_5_count: int
+@export var skill_5_animation_buffer: float
 @export_group("Skill_6")
 @export var skill_6_name: String
 @export var skill_6_tempo: int
 @export var skill_6_power: int
+@export var skill_6_animation_buffer: float
 @export_group("Skill_7")
 @export var skill_7_name: String
 @export var skill_7_tempo: int
 @export var skill_7_power: int
+@export var skill_7_animation_buffer: float
 @export_group("Skill_8")
 @export var skill_8_name: String
 @export var skill_8_tempo: int
 @export var skill_8_power: int
+@export var skill_8_animation_buffer: float
 @export_group("Skill_9")
 @export var skill_9_name: String
 @export var skill_9_tempo: int
 @export var skill_9_power: int
+@export var skill_9_animation_buffer: float
 @export_group("Skill_10")
 @export var skill_10_name: String
 @export var skill_10_tempo: int
 @export var skill_10_power: int
+@export var skill_10_animation_buffer: float
 
 @export_group("Phase_Thresholds")
 @export var phase_1_threshold: float
@@ -166,8 +179,6 @@ func _on_first_action_committed() -> void:
 
 
 
-
-
 #test skill that just randomly does damage to heaven or hell
 func skill_1_effect():
 	var num = [1,2].pick_random()
@@ -186,9 +197,10 @@ func skill_1_effect():
 			damagecalc.clown_to_hell_deviltry_damagecalc()
 			effect_animation.find_attack_spot_hell()
 			effect_animation.play("basic_slash")
-	
 	clownTB_animation.set("parameters/conditions/THROW", false)
-	
+	await get_tree().create_timer(1).timeout
+	clown_turn_end = true
+
 func skill_2_effect():
 	#clownskill = 2
 	var num = [1,2,3].pick_random()
@@ -212,6 +224,9 @@ func skill_2_effect():
 			effect_animation.play("basic_buff")
 			clownstats.add_deviltry(skill_2_deviltry_buff)
 	clownTB_animation.set("parameters/conditions/BUFF1", false)
+	
+	await get_tree().create_timer(skill_2_animation_buffer).timeout
+	clown_turn_end = true
 
 func skill_3_effect():
 	#PHASE-2 KICK-RANDBUFF
@@ -346,6 +361,9 @@ func skill_3_effect():
 					await get_tree().create_timer(.5).timeout
 			clownTB_animation.set("parameters/conditionds/KICKS", false)
 			skill_5_count = 0
+			
+			await get_tree().create_timer(skill_3_animation_buffer).timeout
+			clown_turn_end = true
 func skill_4_effect():
 	#PHASE-2 SPIN-BUFF
 	clownskill = 4
@@ -357,6 +375,9 @@ func skill_4_effect():
 	skill_5_count += 1
 	if skill_5_count >= 5:
 		skill_5_count = 5
+	
+	await get_tree().create_timer(skill_4_animation_buffer)
+	clown_turn_end = true
 
 #func skill_5_effect():
 	##PHASE-2 DOUBLE-KICK (CAN TARGET SAME TARGET TWICE)

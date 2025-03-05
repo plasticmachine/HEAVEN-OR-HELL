@@ -11,6 +11,10 @@ signal hell_disable
 var turn_count: int
 var turn_queue_amount: int
 var turn_pop_amount: int = 2
+var heaven_turn_end := false
+var hell_turn_end := false
+
+
 
 var wait_for_next_turn_time: float = 2.5
 var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
@@ -154,19 +158,23 @@ func turn_queue_pop_check():
 						2: hell_action_button_2.skill_effect()
 						3: hell_action_button_3.skill_effect()
 						4: hell_action_button_4.skill_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
 					#choosing which skill its going to use (heaven)
 					match ClownTB.clownskill:
 						1: ClownTB.skill_1_effect()
 						2: ClownTB.skill_2_effect()
 						3: ClownTB.skill_3_effect()
 						4: ClownTB.skill_4_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					await ClownTB.clown_turn_end
 					match heaven_skill_slot:
 						1: heaven_action_button_1.skill_effect()
 						2: heaven_action_button_2.skill_effect()
 						3: heaven_action_button_3.skill_effect()
 						4: heaven_action_button_4.skill_effect()
+						
+					#RESET all turn end bools so they can be set for the next turn
+					#heaven turn end
+					#hell turn end
+					ClownTB.clown_turn_end = false
 				if "hell: " in tempo_array[0][0] && "enemy: " in tempo_array[2][0]:
 					print("Hell / Heaven / Clown ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
 					match hell_skill_slot:
@@ -181,7 +189,7 @@ func turn_queue_pop_check():
 						2: heaven_action_button_2.skill_effect()
 						3: heaven_action_button_3.skill_effect()
 						4: heaven_action_button_4.skill_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					await ClownTB.clown_turn_end
 					match ClownTB.clownskill:
 						1: ClownTB.skill_1_effect()
 						2: ClownTB.skill_2_effect()
@@ -200,7 +208,7 @@ func turn_queue_pop_check():
 						2: ClownTB.skill_2_effect()
 						3: ClownTB.skill_3_effect()
 						4: ClownTB.skill_4_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					await ClownTB.clown_turn_end
 					match hell_skill_slot:
 						1: hell_action_button_1.skill_effect()
 						2: hell_action_button_2.skill_effect()
@@ -232,7 +240,7 @@ func turn_queue_pop_check():
 						2: ClownTB.skill_2_effect()
 						3: ClownTB.skill_3_effect()
 						4: ClownTB.skill_4_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					await ClownTB.clown_turn_end
 					match hell_skill_slot:
 						1: hell_action_button_1.skill_effect()
 						2: hell_action_button_2.skill_effect()
@@ -251,7 +259,7 @@ func turn_queue_pop_check():
 						2: ClownTB.skill_2_effect()
 						3: ClownTB.skill_3_effect()
 						4: ClownTB.skill_4_effect()
-					await get_tree().create_timer(wait_for_next_turn_time).timeout
+					await ClownTB.clown_turn_end
 					match heaven_skill_slot:
 						1: heaven_action_button_1.skill_effect()
 						2: heaven_action_button_2.skill_effect()

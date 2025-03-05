@@ -1,6 +1,4 @@
 extends Node2D
-
-
 ### CHANGE THIS FOR EVERY SCENE TO FIT THE NEW TURNBASEDMANAGER:
 @onready var TurnBasedManager = $".."
 ### THIS DOESNT CHANGE THO

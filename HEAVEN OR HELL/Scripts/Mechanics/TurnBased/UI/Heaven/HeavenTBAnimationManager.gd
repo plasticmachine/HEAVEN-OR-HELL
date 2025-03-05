@@ -3,6 +3,8 @@ extends Node2D
 @onready var HeavenTBAnimation = $HeavenTbAnimation
 @export var damage_blink_timer_sec: float
 
+
+
 #func _ready():
 	#inventory.inventory_updated.connect(_on_inventory_manager_inventory_updated)
 

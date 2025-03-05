@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=76 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/LevelManagers/TBCLOWN_MANAGER.gd" id="1_h0a2a"]
 [ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/Skills/Skills.gd" id="2_1jhkk"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c3h7qr67wg605" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-1.png" id="5_baws1"]
 [ext_resource type="Texture2D" uid="uid://clifhufb0q740" path="res://art/turnbased effects/healing effects/basic heal/3.PNG" id="5_d3l8a"]
 [ext_resource type="Texture2D" uid="uid://bnd6h5s5yni02" path="res://art/turnbased effects/attack effects/basic slash/IMG_4080.PNG" id="5_nhpj3"]
+[ext_resource type="Script" path="res://Scenes/Levels/TurnBased/animation_sequencer.gd" id="5_olccf"]
 [ext_resource type="Texture2D" uid="uid://ch7tmeqcadg0h" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-2.png" id="6_cenyr"]
 [ext_resource type="Texture2D" uid="uid://8be71ofaxcce" path="res://art/turnbased effects/attack effects/basic slash/IMG_4081.PNG" id="6_gjmh1"]
 [ext_resource type="Texture2D" uid="uid://cpovtvw6kmfje" path="res://art/turnbased effects/healing effects/basic heal/4.PNG" id="6_jph3p"]
@@ -383,16 +384,18 @@ script = ExtResource("2_jufi4")
 [node name="StatusEffects" type="Node2D" parent="."]
 script = ExtResource("4_dqrpe")
 
+[node name="AnimationSequencer" type="Node2D" parent="."]
+script = ExtResource("5_olccf")
+
 [node name="BattleEffectManagerPosition" type="Node2D" parent="."]
 
-[node name="BattleEffectManager4" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+[node name="BattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
 z_index = 350
 scale = Vector2(1, 1.01221)
 sprite_frames = SubResource("SpriteFrames_jmycf")
 animation = &"hide"
 autoplay = "hide"
 script = ExtResource("7_p1xji")
-VFX_buffer = 0.5
 
 [node name="ClownBattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
 z_index = 350
@@ -401,16 +404,15 @@ sprite_frames = SubResource("SpriteFrames_jmycf")
 animation = &"hide"
 autoplay = "hide"
 script = ExtResource("7_p1xji")
-VFX_buffer = 0.5
 
 [node name="HeavenBattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
 z_index = 350
+position = Vector2(1616, 714)
 scale = Vector2(1, 1.01221)
 sprite_frames = SubResource("SpriteFrames_jmycf")
 animation = &"hide"
 autoplay = "hide"
 script = ExtResource("7_p1xji")
-VFX_buffer = 0.5
 
 [node name="HellBattleEffectManager3" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
 z_index = 350
@@ -419,16 +421,13 @@ sprite_frames = SubResource("SpriteFrames_jmycf")
 animation = &"hide"
 autoplay = "hide"
 script = ExtResource("7_p1xji")
-VFX_buffer = 0.5
 
 [node name="EnemySpot2" type="Node2D" parent="."]
 
 [node name="Path2D" type="Path2D" parent="EnemySpot2"]
-visible = false
 curve = SubResource("Curve2D_shoiy")
 
 [node name="ClownDancePath" type="Path2D" parent="EnemySpot2"]
-visible = false
 position = Vector2(0, 95)
 curve = SubResource("Curve2D_f2lxk")
 
@@ -460,11 +459,9 @@ position = Vector2(946, 340)
 [node name="EnemySpot" type="Node2D" parent="."]
 
 [node name="TestPlayerSpots" type="Node2D" parent="."]
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="TestPlayerSpots"]
-visible = false
 z_index = -785
 position = Vector2(944.001, 361)
 scale = Vector2(0.51, 0.51)

@@ -7,7 +7,6 @@ signal clown_damage_taken
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @onready var clownstats = preload("res://Resources/Stats/ClownStats.tres")
 
-
 @onready var variance = [.8, .85, .9, .95, 1.0, 1.05, 1.1, 1.5, 1.2]
 
 static var total_damage: int
@@ -71,7 +70,6 @@ func hell_to_heaven_malice_damagecalc():
 	heaven_damage_taken.emit()
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HELL_DAMAGING_HEAVEN_MALICE")
 func hell_to_heaven_deviltry_damagecalc():
-	
 	#var total_damage: int
 	var outgoing_damage = hellstats.current_skill_power * hellstats.deviltry
 	
