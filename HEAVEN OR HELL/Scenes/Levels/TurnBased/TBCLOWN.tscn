@@ -305,6 +305,7 @@ position = Vector2(11, 181)
 script = ExtResource("1_h0a2a")
 debug_mode = true
 BOSS_ID = 3
+clown_animation_buffer = 5
 
 [node name="SkillManager" type="Node2D" parent="."]
 scale = Vector2(0.998722, 1.0287)
@@ -385,7 +386,7 @@ script = ExtResource("4_dqrpe")
 
 [node name="BattleEffectManagerPosition" type="Node2D" parent="."]
 
-[node name="BattleEffectManager4" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+[node name="BattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
 z_index = 350
 scale = Vector2(1, 1.01221)
 sprite_frames = SubResource("SpriteFrames_jmycf")
@@ -400,8 +401,6 @@ scale = Vector2(1, 1.01221)
 sprite_frames = SubResource("SpriteFrames_jmycf")
 animation = &"hide"
 autoplay = "hide"
-script = ExtResource("7_p1xji")
-VFX_buffer = 0.5
 
 [node name="HeavenBattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
 z_index = 350
@@ -409,8 +408,6 @@ scale = Vector2(1, 1.01221)
 sprite_frames = SubResource("SpriteFrames_jmycf")
 animation = &"hide"
 autoplay = "hide"
-script = ExtResource("7_p1xji")
-VFX_buffer = 0.5
 
 [node name="HellBattleEffectManager3" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
 z_index = 350
@@ -418,17 +415,13 @@ scale = Vector2(1, 1.01221)
 sprite_frames = SubResource("SpriteFrames_jmycf")
 animation = &"hide"
 autoplay = "hide"
-script = ExtResource("7_p1xji")
-VFX_buffer = 0.5
 
 [node name="EnemySpot2" type="Node2D" parent="."]
 
 [node name="Path2D" type="Path2D" parent="EnemySpot2"]
-visible = false
 curve = SubResource("Curve2D_shoiy")
 
 [node name="ClownDancePath" type="Path2D" parent="EnemySpot2"]
-visible = false
 position = Vector2(0, 95)
 curve = SubResource("Curve2D_f2lxk")
 
@@ -460,11 +453,9 @@ position = Vector2(946, 340)
 [node name="EnemySpot" type="Node2D" parent="."]
 
 [node name="TestPlayerSpots" type="Node2D" parent="."]
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="TestPlayerSpots"]
-visible = false
 z_index = -785
 position = Vector2(944.001, 361)
 scale = Vector2(0.51, 0.51)
@@ -874,6 +865,7 @@ scale = Vector2(-0.159953, -0.159953)
 [connection signal="heaven_damage_taken" from="DamageCalculation" to="PlayerSpots/HeavenTb" method="_on_heaven_damage_taken"]
 [connection signal="hell_damage_taken" from="DamageCalculation" to="PlayerSpots/HellTb" method="_on_hell_damage_taken"]
 [connection signal="action_committed" from="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" to="." method="_on_clown_tb_action_committed"]
+[connection signal="skill_4_animation_buffer_change" from="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" to="." method="clown_skill_4_animation_buffer_set"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="." method="_on_hell_action_commited_skill_1"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="PlayerUI/Buttons/HellButtons/Attackbutton1" method="_on_pressed"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="." method="_on_hell_action_commited_skill_2"]

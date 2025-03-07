@@ -1,5 +1,7 @@
 extends Node2D
 signal action_committed
+signal skill_4_animation_buffer_change
+
 
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @onready var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
@@ -40,6 +42,7 @@ signal action_committed
 @export var skill_4_name: String
 @export var skill_4_tempo: int
 @export var skill_4_power: int
+@export var skill_4_animation_buffer: float
 @export_group("Skill_5")
 @export var skill_5_name: String
 @export var skill_5_tempo: int
@@ -355,6 +358,7 @@ func skill_4_effect():
 	clownTB_animation.set("parameters/conditions/SPINS2", false)
 	#skill_5_count caps at 5
 	skill_5_count += 1
+	print_debug(skill_4_animation_buffer)
 	if skill_5_count >= 5:
 		skill_5_count = 5
 
