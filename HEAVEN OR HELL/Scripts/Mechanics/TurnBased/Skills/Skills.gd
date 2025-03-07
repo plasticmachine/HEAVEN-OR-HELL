@@ -826,8 +826,7 @@ func skill_ID_1_heaven():
 			damage_calc.heaven_to_clown_malice_damagecalc()
 			effect_animation.find_attack_spot_enemy()
 			effect_animation.play("basic_slash")
-	await get_tree().create_timer(ID_1_heaven_animation_buffer)
-	heaven_turn_end = true
+			
 #test skill that just does damage based off of deviltry, but spends a little magia bar
 func skill_ID_2_heaven():
 	#heavenstats.convert_tempo(ID_2_heaven_tempo)
