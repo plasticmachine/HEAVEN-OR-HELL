@@ -1,13 +1,38 @@
-[gd_scene load_steps=9 format=3 uid="uid://jopigw4xplp4"]
+[gd_scene load_steps=14 format=3 uid="uid://jopigw4xplp4"]
 
 [ext_resource type="Resource" uid="uid://ddrmqwl3guset" path="res://tests/data/item_definitions_grid.tres" id="1"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_grid.gd" id="2"]
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory_grid.gd" id="3"]
-[ext_resource type="Script" path="res://examples/inventory_grid_transfer.gd" id="4"]
+[ext_resource type="Script" uid="uid://52abib0jc6gm" path="res://examples/inventory_grid_transfer.gd" id="4"]
 [ext_resource type="Texture2D" uid="uid://b2hkcwwq10cut" path="res://z_misc/icon.png" id="5"]
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_item_slot.gd" id="6"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="8"]
-[ext_resource type="Script" path="res://addons/gloot/core/item_slot.gd" id="8_273xl"]
+
+[sub_resource type="Resource" id="Resource_8edio"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_inventory_grid.gd"
+
+[sub_resource type="Resource" id="Resource_w811w"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_inventory_grid.gd"
+
+[sub_resource type="Resource" id="Resource_hw7wr"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_item_slot.gd"
+
+[sub_resource type="Resource" id="Resource_mugeb"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_grid.gd"
+
+[sub_resource type="Resource" id="Resource_lquhw"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_la6nj"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_t42xj"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_grid.gd"
+
+[sub_resource type="Resource" id="Resource_tmrhe"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_f14gk"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_rpyj7"]
+metadata/__load_path__ = "res://addons/gloot/core/item_slot.gd"
 
 [node name="InventoryGridTransfer" type="Control"]
 layout_mode = 3
@@ -38,7 +63,7 @@ layout_mode = 2
 texture_filter = 1
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
-script = ExtResource("3")
+script = SubResource("Resource_8edio")
 inventory_path = NodePath("../../../../../InventoryGridLeft")
 default_item_texture = ExtResource("5")
 
@@ -57,7 +82,7 @@ layout_mode = 2
 texture_filter = 1
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
-script = ExtResource("3")
+script = SubResource("Resource_w811w")
 inventory_path = NodePath("../../../../../InventoryGridRight")
 default_item_texture = ExtResource("5")
 
@@ -80,7 +105,7 @@ size_flags_horizontal = 0
 [node name="CtrlItemSlot" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer3/PanelContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("6")
+script = SubResource("Resource_hw7wr")
 item_slot_path = NodePath("../../../../../ItemSlot")
 label_visible = false
 
@@ -96,17 +121,17 @@ Drag items from the right inventory onto the item slot to equip it.
 Use the 'Unequip' button to unequip it."
 
 [node name="InventoryGridLeft" type="Node" parent="."]
-script = ExtResource("2")
+script = SubResource("Resource_mugeb")
 size = Vector2i(5, 5)
 item_protoset = ExtResource("1")
 
 [node name="L_item_2x2" type="Node" parent="InventoryGridLeft"]
-script = ExtResource("8")
+script = SubResource("Resource_lquhw")
 protoset = ExtResource("1")
 prototype_id = "item_2x2"
 
 [node name="L_item_2x2_2" type="Node" parent="InventoryGridLeft"]
-script = ExtResource("8")
+script = SubResource("Resource_la6nj")
 protoset = ExtResource("1")
 prototype_id = "item_2x2"
 properties = {
@@ -114,17 +139,17 @@ properties = {
 }
 
 [node name="InventoryGridRight" type="Node" parent="."]
-script = ExtResource("2")
+script = SubResource("Resource_t42xj")
 size = Vector2i(5, 5)
 item_protoset = ExtResource("1")
 
 [node name="R_item_2x2" type="Node" parent="InventoryGridRight"]
-script = ExtResource("8")
+script = SubResource("Resource_tmrhe")
 protoset = ExtResource("1")
 prototype_id = "item_2x2"
 
 [node name="R_item_1x1" type="Node" parent="InventoryGridRight"]
-script = ExtResource("8")
+script = SubResource("Resource_f14gk")
 protoset = ExtResource("1")
 prototype_id = "item_1x1"
 properties = {
@@ -138,5 +163,5 @@ offset_right = 40.0
 offset_bottom = 14.0
 
 [node name="ItemSlot" type="Node" parent="."]
-script = ExtResource("8_273xl")
+script = SubResource("Resource_rpyj7")
 item_protoset = ExtResource("1")

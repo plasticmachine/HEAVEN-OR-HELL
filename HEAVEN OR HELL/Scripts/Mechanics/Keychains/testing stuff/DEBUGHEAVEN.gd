@@ -1,11 +1,11 @@
 extends Node2D
 
 @export var inventory_functions: HeavenInventoryFunctions
-var keychain1 = preload("res://Resources/Keychains/Test1.tres")
+var keychain1 = preload("res://Resources/Keychains/TEST/Test1.tres")
 
-var keychain2 = preload("res://Resources/Keychains/Test2.tres")
+var keychain2 = preload("res://Resources/Keychains/TEST/Test2.tres")
 
-var keychain3 = preload("res://Resources/Keychains/Test3.tres")
+var keychain3 = preload("res://Resources/Keychains/TEST/Test3.tres")
 
 func _ready():
 	# Add keychains to the player's inventory

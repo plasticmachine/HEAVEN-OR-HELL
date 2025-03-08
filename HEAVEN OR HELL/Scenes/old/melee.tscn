@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://co8jc0uhro10o"]
 
-[ext_resource type="Script" path="res://Scripts/old/melee.gd" id="1_w5jkd"]
-[ext_resource type="Texture2D" uid="uid://ktqf0y1uxqpb" path="res://art/HEAVEN/attack/sword4.png" id="2_rrvvf"]
-[ext_resource type="Texture2D" uid="uid://btucj1x8u1vxs" path="res://art/HEAVEN/attack/sword5.png" id="3_vn4oj"]
-[ext_resource type="Texture2D" uid="uid://c2v7xf76i7sp3" path="res://art/HEAVEN/attack/sword6.png" id="4_uoh3f"]
-[ext_resource type="Texture2D" uid="uid://cagy5sim6ptrv" path="res://art/HEAVEN/attack/sword7.png" id="5_nuv1b"]
-[ext_resource type="Texture2D" uid="uid://deb1o1jsknmjf" path="res://art/HEAVEN/attack/sword8.png" id="6_qhoie"]
-[ext_resource type="Texture2D" uid="uid://dvbvvyhk42o22" path="res://art/HEAVEN/attack/sword9.png" id="7_r78oi"]
-[ext_resource type="Texture2D" uid="uid://ceec21bsfygl0" path="res://art/HEAVEN/attack/sword10.png" id="8_8n2rw"]
-[ext_resource type="Texture2D" uid="uid://0t2ylkqj1x4r" path="res://art/HEAVEN/attack/sword11.png" id="9_dcge8"]
+[ext_resource type="Script" uid="uid://bgd3x0og1xpml" path="res://Scripts/old/melee.gd" id="1_w5jkd"]
+[ext_resource type="Texture2D" uid="uid://ktqf0y1uxqpb" path="res://art/reimu/attack/sword4.png" id="2_rrvvf"]
+[ext_resource type="Texture2D" uid="uid://btucj1x8u1vxs" path="res://art/reimu/attack/sword5.png" id="3_vn4oj"]
+[ext_resource type="Texture2D" uid="uid://c2v7xf76i7sp3" path="res://art/reimu/attack/sword6.png" id="4_uoh3f"]
+[ext_resource type="Texture2D" uid="uid://cagy5sim6ptrv" path="res://art/reimu/attack/sword7.png" id="5_nuv1b"]
+[ext_resource type="Texture2D" uid="uid://deb1o1jsknmjf" path="res://art/reimu/attack/sword8.png" id="6_qhoie"]
+[ext_resource type="Texture2D" uid="uid://dvbvvyhk42o22" path="res://art/reimu/attack/sword9.png" id="7_r78oi"]
+[ext_resource type="Texture2D" uid="uid://ceec21bsfygl0" path="res://art/reimu/attack/sword10.png" id="8_8n2rw"]
+[ext_resource type="Texture2D" uid="uid://0t2ylkqj1x4r" path="res://art/reimu/attack/sword11.png" id="9_dcge8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0x67l"]
 

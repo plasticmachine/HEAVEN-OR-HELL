@@ -12,7 +12,9 @@ signal skill_4_animation_buffer_change
 
 @onready var damagecalc = $"../../../../DamageCalculation"
 @onready var turnbased_manager = $"../../../.."
-@onready var effect_animation = $"../../../../BattleEffectManagerPosition/BattleEffectManager"
+@onready var clown_effect_animation = $"../../../../BattleEffectManagerPosition/ClownBattleEffectManager"
+@onready var heaven_effect_animation = $"../../../../BattleEffectManagerPosition/HeavenBattleEffectManager"
+@onready var hell_effect_animation = $"../../../../BattleEffectManagerPosition/HellBattleEffectManager"
 @onready var clown_phase_2_path_follow = $".."
 @onready var clownskill: int
 @onready var clownTB_animation = $AnimationTree
@@ -193,12 +195,12 @@ func skill_1_effect():
 	match num:
 		1:
 			damagecalc.clown_to_heaven_deviltry_damagecalc()
-			effect_animation.find_attack_spot_heaven()
-			effect_animation.play("basic_slash")
+			heaven_effect_animation.find_hit_spot()
+			heaven_effect_animation.play("basic_slash")
 		2:
 			damagecalc.clown_to_hell_deviltry_damagecalc()
-			effect_animation.find_attack_spot_hell()
-			effect_animation.play("basic_slash")
+			hell_effect_animation.find_hit_spot()
+			hell_effect_animation.play("basic_slash")
 	clownTB_animation.set("parameters/conditions/THROW", false)
 	await get_tree().create_timer(1).timeout
 	clown_turn_end = true
@@ -214,16 +216,16 @@ func skill_2_effect():
 
 	match num:
 		1:
-			effect_animation.find_effect_spot_enemy()
-			effect_animation.play("basic_heal")
+			clown_effect_animation.find_effect_spot()
+			clown_effect_animation.play("basic_heal")
 			clownstats.add_heart(skill_2_heal)
 		2:
-			effect_animation.find_effect_spot_enemy()
-			effect_animation.play("basic_buff")
+			clown_effect_animation.find_effect_spot()
+			clown_effect_animation.play("basic_buff")
 			clownstats.add_malice(skill_2_malice_buff)
 		3:
-			effect_animation.find_effect_spot_enemy()
-			effect_animation.play("basic_buff")
+			clown_effect_animation.find_effect_spot()
+			clown_effect_animation.play("basic_buff")
 			clownstats.add_deviltry(skill_2_deviltry_buff)
 	clownTB_animation.set("parameters/conditions/BUFF1", false)
 	
@@ -253,114 +255,121 @@ func skill_3_effect():
 						
 						1:
 							damagecalc.clown_to_heaven_malice_damagecalc()
-							effect_animation.find_effect_spot_heaven()
-							effect_animation.play("basic_slash")
+							heaven_effect_animation.find_hit_spot()
+							heaven_effect_animation.play("basic_slash")
 							heavenstats.subtract_guts(skill_3_guts_debuff)
-							await get_tree().create_timer(.5).timeout
-							effect_animation.play("basic_debuff")
+							await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
+							heaven_effect_animation.find_effect_spot()
+							heaven_effect_animation.play("basic_debuff")
 						2:
 							damagecalc.clown_to_heaven_deviltry_damagecalc()
-							effect_animation.find_effect_spot_heaven()
-							effect_animation.play("basic_slash")
-							await get_tree().create_timer(.5).timeout
+							heaven_effect_animation.find_hit_spot()
+							heaven_effect_animation.play("basic_slash")
+							await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 							match crit_chance:
 								1:
 									# keep this between 1.05 and 1.10 (max 5% -> 10% increase) % increase to maintain scaling
 									clownstats.multiply_deviltry(skill_3_malice_buff_multiplier)
-									effect_animation.play("basic_buff")
+									clown_effect_animation.find_effect_spot()
+									clown_effect_animation.play("basic_buff")
 								2:
 									clownstats.multiply_deviltry(skill_3_malice_buff_multiplier + .10 ) #1/20 chance to turn buff into double buff)
-									effect_animation.play("basic_buff")
-							await get_tree().create_timer(.5).timeout
-							effect_animation.play("basic_debuff")
+									clown_effect_animation.find_effect_spot()
+									clown_effect_animation.play("basic_buff")
+							await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
+							heaven_effect_animation.find_effect_spot()
+							heaven_effect_animation.play("basic_debuff")
 				2:
 					match rand_effect:
 						
 						1:
 							damagecalc.clown_to_hell_deviltry_damagecalc()
-							effect_animation.find_effect_spot_hell()
-							effect_animation.play("basic_slash")
+							hell_effect_animation.find_hit_spot()
+							hell_effect_animation.play("basic_slash")
 							hellstats.subtract_guts(skill_3_guts_debuff)
-							await get_tree().create_timer(.5).timeout
-							effect_animation.play("basic_debuff")
+							await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
+							hell_effect_animation.find_effect_spot()
+							hell_effect_animation.play("basic_debuff")
 						2:
 							damagecalc.clown_to_hell_deviltry_damagecalc()
-							effect_animation.find_effect_spot_hell()
-							effect_animation.play("basic_slash")
+							hell_effect_animation.find_hit_spot()
+							hell_effect_animation.play("basic_slash")
 							await get_tree().create_timer(.5).timeout
 							match crit_chance:
 								1:
 									# keep this between 1.05 and 1.10 (max 5% -> 10% increase) % increase to maintain scaling
 									clownstats.multiply_deviltry(skill_3_malice_buff_multiplier)
-									effect_animation.find_effect_spot_enemy()
-									effect_animation.play("basic_buff")
+									clown_effect_animation.find_effect_spot()
+									clown_effect_animation.play("basic_buff")
 								2:
 									clownstats.multiply_deviltry(skill_3_malice_buff_multiplier + .10 ) #1/20 chance to turn buff into double buff)
-									effect_animation.find_effect_spot_enemy()
-									effect_animation.play("basic_buff")
+									clown_effect_animation.find_effect_spot()
+									clown_effect_animation.play("basic_buff")
 							await get_tree().create_timer(.5).timeout
-							effect_animation.play("basic_debuff")
+							hell_effect_animation.play("basic_debuff")
 							
 			clownTB_animation.set("parameters/conditions/KICKS", false)
+			skill_5_count = 0
 		1:
 			## DOUBLE-KICK (CAN TARGET SAME TARGET TWICE, OR TWO DIFFERENT TARGETS)
 			match rand_target:
 				1:
 					damagecalc.clown_to_heaven_deviltry_damagecalc()
-					effect_animation.find_effect_spot_heaven()
-					effect_animation.play("basic_slash")
-					await get_tree().create_timer(.5).timeout
+					heaven_effect_animation.find_hit_spot()
+					heaven_effect_animation.play("basic_slash")
+					await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 				2:
 					damagecalc.clown_to_hell_deviltry_damagecalc()
-					effect_animation.find_effect_spot_hell()
-					effect_animation.play("basic_slash")
-					await get_tree().create_timer(.5).timeout
+					hell_effect_animation.find_hit_spot()
+					hell_effect_animation.play("basic_slash")
+					await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 			match rand_target_2:
 				1:
 					damagecalc.clown_to_heaven_deviltry_damagecalc()
-					effect_animation.find_effect_spot_heaven()
-					effect_animation.play("basic_slash")
-					await get_tree().create_timer(.5).timeout
+					heaven_effect_animation.find_hit_spot()
+					heaven_effect_animation.play("basic_slash")
+					await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 				2:
 					damagecalc.clown_to_hell_deviltry_damagecalc()
-					effect_animation.find_effect_spot_hell()
-					effect_animation.play("basic_slash")
-					await get_tree().create_timer(.5).timeout
+					hell_effect_animation.find_hit_spot()
+					hell_effect_animation.play("basic_slash")
+					await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 			clownTB_animation.set("parameters/conditions/KICKS", false)
+			skill_5_count = 0
 		2:
 			match rand_target:
 				1:
 					damagecalc.clown_to_heaven_deviltry_damagecalc()
-					effect_animation.find_effect_spot_heaven()
-					effect_animation.play("basic_slash")
-					await get_tree().create_timer(.5).timeout
+					heaven_effect_animation.find_hit_spot()
+					heaven_effect_animation.play("basic_slash")
+					await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 				2:
 					damagecalc.clown_to_hell_deviltry_damagecalc()
-					effect_animation.find_effect_spot_hell()
-					effect_animation.play("basic_slash")
-					await get_tree().create_timer(.5).timeout
+					hell_effect_animation.find_hit_spot()
+					hell_effect_animation.play("basic_slash")
+					await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 			match rand_target_2:
 				1:
 					damagecalc.clown_to_heaven_deviltry_damagecalc()
-					effect_animation.find_effect_spot_heaven()
-					effect_animation.play("basic_slash")
-					await get_tree().create_timer(.5).timeout
+					heaven_effect_animation.find_hit_spot()
+					heaven_effect_animation.play("basic_slash")
+					await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 				2:
 					damagecalc.clown_to_hell_deviltry_damagecalc()
-					effect_animation.find_effect_spot_hell()
-					effect_animation.play("basic_slash")
-					await get_tree().create_timer(.5).timeout
+					hell_effect_animation.find_hit_spot()
+					hell_effect_animation.play("basic_slash")
+					await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 			match rand_target_3:
 				1:
 					damagecalc.clown_to_heaven_deviltry_damagecalc()
-					effect_animation.find_effect_spot_heaven()
-					effect_animation.play("basic_slash")
-					await get_tree().create_timer(.5).timeout
+					heaven_effect_animation.find_hit_spot()
+					heaven_effect_animation.play("basic_slash")
+					await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 				2:
 					damagecalc.clown_to_hell_deviltry_damagecalc()
-					effect_animation.find_effect_spot_hell()
-					effect_animation.play("basic_slash")
-					await get_tree().create_timer(.5).timeout
+					hell_effect_animation.find_hit_spot()
+					hell_effect_animation.play("basic_slash")
+					await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 			clownTB_animation.set("parameters/conditionds/KICKS", false)
 			skill_5_count = 0
 			
@@ -376,8 +385,8 @@ func skill_4_effect():
 	#skill_5_count caps at 5
 	skill_5_count += 1
 	print_debug(skill_4_animation_buffer)
-	if skill_5_count >= 5:
-		skill_5_count = 5
+	if skill_5_count >= 3:
+		skill_5_count = 3
 	
 	await get_tree().create_timer(skill_4_animation_buffer)
 	clown_turn_end = true
@@ -390,9 +399,9 @@ func _on_damage_calculation_clown_damage_taken() -> void:
 	match PHASE:
 		1:
 			clownTB_animation.set('parameters/conditions/DAMAGE1', true)
-			await get_tree().create_timer(.5).timeout
+			await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 			clownTB_animation.set('parameters/conditions/DAMAGE1', false)
 		2:
 			clownTB_animation.set('parameters/conditions/DAMAGE2', true)
-			await get_tree().create_timer(.5).timeout
+			await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 			clownTB_animation.set('parameters/conditions/DAMAGE2', false)

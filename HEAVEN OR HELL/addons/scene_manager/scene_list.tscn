@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://7r0ywsv3ga6g"]
 
-[ext_resource type="Script" path="res://addons/scene_manager/scene_list.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://dsg6xebeaooyk" path="res://addons/scene_manager/icons/ImportFail.svg" id="3"]
-[ext_resource type="Texture2D" uid="uid://doo08sq2nfhcm" path="res://addons/scene_manager/icons/eye_open.png" id="4_u7g41"]
+[ext_resource type="Script" uid="uid://biaugmjqqy4rh" path="res://addons/scene_manager/scene_list.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b1kwn1i2rw06v" path="res://addons/scene_manager/icons/ImportFail.svg" id="3"]
+[ext_resource type="Texture2D" uid="uid://5ck34nhi7xy" path="res://addons/scene_manager/icons/eye_open.png" id="4_u7g41"]
 
 [node name="scenes" type="ScrollContainer"]
 anchors_preset = 15

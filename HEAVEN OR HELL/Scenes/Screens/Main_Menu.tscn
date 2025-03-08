@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://deecqqpf2gy63"]
 
 [ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/TB/IMG_2136.PNG" id="1_nurjv"]
-[ext_resource type="Script" path="res://Scripts/Mechanics/Screens/MainMenuStart.gd" id="2_kfhon"]
+[ext_resource type="Script" uid="uid://bycbl3kn56wjf" path="res://Scripts/Mechanics/Screens/MainMenuStart.gd" id="2_kfhon"]
 [ext_resource type="Texture2D" uid="uid://dpatl5wwkwt6m" path="res://art/backgrounds/Sprite-0001.png" id="2_mge0u"]
 [ext_resource type="AudioStream" uid="uid://dngok0eljvqfy" path="res://Audio/Music/Menus/Main/Bleached.mp3" id="3_eq5f0"]
 

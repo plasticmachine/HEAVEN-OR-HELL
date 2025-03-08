@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c78nm2c1qev16"]
 
-[ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/InventoryDisplayRight.gd" id="1_te83d"]
+[ext_resource type="Script" uid="uid://ldjwk4d8n6ll" path="res://Scripts/Mechanics/Keychains/testing stuff/InventoryDisplayRight.gd" id="1_te83d"]
 
 [node name="HeavenInventoryDisplay" type="CanvasLayer"]
 script = ExtResource("1_te83d")

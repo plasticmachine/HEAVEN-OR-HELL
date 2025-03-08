@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgehynlluwe4k"]
 
-[ext_resource type="Script" path="res://addons/BulletUpHell/ExampleScenes/ExampleScene.gd" id="1_l5jb1"]
+[ext_resource type="Script" uid="uid://beai5ad6sof3p" path="res://addons/BulletUpHell/ExampleScenes/ExampleScene.gd" id="1_l5jb1"]
 [ext_resource type="PackedScene" uid="uid://bk1xxjdlsbpmm" path="res://addons/BulletUpHell/Bullet/LaserBeam.tscn" id="2_7gqwj"]
-[ext_resource type="Texture2D" uid="uid://dlxcljbtg73jg" path="res://addons/BulletUpHell/Sprites/NodeIcons22.png" id="3_4gicm"]
+[ext_resource type="Texture2D" uid="uid://dsn562qmoefu" path="res://addons/BulletUpHell/Sprites/NodeIcons22.png" id="3_4gicm"]
 [ext_resource type="PackedScene" uid="uid://bwu8g01loccyj" path="res://addons/BulletUpHell/ExampleScenes/PlayerTest.tscn" id="3_aixy7"]
 
 [node name="Node2D" type="Node2D"]

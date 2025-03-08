@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c7c5ufsur7dql" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-12.png" id="13_fjqof"]
 [ext_resource type="Texture2D" uid="uid://25bhugf8moss" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-13.png" id="14_tsihw"]
 [ext_resource type="Texture2D" uid="uid://eauy65e4acw8" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-14.png" id="15_xe1gs"]
-[ext_resource type="Script" path="res://Scripts/Mechanics/TurnBased/Clown/ClownTbAnimationManager.gd" id="21_rxlsl"]
+[ext_resource type="Script" uid="uid://yabo2au7gbol" path="res://Scripts/Mechanics/TurnBased/Clown/ClownTbAnimationManager.gd" id="21_rxlsl"]
 [ext_resource type="Texture2D" uid="uid://bpuc27uvjc2tl" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-1.png" id="22_gixf8"]
 [ext_resource type="Texture2D" uid="uid://d0o4swln5jyed" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-1.png" id="22_t6r17"]
 [ext_resource type="Texture2D" uid="uid://ckqpov07srvkp" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-2.png" id="23_3ggi2"]
@@ -699,18 +699,18 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jrs4b"]
 _data = {
-"Buff1": SubResource("Animation_gcrxe"),
-"Damage1": SubResource("Animation_m7c7x"),
-"Damage2": SubResource("Animation_fh5op"),
-"Damage3": SubResource("Animation_x1yo7"),
-"Damage4": SubResource("Animation_75ak2"),
-"Kicks": SubResource("Animation_hlv15"),
-"RESET": SubResource("Animation_10nlo"),
-"Spins": SubResource("Animation_y4d6l"),
-"Spins_2": SubResource("Animation_86ua7"),
-"Spins_2_Testing": SubResource("Animation_vw7dj"),
-"Throw": SubResource("Animation_bkj85"),
-"idle": SubResource("Animation_2gtrr")
+&"Buff1": SubResource("Animation_gcrxe"),
+&"Damage1": SubResource("Animation_m7c7x"),
+&"Damage2": SubResource("Animation_fh5op"),
+&"Damage3": SubResource("Animation_x1yo7"),
+&"Damage4": SubResource("Animation_75ak2"),
+&"Kicks": SubResource("Animation_hlv15"),
+&"RESET": SubResource("Animation_10nlo"),
+&"Spins": SubResource("Animation_y4d6l"),
+&"Spins_2": SubResource("Animation_86ua7"),
+&"Spins_2_Testing": SubResource("Animation_vw7dj"),
+&"Throw": SubResource("Animation_bkj85"),
+&"idle": SubResource("Animation_2gtrr")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1028k"]
@@ -929,7 +929,7 @@ frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_jrs4b")
+&"": SubResource("AnimationLibrary_jrs4b")
 }
 autoplay = "idle"
 

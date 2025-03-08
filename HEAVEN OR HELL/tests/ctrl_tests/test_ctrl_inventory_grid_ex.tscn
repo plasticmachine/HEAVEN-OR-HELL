@@ -1,13 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6qdqm1i436gg"]
+[gd_scene load_steps=14 format=3 uid="uid://c6qdqm1i436gg"]
 
 [ext_resource type="Resource" uid="uid://ddrmqwl3guset" path="res://tests/data/item_definitions_grid.tres" id="1"]
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory_grid_ex.gd" id="2"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_grid.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://b2hkcwwq10cut" path="res://z_misc/icon.png" id="4"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="5"]
 [ext_resource type="Texture2D" uid="uid://bpmdtgysdm2tp" path="res://images/field_background.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://cdhuw0juxw3up" path="res://images/field_highlighted_background.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://d2hy7wl46ki5j" path="res://images/field_selected_background.png" id="8"]
+
+[sub_resource type="Resource" id="Resource_svypu"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_inventory_grid_ex.gd"
 
 [sub_resource type="StyleBoxTexture" id="1"]
 texture = ExtResource("6")
@@ -29,6 +29,15 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.00784314, 1, 0, 1)
 
+[sub_resource type="Resource" id="Resource_ysvxh"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_grid.gd"
+
+[sub_resource type="Resource" id="Resource_jhlc2"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_fw8fo"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -44,7 +53,7 @@ layout_mode = 1
 anchors_preset = 0
 offset_right = 160.0
 offset_bottom = 160.0
-script = ExtResource("2")
+script = SubResource("Resource_svypu")
 field_style = SubResource("1")
 field_highlighted_style = SubResource("2")
 field_selected_style = SubResource("3")
@@ -54,17 +63,17 @@ inventory_path = NodePath("../InventoryGrid")
 default_item_texture = ExtResource("4")
 
 [node name="InventoryGrid" type="Node" parent="."]
-script = ExtResource("3")
+script = SubResource("Resource_ysvxh")
 size = Vector2i(5, 5)
 item_protoset = ExtResource("1")
 
 [node name="item_2x2" type="Node" parent="InventoryGrid"]
-script = ExtResource("5")
+script = SubResource("Resource_jhlc2")
 protoset = ExtResource("1")
 prototype_id = "item_2x2"
 
 [node name="item_1x1" type="Node" parent="InventoryGrid"]
-script = ExtResource("5")
+script = SubResource("Resource_fw8fo")
 protoset = ExtResource("1")
 prototype_id = "item_1x1"
 properties = {

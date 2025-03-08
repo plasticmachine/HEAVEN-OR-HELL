@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcyi3nd2idb5j"]
+[gd_scene load_steps=7 format=3 uid="uid://dcyi3nd2idb5j"]
 
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_stacked.gd" id="1"]
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory_stacked.gd" id="2"]
 [ext_resource type="Resource" uid="uid://c1fip2r65xx12" path="res://tests/data/item_definitions_stack.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://bju6hohmp15ua" path="res://images/item_key.png" id="4"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="5"]
+
+[sub_resource type="Resource" id="Resource_fe7q1"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_inventory_stacked.gd"
+
+[sub_resource type="Resource" id="Resource_6oxkg"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_stacked.gd"
+
+[sub_resource type="Resource" id="Resource_eyy2e"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_ed0w3"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,21 +28,21 @@ layout_mode = 0
 offset_top = -1.0
 offset_right = 377.0
 offset_bottom = 224.0
-script = ExtResource("2")
+script = SubResource("Resource_fe7q1")
 inventory_path = NodePath("../InventoryStacked")
 default_item_icon = ExtResource("4")
 
 [node name="InventoryStacked" type="Node" parent="."]
-script = ExtResource("1")
+script = SubResource("Resource_6oxkg")
 capacity = 20.0
 item_protoset = ExtResource("3")
 
 [node name="MinimalItem" type="Node" parent="InventoryStacked"]
-script = ExtResource("5")
+script = SubResource("Resource_eyy2e")
 protoset = ExtResource("3")
 prototype_id = "minimal_item"
 
 [node name="StackableItem" type="Node" parent="InventoryStacked"]
-script = ExtResource("5")
+script = SubResource("Resource_ed0w3")
 protoset = ExtResource("3")
 prototype_id = "stackable_item"

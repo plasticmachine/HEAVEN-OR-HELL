@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://byrkhhsviajgy"]
 
 [ext_resource type="Texture2D" uid="uid://byyu8ucciytkr" path="res://art/misc/xjwmt5upomxa1-export.png" id="2_36d8y"]
-[ext_resource type="Script" path="res://Scripts/Mechanics/Keychains/testing stuff/item.gd" id="2_g4jaw"]
+[ext_resource type="Script" uid="uid://nyl1exyf5c6u" path="res://Scripts/Mechanics/Keychains/testing stuff/item.gd" id="2_g4jaw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etrfm"]
 size = Vector2(1957, 1114)

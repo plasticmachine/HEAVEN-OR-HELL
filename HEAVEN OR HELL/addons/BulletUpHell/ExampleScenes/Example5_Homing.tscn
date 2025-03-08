@@ -1,12 +1,13 @@
-[gd_scene load_steps=31 format=3 uid="uid://bjq5h23h8qpgb"]
+[gd_scene load_steps=32 format=3 uid="uid://bjq5h23h8qpgb"]
 
-[ext_resource type="Script" path="res://addons/BulletUpHell/ExampleScenes/ExampleScene.gd" id="1_bkhcb"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="2_w6r0j"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="3_p3qtu"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="4_idnoj"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="5_se254"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="6_bavsm"]
-[ext_resource type="Texture2D" uid="uid://cci0qi8oibvs1" path="res://addons/BulletUpHell/Sprites/NodeIcons5.png" id="7_h7md5"]
+[ext_resource type="Script" uid="uid://beai5ad6sof3p" path="res://addons/BulletUpHell/ExampleScenes/ExampleScene.gd" id="1_bkhcb"]
+[ext_resource type="Script" uid="uid://1lkmlxnrcvu1" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="2_w6r0j"]
+[ext_resource type="Script" uid="uid://dboxhxwti831d" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="3_p3qtu"]
+[ext_resource type="Script" uid="uid://3wch27kccrye" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="4_idnoj"]
+[ext_resource type="Script" uid="uid://btp1po3w60xjc" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="5_egbvi"]
+[ext_resource type="Script" uid="uid://ci0vfcib7t4t6" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="5_se254"]
+[ext_resource type="Script" uid="uid://cwwxj1uuw5onk" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="6_bavsm"]
+[ext_resource type="Texture2D" uid="uid://fllccvxbrol6" path="res://addons/BulletUpHell/Sprites/NodeIcons5.png" id="7_h7md5"]
 
 [sub_resource type="Curve2D" id="Curve2D_7sipy"]
 
@@ -23,6 +24,7 @@ cooldown_next_spawn = 0.0
 cooldown_next_shoot = 0.0
 cooldown_layers = PackedVector2Array()
 cooldown_stasis = false
+on_interruption = 0
 pattern_angle = 0.0
 pattern_angle_target = NodePath("")
 pattern_angle_mouse = false
@@ -34,6 +36,7 @@ forced_angle = 0.0
 forced_target = NodePath("")
 forced_lookat_mouse = false
 forced_pattern_lookat = true
+impulse = 0
 bullet_list = Array[String]([])
 skip_step = 0
 skip_list = Array[PackedInt32Array]([])
@@ -52,6 +55,7 @@ cooldown_next_spawn = 0.0
 cooldown_next_shoot = 0.0
 cooldown_layers = PackedVector2Array()
 cooldown_stasis = false
+on_interruption = 0
 pattern_angle = 0.0
 pattern_angle_target = NodePath("")
 pattern_angle_mouse = false
@@ -63,6 +67,7 @@ forced_angle = 0.0
 forced_target = NodePath("")
 forced_lookat_mouse = false
 forced_pattern_lookat = true
+impulse = 0
 bullet_list = Array[String]([])
 skip_step = 0
 skip_list = Array[PackedInt32Array]([])
@@ -81,6 +86,7 @@ cooldown_next_spawn = 0.0
 cooldown_next_shoot = 0.0
 cooldown_layers = PackedVector2Array()
 cooldown_stasis = false
+on_interruption = 0
 pattern_angle = 0.0
 pattern_angle_target = NodePath("")
 pattern_angle_mouse = false
@@ -92,6 +98,7 @@ forced_angle = 0.0
 forced_target = NodePath("")
 forced_lookat_mouse = false
 forced_pattern_lookat = true
+impulse = 0
 bullet_list = Array[String]([])
 skip_step = 0
 skip_list = Array[PackedInt32Array]([])
@@ -110,6 +117,7 @@ cooldown_next_spawn = 0.0
 cooldown_next_shoot = 0.0
 cooldown_layers = PackedVector2Array()
 cooldown_stasis = false
+on_interruption = 0
 pattern_angle = 0.0
 pattern_angle_target = NodePath("")
 pattern_angle_mouse = false
@@ -121,6 +129,7 @@ forced_angle = 0.0
 forced_target = NodePath("")
 forced_lookat_mouse = false
 forced_pattern_lookat = true
+impulse = 0
 bullet_list = Array[String]([])
 skip_step = 0
 skip_list = Array[PackedInt32Array]([])
@@ -139,6 +148,7 @@ cooldown_next_spawn = 0.0
 cooldown_next_shoot = 0.0
 cooldown_layers = PackedVector2Array()
 cooldown_stasis = false
+on_interruption = 0
 pattern_angle = 0.0
 pattern_angle_target = NodePath("")
 pattern_angle_mouse = false
@@ -150,6 +160,7 @@ forced_angle = 0.0
 forced_target = NodePath("")
 forced_lookat_mouse = false
 forced_pattern_lookat = true
+impulse = 0
 bullet_list = Array[String]([])
 skip_step = 0
 skip_list = Array[PackedInt32Array]([])
@@ -168,13 +179,14 @@ speed = 100.0
 scale = 1.0
 angle = 0.0
 groups = PackedStringArray()
+custom_data = {}
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
 death_speed_under = 0.0
 death_culling_overwrite = 3
 spec_modulate_loop = 0.0
-anim_more = Array[Resource("res://addons/BulletUpHell/Bullet/animStates.gd")]([])
+anim_more = Array[ExtResource("5_egbvi")]([])
 spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
@@ -188,6 +200,7 @@ spec_bounces = 0
 spec_no_collision = false
 spec_rotating_speed = 0.0
 spec_only_spin_sprite = true
+spec_weight = 1.0
 scale_multi_iterations = 0
 scale_multiplier = SubResource("Curve_f4tjx")
 scale_multi_scale = 1.0
@@ -252,13 +265,14 @@ speed = 100.0
 scale = 1.0
 angle = 0.0
 groups = PackedStringArray()
+custom_data = {}
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
 death_speed_under = 0.0
 death_culling_overwrite = 3
 spec_modulate_loop = 0.0
-anim_more = Array[Resource("res://addons/BulletUpHell/Bullet/animStates.gd")]([])
+anim_more = Array[ExtResource("5_egbvi")]([])
 spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
@@ -272,6 +286,7 @@ spec_bounces = 0
 spec_no_collision = false
 spec_rotating_speed = 0.0
 spec_only_spin_sprite = true
+spec_weight = 1.0
 scale_multi_iterations = 0
 scale_multiplier = SubResource("Curve_1ug5p")
 scale_multi_scale = 1.0
@@ -336,13 +351,14 @@ speed = 100.0
 scale = 1.0
 angle = 0.0
 groups = PackedStringArray()
+custom_data = {}
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
 death_speed_under = 0.0
 death_culling_overwrite = 3
 spec_modulate_loop = 0.0
-anim_more = Array[Resource("res://addons/BulletUpHell/Bullet/animStates.gd")]([])
+anim_more = Array[ExtResource("5_egbvi")]([])
 spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
@@ -356,6 +372,7 @@ spec_bounces = 0
 spec_no_collision = false
 spec_rotating_speed = 0.0
 spec_only_spin_sprite = true
+spec_weight = 1.0
 scale_multi_iterations = 0
 scale_multiplier = SubResource("Curve_w2d58")
 scale_multi_scale = 1.0
@@ -421,13 +438,14 @@ speed = 100.0
 scale = 1.0
 angle = 0.0
 groups = PackedStringArray()
+custom_data = {}
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
 death_speed_under = 0.0
 death_culling_overwrite = 3
 spec_modulate_loop = 0.0
-anim_more = Array[Resource("res://addons/BulletUpHell/Bullet/animStates.gd")]([])
+anim_more = Array[ExtResource("5_egbvi")]([])
 spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
@@ -441,6 +459,7 @@ spec_bounces = 0
 spec_no_collision = false
 spec_rotating_speed = 0.0
 spec_only_spin_sprite = true
+spec_weight = 1.0
 scale_multi_iterations = 0
 scale_multiplier = SubResource("Curve_c2kuj")
 scale_multi_scale = 1.0
@@ -510,6 +529,7 @@ speed = 100.0
 scale = 1.0
 angle = 0.0
 groups = PackedStringArray()
+custom_data = {}
 death_after_time = 30.0
 death_outside_box = Rect2(0, 0, 0, 0)
 death_from_collision = true
@@ -517,7 +537,7 @@ death_speed_under = 0.0
 death_culling_overwrite = 3
 spec_modulate = SubResource("Gradient_wclsq")
 spec_modulate_loop = 0.0
-anim_more = Array[Resource("res://addons/BulletUpHell/Bullet/animStates.gd")]([])
+anim_more = Array[ExtResource("5_egbvi")]([])
 spec_trail_length = 0.0
 spec_trail_width = 0.0
 spec_trail_modulate = Color(1, 1, 1, 1)
@@ -531,6 +551,7 @@ spec_bounces = 0
 spec_no_collision = false
 spec_rotating_speed = 0.0
 spec_only_spin_sprite = true
+spec_weight = 1.0
 scale_multi_iterations = 0
 scale_multiplier = SubResource("Curve_ktun3")
 scale_multi_scale = 1.0

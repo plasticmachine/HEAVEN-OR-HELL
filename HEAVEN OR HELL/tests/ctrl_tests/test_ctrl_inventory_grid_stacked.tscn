@@ -1,10 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1fna7gc68qhq"]
+[gd_scene load_steps=10 format=3 uid="uid://d1fna7gc68qhq"]
 
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory_grid.gd" id="1_mgf0d"]
 [ext_resource type="Texture2D" uid="uid://b2hkcwwq10cut" path="res://z_misc/icon.png" id="2_fptnp"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_grid_stacked.gd" id="3_l7kgs"]
 [ext_resource type="Resource" uid="uid://ddrmqwl3guset" path="res://tests/data/item_definitions_grid.tres" id="4_qm2lv"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="5_5mifg"]
+
+[sub_resource type="Resource" id="Resource_d2v47"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_inventory_grid.gd"
+
+[sub_resource type="Resource" id="Resource_t6fgv"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_grid_stacked.gd"
+
+[sub_resource type="Resource" id="Resource_vvri1"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_r1bvt"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_hu3yv"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_0rm67"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_k4764"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,22 +37,22 @@ custom_minimum_size = Vector2(160, 160)
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 160.0
-script = ExtResource("1_mgf0d")
+script = SubResource("Resource_d2v47")
 inventory_path = NodePath("../InventoryGridStacked")
 default_item_texture = ExtResource("2_fptnp")
 
 [node name="InventoryGridStacked" type="Node" parent="."]
-script = ExtResource("3_l7kgs")
+script = SubResource("Resource_t6fgv")
 size = Vector2i(5, 5)
 item_protoset = ExtResource("4_qm2lv")
 
 [node name="item_2x2" type="Node" parent="InventoryGridStacked"]
-script = ExtResource("5_5mifg")
+script = SubResource("Resource_vvri1")
 protoset = ExtResource("4_qm2lv")
 prototype_id = "item_2x2"
 
 [node name="item_1x1" type="Node" parent="InventoryGridStacked"]
-script = ExtResource("5_5mifg")
+script = SubResource("Resource_r1bvt")
 protoset = ExtResource("4_qm2lv")
 prototype_id = "item_1x1"
 properties = {
@@ -42,7 +60,7 @@ properties = {
 }
 
 [node name="item_1x122298" type="Node" parent="InventoryGridStacked"]
-script = ExtResource("5_5mifg")
+script = SubResource("Resource_hu3yv")
 protoset = ExtResource("4_qm2lv")
 prototype_id = "item_1x1"
 properties = {
@@ -50,7 +68,7 @@ properties = {
 }
 
 [node name="item_1x125585" type="Node" parent="InventoryGridStacked"]
-script = ExtResource("5_5mifg")
+script = SubResource("Resource_0rm67")
 protoset = ExtResource("4_qm2lv")
 prototype_id = "item_1x1"
 properties = {
@@ -58,7 +76,7 @@ properties = {
 }
 
 [node name="item_2x225597" type="Node" parent="InventoryGridStacked"]
-script = ExtResource("5_5mifg")
+script = SubResource("Resource_k4764")
 protoset = ExtResource("4_qm2lv")
 prototype_id = "item_2x2"
 properties = {

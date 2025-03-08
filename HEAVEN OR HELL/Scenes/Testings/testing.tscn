@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://yqy673whmhtf"]
 
-[ext_resource type="Shader" path="res://Shaders/wind.gdshader" id="1_scdaq"]
+[ext_resource type="Shader" uid="uid://bfqy1rf6lxhol" path="res://Shaders/wind.gdshader" id="1_scdaq"]
 [ext_resource type="Texture2D" uid="uid://nekmc0mp1kup" path="res://art/backgrounds/BH/enviroment/Untitled_Artwork.png" id="2_vphlr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tas0h"]

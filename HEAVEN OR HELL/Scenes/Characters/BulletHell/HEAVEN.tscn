@@ -1,7 +1,7 @@
 [gd_scene load_steps=101 format=3 uid="uid://b2uwu4w0ss13g"]
 
-[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HeavenController.gd" id="1_re22k"]
-[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HeavenBulletChecker.gd" id="2_h3mt1"]
+[ext_resource type="Script" uid="uid://b6jl0jgx0gk2r" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HeavenController.gd" id="1_re22k"]
+[ext_resource type="Script" uid="uid://bmyrmlxw5f1gp" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HeavenBulletChecker.gd" id="2_h3mt1"]
 [ext_resource type="Texture2D" uid="uid://cdxt1vbt33ptu" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-1.png" id="3_b4yuk"]
 [ext_resource type="Texture2D" uid="uid://c1u735x11tc4u" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-2.png" id="4_ch2xs"]
 [ext_resource type="Texture2D" uid="uid://chwtw84b614j5" path="res://art/HEAVEN/test/testwalk/down_left/Untitled_Artwork-3.png" id="5_qcpuf"]
@@ -46,7 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://bq35kie8scoi0" path="res://art/HEAVEN/test/IMG_4839.PNG" id="31_jsp1j"]
 [ext_resource type="Texture2D" uid="uid://dvngeb7w1fgm7" path="res://art/HEAVEN/walk/upleft/HVN_UPLFT.PNG" id="32_65wup"]
 [ext_resource type="Texture2D" uid="uid://doa126x42jfuc" path="res://art/HEAVEN/walk/upright/HVN_UPRIGHT.png" id="33_1v8lp"]
-[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/UI/HeavenHPBarBH.gd" id="35_qyur8"]
+[ext_resource type="Script" uid="uid://b4h5gpvegrmjs" path="res://Scripts/Mechanics/BulletHell/UI/HeavenHPBarBH.gd" id="35_qyur8"]
 [ext_resource type="Texture2D" uid="uid://dr0i2ficqchfj" path="res://art/bullets/CLOWN/BOWLINGBALL/new/Bowlingball.PNG" id="37_sao2a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7egpc"]
@@ -588,17 +588,17 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ctgvh"]
 _data = {
-"RESET": SubResource("Animation_6m16l"),
-"down_left": SubResource("Animation_dwiup"),
-"down_right": SubResource("Animation_o7ykt"),
-"idle": SubResource("Animation_lhk5n"),
-"left": SubResource("Animation_nt00e"),
-"right": SubResource("Animation_jpfi1"),
-"run_left": SubResource("Animation_8jvll"),
-"run_right": SubResource("Animation_tgldx"),
-"up": SubResource("Animation_oxg1y"),
-"up_left": SubResource("Animation_2abob"),
-"up_right": SubResource("Animation_0i1sh")
+&"RESET": SubResource("Animation_6m16l"),
+&"down_left": SubResource("Animation_dwiup"),
+&"down_right": SubResource("Animation_o7ykt"),
+&"idle": SubResource("Animation_lhk5n"),
+&"left": SubResource("Animation_nt00e"),
+&"right": SubResource("Animation_jpfi1"),
+&"run_left": SubResource("Animation_8jvll"),
+&"run_right": SubResource("Animation_tgldx"),
+&"up": SubResource("Animation_oxg1y"),
+&"up_left": SubResource("Animation_2abob"),
+&"up_right": SubResource("Animation_0i1sh")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ywbgu"]
@@ -845,7 +845,7 @@ one_shot = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 callback_mode_process = 2
 libraries = {
-"": SubResource("AnimationLibrary_ctgvh")
+&"": SubResource("AnimationLibrary_ctgvh")
 }
 autoplay = "idle"
 playback_auto_capture = false

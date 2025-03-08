@@ -1,8 +1,8 @@
 [gd_scene load_steps=112 format=3 uid="uid://ldg2vsd26rqu"]
 
-[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HellController.gd" id="1_2xahn"]
+[ext_resource type="Script" uid="uid://bt1hq4hmn28d7" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HellController.gd" id="1_2xahn"]
 [ext_resource type="Texture2D" uid="uid://db3sdu6toa484" path="res://art/HELL/walk/down/HLL_DOWN.PNG" id="3_bqu8f"]
-[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HellBulletChecker.gd" id="3_h8gmy"]
+[ext_resource type="Script" uid="uid://bur6f4xmx7b4" path="res://Scripts/Mechanics/BulletHell/HeavenAndHell/HellBulletChecker.gd" id="3_h8gmy"]
 [ext_resource type="Texture2D" uid="uid://bhy3wo5ygf0i3" path="res://art/HELL/test/test_walk/down_left/Untitled_Artwork-1.png" id="4_n8qvj"]
 [ext_resource type="Texture2D" uid="uid://qxbvg8kcfsdc" path="res://art/HELL/test/test_walk/down_left/Untitled_Artwork-2.png" id="5_spqdw"]
 [ext_resource type="Texture2D" uid="uid://loulhlxmfntl" path="res://art/HELL/walk/left/animation/Untitled_Artwork-1.png" id="6_5utwl"]
@@ -24,10 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://datk8wkaxjvlp" path="res://art/GUI/fill.png" id="11_w60cq"]
 [ext_resource type="Texture2D" uid="uid://cm5ngxtemekec" path="res://art/HELL/walk/right/animation/Untitled_Artwork-1.png" id="12_8c4id"]
 [ext_resource type="Texture2D" uid="uid://b1k28cc4oeaog" path="res://art/HELL/test/test_walk/down_right/Untitled_Artwork-3 (1).png" id="12_cb41b"]
-[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/UI/HellHPBarBH.gd" id="12_mi25q"]
+[ext_resource type="Script" uid="uid://fqgjau8504f3" path="res://Scripts/Mechanics/BulletHell/UI/HellHPBarBH.gd" id="12_mi25q"]
 [ext_resource type="Texture2D" uid="uid://bnvs10r8sj44h" path="res://art/HELL/test/test_walk/down_right/Untitled_Artwork-4 (1).png" id="13_7j8pn"]
 [ext_resource type="Texture2D" uid="uid://dioxhh0lnpkl8" path="res://art/HELL/walk/right/animation/Untitled_Artwork-2.png" id="13_bclyw"]
-[ext_resource type="Script" path="res://Scenes/Characters/TurnBased/Stats.gd" id="14_5ewi2"]
+[ext_resource type="Script" uid="uid://dbpjvwcho52h6" path="res://Scenes/Characters/TurnBased/Stats.gd" id="14_5ewi2"]
 [ext_resource type="Texture2D" uid="uid://b778uqhwrbrby" path="res://art/HELL/test/test_walk/down_right/Untitled_Artwork-5 (1).png" id="14_obml7"]
 [ext_resource type="Texture2D" uid="uid://68o13ilotojy" path="res://art/HELL/walk/right/animation/Untitled_Artwork-3.png" id="14_ogi7m"]
 [ext_resource type="Texture2D" uid="uid://bcnui6ifuviar" path="res://art/HELL/test/test_walk/down_right/Untitled_Artwork-6 (1).png" id="15_6ywd5"]
@@ -684,20 +684,20 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c666o"]
 _data = {
-"RESET": SubResource("Animation_ejxiw"),
-"down": SubResource("Animation_70hnj"),
-"down_left": SubResource("Animation_2f2rw"),
-"down_right": SubResource("Animation_6xgk8"),
-"idle": SubResource("Animation_1uxxc"),
-"left": SubResource("Animation_kjxyi"),
-"right": SubResource("Animation_lxwvo"),
-"run_left": SubResource("Animation_xwcqd"),
-"run_right": SubResource("Animation_lhme6"),
-"takeoff_left": SubResource("Animation_q86ja"),
-"takeoff_right": SubResource("Animation_wusfo"),
-"up": SubResource("Animation_cti62"),
-"up_left": SubResource("Animation_6oupd"),
-"up_right": SubResource("Animation_notbu")
+&"RESET": SubResource("Animation_ejxiw"),
+&"down": SubResource("Animation_70hnj"),
+&"down_left": SubResource("Animation_2f2rw"),
+&"down_right": SubResource("Animation_6xgk8"),
+&"idle": SubResource("Animation_1uxxc"),
+&"left": SubResource("Animation_kjxyi"),
+&"right": SubResource("Animation_lxwvo"),
+&"run_left": SubResource("Animation_xwcqd"),
+&"run_right": SubResource("Animation_lhme6"),
+&"takeoff_left": SubResource("Animation_q86ja"),
+&"takeoff_right": SubResource("Animation_wusfo"),
+&"up": SubResource("Animation_cti62"),
+&"up_left": SubResource("Animation_6oupd"),
+&"up_right": SubResource("Animation_notbu")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ywbgu"]

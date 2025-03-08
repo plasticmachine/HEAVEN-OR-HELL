@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://c4llb3gsbfv1a"]
 
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_7824u"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_g1bv4"]
+[ext_resource type="Script" uid="uid://ddmhbf62jjwlv" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_7824u"]
+[ext_resource type="Script" uid="uid://nvont46imyl2" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_g1bv4"]
 [ext_resource type="Resource" uid="uid://cptfoggk2ok67" path="res://addons/phantom_camera/examples/resources/tween/player_phantom_camera_3d_tween.tres" id="3_420vh"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_oqbub"]
+[ext_resource type="Script" uid="uid://2wono73vyxms" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_oqbub"]
 [ext_resource type="PackedScene" uid="uid://cixlwqycoox8h" path="res://addons/phantom_camera/examples/models/3d_cube_dark.tscn" id="4_t4fso"]
 [ext_resource type="Texture2D" uid="uid://c7ja4woxol8yc" path="res://addons/phantom_camera/examples/textures/3D/checker_pattern_dark.png" id="5_c0upu"]
 [ext_resource type="PackedScene" uid="uid://bulsh7s0ibmao" path="res://addons/phantom_camera/examples/example_scenes/3D/sub_scenes/playable_character_3d.tscn" id="5_f2w3x"]
@@ -13,7 +13,12 @@ script = ExtResource("4_oqbub")
 cull_mask = 1048575
 h_offset = 0.0
 v_offset = 0.0
+projection = 0
 fov = 75.0
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.05
+far = 4000.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_auy8m"]
 albedo_texture = ExtResource("5_c0upu")

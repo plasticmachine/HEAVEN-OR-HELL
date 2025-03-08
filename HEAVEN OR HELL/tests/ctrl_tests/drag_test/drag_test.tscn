@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://876tb781gioi"]
+[gd_scene load_steps=6 format=3 uid="uid://876tb781gioi"]
 
-[ext_resource type="Script" path="res://tests/ctrl_tests/drag_test/drag_test.gd" id="1_u86bx"]
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_drop_zone.gd" id="2_4tjx6"]
-[ext_resource type="Script" path="res://tests/ctrl_tests/drag_test/dragable.gd" id="3_ugjyw"]
+[ext_resource type="Script" uid="uid://svsd6otvucq6" path="res://tests/ctrl_tests/drag_test/drag_test.gd" id="1_u86bx"]
+[ext_resource type="Script" uid="uid://d1kscp7y65jn4" path="res://tests/ctrl_tests/drag_test/dragable.gd" id="3_ugjyw"]
 [ext_resource type="Texture2D" uid="uid://b2hkcwwq10cut" path="res://z_misc/icon.png" id="4_pwn6t"]
+
+[sub_resource type="Resource" id="Resource_4o3k0"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_drop_zone.gd"
+
+[sub_resource type="Resource" id="Resource_chc0p"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_drop_zone.gd"
 
 [node name="drag_test" type="Control"]
 layout_mode = 3
@@ -20,7 +25,7 @@ offset_left = 137.0
 offset_top = 134.0
 offset_right = 452.0
 offset_bottom = 345.0
-script = ExtResource("2_4tjx6")
+script = SubResource("Resource_4o3k0")
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
@@ -28,7 +33,7 @@ offset_left = 276.0
 offset_top = 225.0
 offset_right = 591.0
 offset_bottom = 436.0
-script = ExtResource("2_4tjx6")
+script = SubResource("Resource_chc0p")
 
 [node name="Dragable" type="Control" parent="."]
 anchors_preset = 0

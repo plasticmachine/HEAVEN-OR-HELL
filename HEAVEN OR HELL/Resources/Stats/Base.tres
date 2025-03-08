@@ -1,17 +1,28 @@
 [gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://d2yv2gwd7pxqy"]
 
-[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_urbfy"]
+[ext_resource type="Script" uid="uid://dmh5rjdgjawbh" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_urbfy"]
 
 [resource]
 script = ExtResource("1_urbfy")
 character_name = "Example"
 move_speed = 0
+run_speed = 8000
 max_heart = 0
 current_heart = 0
 max_magia = 0
 current_magia = 0
 malice = 0
 deviltry = 0
-guts = 0
+guts = 0.0
+pain_tolerance = 0.0
 luck = 0
 crit = 0
+crit_level = 0
+current_tempo = 5
+current_skill_power = 0
+status_effect_1 = 0
+status_effect_2 = 0
+status_effect_3 = 0
+special_status_effect_1 = 0
+special_status_effect_2 = 0
+special_status_effect_3 = 0

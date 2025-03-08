@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://hh0sw1g7upfc"]
 
-[ext_resource type="Script" path="res://addons/scene_manager/scene_item.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://brxxaey30q7uk" path="res://addons/scene_manager/icons/GuiTabMenuHl.svg" id="3"]
-[ext_resource type="Script" path="res://addons/scene_manager/popup_button.gd" id="3_nwus0"]
-[ext_resource type="Texture2D" uid="uid://b4xi5nvjb3rhr" path="res://addons/scene_manager/icons/PlayOverlay.png" id="4_pt2e1"]
+[ext_resource type="Script" uid="uid://dmm65235n78fq" path="res://addons/scene_manager/scene_item.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://urlibsmurmrs" path="res://addons/scene_manager/icons/GuiTabMenuHl.svg" id="3"]
+[ext_resource type="Script" uid="uid://mvtmtj50xp05" path="res://addons/scene_manager/popup_button.gd" id="3_nwus0"]
+[ext_resource type="Texture2D" uid="uid://dqa5e0rp52sb2" path="res://addons/scene_manager/icons/PlayOverlay.png" id="4_pt2e1"]
 
 [node name="item" type="HBoxContainer"]
 offset_right = 280.0

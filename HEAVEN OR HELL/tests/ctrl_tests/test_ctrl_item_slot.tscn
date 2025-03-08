@@ -1,11 +1,19 @@
 [gd_scene load_steps=7 format=3 uid="uid://cfad61445qg3a"]
 
 [ext_resource type="Resource" uid="uid://nnxjxxu47mtj" path="res://tests/data/item_definitions_basic.tres" id="1"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory.gd" id="2"]
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_item_slot.gd" id="3"]
-[ext_resource type="Script" path="res://addons/gloot/core/item_ref_slot.gd" id="4"]
 [ext_resource type="Texture2D" uid="uid://b2hkcwwq10cut" path="res://z_misc/icon.png" id="5"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="6"]
+
+[sub_resource type="Resource" id="Resource_m543n"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_item_slot.gd"
+
+[sub_resource type="Resource" id="Resource_4n5n2"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory.gd"
+
+[sub_resource type="Resource" id="Resource_aa3u0"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_fwc61"]
+metadata/__load_path__ = "res://addons/gloot/core/item_ref_slot.gd"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,20 +27,20 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 4.0
 offset_bottom = 14.0
-script = ExtResource("3")
+script = SubResource("Resource_m543n")
 item_slot_path = NodePath("../ItemSlot")
 default_item_icon = ExtResource("5")
 
 [node name="Inventory" type="Node" parent="."]
-script = ExtResource("2")
+script = SubResource("Resource_4n5n2")
 item_protoset = ExtResource("1")
 
 [node name="InventoryItem" type="Node" parent="Inventory"]
-script = ExtResource("6")
+script = SubResource("Resource_aa3u0")
 protoset = ExtResource("1")
 prototype_id = "item1"
 
 [node name="ItemSlot" type="Node" parent="."]
-script = ExtResource("4")
+script = SubResource("Resource_fwc61")
 inventory_path = NodePath("../Inventory")
 equipped_item = 0

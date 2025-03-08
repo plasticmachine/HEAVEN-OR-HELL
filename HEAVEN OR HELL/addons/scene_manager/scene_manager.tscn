@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://2iy8wfgenjka"]
 
-[ext_resource type="Script" path="res://addons/scene_manager/scene_manager.gd" id="1"]
+[ext_resource type="Script" uid="uid://6gbg5npxa6bg" path="res://addons/scene_manager/scene_manager.gd" id="1"]
 [ext_resource type="Material" uid="uid://0q7ifty8us3v" path="res://addons/scene_manager/scene_manager.tres" id="2"]
 
 [sub_resource type="Animation" id="8"]
@@ -65,10 +65,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p2st6"]
 _data = {
-"RESET": SubResource("8"),
-"color": SubResource("9"),
-"fade": SubResource("7"),
-"no_color": SubResource("10")
+&"RESET": SubResource("8"),
+&"color": SubResource("9"),
+&"fade": SubResource("7"),
+&"no_color": SubResource("10")
 }
 
 [node name="scene_manager" type="Node2D"]

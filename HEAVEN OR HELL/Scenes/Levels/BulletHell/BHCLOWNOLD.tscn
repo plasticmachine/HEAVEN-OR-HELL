@@ -1,27 +1,27 @@
 [gd_scene load_steps=77 format=3 uid="uid://cjqun4874qmcb"]
 
-[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/LevelManagers/BHCLOWN_MANAGER.gd" id="1_ql545"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_b0jdw"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_i6jsc"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_ut4vu"]
-[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/Cameras/Clown1TimerManager.gd" id="5_ff680"]
+[ext_resource type="Script" uid="uid://c6m437752be" path="res://Scripts/Mechanics/BulletHell/LevelManagers/BHCLOWN_MANAGER.gd" id="1_ql545"]
+[ext_resource type="Script" uid="uid://bbl8e0652fcdb" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="2_b0jdw"]
+[ext_resource type="Script" uid="uid://beqoxc16uxx25" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_i6jsc"]
+[ext_resource type="Script" uid="uid://ddmhbf62jjwlv" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_ut4vu"]
+[ext_resource type="Script" uid="uid://bn47hy5ci4ke1" path="res://Scripts/Mechanics/BulletHell/Cameras/Clown1TimerManager.gd" id="5_ff680"]
 [ext_resource type="Texture2D" uid="uid://datk8wkaxjvlp" path="res://art/GUI/fill.png" id="6_gqw3i"]
 [ext_resource type="Texture2D" uid="uid://cox5c6wprxw51" path="res://art/GUI/bg.png" id="7_tg0k8"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="8_sthy8"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCustomShape.gd" id="9_qa1ao"]
+[ext_resource type="Script" uid="uid://1lkmlxnrcvu1" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="8_sthy8"]
+[ext_resource type="Script" uid="uid://cifxe38fvrgdu" path="res://addons/BulletUpHell/SpawnPatterns/PatternCustomShape.gd" id="9_qa1ao"]
 [ext_resource type="AudioStream" uid="uid://b1apqopat15uh" path="res://Audio/Music/Clown/Bullethell/Freedom Dive.mp3" id="9_u3a1k"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="10_gej2b"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="11_5i667"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="12_f3vpb"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="13_73ydn"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternRandomizer.gd" id="13_abdsv"]
-[ext_resource type="Script" path="res://Scripts/Mechanics/BulletHell/LevelManagers/EnemyPath.gd" id="14_r45kx"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="14_tis2b"]
+[ext_resource type="Script" uid="uid://dboxhxwti831d" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="10_gej2b"]
+[ext_resource type="Script" uid="uid://3wch27kccrye" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="11_5i667"]
+[ext_resource type="Script" uid="uid://btp1po3w60xjc" path="res://addons/BulletUpHell/Bullet/animStates.gd" id="12_f3vpb"]
+[ext_resource type="Script" uid="uid://ci0vfcib7t4t6" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="13_73ydn"]
+[ext_resource type="Script" uid="uid://cvqy3yy0i6lv2" path="res://addons/BulletUpHell/SpawnPatterns/PatternRandomizer.gd" id="13_abdsv"]
+[ext_resource type="Script" uid="uid://ca0f58vdxyaa4" path="res://Scripts/Mechanics/BulletHell/LevelManagers/EnemyPath.gd" id="14_r45kx"]
+[ext_resource type="Script" uid="uid://dbpfd2itftd0v" path="res://addons/BulletUpHell/SpawnPatterns/PatternCircle.gd" id="14_tis2b"]
 [ext_resource type="PackedScene" uid="uid://cgi43evcnmcqb" path="res://art/clown/clown.tscn" id="15_oaur5"]
-[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="16_a4nmd"]
+[ext_resource type="Script" uid="uid://cwwxj1uuw5onk" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="16_a4nmd"]
 [ext_resource type="Texture2D" uid="uid://cqwu6r4ofvrbr" path="res://art/backgrounds/test_blotchy.PNG" id="17_in4j4"]
 [ext_resource type="PackedScene" uid="uid://ldg2vsd26rqu" path="res://Scenes/Characters/BulletHell/Hell.tscn" id="18_nimnx"]
-[ext_resource type="Shader" path="res://art/shaders/shadow.gdshader" id="19_5i5vi"]
+[ext_resource type="Shader" uid="uid://bqqikx2b7jm83" path="res://art/shaders/shadow.gdshader" id="19_5i5vi"]
 [ext_resource type="PackedScene" uid="uid://b2uwu4w0ss13g" path="res://Scenes/Characters/BulletHell/HEAVEN.tscn" id="20_hqc1t"]
 [ext_resource type="PackedScene" uid="uid://c2or1vjh7ai0y" path="res://Scenes/Screens/Pause_Menu.tscn" id="23_tt3m4"]
 [ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/TB/IMG_2136.PNG" id="25_0fx2l"]
@@ -939,7 +939,7 @@ size = Vector2(2929.36, 1661.48)
 shader = ExtResource("19_5i5vi")
 shader_parameter/borderScale = 2.0
 shader_parameter/offset = Vector2(-10, -10)
-shader_parameter/color = null
+shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/debug = false
 
 [node name="Main" type="Node"]

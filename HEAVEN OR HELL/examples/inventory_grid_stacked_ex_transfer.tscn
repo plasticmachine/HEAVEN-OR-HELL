@@ -1,15 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://o6g61xdkjii0"]
+[gd_scene load_steps=24 format=3 uid="uid://o6g61xdkjii0"]
 
-[ext_resource type="Script" path="res://examples/inventory_grid_stacked_transfer.gd" id="1_yjyyb"]
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory_grid_ex.gd" id="2_ptyr5"]
+[ext_resource type="Script" uid="uid://d3d47jibxakq4" path="res://examples/inventory_grid_stacked_transfer.gd" id="1_yjyyb"]
 [ext_resource type="Texture2D" uid="uid://bpmdtgysdm2tp" path="res://images/field_background.png" id="3_lwfya"]
 [ext_resource type="Texture2D" uid="uid://cdhuw0juxw3up" path="res://images/field_highlighted_background.png" id="4_8hltm"]
 [ext_resource type="Texture2D" uid="uid://b2hkcwwq10cut" path="res://z_misc/icon.png" id="5_igoy6"]
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_item_slot_ex.gd" id="6_wlx5u"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_grid_stacked.gd" id="7_6cshf"]
 [ext_resource type="Resource" uid="uid://ddrmqwl3guset" path="res://tests/data/item_definitions_grid.tres" id="8_8dj3i"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="9_cdjm1"]
-[ext_resource type="Script" path="res://addons/gloot/core/item_slot.gd" id="10_lyc83"]
+
+[sub_resource type="Resource" id="Resource_04j8w"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_inventory_grid_ex.gd"
 
 [sub_resource type="StyleBoxTexture" id="1"]
 texture = ExtResource("3_lwfya")
@@ -27,6 +25,9 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 0.92549, 0.152941, 1)
 
+[sub_resource type="Resource" id="Resource_ojosl"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_inventory_grid_ex.gd"
+
 [sub_resource type="StyleBoxTexture" id="3"]
 texture = ExtResource("3_lwfya")
 region_rect = Rect2(0, 0, 32, 32)
@@ -43,6 +44,9 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 0.92549, 0.152941, 1)
 
+[sub_resource type="Resource" id="Resource_txv5j"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_item_slot_ex.gd"
+
 [sub_resource type="StyleBoxTexture" id="7"]
 texture = ExtResource("3_lwfya")
 region_rect = Rect2(0, 0, 32, 32)
@@ -50,6 +54,27 @@ region_rect = Rect2(0, 0, 32, 32)
 [sub_resource type="StyleBoxTexture" id="8"]
 texture = ExtResource("4_8hltm")
 region_rect = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_l4evd"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_grid_stacked.gd"
+
+[sub_resource type="Resource" id="Resource_h6fxo"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_xhab8"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_b278n"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_grid_stacked.gd"
+
+[sub_resource type="Resource" id="Resource_bx34a"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_j382j"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_usq0k"]
+metadata/__load_path__ = "res://addons/gloot/core/item_slot.gd"
 
 [node name="InventoryGridStackedTransfer" type="Control"]
 layout_mode = 3
@@ -81,7 +106,7 @@ unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
-script = ExtResource("2_ptyr5")
+script = SubResource("Resource_04j8w")
 inventory_path = NodePath("../../../../../InventoryGridStackedLeft")
 default_item_texture = ExtResource("5_igoy6")
 field_style = SubResource("1")
@@ -111,7 +136,7 @@ unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
-script = ExtResource("2_ptyr5")
+script = SubResource("Resource_ojosl")
 inventory_path = NodePath("../../../../../InventoryGridStackedRight")
 default_item_texture = ExtResource("5_igoy6")
 field_style = SubResource("3")
@@ -145,7 +170,7 @@ size_flags_horizontal = 4
 unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("6_wlx5u")
+script = SubResource("Resource_txv5j")
 slot_style = SubResource("7")
 slot_highlighted_style = SubResource("8")
 item_slot_path = NodePath("../../../../../ItemSlot")
@@ -165,12 +190,12 @@ Drag items from the right inventory onto the item slot to equip it.
 Use the 'Unequip' button to unequip it."
 
 [node name="InventoryGridStackedLeft" type="Node" parent="."]
-script = ExtResource("7_6cshf")
+script = SubResource("Resource_l4evd")
 size = Vector2i(5, 5)
 item_protoset = ExtResource("8_8dj3i")
 
 [node name="item_1x1" type="Node" parent="InventoryGridStackedLeft"]
-script = ExtResource("9_cdjm1")
+script = SubResource("Resource_h6fxo")
 protoset = ExtResource("8_8dj3i")
 prototype_id = "item_1x1"
 properties = {
@@ -178,7 +203,7 @@ properties = {
 }
 
 [node name="item_2x2" type="Node" parent="InventoryGridStackedLeft"]
-script = ExtResource("9_cdjm1")
+script = SubResource("Resource_xhab8")
 protoset = ExtResource("8_8dj3i")
 prototype_id = "item_2x2"
 properties = {
@@ -187,12 +212,12 @@ properties = {
 }
 
 [node name="InventoryGridStackedRight" type="Node" parent="."]
-script = ExtResource("7_6cshf")
+script = SubResource("Resource_b278n")
 size = Vector2i(5, 5)
 item_protoset = ExtResource("8_8dj3i")
 
 [node name="item_1x1" type="Node" parent="InventoryGridStackedRight"]
-script = ExtResource("9_cdjm1")
+script = SubResource("Resource_bx34a")
 protoset = ExtResource("8_8dj3i")
 prototype_id = "item_1x1"
 properties = {
@@ -200,7 +225,7 @@ properties = {
 }
 
 [node name="item_2x2" type="Node" parent="InventoryGridStackedRight"]
-script = ExtResource("9_cdjm1")
+script = SubResource("Resource_j382j")
 protoset = ExtResource("8_8dj3i")
 prototype_id = "item_2x2"
 properties = {
@@ -216,5 +241,5 @@ offset_right = 40.0
 offset_bottom = 14.0
 
 [node name="ItemSlot" type="Node" parent="."]
-script = ExtResource("10_lyc83")
+script = SubResource("Resource_usq0k")
 item_protoset = ExtResource("8_8dj3i")

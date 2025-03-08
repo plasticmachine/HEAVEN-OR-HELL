@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2or1vjh7ai0y"]
 
-[ext_resource type="Script" path="res://Scenes/Screens/pause_menu.gd" id="1_27v7y"]
+[ext_resource type="Script" uid="uid://chx7u75sfrjjv" path="res://Scenes/Screens/pause_menu.gd" id="1_27v7y"]
 [ext_resource type="FontFile" uid="uid://b2q20yvaohtoc" path="res://fonts/apple_kid.ttf" id="1_ndpr2"]
 [ext_resource type="Texture2D" uid="uid://10h3tbmpp4h8" path="res://art/bullets/spirit_bullets.png" id="3_rtty7"]
 [ext_resource type="AudioStream" uid="uid://d04aiou676l0h" path="res://Audio/Music/Menus/Pause/Cheap Shop.mp3" id="4_v84nb"]

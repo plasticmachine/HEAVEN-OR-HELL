@@ -1,13 +1,38 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwu4vhba7uc2m"]
+[gd_scene load_steps=14 format=3 uid="uid://dwu4vhba7uc2m"]
 
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory.gd" id="1"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory.gd" id="2"]
 [ext_resource type="Resource" uid="uid://nnxjxxu47mtj" path="res://tests/data/item_definitions_basic.tres" id="3"]
-[ext_resource type="Script" path="res://examples/inventory_transfer.gd" id="4"]
+[ext_resource type="Script" uid="uid://cpmaufurcubuv" path="res://examples/inventory_transfer.gd" id="4"]
 [ext_resource type="Texture2D" uid="uid://bju6hohmp15ua" path="res://images/item_key.png" id="5"]
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_item_slot.gd" id="6"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="8"]
-[ext_resource type="Script" path="res://addons/gloot/core/item_slot.gd" id="8_v60ia"]
+
+[sub_resource type="Resource" id="Resource_wuxew"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_inventory.gd"
+
+[sub_resource type="Resource" id="Resource_hjsk7"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_inventory.gd"
+
+[sub_resource type="Resource" id="Resource_nanc3"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_item_slot.gd"
+
+[sub_resource type="Resource" id="Resource_iodnq"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory.gd"
+
+[sub_resource type="Resource" id="Resource_s3yk2"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_71eou"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_amg3d"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory.gd"
+
+[sub_resource type="Resource" id="Resource_kr8xo"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_16ojd"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_3xm06"]
+metadata/__load_path__ = "res://addons/gloot/core/item_slot.gd"
 
 [node name="InventoryTransfer" type="Control"]
 layout_mode = 3
@@ -35,7 +60,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1")
+script = SubResource("Resource_wuxew")
 inventory_path = NodePath("../../../Inventory")
 default_item_icon = ExtResource("5")
 
@@ -43,7 +68,7 @@ default_item_icon = ExtResource("5")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1")
+script = SubResource("Resource_hjsk7")
 inventory_path = NodePath("../../../Inventory2")
 default_item_icon = ExtResource("5")
 
@@ -60,7 +85,7 @@ layout_mode = 2
 [node name="CtrlItemSlot" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/HBoxContainer/PanelContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("6")
+script = SubResource("Resource_nanc3")
 item_slot_path = NodePath("../../../../../ItemSlot")
 label_visible = false
 
@@ -91,33 +116,33 @@ size_flags_horizontal = 3
 text = ">>>"
 
 [node name="Inventory" type="Node" parent="."]
-script = ExtResource("2")
+script = SubResource("Resource_iodnq")
 item_protoset = ExtResource("3")
 
 [node name="InventoryItem" type="Node" parent="Inventory"]
-script = ExtResource("8")
+script = SubResource("Resource_s3yk2")
 protoset = ExtResource("3")
 prototype_id = "item1"
 
 [node name="InventoryItem2" type="Node" parent="Inventory"]
-script = ExtResource("8")
+script = SubResource("Resource_71eou")
 protoset = ExtResource("3")
 prototype_id = "item2"
 
 [node name="Inventory2" type="Node" parent="."]
-script = ExtResource("2")
+script = SubResource("Resource_amg3d")
 item_protoset = ExtResource("3")
 
 [node name="InventoryItem3" type="Node" parent="Inventory2"]
-script = ExtResource("8")
+script = SubResource("Resource_kr8xo")
 protoset = ExtResource("3")
 prototype_id = "item1"
 
 [node name="InventoryItem4" type="Node" parent="Inventory2"]
-script = ExtResource("8")
+script = SubResource("Resource_16ojd")
 protoset = ExtResource("3")
 prototype_id = "item2"
 
 [node name="ItemSlot" type="Node" parent="."]
-script = ExtResource("8_v60ia")
+script = SubResource("Resource_3xm06")
 item_protoset = ExtResource("3")

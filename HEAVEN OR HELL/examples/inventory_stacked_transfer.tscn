@@ -1,13 +1,50 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2owv7hirds6s"]
+[gd_scene load_steps=18 format=3 uid="uid://b2owv7hirds6s"]
 
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_inventory_stacked.gd" id="1"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_stacked.gd" id="2"]
 [ext_resource type="Resource" uid="uid://c1fip2r65xx12" path="res://tests/data/item_definitions_stack.tres" id="3"]
-[ext_resource type="Script" path="res://examples/inventory_stacked_transfer.gd" id="4"]
+[ext_resource type="Script" uid="uid://1kh2if0nxgh6" path="res://examples/inventory_stacked_transfer.gd" id="4"]
 [ext_resource type="Texture2D" uid="uid://bju6hohmp15ua" path="res://images/item_key.png" id="5"]
-[ext_resource type="Script" path="res://addons/gloot/ui/ctrl_item_slot.gd" id="6"]
-[ext_resource type="Script" path="res://addons/gloot/core/inventory_item.gd" id="8"]
-[ext_resource type="Script" path="res://addons/gloot/core/item_slot.gd" id="8_worre"]
+
+[sub_resource type="Resource" id="Resource_xtpsy"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_inventory_stacked.gd"
+
+[sub_resource type="Resource" id="Resource_qhtd8"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_inventory_stacked.gd"
+
+[sub_resource type="Resource" id="Resource_3tk56"]
+metadata/__load_path__ = "res://addons/gloot/ui/ctrl_item_slot.gd"
+
+[sub_resource type="Resource" id="Resource_05gft"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_stacked.gd"
+
+[sub_resource type="Resource" id="Resource_8jkqm"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_1wco1"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_i1x8u"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_slocs"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_k4ppe"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_stacked.gd"
+
+[sub_resource type="Resource" id="Resource_ouxtt"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_0r3tg"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_bddj7"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_4fjod"]
+metadata/__load_path__ = "res://addons/gloot/core/inventory_item.gd"
+
+[sub_resource type="Resource" id="Resource_nmvd2"]
+metadata/__load_path__ = "res://addons/gloot/core/item_slot.gd"
 
 [node name="InventoryStackedTransfer" type="Control"]
 layout_mode = 3
@@ -34,7 +71,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1")
+script = SubResource("Resource_xtpsy")
 inventory_path = NodePath("../../../InventoryStackedLeft")
 default_item_icon = ExtResource("5")
 
@@ -42,7 +79,7 @@ default_item_icon = ExtResource("5")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1")
+script = SubResource("Resource_qhtd8")
 inventory_path = NodePath("../../../InventoryStackedRight")
 default_item_icon = ExtResource("5")
 
@@ -55,7 +92,7 @@ layout_mode = 2
 [node name="CtrlItemSlot" type="HBoxContainer" parent="VBoxContainer/HBoxContainer3/PanelContainer"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-script = ExtResource("6")
+script = SubResource("Resource_3tk56")
 item_slot_path = NodePath("../../../../ItemSlot")
 default_item_icon = ExtResource("5")
 label_visible = false
@@ -87,27 +124,27 @@ size_flags_horizontal = 3
 text = ">>>"
 
 [node name="InventoryStackedLeft" type="Node" parent="."]
-script = ExtResource("2")
+script = SubResource("Resource_05gft")
 capacity = 50.0
 item_protoset = ExtResource("3")
 
 [node name="minimal_item" type="Node" parent="InventoryStackedLeft"]
-script = ExtResource("8")
+script = SubResource("Resource_8jkqm")
 protoset = ExtResource("3")
 prototype_id = "minimal_item"
 
 [node name="big_item" type="Node" parent="InventoryStackedLeft"]
-script = ExtResource("8")
+script = SubResource("Resource_1wco1")
 protoset = ExtResource("3")
 prototype_id = "big_item"
 
 [node name="stackable_item" type="Node" parent="InventoryStackedLeft"]
-script = ExtResource("8")
+script = SubResource("Resource_i1x8u")
 protoset = ExtResource("3")
 prototype_id = "stackable_item"
 
 [node name="limited_stackable_item" type="Node" parent="InventoryStackedLeft"]
-script = ExtResource("8")
+script = SubResource("Resource_slocs")
 protoset = ExtResource("3")
 prototype_id = "limited_stackable_item"
 properties = {
@@ -115,27 +152,27 @@ properties = {
 }
 
 [node name="InventoryStackedRight" type="Node" parent="."]
-script = ExtResource("2")
+script = SubResource("Resource_k4ppe")
 capacity = 50.0
 item_protoset = ExtResource("3")
 
 [node name="minimal_item" type="Node" parent="InventoryStackedRight"]
-script = ExtResource("8")
+script = SubResource("Resource_ouxtt")
 protoset = ExtResource("3")
 prototype_id = "minimal_item"
 
 [node name="big_item" type="Node" parent="InventoryStackedRight"]
-script = ExtResource("8")
+script = SubResource("Resource_0r3tg")
 protoset = ExtResource("3")
 prototype_id = "big_item"
 
 [node name="stackable_item" type="Node" parent="InventoryStackedRight"]
-script = ExtResource("8")
+script = SubResource("Resource_bddj7")
 protoset = ExtResource("3")
 prototype_id = "stackable_item"
 
 [node name="limited_stackable_item" type="Node" parent="InventoryStackedRight"]
-script = ExtResource("8")
+script = SubResource("Resource_4fjod")
 protoset = ExtResource("3")
 prototype_id = "limited_stackable_item"
 properties = {
@@ -143,5 +180,5 @@ properties = {
 }
 
 [node name="ItemSlot" type="Node" parent="."]
-script = ExtResource("8_worre")
+script = SubResource("Resource_nmvd2")
 item_protoset = ExtResource("3")

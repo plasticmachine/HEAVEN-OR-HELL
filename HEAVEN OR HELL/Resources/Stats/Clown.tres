@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://cj8nipgprdrl4"]
 
-[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_e17u4"]
+[ext_resource type="Script" uid="uid://dmh5rjdgjawbh" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_e17u4"]
 
 [resource]
 script = ExtResource("1_e17u4")
@@ -23,3 +23,6 @@ current_skill_power = 0
 status_effect_1 = 0
 status_effect_2 = 0
 status_effect_3 = 0
+special_status_effect_1 = 0
+special_status_effect_2 = 0
+special_status_effect_3 = 0
