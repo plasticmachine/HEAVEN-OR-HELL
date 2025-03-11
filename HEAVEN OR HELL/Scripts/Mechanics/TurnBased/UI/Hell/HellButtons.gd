@@ -33,47 +33,47 @@ func _ready():
 		1:
 			self.texture_normal = test_skill_1_button_normal
 			self.texture_pressed = test_skill_1_button_down
-			self.texture_hover = test_skill_1_button_normal
+			#self.texture_hover = test_skill_1_button_hover
 		2:
 			self.texture_normal = test_skill_2_button_normal
 			self.texture_pressed = test_skill_2_button_down
-			self.texure_hover = test_skill_2_button_normal
+#self.texure_hover = test_skill_2_button_normal
 		3:
 			self.texture_normal = test_skill_3_button_normal
 			self.texture_pressed = test_skill_3_button_down
-			self.texure_hover = test_skill_3_button_normal
+#self.texure_hover = test_skill_3_button_normal
 		4:
 			self.texture_normal = test_skill_4_button_normal
 			self.texture_pressed = test_skill_4_button_down
-			self.texure_hover = test_skill_4_button_normal
+#self.texure_hover = test_skill_4_button_normal
 		5:
 			self.texture_normal = test_skill_5_button_normal
 			self.texture_pressed = test_skill_5_button_down
-			self.texure_hover = test_skill_5_button_normal
+#self.texure_hover = test_skill_5_button_normal
 		6:
 			self.texture_normal = test_skill_6_button_normal
 			self.texture_pressed = test_skill_6_button_down
-			self.texure_hover = test_skill_6_button_normal
+#self.texure_hover = test_skill_6_button_normal
 		7:
 			self.texture_normal = test_skill_7_button_normal
 			self.texture_pressed = test_skill_7_button_down
-			self.texure_hover = test_skill_7_button_normal
+#self.texure_hover = test_skill_7_button_normal
 		8:
 			self.texture_normal = test_skill_8_button_normal
 			self.texture_pressed = test_skill_8_button_down
-			self.texure_hover = test_skill_8_button_normal
+#self.texure_hover = test_skill_8_button_normal
 		9:
 			self.texture_normal = test_skill_9_button_normal
 			self.texture_pressed = test_skill_9_button_down
-			self.texure_hover = test_skill_9_button_normal
+#self.texure_hover = test_skill_9_button_normal
 		10:
 			self.texture_normal = test_skill_10_button_normal
 			self.texture_pressed = test_skill_10_button_down
-			self.texure_hover = test_skill_10_button_normal
+#self.texure_hover = test_skill_10_button_normal
 		11:
 			self.texture_normal = test_skill_11_button_normal
 			self.texture_pressed = test_skill_11_button_down
-			self.texure_hover = test_skill_11_button_normal
+#self.texure_hover = test_skill_11_button_normal
 
 func _on_pressed():
 	hell_action_commited.emit()

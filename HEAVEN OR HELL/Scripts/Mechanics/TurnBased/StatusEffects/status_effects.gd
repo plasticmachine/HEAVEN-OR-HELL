@@ -4,7 +4,8 @@ extends Node2D
 ### THIS DOESNT CHANGE THO
 @onready var SkillManager = $"../SkillManager"
 @onready var damage_calc = $"../DamageCalculation"
-@onready var effect_animation = $"../BattleEffectManagerPosition/BattleEffectManager"
+@onready var heaven_effect_animation = $"../BattleEffectManagerPosition/HeavenBattleEffectManager"
+@onready var hell_effect_animation = $"../BattleEffectManagerPosition/HellBattleEffectManager"
 @onready var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @onready var clownstats = preload("res://Resources/Stats/ClownStats.tres")
@@ -110,13 +111,13 @@ func check_if_effects_worn_off():
 	match TurnBasedManager.turn_count:
 		ID_3_Heaven_disable_turn:
 			#subtracts the malice that the effect gave after a set of turns
-			effect_animation.find_effect_spot_heaven()
-			effect_animation.play("basic_debuff")
+			heaven_effect_animation.find_effect_spot()
+			heaven_effect_animation.play("basic_debuff")
 			heavenstats.subtract_malice(SkillManager.ID_3_heaven_increase_1)
 		ID_5_Heaven_disable_turn:
 			#subtracts all stats that the effect gave after a set of turns
-			effect_animation.find_effect_spot_hell()
-			effect_animation.play("basic_debuff")
+			heaven_effect_animation.find_effect_spot_hell()
+			heaven_effect_animation.play("basic_debuff")
 			hellstats.subtract_malice(SkillManager.ID_5_heaven_increase_1)
 			hellstats.subtract_malice(SkillManager.ID_5_heaven_increase_1)
 		holy_swords_disable_turn:
@@ -127,6 +128,6 @@ func check_if_effects_worn_off():
 			else:
 				clownstats.special_status_effect_3 = 0
 		ID_3_Hell_disable_turn:
-			effect_animation.find_effect_spot_hell()
-			effect_animation.play("basic_debuff")
+			hell_effect_animation.find_effect_spot()
+			hell_effect_animation.play("basic_debuff")
 			hellstats.subtract_deviltry(SkillManager.ID_3_hell_increase_1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://dt06qpfhtfajd"]
+[gd_scene load_steps=152 format=3 uid="uid://dt06qpfhtfajd"]
 
 [ext_resource type="Texture2D" uid="uid://n8jftbuyirgl" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-1.png" id="2_eba1o"]
 [ext_resource type="Texture2D" uid="uid://damkva1jjkcsg" path="res://art/clown/TurnBased/CLOWN_TBTEST.png" id="2_y11lw"]
@@ -12,24 +12,34 @@
 [ext_resource type="Texture2D" uid="uid://dmdbkh08flmr" path="res://art/clown/TurnBased/ClownIdle/colored/3.png" id="6_ri2y1"]
 [ext_resource type="Texture2D" uid="uid://c77lycpn463ho" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-6.png" id="7_ddmd5"]
 [ext_resource type="Texture2D" uid="uid://c7533jxbp4c05" path="res://art/clown/TurnBased/ClownIdle/colored/4.png" id="7_ijefb"]
+[ext_resource type="Texture2D" uid="uid://f88lwmfw2nrk" path="res://art/clown/TurnBased/ClownIdle/colored2/Colored_Phase_1_-_Idle_-1.png" id="8_hfusd"]
 [ext_resource type="Texture2D" uid="uid://d4hxu2q4u8ttx" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-7.png" id="8_mkab4"]
 [ext_resource type="Texture2D" uid="uid://dvbcatq66ofkl" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-8.png" id="9_at1fr"]
+[ext_resource type="Texture2D" uid="uid://dn4abymhgy6if" path="res://art/clown/TurnBased/ClownIdle/colored2/Colored_Phase_1_-_Idle_-2.png" id="9_pv4fx"]
+[ext_resource type="Texture2D" uid="uid://dwi1dxth4byii" path="res://art/clown/TurnBased/ClownIdle/colored2/Colored_Phase_1_-_Idle_-3.png" id="10_20ur4"]
 [ext_resource type="Texture2D" uid="uid://bhheememfg3xy" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-9.png" id="10_sd7w5"]
+[ext_resource type="Texture2D" uid="uid://bvsxwws4k8c1d" path="res://art/clown/TurnBased/ClownIdle/colored2/Colored_Phase_1_-_Idle_-4.png" id="11_g63p1"]
 [ext_resource type="Texture2D" uid="uid://bilc31csiaywn" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-10.png" id="11_i0jof"]
+[ext_resource type="Texture2D" uid="uid://coalpn6kt13by" path="res://art/clown/TurnBased/ClownIdle/colored2/Colored_Phase_1_-_Idle_-5.png" id="12_hc1qb"]
 [ext_resource type="Texture2D" uid="uid://cjjvp5jotl4cw" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-11.png" id="12_tm8se"]
+[ext_resource type="Texture2D" uid="uid://di4qp2q5ilr5k" path="res://art/clown/TurnBased/ClownIdle/colored3/Colored_Phase_1_-_Idle_-1.png" id="13_demh3"]
 [ext_resource type="Texture2D" uid="uid://c7c5ufsur7dql" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-12.png" id="13_fjqof"]
+[ext_resource type="Texture2D" uid="uid://f11426exffy4" path="res://art/clown/TurnBased/ClownIdle/colored3/Colored_Phase_1_-_Idle_-2.png" id="14_s4qe0"]
 [ext_resource type="Texture2D" uid="uid://25bhugf8moss" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-13.png" id="14_tsihw"]
+[ext_resource type="Texture2D" uid="uid://dm4s8el52c0om" path="res://art/clown/TurnBased/ClownIdle/colored3/Colored_Phase_1_-_Idle_-3.png" id="15_fi6os"]
 [ext_resource type="Texture2D" uid="uid://eauy65e4acw8" path="res://art/clown/TurnBased/ClownKick/Untitled_Artwork-14.png" id="15_xe1gs"]
+[ext_resource type="Texture2D" uid="uid://c5e8oxx8ig1go" path="res://art/clown/TurnBased/ClownIdle/colored3/Colored_Phase_1_-_Idle_-4.png" id="16_wueik"]
+[ext_resource type="Texture2D" uid="uid://c01kar6f2vi83" path="res://art/clown/TurnBased/ClownIdle/colored3/Colored_Phase_1_-_Idle_-5.png" id="17_erdm3"]
+[ext_resource type="Texture2D" uid="uid://pw2lmh0tpslr" path="res://art/clown/TurnBased/ClownIdle/colored4/Colored_Phase_1_-_Idle_-1.png" id="18_ijcpa"]
+[ext_resource type="Texture2D" uid="uid://dvekj0k6itwct" path="res://art/clown/TurnBased/ClownIdle/colored4/Colored_Phase_1_-_Idle_-2.png" id="19_v03o3"]
+[ext_resource type="Texture2D" uid="uid://mjxxqv6x36hg" path="res://art/clown/TurnBased/ClownIdle/colored4/Colored_Phase_1_-_Idle_-3.png" id="20_7qpoe"]
+[ext_resource type="Texture2D" uid="uid://cwwtdw2jr8hsd" path="res://art/clown/TurnBased/ClownIdle/colored4/Colored_Phase_1_-_Idle_-4.png" id="21_menjm"]
 [ext_resource type="Script" uid="uid://yabo2au7gbol" path="res://Scripts/Mechanics/TurnBased/Clown/ClownTbAnimationManager.gd" id="21_rxlsl"]
-[ext_resource type="Texture2D" uid="uid://bpuc27uvjc2tl" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-1.png" id="22_gixf8"]
+[ext_resource type="Texture2D" uid="uid://nxux8cjpifiq" path="res://art/clown/TurnBased/ClownIdle/colored4/Colored_Phase_1_-_Idle_-5.png" id="22_2gida"]
 [ext_resource type="Texture2D" uid="uid://d0o4swln5jyed" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-1.png" id="22_t6r17"]
-[ext_resource type="Texture2D" uid="uid://ckqpov07srvkp" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-2.png" id="23_3ggi2"]
 [ext_resource type="Texture2D" uid="uid://ccosupehdsq3y" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-2.png" id="23_qtmyy"]
-[ext_resource type="Texture2D" uid="uid://d37sa6w3qctia" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-3.png" id="24_2vku4"]
 [ext_resource type="Texture2D" uid="uid://gdl7xfy2jsut" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-3.png" id="24_oegv2"]
-[ext_resource type="Texture2D" uid="uid://ci2gw001u6hr0" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-4.png" id="25_tq1dc"]
 [ext_resource type="Texture2D" uid="uid://b7co48b8xvbsg" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-4.png" id="25_xs6nm"]
-[ext_resource type="Texture2D" uid="uid://b8v3d5p16rof" path="res://art/clown/TurnBased/ClownSpin/colored/Colored_Phase_2_-_Spin-5.png" id="26_3ubkp"]
 [ext_resource type="Texture2D" uid="uid://eq6nnk4rg88l" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-5.png" id="26_t1ogs"]
 [ext_resource type="Texture2D" uid="uid://debygplhsf7nh" path="res://art/clown/TurnBased/ClownDamage1/Draft_Hit-6.png" id="27_m1puk"]
 [ext_resource type="Texture2D" uid="uid://bfrk3bvow8u7e" path="res://art/clown/TurnBased/ClownBuff1/Untitled_Artwork-1.png" id="27_u4djn"]
@@ -48,10 +58,15 @@
 [ext_resource type="Texture2D" uid="uid://cvd2k3yjm1yde" path="res://art/clown/TurnBased/ClownBuff1/Untitled_Artwork-14.png" id="40_on4wh"]
 [ext_resource type="Texture2D" uid="uid://ct4eijbq1ja4r" path="res://art/clown/TurnBased/ClownBuff1/Untitled_Artwork-15.png" id="41_fsuic"]
 [ext_resource type="Texture2D" uid="uid://dckjcsgn6cmbb" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-1.png" id="42_fr83q"]
+[ext_resource type="Texture2D" uid="uid://3x6k83ifkonm" path="res://art/clown/TurnBased/ClownSpin/new/Colored2/Colored_Phase_2_-_Spin-1.png" id="43_ogo43"]
 [ext_resource type="Texture2D" uid="uid://bxpo0r6aclex7" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-2.png" id="43_pcnbm"]
+[ext_resource type="Texture2D" uid="uid://behutcwpv5g06" path="res://art/clown/TurnBased/ClownSpin/new/Colored2/Colored_Phase_2_-_Spin-2.png" id="44_d880n"]
 [ext_resource type="Texture2D" uid="uid://b0ihsuoy6tp7q" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-3.png" id="44_sc3b6"]
+[ext_resource type="Texture2D" uid="uid://5m80vw75fbm0" path="res://art/clown/TurnBased/ClownSpin/new/Colored2/Colored_Phase_2_-_Spin-3.png" id="45_3fjfl"]
 [ext_resource type="Texture2D" uid="uid://bfi6jjo6y47g" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-4.png" id="45_o68fm"]
+[ext_resource type="Texture2D" uid="uid://6whwc4t67gck" path="res://art/clown/TurnBased/ClownSpin/new/Colored2/Colored_Phase_2_-_Spin-4.png" id="46_snfga"]
 [ext_resource type="Texture2D" uid="uid://cehpxoopbhswe" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-5.png" id="46_sqbub"]
+[ext_resource type="Texture2D" uid="uid://gd24uuk5vi2r" path="res://art/clown/TurnBased/ClownSpin/new/Colored2/Colored_Phase_2_-_Spin-5.png" id="47_8egpv"]
 [ext_resource type="Texture2D" uid="uid://boancpmkbeens" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-6.png" id="47_o0xxu"]
 [ext_resource type="Texture2D" uid="uid://rt7mcgd4vyex" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-7.png" id="48_eyx0g"]
 [ext_resource type="Texture2D" uid="uid://roq8eevkn040" path="res://art/clown/TurnBased/ClownThrow/Untitled_Artwork-8.png" id="49_i5hrh"]
@@ -87,6 +102,66 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hfusd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pv4fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_20ur4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g63p1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hc1qb")
+}],
+"loop": true,
+"name": &"Idle_2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_demh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_s4qe0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fi6os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wueik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_erdm3")
+}],
+"loop": true,
+"name": &"Idle_3",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_ijcpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_v03o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7qpoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_menjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2gida")
+}],
+"loop": true,
+"name": &"Idle_4",
 "speed": 10.0
 }, {
 "frames": [{
@@ -197,31 +272,31 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("22_gixf8")
+"texture": ExtResource("43_ogo43")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_gixf8")
+"texture": ExtResource("43_ogo43")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_3ggi2")
+"texture": ExtResource("44_d880n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_3ggi2")
+"texture": ExtResource("44_d880n")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_2vku4")
+"texture": ExtResource("45_3fjfl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_tq1dc")
+"texture": ExtResource("46_snfga")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_tq1dc")
+"texture": ExtResource("46_snfga")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_3ubkp")
+"texture": ExtResource("47_8egpv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_3ubkp")
+"texture": ExtResource("47_8egpv")
 }],
 "loop": true,
 "name": &"Spins",
@@ -697,6 +772,96 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
+[sub_resource type="Animation" id="Animation_hfusd"]
+resource_name = "idle_2"
+length = 0.83335
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle_2"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_pv4fx"]
+resource_name = "idle_3"
+length = 0.83335
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle_3"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_20ur4"]
+resource_name = "idle_4"
+length = 0.83335
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Idle_4"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jrs4b"]
 _data = {
 &"Buff1": SubResource("Animation_gcrxe"),
@@ -710,7 +875,10 @@ _data = {
 &"Spins_2": SubResource("Animation_86ua7"),
 &"Spins_2_Testing": SubResource("Animation_vw7dj"),
 &"Throw": SubResource("Animation_bkj85"),
-&"idle": SubResource("Animation_2gtrr")
+&"idle": SubResource("Animation_2gtrr"),
+&"idle_2": SubResource("Animation_hfusd"),
+&"idle_3": SubResource("Animation_pv4fx"),
+&"idle_4": SubResource("Animation_20ur4")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1028k"]
@@ -731,8 +899,20 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_ob0ng")
 blend_point_2/pos = 0.2
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g63p1"]
+animation = &"Buff1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hc1qb"]
+animation = &"Buff1"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t6imc"]
 animation = &"Buff1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_demh3"]
+animation = &"Damage1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s4qe0"]
+animation = &"Damage1"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5yeve"]
 animation = &"Damage1"
@@ -762,19 +942,27 @@ states/idle/node = SubResource("AnimationNodeAnimation_fope2")
 states/idle/position = Vector2(344, 82)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_u0yac")]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fi6os"]
+animation = &"Throw"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wueik"]
+animation = &"Throw"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nw3vd"]
 animation = &"Throw"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rj4b0"]
-animation = &"idle"
+animation = &"idle_2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_erdm3"]
+animation = &"idle_3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ijcpa"]
+animation = &"idle_4"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3u6ds"]
 break_loop_at_end = true
 advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_64rtj"]
-advance_mode = 2
-advance_condition = &"PHASE2"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7wpfe"]
 break_loop_at_end = true
@@ -815,10 +1003,6 @@ reset = false
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h3v6w"]
-advance_mode = 2
-advance_condition = &"PHASE1"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2rpsa"]
 break_loop_at_end = true
 reset = false
@@ -856,31 +1040,141 @@ reset = false
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v03o3"]
+advance_mode = 2
+advance_condition = &"PHASE2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7qpoe"]
+advance_mode = 2
+advance_condition = &"PHASE1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_menjm"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2gida"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"BUFF1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ogo43"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"THROW"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d880n"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3fjfl"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"DAMAGE1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_snfga"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8egpv"]
+advance_mode = 2
+advance_condition = &"IDLE2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b6pl1"]
+advance_mode = 2
+advance_condition = &"IDLE3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p7nij"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"BUFF1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g87cy"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fy2ds"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"THROW"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_it1qq"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m2560"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"DAMAGE1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w6i73"]
+break_loop_at_end = true
+reset = false
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_oqbrf"]
 states/BlendSpace1D/node = SubResource("AnimationNodeBlendSpace1D_abx6s")
 states/BlendSpace1D/position = Vector2(369, 293)
 states/Buff1/node = SubResource("AnimationNodeAnimation_t6imc")
-states/Buff1/position = Vector2(369, 16.9328)
+states/Buff1/position = Vector2(324, 0.9328)
+"states/Buff1 2/node" = SubResource("AnimationNodeAnimation_g63p1")
+"states/Buff1 2/position" = Vector2(490, 5.9328)
+"states/Buff1 3/node" = SubResource("AnimationNodeAnimation_hc1qb")
+"states/Buff1 3/position" = Vector2(684, -3.0672)
 states/Damage1/node = SubResource("AnimationNodeAnimation_5yeve")
-states/Damage1/position = Vector2(405, 223.933)
+states/Damage1/position = Vector2(306, 236)
+"states/Damage1 2/node" = SubResource("AnimationNodeAnimation_demh3")
+"states/Damage1 2/position" = Vector2(542, 236)
+"states/Damage1 3/node" = SubResource("AnimationNodeAnimation_s4qe0")
+"states/Damage1 3/position" = Vector2(725, 222)
 states/Damage2/node = SubResource("AnimationNodeAnimation_oum0t")
-states/Damage2/position = Vector2(557, 263.933)
+states/Damage2/position = Vector2(868, 298)
 states/End/position = Vector2(1569, 120)
 states/Kicks/node = SubResource("AnimationNodeAnimation_gapij")
-states/Kicks/position = Vector2(628, 16.9328)
+states/Kicks/position = Vector2(974, -38.0672)
 states/Spins/node = SubResource("AnimationNodeAnimation_ckpw4")
-states/Spins/position = Vector2(566, 120)
+states/Spins/position = Vector2(876, 120)
 states/Spins_2_Testing/node = SubResource("AnimationNodeAnimation_dppgx")
-states/Spins_2_Testing/position = Vector2(709, 237)
+states/Spins_2_Testing/position = Vector2(1063, 236)
 states/Start/position = Vector2(122, 101)
 states/StateMachine/node = SubResource("AnimationNodeStateMachine_qv7tn")
 states/StateMachine/position = Vector2(557, 536.933)
 states/Throw/node = SubResource("AnimationNodeAnimation_nw3vd")
-states/Throw/position = Vector2(265, 223.933)
+states/Throw/position = Vector2(177, 222)
+"states/Throw 2/node" = SubResource("AnimationNodeAnimation_fi6os")
+"states/Throw 2/position" = Vector2(410, 211)
+"states/Throw 3/node" = SubResource("AnimationNodeAnimation_wueik")
+"states/Throw 3/position" = Vector2(610, 211)
 states/idle/node = SubResource("AnimationNodeAnimation_rj4b0")
-states/idle/position = Vector2(306, 112)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "idle", "Spins", SubResource("AnimationNodeStateMachineTransition_64rtj"), "Buff1", "idle", SubResource("AnimationNodeStateMachineTransition_7wpfe"), "idle", "Buff1", SubResource("AnimationNodeStateMachineTransition_lk75y"), "Spins", "Kicks", SubResource("AnimationNodeStateMachineTransition_vrt1w"), "Kicks", "Spins", SubResource("AnimationNodeStateMachineTransition_7h37o"), "idle", "Throw", SubResource("AnimationNodeStateMachineTransition_xgr8x"), "Throw", "idle", SubResource("AnimationNodeStateMachineTransition_8k7hh"), "Spins", "idle", SubResource("AnimationNodeStateMachineTransition_h3v6w"), "idle", "Damage1", SubResource("AnimationNodeStateMachineTransition_2rpsa"), "Damage1", "idle", SubResource("AnimationNodeStateMachineTransition_vvgn1"), "Spins", "Damage2", SubResource("AnimationNodeStateMachineTransition_sv5ea"), "Damage2", "Spins", SubResource("AnimationNodeStateMachineTransition_l64by"), "Spins", "Spins_2_Testing", SubResource("AnimationNodeStateMachineTransition_w6tlf"), "Spins_2_Testing", "Spins", SubResource("AnimationNodeStateMachineTransition_accyc")]
-graph_offset = Vector2(12, -11.0672)
+states/idle/position = Vector2(313, 110)
+states/idle_2/node = SubResource("AnimationNodeAnimation_erdm3")
+states/idle_2/position = Vector2(475, 110)
+states/idle_3/node = SubResource("AnimationNodeAnimation_ijcpa")
+states/idle_3/position = Vector2(667, 110)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "Buff1", "idle", SubResource("AnimationNodeStateMachineTransition_7wpfe"), "idle", "Buff1", SubResource("AnimationNodeStateMachineTransition_lk75y"), "Spins", "Kicks", SubResource("AnimationNodeStateMachineTransition_vrt1w"), "Kicks", "Spins", SubResource("AnimationNodeStateMachineTransition_7h37o"), "idle", "Throw", SubResource("AnimationNodeStateMachineTransition_xgr8x"), "Throw", "idle", SubResource("AnimationNodeStateMachineTransition_8k7hh"), "idle", "Damage1", SubResource("AnimationNodeStateMachineTransition_2rpsa"), "Damage1", "idle", SubResource("AnimationNodeStateMachineTransition_vvgn1"), "Spins", "Damage2", SubResource("AnimationNodeStateMachineTransition_sv5ea"), "Damage2", "Spins", SubResource("AnimationNodeStateMachineTransition_l64by"), "Spins", "Spins_2_Testing", SubResource("AnimationNodeStateMachineTransition_w6tlf"), "Spins_2_Testing", "Spins", SubResource("AnimationNodeStateMachineTransition_accyc"), "idle_3", "Spins", SubResource("AnimationNodeStateMachineTransition_v03o3"), "Spins", "idle_3", SubResource("AnimationNodeStateMachineTransition_7qpoe"), "Buff1 2", "idle_2", SubResource("AnimationNodeStateMachineTransition_menjm"), "idle_2", "Buff1 2", SubResource("AnimationNodeStateMachineTransition_2gida"), "idle_2", "Throw 2", SubResource("AnimationNodeStateMachineTransition_ogo43"), "Throw 2", "idle_2", SubResource("AnimationNodeStateMachineTransition_d880n"), "idle_2", "Damage1 2", SubResource("AnimationNodeStateMachineTransition_3fjfl"), "Damage1 2", "idle_2", SubResource("AnimationNodeStateMachineTransition_snfga"), "idle", "idle_2", SubResource("AnimationNodeStateMachineTransition_8egpv"), "idle_2", "idle_3", SubResource("AnimationNodeStateMachineTransition_b6pl1"), "idle_3", "Buff1 3", SubResource("AnimationNodeStateMachineTransition_p7nij"), "Buff1 3", "idle_3", SubResource("AnimationNodeStateMachineTransition_g87cy"), "idle_3", "Throw 3", SubResource("AnimationNodeStateMachineTransition_fy2ds"), "Throw 3", "idle_3", SubResource("AnimationNodeStateMachineTransition_it1qq"), "idle_3", "Damage1 3", SubResource("AnimationNodeStateMachineTransition_m2560"), "Damage1 3", "idle_3", SubResource("AnimationNodeStateMachineTransition_w6i73")]
+graph_offset = Vector2(-88, -99.0672)
 
 [node name="ClownTb" type="Node2D"]
 position = Vector2(874, 512)
@@ -907,6 +1201,8 @@ skill_4_name = "SPIIIIIINNNN!!!!"
 skill_4_tempo = 4
 skill_4_animation_buffer = 60.0
 phase_1_threshold = 1.0
+phase_1_1_threshold = 0.92
+phase_1_2_threshold = 0.84
 phase_2_threshold = 0.75
 phase_3_threshold = 0.5
 phase_4_threshold = 0.25
@@ -941,6 +1237,8 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/BUFF1 = false
 parameters/conditions/DAMAGE1 = false
 parameters/conditions/DAMAGE2 = false
+parameters/conditions/IDLE2 = false
+parameters/conditions/IDLE3 = false
 parameters/conditions/KICKS = false
 parameters/conditions/PHASE1 = false
 parameters/conditions/PHASE2 = false

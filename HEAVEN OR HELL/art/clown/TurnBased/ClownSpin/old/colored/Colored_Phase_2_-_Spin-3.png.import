@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bofbepkeq1c1l"
-path="res://.godot/imported/Untitled_Artwork-1 (1).png-2dc5b35179f0c69c2cc3e41a4c839b4a.ctex"
+uid="uid://d37sa6w3qctia"
+path="res://.godot/imported/Colored_Phase_2_-_Spin-3.png-1b773316167083422d4c78de18df481d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/clown/TurnBased/ClownSpin/uncolored/Untitled_Artwork-1 (1).png"
-dest_files=["res://.godot/imported/Untitled_Artwork-1 (1).png-2dc5b35179f0c69c2cc3e41a4c839b4a.ctex"]
+source_file="res://art/clown/TurnBased/ClownSpin/old/colored/Colored_Phase_2_-_Spin-3.png"
+dest_files=["res://.godot/imported/Colored_Phase_2_-_Spin-3.png-1b773316167083422d4c78de18df481d.ctex"]
 
 [params]
 

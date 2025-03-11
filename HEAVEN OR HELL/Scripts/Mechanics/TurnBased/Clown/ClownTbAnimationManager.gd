@@ -85,6 +85,8 @@ signal skill_4_animation_buffer_change
 
 @export_group("Phase_Thresholds")
 @export var phase_1_threshold: float
+@export var phase_1_1_threshold: float
+@export var phase_1_2_threshold: float
 @export var phase_2_threshold: float
 @export var phase_3_threshold: float
 @export var phase_4_threshold: float
@@ -92,15 +94,24 @@ signal skill_4_animation_buffer_change
 
 func animation_phase_shift_check():
 	var phase_1_HP_gate = clownstats.max_heart * phase_1_threshold
+	var phase_1_1_HP_gate = clownstats.max_heart * phase_1_1_threshold
+	var phase_1_2_HP_gate = clownstats.max_heart * phase_1_2_threshold
 	var phase_2_HP_gate = clownstats.max_heart * phase_2_threshold
 	var phase_3_HP_gate = clownstats.max_heart * phase_3_threshold
 	var phase_4_HP_gate = clownstats.max_heart * phase_4_threshold
 	
 	
-	if (clownstats.current_heart <= phase_1_HP_gate && clownstats.current_heart > phase_2_HP_gate ):
+	if (clownstats.current_heart <= phase_1_HP_gate && clownstats.current_heart > phase_1_1_HP_gate ):
 		clownTB_animation.set("parameters/conditions/PHASE1", true)
 		PHASE = 1
 		#print_debug("PHASE: 1")
+	if (clownstats.current_heart <= phase_1_1_HP_gate && clownstats.current_heart > phase_1_2_HP_gate):
+		clownTB_animation.set("parameters/conditions/IDLE2", true)
+		PHASE = 1
+	
+	if (clownstats.current_heart <= phase_1_2_HP_gate && clownstats.current_heart > phase_2_HP_gate):
+		clownTB_animation.set("parameters/conditions/IDLE3", true)
+		PHASE = 1
 	
 	#if  phase_1_HP_gate >= clownstats.current_heart >= phase_2_HP_gate:
 		#clownTB_animation.set("parameters/conditions/PHASE1", true)
