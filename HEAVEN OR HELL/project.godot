@@ -27,12 +27,26 @@ buses/default_bus_layout="res://z_misc/default_bus_layout.tres"
 [autoload]
 
 Spawning="*res://addons/BulletUpHell/Spawning.tscn"
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 YASM="*res://addons/yet_another_scene_manager/Scenes.gd"
 StatSaver="*res://Scenes/StatStuff/stat_saver.tscn"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Panku="*res://addons/panku_console/console.tscn"
 DamageCalculation="*res://Scripts/Mechanics/TurnBased/DamageCalculation/DamageCalculation.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+editor/new_file_template="~ this_is_a_node_title
+Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+Nathan: Here are some choices.
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => this_is_a_node_title
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END"
 
 [display]
 
@@ -204,7 +218,7 @@ block_hell={
 [internationalization]
 
 locale/translations=PackedStringArray("res://Dialogue/testingDialogue.en.translation")
-locale/translations_pot_files=PackedStringArray("res://Dialogue/testingDialogue.dialogue", "res://Dialogue/moretesting.dialogue", "res://Dialogue/TurnBasedClown.dialogue", "res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/testingDialogue.dialogue", "res://Dialogue/moretesting.dialogue", "res://Dialogue/TurnBasedClown.dialogue", "res://Dialogue/BATTLE_SYSTEM_TEXT2.dialogue")
 
 [physics]
 

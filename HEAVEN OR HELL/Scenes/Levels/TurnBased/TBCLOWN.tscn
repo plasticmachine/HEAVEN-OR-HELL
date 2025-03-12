@@ -509,6 +509,14 @@ shape = SubResource("RectangleShape2D_e4fro")
 disabled = true
 debug_color = Color(0.943543, 0.108845, 0.142756, 0.42)
 
+[node name="HitHeavenBlockCol2" type="CollisionShape2D" parent="EnemySpot2/EnemyHitBoxes/HitHeavenBlock"]
+z_index = 5
+position = Vector2(1573, 670)
+scale = Vector2(3.56, 3.56)
+shape = SubResource("RectangleShape2D_e4fro")
+disabled = true
+debug_color = Color(0.943543, 0.108845, 0.142756, 0.42)
+
 [node name="EnemySpot" type="Node2D" parent="."]
 
 [node name="TestPlayerSpots" type="Node2D" parent="."]
