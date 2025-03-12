@@ -142,7 +142,7 @@ heaven_inventory = NodePath("../InventoryManager")
 
 [node name="HeavenActionMechanics" type="Node2D" parent="."]
 script = ExtResource("14_k1xjr")
-block_window = 0.5
+block_window = 1.0
 block_timeout = 10.0
 
 [node name="DEBUG" type="Node2D" parent="." node_paths=PackedStringArray("inventory_functions")]
@@ -172,3 +172,4 @@ position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_5edlt")
 
 [connection signal="inventory_changed" from="InventoryManager" to="HeavenInventoryDisplay" method="update_hud"]
+[connection signal="body_entered" from="BlockArea" to="." method="_on_block_area_body_entered"]

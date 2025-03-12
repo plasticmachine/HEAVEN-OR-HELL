@@ -1180,6 +1180,7 @@ script = ExtResource("21_rxlsl")
 skill_1_name = "Throw!"
 skill_1_tempo = 5
 skill_1_power = 35
+skill_1_block_window = 1000.0
 skill_1_animation_buffer = 1.0
 skill_2_name = "Breathe in! Breathe Out!"
 skill_2_tempo = 3

@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=101 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" uid="uid://csykogoqqgsqc" path="res://Scripts/Mechanics/TurnBased/LevelManagers/TBCLOWN_MANAGER.gd" id="1_h0a2a"]
 [ext_resource type="Script" uid="uid://d2dfbxljvfwi" path="res://Scripts/Mechanics/TurnBased/Skills/Skills.gd" id="2_1jhkk"]
@@ -289,6 +289,9 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4fro"]
+size = Vector2(39.2977, 26.6573)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awxep"]
 bg_color = Color(0, 0, 0, 0.498039)
 
@@ -483,6 +486,28 @@ position = Vector2(946, 340)
 
 [node name="EnemyEffectSpot" type="Node2D" parent="EnemySpot2"]
 position = Vector2(946, 340)
+
+[node name="EnemyHitBoxes" type="Node2D" parent="EnemySpot2"]
+
+[node name="HitHellBlock" type="Area2D" parent="EnemySpot2/EnemyHitBoxes"]
+
+[node name="HitHellBlockCol" type="CollisionShape2D" parent="EnemySpot2/EnemyHitBoxes/HitHellBlock"]
+z_index = 5
+position = Vector2(307, 576)
+scale = Vector2(3.56, 3.56)
+shape = SubResource("RectangleShape2D_e4fro")
+disabled = true
+debug_color = Color(0.943543, 0.108845, 0.142756, 0.42)
+
+[node name="HitHeavenBlock" type="Area2D" parent="EnemySpot2/EnemyHitBoxes"]
+
+[node name="HitHeavenBlockCol" type="CollisionShape2D" parent="EnemySpot2/EnemyHitBoxes/HitHeavenBlock"]
+z_index = 5
+position = Vector2(1573, 670)
+scale = Vector2(3.56, 3.56)
+shape = SubResource("RectangleShape2D_e4fro")
+disabled = true
+debug_color = Color(0.943543, 0.108845, 0.142756, 0.42)
 
 [node name="EnemySpot" type="Node2D" parent="."]
 
@@ -1078,6 +1103,7 @@ scale = Vector2(-0.159953, -0.159953)
 [connection signal="hell_damage_taken" from="DamageCalculation" to="PlayerSpots/HellTb" method="_on_hell_damage_taken"]
 [connection signal="action_committed" from="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" to="." method="_on_clown_tb_action_committed"]
 [connection signal="skill_4_animation_buffer_change" from="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" to="." method="clown_skill_4_animation_buffer_set"]
+[connection signal="heaven_blocked" from="PlayerSpots/HeavenTb" to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_heaven_blocked"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="." method="_on_hell_action_commited_skill_1"]
 [connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="PlayerUI/Buttons/HellButtons/Attackbutton1" method="_on_pressed"]
 [connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="." method="_on_hell_action_commited_skill_2"]

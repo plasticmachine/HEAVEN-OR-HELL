@@ -18,6 +18,10 @@ signal skill_4_animation_buffer_change
 @onready var clown_phase_2_path_follow = $".."
 @onready var clownskill: int
 @onready var clownTB_animation = $AnimationTree
+@onready var HitHellBlockBox = $"../../../EnemyHitBoxes/HitHellBlock/HitHellBlockCol"
+@onready var HitHeavenBlockBox = $"../../../EnemyHitBoxes/HitHeavenBlock/HitHeavenBlockCol"
+@onready var DidHeavenBlock := false
+@onready var DidHellBlock := false
 
 @onready var PHASE: int = 1
 
@@ -25,6 +29,8 @@ signal skill_4_animation_buffer_change
 @export var skill_1_name: String
 @export var skill_1_tempo: int
 @export var skill_1_power: int
+@export var skill_1_block_window: float
+@export var skill_1_parry_window: float
 @export var skill_1_animation_buffer: float
 
 
@@ -133,7 +139,7 @@ func _on_first_action_committed() -> void:
 	if turnbased_manager.turn_queue_amount == 1 and heavenstats.current_heart > 0 and hellstats.current_heart > 0:
 		match PHASE:
 			1:
-				var num = [1,2].pick_random()
+				var num = [1,1].pick_random()
 				match num:
 					1:
 						clownskill = 1
@@ -196,7 +202,7 @@ func _on_first_action_committed() -> void:
 
 #test skill that just randomly does damage to heaven or hell
 func skill_1_effect():
-	var num = [1,2].pick_random()
+	var num = [1,1].pick_random()
 	#clownstats.convert_tempo(skill_1_tempo)
 	clownstats.convert_skill_power(skill_1_power)
 	
@@ -205,9 +211,12 @@ func skill_1_effect():
 	
 	match num:
 		1:
-			damagecalc.clown_to_heaven_deviltry_damagecalc()
 			heaven_effect_animation.find_hit_spot()
 			heaven_effect_animation.play("basic_slash")
+			skill_1_block_box_enable_heaven()
+			await get_tree().create_timer(1).timeout
+			if !DidHeavenBlock:
+				damagecalc.clown_to_heaven_deviltry_damagecalc()
 		2:
 			damagecalc.clown_to_hell_deviltry_damagecalc()
 			hell_effect_animation.find_hit_spot()
@@ -406,6 +415,10 @@ func skill_4_effect():
 	##PHASE-2 DOUBLE-KICK (CAN TARGET SAME TARGET TWICE)
 	#clownskill = 5
 
+
+
+
+
 func _on_damage_calculation_clown_damage_taken() -> void:
 	match PHASE:
 		1:
@@ -416,3 +429,16 @@ func _on_damage_calculation_clown_damage_taken() -> void:
 			clownTB_animation.set('parameters/conditions/DAMAGE2', true)
 			await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 			clownTB_animation.set('parameters/conditions/DAMAGE2', false)
+
+
+func skill_1_block_box_enable_heaven():
+	HitHeavenBlockBox.disabled = false
+	
+	await get_tree().create_timer(2)
+	
+	HitHeavenBlockBox.disabled = true
+	
+	
+
+func _on_heaven_blocked():
+	DidHeavenBlock = true

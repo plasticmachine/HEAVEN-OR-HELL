@@ -15,9 +15,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("block_heaven") and block_possible:
 		BlockBox.disabled = false
+		HeavenTBAnimation.play("hit")
 		block_possible = false
 		await get_tree().create_timer(block_window).timeout
+		HeavenTBAnimation.play("idle")
 		BlockBox.disabled = true
 		await get_tree().create_timer(block_timeout).timeout
 		block_possible = true
+		
 	
