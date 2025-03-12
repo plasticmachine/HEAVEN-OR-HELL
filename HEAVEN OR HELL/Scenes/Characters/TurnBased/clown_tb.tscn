@@ -1077,7 +1077,6 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3fjfl"]
 break_loop_at_end = true
 reset = false
-switch_mode = 2
 advance_mode = 2
 advance_condition = &"DAMAGE1"
 
@@ -1124,7 +1123,6 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m2560"]
 break_loop_at_end = true
 reset = false
-switch_mode = 2
 advance_mode = 2
 advance_condition = &"DAMAGE1"
 

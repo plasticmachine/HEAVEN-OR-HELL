@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bdorwiack3h01"]
+[gd_scene load_steps=20 format=3 uid="uid://bdorwiack3h01"]
 
 [ext_resource type="Texture2D" uid="uid://qb1askllryfb" path="res://art/HEAVEN/turnbased/idle/HVN_TB_Dark.PNG" id="2_7q6gi"]
 [ext_resource type="Script" uid="uid://btrfcgcypc8ye" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/HeavenTBAnimationManager.gd" id="2_67wdh"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://u1cnmaig4yq0" path="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-6.png" id="8_dcr8j"]
 [ext_resource type="Texture2D" uid="uid://burmovs6tiwa" path="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-7.png" id="9_kdnq4"]
 [ext_resource type="Texture2D" uid="uid://c86wk76kbbfm0" path="res://art/HEAVEN/turnbased/idle/light/Untitled_Artwork-8.png" id="10_lgo12"]
+[ext_resource type="Script" uid="uid://dsr5db5nv8i86" path="res://Scenes/Characters/TurnBased/heaven_action_mechanics.gd" id="14_k1xjr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1hfb2"]
 animations = [{
@@ -139,6 +140,11 @@ MAX_UNIQUE_KEYCHAINS = 5
 script = ExtResource("6_dfshg")
 heaven_inventory = NodePath("../InventoryManager")
 
+[node name="HeavenActionMechanics" type="Node2D" parent="."]
+script = ExtResource("14_k1xjr")
+block_window = 0.5
+block_timeout = 10.0
+
 [node name="DEBUG" type="Node2D" parent="." node_paths=PackedStringArray("inventory_functions")]
 script = ExtResource("7_mq0ys")
 inventory_functions = NodePath("../HeavenInventoryFunctions")
@@ -156,6 +162,7 @@ position = Vector2(1612, 844)
 position = Vector2(0.999878, -130)
 scale = Vector2(5.12, 5.12)
 shape = SubResource("RectangleShape2D_xjiw0")
+disabled = true
 
 [node name="ParryArea" type="Area2D" parent="."]
 position = Vector2(1612, 844)
