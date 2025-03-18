@@ -14,11 +14,22 @@ texture = ExtResource("1_nurjv")
 
 [node name="StartButton" type="Button" parent="Background"]
 offset_left = -616.51
-offset_top = -148.38
+offset_top = -228.84
 offset_right = -520.51
-offset_bottom = -117.38
+offset_bottom = -197.84
 scale = Vector2(2.28788, 2.28788)
-text = "Start Game"
+text = "TB
+"
+script = ExtResource("2_kfhon")
+
+[node name="StartButton2" type="Button" parent="Background"]
+offset_left = -616.51
+offset_top = -142.111
+offset_right = -520.51
+offset_bottom = -111.111
+scale = Vector2(2.28788, 2.28788)
+text = "BH
+"
 script = ExtResource("2_kfhon")
 
 [node name="OptionsButton" type="Button" parent="Background"]
@@ -52,4 +63,5 @@ autoplay = true
 parameters/looping = true
 
 [connection signal="pressed" from="Background/StartButton" to="Background/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="Background/StartButton2" to="Background/StartButton2" method="_on_pressed"]
 [connection signal="pressed" from="Background/ExitButton" to="Background/StartButton" method="_on_exit_button_pressed"]

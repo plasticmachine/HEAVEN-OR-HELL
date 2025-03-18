@@ -1,9 +1,10 @@
 extends Node2D
 signal heaven_blocked
+signal heaven_parried
 
 @onready var HeavenTBAnimation = $HeavenTbAnimation
 @export var damage_blink_timer_sec: float
-
+@export var parry_blink_timer_sec: float
 
 
 #func _ready():
@@ -27,5 +28,23 @@ func _on_heaven_damage_taken():
 	await get_tree().create_timer(damage_blink_timer_sec).timeout
 
 
-func _on_block_area_body_entered(body):
+#func _on_block_area_body_entered(body):
+	#heaven_blocked.emit()
+#
+#
+#func _on_block_area_entered(body_rid, body, body_shape_index, local_shape_index):
+	#heaven_blocked.emit()
+#
+
+func _on_block_area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	HeavenTBAnimation.play("block")
 	heaven_blocked.emit()
+	await get_tree().create_timer(parry_blink_timer_sec).timeout
+	HeavenTBAnimation.play("idle")
+
+
+func _on_parry_area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	HeavenTBAnimation.play("parry")
+	heaven_parried.emit()
+	await get_tree().create_timer(parry_blink_timer_sec).timeout
+	HeavenTBAnimation.play("idle")

@@ -18,12 +18,21 @@ signal skill_4_animation_buffer_change
 @onready var clown_phase_2_path_follow = $".."
 @onready var clownskill: int
 @onready var clownTB_animation = $AnimationTree
-@onready var HitHellBlockBox = $"../../../EnemyHitBoxes/HitHellBlock/HitHellBlockCol"
-@onready var HitHeavenBlockBox = $"../../../EnemyHitBoxes/HitHeavenBlock/HitHeavenBlockCol"
+@onready var HitHellBlockBox = $"../../../../EnemyHitBoxes/HitHellBlock/HitHellBlockCol"
+@onready var HitHeavenBlockBox = $"../../../../EnemyHitBoxes/HitHeavenBlock/HitHeavenBlockCol"
+@onready var HitHeavenParryBox = $"../../../../EnemyHitBoxes/HitHeavenParry/HitHeavenParryCol"
+@onready var HitHellParryBox = $"../../../../EnemyHitBoxes/HitHellParry/HitHellParryCol"
+
+#DEFENSIVE ACTION VARIABLES
+@onready var DidHeavenParry := false
+@onready var DidHellParry := false
 @onready var DidHeavenBlock := false
 @onready var DidHellBlock := false
+@onready var SkipHeavenBlock := false
+@onready var SkipHellBlock := false
 
 @onready var PHASE: int = 1
+@onready var last_alive: int #1 is Heaven #2 is Hell
 
 @export_group("Skill_1")
 @export var skill_1_name: String
@@ -98,6 +107,11 @@ signal skill_4_animation_buffer_change
 @export var phase_4_threshold: float
 
 
+func _ready():
+	HitHeavenBlockBox.disabled = true
+	HitHellBlockBox.disabled = true
+	
+
 func animation_phase_shift_check():
 	var phase_1_HP_gate = clownstats.max_heart * phase_1_threshold
 	var phase_1_1_HP_gate = clownstats.max_heart * phase_1_1_threshold
@@ -131,9 +145,19 @@ func animation_phase_shift_check():
 		PHASE = 2
 		#print_debug("PHASE: 2")
 
+func check_last_alive():
+	
+	if heavenstats.current_heart <= 0:
+		last_alive = 2
+	
+	if hellstats.current_heart <= 0:
+		last_alive = 1
+	
+	
 
 func _process(delta):
 	animation_phase_shift_check()
+	check_last_alive()
 
 func _on_first_action_committed() -> void:
 	if turnbased_manager.turn_queue_amount == 1 and heavenstats.current_heart > 0 and hellstats.current_heart > 0:
@@ -202,9 +226,14 @@ func _on_first_action_committed() -> void:
 
 #test skill that just randomly does damage to heaven or hell
 func skill_1_effect():
-	var num = [1,1].pick_random()
+	var num = [2,2].pick_random()
 	#clownstats.convert_tempo(skill_1_tempo)
 	clownstats.convert_skill_power(skill_1_power)
+	
+	if last_alive == 1:
+		num = last_alive
+	if last_alive == 2:
+		num = last_alive
 	
 	clownTB_animation.set("parameters/conditions/THROW", true)
 	await get_tree().create_timer(1).timeout
@@ -213,14 +242,12 @@ func skill_1_effect():
 		1:
 			heaven_effect_animation.find_hit_spot()
 			heaven_effect_animation.play("basic_slash")
-			skill_1_block_box_enable_heaven()
-			await get_tree().create_timer(1).timeout
-			if !DidHeavenBlock:
-				damagecalc.clown_to_heaven_deviltry_damagecalc()
+			check_for_heaven_defensive_action()
+
 		2:
-			damagecalc.clown_to_hell_deviltry_damagecalc()
 			hell_effect_animation.find_hit_spot()
 			hell_effect_animation.play("basic_slash")
+			check_for_hell_defensive_action()
 	clownTB_animation.set("parameters/conditions/THROW", false)
 	await get_tree().create_timer(1).timeout
 	clown_turn_end = true
@@ -434,11 +461,79 @@ func _on_damage_calculation_clown_damage_taken() -> void:
 func skill_1_block_box_enable_heaven():
 	HitHeavenBlockBox.disabled = false
 	
-	await get_tree().create_timer(2)
+	await get_tree().create_timer(skill_1_block_window).timeout
 	
 	HitHeavenBlockBox.disabled = true
+func skill_1_parry_box_enable_heaven():
+	HitHeavenParryBox.disabled = false
 	
+	await get_tree().create_timer(skill_1_parry_window).timeout
 	
+	HitHeavenParryBox.disabled = true
+func skill_1_block_box_enable_hell():
+	HitHellBlockBox.disabled = false
+	
+	await get_tree().create_timer(skill_1_block_window).timeout
+	
+	HitHellBlockBox.disabled = true
+func skill_1_parry_box_enable_hell():
+	HitHellParryBox.disabled = false
+	
+	await get_tree().create_timer(skill_1_parry_window).timeout
+	
+	HitHellParryBox.disabled = true
+
+
+#checks if heaven is going to parry OR block, deals full damage if no action is succsessful
+func check_for_heaven_defensive_action():
+	skill_1_block_box_enable_heaven()
+	skill_1_parry_box_enable_heaven()
+	await get_tree().create_timer(1).timeout
+	if DidHeavenParry == false:
+		#damagecalc.clown_to_heaven_deviltry_damagecalc()
+		SkipHeavenBlock = false
+	if DidHeavenParry == true:
+		damagecalc.heaven_to_clown_deviltry_PARRY_damagecalc()
+		DidHeavenParry = false
+		SkipHeavenBlock = true
+	match SkipHeavenBlock:
+		false:
+			if DidHeavenBlock == false:
+				damagecalc.clown_to_heaven_deviltry_damagecalc()
+			if DidHeavenBlock == true:
+				print_debug("HEAVEN BLOCKED!")
+				DidHeavenBlock = false
+		true: 
+			print_debug("already parried!")
+
+#checks if hell is going to parry OR block, deals full damage if no action is succsessful
+func check_for_hell_defensive_action():
+	skill_1_block_box_enable_hell()
+	skill_1_parry_box_enable_hell()
+	await get_tree().create_timer(1).timeout
+	if DidHellParry == false:
+		#damagecalc.clown_to_hell_deviltry_damagecalc()
+		SkipHellBlock = false
+	if DidHellParry == true:
+		damagecalc.hell_to_clown_deviltry_PARRY_damagecalc()
+		DidHellParry = false
+		SkipHellBlock = true
+	match SkipHellBlock:
+		false:
+			if DidHellBlock == false:
+				damagecalc.clown_to_hell_deviltry_damagecalc()
+			if DidHellBlock == true:
+				print_debug("hell BLOCKED!")
+				DidHellBlock = false
+		true: 
+			print_debug("already parried!")
 
 func _on_heaven_blocked():
 	DidHeavenBlock = true
+func _on_hell_blocked():
+	DidHellBlock = true
+
+func _on_heaven_parried():
+	DidHeavenParry = true
+func _on_hell_parried():
+	DidHellParry = true

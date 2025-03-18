@@ -1,24 +1,43 @@
-[gd_scene load_steps=17 format=3 uid="uid://tcfwrymqvqb4"]
+[gd_scene load_steps=20 format=3 uid="uid://tcfwrymqvqb4"]
 
 [ext_resource type="Script" uid="uid://ciw2sfdtlt7vu" path="res://Scenes/Characters/TurnBased/hellTBAnimation.gd" id="1_8t303"]
-[ext_resource type="Texture2D" uid="uid://cqd4gt1mf6tvx" path="res://art/HELL/turnbased/HLL_TB_Dark.PNG" id="1_qsudq"]
-[ext_resource type="Texture2D" uid="uid://d2128vbjmnuao" path="res://art/HELL/turnbased/idle/dark/Untitled_Artwork-1.png" id="2_g3o8p"]
-[ext_resource type="Texture2D" uid="uid://b77gr2ew0iqgh" path="res://art/HELL/turnbased/idle/light/Untitled_Artwork-1.png" id="4_6u87y"]
+[ext_resource type="Texture2D" uid="uid://dnykxh2n6vx0d" path="res://art/HELL/turnbased/block/Dark Block Test.png" id="1_qsudq"]
+[ext_resource type="Texture2D" uid="uid://bqttc04kfpwqe" path="res://art/HELL/turnbased/idle_resize/dark/Dark.png" id="2_8srhe"]
+[ext_resource type="Texture2D" uid="uid://pu0n8t11kll2" path="res://art/HELL/turnbased/block/Block Test.png" id="2_nd8ll"]
+[ext_resource type="Texture2D" uid="uid://cced5gxeab50e" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-1.png" id="3_8srhe"]
 [ext_resource type="Script" uid="uid://xjvavbp0vun0" path="res://Scripts/Mechanics/Keychains/testing stuff/inventory.gd" id="4_17j3l"]
+[ext_resource type="Texture2D" uid="uid://et21sujlee7w" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-2.png" id="4_s7wec"]
 [ext_resource type="Script" uid="uid://drpwx4knapdyl" path="res://Scripts/Mechanics/Keychains/testing stuff/hell_inventory_functions.gd" id="5_71qnj"]
-[ext_resource type="Texture2D" uid="uid://cfdwlyu2vjs5i" path="res://art/HELL/turnbased/idle/light/Untitled_Artwork-2.png" id="5_87heg"]
-[ext_resource type="Texture2D" uid="uid://cuu1vp12wg8bo" path="res://art/HELL/turnbased/idle/light/Untitled_Artwork-3.png" id="6_ccb1j"]
+[ext_resource type="Texture2D" uid="uid://b6gds3mnev20p" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-3.png" id="5_nd8ll"]
+[ext_resource type="Texture2D" uid="uid://d0pavxp1pdiea" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-4.png" id="6_ddata"]
 [ext_resource type="Script" uid="uid://cpd0ttxlsvjoa" path="res://Scripts/Mechanics/Keychains/testing stuff/DEBUGHELL.gd" id="6_jlxl7"]
-[ext_resource type="Texture2D" uid="uid://dmdsuhv1lqtgj" path="res://art/HELL/turnbased/idle/light/Untitled_Artwork-4.png" id="7_87xxy"]
 [ext_resource type="PackedScene" uid="uid://bdp3mwc8pn1w0" path="res://Scenes/Keychains/HellInventoryDisplay.tscn" id="7_qhq1h"]
-[ext_resource type="Texture2D" uid="uid://d2h2wl8u45cat" path="res://art/HELL/turnbased/idle/light/Untitled_Artwork-5.png" id="8_01ecc"]
-[ext_resource type="Texture2D" uid="uid://ddoxgliv0bik4" path="res://art/HELL/turnbased/idle/light/Untitled_Artwork-6.png" id="9_dj7pk"]
+[ext_resource type="Texture2D" uid="uid://b66kbhyr7yb6i" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-5.png" id="7_vermt"]
+[ext_resource type="Texture2D" uid="uid://bhf8144sjy7c8" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-6.png" id="8_u3vwp"]
+[ext_resource type="Script" uid="uid://r6k3xt12n8or" path="res://Scripts/Mechanics/BulletHell/ActionScripts/hell_action_mechanics.gd" id="12_s7wec"]
+[ext_resource type="PackedScene" uid="uid://b4wq6wnlfoewg" path="res://Scenes/SoundManagers/hell_sound_manager.tscn" id="16_ddata"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wepe7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_g3o8p")
+"texture": ExtResource("2_nd8ll")
+}],
+"loop": true,
+"name": &"block",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qsudq")
+}],
+"loop": true,
+"name": &"block_fail",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8srhe")
 }],
 "loop": true,
 "name": &"disable",
@@ -26,55 +45,49 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_qsudq")
+"texture": ExtResource("2_8srhe")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_qsudq")
+"texture": ExtResource("2_8srhe")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_qsudq")
+"texture": ExtResource("2_8srhe")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_qsudq")
+"texture": ExtResource("2_8srhe")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_qsudq")
+"texture": ExtResource("2_8srhe")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_qsudq")
+"texture": ExtResource("2_8srhe")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_qsudq")
+"texture": ExtResource("2_8srhe")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_qsudq")
-}, {
-"duration": 1.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_qsudq")
+"texture": ExtResource("2_8srhe")
 }],
 "loop": false,
 "name": &"hit",
@@ -82,26 +95,64 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_6u87y")
+"texture": ExtResource("3_8srhe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_87heg")
+"texture": ExtResource("4_s7wec")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ccb1j")
+"texture": ExtResource("5_nd8ll")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_87xxy")
+"texture": ExtResource("6_ddata")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_01ecc")
+"texture": ExtResource("7_vermt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_dj7pk")
+"texture": ExtResource("8_u3vwp")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nd8ll")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nd8ll")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nd8ll")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nd8ll")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nd8ll")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nd8ll")
+}],
+"loop": false,
+"name": &"parry",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tahyk"]
@@ -113,15 +164,15 @@ size = Vector2(143, 80)
 [node name="HellTb" type="Node2D"]
 script = ExtResource("1_8t303")
 damage_blink_timer_sec = 1.5
+parry_blink_timer_sec = 0.5
 
 [node name="HellTbAnimation" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.712129, 0.712129, 0.712129, 1)
-position = Vector2(204, 942)
+position = Vector2(300, 759)
 scale = Vector2(0.760001, 0.760001)
 sprite_frames = SubResource("SpriteFrames_wepe7")
-animation = &"idle"
+animation = &"parry"
 autoplay = "idle"
-frame_progress = 0.697002
 
 [node name="InventoryManager" type="Node2D" parent="."]
 script = ExtResource("4_17j3l")
@@ -130,6 +181,13 @@ MAX_UNIQUE_KEYCHAINS = 5
 [node name="HellInventoryFunctions" type="Node2D" parent="." node_paths=PackedStringArray("hell_inventory")]
 script = ExtResource("5_71qnj")
 hell_inventory = NodePath("../InventoryManager")
+
+[node name="HellActionMechanics" type="Node2D" parent="."]
+script = ExtResource("12_s7wec")
+block_window = 0.5
+block_timeout = 2.0
+parry_window = 0.2
+parry_timeout = 2.0
 
 [node name="DEBUG" type="Node2D" parent="." node_paths=PackedStringArray("inventory_functions")]
 script = ExtResource("6_jlxl7")
@@ -146,6 +204,7 @@ position = Vector2(258, 844)
 position = Vector2(0.999878, -130)
 scale = Vector2(5.12, 5.12)
 shape = SubResource("RectangleShape2D_tahyk")
+disabled = true
 
 [node name="ParryArea" type="Area2D" parent="."]
 position = Vector2(258, 844)
@@ -153,5 +212,10 @@ position = Vector2(258, 844)
 [node name="ParryBox" type="CollisionShape2D" parent="ParryArea"]
 position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_o1ov1")
+disabled = true
+
+[node name="HellSoundManager" parent="." instance=ExtResource("16_ddata")]
 
 [connection signal="inventory_changed" from="InventoryManager" to="HellInventoryDisplay" method="update_hud"]
+[connection signal="area_shape_entered" from="BlockArea" to="." method="_on_block_area_area_shape_entered"]
+[connection signal="area_shape_entered" from="ParryArea" to="." method="_on_parry_area_area_shape_entered"]

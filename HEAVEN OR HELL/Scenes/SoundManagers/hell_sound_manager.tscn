@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4wq6wnlfoewg"]
+
+[ext_resource type="Script" uid="uid://54l1wiu1mo6q" path="res://Scenes/Characters/TurnBased/hell_sound_manager.gd" id="1_fqajy"]
+[ext_resource type="AudioStream" uid="uid://yh8c3st86lqa" path="res://Audio/Sounds/character_sounds/PARRY_UPDATE_LATER.mp3" id="2_ascv1"]
+
+[node name="HellSoundManager" type="Node2D"]
+script = ExtResource("1_fqajy")
+
+[node name="PARRY" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ascv1")
+volume_db = -7.061

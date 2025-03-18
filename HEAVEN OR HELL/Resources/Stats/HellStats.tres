@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://knb3ugeyigtg"]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://dru6w70n637lc"]
 
 [ext_resource type="Script" uid="uid://dmh5rjdgjawbh" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_r2u21"]
 

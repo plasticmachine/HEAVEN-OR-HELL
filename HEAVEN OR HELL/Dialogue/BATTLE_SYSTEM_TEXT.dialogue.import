@@ -1,3 +1,15 @@
 [remap]
 
-importer="keep"
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://b2mo58vkjrjrk"
+path="res://.godot/imported/BATTLE_SYSTEM_TEXT.dialogue-d4b83da245809e9d16c7060ce8595c36.tres"
+
+[deps]
+
+source_file="res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"
+dest_files=["res://.godot/imported/BATTLE_SYSTEM_TEXT.dialogue-d4b83da245809e9d16c7060ce8595c36.tres"]
+
+[params]
+
+defaults=true

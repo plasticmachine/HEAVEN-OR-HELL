@@ -179,9 +179,9 @@ func turn_queue_pop_check():
 						2: heaven_action_button_2.skill_effect()
 						3: heaven_action_button_3.skill_effect()
 						4: heaven_action_button_4.skill_effect()
-					hell_animation_buffer = 2
-					heaven_animation_buffer = 2
-					clown_animation_buffer = 2
+					hell_animation_buffer = 4
+					heaven_animation_buffer = 4
+					clown_animation_buffer = 4
 				if "hell: " in tempo_array[0][0] && "enemy: " in tempo_array[2][0]:
 					print("Hell / Heaven / Clown ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
 					match hell_skill_slot:
@@ -202,9 +202,9 @@ func turn_queue_pop_check():
 						2: ClownTB.skill_2_effect()
 						3: ClownTB.skill_3_effect()
 						4: ClownTB.skill_4_effect()
-					hell_animation_buffer = 2
-					heaven_animation_buffer = 2
-					clown_animation_buffer = 2
+					hell_animation_buffer = 4
+					heaven_animation_buffer = 4
+					clown_animation_buffer = 4
 				if "heaven: " in tempo_array[0][0] && "hell: " in tempo_array[2][0]:
 					print("Heaven / Clown / Hell ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
 					match heaven_skill_slot:
@@ -224,9 +224,9 @@ func turn_queue_pop_check():
 						2: hell_action_button_2.skill_effect()
 						3: hell_action_button_3.skill_effect()
 						4: hell_action_button_4.skill_effect()
-					hell_animation_buffer = 2
-					heaven_animation_buffer = 2
-					clown_animation_buffer = 2
+					hell_animation_buffer = 4
+					heaven_animation_buffer = 4
+					clown_animation_buffer = 4
 				if "heaven: " in tempo_array[0][0] && "enemy: " in tempo_array[2][0]:
 					print("Heaven / Hell / Clown ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
 					match heaven_skill_slot:
@@ -246,9 +246,9 @@ func turn_queue_pop_check():
 						2: ClownTB.skill_2_effect()
 						3: ClownTB.skill_3_effect()
 						4: ClownTB.skill_4_effect()
-					hell_animation_buffer = 2
-					heaven_animation_buffer = 2
-					clown_animation_buffer = 2
+					hell_animation_buffer = 4
+					heaven_animation_buffer = 4
+					clown_animation_buffer = 4
 				if "enemy: " in tempo_array[0][0] && "heaven: " in tempo_array[2][0]:
 					print("Clown / Hell / Heaven ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
 					match ClownTB.clownskill:
@@ -268,9 +268,9 @@ func turn_queue_pop_check():
 						2: heaven_action_button_2.skill_effect()
 						3: heaven_action_button_3.skill_effect()
 						4: heaven_action_button_4.skill_effect()
-					hell_animation_buffer = 2
-					heaven_animation_buffer = 2
-					clown_animation_buffer = 2
+					hell_animation_buffer = 4
+					heaven_animation_buffer = 4
+					clown_animation_buffer = 4
 				if "enemy: " in tempo_array[0][0] && "hell: " in tempo_array[2][0]:
 					print("Clown / Heaven / Hell ", tempo_array[0][1], "/", tempo_array[1][1], "/", tempo_array[2][1] )
 					match ClownTB.clownskill:
@@ -290,9 +290,9 @@ func turn_queue_pop_check():
 						2: hell_action_button_2.skill_effect()
 						3: hell_action_button_3.skill_effect()
 						4: hell_action_button_4.skill_effect()
-					hell_animation_buffer = 2
-					heaven_animation_buffer = 2
-					clown_animation_buffer = 2
+					hell_animation_buffer = 4
+					heaven_animation_buffer = 4
+					clown_animation_buffer = 4
 				#if (hellstats.current_tempo > heavenstats.current_tempo) && (heavenstats.current_tempo > clownstats.current_tempo):
 					##choosing which skill its going to use (hell)
 					#match hell_skill_slot:

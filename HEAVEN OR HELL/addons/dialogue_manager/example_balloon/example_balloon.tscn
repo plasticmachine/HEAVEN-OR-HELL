@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=13 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" uid="uid://d1wt4ma6055l8" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="FontFile" uid="uid://b2q20yvaohtoc" path="res://fonts/apple_kid.ttf" id="2_nlsx6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
@@ -63,6 +64,18 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
+[sub_resource type="Theme" id="Theme_nlsx6"]
+default_font = ExtResource("2_nlsx6")
+default_font_size = 35
+
+[sub_resource type="Theme" id="Theme_1337t"]
+default_font = ExtResource("2_nlsx6")
+default_font_size = 60
+
+[sub_resource type="Theme" id="Theme_kmygl"]
+default_font = ExtResource("2_nlsx6")
+default_font_size = 60
+
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_36de5")
@@ -73,6 +86,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -868.0
+offset_bottom = -868.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
@@ -84,12 +99,13 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.0
-offset_top = -183.0
-offset_right = -19.0
-offset_bottom = -19.0
+offset_left = 192.0
+offset_top = 644.0
+offset_right = 152.0
+offset_bottom = 808.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(0.800001, 0.800001)
 mouse_filter = 1
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
@@ -102,6 +118,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue"]
 layout_mode = 2
+theme = SubResource("Theme_nlsx6")
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/VBoxContainer"]
 unique_name_in_owner = true
@@ -117,6 +134,7 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme = SubResource("Theme_1337t")
 text = "Dialogue..."
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
@@ -126,10 +144,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -147.0
-offset_top = -558.0
-offset_right = 494.0
-offset_bottom = -154.0
+offset_left = -361.0
+offset_top = 215.0
+offset_right = 280.0
+offset_bottom = 619.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -137,6 +155,7 @@ grow_vertical = 0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
+theme = SubResource("Theme_kmygl")
 theme_override_constants/separation = 2
 script = ExtResource("3_72ixx")
 response_template = NodePath("ResponseExample")

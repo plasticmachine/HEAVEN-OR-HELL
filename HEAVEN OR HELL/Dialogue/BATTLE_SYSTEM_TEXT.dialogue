@@ -1,3 +1,4 @@
+#HEAVEN/HELL DAMAGE SYSTEM TEXT
 ~ HEAVEN_DAMAGING_HELL_MALICE
 SYSTEM: Using a MALICE skill {{heavenstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
@@ -23,15 +24,30 @@ SYSTEM: Using a MALICE skill {{hellstats.character_name}} hit {{clownstats.chara
 SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
 
+#CLOWN DAMAGING HEAVEN/HELL SYSTEM TEXT
 ~ CLOWN_DAMAGING_HEAVEN_MALICE
 SYSTEM: Using a MALICE skill {{clownstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
 ~ CLOWN_DAMAGING_HEAVEN_DEVILTRY
-SYSTEM: Using a DEVILTRY skill {{clownstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+SYSTEM: Using a DEVILTRY skill {{clownstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
 ~ CLOWN_DAMAGING_HELL_MALICE
 SYSTEM: Using a MALICE skill {{clownstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
 ~ CLOWN_DAMAGING_HELL_DEVILTRY
 SYSTEM: Using a DEVILTRY skill {{clownstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
-=> END!
+=> END
+
+##PARRY SYSTEM TEXT
+~ HEAVEN_PARRIED_CLOWN_MALICE
+SYSTEM: {{heavenstats.character_name}} PARRIED {{clownstats.character_name}}'s MALICE skill for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HEAVEN_PARRIED_CLOWN_DEVILTRY
+SYSTEM: {{heavenstats.character_name}} PARRIED {{clownstats.character_name}}'s DEVILTRY skill for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HELL_PARRIED_CLOWN_MALICE
+SYSTEM: {{hellstats.character_name}} PARRIED {{clownstats.character_name}}'s MALICE skill for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HELL_PARRIED_CLOWN_DEVILTRY
+SYSTEM: {{hellstats.character_name}} PARRIED {{clownstats.character_name}}'s DEVILTRY skill for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END

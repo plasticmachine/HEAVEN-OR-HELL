@@ -8,8 +8,13 @@ signal hell_ID_3_wear_off_set
 @onready var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 @onready var clownstats = preload("res://Resources/Stats/ClownStats.tres")
 @onready var heaven_effect_animation = $"../BattleEffectManagerPosition/HeavenBattleEffectManager"
+@onready var heaven_effect_animation_support = $"../BattleEffectManagerPosition/HeavenBattleEffectManagerSupport"
 @onready var hell_effect_animation = $"../BattleEffectManagerPosition/HellBattleEffectManager"
+@onready var hell_effect_animation_support = $"../BattleEffectManagerPosition/HellBattleEffectManagerSupport"
+@onready var battle_effect_manager_FS = $"../BattleEffectManagerPosition/BattleEffectManagerFS"
+@onready var battle_effect_manager_FS_support = $"../BattleEffectManagerPosition/BattleEffectManagerFSSupport"
 @export var enemy_effect_animation: AnimatedSprite2D
+@export var enemy_effect_animation_support: AnimatedSprite2D
 
 @onready var damage_calc = $"../DamageCalculation"
 @onready var status_effects = $"../StatusEffects"
@@ -844,14 +849,20 @@ func skill_ID_2_heaven():
 			print_debug(str(heavenstats.character_name) + " used  " + str(ID_2_heaven_skill_name) + " on " + str(hellstats.character_name) + " (" + str(heavenstats.current_tempo) + " tempo)" )
 			damage_calc.heaven_to_hell_deviltry_damagecalc()
 			hell_effect_animation.find_hit_spot()
-			enemy_effect_animation.play("basic_slash")
+			hell_effect_animation_support.play("shoot_arrow")
+			await get_tree().create_timer(.5).timeout
+			hell_effect_animation.play("shoot_explosion")
+			
 		
 		3:
 			print_debug(str(heavenstats.character_name) + " used  " + str(ID_2_heaven_skill_name) + " on " + str(clownstats.character_name) + " (" + str(heavenstats.current_tempo) + " tempo)" )
+			#enemy_effect_animation_support.find_hit_spot()
+			battle_effect_manager_FS_support.play("heaven_shoot_arrow")
+			await get_tree().create_timer(.5).timeout
+			#enemy_effect_animation.find_hit_spot()
 			damage_calc.heaven_to_clown_deviltry_damagecalc()
-			enemy_effect_animation.find_hit_spot()
-			enemy_effect_animation.play("basic_slash")
-	await get_tree().create_timer(ID_2_heaven_animation_buffer)
+			battle_effect_manager_FS.play("heaven_shoot_explosion")
+	await get_tree().create_timer(ID_2_heaven_animation_buffer).timeout
 	heaven_turn_end = true
 func skill_ID_3_heaven():
 	#heavenstats.convert_tempo(ID_3_heaven_tempo)
@@ -1346,6 +1357,8 @@ func skill_ID_2_hell():
 	hell_effect_animation.find_effect_spot()
 	hell_effect_animation.play("magia_use")
 	
+	await get_tree().create_timer(hell_effect_animation.hell_VFX_buffer).timeout
+	
 	match hell_target_ID:
 		2:
 			print_debug(str(hellstats.character_name) + " used  " + str(ID_2_hell_skill_name) + " on " + str(heavenstats.character_name) + " (" + str(hellstats.current_tempo) + " tempo)" )
@@ -1355,9 +1368,12 @@ func skill_ID_2_hell():
 		
 		3:
 			print_debug(str(hellstats.character_name) + " used  " + str(ID_2_hell_skill_name) + " on " + str(clownstats.character_name) + " (" + str(hellstats.current_tempo) + " tempo)" )
+			
+			battle_effect_manager_FS_support.play("hell_shoot_arrow")
+			await get_tree().create_timer(.5).timeout
+			
 			damage_calc.hell_to_clown_deviltry_damagecalc()
-			enemy_effect_animation.find_hit_spot()
-			enemy_effect_animation.play("basic_slash")
+			battle_effect_manager_FS.play("hell_shoot_explosion")
 	await get_tree().create_timer(ID_2_hell_animation_buffer)
 	hell_turn_end = true
 func skill_ID_3_hell():

@@ -948,7 +948,7 @@ position = Vector2(4805.5, 7263)
 script = ExtResource("2_b0jdw")
 follow_mode = 3
 follow_targets = [NodePath("../../Players/Hell"), NodePath("../../Players/Heaven")]
-zoom = Vector2(0.213, 0.213)
+zoom = Vector2(0.29975, 0.29975)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_vyos7")
 follow_damping_value = Vector2(100, 100)
@@ -956,6 +956,7 @@ auto_zoom = true
 auto_zoom_min = 0.01
 auto_zoom_max = 1.428
 auto_zoom_margin = Vector4(100, 1000, 100, 1000)
+draw_limits = true
 
 [node name="BH_1_Cam" type="Node2D" parent="Cameras"]
 position = Vector2(6617, 4776)
@@ -963,6 +964,7 @@ script = ExtResource("2_b0jdw")
 priority = 1
 zoom = Vector2(0.15, 0.15)
 tween_resource = SubResource("Resource_phj3e")
+draw_limits = true
 
 [node name="BH_2_Cam" type="Node2D" parent="Cameras"]
 position = Vector2(3107, -4706)
@@ -970,18 +972,21 @@ script = ExtResource("2_b0jdw")
 zoom = Vector2(0.15, 0.15)
 frame_preview = false
 tween_resource = SubResource("Resource_niu14")
+draw_limits = true
 
 [node name="BH_3_Cam" type="Node2D" parent="Cameras"]
 position = Vector2(-8290, -3273)
 script = ExtResource("2_b0jdw")
 zoom = Vector2(0.15, 0.15)
 tween_resource = SubResource("Resource_phj3e")
+draw_limits = true
 
 [node name="BH_4_Cam" type="Node2D" parent="Cameras"]
 position = Vector2(-8290, 5464)
 script = ExtResource("2_b0jdw")
 zoom = Vector2(0.15, 0.15)
 tween_resource = SubResource("Resource_phj3e")
+draw_limits = true
 
 [node name="Camera2D" type="Camera2D" parent="Cameras"]
 physics_interpolation_mode = 1

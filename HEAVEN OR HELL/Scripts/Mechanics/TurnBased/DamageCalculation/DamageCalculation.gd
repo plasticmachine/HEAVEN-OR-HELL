@@ -8,7 +8,7 @@ signal clown_damage_taken
 @onready var clownstats = preload("res://Resources/Stats/ClownStats.tres")
 
 @onready var variance = [.8, .85, .9, .95, 1.0, 1.05, 1.1, 1.5, 1.2]
-
+@export var parry_multiplier: float
 static var total_damage: int
 ### PLAYER DAMAGE CALCS
 	## HEAVEN DAMAGE CALCS
@@ -111,3 +111,37 @@ func clown_to_hell_deviltry_damagecalc():
 	hellstats.subtract_heart(total_damage)
 	hell_damage_taken.emit()
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "CLOWN_DAMAGING_HELL_DEVILTRY")
+
+	## PARRY DAMAGE CALCS
+func heaven_to_clown_malice_PARRY_damagecalc():
+	#var total_damage: int
+	var outgoing_damage = clownstats.current_skill_power * clownstats.malice * parry_multiplier
+	
+	total_damage = outgoing_damage / clownstats.guts * variance.pick_random()
+	clownstats.subtract_heart(total_damage)
+	clown_damage_taken.emit()
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_PARRIED_CLOWN_MALICE")
+func heaven_to_clown_deviltry_PARRY_damagecalc():
+	#var total_damage: int
+	var outgoing_damage = clownstats.current_skill_power * clownstats.deviltry * parry_multiplier
+	
+	total_damage = outgoing_damage / clownstats.guts * variance.pick_random()
+	clownstats.subtract_heart(total_damage)
+	clown_damage_taken.emit()
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_PARRIED_CLOWN_DEVILTRY")
+func hell_to_clown_malice_PARRY_damagecalc():
+	#var total_damage: int
+	var outgoing_damage = clownstats.current_skill_power * clownstats.malice * parry_multiplier
+	
+	total_damage = outgoing_damage / clownstats.guts * variance.pick_random()
+	clownstats.subtract_heart(total_damage)
+	clown_damage_taken.emit()
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HELL_PARRIED_CLOWN_MALICE")
+func hell_to_clown_deviltry_PARRY_damagecalc():
+	#var total_damage: int
+	var outgoing_damage = clownstats.current_skill_power * clownstats.deviltry * parry_multiplier
+	
+	total_damage = outgoing_damage / clownstats.guts * variance.pick_random()
+	clownstats.subtract_heart(total_damage)
+	clown_damage_taken.emit()
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HELL_PARRIED_CLOWN_DEVILTRY")
