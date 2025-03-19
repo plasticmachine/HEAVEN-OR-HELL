@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bdorwiack3h01"]
+[gd_scene load_steps=22 format=3 uid="uid://bdorwiack3h01"]
 
 [ext_resource type="Texture2D" uid="uid://bxvfjnttv47gf" path="res://art/HEAVEN/turnbased/idle_resize/dark/dark (1).png" id="2_7f6ak"]
 [ext_resource type="Script" uid="uid://btrfcgcypc8ye" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/HeavenTBAnimationManager.gd" id="2_67wdh"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6qflp8hl71e" path="res://art/HEAVEN/turnbased/idle_resize/light/Untitled_Artwork-7.png" id="9_tg4d5"]
 [ext_resource type="Texture2D" uid="uid://bfug3u2d3coa8" path="res://art/HEAVEN/turnbased/idle_resize/light/Untitled_Artwork-8.png" id="10_3e6em"]
 [ext_resource type="Script" uid="uid://dsr5db5nv8i86" path="res://Scripts/Mechanics/BulletHell/ActionScripts/heaven_action_mechanics.gd" id="14_k1xjr"]
+[ext_resource type="PackedScene" uid="uid://dp1nvt4e540vv" path="res://Scenes/SoundManagers/heaven_sound_manager.tscn" id="18_qer1v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1hfb2"]
 animations = [{
@@ -193,10 +194,8 @@ modulate = Color(0.712129, 0.712129, 0.712129, 1)
 position = Vector2(1576, 736)
 scale = Vector2(0.796082, 0.796082)
 sprite_frames = SubResource("SpriteFrames_1hfb2")
-animation = &"parry"
+animation = &"idle"
 autoplay = "idle"
-frame = 10
-frame_progress = 1.0
 
 [node name="InventoryManager" type="Node2D" parent="."]
 script = ExtResource("5_7kpab")
@@ -239,6 +238,8 @@ position = Vector2(1612, 844)
 position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_5edlt")
 disabled = true
+
+[node name="HeavenSoundManager" parent="." instance=ExtResource("18_qer1v")]
 
 [connection signal="inventory_changed" from="InventoryManager" to="HeavenInventoryDisplay" method="update_hud"]
 [connection signal="area_shape_entered" from="BlockArea" to="." method="_on_block_area_area_shape_entered"]

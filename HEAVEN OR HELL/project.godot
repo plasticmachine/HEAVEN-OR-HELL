@@ -34,6 +34,8 @@ Panku="*res://addons/panku_console/console.tscn"
 DamageCalculation="*res://Scripts/Mechanics/TurnBased/DamageCalculation/DamageCalculation.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 HellSounds="*res://Scenes/SoundManagers/hell_sound_manager.tscn"
+HeavenSounds="*res://Scenes/SoundManagers/heaven_sound_manager.tscn"
+ClownSounds="*res://Scenes/SoundManagers/clown_sound_manager.tscn"
 
 [dialogue_manager]
 

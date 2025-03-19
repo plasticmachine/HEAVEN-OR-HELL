@@ -163,7 +163,7 @@ func _on_first_action_committed() -> void:
 	if turnbased_manager.turn_queue_amount == 1 and heavenstats.current_heart > 0 and hellstats.current_heart > 0:
 		match PHASE:
 			1:
-				var num = [1,1].pick_random()
+				var num = [1,2].pick_random()
 				match num:
 					1:
 						clownskill = 1
@@ -226,7 +226,7 @@ func _on_first_action_committed() -> void:
 
 #test skill that just randomly does damage to heaven or hell
 func skill_1_effect():
-	var num = [2,2].pick_random()
+	var num = [1,2].pick_random()
 	#clownstats.convert_tempo(skill_1_tempo)
 	clownstats.convert_skill_power(skill_1_power)
 	
@@ -242,11 +242,13 @@ func skill_1_effect():
 		1:
 			heaven_effect_animation.find_hit_spot()
 			heaven_effect_animation.play("basic_slash")
+			ClownSounds.CLOWN_SLASH.play()
 			check_for_heaven_defensive_action()
 
 		2:
 			hell_effect_animation.find_hit_spot()
 			hell_effect_animation.play("basic_slash")
+			ClownSounds.CLOWN_SLASH.play()
 			check_for_hell_defensive_action()
 	clownTB_animation.set("parameters/conditions/THROW", false)
 	await get_tree().create_timer(1).timeout
@@ -254,7 +256,7 @@ func skill_1_effect():
 
 func skill_2_effect():
 	#clownskill = 2
-	var num = [1,2,3].pick_random()
+	var num = [1,1,2,2,3,3,4].pick_random()
 	#clownstats.convert_tempo(skill_2_tempo)
 	
 	clownTB_animation.set("parameters/conditions/BUFF1", true)
@@ -265,15 +267,23 @@ func skill_2_effect():
 		1:
 			clown_effect_animation.find_effect_spot()
 			clown_effect_animation.play("basic_heal")
+			ClownSounds.CLOWN_HEAL.play()
 			clownstats.add_heart(skill_2_heal)
 		2:
 			clown_effect_animation.find_effect_spot()
 			clown_effect_animation.play("basic_buff")
+			ClownSounds.CLOWN_BUFF.play()
 			clownstats.add_malice(skill_2_malice_buff)
 		3:
 			clown_effect_animation.find_effect_spot()
 			clown_effect_animation.play("basic_buff")
+			ClownSounds.CLOWN_BUFF.play()
 			clownstats.add_deviltry(skill_2_deviltry_buff)
+		4:
+			clown_effect_animation.find_effect_spot()
+			clown_effect_animation.play("basic_debuff")
+			ClownSounds.CLOWN_DEBUFF.play()
+			clownstats.subtract_deviltry(skill_2_deviltry_buff)
 	clownTB_animation.set("parameters/conditions/BUFF1", false)
 	
 	await get_tree().create_timer(skill_2_animation_buffer).timeout

@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4wq6wnlfoewg"]
+[gd_scene load_steps=10 format=3 uid="uid://b4wq6wnlfoewg"]
 
 [ext_resource type="Script" uid="uid://54l1wiu1mo6q" path="res://Scenes/Characters/TurnBased/hell_sound_manager.gd" id="1_fqajy"]
 [ext_resource type="AudioStream" uid="uid://yh8c3st86lqa" path="res://Audio/Sounds/character_sounds/PARRY_UPDATE_LATER.mp3" id="2_ascv1"]
+[ext_resource type="AudioStream" uid="uid://bux282g0ad1so" path="res://Audio/Sounds/character_sounds/BLOCK_TEST.mp3" id="3_337fn"]
+[ext_resource type="AudioStream" uid="uid://dgoywte3ugajo" path="res://Audio/Sounds/character_sounds/SLASH_UPDATE_LATER.wav" id="3_ascv1"]
+[ext_resource type="AudioStream" uid="uid://dnhk355v4tdkr" path="res://Audio/Sounds/character_sounds/BUBBLE_TEST.mp3" id="4_yvdu3"]
+[ext_resource type="AudioStream" uid="uid://derpx1yv0bv88" path="res://Audio/Sounds/character_sounds/BUBBLE_POP_TEST.mp3" id="5_mji55"]
+[ext_resource type="AudioStream" uid="uid://c4116u8rohjrg" path="res://Audio/Sounds/character_sounds/BUFF_TEST.mp3" id="6_mji55"]
+[ext_resource type="AudioStream" uid="uid://ct77nwjx2oalh" path="res://Audio/Sounds/character_sounds/DEBUFF_TEST.mp3" id="7_mc3xi"]
+[ext_resource type="AudioStream" uid="uid://cnbxaofqiocbf" path="res://Audio/Sounds/character_sounds/SILLY_BUFF_TEST.mp3" id="8_337fn"]
 
 [node name="HellSoundManager" type="Node2D"]
 script = ExtResource("1_fqajy")
@@ -9,3 +16,29 @@ script = ExtResource("1_fqajy")
 [node name="PARRY" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ascv1")
 volume_db = -7.061
+
+[node name="BLOCK" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_337fn")
+
+[node name="SLASH" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ascv1")
+
+[node name="SHOOT" type="AudioStreamPlayer" parent="."]
+
+[node name="BUBBLE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yvdu3")
+
+[node name="BUBBLEPOP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_mji55")
+
+[node name="BUFF" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mji55")
+
+[node name="DEBUFF" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_mc3xi")
+
+[node name="ClownSounds" type="Node" parent="."]
+
+[node name="SILLYBUFF" type="AudioStreamPlayer" parent="ClownSounds"]
+stream = ExtResource("8_337fn")
+pitch_scale = 1.97

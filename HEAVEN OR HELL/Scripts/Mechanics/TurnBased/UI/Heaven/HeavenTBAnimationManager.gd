@@ -3,6 +3,9 @@ signal heaven_blocked
 signal heaven_parried
 
 @onready var HeavenTBAnimation = $HeavenTbAnimation
+@onready var HeavenTBVFX = $"../../BattleEffectManagerPosition/HeavenBattleEffectManager"
+@onready var HeavenTBVFXSupport = $"../../BattleEffectManagerPosition/HeavenBattleEffectManagerSupport"
+@onready var camera_tricks = $"../../Camera2D"
 @export var damage_blink_timer_sec: float
 @export var parry_blink_timer_sec: float
 
@@ -46,5 +49,12 @@ func _on_block_area_area_shape_entered(area_rid, area, area_shape_index, local_s
 func _on_parry_area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	HeavenTBAnimation.play("parry")
 	heaven_parried.emit()
+	HeavenSounds.HEAVEN_PARRY.play()
+	hit_stop(0.5,.01)
 	await get_tree().create_timer(parry_blink_timer_sec).timeout
 	HeavenTBAnimation.play("idle")
+	
+func hit_stop(timeScale, duration):
+	Engine.time_scale = timeScale
+	await(get_tree().create_timer(duration, true, true,true).timeout)
+	Engine.time_scale = 1.0

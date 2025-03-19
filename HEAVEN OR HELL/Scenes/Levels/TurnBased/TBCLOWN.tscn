@@ -1,4 +1,4 @@
-[gd_scene load_steps=150 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=183 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" uid="uid://csykogoqqgsqc" path="res://Scripts/Mechanics/TurnBased/LevelManagers/TBCLOWN_MANAGER.gd" id="1_h0a2a"]
 [ext_resource type="Script" uid="uid://d2dfbxljvfwi" path="res://Scripts/Mechanics/TurnBased/Skills/Skills.gd" id="2_1jhkk"]
@@ -94,37 +94,53 @@
 [ext_resource type="Texture2D" uid="uid://br6r3hp5ygck3" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-2.png" id="60_j0g0f"]
 [ext_resource type="Texture2D" uid="uid://df6y1unu01rdl" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-3.png" id="61_e4fro"]
 [ext_resource type="Texture2D" uid="uid://dnyostuordfbm" path="res://art/turnbased effects/attack effects/hell_shoot/arrow/image-1.png" id="61_orkex"]
+[ext_resource type="Texture2D" uid="uid://dw2baqhl5fqq2" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-1.png" id="61_u6sar"]
 [ext_resource type="Texture2D" uid="uid://dk566cpacptwr" path="res://art/turnbased effects/attack effects/hell_shoot/arrow/image-2.png" id="62_3cv2q"]
 [ext_resource type="Texture2D" uid="uid://cih5olkef3gu2" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-4.png" id="62_327jj"]
+[ext_resource type="Texture2D" uid="uid://b24tk5ov4fc4u" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-2.png" id="62_gh4wy"]
 [ext_resource type="Texture2D" uid="uid://7xuo3v46ccc4" path="res://art/turnbased effects/attack effects/hell_shoot/arrow/image-3.png" id="63_crg2r"]
+[ext_resource type="Texture2D" uid="uid://7a8arr0g10pv" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-3.png" id="63_g7j85"]
 [ext_resource type="Texture2D" uid="uid://o7ujvowm7gh3" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-5.png" id="63_y56h2"]
 [ext_resource type="Texture2D" uid="uid://cvvn8ubn7oxsv" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-6.png" id="64_l6yo5"]
+[ext_resource type="Texture2D" uid="uid://dchxqq3460eps" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-4.png" id="64_qb3gw"]
 [ext_resource type="Texture2D" uid="uid://dtwf3pa6t6w5p" path="res://art/turnbased effects/attack effects/hell_shoot/arrow/image-4.png" id="64_sl4ww"]
+[ext_resource type="Texture2D" uid="uid://bf7flokyvh0qs" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-5.png" id="65_5yslt"]
 [ext_resource type="Texture2D" uid="uid://7e2o8uvakd6h" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-7.png" id="65_cbos4"]
 [ext_resource type="Texture2D" uid="uid://co0m3d67rynkj" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-1.png" id="65_dl68s"]
 [ext_resource type="Script" uid="uid://xjvavbp0vun0" path="res://Scripts/Mechanics/Keychains/testing stuff/inventory.gd" id="66_5g7pt"]
 [ext_resource type="Texture2D" uid="uid://68eng5o6jeam" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-8.png" id="66_6mqry"]
 [ext_resource type="Texture2D" uid="uid://dhpo8r5oa1lgq" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-2.png" id="66_nlh5h"]
+[ext_resource type="Texture2D" uid="uid://bjpkru05tu1gm" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-6.png" id="66_wkcd8"]
 [ext_resource type="Texture2D" uid="uid://b8s44ucuaffvm" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-3.png" id="67_a7log"]
+[ext_resource type="Texture2D" uid="uid://dmt8h5crul7yj" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-7.png" id="67_dwt4c"]
 [ext_resource type="Texture2D" uid="uid://cpn8w6ktjg6or" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-9.png" id="67_euste"]
+[ext_resource type="Texture2D" uid="uid://dyvqbgf8r0tdu" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-8.png" id="68_0whlb"]
 [ext_resource type="Texture2D" uid="uid://csgaoxrj6eqd6" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-10.png" id="68_h5fhl"]
 [ext_resource type="Texture2D" uid="uid://cyr82q01jrdt0" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-4.png" id="68_j60al"]
+[ext_resource type="Texture2D" uid="uid://cfhgiw4leo44f" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-9.png" id="69_p3qtu"]
 [ext_resource type="Texture2D" uid="uid://cmcnv6dk17y1m" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-11.png" id="69_qph2w"]
 [ext_resource type="Texture2D" uid="uid://bwthsv4m5snvv" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-5.png" id="69_sxe84"]
 [ext_resource type="Texture2D" uid="uid://ucu5k3qmvvxp" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-6.png" id="70_7xre4"]
+[ext_resource type="Texture2D" uid="uid://wdx25jj7eod7" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-10.png" id="70_86hco"]
 [ext_resource type="Texture2D" uid="uid://chhtselp57gh5" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-12.png" id="70_pg2ot"]
 [ext_resource type="Texture2D" uid="uid://domvj37ixqaxu" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-13.png" id="71_8f5p3"]
 [ext_resource type="Texture2D" uid="uid://b33awltjmrxit" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-7.png" id="71_oimtg"]
+[ext_resource type="Texture2D" uid="uid://d4gyk1mxkr6ux" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-11.png" id="71_ykb6h"]
 [ext_resource type="Texture2D" uid="uid://bxx4heh3e1q7c" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-14.png" id="72_nii5y"]
+[ext_resource type="Texture2D" uid="uid://cbfddw2m4nut6" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-12.png" id="72_pxj2r"]
 [ext_resource type="Texture2D" uid="uid://dcc1jf4nk6dns" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-8.png" id="72_ut8y8"]
+[ext_resource type="Texture2D" uid="uid://8i5tmqjdyq0l" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-13.png" id="73_c8fmb"]
 [ext_resource type="Texture2D" uid="uid://c7qxi5wpc0ui4" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-15.png" id="73_k0t3g"]
 [ext_resource type="Texture2D" uid="uid://cmoe8t7twbgg4" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-9.png" id="73_yofpn"]
 [ext_resource type="Texture2D" uid="uid://hfo36hyo73b8" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-16.png" id="74_5nbax"]
 [ext_resource type="Texture2D" uid="uid://dhg2x8mqeot5" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-10.png" id="74_37rmu"]
+[ext_resource type="Texture2D" uid="uid://6g30grbsdny8" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-14.png" id="74_mf1qq"]
+[ext_resource type="Texture2D" uid="uid://ccemjbke3vkag" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-15.png" id="75_13i4h"]
 [ext_resource type="Texture2D" uid="uid://un36ci0s2dba" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-17.png" id="75_uhpa8"]
 [ext_resource type="Texture2D" uid="uid://c74f7o73jxkbn" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-11.png" id="75_xgh5i"]
 [ext_resource type="Texture2D" uid="uid://dhprro5yk31n0" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-12.png" id="76_5o1h4"]
 [ext_resource type="Texture2D" uid="uid://bn3dm8r5ol34q" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-18.png" id="76_68qcf"]
+[ext_resource type="Texture2D" uid="uid://36o1nwcblxbx" path="res://art/turnbased effects/status effects/heaven_skill_3_buff/image-16.png" id="76_m8k28"]
 [ext_resource type="Texture2D" uid="uid://b0jboonnbuhna" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-19.png" id="77_2bra8"]
 [ext_resource type="Texture2D" uid="uid://b6tgm8eh44ami" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-13.png" id="77_vl5um"]
 [ext_resource type="Texture2D" uid="uid://cwjr63w78fmv1" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-14.png" id="78_0qvf4"]
@@ -135,6 +151,23 @@
 [ext_resource type="Texture2D" uid="uid://dr76vt3ia36xd" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-16.png" id="80_40fcq"]
 [ext_resource type="Texture2D" uid="uid://crahrys4d4t1g" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-17.png" id="81_h1vx2"]
 [ext_resource type="Texture2D" uid="uid://riwto5o4373l" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-18.png" id="82_1myeg"]
+[ext_resource type="Texture2D" uid="uid://dcs6vjv4qm7n2" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-1.png" id="83_h1vx2"]
+[ext_resource type="Texture2D" uid="uid://keuyy5iplxdb" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-2.png" id="84_1myeg"]
+[ext_resource type="Texture2D" uid="uid://dk1rf538ooyfb" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-3.png" id="85_f2x3t"]
+[ext_resource type="Texture2D" uid="uid://coirss0yth5ki" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-4.png" id="86_6xdyx"]
+[ext_resource type="Texture2D" uid="uid://de0oqe3un0w33" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-5.png" id="87_6juhq"]
+[ext_resource type="Texture2D" uid="uid://bdujrm258g2cl" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-6.png" id="88_ul7hb"]
+[ext_resource type="Texture2D" uid="uid://cakbxal5s3bci" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-7.png" id="89_i05ee"]
+[ext_resource type="Texture2D" uid="uid://c2muw6pydq1dm" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-8.png" id="90_xcgme"]
+[ext_resource type="Texture2D" uid="uid://pgdvql4u8qdy" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-9.png" id="91_yb3xa"]
+[ext_resource type="Texture2D" uid="uid://bqdbw83cywc1f" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-10.png" id="92_hcdhp"]
+[ext_resource type="Texture2D" uid="uid://cn4b21qmao8de" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-11.png" id="93_m4n15"]
+[ext_resource type="Texture2D" uid="uid://begi43tfi3wcm" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-12.png" id="94_odm2e"]
+[ext_resource type="Texture2D" uid="uid://bxbludk7p6grh" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-13.png" id="95_dyly1"]
+[ext_resource type="Texture2D" uid="uid://nulevtjx8wye" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-14.png" id="96_wh0ao"]
+[ext_resource type="Texture2D" uid="uid://rbgdiu42cdqv" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-15.png" id="97_6dx1v"]
+[ext_resource type="Texture2D" uid="uid://d1mk4rl6fbnof" path="res://art/turnbased effects/status effects/hell_skill_3_buff/image-16.png" id="98_re6t8"]
+[ext_resource type="Texture2D" uid="uid://c2yvebb6py0r8" path="res://art/backgrounds/TB/test_background.jpg" id="130_gh4wy"]
 [ext_resource type="Script" uid="uid://bbl8e0652fcdb" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="136_crg2r"]
 [ext_resource type="Script" uid="uid://p0kxvabmbn72" path="res://Scripts/CameraScripts/camera_tricks.gd" id="136_dl68s"]
 [ext_resource type="Script" uid="uid://ddmhbf62jjwlv" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="136_sl4ww"]
@@ -402,6 +435,80 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("61_u6sar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_gh4wy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_g7j85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_qb3gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_5yslt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_wkcd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_dwt4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_dwt4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_0whlb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_0whlb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_p3qtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_p3qtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_86hco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_86hco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ykb6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ykb6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_pxj2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_pxj2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_c8fmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_c8fmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_mf1qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_13i4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_m8k28")
+}],
+"loop": false,
+"name": &"heaven_thought_test",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("61_orkex")
 }, {
 "duration": 1.0,
@@ -515,8 +622,79 @@ animations = [{
 "name": &"hell_shoot_explosion",
 "speed": 21.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("83_h1vx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_1myeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_f2x3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_6xdyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_6juhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_ul7hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_i05ee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_i05ee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_xcgme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_xcgme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_yb3xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_yb3xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_hcdhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_hcdhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_m4n15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_m4n15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_odm2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_odm2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_dyly1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_wh0ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_6dx1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_re6t8")
+}],
+"loop": false,
+"name": &"hell_thought_test",
+"speed": 15.0
+}, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"hide",
 "speed": 5.0
 }, {
@@ -625,14 +803,14 @@ enemy_effect_animation = NodePath("../BattleEffectManagerPosition/ClownBattleEff
 enemy_effect_animation_support = NodePath("../BattleEffectManagerPosition/ClownBattleEffectManagerSupport")
 heaven_target_ID = 3
 hell_target_ID = 3
-skill_slot_1_skill_heaven = 2
-skill_slot_2_skill_heaven = 4
-skill_slot_3_skill_heaven = 10
-skill_slot_4_skill_heaven = 11
+skill_slot_1_skill_heaven = 1
+skill_slot_2_skill_heaven = 2
+skill_slot_3_skill_heaven = 3
+skill_slot_4_skill_heaven = 4
 skill_slot_1_skill_hell = 1
-skill_slot_2_skill_hell = 5
-skill_slot_3_skill_hell = 6
-skill_slot_4_skill_hell = 9
+skill_slot_2_skill_hell = 2
+skill_slot_3_skill_hell = 3
+skill_slot_4_skill_hell = 4
 ID_1_heaven_skill_name = "Slash!"
 ID_1_heaven_tempo = 1
 ID_1_heaven_power = 35
@@ -719,6 +897,22 @@ sprite_frames = SubResource("SpriteFrames_jmycf")
 animation = &"hide"
 autoplay = "hide"
 
+[node name="BattleEffectManagerFSBehind" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+z_index = 1065
+position = Vector2(963, 340)
+scale = Vector2(0.761, 0.761)
+sprite_frames = SubResource("SpriteFrames_jmycf")
+animation = &"hide"
+autoplay = "hide"
+
+[node name="BattleEffectManagerFSSupportBehind" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+z_index = 350
+position = Vector2(963, 340)
+scale = Vector2(0.761, 0.761)
+sprite_frames = SubResource("SpriteFrames_jmycf")
+animation = &"hide"
+autoplay = "hide"
+
 [node name="ClownBattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
 z_index = 316
 scale = Vector2(1, 1.01221)
@@ -797,12 +991,12 @@ speed = 300
 z_index = -1
 position = Vector2(0, 0)
 skill_2_tempo = 9
+skill_2_malice_buff = 5
 
 [node name="ClownTrack" type="AudioStreamPlayer2D" parent="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb"]
 position = Vector2(31, -143)
 stream = ExtResource("17_y1u7i")
 volume_db = -16.517
-autoplay = true
 max_distance = 9940.0
 panning_strength = 2.0
 
@@ -860,10 +1054,17 @@ debug_color = Color(0.943543, 0.108845, 0.142756, 0.42)
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="TestPlayerSpots"]
+visible = false
 z_index = -785
 position = Vector2(944.001, 361)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("2_fiwds")
+
+[node name="Background2" type="Sprite2D" parent="TestPlayerSpots"]
+z_index = -785
+position = Vector2(945.779, 360)
+scale = Vector2(0.996296, 0.996296)
+texture = ExtResource("130_gh4wy")
 
 [node name="HvnUplft1" type="Sprite2D" parent="TestPlayerSpots"]
 visible = false
@@ -1441,7 +1642,7 @@ scale = Vector2(-0.159953, -0.159953)
 physics_interpolation_mode = 2
 position = Vector2(949, 359)
 script = ExtResource("136_dl68s")
-shake_magnitude = 150.0
+shake_magnitude = 0.0
 shake_duration = 1.0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]

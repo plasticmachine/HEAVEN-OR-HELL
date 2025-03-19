@@ -13,6 +13,7 @@ signal hell_ID_3_wear_off_set
 @onready var hell_effect_animation_support = $"../BattleEffectManagerPosition/HellBattleEffectManagerSupport"
 @onready var battle_effect_manager_FS = $"../BattleEffectManagerPosition/BattleEffectManagerFS"
 @onready var battle_effect_manager_FS_support = $"../BattleEffectManagerPosition/BattleEffectManagerFSSupport"
+@onready var battle_effect_manager_FS_behind = $"../BattleEffectManagerPosition/BattleEffectManagerFSBehind"
 @export var enemy_effect_animation: AnimatedSprite2D
 @export var enemy_effect_animation_support: AnimatedSprite2D
 
@@ -827,12 +828,14 @@ func skill_ID_1_heaven():
 			damage_calc.heaven_to_hell_malice_damagecalc()
 			hell_effect_animation.find_hit_spot()
 			hell_effect_animation.play("basic_slash")
+			HeavenSounds.HEAVEN_SLASH.play()
 		
 		3:
 			print_debug(str(heavenstats.character_name) + " used  " + str(ID_1_heaven_skill_name) + " on " + str(clownstats.character_name) + " (" + str(heavenstats.current_tempo) + " tempo)" )
 			damage_calc.heaven_to_clown_malice_damagecalc()
 			enemy_effect_animation.find_hit_spot()
 			enemy_effect_animation.play("basic_slash")
+			HeavenSounds.HEAVEN_SLASH.play()
 			
 #test skill that just does damage based off of deviltry, but spends a little magia bar
 func skill_ID_2_heaven():
@@ -871,10 +874,20 @@ func skill_ID_3_heaven():
 	heaven_effect_animation.find_effect_spot()
 	heaven_effect_animation.play("magia_use")
 	
-	await get_tree().create_timer(heaven_effect_animation.heaven_VFX_buffer).timeout
+	await get_tree().create_timer(.1).timeout
+	
+	battle_effect_manager_FS_behind.play("heaven_thought_test")
+	HeavenSounds.HEAVEN_BUBBLE.play()
+	
+	await get_tree().create_timer(.3).timeout
+	
+	HeavenSounds.HEAVEN_BUBBLE_POP.play()
+	
+	await get_tree().create_timer(1).timeout
 	
 	#heaven_effect_animation.find_effect_spot()
 	heaven_effect_animation.play("basic_buff")
+	HeavenSounds.HEAVEN_BUFF.play()
 	
 	skill_effect_wear_off_set.emit()
 	
@@ -1382,8 +1395,17 @@ func skill_ID_3_hell():
 	hell_effect_animation.find_effect_spot()
 	hell_effect_animation.play("magia_use")
 	
-	await get_tree().create_timer(.3).timeout
+	await get_tree().create_timer(.1).timeout
 	
+	battle_effect_manager_FS_behind.play("hell_thought_test")
+	HellSounds.HELL_BUBBLE.play()
+	await get_tree().create_timer(.3).timeout
+	HellSounds.HELL_BUBBLE_POP.play()
+	
+	
+	await get_tree().create_timer(1).timeout
+	
+	HellSounds.HELL_BUFF.play()
 	hellstats.add_deviltry(ID_3_hell_increase_1)
 	hell_effect_animation.play("basic_buff")
 	

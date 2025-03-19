@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://tcfwrymqvqb4"]
+[gd_scene load_steps=21 format=3 uid="uid://tcfwrymqvqb4"]
 
 [ext_resource type="Script" uid="uid://ciw2sfdtlt7vu" path="res://Scenes/Characters/TurnBased/hellTBAnimation.gd" id="1_8t303"]
 [ext_resource type="Texture2D" uid="uid://dnykxh2n6vx0d" path="res://art/HELL/turnbased/block/Dark Block Test.png" id="1_qsudq"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bdp3mwc8pn1w0" path="res://Scenes/Keychains/HellInventoryDisplay.tscn" id="7_qhq1h"]
 [ext_resource type="Texture2D" uid="uid://b66kbhyr7yb6i" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-5.png" id="7_vermt"]
 [ext_resource type="Texture2D" uid="uid://bhf8144sjy7c8" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-6.png" id="8_u3vwp"]
+[ext_resource type="Texture2D" uid="uid://dtov2lo4bd5yc" path="res://art/HELL/turnbased/block/Block Test2.png" id="11_vermt"]
 [ext_resource type="Script" uid="uid://r6k3xt12n8or" path="res://Scripts/Mechanics/BulletHell/ActionScripts/hell_action_mechanics.gd" id="12_s7wec"]
 [ext_resource type="PackedScene" uid="uid://b4wq6wnlfoewg" path="res://Scenes/SoundManagers/hell_sound_manager.tscn" id="16_ddata"]
 
@@ -118,37 +119,37 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nd8ll")
+"texture": ExtResource("11_vermt")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_nd8ll")
+"texture": ExtResource("11_vermt")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_nd8ll")
+"texture": ExtResource("11_vermt")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_nd8ll")
+"texture": ExtResource("11_vermt")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_nd8ll")
+"texture": ExtResource("11_vermt")
 }, {
 "duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_nd8ll")
+"texture": ExtResource("11_vermt")
 }],
 "loop": false,
 "name": &"parry",
@@ -171,7 +172,7 @@ modulate = Color(0.712129, 0.712129, 0.712129, 1)
 position = Vector2(300, 759)
 scale = Vector2(0.760001, 0.760001)
 sprite_frames = SubResource("SpriteFrames_wepe7")
-animation = &"parry"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="InventoryManager" type="Node2D" parent="."]

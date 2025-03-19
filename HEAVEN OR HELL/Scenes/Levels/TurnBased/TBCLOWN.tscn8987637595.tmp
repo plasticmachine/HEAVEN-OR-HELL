@@ -1,0 +1,1491 @@
+[gd_scene load_steps=150 format=3 uid="uid://cgwbosrq1svq4"]
+
+[ext_resource type="Script" uid="uid://csykogoqqgsqc" path="res://Scripts/Mechanics/TurnBased/LevelManagers/TBCLOWN_MANAGER.gd" id="1_h0a2a"]
+[ext_resource type="Script" uid="uid://d2dfbxljvfwi" path="res://Scripts/Mechanics/TurnBased/Skills/Skills.gd" id="2_1jhkk"]
+[ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
+[ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/TB/IMG_2136.PNG" id="2_fiwds"]
+[ext_resource type="Script" uid="uid://7c8xt0u347hd" path="res://Scripts/Mechanics/TurnBased/DamageCalculation/DamageCalculation.gd" id="2_jufi4"]
+[ext_resource type="Texture2D" uid="uid://41ergq2age6v" path="res://art/turnbased effects/healing effects/basic heal/1.PNG" id="3_bbatn"]
+[ext_resource type="Texture2D" uid="uid://c12hvwoutnhrh" path="res://art/turnbased effects/attack effects/slash/IMG_4078.PNG" id="3_kw0v5"]
+[ext_resource type="Texture2D" uid="uid://d1bwfc5sda7nx" path="res://art/GUI/battle_ui/buttons/attackbutton.png" id="4_4revw"]
+[ext_resource type="Texture2D" uid="uid://co35vcjirugsc" path="res://art/turnbased effects/healing effects/basic heal/2.PNG" id="4_a3xkn"]
+[ext_resource type="Texture2D" uid="uid://gvx1tms0dl5r" path="res://art/turnbased effects/attack effects/slash/IMG_4079.PNG" id="4_c8yiy"]
+[ext_resource type="Script" uid="uid://dr7fman64f2ou" path="res://Scripts/Mechanics/TurnBased/StatusEffects/status_effects.gd" id="4_dqrpe"]
+[ext_resource type="Texture2D" uid="uid://c3h7qr67wg605" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-1.png" id="5_baws1"]
+[ext_resource type="Texture2D" uid="uid://clifhufb0q740" path="res://art/turnbased effects/healing effects/basic heal/3.PNG" id="5_d3l8a"]
+[ext_resource type="Texture2D" uid="uid://bnd6h5s5yni02" path="res://art/turnbased effects/attack effects/slash/IMG_4080.PNG" id="5_nhpj3"]
+[ext_resource type="Script" uid="uid://bsxxtv0l0pdfr" path="res://Scenes/Levels/TurnBased/animation_sequencer.gd" id="5_olccf"]
+[ext_resource type="Texture2D" uid="uid://ch7tmeqcadg0h" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-2.png" id="6_cenyr"]
+[ext_resource type="Texture2D" uid="uid://8be71ofaxcce" path="res://art/turnbased effects/attack effects/slash/IMG_4081.PNG" id="6_gjmh1"]
+[ext_resource type="Texture2D" uid="uid://cpovtvw6kmfje" path="res://art/turnbased effects/healing effects/basic heal/4.PNG" id="6_jph3p"]
+[ext_resource type="Texture2D" uid="uid://dfq7o3txvpiof" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-3.png" id="7_78jwt"]
+[ext_resource type="Texture2D" uid="uid://tjug0kwa66mt" path="res://art/turnbased effects/healing effects/basic heal/5.PNG" id="7_hq7uk"]
+[ext_resource type="Texture2D" uid="uid://b36m3akxxgtex" path="res://art/turnbased effects/healing effects/basic heal/6.PNG" id="8_0um1u"]
+[ext_resource type="PackedScene" uid="uid://bdorwiack3h01" path="res://Scenes/Characters/TurnBased/heaven_tb.tscn" id="8_n8gx8"]
+[ext_resource type="Texture2D" uid="uid://bijeyym6otiva" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-4.png" id="8_vql0d"]
+[ext_resource type="Texture2D" uid="uid://b5blcjxhy1d4i" path="res://art/turnbased effects/healing effects/basic heal/7.PNG" id="9_fdglc"]
+[ext_resource type="PackedScene" uid="uid://tcfwrymqvqb4" path="res://Scenes/Characters/TurnBased/hell_tb.tscn" id="9_gxyuk"]
+[ext_resource type="Texture2D" uid="uid://dcaqbf8fago0n" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-5.png" id="9_l22l7"]
+[ext_resource type="Texture2D" uid="uid://c4ssty68gh7vj" path="res://art/turnbased effects/healing effects/basic heal/8.PNG" id="10_8elgt"]
+[ext_resource type="Texture2D" uid="uid://cxptkvlsxh02v" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-6.png" id="10_b1arx"]
+[ext_resource type="Script" uid="uid://d1eu7fx1nmifv" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellButtons.gd" id="10_gj12g"]
+[ext_resource type="FontFile" uid="uid://b2q20yvaohtoc" path="res://fonts/apple_kid.ttf" id="11_2k5sh"]
+[ext_resource type="Texture2D" uid="uid://bjd0m1na5kwkn" path="res://art/GUI/battle_ui/buttons/attackbutton_presseddown.png" id="11_mr243"]
+[ext_resource type="Texture2D" uid="uid://dleoeqqfoxp0" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-7.png" id="11_s0wjc"]
+[ext_resource type="Texture2D" uid="uid://xiwacvb5o588" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-8.png" id="12_dsedb"]
+[ext_resource type="Texture2D" uid="uid://dmf2fx8qplufk" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-9.png" id="13_8ysl1"]
+[ext_resource type="Script" uid="uid://cmk56qwkj13ad" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/HeavenButtons.gd" id="13_11hfm"]
+[ext_resource type="Script" uid="uid://cn8pwasgyb1qb" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellButtons2.gd" id="13_ie6y5"]
+[ext_resource type="Texture2D" uid="uid://c08uehpbrfmbv" path="res://art/turnbased effects/status effects/basic_buff/Untitled_Artwork-10.png" id="14_l6lxb"]
+[ext_resource type="Script" uid="uid://bt6g0naw7b3sj" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/Attackbutton3.gd" id="14_nfy1c"]
+[ext_resource type="Script" uid="uid://uifqwucrhmja" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellBars.gd" id="15_5slww"]
+[ext_resource type="Script" uid="uid://ca0f58vdxyaa4" path="res://Scripts/Mechanics/BulletHell/LevelManagers/EnemyPath.gd" id="15_qlv6m"]
+[ext_resource type="Script" uid="uid://vq78ss3wnr1" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/Attackbutton2.gd" id="16_62r43"]
+[ext_resource type="Texture2D" uid="uid://cjjcecg5xh700" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-1.png" id="16_djwqd"]
+[ext_resource type="Texture2D" uid="uid://cc1ud6s3ff4lg" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-2.png" id="17_7nb4h"]
+[ext_resource type="Script" uid="uid://b6ulj2nmhwhac" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/HeavenBars.gd" id="17_kebos"]
+[ext_resource type="AudioStream" uid="uid://bp4gmvnpy1x17" path="res://Audio/Music/Clown/Turnbased/making a song with only soundfonts.wav" id="17_y1u7i"]
+[ext_resource type="Texture2D" uid="uid://c653cksfutsic" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-3.png" id="18_u5yjf"]
+[ext_resource type="Texture2D" uid="uid://dlnspc16er4ti" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-4.png" id="19_hh2io"]
+[ext_resource type="Texture2D" uid="uid://cqpy6ntbs8uk3" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-5.png" id="20_oen7n"]
+[ext_resource type="Texture2D" uid="uid://dvujjn20k0cgn" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-6.png" id="21_j8itc"]
+[ext_resource type="Texture2D" uid="uid://bt6g8qltu4bar" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-7.png" id="22_24j5r"]
+[ext_resource type="Texture2D" uid="uid://cemrqjvfj86nj" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-8.png" id="23_46skd"]
+[ext_resource type="Texture2D" uid="uid://daoolronbr5xi" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-9.png" id="24_48drj"]
+[ext_resource type="Texture2D" uid="uid://cufu6vrje0gul" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-10.png" id="25_0rlyn"]
+[ext_resource type="Script" uid="uid://dwhkbe334ecx6" path="res://Scripts/Mechanics/TurnBased/UI/Hell/HellButtons4.gd" id="26_30vdi"]
+[ext_resource type="Texture2D" uid="uid://1beggdenv32y" path="res://art/turnbased effects/status effects/basic_debuff/Untitled_Artwork-11.png" id="26_rynsc"]
+[ext_resource type="Script" uid="uid://cp5yvwaayclkb" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/attackbutton_4.gd" id="30_bgbie"]
+[ext_resource type="Script" uid="uid://dstbm8tqagygb" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/healbutton.gd" id="30_n7j6j"]
+[ext_resource type="Texture2D" uid="uid://ckrcrah1yc2c0" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-1.png" id="38_33bvc"]
+[ext_resource type="Texture2D" uid="uid://de3icp7blgy2v" path="res://art/turnbased effects/attack effects/heaven_shoot/arrow/image-1.png" id="39_orkex"]
+[ext_resource type="Texture2D" uid="uid://cvu4wwcsitdbf" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-2.png" id="39_ygfgu"]
+[ext_resource type="Texture2D" uid="uid://drq2piw4m3u0e" path="res://art/turnbased effects/attack effects/heaven_shoot/arrow/image-2.png" id="40_3cv2q"]
+[ext_resource type="Texture2D" uid="uid://ccqamucophh8a" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-3.png" id="40_c3ybj"]
+[ext_resource type="Texture2D" uid="uid://i60bpjv4asnq" path="res://art/turnbased effects/attack effects/heaven_shoot/arrow/image-3.png" id="41_crg2r"]
+[ext_resource type="Texture2D" uid="uid://btl20ci0t5d4n" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-4.png" id="41_mrt8t"]
+[ext_resource type="Texture2D" uid="uid://datektqsuswyv" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-5.png" id="42_fmo1i"]
+[ext_resource type="Texture2D" uid="uid://bbob7urslr8ro" path="res://art/turnbased effects/attack effects/heaven_shoot/arrow/image-4.png" id="42_sl4ww"]
+[ext_resource type="Texture2D" uid="uid://dujnx6ryb3ar2" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-6.png" id="43_7a5d4"]
+[ext_resource type="Texture2D" uid="uid://1c6eurdqoykn" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-1.png" id="43_dl68s"]
+[ext_resource type="Texture2D" uid="uid://dp7auo0e48gm2" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-7.png" id="44_1wo5p"]
+[ext_resource type="Texture2D" uid="uid://crlcyo0siorx7" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-2.png" id="44_nlh5h"]
+[ext_resource type="Texture2D" uid="uid://dlfsynu0ommgk" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-3.png" id="45_a7log"]
+[ext_resource type="Texture2D" uid="uid://bndlpixd48pfs" path="res://art/turnbased effects/magia effects/spending magia/Untitled_Artwork-8.png" id="45_ryms0"]
+[ext_resource type="Texture2D" uid="uid://cbd7objl8532e" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-4.png" id="46_j60al"]
+[ext_resource type="Script" uid="uid://dmklqsyiobbq4" path="res://Scripts/Mechanics/TurnBased/UI/Heaven/heaven_effect_manager.gd" id="47_ixyui"]
+[ext_resource type="Script" uid="uid://sxdun06x5216" path="res://Scripts/Mechanics/TurnBased/UI/BOSSES/clown/clown_effect_manager.gd" id="47_m2rta"]
+[ext_resource type="Texture2D" uid="uid://cxr2ht4yw8uku" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-5.png" id="47_sxe84"]
+[ext_resource type="Texture2D" uid="uid://mh6bu124wvgj" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-6.png" id="48_7xre4"]
+[ext_resource type="Script" uid="uid://b105syl4jukad" path="res://Scripts/Mechanics/TurnBased/UI/Hell/hell_effect_manager.gd" id="48_ealp1"]
+[ext_resource type="Texture2D" uid="uid://3b8qr12eh27x" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-7.png" id="49_oimtg"]
+[ext_resource type="Texture2D" uid="uid://cht4wdpmdutcr" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-8.png" id="50_ut8y8"]
+[ext_resource type="Texture2D" uid="uid://dtiaivry5lu5m" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-9.png" id="51_yofpn"]
+[ext_resource type="Texture2D" uid="uid://dkh7k2nyvx4ro" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-10.png" id="52_37rmu"]
+[ext_resource type="Texture2D" uid="uid://c480uhcr7hi5j" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-11.png" id="53_xgh5i"]
+[ext_resource type="Texture2D" uid="uid://b2c0w2euon2lb" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-12.png" id="54_5o1h4"]
+[ext_resource type="Texture2D" uid="uid://6fojyhkyyt4i" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-13.png" id="55_vl5um"]
+[ext_resource type="Texture2D" uid="uid://rplbdjvbq3gt" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-14.png" id="56_0qvf4"]
+[ext_resource type="Texture2D" uid="uid://dkjybiyyp5b3d" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-15.png" id="57_w3l1j"]
+[ext_resource type="Texture2D" uid="uid://d08gt3lwpiyxa" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-16.png" id="58_40fcq"]
+[ext_resource type="Texture2D" uid="uid://mhx3x4lpatig" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-1.png" id="59_ck3ta"]
+[ext_resource type="Texture2D" uid="uid://dlw5itc06xl4j" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-17.png" id="59_h1vx2"]
+[ext_resource type="Texture2D" uid="uid://b1svjf0fhctn1" path="res://art/turnbased effects/attack effects/heaven_shoot/explosion/image-18.png" id="60_1myeg"]
+[ext_resource type="Texture2D" uid="uid://br6r3hp5ygck3" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-2.png" id="60_j0g0f"]
+[ext_resource type="Texture2D" uid="uid://df6y1unu01rdl" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-3.png" id="61_e4fro"]
+[ext_resource type="Texture2D" uid="uid://dnyostuordfbm" path="res://art/turnbased effects/attack effects/hell_shoot/arrow/image-1.png" id="61_orkex"]
+[ext_resource type="Texture2D" uid="uid://dk566cpacptwr" path="res://art/turnbased effects/attack effects/hell_shoot/arrow/image-2.png" id="62_3cv2q"]
+[ext_resource type="Texture2D" uid="uid://cih5olkef3gu2" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-4.png" id="62_327jj"]
+[ext_resource type="Texture2D" uid="uid://7xuo3v46ccc4" path="res://art/turnbased effects/attack effects/hell_shoot/arrow/image-3.png" id="63_crg2r"]
+[ext_resource type="Texture2D" uid="uid://o7ujvowm7gh3" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-5.png" id="63_y56h2"]
+[ext_resource type="Texture2D" uid="uid://cvvn8ubn7oxsv" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-6.png" id="64_l6yo5"]
+[ext_resource type="Texture2D" uid="uid://dtwf3pa6t6w5p" path="res://art/turnbased effects/attack effects/hell_shoot/arrow/image-4.png" id="64_sl4ww"]
+[ext_resource type="Texture2D" uid="uid://7e2o8uvakd6h" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-7.png" id="65_cbos4"]
+[ext_resource type="Texture2D" uid="uid://co0m3d67rynkj" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-1.png" id="65_dl68s"]
+[ext_resource type="Script" uid="uid://xjvavbp0vun0" path="res://Scripts/Mechanics/Keychains/testing stuff/inventory.gd" id="66_5g7pt"]
+[ext_resource type="Texture2D" uid="uid://68eng5o6jeam" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-8.png" id="66_6mqry"]
+[ext_resource type="Texture2D" uid="uid://dhpo8r5oa1lgq" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-2.png" id="66_nlh5h"]
+[ext_resource type="Texture2D" uid="uid://b8s44ucuaffvm" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-3.png" id="67_a7log"]
+[ext_resource type="Texture2D" uid="uid://cpn8w6ktjg6or" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-9.png" id="67_euste"]
+[ext_resource type="Texture2D" uid="uid://csgaoxrj6eqd6" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-10.png" id="68_h5fhl"]
+[ext_resource type="Texture2D" uid="uid://cyr82q01jrdt0" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-4.png" id="68_j60al"]
+[ext_resource type="Texture2D" uid="uid://cmcnv6dk17y1m" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-11.png" id="69_qph2w"]
+[ext_resource type="Texture2D" uid="uid://bwthsv4m5snvv" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-5.png" id="69_sxe84"]
+[ext_resource type="Texture2D" uid="uid://ucu5k3qmvvxp" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-6.png" id="70_7xre4"]
+[ext_resource type="Texture2D" uid="uid://chhtselp57gh5" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-12.png" id="70_pg2ot"]
+[ext_resource type="Texture2D" uid="uid://domvj37ixqaxu" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-13.png" id="71_8f5p3"]
+[ext_resource type="Texture2D" uid="uid://b33awltjmrxit" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-7.png" id="71_oimtg"]
+[ext_resource type="Texture2D" uid="uid://bxx4heh3e1q7c" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-14.png" id="72_nii5y"]
+[ext_resource type="Texture2D" uid="uid://dcc1jf4nk6dns" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-8.png" id="72_ut8y8"]
+[ext_resource type="Texture2D" uid="uid://c7qxi5wpc0ui4" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-15.png" id="73_k0t3g"]
+[ext_resource type="Texture2D" uid="uid://cmoe8t7twbgg4" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-9.png" id="73_yofpn"]
+[ext_resource type="Texture2D" uid="uid://hfo36hyo73b8" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-16.png" id="74_5nbax"]
+[ext_resource type="Texture2D" uid="uid://dhg2x8mqeot5" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-10.png" id="74_37rmu"]
+[ext_resource type="Texture2D" uid="uid://un36ci0s2dba" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-17.png" id="75_uhpa8"]
+[ext_resource type="Texture2D" uid="uid://c74f7o73jxkbn" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-11.png" id="75_xgh5i"]
+[ext_resource type="Texture2D" uid="uid://dhprro5yk31n0" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-12.png" id="76_5o1h4"]
+[ext_resource type="Texture2D" uid="uid://bn3dm8r5ol34q" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-18.png" id="76_68qcf"]
+[ext_resource type="Texture2D" uid="uid://b0jboonnbuhna" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-19.png" id="77_2bra8"]
+[ext_resource type="Texture2D" uid="uid://b6tgm8eh44ami" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-13.png" id="77_vl5um"]
+[ext_resource type="Texture2D" uid="uid://cwjr63w78fmv1" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-14.png" id="78_0qvf4"]
+[ext_resource type="Texture2D" uid="uid://bvwuqslslyhtq" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-20.png" id="78_8trut"]
+[ext_resource type="Texture2D" uid="uid://dj37bbab6xo48" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-21.png" id="79_d3hrg"]
+[ext_resource type="Texture2D" uid="uid://cyd1hyr2i6xb8" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-15.png" id="79_w3l1j"]
+[ext_resource type="Texture2D" uid="uid://cihojaw62s7ss" path="res://art/GUI/battle_ui/buttons/test_buttons/Untitled_Artwork-22.png" id="80_4s774"]
+[ext_resource type="Texture2D" uid="uid://dr76vt3ia36xd" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-16.png" id="80_40fcq"]
+[ext_resource type="Texture2D" uid="uid://crahrys4d4t1g" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-17.png" id="81_h1vx2"]
+[ext_resource type="Texture2D" uid="uid://riwto5o4373l" path="res://art/turnbased effects/attack effects/hell_shoot/explosion/image-18.png" id="82_1myeg"]
+[ext_resource type="Script" uid="uid://bbl8e0652fcdb" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="136_crg2r"]
+[ext_resource type="Script" uid="uid://p0kxvabmbn72" path="res://Scripts/CameraScripts/camera_tricks.gd" id="136_dl68s"]
+[ext_resource type="Script" uid="uid://ddmhbf62jjwlv" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="136_sl4ww"]
+[ext_resource type="Script" uid="uid://beqoxc16uxx25" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="137_sl4ww"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmycf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_baws1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cenyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_78jwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vql0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l22l7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_b1arx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s0wjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dsedb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8ysl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_l6lxb")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"basic_buff",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_djwqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7nb4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u5yjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hh2io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_oen7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_j8itc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_24j5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_46skd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_48drj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0rlyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rynsc")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"basic_debuff",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bbatn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a3xkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d3l8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jph3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hq7uk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0um1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fdglc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8elgt")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"basic_heal",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kw0v5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c8yiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nhpj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gjmh1")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"basic_slash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_orkex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_3cv2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_crg2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_sl4ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_sl4ww")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"heaven_shoot_arrow",
+"speed": 23.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_dl68s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_nlh5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_a7log")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_j60al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_sxe84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_7xre4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_oimtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_ut8y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_yofpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_37rmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_37rmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_xgh5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_xgh5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_xgh5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_5o1h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_5o1h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_5o1h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_vl5um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_vl5um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_vl5um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_0qvf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_0qvf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_w3l1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_w3l1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_40fcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_40fcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_h1vx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_1myeg")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"heaven_shoot_explosion",
+"speed": 21.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_orkex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_3cv2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_crg2r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_sl4ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_sl4ww")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"hell_shoot_arrow",
+"speed": 23.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_dl68s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_nlh5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_a7log")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_j60al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_sxe84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_7xre4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_oimtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_ut8y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_yofpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_37rmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_37rmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_xgh5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_xgh5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_xgh5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_5o1h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_5o1h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_5o1h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_vl5um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_vl5um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_vl5um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_0qvf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_0qvf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_w3l1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_w3l1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_40fcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_40fcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_h1vx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_1myeg")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"hell_shoot_explosion",
+"speed": 21.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hide",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"magia_replenish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_33bvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ygfgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_c3ybj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_mrt8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_fmo1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_7a5d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_1wo5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ryms0")
+}],
+"loop": false,
+"name": &"magia_use",
+"speed": 12.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_shoiy"]
+_data = {
+"points": PackedVector2Array(78.5663, 70.7757, -78.5663, -70.7757, 903, 241, -1636.15, -86.3523, 1636.15, 86.3523, -157, 1119, -2291.69, 99.8049, 2291.69, -99.8049, 1927, 1123, 17.5093, -186.522, -17.5093, 186.522, 1035, 244, 0, 0, 0, 0, 866, 283, -239.439, 75.2219, 239.439, -75.2219, 929, 98, 0, 0, 0, 0, 903, 242)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_f2lxk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1603, 245, 0, 0, 0, 0, 260, 245, 0, 0, 0, 0, 260, 245, 0, 0, 0, 0, 1603, 245, 0, 0, 0, 0, 1603, 245)
+}
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4fro"]
+size = Vector2(39.2977, 26.6573)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awxep"]
+bg_color = Color(0, 0, 0, 0.498039)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8l7pn"]
+font = ExtResource("11_2k5sh")
+font_size = 32
+shadow_size = 10566
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1u77"]
+bg_color = Color(0, 0, 0, 0.301961)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2m07e"]
+bg_color = Color(0.992157, 0.411765, 0.513726, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryeqi"]
+bg_color = Color(0, 0.721569, 0.898039, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="Resource" id="Resource_dl68s"]
+script = ExtResource("137_sl4ww")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="TurnBased" type="Node2D"]
+position = Vector2(11, 181)
+script = ExtResource("1_h0a2a")
+debug_mode = true
+BOSS_ID = 3
+
+[node name="SkillManager" type="Node2D" parent="." node_paths=PackedStringArray("enemy_effect_animation", "enemy_effect_animation_support")]
+scale = Vector2(0.998722, 1.0287)
+script = ExtResource("2_1jhkk")
+enemy_effect_animation = NodePath("../BattleEffectManagerPosition/ClownBattleEffectManager")
+enemy_effect_animation_support = NodePath("../BattleEffectManagerPosition/ClownBattleEffectManagerSupport")
+heaven_target_ID = 3
+hell_target_ID = 3
+skill_slot_1_skill_heaven = 2
+skill_slot_2_skill_heaven = 4
+skill_slot_3_skill_heaven = 10
+skill_slot_4_skill_heaven = 11
+skill_slot_1_skill_hell = 1
+skill_slot_2_skill_hell = 5
+skill_slot_3_skill_hell = 6
+skill_slot_4_skill_hell = 9
+ID_1_heaven_skill_name = "Slash!"
+ID_1_heaven_tempo = 1
+ID_1_heaven_power = 35
+ID_2_heaven_skill_name = "Shoot!"
+ID_2_heaven_tempo = 2
+ID_2_heaven_power = 55
+ID_2_heaven_cost_1 = 15
+ID_2_heaven_animation_buffer = 1.4
+ID_3_heaven_skill_name = "Acquire Intent"
+ID_3_heaven_tempo = 3
+ID_3_heaven_cost_1 = 15
+ID_3_heaven_effect_length = 2
+ID_3_heaven_increase_1 = 5
+ID_4_heaven_skill_name = "Reclaim Will"
+ID_4_heaven_tempo = 4
+ID_4_heaven_effect_length = 2
+ID_5_heaven_skill_name = "Indignation!"
+ID_5_heaven_tempo = 8
+ID_5_heaven_cost_1 = 35
+ID_5_heaven_increase_1 = 50
+ID_5_heaven_increase_2 = 5
+ID_5_heaven_increase_3 = 5
+ID_6_heaven_skill_name = "Blessed Blades"
+ID_6_heaven_tempo = 1
+ID_6_heaven_cost_1 = 45
+ID_6_heaven_effect_length = 3
+ID_6_heaven_percent_decrease_1 = 0.35
+ID_7_heaven_skill_name = "Faltered Faith"
+ID_7_heaven_tempo = 1
+ID_7_heaven_increase_1 = 5
+ID_8_heaven_skill_name = "Higher Ground"
+ID_8_heaven_tempo = 2
+ID_10_heaven_skill_name = "At The Gates"
+ID_10_heaven_tempo = 2
+ID_10_heaven_power_1 = 33
+ID_10_heaven_power_2 = 66
+ID_10_heaven_power_3 = 100
+ID_10_heaven_decrease_1 = 5
+ID_10_heaven_decrease_2 = 7
+ID_10_heaven_decrease_3 = 10
+ID_10_heaven_percent_decrease_1 = 0.85
+ID_10_heaven_percent_decrease_2 = 0.7
+ID_10_heaven_percent_decrease_3 = 0.5
+ID_11_heaven_skill_name = "Colliding Stars"
+ID_11_heaven_tempo = 2
+ID_11_heaven_power_1 = 33
+ID_11_heaven_power_2 = 66
+ID_11_heaven_power_3 = 100
+ID_11_heaven_increase_1 = 5
+ID_11_heaven_increase_2 = 7
+ID_11_heaven_increase_3 = 10
+ID_1_hell_skill_name = "Slash!"
+ID_1_hell_tempo = 1
+ID_1_hell_power = 35
+ID_2_hell_skill_name = "Shoot!"
+ID_2_hell_tempo = 1
+ID_2_hell_power = 55
+ID_2_hell_cost_1 = 15
+
+[node name="DamageCalculation" type="Node2D" parent="."]
+script = ExtResource("2_jufi4")
+parry_multiplier = 1.5
+
+[node name="StatusEffects" type="Node2D" parent="."]
+script = ExtResource("4_dqrpe")
+
+[node name="AnimationSequencer" type="Node2D" parent="."]
+script = ExtResource("5_olccf")
+
+[node name="BattleEffectManagerPosition" type="Node2D" parent="."]
+
+[node name="BattleEffectManagerFS" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+position = Vector2(963, 340)
+scale = Vector2(0.761, 0.761)
+sprite_frames = SubResource("SpriteFrames_jmycf")
+animation = &"hide"
+autoplay = "hide"
+
+[node name="BattleEffectManagerFSSupport" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+z_index = 350
+position = Vector2(963, 340)
+scale = Vector2(0.761, 0.761)
+sprite_frames = SubResource("SpriteFrames_jmycf")
+animation = &"basic_debuff"
+autoplay = "hide"
+
+[node name="ClownBattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+z_index = 316
+scale = Vector2(1, 1.01221)
+sprite_frames = SubResource("SpriteFrames_jmycf")
+animation = &"hide"
+autoplay = "hide"
+script = ExtResource("47_m2rta")
+clown_VFX_buffer = 0.5
+
+[node name="ClownBattleEffectManagerSupport" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+z_index = 350
+position = Vector2(2, 0)
+scale = Vector2(1, 1.02457)
+sprite_frames = SubResource("SpriteFrames_jmycf")
+animation = &"hide"
+autoplay = "hide"
+script = ExtResource("47_m2rta")
+clown_VFX_buffer = 0.5
+
+[node name="HeavenBattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+z_index = 3
+position = Vector2(1616, 714)
+scale = Vector2(1, 1.01221)
+sprite_frames = SubResource("SpriteFrames_jmycf")
+animation = &"hide"
+autoplay = "hide"
+script = ExtResource("47_ixyui")
+heaven_VFX_buffer = 1.0
+
+[node name="HeavenBattleEffectManagerSupport" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+z_index = 3
+position = Vector2(1573, 560)
+scale = Vector2(1, 1.01221)
+sprite_frames = SubResource("SpriteFrames_jmycf")
+animation = &"hide"
+autoplay = "hide"
+script = ExtResource("47_ixyui")
+heaven_VFX_buffer = 1.0
+
+[node name="HellBattleEffectManager" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+z_index = 350
+scale = Vector2(1, 1.01221)
+sprite_frames = SubResource("SpriteFrames_jmycf")
+animation = &"hide"
+autoplay = "hide"
+script = ExtResource("48_ealp1")
+hell_VFX_buffer = 1.0
+
+[node name="HellBattleEffectManagerSupport" type="AnimatedSprite2D" parent="BattleEffectManagerPosition"]
+z_index = 350
+scale = Vector2(1, 1.01221)
+sprite_frames = SubResource("SpriteFrames_jmycf")
+animation = &"hide"
+autoplay = "hide"
+script = ExtResource("48_ealp1")
+hell_VFX_buffer = 1.0
+
+[node name="EnemySpot2" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="EnemySpot2"]
+curve = SubResource("Curve2D_shoiy")
+
+[node name="ClownDancePath" type="Path2D" parent="EnemySpot2"]
+position = Vector2(0, 95)
+curve = SubResource("Curve2D_f2lxk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpot2/ClownDancePath"]
+position = Vector2(931.5, 245)
+progress = 671.5
+rotates = false
+cubic_interp = false
+script = ExtResource("15_qlv6m")
+speed = 300
+
+[node name="ClownTb" parent="EnemySpot2/ClownDancePath/PathFollow2D" instance=ExtResource("2_djc2d")]
+z_index = -1
+position = Vector2(0, 0)
+skill_2_tempo = 9
+
+[node name="ClownTrack" type="AudioStreamPlayer2D" parent="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb"]
+position = Vector2(31, -143)
+stream = ExtResource("17_y1u7i")
+volume_db = -16.517
+autoplay = true
+max_distance = 9940.0
+panning_strength = 2.0
+
+[node name="EnemyHitSpot" type="Node2D" parent="EnemySpot2"]
+position = Vector2(946, 340)
+
+[node name="EnemyEffectSpot" type="Node2D" parent="EnemySpot2"]
+position = Vector2(946, 340)
+
+[node name="EnemyHitBoxes" type="Node2D" parent="."]
+
+[node name="HitHellBlock" type="Area2D" parent="EnemyHitBoxes"]
+
+[node name="HitHellBlockCol" type="CollisionShape2D" parent="EnemyHitBoxes/HitHellBlock"]
+z_index = 40
+position = Vector2(307, 576)
+scale = Vector2(3.56, 3.56)
+shape = SubResource("RectangleShape2D_e4fro")
+disabled = true
+debug_color = Color(0.943543, 0.108845, 0.142756, 0.42)
+
+[node name="HitHellParry" type="Area2D" parent="EnemyHitBoxes"]
+position = Vector2(0, 154)
+
+[node name="HitHellParryCol" type="CollisionShape2D" parent="EnemyHitBoxes/HitHellParry"]
+z_index = 40
+position = Vector2(307, 576)
+scale = Vector2(3.56, 3.56)
+shape = SubResource("RectangleShape2D_e4fro")
+disabled = true
+debug_color = Color(0.943543, 0.108845, 0.142756, 0.42)
+
+[node name="HitHeavenBlock" type="Area2D" parent="EnemyHitBoxes"]
+position = Vector2(0, 154)
+
+[node name="HitHeavenBlockCol" type="CollisionShape2D" parent="EnemyHitBoxes/HitHeavenBlock"]
+z_index = 65
+position = Vector2(1573, 670)
+scale = Vector2(3.56, 3.56)
+shape = SubResource("RectangleShape2D_e4fro")
+disabled = true
+debug_color = Color(0.943543, 0.108845, 0.142756, 0.42)
+
+[node name="HitHeavenParry" type="Area2D" parent="EnemyHitBoxes"]
+
+[node name="HitHeavenParryCol" type="CollisionShape2D" parent="EnemyHitBoxes/HitHeavenParry"]
+z_index = 65
+position = Vector2(1573, 670)
+scale = Vector2(3.56, 3.56)
+shape = SubResource("RectangleShape2D_e4fro")
+disabled = true
+debug_color = Color(0.943543, 0.108845, 0.142756, 0.42)
+
+[node name="TestPlayerSpots" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="TestPlayerSpots"]
+z_index = -785
+position = Vector2(944.001, 361)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("2_fiwds")
+
+[node name="HvnUplft1" type="Sprite2D" parent="TestPlayerSpots"]
+visible = false
+position = Vector2(11396, 5424)
+scale = Vector2(4.48035, 4.48035)
+metadata/_edit_lock_ = true
+
+[node name="HvnUplft2" type="Sprite2D" parent="TestPlayerSpots"]
+visible = false
+position = Vector2(11416.3, 1642.16)
+scale = Vector2(4.21635, 4.21635)
+metadata/_edit_lock_ = true
+
+[node name="HvnUpright1" type="Sprite2D" parent="TestPlayerSpots"]
+visible = false
+position = Vector2(3675, 5574)
+scale = Vector2(4.17362, 4.17362)
+metadata/_edit_lock_ = true
+
+[node name="HvnUpright2" type="Sprite2D" parent="TestPlayerSpots"]
+visible = false
+position = Vector2(3770, 1286)
+scale = Vector2(4.17387, 4.17387)
+metadata/_edit_lock_ = true
+
+[node name="HvnUp1" type="Sprite2D" parent="TestPlayerSpots"]
+visible = false
+position = Vector2(7392, 6054)
+scale = Vector2(5.91167, 5.91167)
+metadata/_edit_lock_ = true
+
+[node name="HvnUp2" type="Sprite2D" parent="TestPlayerSpots"]
+visible = false
+position = Vector2(7365, 1358)
+scale = Vector2(5.91167, 5.91167)
+metadata/_edit_lock_ = true
+
+[node name="PlayerSpots" type="Node2D" parent="."]
+
+[node name="HeavenTb" parent="PlayerSpots" instance=ExtResource("8_n8gx8")]
+z_index = 2
+
+[node name="HellTb" parent="PlayerSpots" instance=ExtResource("9_gxyuk")]
+z_index = 2
+position = Vector2(-9, -96)
+
+[node name="UISpots" type="Node2D" parent="PlayerSpots"]
+
+[node name="HeavenHitSpot" type="Node2D" parent="PlayerSpots/UISpots"]
+position = Vector2(1638, 514)
+
+[node name="HellHitSpot" type="Node2D" parent="PlayerSpots/UISpots"]
+position = Vector2(245, 447)
+
+[node name="HeavenEffectSpot" type="Node2D" parent="PlayerSpots/UISpots"]
+position = Vector2(1490, 456)
+
+[node name="HellEffectSpot" type="Node2D" parent="PlayerSpots/UISpots"]
+position = Vector2(362, 521)
+
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -173.0
+offset_right = 1920.0
+offset_bottom = 907.0
+scale = Vector2(0.997992, 0.995164)
+metadata/_edit_lock_ = true
+
+[node name="Buttons" type="Control" parent="PlayerUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HellButtons" type="Control" parent="PlayerUI/Buttons"]
+anchors_preset = 0
+offset_top = 120.515
+offset_right = 40.0
+offset_bottom = 160.515
+
+[node name="Attackbutton1" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 512.028
+offset_top = 696.436
+offset_right = 1832.03
+offset_bottom = 1515.44
+scale = Vector2(0.115, 0.115)
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("11_mr243")
+texture_disabled = ExtResource("4_4revw")
+script = ExtResource("10_gj12g")
+test_skill_1_button_normal = ExtResource("59_ck3ta")
+test_skill_1_button_down = ExtResource("60_j0g0f")
+test_skill_1_button_hover = ExtResource("60_j0g0f")
+test_skill_2_button_normal = ExtResource("61_e4fro")
+test_skill_2_button_down = ExtResource("62_327jj")
+test_skill_3_button_normal = ExtResource("63_y56h2")
+test_skill_3_button_down = ExtResource("64_l6yo5")
+test_skill_4_button_normal = ExtResource("65_cbos4")
+test_skill_4_button_down = ExtResource("66_6mqry")
+test_skill_5_button_normal = ExtResource("67_euste")
+test_skill_5_button_down = ExtResource("68_h5fhl")
+test_skill_6_button_normal = ExtResource("69_qph2w")
+test_skill_6_button_down = ExtResource("70_pg2ot")
+test_skill_7_button_normal = ExtResource("71_8f5p3")
+test_skill_7_button_down = ExtResource("72_nii5y")
+test_skill_8_button_normal = ExtResource("73_k0t3g")
+test_skill_8_button_down = ExtResource("74_5nbax")
+test_skill_9_button_normal = ExtResource("75_uhpa8")
+test_skill_9_button_down = ExtResource("76_68qcf")
+test_skill_10_button_normal = ExtResource("77_2bra8")
+test_skill_10_button_down = ExtResource("78_8trut")
+test_skill_11_button_normal = ExtResource("79_d3hrg")
+test_skill_11_button_down = ExtResource("80_4s774")
+
+[node name="Attackbutton2" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.795
+anchor_bottom = 2.355
+offset_left = 663.332
+offset_top = 696.436
+offset_right = 1831.53
+offset_bottom = 1421.24
+scale = Vector2(0.115, 0.115)
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
+script = ExtResource("13_ie6y5")
+test_skill_1_button_normal = ExtResource("59_ck3ta")
+test_skill_1_button_down = ExtResource("60_j0g0f")
+test_skill_2_button_normal = ExtResource("61_e4fro")
+test_skill_2_button_down = ExtResource("62_327jj")
+test_skill_3_button_normal = ExtResource("63_y56h2")
+test_skill_3_button_down = ExtResource("64_l6yo5")
+test_skill_4_button_normal = ExtResource("65_cbos4")
+test_skill_4_button_down = ExtResource("66_6mqry")
+test_skill_5_button_normal = ExtResource("67_euste")
+test_skill_5_button_down = ExtResource("68_h5fhl")
+test_skill_6_button_normal = ExtResource("69_qph2w")
+test_skill_6_button_down = ExtResource("70_pg2ot")
+test_skill_7_button_normal = ExtResource("71_8f5p3")
+test_skill_7_button_down = ExtResource("72_nii5y")
+test_skill_8_button_normal = ExtResource("73_k0t3g")
+test_skill_8_button_down = ExtResource("74_5nbax")
+test_skill_9_button_normal = ExtResource("75_uhpa8")
+test_skill_9_button_down = ExtResource("76_68qcf")
+test_skill_10_button_normal = ExtResource("77_2bra8")
+test_skill_10_button_down = ExtResource("78_8trut")
+test_skill_11_button_normal = ExtResource("79_d3hrg")
+test_skill_11_button_down = ExtResource("80_4s774")
+
+[node name="Attackbutton3" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 512.028
+offset_top = 786.873
+offset_right = 1832.03
+offset_bottom = 1605.87
+scale = Vector2(0.115, 0.115)
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
+script = ExtResource("14_nfy1c")
+test_skill_1_button_normal = ExtResource("59_ck3ta")
+test_skill_1_button_down = ExtResource("60_j0g0f")
+test_skill_2_button_normal = ExtResource("61_e4fro")
+test_skill_2_button_down = ExtResource("62_327jj")
+test_skill_3_button_normal = ExtResource("63_y56h2")
+test_skill_3_button_down = ExtResource("64_l6yo5")
+test_skill_4_button_normal = ExtResource("65_cbos4")
+test_skill_4_button_down = ExtResource("66_6mqry")
+test_skill_5_button_normal = ExtResource("67_euste")
+test_skill_5_button_down = ExtResource("68_h5fhl")
+test_skill_6_button_normal = ExtResource("69_qph2w")
+test_skill_6_button_down = ExtResource("70_pg2ot")
+test_skill_7_button_normal = ExtResource("71_8f5p3")
+test_skill_7_button_down = ExtResource("72_nii5y")
+test_skill_8_button_normal = ExtResource("73_k0t3g")
+test_skill_8_button_down = ExtResource("74_5nbax")
+test_skill_9_button_normal = ExtResource("75_uhpa8")
+test_skill_9_button_down = ExtResource("76_68qcf")
+test_skill_10_button_normal = ExtResource("77_2bra8")
+test_skill_10_button_down = ExtResource("78_8trut")
+test_skill_11_button_normal = ExtResource("79_d3hrg")
+test_skill_11_button_down = ExtResource("80_4s774")
+
+[node name="Attackbutton4" type="TextureButton" parent="PlayerUI/Buttons/HellButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.795
+anchor_bottom = 2.355
+offset_left = 663.332
+offset_top = 786.873
+offset_right = 1831.53
+offset_bottom = 1511.67
+scale = Vector2(0.115, 0.115)
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
+script = ExtResource("26_30vdi")
+test_skill_1_button_normal = ExtResource("59_ck3ta")
+test_skill_1_button_down = ExtResource("60_j0g0f")
+test_skill_2_button_normal = ExtResource("61_e4fro")
+test_skill_2_button_down = ExtResource("62_327jj")
+test_skill_3_button_normal = ExtResource("63_y56h2")
+test_skill_3_button_down = ExtResource("64_l6yo5")
+test_skill_4_button_normal = ExtResource("65_cbos4")
+test_skill_4_button_down = ExtResource("66_6mqry")
+test_skill_5_button_normal = ExtResource("67_euste")
+test_skill_5_button_down = ExtResource("68_h5fhl")
+test_skill_6_button_normal = ExtResource("69_qph2w")
+test_skill_6_button_down = ExtResource("70_pg2ot")
+test_skill_7_button_normal = ExtResource("71_8f5p3")
+test_skill_7_button_down = ExtResource("72_nii5y")
+test_skill_8_button_normal = ExtResource("73_k0t3g")
+test_skill_8_button_down = ExtResource("74_5nbax")
+test_skill_9_button_normal = ExtResource("75_uhpa8")
+test_skill_9_button_down = ExtResource("76_68qcf")
+test_skill_10_button_normal = ExtResource("77_2bra8")
+test_skill_10_button_down = ExtResource("78_8trut")
+test_skill_11_button_normal = ExtResource("79_d3hrg")
+test_skill_11_button_down = ExtResource("80_4s774")
+
+[node name="HeavenButtons" type="Control" parent="PlayerUI/Buttons"]
+anchors_preset = 0
+offset_left = 555.0
+offset_right = 595.0
+offset_bottom = 40.0
+
+[node name="Attackbutton1" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 519.157
+offset_top = 816.951
+offset_right = 1839.16
+offset_bottom = 1635.95
+scale = Vector2(0.115, 0.115)
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
+script = ExtResource("13_11hfm")
+test_skill_1_button_normal = ExtResource("59_ck3ta")
+test_skill_1_button_down = ExtResource("60_j0g0f")
+test_skill_2_button_normal = ExtResource("61_e4fro")
+test_skill_2_button_down = ExtResource("62_327jj")
+test_skill_3_button_normal = ExtResource("63_y56h2")
+test_skill_3_button_down = ExtResource("64_l6yo5")
+test_skill_4_button_normal = ExtResource("65_cbos4")
+test_skill_4_button_down = ExtResource("66_6mqry")
+test_skill_5_button_normal = ExtResource("67_euste")
+test_skill_5_button_down = ExtResource("68_h5fhl")
+test_skill_6_button_normal = ExtResource("69_qph2w")
+test_skill_6_button_down = ExtResource("70_pg2ot")
+test_skill_7_button_normal = ExtResource("71_8f5p3")
+test_skill_7_button_down = ExtResource("72_nii5y")
+test_skill_8_button_normal = ExtResource("73_k0t3g")
+test_skill_8_button_down = ExtResource("74_5nbax")
+test_skill_9_button_normal = ExtResource("75_uhpa8")
+test_skill_9_button_down = ExtResource("76_68qcf")
+test_skill_10_button_normal = ExtResource("77_2bra8")
+test_skill_10_button_down = ExtResource("78_8trut")
+test_skill_11_button_normal = ExtResource("79_d3hrg")
+test_skill_11_button_down = ExtResource("80_4s774")
+
+[node name="Attackbutton2" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.795
+anchor_bottom = 2.355
+offset_left = 670.461
+offset_top = 816.951
+offset_right = 1838.66
+offset_bottom = 1541.75
+scale = Vector2(0.115, 0.115)
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
+script = ExtResource("16_62r43")
+test_skill_1_button_normal = ExtResource("59_ck3ta")
+test_skill_1_button_down = ExtResource("60_j0g0f")
+test_skill_2_button_normal = ExtResource("61_e4fro")
+test_skill_2_button_down = ExtResource("62_327jj")
+test_skill_3_button_normal = ExtResource("63_y56h2")
+test_skill_3_button_down = ExtResource("64_l6yo5")
+test_skill_4_button_normal = ExtResource("65_cbos4")
+test_skill_4_button_down = ExtResource("66_6mqry")
+test_skill_5_button_normal = ExtResource("67_euste")
+test_skill_5_button_down = ExtResource("68_h5fhl")
+test_skill_6_button_normal = ExtResource("69_qph2w")
+test_skill_6_button_down = ExtResource("70_pg2ot")
+test_skill_7_button_normal = ExtResource("71_8f5p3")
+test_skill_7_button_down = ExtResource("72_nii5y")
+test_skill_8_button_normal = ExtResource("73_k0t3g")
+test_skill_8_button_down = ExtResource("74_5nbax")
+test_skill_9_button_normal = ExtResource("75_uhpa8")
+test_skill_9_button_down = ExtResource("76_68qcf")
+test_skill_10_button_normal = ExtResource("77_2bra8")
+test_skill_10_button_down = ExtResource("78_8trut")
+test_skill_11_button_normal = ExtResource("79_d3hrg")
+test_skill_11_button_down = ExtResource("80_4s774")
+
+[node name="Attackbutton3" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 519.157
+offset_top = 907.388
+offset_right = 1839.16
+offset_bottom = 1726.39
+scale = Vector2(0.115, 0.115)
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
+script = ExtResource("30_n7j6j")
+test_skill_1_button_normal = ExtResource("59_ck3ta")
+test_skill_1_button_down = ExtResource("60_j0g0f")
+test_skill_2_button_normal = ExtResource("61_e4fro")
+test_skill_2_button_down = ExtResource("62_327jj")
+test_skill_3_button_normal = ExtResource("63_y56h2")
+test_skill_3_button_down = ExtResource("64_l6yo5")
+test_skill_4_button_normal = ExtResource("65_cbos4")
+test_skill_4_button_down = ExtResource("66_6mqry")
+test_skill_5_button_normal = ExtResource("67_euste")
+test_skill_5_button_down = ExtResource("68_h5fhl")
+test_skill_6_button_normal = ExtResource("69_qph2w")
+test_skill_6_button_down = ExtResource("70_pg2ot")
+test_skill_7_button_normal = ExtResource("71_8f5p3")
+test_skill_7_button_down = ExtResource("72_nii5y")
+test_skill_8_button_normal = ExtResource("73_k0t3g")
+test_skill_8_button_down = ExtResource("74_5nbax")
+test_skill_9_button_normal = ExtResource("75_uhpa8")
+test_skill_9_button_down = ExtResource("76_68qcf")
+test_skill_10_button_normal = ExtResource("77_2bra8")
+test_skill_10_button_down = ExtResource("78_8trut")
+test_skill_11_button_normal = ExtResource("79_d3hrg")
+test_skill_11_button_down = ExtResource("80_4s774")
+
+[node name="Attackbutton4" type="TextureButton" parent="PlayerUI/Buttons/HeavenButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.795
+anchor_bottom = 2.355
+offset_left = 670.461
+offset_top = 907.388
+offset_right = 1838.66
+offset_bottom = 1632.19
+scale = Vector2(0.115, 0.115)
+texture_normal = ExtResource("4_4revw")
+texture_pressed = ExtResource("11_mr243")
+texture_hover = ExtResource("4_4revw")
+script = ExtResource("30_bgbie")
+test_skill_1_button_normal = ExtResource("59_ck3ta")
+test_skill_1_button_down = ExtResource("60_j0g0f")
+test_skill_2_button_normal = ExtResource("61_e4fro")
+test_skill_2_button_down = ExtResource("62_327jj")
+test_skill_3_button_normal = ExtResource("63_y56h2")
+test_skill_3_button_down = ExtResource("64_l6yo5")
+test_skill_4_button_normal = ExtResource("65_cbos4")
+test_skill_4_button_down = ExtResource("66_6mqry")
+test_skill_5_button_normal = ExtResource("67_euste")
+test_skill_5_button_down = ExtResource("68_h5fhl")
+test_skill_6_button_normal = ExtResource("69_qph2w")
+test_skill_6_button_down = ExtResource("70_pg2ot")
+test_skill_7_button_normal = ExtResource("71_8f5p3")
+test_skill_7_button_down = ExtResource("72_nii5y")
+test_skill_8_button_normal = ExtResource("73_k0t3g")
+test_skill_8_button_down = ExtResource("74_5nbax")
+test_skill_9_button_normal = ExtResource("75_uhpa8")
+test_skill_9_button_down = ExtResource("76_68qcf")
+test_skill_10_button_normal = ExtResource("77_2bra8")
+test_skill_10_button_down = ExtResource("78_8trut")
+test_skill_11_button_normal = ExtResource("79_d3hrg")
+test_skill_11_button_down = ExtResource("80_4s774")
+
+[node name="Data" type="Control" parent="PlayerUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HellData" type="Control" parent="PlayerUI/Data"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HellHeartData" type="Control" parent="PlayerUI/Data/HellData"]
+anchors_preset = 0
+offset_top = -66.3207
+offset_right = 40.0
+offset_bottom = -26.3207
+
+[node name="HellHeartPanel" type="Panel" parent="PlayerUI/Data/HellData/HellHeartData"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+offset_left = 522.048
+offset_top = 769.723
+offset_right = 801.823
+offset_bottom = 809.723
+theme_override_styles/panel = SubResource("StyleBoxFlat_awxep")
+
+[node name="HellHeartTextContainer" type="HBoxContainer" parent="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="HellHeartText" type="Label" parent="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel/HellHeartTextContainer"]
+z_index = 1
+layout_mode = 2
+text = "HEART"
+label_settings = SubResource("LabelSettings_8l7pn")
+horizontal_alignment = 3
+vertical_alignment = 2
+
+[node name="HellHeartBar" type="ProgressBar" parent="PlayerUI/Data/HellData/HellHeartData/HellHeartPanel"]
+custom_minimum_size = Vector2(281.57, 40)
+layout_mode = 0
+offset_left = 0.00030579
+offset_top = -0.000613318
+offset_right = 281.57
+offset_bottom = 39.9994
+scale = Vector2(0.992759, 1.02564)
+theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2m07e")
+step = 0.0
+script = ExtResource("15_5slww")
+
+[node name="HellMagiaData" type="Control" parent="PlayerUI/Data/HellData"]
+anchors_preset = 0
+offset_top = -13.0632
+offset_right = 40.0
+offset_bottom = 26.9368
+
+[node name="HellMagiaPanel" type="Panel" parent="PlayerUI/Data/HellData/HellMagiaData"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+offset_left = 522.048
+offset_top = 769.723
+offset_right = 801.823
+offset_bottom = 809.723
+theme_override_styles/panel = SubResource("StyleBoxFlat_awxep")
+
+[node name="HellMagiaTextContainer" type="HBoxContainer" parent="PlayerUI/Data/HellData/HellMagiaData/HellMagiaPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="HellMagiaText" type="Label" parent="PlayerUI/Data/HellData/HellMagiaData/HellMagiaPanel/HellMagiaTextContainer"]
+z_index = 1
+layout_mode = 2
+text = "MAGIA"
+label_settings = SubResource("LabelSettings_8l7pn")
+horizontal_alignment = 3
+vertical_alignment = 2
+
+[node name="HellMagiaBar" type="ProgressBar" parent="PlayerUI/Data/HellData/HellMagiaData/HellMagiaPanel"]
+custom_minimum_size = Vector2(281.57, 40)
+layout_mode = 0
+offset_left = 0.00030579
+offset_top = -0.000613318
+offset_right = 281.57
+offset_bottom = 39.9994
+scale = Vector2(0.992759, 1.02564)
+theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ryeqi")
+step = 1.0
+
+[node name="HeavenData" type="Control" parent="PlayerUI/Data"]
+anchors_preset = 0
+offset_left = 566.137
+offset_right = 606.137
+offset_bottom = 40.0
+
+[node name="HeavenHeartData" type="Control" parent="PlayerUI/Data/HeavenData"]
+anchors_preset = 0
+offset_top = -66.3207
+offset_right = 40.0
+offset_bottom = -26.3207
+
+[node name="HeavenHeartPanel" type="Panel" parent="PlayerUI/Data/HeavenData/HeavenHeartData"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+offset_left = 522.048
+offset_top = 769.723
+offset_right = 801.823
+offset_bottom = 809.723
+theme_override_styles/panel = SubResource("StyleBoxFlat_awxep")
+
+[node name="HeavenHeartTextContainer" type="HBoxContainer" parent="PlayerUI/Data/HeavenData/HeavenHeartData/HeavenHeartPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="HeavenHeartText" type="Label" parent="PlayerUI/Data/HeavenData/HeavenHeartData/HeavenHeartPanel/HeavenHeartTextContainer"]
+z_index = 1
+layout_mode = 2
+text = "HEART"
+label_settings = SubResource("LabelSettings_8l7pn")
+horizontal_alignment = 3
+vertical_alignment = 2
+
+[node name="HeavenHeartBar" type="ProgressBar" parent="PlayerUI/Data/HeavenData/HeavenHeartData/HeavenHeartPanel"]
+custom_minimum_size = Vector2(281.57, 40)
+layout_mode = 2
+offset_left = -1.00186
+offset_top = -0.000613318
+offset_right = 280.568
+offset_bottom = 39.9994
+theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2m07e")
+step = 0.0
+script = ExtResource("17_kebos")
+
+[node name="HeavenMagiaData" type="Control" parent="PlayerUI/Data/HeavenData"]
+anchors_preset = 0
+offset_top = -13.0632
+offset_right = 40.0
+offset_bottom = 26.9368
+
+[node name="HeavenMagiaPanel" type="Panel" parent="PlayerUI/Data/HeavenData/HeavenMagiaData"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+offset_left = 522.048
+offset_top = 769.723
+offset_right = 801.823
+offset_bottom = 809.723
+theme_override_styles/panel = SubResource("StyleBoxFlat_awxep")
+
+[node name="HeavenMagiaTextContainer" type="HBoxContainer" parent="PlayerUI/Data/HeavenData/HeavenMagiaData/HeavenMagiaPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="HeavenMagiaText" type="Label" parent="PlayerUI/Data/HeavenData/HeavenMagiaData/HeavenMagiaPanel/HeavenMagiaTextContainer"]
+z_index = 1
+layout_mode = 2
+text = "MAGIA"
+label_settings = SubResource("LabelSettings_8l7pn")
+horizontal_alignment = 3
+vertical_alignment = 2
+
+[node name="HeavenMagiaBar" type="ProgressBar" parent="PlayerUI/Data/HeavenData/HeavenMagiaData/HeavenMagiaPanel"]
+custom_minimum_size = Vector2(281.57, 40)
+layout_mode = 0
+offset_left = 0.000366948
+offset_top = -0.000613318
+offset_right = 281.57
+offset_bottom = 39.9994
+scale = Vector2(0.992759, 1.02564)
+theme_override_styles/background = SubResource("StyleBoxFlat_s1u77")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ryeqi")
+step = 0.25
+
+[node name="KEYCHAINTESTING" type="Control" parent="PlayerUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("66_5g7pt")
+
+[node name="HvnDown" type="Sprite2D" parent="."]
+position = Vector2(618, 392)
+rotation = 0.0506095
+scale = Vector2(0.189191, 0.189191)
+
+[node name="HllDown" type="Sprite2D" parent="."]
+position = Vector2(463, 438)
+rotation = -3.10526
+scale = Vector2(-0.159953, -0.159953)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 2
+position = Vector2(949, 359)
+script = ExtResource("136_dl68s")
+shake_magnitude = 100.0
+shake_duration = 1.0
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("136_sl4ww")
+metadata/_custom_type_script = "uid://ddmhbf62jjwlv"
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+position = Vector2(949, 359)
+script = ExtResource("136_crg2r")
+tween_resource = SubResource("Resource_dl68s")
+draw_limits = true
+metadata/_custom_type_script = "uid://bbl8e0652fcdb"
+
+[connection signal="clown_skill_search" from="." to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_first_action_committed"]
+[connection signal="heaven_disable" from="." to="PlayerSpots/HeavenTb" method="_on_turn_based_heaven_disable"]
+[connection signal="heaven_enable" from="." to="PlayerSpots/HeavenTb" method="_on_turn_based_heaven_enable"]
+[connection signal="hell_disable" from="." to="PlayerSpots/HellTb" method="_on_turn_based_hell_disable"]
+[connection signal="hell_enable" from="." to="PlayerSpots/HellTb" method="_on_turn_based_hell_enable"]
+[connection signal="heaven_ID_5_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_heaven_id_5_wear_off_set"]
+[connection signal="hell_ID_3_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_hell_id_3_wear_off_set"]
+[connection signal="skill_effect_wear_off_set" from="SkillManager" to="StatusEffects" method="_on_skill_manager_skill_effect_wear_off_set"]
+[connection signal="clown_damage_taken" from="DamageCalculation" to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_damage_calculation_clown_damage_taken"]
+[connection signal="heaven_damage_taken" from="DamageCalculation" to="PlayerSpots/HeavenTb" method="_on_heaven_damage_taken"]
+[connection signal="hell_damage_taken" from="DamageCalculation" to="PlayerSpots/HellTb" method="_on_hell_damage_taken"]
+[connection signal="action_committed" from="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" to="." method="_on_clown_tb_action_committed"]
+[connection signal="skill_4_animation_buffer_change" from="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" to="." method="clown_skill_4_animation_buffer_set"]
+[connection signal="heaven_blocked" from="PlayerSpots/HeavenTb" to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_heaven_blocked"]
+[connection signal="heaven_parried" from="PlayerSpots/HeavenTb" to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_heaven_parried"]
+[connection signal="hell_blocked" from="PlayerSpots/HellTb" to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_hell_blocked"]
+[connection signal="hell_parried" from="PlayerSpots/HellTb" to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_hell_parried"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="." method="_on_hell_action_commited_skill_1"]
+[connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton1" to="PlayerUI/Buttons/HellButtons/Attackbutton1" method="_on_pressed"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="." method="_on_hell_action_commited_skill_2"]
+[connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton2" to="PlayerUI/Buttons/HellButtons/Attackbutton2" method="_on_pressed"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="." method="_on_hell_action_commited_skill_3"]
+[connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton3" to="PlayerUI/Buttons/HellButtons/Attackbutton3" method="_on_pressed"]
+[connection signal="hell_action_commited" from="PlayerUI/Buttons/HellButtons/Attackbutton4" to="." method="_on_hell_action_commited_skill_4"]
+[connection signal="pressed" from="PlayerUI/Buttons/HellButtons/Attackbutton4" to="PlayerUI/Buttons/HellButtons/Attackbutton4" method="_on_pressed"]
+[connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="." method="_on_heaven_action_commited_skill_1"]
+[connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton1" to="PlayerUI/Buttons/HeavenButtons/Attackbutton1" method="_on_pressed"]
+[connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="." method="_on_heaven_action_commited_skill_2"]
+[connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_attackbutton_2_pressed"]
+[connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton2" to="PlayerUI/Buttons/HeavenButtons/Attackbutton2" method="_on_pressed"]
+[connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton3" to="." method="_on_heaven_action_commited_skill_3"]
+[connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton3" to="PlayerUI/Buttons/HeavenButtons/Attackbutton3" method="_on_pressed"]
+[connection signal="heaven_action_commited" from="PlayerUI/Buttons/HeavenButtons/Attackbutton4" to="." method="_on_heaven_action_commited_skill_4"]
+[connection signal="pressed" from="PlayerUI/Buttons/HeavenButtons/Attackbutton4" to="PlayerUI/Buttons/HeavenButtons/Attackbutton4" method="_on_pressed"]

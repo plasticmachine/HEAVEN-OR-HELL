@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=3 uid="uid://7yedbyh0xukp"]
+
+[ext_resource type="Script" uid="uid://bj1g1t1vnmiuh" path="res://Scripts/SoundScripts/clown_sound_manager.gd" id="1_qa1r4"]
+[ext_resource type="AudioStream" uid="uid://bux282g0ad1so" path="res://Audio/Sounds/character_sounds/BLOCK_TEST.mp3" id="2_18mn5"]
+[ext_resource type="AudioStream" uid="uid://yh8c3st86lqa" path="res://Audio/Sounds/character_sounds/PARRY_UPDATE_LATER.mp3" id="3_1w3t6"]
+[ext_resource type="AudioStream" uid="uid://de302c4ieyf25" path="res://Audio/Sounds/character_sounds/clown_sounds/CLOWN_HEAL_TEST.mp3" id="3_18mn5"]
+[ext_resource type="AudioStream" uid="uid://vyy0d3s7f5mv" path="res://Audio/Sounds/character_sounds/clown_sounds/CLOWN_SLASH.mp3" id="4_qa1r4"]
+[ext_resource type="AudioStream" uid="uid://dnhk355v4tdkr" path="res://Audio/Sounds/character_sounds/BUBBLE_TEST.mp3" id="5_neuh7"]
+[ext_resource type="AudioStream" uid="uid://derpx1yv0bv88" path="res://Audio/Sounds/character_sounds/BUBBLE_POP_TEST.mp3" id="6_xjqtw"]
+[ext_resource type="AudioStream" uid="uid://ct8wynq8hbvd8" path="res://Audio/Sounds/character_sounds/clown_sounds/CLOWN_BUFF_TEST.mp3" id="7_qa1r4"]
+[ext_resource type="AudioStream" uid="uid://br7x2ms1nmbu8" path="res://Audio/Sounds/character_sounds/clown_sounds/CLOWN_DEBUFF_TEST.mp3" id="8_18mn5"]
+[ext_resource type="AudioStream" uid="uid://cnbxaofqiocbf" path="res://Audio/Sounds/character_sounds/SILLY_BUFF_TEST.mp3" id="9_hl28m"]
+
+[node name="ClownSoundManager" type="Node2D"]
+script = ExtResource("1_qa1r4")
+
+[node name="BLOCK" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_18mn5")
+
+[node name="HEAL" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_18mn5")
+pitch_scale = 1.69
+
+[node name="PARRY" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1w3t6")
+volume_db = -7.061
+
+[node name="SLASH" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qa1r4")
+volume_db = -10.645
+
+[node name="SHOOT" type="AudioStreamPlayer" parent="."]
+
+[node name="BUBBLE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_neuh7")
+
+[node name="BUBBLEPOP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_xjqtw")
+
+[node name="BUFF" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_qa1r4")
+pitch_scale = 1.48
+
+[node name="DEBUFF" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_18mn5")
+pitch_scale = 1.4
+
+[node name="ClownSounds" type="Node" parent="."]
+
+[node name="SILLYBUFF" type="AudioStreamPlayer" parent="ClownSounds"]
+stream = ExtResource("9_hl28m")
+pitch_scale = 1.97

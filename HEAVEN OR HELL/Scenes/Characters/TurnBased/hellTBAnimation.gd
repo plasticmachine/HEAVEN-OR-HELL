@@ -33,7 +33,7 @@ func _on_parry_area_area_shape_entered(area_rid, area, area_shape_index, local_s
 	hellTBVFX.find_effect_spot()
 	hellTBVFX.play("magia_use")
 	cameraTricks.camera_shake_enable()
-	hit_stop(0.05, .1)
+	hit_stop(0.05, .2)
 	await get_tree().create_timer(parry_blink_timer_sec).timeout
 	hellTBAnimation.play("disable")
 
