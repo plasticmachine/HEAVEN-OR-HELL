@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://ccnn3ivtelk0e"]
 
-[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_r2u21"]
+[ext_resource type="Script" uid="uid://dmh5rjdgjawbh" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_r2u21"]
 
 [resource]
 script = ExtResource("1_r2u21")
@@ -8,21 +8,23 @@ character_name = "Hell"
 move_speed = 3500
 run_speed = 8000
 max_heart = 300
-current_heart = 300
+current_heart = 127
 max_magia = 300
-current_magia = 285
+current_magia = 260
 malice = 10
-deviltry = 10
+deviltry = 20
 guts = 10.0
 pain_tolerance = 1.6
 luck = 0
 crit = 0
 crit_level = 0
-current_tempo = 1
-current_skill_power = 55
+current_tempo = 5
+current_skill_power = 0
 status_effect_1 = 0
 status_effect_2 = 0
 status_effect_3 = 0
 special_status_effect_1 = 0
 special_status_effect_2 = 0
 special_status_effect_3 = 0
+current_stat_change = 5
+current_skill_used = "Creative Corruption"

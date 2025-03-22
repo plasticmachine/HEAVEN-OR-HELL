@@ -1,9 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://tcfwrymqvqb4"]
+[gd_scene load_steps=20 format=3 uid="uid://tcfwrymqvqb4"]
 
 [ext_resource type="Script" uid="uid://ciw2sfdtlt7vu" path="res://Scenes/Characters/TurnBased/hellTBAnimation.gd" id="1_8t303"]
 [ext_resource type="Texture2D" uid="uid://dnykxh2n6vx0d" path="res://art/HELL/turnbased/block/Dark Block Test.png" id="1_qsudq"]
 [ext_resource type="Texture2D" uid="uid://bqttc04kfpwqe" path="res://art/HELL/turnbased/idle_resize/dark/Dark.png" id="2_8srhe"]
-[ext_resource type="Texture2D" uid="uid://pu0n8t11kll2" path="res://art/HELL/turnbased/block/Block Test.png" id="2_nd8ll"]
 [ext_resource type="Texture2D" uid="uid://cced5gxeab50e" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-1.png" id="3_8srhe"]
 [ext_resource type="Script" uid="uid://xjvavbp0vun0" path="res://Scripts/Mechanics/Keychains/testing stuff/inventory.gd" id="4_17j3l"]
 [ext_resource type="Texture2D" uid="uid://et21sujlee7w" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-2.png" id="4_s7wec"]
@@ -22,9 +21,21 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nd8ll")
+"texture": ExtResource("11_vermt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vermt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vermt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vermt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vermt")
 }],
-"loop": true,
+"loop": false,
 "name": &"block",
 "speed": 5.0
 }, {
@@ -32,7 +43,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_qsudq")
 }],
-"loop": true,
+"loop": false,
 "name": &"block_fail",
 "speed": 5.0
 }, {
@@ -172,7 +183,7 @@ modulate = Color(0.712129, 0.712129, 0.712129, 1)
 position = Vector2(300, 759)
 scale = Vector2(0.760001, 0.760001)
 sprite_frames = SubResource("SpriteFrames_wepe7")
-animation = &"idle"
+animation = &"block"
 autoplay = "idle"
 
 [node name="InventoryManager" type="Node2D" parent="."]

@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://c76wbckoyybph"]
 
-[ext_resource type="Script" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_lx6vb"]
+[ext_resource type="Script" uid="uid://dmh5rjdgjawbh" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_lx6vb"]
 
 [resource]
 script = ExtResource("1_lx6vb")
@@ -8,9 +8,9 @@ character_name = "Heaven"
 move_speed = 3500
 run_speed = 8000
 max_heart = 300
-current_heart = 103
+current_heart = 300
 max_magia = 300
-current_magia = 285
+current_magia = 270
 malice = 15
 deviltry = 10
 guts = 10.0
@@ -19,10 +19,12 @@ luck = 0
 crit = 0
 crit_level = 0
 current_tempo = 3
-current_skill_power = 35
+current_skill_power = 55
 status_effect_1 = 0
 status_effect_2 = 0
 status_effect_3 = 0
 special_status_effect_1 = 0
 special_status_effect_2 = 0
 special_status_effect_3 = 0
+current_stat_change = 15
+current_skill_used = "Acquire Intent"

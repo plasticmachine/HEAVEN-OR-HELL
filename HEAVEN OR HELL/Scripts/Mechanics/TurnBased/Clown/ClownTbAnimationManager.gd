@@ -31,6 +31,9 @@ signal skill_4_animation_buffer_change
 @onready var SkipHeavenBlock := false
 @onready var SkipHellBlock := false
 
+#SYSTEM TEXT VARIABLES
+@onready var current_stat_change: int
+
 @onready var PHASE: int = 1
 @onready var last_alive: int #1 is Heaven #2 is Hell
 
@@ -274,16 +277,19 @@ func skill_2_effect():
 			clown_effect_animation.play("basic_buff")
 			ClownSounds.CLOWN_BUFF.play()
 			clownstats.add_malice(skill_2_malice_buff)
+			current_stat_change = skill_2_malice_buff
 		3:
 			clown_effect_animation.find_effect_spot()
 			clown_effect_animation.play("basic_buff")
 			ClownSounds.CLOWN_BUFF.play()
 			clownstats.add_deviltry(skill_2_deviltry_buff)
+			current_stat_change = skill_2_deviltry_buff
 		4:
 			clown_effect_animation.find_effect_spot()
 			clown_effect_animation.play("basic_debuff")
 			ClownSounds.CLOWN_DEBUFF.play()
 			clownstats.subtract_deviltry(skill_2_deviltry_buff)
+			current_stat_change = skill_2_deviltry_buff
 	clownTB_animation.set("parameters/conditions/BUFF1", false)
 	
 	await get_tree().create_timer(skill_2_animation_buffer).timeout

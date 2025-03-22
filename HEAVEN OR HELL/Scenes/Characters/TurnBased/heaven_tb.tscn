@@ -194,7 +194,7 @@ modulate = Color(0.712129, 0.712129, 0.712129, 1)
 position = Vector2(1576, 736)
 scale = Vector2(0.796082, 0.796082)
 sprite_frames = SubResource("SpriteFrames_1hfb2")
-animation = &"idle"
+animation = &"block"
 autoplay = "idle"
 
 [node name="InventoryManager" type="Node2D" parent="."]

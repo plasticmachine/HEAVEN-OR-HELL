@@ -795,6 +795,10 @@ position = Vector2(11, 181)
 script = ExtResource("1_h0a2a")
 debug_mode = true
 BOSS_ID = 3
+end_of_turn_buffer = 4
+heaven_animation_buffer = 4
+hell_animation_buffer = 4
+clown_animation_buffer = 4
 
 [node name="SkillManager" type="Node2D" parent="." node_paths=PackedStringArray("enemy_effect_animation", "enemy_effect_animation_support")]
 scale = Vector2(0.998722, 1.0287)
@@ -869,6 +873,10 @@ ID_2_hell_skill_name = "Shoot!"
 ID_2_hell_tempo = 1
 ID_2_hell_power = 55
 ID_2_hell_cost_1 = 15
+ID_3_hell_skill_name = "Creative Corruption"
+ID_3_hell_tempo = 5
+ID_3_hell_cost_1 = 20
+ID_3_hell_increase_1 = 5
 
 [node name="DamageCalculation" type="Node2D" parent="."]
 script = ExtResource("2_jufi4")
@@ -1063,7 +1071,7 @@ texture = ExtResource("2_fiwds")
 [node name="Background2" type="Sprite2D" parent="TestPlayerSpots"]
 z_index = -785
 position = Vector2(945.779, 360)
-scale = Vector2(0.996296, 0.996296)
+scale = Vector2(1.07629, 1.07629)
 texture = ExtResource("130_gh4wy")
 
 [node name="HvnUplft1" type="Sprite2D" parent="TestPlayerSpots"]

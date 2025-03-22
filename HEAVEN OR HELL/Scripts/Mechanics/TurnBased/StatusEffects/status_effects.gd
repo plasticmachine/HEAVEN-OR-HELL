@@ -113,11 +113,13 @@ func check_if_effects_worn_off():
 			#subtracts the malice that the effect gave after a set of turns
 			heaven_effect_animation.find_effect_spot()
 			heaven_effect_animation.play("basic_debuff")
+			HeavenSounds.HEAVEN_DEBUFF.play()
 			heavenstats.subtract_malice(SkillManager.ID_3_heaven_increase_1)
 		ID_5_Heaven_disable_turn:
 			#subtracts all stats that the effect gave after a set of turns
 			heaven_effect_animation.find_effect_spot_hell()
 			heaven_effect_animation.play("basic_debuff")
+			HeavenSounds.HEAVEN_DEBUFF.play()
 			hellstats.subtract_malice(SkillManager.ID_5_heaven_increase_1)
 			hellstats.subtract_malice(SkillManager.ID_5_heaven_increase_1)
 		holy_swords_disable_turn:
@@ -130,4 +132,5 @@ func check_if_effects_worn_off():
 		ID_3_Hell_disable_turn:
 			hell_effect_animation.find_effect_spot()
 			hell_effect_animation.play("basic_debuff")
+			HellSounds.HEAVEN_DEBUFF.play()
 			hellstats.subtract_deviltry(SkillManager.ID_3_hell_increase_1)

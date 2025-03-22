@@ -30,10 +30,16 @@ var BH_defense: float
 @export var special_status_effect_1: int
 @export var special_status_effect_2: int
 @export var special_status_effect_3: int
+
+#SYSTEM TEXT VARIABLES
+@export var current_stat_change := 0
+@export var current_skill_used: String
+
 ### MOVESPEED FUNCTIONS
 func add_move_speed(amount: int) -> void:
 		move_speed += amount
 		print_debug(character_name + " has " + str(move_speed) + " movement speed! (+ " + str(amount) + ")")
+		current_stat_change = amount
 	#emit_signal("stat_changed", "current_heart", current_heart)
 func subtract_move_speed(amount: int) -> void:
 	if move_speed >= 1:
@@ -42,13 +48,16 @@ func subtract_move_speed(amount: int) -> void:
 	else:
 		move_speed = 0
 		print_debug(character_name + " is as slow as a snail!!! ")
+	current_stat_change = amount
 	#emit_signal("stat_changed", "current_heart", current_heart)
 func multiply_move_speed(factor: float) -> void:
 	move_speed = int(move_speed * factor)
 	#emit_signal("stat_changed", "current_heart", current_heart)
+	current_stat_change = factor
 func divide_move_speed(divisor: float) -> void:
 	if divisor != 0:
 		move_speed = int(move_speed / divisor)
+	current_stat_change = divisor
 ### HEART FUNCTIONS
 func add_heart(amount: int) -> void:
 	if max_heart > current_heart:
@@ -60,7 +69,7 @@ func add_heart(amount: int) -> void:
 	else:
 		current_heart = max_heart
 		print_debug(character_name + "'s max health is " + str(max_heart))
-	
+	current_stat_change = amount
 	#emit_signal("stat_changed", "current_heart", current_heart)
 func subtract_heart(amount: int) -> void:
 	if current_heart >= 1:
@@ -68,8 +77,8 @@ func subtract_heart(amount: int) -> void:
 		print_debug(character_name + " has " + str(current_heart) + " heart! (-" + str(amount) + ")")
 	else:
 		current_heart = 0
-		
 		print_debug(character_name + " is already fucking dead!!! ")
+	current_stat_change = amount
 	#emit_signal("stat_changed", "current_heart", current_heart)
 func multiply_heart(factor: float) -> void:
 	current_heart = int(current_heart * factor)
@@ -79,6 +88,7 @@ func divide_heart(divisor: float) -> void:
 	if divisor != 0:
 		current_heart = int(current_heart / divisor)
 	#emit_signal("stat_changed", "current_heart", current_heart)
+	current_stat_change = divisor
 ### MAGIA FUNCTIONS
 func add_magia(amount: int) -> void:
 	if max_magia > current_magia:
@@ -90,6 +100,7 @@ func add_magia(amount: int) -> void:
 	else:
 		current_magia = max_magia
 		print_debug(character_name + "'s max magia is " + str(max_magia))
+	current_stat_change = amount
 func subtract_magia(amount: int) -> void:
 	
 	if current_magia >= 1:
@@ -98,19 +109,23 @@ func subtract_magia(amount: int) -> void:
 	else:
 		current_magia = 0
 		print_debug(character_name + " is all out of juice!!! ")
+	current_stat_change = amount
 func multiply_magia(factor: float) -> void:
 	current_magia = int(current_magia * factor)
 	print_debug(character_name + " has " + str(current_magia) + " magia! (*" + str(factor) + ")")
 	#emit_signal("stat_changed", "current_heart", current_heart)
+	current_stat_change = factor
 func divide_magia(divisor: float) -> void:
 
 	if divisor != 0:
 		current_magia = int(current_magia / divisor)
 	#emit_signal("stat_changed", "current_heart", current_heart)
+	current_stat_change = divisor
 ### MALICE FUNCTIONS
 func add_malice(amount: int) -> void:
 		malice += amount
 		print_debug(character_name + " has " + str(malice) + " malice! (+" + str(amount) + ")")
+		current_stat_change = amount
 func subtract_malice(amount: int) -> void:
 	if malice >= 1:
 		malice -= amount
@@ -118,19 +133,23 @@ func subtract_malice(amount: int) -> void:
 	else:
 		malice = 0
 		print_debug(character_name + "'s violence has come to an end. ")
+	current_stat_change = amount
 func multiply_malice(factor: float) -> void:
 
 	malice = int(malice * factor)
 	print_debug(character_name + " has " + str(malice) + " malice! (*" + str(factor) + ")")
 	#move_speed = int(malice * factor)
+	current_stat_change = factor
 func divide_malice(divisor: float) -> void:
 	if divisor != 0:
 		malice = int(malice / divisor)
 	print_debug(character_name + " has " + str(malice) + " malice! (/" + str(divisor) + ")")
+	current_stat_change = divisor
 ### DEVILTRY FUNCTIONS
 func add_deviltry(amount: int) -> void:
 		deviltry += amount
 		print_debug(character_name + " has " + str(deviltry) + " deviltry! (+" + str(amount) + ")")
+		current_stat_change = amount
 func subtract_deviltry(amount: int) -> void:
 	if deviltry >= 1:
 		deviltry -= amount
@@ -138,14 +157,17 @@ func subtract_deviltry(amount: int) -> void:
 	else:
 		deviltry = 0
 		print_debug(character_name + "'s demons have gone quiet. ")
+	current_stat_change = amount
 func multiply_deviltry(factor: float) -> void:
 	deviltry = int(deviltry * factor)
 	print_debug(character_name + " has " + str(deviltry) + " deviltry! (*" + str(factor) + ")")
 	#emit_signal("stat_changed", "current_heart", current_heart)
+	current_stat_change = factor
 func divide_deviltry(divisor: float) -> void:
 	if divisor != 0:
 		deviltry = int(deviltry / divisor)
 	print_debug(character_name + " has " + str(deviltry) + " deviltry! (/" + str(divisor) + ")")
+	current_stat_change = divisor
 	#emit_signal("stat_changed", "current_heart", current_heart)
 ### GUTS FUNCTIONS
 func add_guts(amount: int) -> void:
@@ -155,6 +177,7 @@ func add_guts(amount: int) -> void:
 	else: 
 		guts = 50
 		print_debug(character_name + "'s max guts is 50")
+	current_stat_change = amount
 func subtract_guts(amount: int) -> void:
 	
 	if guts >= 1:
@@ -163,17 +186,21 @@ func subtract_guts(amount: int) -> void:
 	else:
 		guts = 0
 		print_debug(character_name + "'can draw inspiration from the world no longer.")
+	current_stat_change = amount
 func multiply_guts(factor: float) -> void:
 	guts = int(guts * factor)
 	#emit_signal("stat_changed", "current_heart", current_heart)
+	current_stat_change = factor
 func divide_guts(divisor: float) -> void:
 	if divisor != 0:
 		guts = int(guts / divisor)
 	#emit_signal("stat_changed", "current_heart", current_heart
+	current_stat_change = divisor
 ### LUCK FUNCTIONS
 func add_luck(amount: int) -> void:
 		luck += amount
 		print_debug(character_name + " has " + str(luck) + " luck! (+" + str(amount) + ")")
+		current_stat_change = amount
 func subtract_luck(amount: int) -> void:
 	
 	if luck >= 1:
@@ -182,13 +209,16 @@ func subtract_luck(amount: int) -> void:
 	else:
 		luck = 0
 		print_debug(character_name + " has seen too many black cats. ")
+	current_stat_change = amount
 func multiply_luck(factor: float) -> void:
 	luck = int(luck * factor)
 	#emit_signal("stat_changed", "current_heart", current_heart)
+	current_stat_change = factor
 func divide_luck(divisor: float) -> void:
 	if divisor != 0:
 		luck = int(luck / divisor)
 	#emit_signal("stat_changed", "current_heart", current_heart)
+	current_stat_change = divisor
 ### CRIT FUNCTIONS
 func add_crit(amount: int) -> void:
 		crit += amount
@@ -208,6 +238,7 @@ func add_crit(amount: int) -> void:
 			print_debug("with a " + str(crit)+ "% chance " + character_name + " can hit single crits!!")
 			print_debug("with a " + str(crit-100) + "% chance " + character_name + " can hit double crits!!")
 			print_debug("with a " + str(crit-200) + "% chance " + character_name + " can hit triple crits!!")
+		current_stat_change = amount
 func subtract_crit(amount: int) -> void:
 	
 	if crit >= 1:
@@ -216,13 +247,16 @@ func subtract_crit(amount: int) -> void:
 	else:
 		crit = 0
 		print_debug(character_name + " has been completely pacified.")
+	current_stat_change = amount
 func multiply_crit(factor: float) -> void:
 	crit = int(crit * factor)
 	#emit_signal("stat_changed", "current_heart", current_heart)
+	current_stat_change = factor
 func divide_crit(divisor: float) -> void:
 	if divisor != 0:
 		crit = int(crit / divisor)
 	#emit_signal("stat_changed", "current_heart", current_heart
+	current_stat_change = divisor
 
 
 ### SKILL FUNCTIONS

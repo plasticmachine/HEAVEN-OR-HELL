@@ -19,7 +19,7 @@ func heaven_to_clown_malice_damagecalc():
 	total_damage = outgoing_damage / clownstats.guts * variance.pick_random()
 	clownstats.subtract_heart(total_damage)
 	clown_damage_taken.emit()
-	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_DAMAGING_CLOWN_MALICE")
+	#DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_DAMAGING_CLOWN_MALICE")
 func heaven_to_clown_deviltry_damagecalc():
 	#var total_damage: int
 	var outgoing_damage = heavenstats.current_skill_power * heavenstats.deviltry

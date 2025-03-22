@@ -10,7 +10,7 @@ SYSTEM: Using a MALICE skill {{hellstats.character_name}} hit {{heavenstats.char
 => END
 ~ HELL_DAMAGING_HEAVEN_DEVILTRY
 SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
-=> END!	
+=> END
 ~ HEAVEN_DAMAGING_CLOWN_MALICE
 SYSTEM: Using a MALICE skill {{heavenstats.character_name}} hit {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
@@ -38,6 +38,13 @@ SYSTEM: Using a MALICE skill {{clownstats.character_name}} hit {{hellstats.chara
 SYSTEM: Using a DEVILTRY skill {{clownstats.character_name}} hit {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
 
+~ HEAVEN_USED_SKILL
+SYSTEM: {{heavenstats.character_name}} used {{heavenstats.current_skill_used}} !! [next=auto]
+=> END
+~ HELL_USED_SKILL
+SYSTEM: {{hellstats.character_name}} used {{hellstats.current_skill_used}} !! [next=auto]
+=> END
+
 ##PARRY SYSTEM TEXT
 ~ HEAVEN_PARRIED_CLOWN_MALICE
 SYSTEM: {{heavenstats.character_name}} PARRIED {{clownstats.character_name}}'s MALICE skill for {{DamageCalculation.total_damage}}!! [next=auto]
@@ -50,4 +57,145 @@ SYSTEM: {{hellstats.character_name}} PARRIED {{clownstats.character_name}}'s MAL
 => END
 ~ HELL_PARRIED_CLOWN_DEVILTRY
 SYSTEM: {{hellstats.character_name}} PARRIED {{clownstats.character_name}}'s DEVILTRY skill for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+
+
+
+##STAT CHANGE TEXT
+### CLOWN OUTBOUND STAT CHANGES
+~ CLOWN_DECREASED_HELL_GUTS
+SYSTEM: {{hellstats.character_name}}'s GUTS was decreased by {{clownstats.current_stat_change}} [next=auto]
+=> END
+~ CLOWN_DECREASED_HEAVEN_GUTS
+SYSTEM: {{heavenstats.character_name}}'s GUTS was decreased by {{clownstats.current_stat_change}} [next=auto]
+=> END
+### CLOWN SELF STAT CHANGES
+~ CLOWN_INCREASED_OWN_DEVILTRY
+SYSTEM: {{clownstats.character_name}}'s DEVILTRY was increased by {{clownstats.current_stat_change}}!! [next=auto]
+=> END
+~ CLOWN_DECREASED_OWN_DEVILTRY
+SYSTEM: {{clownstats.character_name}}'s DEVILTRY was decreased by -{{clownstats.current_stat_change}}!! [next=auto]
+=> END
+~ CLOWN_INCREASED_OWN_GUTS
+SYSTEM: {{clownstats.character_name}}'s GUTS was increased by {{clownstats.current_stat_change}}!! [next=auto]
+=> END
+~ CLOWN_DECREASED_OWN_GUTS
+SYSTEM: {{clownstats.character_name}}'s GUTS was decreased by -{{clownstats.current_stat_change}}!! [next=auto]
+~ CLOWN_INCREASED_OWN_MAX_HEART
+SYSTEM: {{clownstats.character_name}}'s MAX_HEART was increased by {{clownstats.current_stat_change}}!! [next=auto]
+=> END
+~ CLOWN_DECREASED_OWN_MAX_HEART
+SYSTEM: {{hellstats.character_name}}'s MAX_HEART was decreased by -{{clownstats.current_stat_change}}!! [next=auto]
+~ CLOWN_HEALS_OWN_HEART
+SYSTEM: {{clownstats.character_name}} healed himself {{clownstats.current_stat_change}} HEART!! [next=auto]
+=> END
+~ CLOWN_HURTS_OWN_HEART
+SYSTEM: {{clownstats.character_name}} hurt himself for -{{clownstats.current_stat_change}} HEART!! [next=auto]
+=> END
+~ CLOWN_REGENS_OWN_MAGIA
+SYSTEM: {{clownstats.character_name}} regenerated {{clownstats.current_stat_change}} MAGIA for himself!! [next=auto]
+=> END
+~ CLOWN_SPENDS_OWN_MAGIA
+SYSTEM: {{clownstats.character_name}} spent {{clownstats.current_stat_change}} of his own MAGIA!! [next=auto]
+=> END
+~ CLOWN_INCREASED_OWN_CRIT
+SYSTEM: {{clownstats.character_name}}'s CRIT was increased by {{clownstats.current_stat_change}}!! [next=auto]
+=> END
+~ CLOWN_DECREASED_OWN_CRIT
+SYSTEM: {{clownstats.character_name}}'s CRIT was decreased by -{{clownstats.current_stat_change}}!! [next=auto]
+~ CLOWN_INCREASED_OWN_LUCK
+SYSTEM: {{clownstats.character_name}}'s LUCK was increased by {{clownstats.current_stat_change}}!! [next=auto]
+=> END
+~ CLOWN_DECREASED_OWN_LUCK
+SYSTEM: {{clownstats.character_name}}'s LUCK was decreased by -{{clownstats.current_stat_change}}!! [next=auto]
+=> END
+
+### HELL SELF STAT CHANGES
+~ HELL_INCREASED_OWN_DEVILTRY
+SYSTEM: {{hellstats.character_name}}'s DEVILTRY was increased by {{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HELL_DECREASED_OWN_DEVILTRY
+SYSTEM: {{hellstats.character_name}}'s DEVILTRY was decreased by -{{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HELL_INCREASED_OWN_GUTS
+SYSTEM: {{hellstats.character_name}}'s GUTS was increased by {{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HELL_DECREASED_OWN_GUTS
+SYSTEM: {{hellstats.character_name}}'s GUTS was decreased by -{{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HELL_INCREASED_OWN_MAX_HEART
+SYSTEM: {{hellstats.character_name}}'s MAX_HEART was increased by {{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HELL_DECREASED_OWN_MAX_HEART
+SYSTEM: {{hellstats.character_name}}'s MAX_HEART was decreased by -{{hellstats.current_stat_change}}!! [next=auto]
+~ HELL_HEALS_OWN_HEART
+SYSTEM: {{hellstats.character_name}} healed himself {{hellstats.current_stat_change}} HEART!! [next=auto]
+=> END
+~ HELL_HURTS_OWN_HEART
+SYSTEM: {{hellstats.character_name}} hurt himself for -{{hellstats.current_stat_change}} HEART!! [next=auto]
+=> END
+~ HELL_REGENS_OWN_MAGIA
+SYSTEM: {{hellstats.character_name}} regenerated {{hellstats.current_stat_change}} MAGIA for himself!! [next=auto]
+=> END
+~ HELL_SPENDS_OWN_MAGIA
+SYSTEM: {{hellstats.character_name}} spent {{hellstats.current_stat_change}} of his own MAGIA!! [next=auto]
+=> END
+~ HELL_INCREASED_OWN_CRIT
+SYSTEM: {{hellstats.character_name}}'s CRIT was increased by {{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HELL_DECREASED_OWN_CRIT
+SYSTEM: {{hellstats.character_name}}'s CRIT was decreased by -{{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HELL_INCREASED_OWN_LUCK
+SYSTEM: {{hellstats.character_name}}'s LUCK was increased by {{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HELL_DECREASED_OWN_LUCK
+SYSTEM: {{hellstats.character_name}}'s LUCK was decreased by -{{hellstats.current_stat_change}}!! [next=auto]
+#HEAVEN SELF STAT CHANGES
+~ HEAVEN_INCREASED_OWN_DEVILTRY
+SYSTEM: {{hellstats.character_name}}'s DEVILTRY was increased by {{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HEAVEN_DECREASED_OWN_DEVILTRY
+SYSTEM: {{heavenstats.character_name}}'s DEVILTRY was decreased by -{{heavenstats.current_stat_change}}!! [next=auto]
+=> END
+~ HEAVEN_INCREASED_OWN_MALICE
+SYSTEM: {{heavenstats.character_name}}'s MALICE was increased by {{heavenstats.current_stat_change}}!! [next=auto]
+=> END
+~ HEAVEN_DECREASED_OWN_MALICE
+SYSTEM: {{heavenstats.character_name}}'s MALICE was decreased by -{{heavenstats.current_stat_change}}!! [next=auto]
+=> END
+~ HEAVEN_INCREASED_OWN_GUTS
+SYSTEM: {{hellstats.character_name}}'s GUTS was increased by {{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HEAVEN_DECREASED_OWN_GUTS
+SYSTEM: {{heavenstats.character_name}}'s GUTS was decreased by -{{heavenstats.current_stat_change}}!! [next=auto]
+=> END
+~ HEAVEN_INCREASED_OWN_MAX_HEART
+SYSTEM: {{hellstats.character_name}}'s MAX_HEART was increased by {{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HEAVEN_DECREASED_OWN_MAX_HEART
+SYSTEM: {{heavenstats.character_name}}'s MAX_HEART was decreased by -{{heavenstats.current_stat_change}}!! [next=auto]
+~ HEAVEN_HEALS_OWN_HEART
+SYSTEM: {{heavenstats.character_name}} healed himself {{heavenstats.current_stat_change}} HEART!! [next=auto]
+=> END
+~ HEAVEN_HURTS_OWN_HEART
+SYSTEM: {{heavenstats.character_name}} hurt himself for -{{heavenstats.current_stat_change}} HEART!! [next=auto]
+=> END
+~ HEAVEN_REGENS_OWN_MAGIA
+SYSTEM: {{heavenstats.character_name}} regenerated {{heavenstats.current_stat_change}} MAGIA for himself!! [next=auto]
+=> END
+~ HEAVEN_SPENDS_OWN_MAGIA
+SYSTEM: {{heavenstats.character_name}} spent {{heavenstats.current_stat_change}} of his own MAGIA!! [next=auto]
+=> END
+~ HEAVEN_INCREASED_OWN_CRIT
+SYSTEM: {{heavenstats.character_name}}'s CRIT was increased by {{heavenstats.current_stat_change}}!! [next=auto]
+=> END
+~ HEAVEN_DECREASED_OWN_CRIT
+SYSTEM: {{heavenstats.character_name}}'s CRIT was decreased by -{{heavenstats.current_stat_change}}!! [next=auto]
+=> END
+~ HEAVEN_INCREASED_OWN_LUCK
+SYSTEM: {{hellstats.character_name}}'s LUCK was increased by {{hellstats.current_stat_change}}!! [next=auto]
+=> END
+~ HEAVEN_DECREASED_OWN_LUCK
+SYSTEM: {{heavenstats.character_name}}'s LUCK was decreased by -{{heavenstats.current_stat_change}}!! [next=auto]
 => END
