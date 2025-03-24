@@ -1,12 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://dp1nvt4e540vv"]
+[gd_scene load_steps=13 format=3 uid="uid://dp1nvt4e540vv"]
 
 [ext_resource type="Script" uid="uid://btwaarpvneh18" path="res://Scenes/Characters/TurnBased/heaven_sound_manager.gd" id="1_0ludb"]
 [ext_resource type="AudioStream" uid="uid://yh8c3st86lqa" path="res://Audio/Sounds/character_sounds/PARRY_UPDATE_LATER.mp3" id="2_0ludb"]
 [ext_resource type="AudioStream" uid="uid://bux282g0ad1so" path="res://Audio/Sounds/character_sounds/BLOCK_TEST.mp3" id="2_c3qsn"]
 [ext_resource type="AudioStream" uid="uid://dgoywte3ugajo" path="res://Audio/Sounds/character_sounds/SLASH_UPDATE_LATER.wav" id="3_0ludb"]
 [ext_resource type="AudioStream" uid="uid://dnhk355v4tdkr" path="res://Audio/Sounds/character_sounds/BUBBLE_TEST.mp3" id="4_ait6o"]
+[ext_resource type="AudioStream" uid="uid://b6acirfjncyqd" path="res://Audio/Sounds/character_sounds/TEST_HEAL.mp3" id="4_h108n"]
 [ext_resource type="AudioStream" uid="uid://derpx1yv0bv88" path="res://Audio/Sounds/character_sounds/BUBBLE_POP_TEST.mp3" id="5_ksjc1"]
+[ext_resource type="AudioStream" uid="uid://d0ogusi8jhyc4" path="res://Audio/Sounds/character_sounds/MAGIA_TEST.mp3" id="5_wb5rt"]
 [ext_resource type="AudioStream" uid="uid://c4116u8rohjrg" path="res://Audio/Sounds/character_sounds/BUFF_TEST.mp3" id="6_ksjc1"]
+[ext_resource type="AudioStream" uid="uid://gy5k24n02hvq" path="res://Audio/Sounds/character_sounds/MAGIA_REGEN_TEST.mp3" id="6_mlt5h"]
 [ext_resource type="AudioStream" uid="uid://ct77nwjx2oalh" path="res://Audio/Sounds/character_sounds/DEBUFF_TEST.mp3" id="7_6se3n"]
 [ext_resource type="AudioStream" uid="uid://cnbxaofqiocbf" path="res://Audio/Sounds/character_sounds/SILLY_BUFF_TEST.mp3" id="8_c3qsn"]
 
@@ -19,6 +22,15 @@ stream = ExtResource("2_c3qsn")
 [node name="PARRY" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_0ludb")
 volume_db = -7.061
+
+[node name="HEAL" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h108n")
+
+[node name="MAGIAUSE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wb5rt")
+
+[node name="MAGIAREGEN" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mlt5h")
 
 [node name="SLASH" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_0ludb")

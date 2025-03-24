@@ -5,7 +5,6 @@ signal hell_parried
 @onready var hellTBAnimation = $HellTbAnimation
 @onready var hellTBVFX = $"../../BattleEffectManagerPosition/HellBattleEffectManager"
 @onready var hellTBVFXSupport = $"../../BattleEffectManagerPosition/HellBattleEffectManagerSupport"
-@onready var hellSoundManager = $HellSoundManager
 @onready var cameraTricks = $"../../Camera2D"
 @export var damage_blink_timer_sec: float
 @export var parry_blink_timer_sec: float

@@ -883,7 +883,7 @@ func skill_ID_3_heaven():
 	heavenstats.current_skill_used = ID_3_heaven_skill_name
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_USED_SKILL")
 	await get_tree().create_timer(1).timeout
-	heavenstats.add_malice(ID_3_heaven_increase_1)
+
 	heavenstats.subtract_magia(ID_3_heaven_cost_1)
 	heaven_effect_animation.find_effect_spot()
 	heaven_effect_animation.play("magia_use")
@@ -902,6 +902,7 @@ func skill_ID_3_heaven():
 	await get_tree().create_timer(1).timeout
 	
 	#heaven_effect_animation.find_effect_spot()
+	heavenstats.add_malice(ID_3_heaven_increase_1)
 	heaven_effect_animation.play("basic_buff")
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_INCREASED_OWN_MALICE")
 	HeavenSounds.HEAVEN_BUFF.play()
@@ -913,16 +914,23 @@ func skill_ID_3_heaven():
 func skill_ID_4_heaven():
 	heavenstats.current_skill_used = ID_4_heaven_skill_name
 	print_debug(heavenstats.character_name + " used " + ID_4_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
-	#heavenstats.convert_tempo(ID_4_heaven_tempo)
-	heavenstats.add_heart(ID_4_heaven_increase_1)
+	heavenstats.current_stat_change = ID_4_heaven_cost_1
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_USED_SKILL")
+	await get_tree().create_timer(1).timeout
 	heavenstats.subtract_magia(ID_4_heaven_cost_1)
 	heaven_effect_animation.find_effect_spot()
 	heaven_effect_animation.play("magia_use")
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_SPENDS_OWN_MAGIA")
+	HeavenSounds.HEAVEN_MAGIA_USE.play()
 	
 	await get_tree().create_timer(heaven_effect_animation.heaven_VFX_buffer).timeout
 
 	#heaven_effect_animation.find_effect_spot()
 	heaven_effect_animation.play("basic_heal")
+	heavenstats.add_heart(ID_4_heaven_increase_1)
+	heavenstats.current_stat_change = ID_4_heaven_increase_1
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_HEALS_OWN_HEART")
+	HeavenSounds.HEAVEN_HEAL.play()
 	
 	await get_tree().create_timer(ID_4_heaven_animation_buffer)
 	heaven_turn_end = true

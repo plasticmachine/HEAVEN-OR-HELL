@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var HEAVEN_HEAL = $HEAL
+@onready var HEAVEN_MAGIA_USE = $MAGIAUSE
+@onready var HEAVEN_MAGIA_REGEN = $MAGIAREGEN
 @onready var HEAVEN_PARRY = $PARRY
 @onready var HEAVEN_BLOCK = $BLOCK
 @onready var HEAVEN_SLASH = $SLASH
