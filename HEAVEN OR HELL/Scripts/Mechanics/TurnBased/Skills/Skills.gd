@@ -1040,7 +1040,7 @@ func skill_ID_9_heaven():
 			hellstats.add_magia(damage_calc.heaven_to_clown_malice_damagecalc().total_damage)
 			hell_effect_animation.find_effect_spot()
 			hell_effect_animation.play("magia_regain")
-	
+
 	await get_tree().create_timer(ID_9_heaven_animation_buffer)
 	heaven_turn_end = true
 

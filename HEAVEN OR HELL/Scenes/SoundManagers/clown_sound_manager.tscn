@@ -17,6 +17,15 @@ script = ExtResource("1_qa1r4")
 [node name="BLOCK" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_18mn5")
 
+[node name="CRIT_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_18mn5")
+
+[node name="CRIT_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_18mn5")
+
+[node name="CRIT_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_18mn5")
+
 [node name="HEAL" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_18mn5")
 pitch_scale = 1.69

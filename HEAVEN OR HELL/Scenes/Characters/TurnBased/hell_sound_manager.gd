@@ -12,3 +12,6 @@ extends Node2D
 @onready var HELL_BUFF = $BUFF
 @onready var HELL_DEBUFF = $DEBUFF
 @onready var HELL_SILLY_BUFF =$ClownSounds/SILLYBUFF
+@onready var HELL_CRIT_1 = $CRIT_1
+@onready var HELL_CRIT_2 = $CRIT_2
+@onready var HELL_CRIT_3 = $CRIT_3

@@ -12,3 +12,6 @@ extends Node2D
 @onready var HEAVEN_BUFF = $BUFF
 @onready var HEAVEN_DEBUFF = $DEBUFF
 @onready var SILLY_HEAVEN_BUFF = $ClownSounds/SILLYBUFF
+@onready var HEAVEN_CRIT_1 = $CRIT_1
+@onready var HEAVEN_CRIT_2 = $CRIT_2
+@onready var HEAVEN_CRIT_3 = $CRIT_3

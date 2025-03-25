@@ -20,6 +20,18 @@ script = ExtResource("1_fqajy")
 stream = ExtResource("2_ascv1")
 volume_db = -7.061
 
+[node name="CRIT_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ascv1")
+volume_db = -7.061
+
+[node name="CRIT_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ascv1")
+volume_db = -7.061
+
+[node name="CRIT_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ascv1")
+volume_db = -7.061
+
 [node name="HEAL" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7utye")
 

@@ -145,3 +145,10 @@ func hell_to_clown_deviltry_PARRY_damagecalc():
 	clownstats.subtract_heart(total_damage)
 	clown_damage_taken.emit()
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HELL_PARRIED_CLOWN_DEVILTRY")
+	
+func check_hell_crit():
+	var crit_rng_1 =  randf_range(1,100)
+	var crit_rng_2 = [101,200].pick_random()
+	var crit_rng_3 = [201, 300].pick_random()
+	
+	var crit_1_range = [1, ]
