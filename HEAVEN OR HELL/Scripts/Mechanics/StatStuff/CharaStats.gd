@@ -32,6 +32,7 @@ var BH_defense: float
 @export var special_status_effect_3: int
 
 #SYSTEM TEXT VARIABLES
+@export_category("system text variables (dont change)")
 @export var current_stat_change := 0
 @export var current_skill_used: String
 
@@ -223,21 +224,6 @@ func divide_luck(divisor: float) -> void:
 func add_crit(amount: int) -> void:
 		crit += amount
 		print_debug(character_name + " has " + str(crit) + " crit! (+" + str(amount) + ")")
-		if crit == 1 || crit <= 99:
-			crit_level = 1
-		if crit >= 100 || crit <= 199:
-			crit_level = 2
-		if crit > 199 || crit >= 300:
-			crit_level = 3	
-		if crit_level == 1:
-				print_debug("with a " + str(crit)+ "% chance " + character_name + " can hit single crits!!")
-		if crit_level == 2:
-			print_debug("with a " + str(crit)+ "% chance " + character_name + " can hit single crits!!")
-			print_debug("with a " + str(crit-100) + "% chance " + character_name + " can hit double crits!!")
-		if crit_level == 3:
-			print_debug("with a " + str(crit)+ "% chance " + character_name + " can hit single crits!!")
-			print_debug("with a " + str(crit-100) + "% chance " + character_name + " can hit double crits!!")
-			print_debug("with a " + str(crit-200) + "% chance " + character_name + " can hit triple crits!!")
 		current_stat_change = amount
 func subtract_crit(amount: int) -> void:
 	
@@ -355,6 +341,28 @@ func calc_BH_defense():
 			print_debug(BH_defense)
 			##PUT LOGIC FOR GUTS MIN DEBUFF PASSIVE: (1/4th of all incoming damage is dealt to your partner as well [TB/BH])
 
+func calc_crit_level():
+		if crit > 1 && crit < 100:
+			crit_level = 1
+		if crit > 101 && crit < 200:
+			crit_level = 2
+		if crit > 201 && crit < 300:
+			crit_level = 3
+			
+		match crit:
+			101:
+				crit_level = 2
+			201:
+				crit_level = 3
+		
+		match crit_level:
+			1:
+				print_debug("with a " + str(crit)+ "% chance " + character_name + " can hit single crits!!")
+			2:
+				print_debug("with a " + str(crit-100) + "% chance " + character_name + " can hit double crits!!")
+			3:
+				print_debug("with a " + str(crit-200) + "% chance " + character_name + " can hit triple crits!!")
+
 
 func reset_stats():
 			move_speed = 3500
@@ -366,7 +374,7 @@ func reset_stats():
 			deviltry = 10
 			guts = 10
 			luck = 0
-			crit = 0
-			crit_level = 0
+			#crit = 0
+			#crit_level = 0
 			print_debug("reset all " + character_name + "'s stats to default")
-			print_debug( str(move_speed, max_heart, current_heart, max_magia, current_magia, malice, deviltry, guts, luck, crit, crit_level))
+			print_debug( str(move_speed,"/", max_heart,"/", current_heart,"/",max_magia,"/",current_magia,"/",malice,"/",deviltry,"/",guts,"/",luck,"/",crit,"/",crit_level))

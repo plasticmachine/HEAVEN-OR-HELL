@@ -20,6 +20,15 @@ SYSTEM: Using a DEVILTRY skill {{heavenstats.character_name}} hit {{clownstats.c
 ~ HELL_DAMAGING_CLOWN_MALICE
 SYSTEM: Using a MALICE skill {{hellstats.character_name}} hit {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
+~ HELL_DAMAGING_CLOWN_MALICE_CRIT_1
+SYSTEM: Using a MALICE skill {{hellstats.character_name}} CRIT!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HELL_DAMAGING_CLOWN_MALICE_CRIT_2
+SYSTEM: Using a MALICE skill {{hellstats.character_name}} DOUBLE_CRIT!!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HELL_DAMAGING_CLOWN_MALICE_CRIT_3
+SYSTEM: Using a MALICE skill {{hellstats.character_name}} TRIPLE_CRIT!!!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
 ~ HELL_DAMAGING_CLOWN_DEVILTRY
 SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END

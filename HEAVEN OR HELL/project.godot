@@ -239,6 +239,8 @@ common/physics_interpolation=true
 
 [rendering]
 
+rendering_device/driver="d3d12"
+rendering_device/driver.windows="d3d12"
 textures/default_filters/use_nearest_mipmap_filter=true
 camera/depth_of_field/depth_of_field_bokeh_shape=2
 camera/depth_of_field/depth_of_field_bokeh_quality=3
