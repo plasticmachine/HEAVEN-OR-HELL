@@ -1,13 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://dp1nvt4e540vv"]
+[gd_scene load_steps=16 format=3 uid="uid://dp1nvt4e540vv"]
 
 [ext_resource type="Script" uid="uid://btwaarpvneh18" path="res://Scenes/Characters/TurnBased/heaven_sound_manager.gd" id="1_0ludb"]
 [ext_resource type="AudioStream" uid="uid://yh8c3st86lqa" path="res://Audio/Sounds/character_sounds/PARRY_UPDATE_LATER.mp3" id="2_0ludb"]
 [ext_resource type="AudioStream" uid="uid://bux282g0ad1so" path="res://Audio/Sounds/character_sounds/BLOCK_TEST.mp3" id="2_c3qsn"]
 [ext_resource type="AudioStream" uid="uid://dgoywte3ugajo" path="res://Audio/Sounds/character_sounds/SLASH_UPDATE_LATER.wav" id="3_0ludb"]
 [ext_resource type="AudioStream" uid="uid://dnhk355v4tdkr" path="res://Audio/Sounds/character_sounds/BUBBLE_TEST.mp3" id="4_ait6o"]
+[ext_resource type="AudioStream" uid="uid://ob01yohuw3vg" path="res://Audio/Sounds/character_sounds/CRIT_TEST.wav" id="4_b7h4v"]
 [ext_resource type="AudioStream" uid="uid://b6acirfjncyqd" path="res://Audio/Sounds/character_sounds/TEST_HEAL.mp3" id="4_h108n"]
+[ext_resource type="AudioStream" uid="uid://cyfn2m40hqjv2" path="res://Audio/Sounds/character_sounds/CRIT_TEST_2.wav" id="5_0ufpv"]
 [ext_resource type="AudioStream" uid="uid://derpx1yv0bv88" path="res://Audio/Sounds/character_sounds/BUBBLE_POP_TEST.mp3" id="5_ksjc1"]
 [ext_resource type="AudioStream" uid="uid://d0ogusi8jhyc4" path="res://Audio/Sounds/character_sounds/MAGIA_TEST.mp3" id="5_wb5rt"]
+[ext_resource type="AudioStream" uid="uid://dxupe7vsgqe5v" path="res://Audio/Sounds/character_sounds/CRIT_TEST_3.wav" id="6_63jcy"]
 [ext_resource type="AudioStream" uid="uid://c4116u8rohjrg" path="res://Audio/Sounds/character_sounds/BUFF_TEST.mp3" id="6_ksjc1"]
 [ext_resource type="AudioStream" uid="uid://gy5k24n02hvq" path="res://Audio/Sounds/character_sounds/MAGIA_REGEN_TEST.mp3" id="6_mlt5h"]
 [ext_resource type="AudioStream" uid="uid://ct77nwjx2oalh" path="res://Audio/Sounds/character_sounds/DEBUFF_TEST.mp3" id="7_6se3n"]
@@ -24,15 +27,13 @@ stream = ExtResource("2_0ludb")
 volume_db = -7.061
 
 [node name="CRIT_1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_0ludb")
-volume_db = -7.061
+stream = ExtResource("4_b7h4v")
 
 [node name="CRIT_2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_0ludb")
-volume_db = -7.061
+stream = ExtResource("5_0ufpv")
 
 [node name="CRIT_3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_0ludb")
+stream = ExtResource("6_63jcy")
 volume_db = -7.061
 
 [node name="HEAL" type="AudioStreamPlayer" parent="."]

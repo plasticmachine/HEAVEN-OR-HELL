@@ -35,7 +35,7 @@ var BH_defense: float
 @export_category("system text variables (dont change)")
 @export var current_stat_change := 0
 @export var current_skill_used: String
-
+@export var current_crit_level: int
 ### MOVESPEED FUNCTIONS
 func add_move_speed(amount: int) -> void:
 		move_speed += amount
@@ -358,10 +358,13 @@ func calc_crit_level():
 		match crit_level:
 			1:
 				print_debug("with a " + str(crit)+ "% chance " + character_name + " can hit single crits!!")
+				current_crit_level = 1
 			2:
 				print_debug("with a " + str(crit-100) + "% chance " + character_name + " can hit double crits!!")
+				current_crit_level = 2
 			3:
 				print_debug("with a " + str(crit-200) + "% chance " + character_name + " can hit triple crits!!")
+				current_crit_level = 3
 
 
 func reset_stats():

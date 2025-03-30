@@ -1,14 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4wq6wnlfoewg"]
+[gd_scene load_steps=16 format=3 uid="uid://b4wq6wnlfoewg"]
 
 [ext_resource type="Script" uid="uid://54l1wiu1mo6q" path="res://Scenes/Characters/TurnBased/hell_sound_manager.gd" id="1_fqajy"]
 [ext_resource type="AudioStream" uid="uid://yh8c3st86lqa" path="res://Audio/Sounds/character_sounds/PARRY_UPDATE_LATER.mp3" id="2_ascv1"]
+[ext_resource type="AudioStream" uid="uid://ob01yohuw3vg" path="res://Audio/Sounds/character_sounds/CRIT_TEST.wav" id="3_07tsi"]
 [ext_resource type="AudioStream" uid="uid://b6acirfjncyqd" path="res://Audio/Sounds/character_sounds/TEST_HEAL.mp3" id="3_7utye"]
 [ext_resource type="AudioStream" uid="uid://bux282g0ad1so" path="res://Audio/Sounds/character_sounds/BLOCK_TEST.mp3" id="3_337fn"]
 [ext_resource type="AudioStream" uid="uid://dgoywte3ugajo" path="res://Audio/Sounds/character_sounds/SLASH_UPDATE_LATER.wav" id="3_ascv1"]
+[ext_resource type="AudioStream" uid="uid://cyfn2m40hqjv2" path="res://Audio/Sounds/character_sounds/CRIT_TEST_2.wav" id="4_f6sd1"]
 [ext_resource type="AudioStream" uid="uid://d0ogusi8jhyc4" path="res://Audio/Sounds/character_sounds/MAGIA_TEST.mp3" id="4_fg564"]
 [ext_resource type="AudioStream" uid="uid://dnhk355v4tdkr" path="res://Audio/Sounds/character_sounds/BUBBLE_TEST.mp3" id="4_yvdu3"]
 [ext_resource type="AudioStream" uid="uid://gy5k24n02hvq" path="res://Audio/Sounds/character_sounds/MAGIA_REGEN_TEST.mp3" id="5_kbejb"]
 [ext_resource type="AudioStream" uid="uid://derpx1yv0bv88" path="res://Audio/Sounds/character_sounds/BUBBLE_POP_TEST.mp3" id="5_mji55"]
+[ext_resource type="AudioStream" uid="uid://dxupe7vsgqe5v" path="res://Audio/Sounds/character_sounds/CRIT_TEST_3.wav" id="5_wj06c"]
 [ext_resource type="AudioStream" uid="uid://c4116u8rohjrg" path="res://Audio/Sounds/character_sounds/BUFF_TEST.mp3" id="6_mji55"]
 [ext_resource type="AudioStream" uid="uid://ct77nwjx2oalh" path="res://Audio/Sounds/character_sounds/DEBUFF_TEST.mp3" id="7_mc3xi"]
 [ext_resource type="AudioStream" uid="uid://cnbxaofqiocbf" path="res://Audio/Sounds/character_sounds/SILLY_BUFF_TEST.mp3" id="8_337fn"]
@@ -21,16 +24,13 @@ stream = ExtResource("2_ascv1")
 volume_db = -7.061
 
 [node name="CRIT_1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_ascv1")
-volume_db = -7.061
+stream = ExtResource("3_07tsi")
 
 [node name="CRIT_2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_ascv1")
-volume_db = -7.061
+stream = ExtResource("4_f6sd1")
 
 [node name="CRIT_3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_ascv1")
-volume_db = -7.061
+stream = ExtResource("5_wj06c")
 
 [node name="HEAL" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7utye")

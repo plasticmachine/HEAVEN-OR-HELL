@@ -14,23 +14,39 @@ SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} hit {{heavenstats.ch
 ~ HEAVEN_DAMAGING_CLOWN_MALICE
 SYSTEM: Using a MALICE skill {{heavenstats.character_name}} hit {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
+~ HEAVEN_DAMAGING_CLOWN_MALICE_CRIT
+SYSTEM: Using a MALICE skill {{heavenstats.character_name}} {{heavenstats.current_crit_level}}X CRIT!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
 ~ HEAVEN_DAMAGING_CLOWN_DEVILTRY
 SYSTEM: Using a DEVILTRY skill {{heavenstats.character_name}} hit {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HEAVEN_DAMAGING_CLOWN_DEVILTRY_CRIT
+SYSTEM: Using a DEVILTRY skill {{heavenstats.character_name}} {{heavenstats.current_crit_level}}X CRIT!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
 ~ HELL_DAMAGING_CLOWN_MALICE
 SYSTEM: Using a MALICE skill {{hellstats.character_name}} hit {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
-~ HELL_DAMAGING_CLOWN_MALICE_CRIT_1
-SYSTEM: Using a MALICE skill {{hellstats.character_name}} CRIT!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
-=> END
-~ HELL_DAMAGING_CLOWN_MALICE_CRIT_2
-SYSTEM: Using a MALICE skill {{hellstats.character_name}} DOUBLE_CRIT!!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
-=> END
-~ HELL_DAMAGING_CLOWN_MALICE_CRIT_3
-SYSTEM: Using a MALICE skill {{hellstats.character_name}} TRIPLE_CRIT!!!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+~ HELL_DAMAGING_CLOWN_MALICE_CRIT
+SYSTEM: Using a MALICE skill {{hellstats.character_name}} {{hellstats.current_crit_level}}X CRIT!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
 ~ HELL_DAMAGING_CLOWN_DEVILTRY
 SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HELL_DAMAGING_CLOWN_DEVILTRY_CRIT
+SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} {{hellstats.current_crit_level}}X CRIT!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+
+~ HELL_DAMAGING_HEAVEN_DEVILTRY_CRIT
+SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} {{hellstats.current_crit_level}}X CRIT!! {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HELL_DAMAGING_HEAVEN_MALICE_CRIT
+SYSTEM: Using a MALICE skill {{hellstats.character_name}} {{hellstats.current_crit_level}}X CRIT!! {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HEAVEN_DAMAGING_HELL_DEVILTRY_CRIT
+SYSTEM: Using a DEVILTRY skill {{heavenstats.character_name}} {{heavenstats.current_crit_level}}X CRIT!! {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+=> END
+~ HEAVEN_DAMAGING_HELL_MALICE_CRIT
+SYSTEM: Using a MALICE skill {{heavenstats.character_name}} {{heavenstats.current_crit_level}}X CRIT!! {{hellstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
 
 #CLOWN DAMAGING HEAVEN/HELL SYSTEM TEXT
@@ -95,6 +111,7 @@ SYSTEM: {{clownstats.character_name}}'s MAX_HEART was increased by {{clownstats.
 => END
 ~ CLOWN_DECREASED_OWN_MAX_HEART
 SYSTEM: {{hellstats.character_name}}'s MAX_HEART was decreased by -{{clownstats.current_stat_change}}!! [next=auto]
+=> END
 ~ CLOWN_HEALS_OWN_HEART
 SYSTEM: {{clownstats.character_name}} healed himself {{clownstats.current_stat_change}} HEART!! [next=auto]
 => END
@@ -184,6 +201,7 @@ SYSTEM: {{hellstats.character_name}}'s MAX_HEART was increased by {{hellstats.cu
 => END
 ~ HEAVEN_DECREASED_OWN_MAX_HEART
 SYSTEM: {{heavenstats.character_name}}'s MAX_HEART was decreased by -{{heavenstats.current_stat_change}}!! [next=auto]
+=> END
 ~ HEAVEN_HEALS_OWN_HEART
 SYSTEM: {{heavenstats.character_name}} healed himself {{heavenstats.current_stat_change}} HEART!! [next=auto]
 => END

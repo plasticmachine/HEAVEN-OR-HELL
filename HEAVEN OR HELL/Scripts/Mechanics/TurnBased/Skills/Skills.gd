@@ -835,9 +835,6 @@ func skill_ID_1_heaven():
 			hell_effect_animation.find_hit_spot()
 			hell_effect_animation.play("basic_slash")
 			HeavenSounds.HEAVEN_SLASH.play()
-
-			
-		
 		3:
 			print_debug(str(heavenstats.character_name) + " used  " + str(ID_1_heaven_skill_name) + " on " + str(clownstats.character_name) + " (" + str(heavenstats.current_tempo) + " tempo)" )
 			damage_calc.heaven_to_clown_malice_damagecalc()
@@ -1375,6 +1372,8 @@ func skill_ID_11_heaven():
 #test skill that just does damage based off of malice
 func skill_ID_1_hell():
 	hellstats.current_skill_used = ID_1_hell_skill_name
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HELL_USED_SKILL")
+	await get_tree().create_timer(1).timeout
 	print_debug(hellstats.character_name + " locked in " + ID_1_hell_skill_name + " (" + str(hellstats.current_tempo) + " tempo)" )
 	hellstats.convert_skill_power(ID_1_hell_power)
 	
@@ -1384,17 +1383,20 @@ func skill_ID_1_hell():
 			damage_calc.hell_to_heaven_malice_damagecalc()
 			heaven_effect_animation.find_hit_spot()
 			heaven_effect_animation.play("basic_slash")
+			HellSounds.HELL_SLASH.play()
 		
 		3:
 			print_debug(str(hellstats.character_name) + " used  " + str(ID_1_hell_skill_name) + " on " + str(clownstats.character_name) + " (" + str(hellstats.current_tempo) + " tempo)" )
 			damage_calc.hell_to_clown_malice_damagecalc()
 			enemy_effect_animation.find_hit_spot()
 			enemy_effect_animation.play("basic_slash")
+			HellSounds.HELL_SLASH.play()
 	await get_tree().create_timer(ID_1_hell_animation_buffer)
 	hell_turn_end = true
 #test skill that just does damage based off of deviltry, but spends a little magia bar
 func skill_ID_2_hell():
 	hellstats.current_skill_used = ID_2_hell_skill_name
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HELL_USED_SKILL")
 	print_debug(hellstats.character_name + " locked in " + ID_2_hell_skill_name + " (" + str(hellstats.current_tempo) + " tempo)" )
 	hellstats.convert_skill_power(ID_2_hell_power)
 	
@@ -1423,6 +1425,8 @@ func skill_ID_2_hell():
 	hell_turn_end = true
 func skill_ID_3_hell():
 	hellstats.current_skill_used = ID_3_hell_skill_name
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HELL_USED_SKILL")
+	
 	print_debug(hellstats.character_name + " locked in " + ID_2_hell_skill_name + " (" + str(hellstats.current_tempo) + " tempo)" )
 	hellstats.subtract_magia(ID_3_hell_cost_1)
 	hell_effect_animation.find_effect_spot()
@@ -1451,6 +1455,8 @@ func skill_ID_3_hell():
 	hell_turn_end = true
 func skill_ID_4_hell():
 	hellstats.current_skill_used = ID_4_hell_skill_name
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HELL_USED_SKILL")
+	
 	print_debug(hellstats.character_name + "locked in " + ID_4_hell_skill_name + " (" + str(hellstats.current_tempo) + "tempo)")
 	hellstats.subtract_heart(ID_4_hell_cost_1)
 	hell_effect_animation.find_hit_spot()
@@ -1470,6 +1476,8 @@ func skill_ID_4_hell():
 	## seems interesting, if not just a good way to make this skill feel different 
 func skill_ID_5_hell():
 	hellstats.current_skill_used = ID_5_hell_skill_name
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HELL_USED_SKILL")
+	
 	print_debug(hellstats.character_name + "locked in " + ID_5_hell_skill_name)
 	hellstats.subtract_heart(ID_5_hell_cost_1)
 	heavenstats.subtract_heart(ID_5_hell_cost_2) #HEAVEN COST IS MORE THAN HELL
@@ -1492,6 +1500,8 @@ func skill_ID_5_hell():
 	#skill that decreases the target's guts at the cost of user's guts. 
 func skill_ID_6_hell():
 	hellstats.current_skill_used = ID_6_hell_skill_name
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HELL_USED_SKILL")
+	
 	print_debug(hellstats.character_name + "locked in " + ID_6_hell_skill_name)
 	hellstats.subtract_guts(ID_5_hell_decrease_1) ##KEEP THIS LOWER THAN TARGET DECREASE
 	hell_effect_animation.find_effect_spot()
