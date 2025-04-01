@@ -18,6 +18,11 @@ signal hell_ID_3_wear_off_set
 @export var enemy_effect_animation: AnimatedSprite2D
 @export var enemy_effect_animation_support: AnimatedSprite2D
 
+@onready var heaven_switch_turn_animation_buffer: float
+@onready var hell_switch_turn_animation_buffer: float
+@onready var clown_switch_turn_animation_buffer: float
+
+
 @onready var damage_calc = $"../DamageCalculation"
 @onready var status_effects = $"../StatusEffects"
 
@@ -841,7 +846,8 @@ func skill_ID_1_heaven():
 			enemy_effect_animation.find_hit_spot()
 			enemy_effect_animation.play("basic_slash")
 			HeavenSounds.HEAVEN_SLASH.play()
-			
+	
+	heaven_switch_turn_animation_buffer = ID_1_heaven_animation_buffer
 #test skill that just does damage based off of deviltry, but spends a little magia bar
 func skill_ID_2_heaven():
 	#heavenstats.convert_tempo(ID_2_heaven_tempo)
@@ -873,8 +879,8 @@ func skill_ID_2_heaven():
 			#enemy_effect_animation.find_hit_spot()
 			damage_calc.heaven_to_clown_deviltry_damagecalc()
 			battle_effect_manager_FS.play("heaven_shoot_explosion")
-	await get_tree().create_timer(ID_2_heaven_animation_buffer).timeout
-	heaven_turn_end = true
+			heaven_switch_turn_animation_buffer = ID_2_heaven_animation_buffer
+	heaven_switch_turn_animation_buffer = ID_2_heaven_animation_buffer
 func skill_ID_3_heaven():
 	#heavenstats.convert_tempo(ID_3_heaven_tempo)
 	heavenstats.current_skill_used = ID_3_heaven_skill_name
@@ -906,8 +912,7 @@ func skill_ID_3_heaven():
 	
 	skill_effect_wear_off_set.emit()
 	
-	await get_tree().create_timer(ID_3_heaven_animation_buffer)
-	heaven_turn_end = true
+	heaven_switch_turn_animation_buffer = ID_3_heaven_animation_buffer
 func skill_ID_4_heaven():
 	heavenstats.current_skill_used = ID_4_heaven_skill_name
 	print_debug(heavenstats.character_name + " used " + ID_4_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
@@ -929,8 +934,7 @@ func skill_ID_4_heaven():
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_HEALS_OWN_HEART")
 	HeavenSounds.HEAVEN_HEAL.play()
 	
-	await get_tree().create_timer(ID_4_heaven_animation_buffer)
-	heaven_turn_end = true
+	heaven_switch_turn_animation_buffer = ID_4_heaven_animation_buffer
 func skill_ID_5_heaven():
 	heavenstats.current_skill_used = ID_5_heaven_skill_name
 	#heavenstats.convert_tempo(ID_5_heaven_tempo)
@@ -958,7 +962,7 @@ func skill_ID_5_heaven():
 	
 	skill_effect_wear_off_set.emit()
 	
-	await get_tree().create_timer(ID_5_heaven_animation_buffer)
+	heaven_switch_turn_animation_buffer = ID_5_heaven_animation_buffer
 func skill_ID_6_heaven():
 	heavenstats.current_skill_used = ID_6_heaven_skill_name
 	var skill_ID_6_cost = heavenstats.max_magia * ID_6_heaven_percent_decrease_1
@@ -971,7 +975,7 @@ func skill_ID_6_heaven():
 	
 	status_effects.holy_swords_set()
 	
-	await get_tree().create_timer(ID_6_heaven_animation_buffer)
+	heaven_switch_turn_animation_buffer = ID_6_heaven_animation_buffer
 func skill_ID_7_heaven():
 	heavenstats.current_skill_used = ID_7_heaven_skill_name
 	var rand_choice = [1,2].pick_random()
@@ -1004,7 +1008,7 @@ func skill_ID_7_heaven():
 			hell_effect_animation.find_effect_spot()
 			hell_effect_animation.play("basic_buff")
 			
-	await get_tree().create_timer(ID_7_heaven_animation_buffer)
+	heaven_switch_turn_animation_buffer = ID_7_heaven_animation_buffer
 func skill_ID_8_heaven():
 	#make this one last bc its kinda hard, but its the one thats basically tailwind from pokemon
 	pass
@@ -1037,10 +1041,7 @@ func skill_ID_9_heaven():
 			hellstats.add_magia(damage_calc.heaven_to_clown_malice_damagecalc().total_damage)
 			hell_effect_animation.find_effect_spot()
 			hell_effect_animation.play("magia_regain")
-
-	await get_tree().create_timer(ID_9_heaven_animation_buffer)
-	heaven_turn_end = true
-
+	heaven_switch_turn_animation_buffer = ID_10_heaven_animation_buffer
 func skill_ID_10_heaven():
 	### BE SURE TO MAKE THE SKILL POWER FOR THESE RANGES EQUALLY SPACED APART, 1 IS WEAKEST, 3 IS STRONGEST
 	heavenstats.current_skill_used = ID_10_heaven_skill_name
@@ -1181,8 +1182,7 @@ func skill_ID_10_heaven():
 					enemy_effect_animation.find_effect_spot()
 					enemy_effect_animation.play("basic_debuff")
 	
-	await get_tree().create_timer(ID_10_heaven_animation_buffer)
-	heaven_turn_end = true
+	heaven_switch_turn_animation_buffer = ID_10_heaven_animation_buffer
 func skill_ID_11_heaven():
 	heavenstats.current_skill_used = ID_11_heaven_skill_name
 	### BE SURE TO MAKE THE SKILL POWER FOR THESE RANGES EQUALLY SPACED APART, 11 IS WEAKEST, 3 IS STRONGEST
@@ -1365,9 +1365,7 @@ func skill_ID_11_heaven():
 					hell_effect_animation.find_effect_spot()
 					heaven_effect_animation.play("basic_buff")
 					hell_effect_animation.play("basic_buff")
-					
-	await get_tree().create_timer(ID_11_heaven_animation_buffer)
-	heaven_turn_end = true
+	heaven_switch_turn_animation_buffer = ID_11_heaven_animation_buffer
 ###       HELL SKILLS
 #test skill that just does damage based off of malice
 func skill_ID_1_hell():
@@ -1391,8 +1389,7 @@ func skill_ID_1_hell():
 			enemy_effect_animation.find_hit_spot()
 			enemy_effect_animation.play("basic_slash")
 			HellSounds.HELL_SLASH.play()
-	await get_tree().create_timer(ID_1_hell_animation_buffer)
-	hell_turn_end = true
+	hell_switch_turn_animation_buffer = ID_1_hell_animation_buffer
 #test skill that just does damage based off of deviltry, but spends a little magia bar
 func skill_ID_2_hell():
 	hellstats.current_skill_used = ID_2_hell_skill_name
@@ -1421,8 +1418,7 @@ func skill_ID_2_hell():
 			
 			damage_calc.hell_to_clown_deviltry_damagecalc()
 			battle_effect_manager_FS.play("hell_shoot_explosion")
-	await get_tree().create_timer(ID_2_hell_animation_buffer)
-	hell_turn_end = true
+	
 func skill_ID_3_hell():
 	hellstats.current_skill_used = ID_3_hell_skill_name
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HELL_USED_SKILL")

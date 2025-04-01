@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://duvamop5l6ygb"]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://cfxi36oa5eg6m"]
 
 [ext_resource type="Script" uid="uid://dmh5rjdgjawbh" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_r2u21"]
 
@@ -8,9 +8,9 @@ character_name = "Hell"
 move_speed = 3500
 run_speed = 8000
 max_heart = 300
-current_heart = 300
+current_heart = 264
 max_magia = 300
-current_magia = 270
+current_magia = 255
 malice = 100
 deviltry = 100
 guts = 10.0
@@ -27,5 +27,5 @@ special_status_effect_1 = 0
 special_status_effect_2 = 0
 special_status_effect_3 = 0
 current_stat_change = 15
-current_skill_used = "Shoot!"
+current_skill_used = "Slash!"
 current_crit_level = 3

@@ -44,6 +44,7 @@ var clwnskill: int
 @onready var hell_action_button_3 = $PlayerUI/Buttons/HellButtons/Attackbutton3
 @onready var hell_action_button_4 = $PlayerUI/Buttons/HellButtons/Attackbutton4
 
+@onready var SkillManager = $SkillManager
 @onready var StatusEffects = $StatusEffects
 
 @export var debug_mode: bool
@@ -212,7 +213,7 @@ func turn_queue_pop_check():
 						2: heaven_action_button_2.skill_effect()
 						3: heaven_action_button_3.skill_effect()
 						4: heaven_action_button_4.skill_effect()
-					await get_tree().create_timer(heaven_animation_buffer).timeout
+					await get_tree().create_timer(SkillManager.heaven_switch_turn_animation_buffer).timeout
 					match ClownTB.clownskill:
 						1: ClownTB.skill_1_effect()
 						2: ClownTB.skill_2_effect()
