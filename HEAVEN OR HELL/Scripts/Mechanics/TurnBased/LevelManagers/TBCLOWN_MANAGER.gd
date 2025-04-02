@@ -78,7 +78,7 @@ func _ready():
 	
 	if debug_mode == true:
 		
-		
+		clownstats.reset_boss_stats()
 		heavenstats.reset_stats()
 		hellstats.reset_stats()
 	
@@ -167,14 +167,14 @@ func turn_queue_pop_check():
 						2: hell_action_button_2.skill_effect()
 						3: hell_action_button_3.skill_effect()
 						4: hell_action_button_4.skill_effect()
-					await get_tree().create_timer(hell_animation_buffer).timeout
+					await get_tree().create_timer(SkillManager.hell_switch_turn_animation_buffer).timeout
 					#choosing which skill its going to use (heaven)
 					match ClownTB.clownskill:
 						1: ClownTB.skill_1_effect()
 						2: ClownTB.skill_2_effect()
 						3: ClownTB.skill_3_effect()
 						4: ClownTB.skill_4_effect()
-					await get_tree().create_timer(clown_animation_buffer).timeout
+					await get_tree().create_timer(ClownTB.clown_switch_turn_animation_buffer).timeout
 					match heaven_skill_slot:
 						1: heaven_action_button_1.skill_effect()
 						2: heaven_action_button_2.skill_effect()
@@ -190,14 +190,14 @@ func turn_queue_pop_check():
 						2: hell_action_button_2.skill_effect()
 						3: hell_action_button_3.skill_effect()
 						4: hell_action_button_4.skill_effect()
-					await get_tree().create_timer(hell_animation_buffer).timeout
+					await get_tree().create_timer(SkillManager.hell_switch_turn_animation_buffer).timeout
 					#choosing which skill its going to use (heaven)
 					match heaven_skill_slot:
 						1: heaven_action_button_1.skill_effect()
 						2: heaven_action_button_2.skill_effect()
 						3: heaven_action_button_3.skill_effect()
 						4: heaven_action_button_4.skill_effect()
-					await get_tree().create_timer(heaven_animation_buffer).timeout
+					await get_tree().create_timer(SkillManager.heaven_switch_turn_animation_buffer).timeout
 					match ClownTB.clownskill:
 						1: ClownTB.skill_1_effect()
 						2: ClownTB.skill_2_effect()
@@ -219,7 +219,7 @@ func turn_queue_pop_check():
 						2: ClownTB.skill_2_effect()
 						3: ClownTB.skill_3_effect()
 						4: ClownTB.skill_4_effect()
-					await get_tree().create_timer(clown_animation_buffer).timeout
+					await get_tree().create_timer(ClownTB.clown_switch_turn_animation_buffer).timeout
 					match hell_skill_slot:
 						1: hell_action_button_1.skill_effect()
 						2: hell_action_button_2.skill_effect()
@@ -235,13 +235,13 @@ func turn_queue_pop_check():
 						2: heaven_action_button_2.skill_effect()
 						3: heaven_action_button_3.skill_effect()
 						4: heaven_action_button_4.skill_effect()
-					await get_tree().create_timer(heaven_animation_buffer).timeout
+					await get_tree().create_timer(SkillManager.heaven_switch_turn_animation_buffer).timeout
 					match hell_skill_slot:
 						1: hell_action_button_1.skill_effect()
 						2: hell_action_button_2.skill_effect()
 						3: hell_action_button_3.skill_effect()
 						4: hell_action_button_4.skill_effect()
-					await get_tree().create_timer(hell_animation_buffer).timeout
+					await get_tree().create_timer(SkillManager.hell_switch_turn_animation_buffer).timeout
 					match ClownTB.clownskill:
 						1: ClownTB.skill_1_effect()
 						2: ClownTB.skill_2_effect()
@@ -257,13 +257,13 @@ func turn_queue_pop_check():
 						2: ClownTB.skill_2_effect()
 						3: ClownTB.skill_3_effect()
 						4: ClownTB.skill_4_effect()
-					await get_tree().create_timer(clown_animation_buffer).timeout
+					await get_tree().create_timer(ClownTB.clown_switch_turn_animation_buffer).timeout
 					match hell_skill_slot:
 						1: hell_action_button_1.skill_effect()
 						2: hell_action_button_2.skill_effect()
 						3: hell_action_button_3.skill_effect()
 						4: hell_action_button_4.skill_effect()
-					await get_tree().create_timer(hell_animation_buffer).timeout
+					await get_tree().create_timer(SkillManager.hell_switch_turn_animation_buffer).timeout
 					match heaven_skill_slot:
 						1: heaven_action_button_1.skill_effect()
 						2: heaven_action_button_2.skill_effect()
@@ -279,13 +279,13 @@ func turn_queue_pop_check():
 						2: ClownTB.skill_2_effect()
 						3: ClownTB.skill_3_effect()
 						4: ClownTB.skill_4_effect()
-					await get_tree().create_timer(clown_animation_buffer).timeout
+					await get_tree().create_timer(ClownTB.clown_switch_turn_animation_buffer).timeout
 					match heaven_skill_slot:
 						1: heaven_action_button_1.skill_effect()
 						2: heaven_action_button_2.skill_effect()
 						3: heaven_action_button_3.skill_effect()
 						4: heaven_action_button_4.skill_effect()
-					await get_tree().create_timer(heaven_animation_buffer).timeout
+					await get_tree().create_timer(SkillManager.heaven_switch_turn_animation_buffer).timeout
 					match hell_skill_slot:
 						1: hell_action_button_1.skill_effect()
 						2: hell_action_button_2.skill_effect()

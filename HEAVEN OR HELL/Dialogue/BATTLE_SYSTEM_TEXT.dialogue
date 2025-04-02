@@ -30,7 +30,7 @@ SYSTEM: Using a MALICE skill {{hellstats.character_name}} hit {{clownstats.chara
 SYSTEM: Using a MALICE skill {{hellstats.character_name}} {{hellstats.current_crit_level}}X CRIT!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
 ~ HELL_DAMAGING_CLOWN_DEVILTRY
-SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} hit {{heavenstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
+SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} hit {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]
 => END
 ~ HELL_DAMAGING_CLOWN_DEVILTRY_CRIT
 SYSTEM: Using a DEVILTRY skill {{hellstats.character_name}} {{hellstats.current_crit_level}}X CRIT!! {{clownstats.character_name}} for {{DamageCalculation.total_damage}}!! [next=auto]

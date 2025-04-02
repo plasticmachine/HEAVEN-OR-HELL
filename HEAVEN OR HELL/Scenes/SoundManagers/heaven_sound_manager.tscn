@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dp1nvt4e540vv"]
+[gd_scene load_steps=17 format=3 uid="uid://dp1nvt4e540vv"]
 
 [ext_resource type="Script" uid="uid://btwaarpvneh18" path="res://Scenes/Characters/TurnBased/heaven_sound_manager.gd" id="1_0ludb"]
 [ext_resource type="AudioStream" uid="uid://yh8c3st86lqa" path="res://Audio/Sounds/character_sounds/PARRY_UPDATE_LATER.mp3" id="2_0ludb"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://gy5k24n02hvq" path="res://Audio/Sounds/character_sounds/MAGIA_REGEN_TEST.mp3" id="6_mlt5h"]
 [ext_resource type="AudioStream" uid="uid://ct77nwjx2oalh" path="res://Audio/Sounds/character_sounds/DEBUFF_TEST.mp3" id="7_6se3n"]
 [ext_resource type="AudioStream" uid="uid://cnbxaofqiocbf" path="res://Audio/Sounds/character_sounds/SILLY_BUFF_TEST.mp3" id="8_c3qsn"]
+[ext_resource type="AudioStream" uid="uid://nogfdhqgg6pn" path="res://Audio/Sounds/character_sounds/SHOOT_TEST.mp3" id="11_0ufpv"]
 
 [node name="HeavenSoundManager" type="Node2D"]
 script = ExtResource("1_0ludb")
@@ -49,6 +50,7 @@ stream = ExtResource("6_mlt5h")
 stream = ExtResource("3_0ludb")
 
 [node name="SHOOT" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_0ufpv")
 
 [node name="BUBBLE" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ait6o")

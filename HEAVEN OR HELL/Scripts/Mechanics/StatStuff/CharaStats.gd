@@ -366,6 +366,17 @@ func calc_crit_level():
 				print_debug("with a " + str(crit-200) + "% chance " + character_name + " can hit triple crits!!")
 				current_crit_level = 3
 
+func reset_boss_stats():
+			move_speed = 3500
+			max_heart = 10000
+			max_magia = 10000
+			current_heart = 10000
+			current_magia = 10000
+			malice = 10
+			deviltry = 10
+			guts = 10
+			luck = 0
+			crit = 50
 
 func reset_stats():
 			move_speed = 3500
@@ -377,7 +388,7 @@ func reset_stats():
 			deviltry = 10
 			guts = 10
 			luck = 0
-			#crit = 0
+			crit = 50
 			#crit_level = 0
 			print_debug("reset all " + character_name + "'s stats to default")
 			print_debug( str(move_speed,"/", max_heart,"/", current_heart,"/",max_magia,"/",current_magia,"/",malice,"/",deviltry,"/",guts,"/",luck,"/",crit,"/",crit_level))

@@ -3,11 +3,11 @@ signal action_committed
 signal skill_4_animation_buffer_change
 
 
-
+#STAT VARIABLES
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @onready var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 @onready var clownstats = preload("res://Resources/Stats/ClownStats.tres")
-@onready var clown_turn_end := false
+@onready var clown_switch_turn_animation_buffer: float
 
 
 @onready var damagecalc = $"../../../../DamageCalculation"
@@ -35,7 +35,7 @@ signal skill_4_animation_buffer_change
 @onready var current_stat_change: int
 
 @onready var PHASE: int = 1
-@onready var last_alive: int #1 is Heaven #2 is Hell
+@onready var last_alive: int = 0 #0 is neither #1 is Heaven #2 is Hell
 
 @export_group("Skill_1")
 @export var skill_1_name: String
@@ -229,6 +229,8 @@ func _on_first_action_committed() -> void:
 
 #test skill that just randomly does damage to heaven or hell
 func skill_1_effect():
+	clown_switch_turn_animation_buffer = skill_1_animation_buffer
+	
 	var num = [1,2].pick_random()
 	#clownstats.convert_tempo(skill_1_tempo)
 	clownstats.convert_skill_power(skill_1_power)
@@ -254,10 +256,11 @@ func skill_1_effect():
 			ClownSounds.CLOWN_SLASH.play()
 			check_for_hell_defensive_action()
 	clownTB_animation.set("parameters/conditions/THROW", false)
-	await get_tree().create_timer(1).timeout
-	clown_turn_end = true
+
+
 
 func skill_2_effect():
+	clown_switch_turn_animation_buffer = skill_2_animation_buffer
 	#clownskill = 2
 	var num = [1,1,2,2,3,3,4].pick_random()
 	#clownstats.convert_tempo(skill_2_tempo)
@@ -291,11 +294,9 @@ func skill_2_effect():
 			clownstats.subtract_deviltry(skill_2_deviltry_buff)
 			current_stat_change = skill_2_deviltry_buff
 	clownTB_animation.set("parameters/conditions/BUFF1", false)
-	
-	await get_tree().create_timer(skill_2_animation_buffer).timeout
-	clown_turn_end = true
 
 func skill_3_effect():
+	clown_switch_turn_animation_buffer = skill_3_animation_buffer
 	#PHASE-2 KICK-RANDBUFF
 	#clownskill = 3
 	var rand_target = [1,2].pick_random()
@@ -435,10 +436,8 @@ func skill_3_effect():
 					await get_tree().create_timer(clown_effect_animation.clown_VFX_buffer).timeout
 			clownTB_animation.set("parameters/conditionds/KICKS", false)
 			skill_5_count = 0
-			
-			await get_tree().create_timer(skill_3_animation_buffer).timeout
-			clown_turn_end = true
 func skill_4_effect():
+	clown_switch_turn_animation_buffer = skill_4_animation_buffer
 	#PHASE-2 SPIN-BUFF
 	clownskill = 4
 	clownTB_animation.set("parameters/conditions/SPINS2", true)
@@ -450,9 +449,7 @@ func skill_4_effect():
 	print_debug(skill_4_animation_buffer)
 	if skill_5_count >= 3:
 		skill_5_count = 3
-	
-	await get_tree().create_timer(skill_4_animation_buffer)
-	clown_turn_end = true
+
 
 #func skill_5_effect():
 	##PHASE-2 DOUBLE-KICK (CAN TARGET SAME TARGET TWICE)
