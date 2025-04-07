@@ -27,6 +27,12 @@ var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @export var test_skill_11_button_normal: CompressedTexture2D
 @export var test_skill_11_button_down: CompressedTexture2D
 
+
+func _process(delta: float):
+	if Input.is_action_just_pressed("test_hell_skill_2"):
+		print_debug("NYA")
+		_on_pressed()
+
 func _ready():
 	match skills.skill_slot_2_skill_hell:
 		1:

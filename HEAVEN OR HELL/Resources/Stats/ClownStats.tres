@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://de6q1fs331ppb"]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://cuadvbpkx1wx"]
 
 [ext_resource type="Script" uid="uid://dmh5rjdgjawbh" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_r3df3"]
 
@@ -8,24 +8,24 @@ character_name = "Clown"
 move_speed = 3500
 run_speed = 8000
 max_heart = 10000
-current_heart = 9858
+current_heart = 9649
 max_magia = 10000
 current_magia = 10000
-malice = 10
-deviltry = 15
+malice = 30
+deviltry = 30
 guts = 10.0
 pain_tolerance = 0.0
 luck = 0
 crit = 50
 crit_level = 0
-current_tempo = 9
-current_skill_power = 0
+current_tempo = 10
+current_skill_power = 35
 status_effect_1 = 0
 status_effect_2 = 0
 status_effect_3 = 0
 special_status_effect_1 = 0
 special_status_effect_2 = 0
 special_status_effect_3 = 0
-current_stat_change = 142
+current_stat_change = 85
 current_skill_used = ""
 current_crit_level = 0

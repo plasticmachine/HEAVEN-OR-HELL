@@ -372,8 +372,8 @@ func reset_boss_stats():
 			max_magia = 10000
 			current_heart = 10000
 			current_magia = 10000
-			malice = 10
-			deviltry = 10
+			malice = 30
+			deviltry = 30
 			guts = 10
 			luck = 0
 			crit = 50

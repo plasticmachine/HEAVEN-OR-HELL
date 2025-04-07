@@ -54,6 +54,8 @@ func _on_parry_area_area_shape_entered(area_rid, area, area_shape_index, local_s
 	HeavenTBVFX.play("magia_use")
 	cameraTricks.camera_shake_enable()
 	hit_stop(0.05, .2)
+	Input.start_joy_vibration(0,1,1,1)
+	
 	await get_tree().create_timer(parry_blink_timer_sec).timeout
 	HeavenTBAnimation.play("idle")
 	

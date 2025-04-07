@@ -27,6 +27,11 @@ var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 @export var test_skill_11_button_normal: CompressedTexture2D
 @export var test_skill_11_button_down: CompressedTexture2D
 
+func _process(delta: float):
+	if Input.is_action_just_pressed("test_heaven_skill_1"):
+		print_debug("NYA")
+		_on_pressed()
+
 func _ready():
 	match skills.skill_slot_1_skill_heaven:
 		1:

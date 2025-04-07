@@ -1,4 +1,5 @@
 extends TextureButton
+
 signal hell_action_commited
 
 @onready var skills = $"../../../../SkillManager"
@@ -27,6 +28,12 @@ var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @export var test_skill_10_button_down: CompressedTexture2D
 @export var test_skill_11_button_normal: CompressedTexture2D
 @export var test_skill_11_button_down: CompressedTexture2D
+
+func _process(delta: float):
+	if Input.is_action_just_released("test_hell_skill_1"):
+		print_debug("NYA")
+		self.pressed
+		_on_pressed()
 
 func _ready():
 	match skills.skill_slot_1_skill_hell:
@@ -75,13 +82,13 @@ func _ready():
 			self.texture_pressed = test_skill_11_button_down
 #self.texure_hover = test_skill_11_button_normal
 
+
 func _on_pressed():
 	hell_action_commited.emit()
 	match skills.skill_slot_1_skill_hell:
 		1:
 			skills.skill_ID_1_hell_tempo_convert()
 			print_debug(hellstats.character_name + " locked in a move with " + str(hellstats.current_tempo) + " tempo)" )
-
 		2:
 			skills.skill_ID_2_hell_tempo_convert()
 			print_debug(hellstats.character_name + " locked in a move with " + str(hellstats.current_tempo) + " tempo)" )

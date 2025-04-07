@@ -68,6 +68,7 @@ func _ready():
 	hellstats.current_tempo = 0
 	
 	
+	
 	match BOSS_ID:
 		3:
 			clownstats.current_skill_power = 0
@@ -77,7 +78,10 @@ func _ready():
 			clownstats.special_status_effect_3 = 0
 	
 	if debug_mode == true:
-		
+		print_debug(Input.get_joy_name(0))
+		print_debug(Input.get_joy_info(0))
+		print_debug(Input.get_joy_name(1))
+		print_debug(Input.get_joy_info(1))
 		clownstats.reset_boss_stats()
 		heavenstats.reset_stats()
 		hellstats.reset_stats()

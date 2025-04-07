@@ -1204,7 +1204,6 @@ func skill_ID_11_heaven():
 	### BE SURE TO MAKE THE SKILL POWER FOR THESE RANGES EQUALLY SPACED APART, 11 IS WEAKEST, 3 IS STRONGEST
 	var stage
 	heavenstats.convert_tempo(ID_11_heaven_tempo)
-
 	print_debug(heavenstats.character_name + " used " + ID_11_heaven_skill_name + " (" + str(heavenstats.current_tempo) + " tempo)" )
 	
 	if heavenstats.current_magia <= (heavenstats.max_magia * .75):
