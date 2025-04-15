@@ -459,11 +459,11 @@ tracks/1/keys = {
 "values": [&"Phase_1_Damage"]
 }
 
-[sub_resource type="Animation" id="Animation_fh5op"]
+[sub_resource type="Animation" id="Animation_l6skv"]
 resource_name = "Damage2"
-length = 1.00001
+length = 0.636373
 loop_mode = 1
-step = 0.0833333
+step = 0.0909091
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -471,10 +471,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0909091, 0.181818, 0.272727, 0.363636, 0.454545, 0.545455),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [0, 1, 2, 3, 3, 4, 4]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -850,7 +850,7 @@ tracks/1/keys = {
 _data = {
 &"Buff1": SubResource("Animation_gcrxe"),
 &"Damage1": SubResource("Animation_m7c7x"),
-&"Damage2": SubResource("Animation_fh5op"),
+&"Damage2": SubResource("Animation_l6skv"),
 &"Damage3": SubResource("Animation_x1yo7"),
 &"Damage4": SubResource("Animation_75ak2"),
 &"Kicks": SubResource("Animation_hlv15"),
@@ -964,7 +964,7 @@ advance_condition = &"BUFF1"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vrt1w"]
 break_loop_at_end = true
 reset = false
-switch_mode = 2
+switch_mode = 1
 advance_mode = 2
 advance_condition = &"KICKS"
 
@@ -1061,7 +1061,6 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3fjfl"]
 break_loop_at_end = true
 reset = false
-switch_mode = 1
 advance_mode = 2
 advance_condition = &"DAMAGE1"
 
@@ -1147,7 +1146,7 @@ states/StateMachine/position = Vector2(557, 536.933)
 states/Throw/node = SubResource("AnimationNodeAnimation_nw3vd")
 states/Throw/position = Vector2(177, 222)
 "states/Throw 2/node" = SubResource("AnimationNodeAnimation_fi6os")
-"states/Throw 2/position" = Vector2(349, 211)
+"states/Throw 2/position" = Vector2(411, 230)
 "states/Throw 3/node" = SubResource("AnimationNodeAnimation_wueik")
 "states/Throw 3/position" = Vector2(610, 211)
 states/idle/node = SubResource("AnimationNodeAnimation_rj4b0")
@@ -1157,7 +1156,7 @@ states/idle_2/position = Vector2(475, 110)
 states/idle_3/node = SubResource("AnimationNodeAnimation_ijcpa")
 states/idle_3/position = Vector2(667, 110)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3u6ds"), "Buff1", "idle", SubResource("AnimationNodeStateMachineTransition_7wpfe"), "idle", "Buff1", SubResource("AnimationNodeStateMachineTransition_lk75y"), "Spins", "Kicks", SubResource("AnimationNodeStateMachineTransition_vrt1w"), "Kicks", "Spins", SubResource("AnimationNodeStateMachineTransition_7h37o"), "idle", "Throw", SubResource("AnimationNodeStateMachineTransition_xgr8x"), "Throw", "idle", SubResource("AnimationNodeStateMachineTransition_8k7hh"), "idle", "Damage1", SubResource("AnimationNodeStateMachineTransition_2rpsa"), "Damage1", "idle", SubResource("AnimationNodeStateMachineTransition_vvgn1"), "Spins", "Damage2", SubResource("AnimationNodeStateMachineTransition_sv5ea"), "Damage2", "Spins", SubResource("AnimationNodeStateMachineTransition_l64by"), "Spins", "Spins_2_Testing", SubResource("AnimationNodeStateMachineTransition_w6tlf"), "Spins_2_Testing", "Spins", SubResource("AnimationNodeStateMachineTransition_accyc"), "idle_3", "Spins", SubResource("AnimationNodeStateMachineTransition_v03o3"), "Spins", "idle_3", SubResource("AnimationNodeStateMachineTransition_7qpoe"), "Buff1 2", "idle_2", SubResource("AnimationNodeStateMachineTransition_menjm"), "idle_2", "Buff1 2", SubResource("AnimationNodeStateMachineTransition_2gida"), "idle_2", "Throw 2", SubResource("AnimationNodeStateMachineTransition_ogo43"), "Throw 2", "idle_2", SubResource("AnimationNodeStateMachineTransition_d880n"), "idle_2", "Damage1 2", SubResource("AnimationNodeStateMachineTransition_3fjfl"), "Damage1 2", "idle_2", SubResource("AnimationNodeStateMachineTransition_snfga"), "idle", "idle_2", SubResource("AnimationNodeStateMachineTransition_8egpv"), "idle_2", "idle_3", SubResource("AnimationNodeStateMachineTransition_b6pl1"), "idle_3", "Buff1 3", SubResource("AnimationNodeStateMachineTransition_p7nij"), "Buff1 3", "idle_3", SubResource("AnimationNodeStateMachineTransition_g87cy"), "idle_3", "Throw 3", SubResource("AnimationNodeStateMachineTransition_fy2ds"), "Throw 3", "idle_3", SubResource("AnimationNodeStateMachineTransition_it1qq"), "idle_3", "Damage1 3", SubResource("AnimationNodeStateMachineTransition_m2560"), "Damage1 3", "idle_3", SubResource("AnimationNodeStateMachineTransition_w6i73")]
-graph_offset = Vector2(-88, -99.0672)
+graph_offset = Vector2(15, -135.067)
 
 [node name="ClownTb" type="Node2D"]
 position = Vector2(874, 512)

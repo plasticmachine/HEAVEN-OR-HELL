@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://7rt6dkveq6uj"]
+
+[ext_resource type="Script" uid="uid://edecm6u4rgsn" path="res://Resources/Inventories/CharaInventory.gd" id="1_fv53j"]
+[ext_resource type="Resource" uid="uid://b4qdprvsd4kxf" path="res://Resources/Keychains/TEST/TEST_A1.tres" id="1_g1swl"]
+
+[resource]
+script = ExtResource("1_fv53j")
+character_name = "Heaven"
+skill_slot_1 = 1
+skill_slot_2 = 2
+skill_slot_3 = 3
+skill_slot_4 = 4
+keychain_slot_1 = ExtResource("1_g1swl")
+keychain_slot_1_stack = 1
+keychain_slot_2_stack = 0
+keychain_slot_3_stack = 0
+keychain_slot_4_stack = 0
+keychain_slot_5_stack = 0
+can_parry = false
+can_block = false
+added_effect_ID = 1
+removed_effect_ID = 2

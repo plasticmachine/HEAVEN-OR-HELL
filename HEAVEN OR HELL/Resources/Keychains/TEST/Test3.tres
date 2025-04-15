@@ -7,6 +7,7 @@
 script = ExtResource("1_0hxmn")
 keychain_id = 3
 keychain_name = "pumpkin"
+keychain_size = 1
 keychain_description = "pumpkin"
 keychain_rarity = "pumpkin"
 keychain_texture = ExtResource("1_qkutw")

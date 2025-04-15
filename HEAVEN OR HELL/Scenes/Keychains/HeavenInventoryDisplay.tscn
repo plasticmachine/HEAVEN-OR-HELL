@@ -1,20 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://c78nm2c1qev16"]
+[gd_scene load_steps=3 format=3 uid="uid://c78nm2c1qev16"]
 
 [ext_resource type="Script" uid="uid://ldjwk4d8n6ll" path="res://Scripts/Mechanics/Keychains/testing stuff/InventoryDisplayRight.gd" id="1_te83d"]
+[ext_resource type="Texture2D" uid="uid://b43e5c2mtcsof" path="res://art/misc/xjwmt5upomxa1.png" id="2_ol8kp"]
 
 [node name="HeavenInventoryDisplay" type="CanvasLayer"]
 script = ExtResource("1_te83d")
-keychain_size = Vector2(32, 32)
-label_y_offset = 1
 
-[node name="InventoryContainer" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1750.0
-offset_top = 15.0
-offset_right = 1750.0
-offset_bottom = 15.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Slot1" type="TextureRect" parent="."]
+offset_left = 1098.0
+offset_right = 1198.0
+offset_bottom = 100.0
+scale = Vector2(1.64, 1.64)
+texture = ExtResource("2_ol8kp")
+
+[node name="Slot2" type="TextureRect" parent="."]
+offset_left = 1262.0
+offset_right = 1362.0
+offset_bottom = 100.0
+scale = Vector2(1.64, 1.64)
+
+[node name="Slot3" type="TextureRect" parent="."]
+offset_left = 1424.0
+offset_right = 1524.0
+offset_bottom = 100.0
+scale = Vector2(1.64, 1.64)
+
+[node name="Slot4" type="TextureRect" parent="."]
+offset_left = 1588.0
+offset_right = 1688.0
+offset_bottom = 100.0
+scale = Vector2(1.64, 1.64)
+
+[node name="Slot5" type="TextureRect" parent="."]
+offset_left = 1753.0
+offset_right = 1853.0
+offset_bottom = 100.0
+scale = Vector2(1.64, 1.64)

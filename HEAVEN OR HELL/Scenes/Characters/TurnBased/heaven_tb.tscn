@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dg5v3yjj5m15l" path="res://art/HEAVEN/turnbased/block/dark/Dark Block Test.png" id="3_qer1v"]
 [ext_resource type="PackedScene" uid="uid://c78nm2c1qev16" path="res://Scenes/Keychains/HeavenInventoryDisplay.tscn" id="4_0d727"]
 [ext_resource type="Texture2D" uid="uid://b46odikqlqrwm" path="res://art/HEAVEN/turnbased/idle_resize/light/Untitled_Artwork-2.png" id="4_jioyu"]
-[ext_resource type="Script" uid="uid://xjvavbp0vun0" path="res://Scripts/Mechanics/Keychains/testing stuff/inventory.gd" id="5_7kpab"]
+[ext_resource type="Script" uid="uid://xjvavbp0vun0" path="res://Scripts/Mechanics/Keychains/testing stuff/OLD_inventory.gd" id="5_7kpab"]
 [ext_resource type="Texture2D" uid="uid://cebs0usp13ypf" path="res://art/HEAVEN/turnbased/idle_resize/light/Untitled_Artwork-3.png" id="5_qer1v"]
 [ext_resource type="Texture2D" uid="uid://ci3mlh3wruypv" path="res://art/HEAVEN/turnbased/idle_resize/light/Untitled_Artwork-4.png" id="6_4mlvi"]
 [ext_resource type="Script" uid="uid://bo0ycrftx58al" path="res://Scripts/Mechanics/Keychains/testing stuff/heaven_inventory_functions.gd" id="6_dfshg"]
@@ -194,16 +194,14 @@ modulate = Color(0.712129, 0.712129, 0.712129, 1)
 position = Vector2(1576, 736)
 scale = Vector2(0.796082, 0.796082)
 sprite_frames = SubResource("SpriteFrames_1hfb2")
-animation = &"block"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="InventoryManager" type="Node2D" parent="."]
 script = ExtResource("5_7kpab")
-MAX_UNIQUE_KEYCHAINS = 5
 
-[node name="HeavenInventoryFunctions" type="Node2D" parent="." node_paths=PackedStringArray("heaven_inventory")]
+[node name="HeavenInventoryFunctions" type="Node2D" parent="."]
 script = ExtResource("6_dfshg")
-heaven_inventory = NodePath("../InventoryManager")
 
 [node name="HeavenActionMechanics" type="Node2D" parent="."]
 script = ExtResource("14_k1xjr")
@@ -212,15 +210,10 @@ block_timeout = 2.0
 parry_window = 0.2
 parry_timeout = 2.0
 
-[node name="DEBUG" type="Node2D" parent="." node_paths=PackedStringArray("inventory_functions")]
+[node name="DEBUG" type="Node2D" parent="."]
 script = ExtResource("7_mq0ys")
-inventory_functions = NodePath("../HeavenInventoryFunctions")
 
-[node name="HeavenInventoryDisplay" parent="." node_paths=PackedStringArray("inventory_manager") instance=ExtResource("4_0d727")]
-inventory_manager = NodePath("../InventoryManager")
-keychain_spacing = -175
-keychain_size = Vector2(0, 0)
-label_y_offset = 16
+[node name="HeavenInventoryDisplay" parent="." instance=ExtResource("4_0d727")]
 
 [node name="BlockArea" type="Area2D" parent="."]
 position = Vector2(1612, 844)
@@ -241,7 +234,6 @@ disabled = true
 
 [node name="HeavenSoundManager" parent="." instance=ExtResource("18_qer1v")]
 
-[connection signal="inventory_changed" from="InventoryManager" to="HeavenInventoryDisplay" method="update_hud"]
 [connection signal="area_shape_entered" from="BlockArea" to="." method="_on_block_area_area_shape_entered"]
 [connection signal="body_entered" from="BlockArea" to="." method="_on_block_area_body_entered"]
 [connection signal="body_shape_entered" from="BlockArea" to="." method="_on_block_area_entered"]

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bovtv2gue228w"]
+
+[ext_resource type="Script" uid="uid://edecm6u4rgsn" path="res://Resources/Inventories/CharaInventory.gd" id="1_tib73"]
+
+[resource]
+script = ExtResource("1_tib73")
+character_name = "Hell"
+skill_slot_1 = 2
+skill_slot_2 = 3
+skill_slot_3 = 4
+skill_slot_4 = 1
+keychain_slot_1_stack = 0
+keychain_slot_2_stack = 0
+keychain_slot_3_stack = 0
+keychain_slot_4_stack = 0
+keychain_slot_5_stack = 0
+can_parry = false
+can_block = false
+added_effect_ID = 0
+removed_effect_ID = 0

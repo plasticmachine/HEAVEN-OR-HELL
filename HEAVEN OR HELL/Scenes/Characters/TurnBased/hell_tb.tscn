@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnykxh2n6vx0d" path="res://art/HELL/turnbased/block/Dark Block Test.png" id="1_qsudq"]
 [ext_resource type="Texture2D" uid="uid://bqttc04kfpwqe" path="res://art/HELL/turnbased/idle_resize/dark/Dark.png" id="2_8srhe"]
 [ext_resource type="Texture2D" uid="uid://cced5gxeab50e" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-1.png" id="3_8srhe"]
-[ext_resource type="Script" uid="uid://xjvavbp0vun0" path="res://Scripts/Mechanics/Keychains/testing stuff/inventory.gd" id="4_17j3l"]
+[ext_resource type="Script" uid="uid://xjvavbp0vun0" path="res://Scripts/Mechanics/Keychains/testing stuff/OLD_inventory.gd" id="4_17j3l"]
 [ext_resource type="Texture2D" uid="uid://et21sujlee7w" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-2.png" id="4_s7wec"]
 [ext_resource type="Script" uid="uid://drpwx4knapdyl" path="res://Scripts/Mechanics/Keychains/testing stuff/hell_inventory_functions.gd" id="5_71qnj"]
 [ext_resource type="Texture2D" uid="uid://b6gds3mnev20p" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-3.png" id="5_nd8ll"]
@@ -188,7 +188,6 @@ autoplay = "idle"
 
 [node name="InventoryManager" type="Node2D" parent="."]
 script = ExtResource("4_17j3l")
-MAX_UNIQUE_KEYCHAINS = 5
 
 [node name="HellInventoryFunctions" type="Node2D" parent="." node_paths=PackedStringArray("hell_inventory")]
 script = ExtResource("5_71qnj")
@@ -228,6 +227,5 @@ disabled = true
 
 [node name="HellSoundManager" parent="." instance=ExtResource("16_ddata")]
 
-[connection signal="inventory_changed" from="InventoryManager" to="HellInventoryDisplay" method="update_hud"]
 [connection signal="area_shape_entered" from="BlockArea" to="." method="_on_block_area_area_shape_entered"]
 [connection signal="area_shape_entered" from="ParryArea" to="." method="_on_parry_area_area_shape_entered"]

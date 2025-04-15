@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bubpi4bu74gth"]
+
+[ext_resource type="Script" uid="uid://edecm6u4rgsn" path="res://Resources/Inventories/CharaInventory.gd" id="1_hofmx"]
+
+[resource]
+script = ExtResource("1_hofmx")
+character_name = "ANGEL/DEVIL"
+skill_slot_1 = 0
+skill_slot_2 = 0
+skill_slot_3 = 0
+skill_slot_4 = 0
+keychain_slot_1_stack = 0
+keychain_slot_2_stack = 0
+keychain_slot_3_stack = 0
+keychain_slot_4_stack = 0
+keychain_slot_5_stack = 0
+can_parry = false
+can_block = false
+added_effect_ID = 0

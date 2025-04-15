@@ -7,6 +7,7 @@
 script = ExtResource("2_pxiar")
 keychain_id = 2
 keychain_name = "Reimu"
+keychain_size = 2
 keychain_description = "\"its Reimu!\""
 keychain_rarity = "ULTRA RARE!"
 keychain_texture = ExtResource("1_w7bju")

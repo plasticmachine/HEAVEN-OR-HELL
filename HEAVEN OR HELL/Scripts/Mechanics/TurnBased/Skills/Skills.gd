@@ -7,6 +7,12 @@ signal hell_ID_3_wear_off_set
 
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
 @onready var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
+@onready var test_1 = preload("res://Resources/Keychains/TEST/Test1.tres")
+@onready var test_2 = preload("res://Resources/Keychains/TEST/Test2.tres")
+
+@onready var hellinventory = preload("res://Resources/Inventories/HellInventory.tres")
+@onready var heaveninventory = preload("res://Resources/Inventories/HeavenInventory.tres")
+
 @onready var clownstats = preload("res://Resources/Stats/ClownStats.tres")
 @onready var heaven_effect_animation = $"../BattleEffectManagerPosition/HeavenBattleEffectManager"
 @onready var heaven_effect_animation_support = $"../BattleEffectManagerPosition/HeavenBattleEffectManagerSupport"
@@ -34,15 +40,15 @@ signal hell_ID_3_wear_off_set
 
 #export these for now for testing purposes, but in the future make these private so only the inventory system can change these values
 @export_group("Heaven Skill Slots: TESTING")
-@export var skill_slot_1_skill_heaven: int
-@export var skill_slot_2_skill_heaven: int
-@export var skill_slot_3_skill_heaven: int
-@export var skill_slot_4_skill_heaven: int
+@onready var skill_slot_1_skill_heaven = heaveninventory.skill_slot_1
+@onready var skill_slot_2_skill_heaven = heaveninventory.skill_slot_2
+@onready var skill_slot_3_skill_heaven = heaveninventory.skill_slot_3
+@onready var skill_slot_4_skill_heaven = heaveninventory.skill_slot_4
 @export_group("Hell Skill Slots: TESTING")
-@export var skill_slot_1_skill_hell: int
-@export var skill_slot_2_skill_hell: int
-@export var skill_slot_3_skill_hell: int
-@export var skill_slot_4_skill_hell: int
+@onready var skill_slot_1_skill_hell = hellinventory.skill_slot_1
+@onready var skill_slot_2_skill_hell = hellinventory.skill_slot_2
+@onready var skill_slot_3_skill_hell = hellinventory.skill_slot_3
+@onready var skill_slot_4_skill_hell = hellinventory.skill_slot_4
 
 @export_group("Heaven Skill: Test 1")
 @export_subgroup("Variables: Test 1")
@@ -579,7 +585,6 @@ signal hell_ID_3_wear_off_set
 ### SYSTEM TEXT VARIABLES
 @export var skill_used: String
 
-
 ### TARGET_ID = 1: HEAVEN 2: HELL 3: CLOWN
 
 ### SKILL SLOTS
@@ -834,6 +839,11 @@ func skill_ID_1_heaven():
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_USED_SKILL")
 	heavenstats.convert_skill_power(ID_1_heaven_power)
 	
+
+	heaveninventory.add_keychain(test_1)
+	KeychainStuff.check_keychain_added_heaven()
+	print_debug(str(heaveninventory.keychain_slot_1.keychain_name))
+	print_debug(str(heaveninventory.keychain_slot_1_stack))
 	match heaven_target_ID:
 		2:
 			print_debug(str(heavenstats.character_name) + " used  " + str(ID_1_heaven_skill_name) + " on " + str(hellstats.character_name) + " (" + str(heavenstats.current_tempo) + " tempo)" )
@@ -847,8 +857,7 @@ func skill_ID_1_heaven():
 			enemy_effect_animation.find_hit_spot()
 			enemy_effect_animation.play("basic_slash")
 			HeavenSounds.HEAVEN_SLASH.play()
-	
-
+	ResourceSaver.save(heaveninventory)
 #test skill that just does damage based off of deviltry, but spends a little magia bar
 func skill_ID_2_heaven():
 	#heavenstats.convert_tempo(ID_2_heaven_tempo)
@@ -863,7 +872,10 @@ func skill_ID_2_heaven():
 	
 	await get_tree().create_timer(heaven_effect_animation.heaven_VFX_buffer).timeout
 	
-	
+	heaveninventory.add_keychain(test_2)
+	KeychainStuff.check_keychain_added_heaven()
+	print_debug(str(heaveninventory.keychain_slot_1.keychain_name))
+	print_debug(str(heaveninventory.keychain_slot_1_stack))
 	match heaven_target_ID:
 		2:
 			print_debug(str(heavenstats.character_name) + " used  " + str(ID_2_heaven_skill_name) + " on " + str(hellstats.character_name) + " (" + str(heavenstats.current_tempo) + " tempo)" )
@@ -884,7 +896,7 @@ func skill_ID_2_heaven():
 			damage_calc.heaven_to_clown_deviltry_damagecalc()
 			battle_effect_manager_FS.play("heaven_shoot_explosion")
 			HeavenSounds.HEAVEN_SHOOT.play()
-	
+	ResourceSaver.save(heaveninventory)
 func skill_ID_3_heaven():
 	heaven_switch_turn_animation_buffer = ID_3_heaven_animation_buffer
 	#heavenstats.convert_tempo(ID_3_heaven_tempo)
@@ -916,9 +928,12 @@ func skill_ID_3_heaven():
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_INCREASED_OWN_MALICE")
 	HeavenSounds.HEAVEN_BUFF.play()
 	
+	heaveninventory.remove_keychain(test_1)
+	KeychainStuff.check_keychain_removed_heaven()
+	
 	skill_effect_wear_off_set.emit()
 	
-
+	ResourceSaver.save(heaveninventory)
 func skill_ID_4_heaven():
 	heaven_switch_turn_animation_buffer = ID_4_heaven_animation_buffer
 	heavenstats.current_skill_used = ID_4_heaven_skill_name
@@ -940,7 +955,10 @@ func skill_ID_4_heaven():
 	heavenstats.add_heart(ID_4_heaven_increase_1)
 	heavenstats.current_stat_change = ID_4_heaven_increase_1
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_HEALS_OWN_HEART")
-
+	
+	heaveninventory.remove_keychain(test_2)
+	KeychainStuff.check_keychain_removed_heaven()
+	ResourceSaver.save(heaveninventory)
 func skill_ID_5_heaven():
 	heaven_switch_turn_animation_buffer = ID_5_heaven_animation_buffer
 	heavenstats.current_skill_used = ID_5_heaven_skill_name

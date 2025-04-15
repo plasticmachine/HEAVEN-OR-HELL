@@ -35,6 +35,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 HellSounds="*res://Scenes/SoundManagers/hell_sound_manager.tscn"
 HeavenSounds="*res://Scenes/SoundManagers/heaven_sound_manager.tscn"
 ClownSounds="*res://Scenes/SoundManagers/clown_sound_manager.tscn"
+KeychainStuff="*res://Scripts/Mechanics/Keychains/Keychains.gd"
 
 [dialogue_manager]
 
