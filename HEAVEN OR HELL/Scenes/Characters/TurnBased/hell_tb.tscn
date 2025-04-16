@@ -1,12 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://tcfwrymqvqb4"]
+[gd_scene load_steps=18 format=3 uid="uid://tcfwrymqvqb4"]
 
 [ext_resource type="Script" uid="uid://ciw2sfdtlt7vu" path="res://Scenes/Characters/TurnBased/hellTBAnimation.gd" id="1_8t303"]
 [ext_resource type="Texture2D" uid="uid://dnykxh2n6vx0d" path="res://art/HELL/turnbased/block/Dark Block Test.png" id="1_qsudq"]
 [ext_resource type="Texture2D" uid="uid://bqttc04kfpwqe" path="res://art/HELL/turnbased/idle_resize/dark/Dark.png" id="2_8srhe"]
 [ext_resource type="Texture2D" uid="uid://cced5gxeab50e" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-1.png" id="3_8srhe"]
-[ext_resource type="Script" uid="uid://xjvavbp0vun0" path="res://Scripts/Mechanics/Keychains/testing stuff/OLD_inventory.gd" id="4_17j3l"]
 [ext_resource type="Texture2D" uid="uid://et21sujlee7w" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-2.png" id="4_s7wec"]
-[ext_resource type="Script" uid="uid://drpwx4knapdyl" path="res://Scripts/Mechanics/Keychains/testing stuff/hell_inventory_functions.gd" id="5_71qnj"]
 [ext_resource type="Texture2D" uid="uid://b6gds3mnev20p" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-3.png" id="5_nd8ll"]
 [ext_resource type="Texture2D" uid="uid://d0pavxp1pdiea" path="res://art/HELL/turnbased/idle_resize/light/Untitled_Artwork-4.png" id="6_ddata"]
 [ext_resource type="Script" uid="uid://cpd0ttxlsvjoa" path="res://Scripts/Mechanics/Keychains/testing stuff/DEBUGHELL.gd" id="6_jlxl7"]
@@ -186,13 +184,6 @@ sprite_frames = SubResource("SpriteFrames_wepe7")
 animation = &"block"
 autoplay = "idle"
 
-[node name="InventoryManager" type="Node2D" parent="."]
-script = ExtResource("4_17j3l")
-
-[node name="HellInventoryFunctions" type="Node2D" parent="." node_paths=PackedStringArray("hell_inventory")]
-script = ExtResource("5_71qnj")
-hell_inventory = NodePath("../InventoryManager")
-
 [node name="HellActionMechanics" type="Node2D" parent="."]
 script = ExtResource("12_s7wec")
 block_window = 0.5
@@ -200,13 +191,10 @@ block_timeout = 2.0
 parry_window = 0.2
 parry_timeout = 2.0
 
-[node name="DEBUG" type="Node2D" parent="." node_paths=PackedStringArray("inventory_functions")]
+[node name="DEBUG" type="Node2D" parent="."]
 script = ExtResource("6_jlxl7")
-inventory_functions = NodePath("../HellInventoryFunctions")
 
-[node name="HellInventoryDisplay" parent="." node_paths=PackedStringArray("inventory_manager") instance=ExtResource("7_qhq1h")]
-inventory_manager = NodePath("../InventoryManager")
-keychain_spacing = 175
+[node name="HellInventoryDisplay" parent="." instance=ExtResource("7_qhq1h")]
 
 [node name="BlockArea" type="Area2D" parent="."]
 position = Vector2(258, 844)

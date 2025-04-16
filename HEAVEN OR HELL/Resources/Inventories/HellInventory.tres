@@ -16,5 +16,6 @@ keychain_slot_4_stack = 0
 keychain_slot_5_stack = 0
 can_parry = false
 can_block = false
+inventory_changed = false
 added_effect_ID = 0
 removed_effect_ID = 0

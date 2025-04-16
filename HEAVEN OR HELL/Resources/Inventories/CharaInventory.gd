@@ -27,6 +27,7 @@ static var KeychainStackLimit: int = 5
 @export var can_parry: bool = false
 @export var can_block: bool = false
 
+@export var inventory_changed: bool = false
 @export var added_effect_ID: int = 0
 @export var removed_effect_ID: int = 0
 func _process(delta: float) -> void:
@@ -60,6 +61,7 @@ func add_keychain(keychain: KeychainResource) -> bool:
 		if new_stack <= KeychainStackLimit:
 			set("keychain_slot_%d" % i, new_stack)
 			added_effect_ID = keychain.keychain_id
+			inventory_changed = true
 			return true
 		print_debug("CURRENT KEYCHAIN STACK FOR SLOT " + str(slot) + " IS " + str(new_stack))
 	#finding a new stack to populate if there's not an existing one, add to first empty slot=
@@ -70,8 +72,10 @@ func add_keychain(keychain: KeychainResource) -> bool:
 		set("keychain_slot_%d" % i, keychain)
 		set("keychain_slot_%d_stack" % i, keychain_size)
 		added_effect_ID = keychain.keychain_id
+		inventory_changed = true
 		return true
 		print_debug("CURRENT KEYCHAIN STACK FOR " + str(slot) + " NO STACK YET!")
+	inventory_changed = false
 	#full inventory!
 	return false
 
@@ -91,6 +95,8 @@ func remove_keychain(keychain: KeychainResource) -> bool:
 				set("keychain_slot_%d" % i, null)
 				set("keychain_slot_%d_stack" % i, 0)
 				removed_effect_ID = keychain.keychain_id
+				inventory_changed = true
 			return true
+		inventory_changed = false
 	#keychain not found
 	return false

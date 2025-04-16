@@ -5,14 +5,32 @@
 [node name="HellInventoryDisplay" type="CanvasLayer"]
 script = ExtResource("1_xhmq6")
 
-[node name="InventoryContainer" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 13.0
-offset_right = -1730.0
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Slot1" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_right = 101.0
+offset_bottom = 100.0
+scale = Vector2(1.64, 1.64)
+
+[node name="Slot2" type="TextureRect" parent="."]
+offset_left = 165.0
+offset_right = 265.0
+offset_bottom = 100.0
+scale = Vector2(1.64, 1.64)
+
+[node name="Slot3" type="TextureRect" parent="."]
+offset_left = 327.0
+offset_right = 427.0
+offset_bottom = 100.0
+scale = Vector2(1.64, 1.64)
+
+[node name="Slot4" type="TextureRect" parent="."]
+offset_left = 491.0
+offset_right = 591.0
+offset_bottom = 100.0
+scale = Vector2(1.64, 1.64)
+
+[node name="Slot5" type="TextureRect" parent="."]
+offset_left = 656.0
+offset_right = 756.0
+offset_bottom = 100.0
+scale = Vector2(1.64, 1.64)

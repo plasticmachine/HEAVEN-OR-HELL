@@ -12,12 +12,15 @@ extends CanvasLayer
 func _ready():
 	update_all_slots()
 
-func _process(delta: float) -> void:
-	update_all_slots()
-
+#func _process(delta: float) -> void:
+	#update_all_slots()
+##
+func check_if_inventory_changed():
+	if heaveninventory.inventory_changed == true:
+		update_all_slots()
 
 func update_all_slots():
-	if heaveninventory.keychain_slot_1.keychain_texture != null:
+	if heaveninventory.keychain_slot_1 != null:
 		slot_1.texture = heaveninventory.keychain_slot_1.keychain_texture
 		slot_2.texture = heaveninventory.keychain_slot_2.keychain_texture
 		slot_3.texture = heaveninventory.keychain_slot_3.keychain_texture
