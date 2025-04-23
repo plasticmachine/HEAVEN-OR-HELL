@@ -26,77 +26,112 @@ static var KeychainStackLimit: int = 5
 @export_category("KEYCHAIN BOOLEANS / EFFECT_IDS")
 @export var can_parry: bool = false
 @export var can_block: bool = false
+@export var can_bonus_attack: bool = false
+@export var can_bounce_on_it: bool = false
+@export var lucy_active: bool = false
+@export var protections: int = 0
+
 
 @export var inventory_changed: bool = false
 @export var added_effect_ID: int = 0
 @export var removed_effect_ID: int = 0
+@export var current_slot: int = 0
+@export var current_slot_stack: int = 0
 func _process(delta: float) -> void:
-	if keychain_slot_1_stack > 5:
-		keychain_slot_1_stack = 5
-	if keychain_slot_2_stack > 5:
-		keychain_slot_2_stack = 5
-	if keychain_slot_3_stack > 5:
-		keychain_slot_3_stack = 5
-	if keychain_slot_4_stack > 5:
-		keychain_slot_4_stack = 5
-	if keychain_slot_5_stack > 5:
-		keychain_slot_5_stack = 5
+	# Ensure stacks don't exceed limit
+	for i in range(1, 6):
+		var stack = get("keychain_slot_%d_stack" % i)
+		if stack > KeychainStackLimit:
+			set("keychain_slot_%d_stack" % i, KeychainStackLimit)
 
 func add_keychain(keychain: KeychainResource) -> bool:
 	if not keychain:
 		return false
 	
-	var keychain_size: int = keychain.get("keychain_size")
-	#if keychain and keychain.get("keychain_size") != null:
-		#keychain_size = keychain.keychain_size
-		#
-	#trying to add to an existing keychain stack
-	for i in range(1,6):
-		var slot = get("keychain_slot_%d" % i)
-		if slot != keychain:
+	var keychain_size: int = keychain.keychain_size
+	
+	# First try to add to an existing stack of the same keychain type
+	for i in range(1, 6):
+		var existing_keychain = get("keychain_slot_%d" % i)
+		if existing_keychain == null:
 			continue
 			
-		var current_stack = get("keychain_slot_%d_stack" % i)
-		var new_stack =+ current_stack + keychain_size
-		if new_stack <= KeychainStackLimit:
-			set("keychain_slot_%d" % i, new_stack)
+		# Check if keychains are the same type (you might want to compare by ID or other unique identifier)
+		if existing_keychain.keychain_id == keychain.keychain_id:
+			var current_stack = get("keychain_slot_%d_stack" % i)
+			var new_stack = current_stack + keychain_size
+			
+			if new_stack <= KeychainStackLimit:
+				set("keychain_slot_%d_stack" % i, new_stack)
+				added_effect_ID = keychain.keychain_id
+				inventory_changed = true
+				current_slot = i
+				current_slot_stack = new_stack
+				return true
+			else:
+				# If we can't add all, add as much as possible
+				var added_amount = KeychainStackLimit - current_stack
+				if added_amount > 0:
+					set("keychain_slot_%d_stack" % i, KeychainStackLimit)
+					added_effect_ID = keychain.keychain_id
+					inventory_changed = true
+					current_slot = i
+					current_slot_stack = new_stack
+					return true
+				# If no room in this stack, continue to next slot
+	
+	# If no existing stack found, add to first empty slot
+	for i in range(1, 6):
+		var existing_keychain = get("keychain_slot_%d" % i)
+		if existing_keychain == null:
+			set("keychain_slot_%d" % i, keychain)
+			set("keychain_slot_%d_stack" % i, keychain_size)
 			added_effect_ID = keychain.keychain_id
+			current_slot = i
+			current_slot_stack = 1
 			inventory_changed = true
 			return true
-		print_debug("CURRENT KEYCHAIN STACK FOR SLOT " + str(slot) + " IS " + str(new_stack))
-	#finding a new stack to populate if there's not an existing one, add to first empty slot=
-	for i in range(1,6):
-		var slot = get("keychain_slot_%d" % i)
-		if slot != null:
-			continue
-		set("keychain_slot_%d" % i, keychain)
-		set("keychain_slot_%d_stack" % i, keychain_size)
-		added_effect_ID = keychain.keychain_id
-		inventory_changed = true
-		return true
-		print_debug("CURRENT KEYCHAIN STACK FOR " + str(slot) + " NO STACK YET!")
-	inventory_changed = false
-	#full inventory!
+	
+	# Inventory is full
 	return false
 
 func remove_keychain(keychain: KeychainResource) -> bool:
-	#try to remove from existing stack
-	var keychain_size: int = 1
-	if keychain and keychain.get("keychain_size") != null:
-		keychain_size = keychain.keychain_size
-	for i in range(1,6):
-		var slot = get("keychain_slot_%d" % i)
-		var stack = get("keychain_slot_%d_stack" % i)
-		
-		if slot == keychain and stack >= keychain_size:
-			set("keychain_slot_%d_stack" % i, stack - keychain_size)
+	if not keychain:
+		return false
+	
+	var keychain_size: int = keychain.keychain_size
+	
+	# Try to remove from existing stack
+	for i in range(1, 6):
+		var existing_keychain = get("keychain_slot_%d" % i)
+		if existing_keychain == null:
+			continue
 			
-			if stack - keychain_size <= 0:
+		if existing_keychain.keychain_id == keychain.keychain_id:
+			var current_stack = get("keychain_slot_%d_stack" % i)
+			var new_stack = current_stack - keychain_size
+			if new_stack > 0:
+				set("keychain_slot_%d_stack" % i, new_stack)
+			else:
+				# Remove the keychain completely if stack reaches 0
 				set("keychain_slot_%d" % i, null)
 				set("keychain_slot_%d_stack" % i, 0)
-				removed_effect_ID = keychain.keychain_id
-				inventory_changed = true
+			
+			removed_effect_ID = keychain.keychain_id
+			inventory_changed = true
+			current_slot = i
+			current_slot_stack = new_stack
 			return true
-		inventory_changed = false
-	#keychain not found
+	
+	# Keychain not found
 	return false
+
+func reset_inventory():
+	skill_slot_1 = 1
+	skill_slot_2 = 2
+	skill_slot_3 = 3
+	skill_slot_4 = 4
+	
+	for i in range(1, 6):
+		set("keychain_slot_%d" % i, null)
+		set("keychain_slot_%d_stack" % i, 0)

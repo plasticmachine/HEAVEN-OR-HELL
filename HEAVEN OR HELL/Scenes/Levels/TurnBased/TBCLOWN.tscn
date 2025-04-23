@@ -797,7 +797,8 @@ ease = 2
 [node name="TurnBased" type="Node2D"]
 position = Vector2(11, 181)
 script = ExtResource("1_h0a2a")
-debug_mode = true
+reset_stats = true
+reset_inventory = true
 BOSS_ID = 3
 end_of_turn_buffer = 4
 heaven_animation_buffer = 4

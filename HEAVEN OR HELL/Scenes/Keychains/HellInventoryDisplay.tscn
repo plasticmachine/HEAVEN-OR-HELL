@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdp3mwc8pn1w0"]
+[gd_scene load_steps=5 format=3 uid="uid://bdp3mwc8pn1w0"]
 
 [ext_resource type="Script" uid="uid://dsnqd8cnml1g2" path="res://Scripts/Mechanics/Keychains/testing stuff/InventoryDisplayLeft.gd" id="1_xhmq6"]
+[ext_resource type="Texture2D" uid="uid://bdyc7xuwsw3kn" path="res://art/keychains/testing_keychains/TEST_A1.png" id="2_25b64"]
+[ext_resource type="FontFile" uid="uid://b2q20yvaohtoc" path="res://fonts/apple_kid.ttf" id="2_a5msj"]
+
+[sub_resource type="Theme" id="Theme_r163i"]
+default_font = ExtResource("2_a5msj")
+default_font_size = 50
 
 [node name="HellInventoryDisplay" type="CanvasLayer"]
 script = ExtResource("1_xhmq6")
@@ -10,6 +16,16 @@ offset_left = 1.0
 offset_right = 101.0
 offset_bottom = 100.0
 scale = Vector2(1.64, 1.64)
+texture = ExtResource("2_25b64")
+
+[node name="Slot1Stack" type="RichTextLabel" parent="Slot1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_r163i")
+text = "1"
+fit_content = true
+scroll_active = false
 
 [node name="Slot2" type="TextureRect" parent="."]
 offset_left = 165.0
@@ -17,11 +33,27 @@ offset_right = 265.0
 offset_bottom = 100.0
 scale = Vector2(1.64, 1.64)
 
+[node name="Slot2Stack" type="RichTextLabel" parent="Slot2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_r163i")
+fit_content = true
+scroll_active = false
+
 [node name="Slot3" type="TextureRect" parent="."]
 offset_left = 327.0
 offset_right = 427.0
 offset_bottom = 100.0
 scale = Vector2(1.64, 1.64)
+
+[node name="Slot3Stack" type="RichTextLabel" parent="Slot3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_r163i")
+fit_content = true
+scroll_active = false
 
 [node name="Slot4" type="TextureRect" parent="."]
 offset_left = 491.0
@@ -29,8 +61,24 @@ offset_right = 591.0
 offset_bottom = 100.0
 scale = Vector2(1.64, 1.64)
 
+[node name="Slot4Stack" type="RichTextLabel" parent="Slot4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_r163i")
+fit_content = true
+scroll_active = false
+
 [node name="Slot5" type="TextureRect" parent="."]
 offset_left = 656.0
 offset_right = 756.0
 offset_bottom = 100.0
 scale = Vector2(1.64, 1.64)
+
+[node name="Slot5Stack" type="RichTextLabel" parent="Slot5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_r163i")
+fit_content = true
+scroll_active = false

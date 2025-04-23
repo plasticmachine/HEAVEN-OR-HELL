@@ -1,8 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://c78nm2c1qev16"]
+[gd_scene load_steps=9 format=3 uid="uid://c78nm2c1qev16"]
 
 [ext_resource type="Script" uid="uid://ldjwk4d8n6ll" path="res://Scripts/Mechanics/Keychains/testing stuff/InventoryDisplayRight.gd" id="1_te83d"]
-[ext_resource type="Texture2D" uid="uid://bdyc7xuwsw3kn" path="res://art/keychains/testing_keychains/TEST_A1.png" id="2_ol8kp"]
-[ext_resource type="Texture2D" uid="uid://cihowkyuwjxea" path="res://art/keychains/testing_keychains/TEST_A2.png" id="3_6rx5a"]
+[ext_resource type="Texture2D" uid="uid://bdyc7xuwsw3kn" path="res://art/keychains/testing_keychains/TEST_A1.png" id="2_6rx5a"]
+[ext_resource type="FontFile" uid="uid://b2q20yvaohtoc" path="res://fonts/apple_kid.ttf" id="2_ol8kp"]
+
+[sub_resource type="Theme" id="Theme_6rx5a"]
+default_font = ExtResource("2_ol8kp")
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_w4yjk"]
+default_font = ExtResource("2_ol8kp")
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_pku5e"]
+default_font = ExtResource("2_ol8kp")
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_smuit"]
+default_font = ExtResource("2_ol8kp")
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_vraa0"]
+default_font = ExtResource("2_ol8kp")
+default_font_size = 50
 
 [node name="HeavenInventoryDisplay" type="CanvasLayer"]
 script = ExtResource("1_te83d")
@@ -12,14 +32,30 @@ offset_left = 1098.0
 offset_right = 1198.0
 offset_bottom = 100.0
 scale = Vector2(1.64, 1.64)
-texture = ExtResource("2_ol8kp")
+texture = ExtResource("2_6rx5a")
+
+[node name="Slot1Stack" type="RichTextLabel" parent="Slot1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_6rx5a")
+text = "1"
+fit_content = true
+scroll_active = false
 
 [node name="Slot2" type="TextureRect" parent="."]
 offset_left = 1262.0
 offset_right = 1362.0
 offset_bottom = 100.0
 scale = Vector2(1.64, 1.64)
-texture = ExtResource("3_6rx5a")
+
+[node name="Slot2Stack" type="RichTextLabel" parent="Slot2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_w4yjk")
+fit_content = true
+scroll_active = false
 
 [node name="Slot3" type="TextureRect" parent="."]
 offset_left = 1424.0
@@ -27,14 +63,38 @@ offset_right = 1524.0
 offset_bottom = 100.0
 scale = Vector2(1.64, 1.64)
 
+[node name="Slot3Stack" type="RichTextLabel" parent="Slot3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_pku5e")
+fit_content = true
+scroll_active = false
+
 [node name="Slot4" type="TextureRect" parent="."]
 offset_left = 1588.0
 offset_right = 1688.0
 offset_bottom = 100.0
 scale = Vector2(1.64, 1.64)
 
+[node name="Slot4Stack" type="RichTextLabel" parent="Slot4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_smuit")
+fit_content = true
+scroll_active = false
+
 [node name="Slot5" type="TextureRect" parent="."]
 offset_left = 1753.0
 offset_right = 1853.0
 offset_bottom = 100.0
 scale = Vector2(1.64, 1.64)
+
+[node name="Slot5Stack" type="RichTextLabel" parent="Slot5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_vraa0")
+fit_content = true
+scroll_active = false

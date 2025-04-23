@@ -17,6 +17,10 @@ var hell_turn_end := false
 var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
 var hellstats = preload("res://Resources/Stats/HellStats.tres")
 var clownstats = preload("res://Resources/Stats/ClownStats.tres")
+
+var heaveninventory = preload("res://Resources/Inventories/HeavenInventory.tres")
+var hellinventory = preload("res://Resources/Inventories/HellInventory.tres"
+)
 var heaven_skill_slot: int
 var hell_skill_slot: int
 var clwnskill: int
@@ -47,7 +51,8 @@ var clwnskill: int
 @onready var SkillManager = $SkillManager
 @onready var StatusEffects = $StatusEffects
 
-@export var debug_mode: bool
+@export var reset_stats: bool
+@export var reset_inventory: bool
 
 @export var BOSS_ID: int
 
@@ -77,7 +82,7 @@ func _ready():
 			clownstats.special_status_effect_2 = 0
 			clownstats.special_status_effect_3 = 0
 	
-	if debug_mode == true:
+	if reset_stats:
 		print_debug(Input.get_joy_name(0))
 		print_debug(Input.get_joy_info(0))
 		print_debug(Input.get_joy_name(1))
@@ -86,6 +91,9 @@ func _ready():
 		heavenstats.reset_stats()
 		hellstats.reset_stats()
 	
+	if reset_inventory:
+		heaveninventory.reset_inventory()
+		hellinventory.reset_inventory()
 	#_init_battle()
 #func DialogueTesting():
 	#if Input.is_action_just_pressed("Melee_hell"):

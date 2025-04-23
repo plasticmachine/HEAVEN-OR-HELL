@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="KeychainResource" load_steps=3 format=3 uid="uid://d2arkkhothrwk"]
+
+[ext_resource type="Texture2D" uid="uid://co2mcr1qc72og" path="res://art/keychains/testing_keychains/TEST_E1.png" id="1_7oxxg"]
+[ext_resource type="Script" uid="uid://c6hj0as7yn5ue" path="res://Resources/Keychains/BaseKeychain.gd" id="2_5160d"]
+
+[resource]
+script = ExtResource("2_5160d")
+keychain_id = 13
+keychain_name = "TEST_E1"
+keychain_size = 1
+keychain_description = "E1!"
+keychain_rarity = "COMMON"
+keychain_texture = ExtResource("1_7oxxg")
+metadata/_custom_type_script = "uid://c6hj0as7yn5ue"

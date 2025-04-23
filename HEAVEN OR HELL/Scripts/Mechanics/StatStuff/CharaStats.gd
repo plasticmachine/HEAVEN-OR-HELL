@@ -81,6 +81,20 @@ func subtract_heart(amount: int) -> void:
 		print_debug(character_name + " is already fucking dead!!! ")
 	current_stat_change = amount
 	#emit_signal("stat_changed", "current_heart", current_heart)
+func add_max_heart(amount: int) -> void:
+	max_heart += amount
+	add_heart(amount)
+	current_stat_change = amount
+	print_debug(character_name + " has " + str(max_heart) + " max heart! (+" + str(amount) + ")")
+func subtract_max_heart(amount: int) -> void:
+	if max_heart > 1:
+		max_heart -= amount
+		subtract_heart(amount)
+		print_debug(character_name + " has " + str(max_heart) + " max heart! (-" + str(amount) + ")")
+	else:
+		max_heart = 1
+		print_debug(character_name + "'s " + str(max_heart) + " max heart, is as low as it can go!")
+
 func multiply_heart(factor: float) -> void:
 	current_heart = int(current_heart * factor)
 	#emit_signal("stat_changed", "current_heart", current_heart)

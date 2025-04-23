@@ -8,7 +8,9 @@ signal clown_damage_taken
 @onready var ClownDamageNumbers = $"../EnemySpot2/ClownDancePath/PathFollow2D/ClownTb/ClownDamageNumber"
 
 @onready var heavenstats = preload("res://Resources/Stats/HeavenStats.tres")
+@onready var heaveninventory = preload("res://Resources/Inventories/HeavenInventory.tres")
 @onready var hellstats = preload("res://Resources/Stats/HellStats.tres")
+@onready var hellinventory = preload("res://Resources/Inventories/HellInventory.tres")
 @onready var clownstats = preload("res://Resources/Stats/ClownStats.tres")
 
 @onready var variance = [.8, .85, .9, .95, 1.0, 1.05, 1.1, 1.5, 1.2]
@@ -234,6 +236,10 @@ func hell_to_heaven_deviltry_damagecalc():
 	## CLOWN DAMAGE CALCS
 func clown_to_heaven_malice_damagecalc():
 	#var total_damage: int
+	
+	if heaveninventory.protections >= 1:
+		total_damage = 0
+		heaveninventory.protections -= 1
 	var outgoing_damage = clownstats.current_skill_power * clownstats.malice
 	
 	total_damage = outgoing_damage / heavenstats.guts * variance.pick_random()
