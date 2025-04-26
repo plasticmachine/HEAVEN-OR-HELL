@@ -176,7 +176,8 @@ func add_keychain_ID_1_effect_hell():
 func remove_keychain_ID_1_effect_hell():
 		var heart_decrease = hellstats.max_heart * ID_1_percentage_increase
 		hellstats.subtract_heart(heart_decrease)
-
+		if hellinventory.protections > 0:
+			hellinventory.protections -= 1
 ### ID_2_KEYCHAIN - HEAVEN
 func add_keychain_ID_2_effect_heaven():
 	heaveninventory.can_parry = true

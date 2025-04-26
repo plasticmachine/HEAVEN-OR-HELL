@@ -75,27 +75,31 @@ func heaven_to_clown_deviltry_damagecalc():
 func heaven_to_hell_malice_damagecalc():
 	#var total_damage: int
 	check_heaven_crit()
-	
-	match crit_hit:
-		true:
-			var outgoing_damage = heavenstats.current_skill_power * heavenstats.malice
-			total_damage = outgoing_damage / hellstats.guts * variance.pick_random() * crit_multiplier
-			hellstats.subtract_heart(total_damage)
-			hell_damage_taken.emit()
-			DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_DAMAGING_HELL_MALICE_CRIT")
-			match heavenstats.crit_level:
-				1:
-					HeavenSounds.HEAVEN_CRIT_1.play()
-				2:
-					HeavenSounds.HEAVEN_CRIT_2.play()
-				3:
-					HeavenSounds.HEAVEN_CRIT_3.play()
-		false:
-			var outgoing_damage = heavenstats.current_skill_power * heavenstats.malice
-			total_damage = outgoing_damage / hellstats.guts * variance.pick_random()
-			hellstats.subtract_heart(total_damage)
-			hell_damage_taken.emit()
-			DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_DAMAGING_HELL_MALICE")
+	if hellinventory.protections >= 1:
+		hellstats.subtract_heart(0)
+		hell_damage_taken.emit()
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_DAMAGING_HELL_MALICE")
+	else:
+		match crit_hit:
+			true:
+				var outgoing_damage = heavenstats.current_skill_power * heavenstats.malice
+				total_damage = outgoing_damage / hellstats.guts * variance.pick_random() * crit_multiplier
+				hellstats.subtract_heart(total_damage)
+				hell_damage_taken.emit()
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_DAMAGING_HELL_MALICE_CRIT")
+				match heavenstats.crit_level:
+					1:
+						HeavenSounds.HEAVEN_CRIT_1.play()
+					2:
+						HeavenSounds.HEAVEN_CRIT_2.play()
+					3:
+						HeavenSounds.HEAVEN_CRIT_3.play()
+			false:
+				var outgoing_damage = heavenstats.current_skill_power * heavenstats.malice
+				total_damage = outgoing_damage / hellstats.guts * variance.pick_random()
+				hellstats.subtract_heart(total_damage)
+				hell_damage_taken.emit()
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/BATTLE_SYSTEM_TEXT.dialogue"), "HEAVEN_DAMAGING_HELL_MALICE")
 func heaven_to_hell_deviltry_damagecalc():
 	#var total_damage: int
 	check_heaven_crit()
@@ -236,11 +240,11 @@ func hell_to_heaven_deviltry_damagecalc():
 	## CLOWN DAMAGE CALCS
 func clown_to_heaven_malice_damagecalc():
 	#var total_damage: int
+	var outgoing_damage = clownstats.current_skill_power * clownstats.malice
 	
 	if heaveninventory.protections >= 1:
-		total_damage = 0
+		outgoing_damage = 0
 		heaveninventory.protections -= 1
-	var outgoing_damage = clownstats.current_skill_power * clownstats.malice
 	
 	total_damage = outgoing_damage / heavenstats.guts * variance.pick_random()
 	heavenstats.subtract_heart(total_damage)
@@ -260,6 +264,10 @@ func clown_to_hell_malice_damagecalc():
 	#var total_damage: int
 	var outgoing_damage = clownstats.current_skill_power * clownstats.malice
 	
+	if hellinventory.protections >= 1:
+		outgoing_damage = 0
+		hellinventory.protections -= 1
+	
 	total_damage = outgoing_damage / hellstats.guts * variance.pick_random()
 	hellstats.subtract_heart(total_damage)
 	hell_damage_taken.emit() 
@@ -268,6 +276,10 @@ func clown_to_hell_malice_damagecalc():
 func clown_to_hell_deviltry_damagecalc():
 	#var total_damage: int
 	var outgoing_damage = clownstats.current_skill_power * clownstats.deviltry
+	
+	if hellinventory.protections >= 1:
+		outgoing_damage = 0
+		hellinventory.protections -= 1
 	
 	total_damage = outgoing_damage / hellstats.guts * variance.pick_random()
 	hellstats.subtract_heart(total_damage)
