@@ -30,6 +30,8 @@ static var KeychainStackLimit: int = 5
 @export var can_bounce_on_it: bool = false
 @export var lucy_active: bool = false
 @export var protections: int = 0
+@export var deviltry_max_variances: int = 0
+@export var malice_max_variances: int = 0
 
 
 @export var inventory_changed: bool = false
@@ -43,6 +45,9 @@ func _process(delta: float) -> void:
 		var stack = get("keychain_slot_%d_stack" % i)
 		if stack > KeychainStackLimit:
 			set("keychain_slot_%d_stack" % i, KeychainStackLimit)
+	clampi(protections, 0, 100)
+	clampi(deviltry_max_variances, 0, 100)
+	clampi(malice_max_variances, 0, 100)
 
 func add_keychain(keychain: KeychainResource) -> bool:
 	if not keychain:

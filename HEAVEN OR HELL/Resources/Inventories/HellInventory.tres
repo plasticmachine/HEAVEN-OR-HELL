@@ -1,7 +1,7 @@
-[gd_resource type="Resource" load_steps=3 format=3]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bfvuoe3cy3v6a"]
 
-[ext_resource type="Script" path="res://Resources/Inventories/CharaInventory.gd" id="1_tib73"]
-[ext_resource type="Resource" path="res://Resources/Keychains/TEST/TEST_A1.tres" id="2_ofe2u"]
+[ext_resource type="Script" uid="uid://edecm6u4rgsn" path="res://Resources/Inventories/CharaInventory.gd" id="1_tib73"]
+[ext_resource type="Resource" uid="uid://b4qdprvsd4kxf" path="res://Resources/Keychains/TEST/TEST_A1.tres" id="2_ofe2u"]
 
 [resource]
 script = ExtResource("1_tib73")
@@ -24,6 +24,8 @@ can_bonus_attack = true
 can_bounce_on_it = false
 lucy_active = false
 protections = 1
+deviltry_max_variances = 0
+malice_max_variances = 0
 inventory_changed = true
 added_effect_ID = 1
 removed_effect_ID = 2

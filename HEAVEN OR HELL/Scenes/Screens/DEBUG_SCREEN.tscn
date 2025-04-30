@@ -1,0 +1,1402 @@
+[gd_scene load_steps=6 format=3 uid="uid://cevc3xq4sdr4d"]
+
+[ext_resource type="PackedScene" uid="uid://cmhxvjptgn26x" path="res://Scenes/Keychains/keychain_manager.tscn" id="1_rsc75"]
+[ext_resource type="PackedScene" uid="uid://c78nm2c1qev16" path="res://Scenes/Keychains/HeavenInventoryDisplay.tscn" id="2_cg5x0"]
+[ext_resource type="PackedScene" uid="uid://bdp3mwc8pn1w0" path="res://Scenes/Keychains/HellInventoryDisplay.tscn" id="3_2iv6t"]
+[ext_resource type="Script" uid="uid://bea2pklopcdbf" path="res://Scripts/DEBUG/DEBUG_BUTTONS.gd" id="4_2iv6t"]
+[ext_resource type="Resource" uid="uid://b4qdprvsd4kxf" path="res://Resources/Keychains/TEST/TEST_A1.tres" id="5_7u54h"]
+
+[node name="Node" type="Node"]
+
+[node name="KeychainManager" parent="." instance=ExtResource("1_rsc75")]
+
+[node name="HeavenInventoryDisplay" parent="." instance=ExtResource("2_cg5x0")]
+
+[node name="HellInventoryDisplay" parent="." instance=ExtResource("3_2iv6t")]
+
+[node name="Buttons" type="Node" parent="."]
+script = ExtResource("4_2iv6t")
+Keychain_ID_1 = ExtResource("5_7u54h")
+
+[node name="ClearHell" type="Button" parent="Buttons"]
+offset_left = 336.0
+offset_top = 193.0
+offset_right = 605.0
+offset_bottom = 236.0
+text = "CLEAR_HELL_INVENTORY"
+
+[node name="ClearHeaven" type="Button" parent="Buttons"]
+offset_left = 1005.0
+offset_top = 193.0
+offset_right = 1274.0
+offset_bottom = 236.0
+tooltip_text = "clears heaven's inventory"
+text = "CLEAR_HEAVEN_INVENTORY"
+
+[node name="Button" type="Button" parent="Buttons"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="AddButtons" type="Node" parent="Buttons"]
+
+[node name="HeavenAddButtons" type="Node2D" parent="Buttons/AddButtons"]
+
+[node name="AddHeaven" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 288.0
+offset_right = 1217.0
+offset_bottom = 331.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_1"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven2" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 333.0
+offset_right = 1217.0
+offset_bottom = 376.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_2
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven3" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 379.0
+offset_right = 1217.0
+offset_bottom = 422.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_3"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven4" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 424.0
+offset_right = 1217.0
+offset_bottom = 467.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_4"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven5" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 471.0
+offset_right = 1217.0
+offset_bottom = 514.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_5"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven6" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 516.0
+offset_right = 1217.0
+offset_bottom = 559.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_6"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven7" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 562.0
+offset_right = 1217.0
+offset_bottom = 605.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_7"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven8" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 607.0
+offset_right = 1217.0
+offset_bottom = 650.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_8"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven9" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 654.0
+offset_right = 1217.0
+offset_bottom = 697.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_9"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven10" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 699.0
+offset_right = 1217.0
+offset_bottom = 742.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_10"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven11" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 745.0
+offset_right = 1217.0
+offset_bottom = 788.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_11"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven12" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 790.0
+offset_right = 1217.0
+offset_bottom = 833.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_12"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven13" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 837.0
+offset_right = 1217.0
+offset_bottom = 880.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_13"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven14" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 882.0
+offset_right = 1217.0
+offset_bottom = 925.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_14"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven15" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 928.0
+offset_right = 1217.0
+offset_bottom = 971.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_15"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven16" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 948.0
+offset_top = 973.0
+offset_right = 1217.0
+offset_bottom = 1016.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_16"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven17" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 1202.0
+offset_top = 288.0
+offset_right = 1471.0
+offset_bottom = 331.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_17"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven18" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 1202.0
+offset_top = 333.0
+offset_right = 1471.0
+offset_bottom = 376.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_18"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven19" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 1202.0
+offset_top = 379.0
+offset_right = 1471.0
+offset_bottom = 422.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_19"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHeaven20" type="Button" parent="Buttons/AddButtons/HeavenAddButtons"]
+offset_left = 1202.0
+offset_top = 424.0
+offset_right = 1471.0
+offset_bottom = 467.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_20"
+metadata/_edit_use_anchors_ = true
+
+[node name="HellAddButtons" type="Node2D" parent="Buttons/AddButtons"]
+position = Vector2(-595, 0)
+
+[node name="AddHell" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 288.0
+offset_right = 1217.0
+offset_bottom = 331.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_1"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell2" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 333.0
+offset_right = 1217.0
+offset_bottom = 376.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_2
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell3" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 379.0
+offset_right = 1217.0
+offset_bottom = 422.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_3"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell4" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 424.0
+offset_right = 1217.0
+offset_bottom = 467.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_4"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell5" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 471.0
+offset_right = 1217.0
+offset_bottom = 514.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_5"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell6" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 516.0
+offset_right = 1217.0
+offset_bottom = 559.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_6"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell7" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 562.0
+offset_right = 1217.0
+offset_bottom = 605.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_7"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell8" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 607.0
+offset_right = 1217.0
+offset_bottom = 650.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_8"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell9" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 654.0
+offset_right = 1217.0
+offset_bottom = 697.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_9"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell10" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 699.0
+offset_right = 1217.0
+offset_bottom = 742.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_10"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell11" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 745.0
+offset_right = 1217.0
+offset_bottom = 788.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_11"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell12" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 790.0
+offset_right = 1217.0
+offset_bottom = 833.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_12"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell13" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 837.0
+offset_right = 1217.0
+offset_bottom = 880.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_13"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell14" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 882.0
+offset_right = 1217.0
+offset_bottom = 925.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_14"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell15" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 928.0
+offset_right = 1217.0
+offset_bottom = 971.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_15"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell16" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 948.0
+offset_top = 973.0
+offset_right = 1217.0
+offset_bottom = 1016.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_16"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell17" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 1202.0
+offset_top = 288.0
+offset_right = 1471.0
+offset_bottom = 331.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_17"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell18" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 1202.0
+offset_top = 333.0
+offset_right = 1471.0
+offset_bottom = 376.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_18"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell19" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 1202.0
+offset_top = 379.0
+offset_right = 1471.0
+offset_bottom = 422.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_19"
+metadata/_edit_use_anchors_ = true
+
+[node name="AddHell20" type="Button" parent="Buttons/AddButtons/HellAddButtons"]
+offset_left = 1202.0
+offset_top = 424.0
+offset_right = 1471.0
+offset_bottom = 467.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "ADD_KEYCHAIN_ID_20"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveButtons" type="Node" parent="Buttons"]
+
+[node name="HeavenRemoveButtons" type="Node2D" parent="Buttons/RemoveButtons"]
+
+[node name="RemoveAllSlotsHeaven" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 2087.0
+offset_top = 783.0
+offset_right = 2356.0
+offset_bottom = 826.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_ALL_KEYCHAIN_SLOTS"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveSlotHeaven" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 2087.0
+offset_top = 827.0
+offset_right = 2356.0
+offset_bottom = 870.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_SLOT_1"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveSlotHeaven2" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 2087.0
+offset_top = 872.0
+offset_right = 2356.0
+offset_bottom = 915.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_SLOT_2
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveSlotHeaven3" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 2087.0
+offset_top = 918.0
+offset_right = 2356.0
+offset_bottom = 961.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_SLOT_3"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveSlotHeaven4" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 2087.0
+offset_top = 963.0
+offset_right = 2356.0
+offset_bottom = 1006.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_SLOT_4"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveSlotHeaven5" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 2087.0
+offset_top = 1009.0
+offset_right = 2356.0
+offset_bottom = 1052.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_SLOT_5"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 234.0
+offset_right = 1939.0
+offset_bottom = 277.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_1"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven2" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 274.676
+offset_right = 1939.0
+offset_bottom = 317.676
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_2
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven3" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 316.256
+offset_right = 1939.0
+offset_bottom = 359.256
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_3"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven4" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 356.933
+offset_right = 1939.0
+offset_bottom = 399.933
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_4"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven5" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 399.417
+offset_right = 1939.0
+offset_bottom = 442.417
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_5"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven6" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 440.093
+offset_right = 1939.0
+offset_bottom = 483.093
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_6"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven7" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 481.673
+offset_right = 1939.0
+offset_bottom = 524.673
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_7"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven8" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 522.349
+offset_right = 1939.0
+offset_bottom = 565.349
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_8"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven9" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 564.833
+offset_right = 1939.0
+offset_bottom = 607.833
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_9"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven10" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 605.51
+offset_right = 1939.0
+offset_bottom = 648.51
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_10"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven11" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 647.09
+offset_right = 1939.0
+offset_bottom = 690.09
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_11"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven12" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 687.766
+offset_right = 1939.0
+offset_bottom = 730.766
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_12"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven13" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 730.25
+offset_right = 1939.0
+offset_bottom = 773.25
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_13"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven14" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 770.926
+offset_right = 1939.0
+offset_bottom = 813.926
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_14"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven15" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 812.506
+offset_right = 1939.0
+offset_bottom = 855.506
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_15"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven16" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 853.183
+offset_right = 1939.0
+offset_bottom = 896.183
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_16"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven17" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 894.0
+offset_right = 1939.0
+offset_bottom = 937.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_17"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven18" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 934.676
+offset_right = 1939.0
+offset_bottom = 977.676
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_18"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven19" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 976.256
+offset_right = 1939.0
+offset_bottom = 1019.26
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_19"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHeaven20" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons"]
+offset_left = 1670.0
+offset_top = 1016.93
+offset_right = 1939.0
+offset_bottom = 1059.93
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_20"
+metadata/_edit_use_anchors_ = true
+
+[node name="HeavenRemoveButtons2" type="Node2D" parent="Buttons/RemoveButtons"]
+position = Vector2(-1670, 0)
+
+[node name="RemoveAllSlotsHell" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1360.0
+offset_top = 783.0
+offset_right = 1629.0
+offset_bottom = 826.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_ALL_KEYCHAIN_SLOTS"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveSlotHell" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1360.0
+offset_top = 827.0
+offset_right = 1629.0
+offset_bottom = 870.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_SLOT_1"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveSlotHell2" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1360.0
+offset_top = 872.0
+offset_right = 1629.0
+offset_bottom = 915.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_SLOT_2
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveSlotHell3" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1360.0
+offset_top = 918.0
+offset_right = 1629.0
+offset_bottom = 961.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_SLOT_3"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveSlotHell4" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1360.0
+offset_top = 963.0
+offset_right = 1629.0
+offset_bottom = 1006.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_SLOT_4"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveSlotHell5" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1360.0
+offset_top = 1009.0
+offset_right = 1629.0
+offset_bottom = 1052.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_SLOT_5"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 234.0
+offset_right = 1939.0
+offset_bottom = 277.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_1"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell2" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 274.676
+offset_right = 1939.0
+offset_bottom = 317.676
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_2
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell3" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 316.256
+offset_right = 1939.0
+offset_bottom = 359.256
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_3"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell4" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 356.933
+offset_right = 1939.0
+offset_bottom = 399.933
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_4"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell5" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 399.417
+offset_right = 1939.0
+offset_bottom = 442.417
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_5"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell6" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 440.093
+offset_right = 1939.0
+offset_bottom = 483.093
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_6"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell7" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 481.673
+offset_right = 1939.0
+offset_bottom = 524.673
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_7"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell8" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 522.349
+offset_right = 1939.0
+offset_bottom = 565.349
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_8"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell9" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 564.833
+offset_right = 1939.0
+offset_bottom = 607.833
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_9"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell10" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 605.51
+offset_right = 1939.0
+offset_bottom = 648.51
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_10"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell11" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 647.09
+offset_right = 1939.0
+offset_bottom = 690.09
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_11"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell12" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 687.766
+offset_right = 1939.0
+offset_bottom = 730.766
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_12"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell13" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 730.25
+offset_right = 1939.0
+offset_bottom = 773.25
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_13"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell14" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 770.926
+offset_right = 1939.0
+offset_bottom = 813.926
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_14"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell15" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 812.506
+offset_right = 1939.0
+offset_bottom = 855.506
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_15"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell16" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 853.183
+offset_right = 1939.0
+offset_bottom = 896.183
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_16"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell17" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 894.0
+offset_right = 1939.0
+offset_bottom = 937.0
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_17"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell18" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 934.676
+offset_right = 1939.0
+offset_bottom = 977.676
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_18"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell19" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 976.256
+offset_right = 1939.0
+offset_bottom = 1019.26
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_19"
+metadata/_edit_use_anchors_ = true
+
+[node name="RemoveHell20" type="Button" parent="Buttons/RemoveButtons/HeavenRemoveButtons2"]
+offset_left = 1670.0
+offset_top = 1016.93
+offset_right = 1939.0
+offset_bottom = 1059.93
+scale = Vector2(0.903916, 0.903916)
+tooltip_text = "clears heaven's inventory"
+text = "REMOVE_KEYCHAIN_ID_20"
+metadata/_edit_use_anchors_ = true
+
+[node name="Stats" type="Node" parent="."]
+
+[node name="HeavenStats" type="Node2D" parent="Stats"]
+
+[node name="heaven_char_name" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1379.0
+offset_top = 519.0
+offset_right = 1529.0
+offset_bottom = 559.0
+scale = Vector2(0.87999, 0.87999)
+text = "HEAVEN"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_move_speed" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 548.0
+offset_right = 1527.0
+offset_bottom = 588.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_run_speed" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 577.0
+offset_right = 1527.0
+offset_bottom = 617.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_max_heart" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 607.0
+offset_right = 1527.0
+offset_bottom = 647.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_heart" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 636.0
+offset_right = 1527.0
+offset_bottom = 676.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_max_magia" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 666.0
+offset_right = 1527.0
+offset_bottom = 706.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_magia" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 695.0
+offset_right = 1527.0
+offset_bottom = 735.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_malice" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 725.0
+offset_right = 1527.0
+offset_bottom = 765.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_deviltry" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 754.0
+offset_right = 1527.0
+offset_bottom = 794.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_guts" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 780.0
+offset_right = 1527.0
+offset_bottom = 820.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_pain_tolerance" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 809.0
+offset_right = 1527.0
+offset_bottom = 849.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_luck" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 839.0
+offset_right = 1527.0
+offset_bottom = 879.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_crit" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 868.0
+offset_right = 1527.0
+offset_bottom = 908.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="heaven_crit_level" type="RichTextLabel" parent="Stats/HeavenStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 898.0
+offset_right = 1527.0
+offset_bottom = 938.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Statlabels" type="Node" parent="Stats/HeavenStats"]
+
+[node name="StatLabelsHeaven" type="RichTextLabel" parent="Stats/HeavenStats/Statlabels"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1252.0
+offset_top = 513.0
+offset_right = 1253.0
+offset_bottom = 3710.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.92405, 1.27622)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.337316, 0.989156, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "character_name:
+move_speed:
+run_speed: 
+max_heart:
+heart:
+max_magia:
+magia:
+malice:
+deviltry:
+guts:
+pain_tolerance:
+luck:
+crit:
+crit_level:"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="HellStats" type="Node2D" parent="Stats"]
+position = Vector2(-578, -1)
+
+[node name="hell_char_name" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1379.0
+offset_top = 519.0
+offset_right = 1529.0
+offset_bottom = 559.0
+scale = Vector2(0.87999, 0.87999)
+text = "HELL"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_move_speed" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 548.0
+offset_right = 1527.0
+offset_bottom = 588.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_run_speed" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 577.0
+offset_right = 1527.0
+offset_bottom = 617.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_max_heart" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 607.0
+offset_right = 1527.0
+offset_bottom = 647.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_heart" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 636.0
+offset_right = 1527.0
+offset_bottom = 676.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_max_magia" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 666.0
+offset_right = 1527.0
+offset_bottom = 706.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_magia" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 695.0
+offset_right = 1527.0
+offset_bottom = 735.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_malice" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 725.0
+offset_right = 1527.0
+offset_bottom = 765.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_deviltry" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 754.0
+offset_right = 1527.0
+offset_bottom = 794.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_guts" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 780.0
+offset_right = 1527.0
+offset_bottom = 820.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_pain_tolerance" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 809.0
+offset_right = 1527.0
+offset_bottom = 849.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_luck" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 839.0
+offset_right = 1527.0
+offset_bottom = 879.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_crit" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 868.0
+offset_right = 1527.0
+offset_bottom = 908.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="hell_crit_level" type="RichTextLabel" parent="Stats/HellStats"]
+custom_minimum_size = Vector2(150, 0)
+offset_left = 1377.0
+offset_top = 898.0
+offset_right = 1527.0
+offset_bottom = 938.0
+scale = Vector2(0.87999, 0.87999)
+text = "1"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Statlabels" type="Node" parent="Stats/HellStats"]
+
+[node name="StatLabelsHell" type="RichTextLabel" parent="Stats/HellStats/Statlabels"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 671.0
+offset_top = 513.0
+offset_right = 672.0
+offset_bottom = 3710.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.92405, 1.27622)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.337316, 0.989156, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "character_name:
+move_speed:
+run_speed: 
+max_heart:
+heart:
+max_magia:
+magia:
+malice:
+deviltry:
+guts:
+pain_tolerance:
+luck:
+crit:
+crit_level:"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven" to="Buttons" method="_on_add_heaven_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven2" to="Buttons" method="_on_add_heaven_2_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven3" to="Buttons" method="_on_add_heaven_3_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven4" to="Buttons" method="_on_add_heaven_4_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven5" to="Buttons" method="_on_add_heaven_5_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven6" to="Buttons" method="_on_add_heaven_6_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven7" to="Buttons" method="_on_add_heaven_7_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven8" to="Buttons" method="_on_add_heaven_8_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven9" to="Buttons" method="_on_add_heaven_9_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven10" to="Buttons" method="_on_add_heaven_10_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven11" to="Buttons" method="_on_add_heaven_11_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven12" to="Buttons" method="_on_add_heaven_12_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven13" to="Buttons" method="_on_add_heaven_13_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven14" to="Buttons" method="_on_add_heaven_14_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven15" to="Buttons" method="_on_add_heaven_15_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven16" to="Buttons" method="_on_add_heaven_16_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven17" to="Buttons" method="_on_add_heaven_17_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven18" to="Buttons" method="_on_add_heaven_18_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven19" to="Buttons" method="_on_add_heaven_19_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven20" to="Buttons" method="_on_add_heaven_20_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell" to="Buttons" method="_on_add_hell_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell2" to="Buttons" method="_on_add_hell_2_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell3" to="Buttons" method="_on_add_hell_3_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell4" to="Buttons" method="_on_add_hell_4_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell5" to="Buttons" method="_on_add_hell_5_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell6" to="Buttons" method="_on_add_hell_6_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell7" to="Buttons" method="_on_add_hell_7_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell8" to="Buttons" method="_on_add_hell_8_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell9" to="Buttons" method="_on_add_hell_9_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell10" to="Buttons" method="_on_add_hell_10_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell11" to="Buttons" method="_on_add_hell_11_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell12" to="Buttons" method="_on_add_hell_12_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell13" to="Buttons" method="_on_add_hell_13_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell14" to="Buttons" method="_on_add_hell_14_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell15" to="Buttons" method="_on_add_hell_15_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell16" to="Buttons" method="_on_add_hell_16_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell17" to="Buttons" method="_on_add_hell_17_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell18" to="Buttons" method="_on_add_hell_18_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell19" to="Buttons" method="_on_add_hell_19_pressed"]
+[connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell20" to="Buttons" method="_on_add_hell_20_pressed"]

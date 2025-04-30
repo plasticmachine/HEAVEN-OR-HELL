@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmhxvjptgn26x"]
+
+[ext_resource type="Script" uid="uid://da1jqdm6m4pek" path="res://Scripts/Mechanics/Keychains/Keychains.gd" id="1_dtimq"]
+
+[node name="KeychainManager" type="Node2D"]
+script = ExtResource("1_dtimq")
