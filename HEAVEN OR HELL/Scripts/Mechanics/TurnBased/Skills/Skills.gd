@@ -842,8 +842,6 @@ func skill_ID_1_heaven():
 
 	#hellinventory.add_keychain(test_1)
 	#KeychainStuff.check_keychain_added_hell()
-	print_debug(str(hellinventory.keychain_slot_1.keychain_name))
-	print_debug(str(hellinventory.keychain_slot_1_stack))
 	match heaven_target_ID:
 		2:
 			print_debug(str(heavenstats.character_name) + " used  " + str(ID_1_heaven_skill_name) + " on " + str(hellstats.character_name) + " (" + str(heavenstats.current_tempo) + " tempo)" )

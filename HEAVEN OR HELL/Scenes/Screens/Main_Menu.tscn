@@ -32,20 +32,29 @@ text = "BH
 "
 script = ExtResource("2_kfhon")
 
+[node name="StartButton3" type="Button" parent="Background"]
+offset_left = -616.51
+offset_top = -48.0669
+offset_right = -520.51
+offset_bottom = -17.067
+scale = Vector2(2.28788, 2.28788)
+text = "DEBUG"
+script = ExtResource("2_kfhon")
+
 [node name="OptionsButton" type="Button" parent="Background"]
 offset_left = -616.51
-offset_top = -52.2466
+offset_top = 44.9321
 offset_right = -520.51
-offset_bottom = -21.2465
+offset_bottom = 75.9322
 scale = Vector2(2.28788, 2.28788)
 text = "Options
 "
 
 [node name="ExitButton" type="Button" parent="Background"]
 offset_left = -615.465
-offset_top = 50.1568
+offset_top = 134.796
 offset_right = -519.465
-offset_bottom = 81.1568
+offset_bottom = 165.796
 scale = Vector2(2.28788, 2.28788)
 text = "Exit
 "
@@ -63,5 +72,6 @@ autoplay = true
 parameters/looping = true
 
 [connection signal="pressed" from="Background/StartButton" to="Background/StartButton" method="_on_pressed"]
-[connection signal="pressed" from="Background/StartButton2" to="Background/StartButton2" method="_on_pressed"]
+[connection signal="pressed" from="Background/StartButton2" to="Background/StartButton" method="_on_start_button_2_pressed"]
+[connection signal="pressed" from="Background/StartButton3" to="Background/StartButton" method="_on_start_button_3_pressed"]
 [connection signal="pressed" from="Background/ExitButton" to="Background/StartButton" method="_on_exit_button_pressed"]

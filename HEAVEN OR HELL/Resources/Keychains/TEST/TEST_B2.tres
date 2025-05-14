@@ -1,14 +1,15 @@
 [gd_resource type="Resource" script_class="KeychainResource" load_steps=3 format=3 uid="uid://pxvto7fc8c3q"]
 
-[ext_resource type="Texture2D" uid="uid://dx25jrfixci1f" path="res://art/keychains/testing_keychains/TEST_B1.png" id="1_6bq6b"]
+[ext_resource type="Texture2D" uid="uid://pyx43vici1sf" path="res://art/keychains/testing_keychains/TEST_B2.png" id="1_6bq6b"]
 [ext_resource type="Script" uid="uid://c6hj0as7yn5ue" path="res://Resources/Keychains/BaseKeychain.gd" id="2_fo4c6"]
 
 [resource]
 script = ExtResource("2_fo4c6")
 keychain_id = 5
-keychain_name = "TEST_B1"
+keychain_name = "TEST_B2"
 keychain_size = 1
-keychain_description = "A4!"
+keychain_description = "Increases MALICE by +5
+FS: +3 max_variance"
 keychain_rarity = "COMMON"
 keychain_texture = ExtResource("1_6bq6b")
 metadata/_custom_type_script = "uid://c6hj0as7yn5ue"

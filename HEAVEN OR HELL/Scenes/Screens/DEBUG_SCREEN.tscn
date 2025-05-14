@@ -1,22 +1,68 @@
-[gd_scene load_steps=6 format=3 uid="uid://cevc3xq4sdr4d"]
+[gd_scene load_steps=25 format=3 uid="uid://cevc3xq4sdr4d"]
 
-[ext_resource type="PackedScene" uid="uid://cmhxvjptgn26x" path="res://Scenes/Keychains/keychain_manager.tscn" id="1_rsc75"]
-[ext_resource type="PackedScene" uid="uid://c78nm2c1qev16" path="res://Scenes/Keychains/HeavenInventoryDisplay.tscn" id="2_cg5x0"]
-[ext_resource type="PackedScene" uid="uid://bdp3mwc8pn1w0" path="res://Scenes/Keychains/HellInventoryDisplay.tscn" id="3_2iv6t"]
-[ext_resource type="Script" uid="uid://bea2pklopcdbf" path="res://Scripts/DEBUG/DEBUG_BUTTONS.gd" id="4_2iv6t"]
-[ext_resource type="Resource" uid="uid://b4qdprvsd4kxf" path="res://Resources/Keychains/TEST/TEST_A1.tres" id="5_7u54h"]
+[ext_resource type="PackedScene" uid="uid://cmhxvjptgn26x" path="res://Scenes/Keychains/keychain_manager.tscn" id="1_wxtf0"]
+[ext_resource type="PackedScene" uid="uid://c78nm2c1qev16" path="res://Scenes/Keychains/HeavenInventoryDisplay.tscn" id="2_drmdu"]
+[ext_resource type="PackedScene" uid="uid://bdp3mwc8pn1w0" path="res://Scenes/Keychains/HellInventoryDisplay.tscn" id="3_o1gfn"]
+[ext_resource type="Script" uid="uid://bea2pklopcdbf" path="res://Scripts/DEBUG/DEBUG_BUTTONS.gd" id="4_ganic"]
+[ext_resource type="Resource" uid="uid://b4qdprvsd4kxf" path="res://Resources/Keychains/TEST/TEST_A1.tres" id="5_gatww"]
+[ext_resource type="Resource" uid="uid://lngke6mchycj" path="res://Resources/Keychains/TEST/TEST_A2.tres" id="6_ganic"]
+[ext_resource type="Resource" uid="uid://c4lkt57gyvi0y" path="res://Resources/Keychains/TEST/TEST_A3.tres" id="7_gatww"]
+[ext_resource type="Resource" uid="uid://cw1p2dip3boqx" path="res://Resources/Keychains/TEST/TEST_B1.tres" id="8_rd3xq"]
+[ext_resource type="Resource" uid="uid://pxvto7fc8c3q" path="res://Resources/Keychains/TEST/TEST_B2.tres" id="9_rd3xq"]
+[ext_resource type="Resource" uid="uid://ph27lc0psl18" path="res://Resources/Keychains/TEST/TEST_B3.tres" id="10_xvvqb"]
+[ext_resource type="Resource" uid="uid://bfh2psg5kchqm" path="res://Resources/Keychains/TEST/TEST_C1.tres" id="11_j0c60"]
+[ext_resource type="Resource" uid="uid://8axrsfm82ntf" path="res://Resources/Keychains/TEST/TEST_C2.tres" id="12_byio6"]
+[ext_resource type="Resource" uid="uid://dhjs43gh8ihvb" path="res://Resources/Keychains/TEST/TEST_C3.tres" id="13_0ikws"]
+[ext_resource type="Resource" uid="uid://c2mulvby3whit" path="res://Resources/Keychains/TEST/TEST_D1.tres" id="14_r42ts"]
+[ext_resource type="Resource" uid="uid://dh2xm1dofmpy4" path="res://Resources/Keychains/TEST/TEST_D2.tres" id="15_htvb2"]
+[ext_resource type="Resource" uid="uid://5my6vi3sqvfs" path="res://Resources/Keychains/TEST/TEST_D3.tres" id="16_5l64n"]
+[ext_resource type="Resource" uid="uid://d2arkkhothrwk" path="res://Resources/Keychains/TEST/TEST_E1.tres" id="17_157pl"]
+[ext_resource type="Resource" uid="uid://bscxisly8bjs3" path="res://Resources/Keychains/TEST/TEST_E2.tres" id="18_kdnuj"]
+[ext_resource type="Resource" uid="uid://2n11yekg2p2o" path="res://Resources/Keychains/TEST/TEST_E3.tres" id="19_y7g2l"]
+[ext_resource type="Resource" uid="uid://c07t15kmdoxv4" path="res://Resources/Keychains/TEST/TEST_F1.tres" id="20_o2w83"]
+[ext_resource type="Resource" uid="uid://b1ydt5r1rtcsg" path="res://Resources/Keychains/TEST/TEST_F2.tres" id="21_3bpg6"]
+[ext_resource type="Resource" uid="uid://bh675sts80bjx" path="res://Resources/Keychains/TEST/TEST_F3.tres" id="22_vrr77"]
+[ext_resource type="Resource" uid="uid://urosj8k0ooaa" path="res://Resources/Keychains/TEST/TEST_G1.tres" id="23_nye4d"]
+[ext_resource type="Resource" uid="uid://cmhyjb20gwu1g" path="res://Resources/Keychains/TEST/TEST_G2.tres" id="24_j8ybw"]
 
 [node name="Node" type="Node"]
 
-[node name="KeychainManager" parent="." instance=ExtResource("1_rsc75")]
+[node name="KeychainManager" parent="." instance=ExtResource("1_wxtf0")]
 
-[node name="HeavenInventoryDisplay" parent="." instance=ExtResource("2_cg5x0")]
+[node name="HeavenInventoryDisplay" parent="." instance=ExtResource("2_drmdu")]
 
-[node name="HellInventoryDisplay" parent="." instance=ExtResource("3_2iv6t")]
+[node name="HellInventoryDisplay" parent="." instance=ExtResource("3_o1gfn")]
 
 [node name="Buttons" type="Node" parent="."]
-script = ExtResource("4_2iv6t")
-Keychain_ID_1 = ExtResource("5_7u54h")
+script = ExtResource("4_ganic")
+Keychain_ID_1 = ExtResource("5_gatww")
+Keychain_ID_2 = ExtResource("6_ganic")
+Keychain_ID_3 = ExtResource("7_gatww")
+Keychain_ID_4 = ExtResource("8_rd3xq")
+Keychain_ID_5 = ExtResource("9_rd3xq")
+Keychain_ID_6 = ExtResource("10_xvvqb")
+Keychain_ID_7 = ExtResource("11_j0c60")
+Keychain_ID_8 = ExtResource("12_byio6")
+Keychain_ID_9 = ExtResource("13_0ikws")
+Keychain_ID_10 = ExtResource("14_r42ts")
+Keychain_ID_11 = ExtResource("15_htvb2")
+Keychain_ID_12 = ExtResource("16_5l64n")
+Keychain_ID_13 = ExtResource("17_157pl")
+Keychain_ID_14 = ExtResource("18_kdnuj")
+Keychain_ID_15 = ExtResource("19_y7g2l")
+Keychain_ID_16 = ExtResource("20_o2w83")
+Keychain_ID_17 = ExtResource("21_3bpg6")
+Keychain_ID_18 = ExtResource("22_vrr77")
+Keychain_ID_19 = ExtResource("23_nye4d")
+Keychain_ID_20 = ExtResource("24_j8ybw")
+
+[node name="SceneSelector" type="Button" parent="Buttons"]
+offset_left = 638.0
+offset_top = 991.0
+offset_right = 907.0
+offset_bottom = 1034.0
+text = "LEVEL_SELECTOR
+"
 
 [node name="ClearHell" type="Button" parent="Buttons"]
 offset_left = 336.0
@@ -24,6 +70,13 @@ offset_top = 193.0
 offset_right = 605.0
 offset_bottom = 236.0
 text = "CLEAR_HELL_INVENTORY"
+
+[node name="ResetHellStats" type="Button" parent="Buttons"]
+offset_left = 610.0
+offset_top = 193.0
+offset_right = 879.0
+offset_bottom = 236.0
+text = "RESET_HEAVEN_STATS"
 
 [node name="ClearHeaven" type="Button" parent="Buttons"]
 offset_left = 1005.0
@@ -33,9 +86,13 @@ offset_bottom = 236.0
 tooltip_text = "clears heaven's inventory"
 text = "CLEAR_HEAVEN_INVENTORY"
 
-[node name="Button" type="Button" parent="Buttons"]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="ResetHeavenStats" type="Button" parent="Buttons"]
+offset_left = 1279.0
+offset_top = 193.0
+offset_right = 1548.0
+offset_bottom = 236.0
+tooltip_text = "clears heaven's inventory"
+text = "RESET_HEAVEN_STATS"
 
 [node name="AddButtons" type="Node" parent="Buttons"]
 
@@ -1138,13 +1195,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Statlabels" type="Node" parent="Stats/HeavenStats"]
 
 [node name="StatLabelsHeaven" type="RichTextLabel" parent="Stats/HeavenStats/Statlabels"]
-anchors_preset = 15
-anchor_right = 1.0
+z_index = -1105
+anchors_preset = -1
+anchor_right = 0.072
 anchor_bottom = 1.0
 offset_left = 1252.0
 offset_top = 513.0
 offset_right = 1253.0
-offset_bottom = 3710.0
+offset_bottom = -221.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.92405, 1.27622)
@@ -1329,13 +1387,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Statlabels" type="Node" parent="Stats/HellStats"]
 
 [node name="StatLabelsHell" type="RichTextLabel" parent="Stats/HellStats/Statlabels"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+z_index = -2635
+y_sort_enabled = true
+anchors_preset = -1
+anchor_right = 0.076
 offset_left = 671.0
 offset_top = 513.0
 offset_right = 672.0
-offset_bottom = 3710.0
+offset_bottom = 835.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.92405, 1.27622)
@@ -1360,6 +1419,11 @@ crit_level:"
 fit_content = true
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="Buttons/SceneSelector" to="Buttons" method="_on_scene_selector_pressed"]
+[connection signal="pressed" from="Buttons/ClearHell" to="Buttons" method="_on_clear_hell_pressed"]
+[connection signal="pressed" from="Buttons/ResetHellStats" to="Buttons" method="_on_reset_hell_stats_pressed"]
+[connection signal="pressed" from="Buttons/ClearHeaven" to="Buttons" method="_on_clear_heaven_pressed"]
+[connection signal="pressed" from="Buttons/ResetHeavenStats" to="Buttons" method="_on_reset_heaven_stats_pressed"]
 [connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven" to="Buttons" method="_on_add_heaven_pressed"]
 [connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven2" to="Buttons" method="_on_add_heaven_2_pressed"]
 [connection signal="pressed" from="Buttons/AddButtons/HeavenAddButtons/AddHeaven3" to="Buttons" method="_on_add_heaven_3_pressed"]
@@ -1400,3 +1464,43 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell18" to="Buttons" method="_on_add_hell_18_pressed"]
 [connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell19" to="Buttons" method="_on_add_hell_19_pressed"]
 [connection signal="pressed" from="Buttons/AddButtons/HellAddButtons/AddHell20" to="Buttons" method="_on_add_hell_20_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven" to="Buttons" method="_on_remove_heaven_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven2" to="Buttons" method="_on_remove_heaven_2_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven3" to="Buttons" method="_on_remove_heaven_3_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven4" to="Buttons" method="_on_remove_heaven_4_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven5" to="Buttons" method="_on_remove_heaven_5_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven6" to="Buttons" method="_on_remove_heaven_6_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven7" to="Buttons" method="_on_remove_heaven_7_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven8" to="Buttons" method="_on_remove_heaven_8_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven9" to="Buttons" method="_on_remove_heaven_9_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven10" to="Buttons" method="_on_remove_heaven_10_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven11" to="Buttons" method="_on_remove_heaven_11_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven12" to="Buttons" method="_on_remove_heaven_12_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven13" to="Buttons" method="_on_remove_heaven_13_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven14" to="Buttons" method="_on_remove_heaven_14_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven15" to="Buttons" method="_on_remove_heaven_15_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven16" to="Buttons" method="_on_remove_heaven_16_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven17" to="Buttons" method="_on_remove_heaven_17_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven18" to="Buttons" method="_on_remove_heaven_18_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven19" to="Buttons" method="_on_remove_heaven_19_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons/RemoveHeaven20" to="Buttons" method="_on_remove_heaven_20_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell" to="Buttons" method="_on_remove_hell_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell2" to="Buttons" method="_on_remove_hell_2_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell3" to="Buttons" method="_on_remove_hell_3_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell4" to="Buttons" method="_on_remove_hell_4_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell5" to="Buttons" method="_on_remove_hell_5_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell6" to="Buttons" method="_on_remove_hell_6_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell7" to="Buttons" method="_on_remove_hell_7_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell8" to="Buttons" method="_on_remove_hell_8_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell9" to="Buttons" method="_on_remove_hell_9_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell10" to="Buttons" method="_on_remove_hell_10_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell11" to="Buttons" method="_on_remove_hell_11_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell12" to="Buttons" method="_on_remove_hell_12_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell13" to="Buttons" method="_on_remove_hell_13_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell14" to="Buttons" method="_on_remove_hell_14_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell15" to="Buttons" method="_on_remove_hell_15_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell16" to="Buttons" method="_on_remove_hell_16_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell17" to="Buttons" method="_on_remove_hell_17_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell18" to="Buttons" method="_on_remove_hell_18_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell19" to="Buttons" method="_on_remove_hell_19_pressed"]
+[connection signal="pressed" from="Buttons/RemoveButtons/HeavenRemoveButtons2/RemoveHell20" to="Buttons" method="_on_remove_hell_20_pressed"]

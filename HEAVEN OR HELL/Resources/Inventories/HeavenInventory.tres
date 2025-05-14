@@ -1,7 +1,6 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://3i4mwg3fwruq"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dgesbd8cam83"]
 
 [ext_resource type="Script" uid="uid://edecm6u4rgsn" path="res://Resources/Inventories/CharaInventory.gd" id="1_fv53j"]
-[ext_resource type="Resource" uid="uid://b4qdprvsd4kxf" path="res://Resources/Keychains/TEST/TEST_A1.tres" id="1_g1swl"]
 
 [resource]
 script = ExtResource("1_fv53j")
@@ -10,8 +9,7 @@ skill_slot_1 = 1
 skill_slot_2 = 2
 skill_slot_3 = 3
 skill_slot_4 = 4
-keychain_slot_1 = ExtResource("1_g1swl")
-keychain_slot_1_stack = 1
+keychain_slot_1_stack = 0
 keychain_slot_2_stack = 0
 keychain_slot_3_stack = 0
 keychain_slot_4_stack = 0
@@ -21,11 +19,21 @@ can_block = false
 can_bonus_attack = false
 can_bounce_on_it = false
 lucy_active = false
+misanthropist = false
+kingforaday_active = false
+kingslayer_active = false
+frenesi_active = false
+lefty_active = false
+jinxed_active = false
+magia_refund_percentage = 0.0
 protections = 0
+misanthropist_turns = 0
+frenesi_actions = 0
 deviltry_max_variances = 0
 malice_max_variances = 0
+zero_magia_spends = 0
 inventory_changed = true
-added_effect_ID = 1
-removed_effect_ID = 1
-current_slot = 1
-current_slot_stack = 1
+added_effect_ID = 5
+removed_effect_ID = 5
+current_slot = 5
+current_slot_stack = 4

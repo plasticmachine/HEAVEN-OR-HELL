@@ -1092,7 +1092,7 @@ texture = ExtResource("2_fiwds")
 [node name="Background2" type="Sprite2D" parent="TestPlayerSpots"]
 z_index = -785
 position = Vector2(945.779, 360)
-scale = Vector2(1.07629, 1.07629)
+scale = Vector2(1.43629, 1.43629)
 texture = ExtResource("130_gh4wy")
 
 [node name="HvnUplft1" type="Sprite2D" parent="TestPlayerSpots"]
@@ -1701,23 +1701,27 @@ position = Vector2(463, 438)
 rotation = -3.10526
 scale = Vector2(-0.159953, -0.159953)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Cameras" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="Cameras"]
 physics_interpolation_mode = 2
 position = Vector2(949, 359)
 script = ExtResource("136_dl68s")
 shake_magnitude = 0.0
 shake_duration = 1.0
 
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+[node name="PhantomCameraHost" type="Node" parent="Cameras/Camera2D"]
 script = ExtResource("136_sl4ww")
 metadata/_custom_type_script = "uid://ddmhbf62jjwlv"
 
-[node name="PhantomCamera2D" type="Node2D" parent="."]
+[node name="PhantomCamera2D" type="Node2D" parent="Cameras"]
 position = Vector2(949, 359)
 script = ExtResource("136_crg2r")
 tween_resource = SubResource("Resource_dl68s")
 draw_limits = true
 metadata/_custom_type_script = "uid://bbl8e0652fcdb"
+
+[node name="CameraPoints" type="Node2D" parent="Cameras"]
 
 [connection signal="clown_skill_search" from="." to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_first_action_committed"]
 [connection signal="heaven_disable" from="." to="PlayerSpots/HeavenTb" method="_on_turn_based_heaven_disable"]

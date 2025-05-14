@@ -8,7 +8,8 @@ script = ExtResource("2_88rkj")
 keychain_id = 4
 keychain_name = "TEST_B1"
 keychain_size = 1
-keychain_description = "A4!"
-keychain_rarity = "COMMON"
+keychain_description = "Increase DEVILTRY by +10
+FS: +7 max_variances"
+keychain_rarity = "UNCOMMON"
 keychain_texture = ExtResource("1_r6fwt")
 metadata/_custom_type_script = "uid://c6hj0as7yn5ue"

@@ -8,7 +8,9 @@ script = ExtResource("1_so5gy")
 keychain_id = 1
 keychain_name = "TEST_A1"
 keychain_size = 1
-keychain_description = "A1!"
+keychain_description = "LONGING -
+Increase HEART by +10
+(FULL STACK: +1 Protections)"
 keychain_rarity = "COMMON"
 keychain_texture = ExtResource("1_22fth")
 metadata/_custom_type_script = "uid://c6hj0as7yn5ue"

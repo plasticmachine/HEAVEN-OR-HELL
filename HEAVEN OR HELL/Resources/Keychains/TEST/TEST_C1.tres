@@ -8,7 +8,11 @@ script = ExtResource("2_0lidf")
 keychain_id = 7
 keychain_name = "TEST_C1"
 keychain_size = 1
-keychain_description = "C1!"
-keychain_rarity = "COMMON"
+keychain_description = "MISANTHROPIST:
+when debuffed in anyway, instead increase MALICE by +100% for 1 (+1 per stack) turns.
+FS: buff yourself AND your partner
+
+"
+keychain_rarity = "RARE"
 keychain_texture = ExtResource("1_j4nv1")
 metadata/_custom_type_script = "uid://c6hj0as7yn5ue"

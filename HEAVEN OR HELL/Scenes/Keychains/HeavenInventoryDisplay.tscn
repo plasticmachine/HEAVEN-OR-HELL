@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c78nm2c1qev16"]
+[gd_scene load_steps=8 format=3 uid="uid://c78nm2c1qev16"]
 
 [ext_resource type="Script" uid="uid://ldjwk4d8n6ll" path="res://Scripts/Mechanics/Keychains/testing stuff/InventoryDisplayRight.gd" id="1_te83d"]
-[ext_resource type="Texture2D" uid="uid://bdyc7xuwsw3kn" path="res://art/keychains/testing_keychains/TEST_A1.png" id="2_6rx5a"]
 [ext_resource type="FontFile" uid="uid://b2q20yvaohtoc" path="res://fonts/apple_kid.ttf" id="2_ol8kp"]
 
 [sub_resource type="Theme" id="Theme_6rx5a"]
@@ -32,14 +31,13 @@ offset_left = 1098.0
 offset_right = 1198.0
 offset_bottom = 100.0
 scale = Vector2(1.64, 1.64)
-texture = ExtResource("2_6rx5a")
 
 [node name="Slot1Stack" type="RichTextLabel" parent="Slot1"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 33.5366
+offset_right = 73.5366
+offset_bottom = 42.0
 theme = SubResource("Theme_6rx5a")
-text = "1"
 fit_content = true
 scroll_active = false
 
@@ -51,8 +49,9 @@ scale = Vector2(1.64, 1.64)
 
 [node name="Slot2Stack" type="RichTextLabel" parent="Slot2"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 36.5854
+offset_right = 76.5854
+offset_bottom = 42.0
 theme = SubResource("Theme_w4yjk")
 fit_content = true
 scroll_active = false
@@ -65,8 +64,9 @@ scale = Vector2(1.64, 1.64)
 
 [node name="Slot3Stack" type="RichTextLabel" parent="Slot3"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 35.9756
+offset_right = 75.9756
+offset_bottom = 42.0
 theme = SubResource("Theme_pku5e")
 fit_content = true
 scroll_active = false
@@ -79,8 +79,9 @@ scale = Vector2(1.64, 1.64)
 
 [node name="Slot4Stack" type="RichTextLabel" parent="Slot4"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 32.3171
+offset_right = 72.3171
+offset_bottom = 42.0
 theme = SubResource("Theme_smuit")
 fit_content = true
 scroll_active = false
@@ -93,8 +94,9 @@ scale = Vector2(1.64, 1.64)
 
 [node name="Slot5Stack" type="RichTextLabel" parent="Slot5"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 15.8537
+offset_right = 55.8537
+offset_bottom = 42.0
 theme = SubResource("Theme_vraa0")
 fit_content = true
 scroll_active = false

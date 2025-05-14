@@ -7,3 +7,11 @@ func _on_pressed():
 func _on_exit_button_pressed():
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 	get_tree().quit()
+
+
+func _on_start_button_2_pressed() -> void:
+	YASM.load_scene("res://Scenes/Levels/BulletHell/BHCLOWN.tscn")
+
+
+func _on_start_button_3_pressed() -> void:
+	YASM.load_scene("res://Scenes/Screens/debug_screen.tscn")
