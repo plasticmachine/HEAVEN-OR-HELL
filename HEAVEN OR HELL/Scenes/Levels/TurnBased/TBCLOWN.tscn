@@ -1,9 +1,10 @@
-[gd_scene load_steps=184 format=3 uid="uid://cgwbosrq1svq4"]
+[gd_scene load_steps=187 format=3 uid="uid://cgwbosrq1svq4"]
 
 [ext_resource type="Script" uid="uid://csykogoqqgsqc" path="res://Scripts/Mechanics/TurnBased/LevelManagers/TBCLOWN_MANAGER.gd" id="1_h0a2a"]
 [ext_resource type="Script" uid="uid://d2dfbxljvfwi" path="res://Scripts/Mechanics/TurnBased/Skills/Skills.gd" id="2_1jhkk"]
 [ext_resource type="PackedScene" uid="uid://dt06qpfhtfajd" path="res://Scenes/Characters/TurnBased/clown_tb.tscn" id="2_djc2d"]
 [ext_resource type="Texture2D" uid="uid://c4dptou8u3nyo" path="res://art/backgrounds/TB/IMG_2136.PNG" id="2_fiwds"]
+[ext_resource type="Script" uid="uid://waocyucdt4k6" path="res://Scripts/DEBUG/DEBUG_TB_CONTROLS.gd" id="2_g7j85"]
 [ext_resource type="Script" uid="uid://7c8xt0u347hd" path="res://Scripts/Mechanics/TurnBased/DamageCalculation/DamageCalculation.gd" id="2_jufi4"]
 [ext_resource type="Texture2D" uid="uid://41ergq2age6v" path="res://art/turnbased effects/healing effects/basic heal/1.PNG" id="3_bbatn"]
 [ext_resource type="PackedScene" uid="uid://cmhxvjptgn26x" path="res://Scenes/Keychains/keychain_manager.tscn" id="3_gh4wy"]
@@ -794,6 +795,18 @@ duration = 1.0
 transition = 0
 ease = 2
 
+[sub_resource type="Curve2D" id="Curve2D_gh4wy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 949, 342, 164.272, -4.83153, 0, 0, 766, 410)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_g7j85"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 949, 341, -164.272, 4.832, 0, 0, 1132, 411)
+}
+point_count = 2
+
 [node name="TurnBased" type="Node2D"]
 position = Vector2(11, 181)
 script = ExtResource("1_h0a2a")
@@ -804,6 +817,9 @@ end_of_turn_buffer = 4
 heaven_animation_buffer = 4
 hell_animation_buffer = 4
 clown_animation_buffer = 4
+
+[node name="DEBUG_CONTROLS" type="Node2D" parent="."]
+script = ExtResource("2_g7j85")
 
 [node name="SkillManager" type="Node2D" parent="." node_paths=PackedStringArray("enemy_effect_animation", "enemy_effect_animation_support")]
 scale = Vector2(0.998722, 1.0287)
@@ -1701,7 +1717,14 @@ position = Vector2(463, 438)
 rotation = -3.10526
 scale = Vector2(-0.159953, -0.159953)
 
-[node name="Cameras" type="Node2D" parent="."]
+[node name="Cameras" type="Node2D" parent="." node_paths=PackedStringArray("phan_cam", "hell_cam", "hell_cam_path_follow", "heaven_cam", "heaven_cam_path_follow")]
+script = ExtResource("136_dl68s")
+phan_cam = NodePath("MainCamera")
+hell_cam = NodePath("CameraPaths/HellCameraPath/PathFollow2D/HellCamera")
+hell_cam_path_follow = NodePath("CameraPaths/HellCameraPath/PathFollow2D")
+heaven_cam = NodePath("CameraPaths/HeavenCameraPath/HeavenCameraPath/HeavenCamera")
+heaven_cam_path_follow = NodePath("CameraPaths/HeavenCameraPath/HeavenCameraPath")
+camera_speed = 1000.0
 
 [node name="Camera2D" type="Camera2D" parent="Cameras"]
 physics_interpolation_mode = 2
@@ -1714,14 +1737,50 @@ shake_duration = 1.0
 script = ExtResource("136_sl4ww")
 metadata/_custom_type_script = "uid://ddmhbf62jjwlv"
 
-[node name="PhantomCamera2D" type="Node2D" parent="Cameras"]
+[node name="MainCamera" type="Node2D" parent="Cameras"]
 position = Vector2(949, 359)
 script = ExtResource("136_crg2r")
+priority = 1
 tween_resource = SubResource("Resource_dl68s")
 draw_limits = true
 metadata/_custom_type_script = "uid://bbl8e0652fcdb"
 
-[node name="CameraPoints" type="Node2D" parent="Cameras"]
+[node name="CameraPaths" type="Node2D" parent="Cameras"]
+
+[node name="HellCameraPath" type="Path2D" parent="Cameras/CameraPaths"]
+curve = SubResource("Curve2D_gh4wy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Cameras/CameraPaths/HellCameraPath"]
+position = Vector2(949, 342)
+rotation = -0.000609756
+rotates = false
+loop = false
+
+[node name="HellCamera" type="Node2D" parent="Cameras/CameraPaths/HellCameraPath/PathFollow2D" node_paths=PackedStringArray("follow_path")]
+position = Vector2(-0.010376, 17)
+rotation = 0.000609756
+script = ExtResource("136_crg2r")
+follow_path = NodePath("../..")
+tween_resource = SubResource("Resource_dl68s")
+draw_limits = true
+metadata/_custom_type_script = "uid://bbl8e0652fcdb"
+
+[node name="HeavenCameraPath" type="Path2D" parent="Cameras/CameraPaths"]
+curve = SubResource("Curve2D_g7j85")
+
+[node name="HeavenCameraPath" type="PathFollow2D" parent="Cameras/CameraPaths/HeavenCameraPath"]
+position = Vector2(949, 341)
+rotation = -0.000609756
+rotates = false
+loop = false
+
+[node name="HeavenCamera" type="Node2D" parent="Cameras/CameraPaths/HeavenCameraPath/HeavenCameraPath"]
+position = Vector2(-0.0109863, 18)
+rotation = 0.000609756
+script = ExtResource("136_crg2r")
+tween_resource = SubResource("Resource_dl68s")
+draw_limits = true
+metadata/_custom_type_script = "uid://bbl8e0652fcdb"
 
 [connection signal="clown_skill_search" from="." to="EnemySpot2/ClownDancePath/PathFollow2D/ClownTb" method="_on_first_action_committed"]
 [connection signal="heaven_disable" from="." to="PlayerSpots/HeavenTb" method="_on_turn_based_heaven_disable"]

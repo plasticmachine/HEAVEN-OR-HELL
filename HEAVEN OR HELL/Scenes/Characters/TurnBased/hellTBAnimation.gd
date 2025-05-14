@@ -5,7 +5,7 @@ signal hell_parried
 @onready var hellTBAnimation = $HellTbAnimation
 @onready var hellTBVFX = $"../../BattleEffectManagerPosition/HellBattleEffectManager"
 @onready var hellTBVFXSupport = $"../../BattleEffectManagerPosition/HellBattleEffectManagerSupport"
-@onready var cameraTricks = $"../../Camera2D"
+@onready var cameraTricks = $"../../Cameras"
 
 @onready var HellButtons = $"../../PlayerUI/Buttons/HellButtons"
 

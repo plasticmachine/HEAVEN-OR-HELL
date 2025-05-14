@@ -19,8 +19,7 @@ var hellstats = preload("res://Resources/Stats/HellStats.tres")
 var clownstats = preload("res://Resources/Stats/ClownStats.tres")
 
 var heaveninventory = preload("res://Resources/Inventories/HeavenInventory.tres")
-var hellinventory = preload("res://Resources/Inventories/HellInventory.tres"
-)
+var hellinventory = preload("res://Resources/Inventories/HellInventory.tres")
 var heaven_skill_slot: int
 var hell_skill_slot: int
 var clwnskill: int
@@ -179,6 +178,7 @@ func turn_queue_pop_check():
 						2: hell_action_button_2.skill_effect()
 						3: hell_action_button_3.skill_effect()
 						4: hell_action_button_4.skill_effect()
+					
 					await get_tree().create_timer(SkillManager.hell_switch_turn_animation_buffer).timeout
 					#choosing which skill its going to use (heaven)
 					match ClownTB.clownskill:

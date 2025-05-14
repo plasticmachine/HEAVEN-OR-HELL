@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://piswgmsmpb8c"]
+[gd_resource type="Resource" script_class="CharaStats" load_steps=2 format=3 uid="uid://7i46ool5xox0"]
 
 [ext_resource type="Script" uid="uid://dmh5rjdgjawbh" path="res://Scripts/Mechanics/StatStuff/CharaStats.gd" id="1_lx6vb"]
 
@@ -8,7 +8,7 @@ character_name = "Heaven"
 move_speed = 3500
 run_speed = 8000
 max_heart = 300
-current_heart = 211
+current_heart = 201
 max_magia = 300
 current_magia = 270
 malice = 10

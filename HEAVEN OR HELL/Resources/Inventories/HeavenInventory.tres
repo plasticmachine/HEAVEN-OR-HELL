@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dgesbd8cam83"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bxx63vy14a2qb"]
 
 [ext_resource type="Script" uid="uid://edecm6u4rgsn" path="res://Resources/Inventories/CharaInventory.gd" id="1_fv53j"]
 
@@ -15,7 +15,8 @@ keychain_slot_3_stack = 0
 keychain_slot_4_stack = 0
 keychain_slot_5_stack = 0
 can_parry = false
-can_block = false
+can_block = true
+can_dodge = false
 can_bonus_attack = false
 can_bounce_on_it = false
 lucy_active = false
